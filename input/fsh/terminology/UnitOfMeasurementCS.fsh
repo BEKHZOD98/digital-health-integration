@@ -1,11 +1,9 @@
 CodeSystem: UnitOfMeasurementCS
 Id: unit-of-measurement-cs
-Title: "Unit Of Measurement"
+Title: "Unit Of Measurement CodeSystem"
 Description: "Units of measurement used to measure the length and weight of a baby at birth"
+
 * insert OriginalCodeSystemDraft(unit-of-measurement-cs)
-* ^status = #draft
-* ^experimental = true
-* ^caseSensitive = true
 
 * #birth002.0001 "Tana vazni"
   * ^designation[+].language = #ru

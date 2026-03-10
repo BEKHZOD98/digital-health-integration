@@ -2,10 +2,8 @@ CodeSystem: LOINC_Birth_Supplement
 Id: loinc-birth-supplement
 Title: "LOINC Birth Supplement (UZ/RU)"
 Description: "Uzbek and Russian designations for selected LOINC birth-related codes"
-* ^status = #draft
-* ^experimental = true
-* ^content = #supplement
-* ^supplements = "http://loinc.org"
+
+* insert SupplementCodeSystemDraft(loinc-birth-supplement, http://loinc.org, 2.77)
 
 * #9272-6
   * ^designation[0].language = #ru
