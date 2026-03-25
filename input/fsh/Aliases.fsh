@@ -101,3 +101,7 @@ Alias: $drs = http://hl7.org/fhir/document-reference-status
 Alias: $drcs = 	http://hl7.org/fhir/composition-status
 Alias: $drca = http://hl7.org/fhir/composition-attestation-mode
 Alias: $loinc_code = http://loinc.org
+Alias: $mahalla-vs = https://terminology.dhp.uz/fhir/core/ValueSet/mahalla-vs
+Alias: $regions-vs = https://terminology.dhp.uz/fhir/core/ValueSet/regions-vs
+Alias: $state-vs = https://terminology.dhp.uz/fhir/core/ValueSet/state-vs
+Alias: $address-vs = https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs
