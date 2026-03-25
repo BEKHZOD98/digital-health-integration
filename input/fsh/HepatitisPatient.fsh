@@ -99,7 +99,7 @@ Description: "Profile for hepatitis patient resource"
 
 * address[uzAddress]
   * use from AddressUseVS (required)
-  * type from AddressTypeVS (required)
+  * type from $address-vs (required)
   * text 0..1 MS
   * line 0..* MS
   * city from MahallaVS (required)
