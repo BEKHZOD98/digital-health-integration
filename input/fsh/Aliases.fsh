@@ -157,3 +157,7 @@ Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSy
 Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
 
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
+Alias: $mahalla-vs = https://terminology.dhp.uz/fhir/core/ValueSet/mahalla-vs
+Alias: $regions-vs = https://terminology.dhp.uz/fhir/core/ValueSet/regions-vs
+Alias: $state-vs = https://terminology.dhp.uz/fhir/core/ValueSet/state-vs
+Alias: $address-vs = https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs

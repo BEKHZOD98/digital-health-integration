@@ -1,6 +1,19 @@
+<<<<<<< HEAD
 Instance: samarkand-regional-hospital
 InstanceOf: Organization
 Description: "Example regional hospital organization in Samarkand."
+=======
+Instance: muratova-goolshod
+InstanceOf: Practitioner
+Usage: #example
+
+* id = "muratova-goolshod"
+* name.family = "Muratova"
+* name.given[0] = "Gulshod"
+
+Instance: samarkand-regional-hospital
+InstanceOf: Organization
+>>>>>>> 2d9b352 (Hepatit fsh)
 Usage: #example
 
 * id = "samarkand-regional-hospital"
@@ -8,15 +21,31 @@ Usage: #example
 
 Instance: samarkand-infectious-hospital
 InstanceOf: Organization
+<<<<<<< HEAD
 Description: "Example infectious diseases hospital organization in Samarkand."
+=======
+>>>>>>> 2d9b352 (Hepatit fsh)
 Usage: #example
 
 * id = "samarkand-infectious-hospital"
 * name = "Samarkand Infectious Hospital"
 
+<<<<<<< HEAD
 Instance: example-practitioner
 InstanceOf: Practitioner
 Description: "Example healthcare practitioner."
+=======
+Instance: simonov-farkhod
+InstanceOf: Practitioner
+Usage: #example
+
+* id = "simonov-farkhod"
+* name.family = "Simonov"
+* name.given[0] = "Farkhod"
+
+Instance: example-practitioner
+InstanceOf: Practitioner
+>>>>>>> 2d9b352 (Hepatit fsh)
 Usage: #example
 
 * id = "example-practitioner"
@@ -25,7 +54,10 @@ Usage: #example
 
 Instance: referral-to-specialist
 InstanceOf: ServiceRequest
+<<<<<<< HEAD
 Description: "Example referral request to a specialist."
+=======
+>>>>>>> 2d9b352 (Hepatit fsh)
 Usage: #example
 
 * id = "referral-to-specialist"
@@ -35,7 +67,10 @@ Usage: #example
 
 Instance: muratova-gulshoda
 InstanceOf: Practitioner
+<<<<<<< HEAD
 Description: "Example practitioner Gulshoda Muratova."
+=======
+>>>>>>> 2d9b352 (Hepatit fsh)
 Usage: #example
 
 * id = "muratova-gulshoda"
