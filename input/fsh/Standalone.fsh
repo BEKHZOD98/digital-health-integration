@@ -61,3 +61,38 @@ Usage: #example
 * practitioner = Reference(Practitioner/muratova-gulshoda)
 * organization = Reference(Organization/samarkand-regional-hospital)
 
+// Instance: example-hepatitis-patient
+// InstanceOf: HepatitisPatientProfile
+// Description: "Gepatit profili uchun Tolibjon To'lanboev misolida namuna"
+// Usage: #example
+
+// // * extension[nationality].extension[code].valueCodeableConcept = #UZ "Uzbekistan"
+// * extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#UZ "Uzbekistan"
+
+// * identifier[nationalId]
+//   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
+//   * value = "515050500505"
+//   * use = #usual
+
+// * identifier[passportLocal]
+//   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ppn/local"
+//   * value = "AB1234567"
+//   * use = #usual
+
+// * name 
+//   * use = #official
+//   * text = "To'lanboev Tolibjon"
+//   * family = "To'lanboyev"
+//   * given = "Tolibjon"
+
+// * gender = #male 
+// * birthDate = "1990-02-01"
+
+// * address[uzAddress]
+//   * use = #temp
+//   * type = #physical
+//   * text = "Iltifot MFY, 58-Harbiy shaharcha mavzesi, 53 Uy, 104 Kvartira"
+//   * city = #17150085
+//   * district = #1726262
+//   * state = #1726
+//   * country = "UZ"
