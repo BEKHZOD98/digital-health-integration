@@ -158,6 +158,6 @@ Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/Value
 
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
 Alias: $mahalla-vs = https://terminology.dhp.uz/fhir/core/ValueSet/mahalla-vs
-Alias: $regions-vs = https://terminology.dhp.uz/fhir/core/ValueSet/regions-vs
 Alias: $state-vs = https://terminology.dhp.uz/fhir/core/ValueSet/state-vs
 Alias: $address-vs = https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs
+Alias: $hep-observation-lab-codes-vs = https://terminology.dhp.uz/fhir/core/ValueSet/observation-codes-vs

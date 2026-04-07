@@ -1,5 +1,5 @@
 Profile: HepatitisPatientProfile
-Parent: Patient
+Parent: UZCorePatient
 Id: hepatitis-patient-profile
 Title: "Hepatitis Patient Profile"
 Description: "Profile for hepatitis patient resource"
@@ -7,65 +7,65 @@ Description: "Profile for hepatitis patient resource"
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
-* extension contains
-    http://hl7.org/fhir/StructureDefinition/patient-nationality named nationality 0..1 MS and
-    http://hl7.org/fhir/StructureDefinition/patient-citizenship named citizenship 0..1 MS
+// * extension contains
+//   http://hl7.org/fhir/StructureDefinition/patient-nationality named nationality 0..1 MS and
+//   http://hl7.org/fhir/StructureDefinition/patient-citizenship named citizenship 0..1 MS
 
 * extension[nationality].extension[code].value[x] from NationalityVS (required)
 * extension[citizenship].extension[code].value[x] from CitizenshipVS (required)
 
 * identifier 1..* MS SU
-  * extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1 MS
+  // * extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1 MS
 * identifier.use from http://hl7.org/fhir/ValueSet/identifier-use (required)
 * identifier.type from http://hl7.org/fhir/ValueSet/identifier-type (required)
 
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "system"
-* identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Ways patient can be identitifed"
-* identifier ^slicing.ordered = false
+// * identifier ^slicing.discriminator.type = #value
+// * identifier ^slicing.discriminator.path = "system"
+// * identifier ^slicing.rules = #open
+// * identifier ^slicing.description = "Ways patient can be identitifed"
+// * identifier ^slicing.ordered = false
 
-* identifier contains nationalId 0..1 MS
+// * identifier contains nationalId 0..1 MS
 * identifier[nationalId]
-  * use = #usual
-  * type.coding 1..* MS
-    * system 1..1 MS
-    * system = $identifier-type 
-    * code 1..1 MS
-    * code = #NI
-    * display 1..1 MS
-    * display = "National unique individual identifier"
-  * system 1..1 MS
-  * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
+  // * use = #usual
+  // * type.coding 1..* MS
+  //   * system 1..1 MS  
+  //   * system = $identifier-type 
+  //   * code 1..1 MS
+  //   * code = #NI
+  //   * display 1..1 MS
+  //   * display = "National unique individual identifier"
+  // * system 1..1 MS
+  // * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
   * value 1..1 MS
   * value = "515050500505"
 
-* identifier contains passportLocal 0..1 MS
+// * identifier contains passportLocal 0..1 MS
 * identifier[passportLocal]
-  * type.coding 1..* MS
-    * system 1..1 MS
-    * system = $identifier-type 
-    * code 1..1 MS
-    * code = #PPN
-    * display 1..1 MS
-    * display = "Passport number"
-  * system 1..1 MS 
-  * system = "https://dhp.uz/fhir/core/sid/pid/uz/ppn/local"
+  // * type.coding 1..* MS
+  //   * system 1..1 MS
+  //   * system = $identifier-type 
+  //   * code 1..1 MS
+  //   * code = #PPN
+  //   * display 1..1 MS
+  // //   * display = "Passport number"
+  // * system 1..1 MS 
+  // * system = "https://dhp.uz/fhir/core/sid/pid/uz/ppn/local"
   * value 1..1 MS
   * value = "AB1234567"
 
-* identifier contains healthCardId 0..1 MS
+// * identifier contains healthCardId 0..1 MS
 * identifier[healthCardId]
-  * use = #official
-  * type.coding 1..* MS
-    * system 1..1 MS
-    * system =  $identifier-type 
-    * code 1..1 MS
-    * code = #HC
-    * display 1..1 MS
-    * display = "Health card number"
-  * system 1..1 MS
-  * system = https://dhp.uz/fhir/core/sid/pid/uz/#PPN
+  // * use = #official
+  // * type.coding 1..* MS
+  //   * system 1..1 MS
+  //   * system =  $identifier-type 
+  //   * code 1..1 MS
+  //   * code = #HC
+  //   * display 1..1 MS
+  //   * display = "Health card number"
+  // * system 1..1 MS
+  // * system = https://dhp.uz/fhir/core/sid/pid/uz/#PPN
   * value 1..1 MS
   * value = "123456"
 
@@ -90,11 +90,11 @@ Description: "Profile for hepatitis patient resource"
 * deceased[x] MS
 
 * address 0..* MS
-* address ^slicing.discriminator.type = #value
-* address ^slicing.discriminator.path = "country"
-* address ^slicing.rules = #open
+// * address ^slicing.discriminator.type = #value
+// * address ^slicing.discriminator.path = "country"
+// * address ^slicing.rules = #open
 
-* address contains uzAddress 0..* MS
+// * address contains uzAddress 0..* MS
 * address[uzAddress].country = "UZ"
 
 * address[uzAddress]
@@ -122,7 +122,7 @@ Usage: #example
 * identifier[nationalId]
   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
   * value = "515050500505"
-  * use = #usual
+  * use = #official
 
 * identifier[passportLocal]
   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ppn/local"
