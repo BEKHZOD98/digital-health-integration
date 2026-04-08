@@ -7,15 +7,17 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
-* identifier 1..* MS
-* status from http://hl7.org/fhir/ValueSet/observation-status (required)
+* identifier MS
+* method 0..1 MS
+* method from $observation-methods (extensible)  //change the alieas to UZCoreObservation.method valueset url after merged ObservationLabCodes
+* category 0..* MS
+* category from hepatObsCategoryVS (required) //category qo'shildi
+* status from ObservationStatusVS (required)
 * status 1..1 MS
 
-* method 0..1 MS
-* method from https://terminology.dhp.uz/fhir/core/ValueSet/typeOfMethod (extensible)
 
 * code 1..1 MS
-* code from https://dhp.uz/fhir/core/en/ValueSet-observation-codes-vs (required)
+* code from HepatitisObservationAnalysisVS (required) //change the URL after ObservationLabCodes branch merged to main branch 
 
 * subject 0..1 MS
 * subject only Reference(Patient)
@@ -24,14 +26,14 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
 * effective[x] only dateTime or Period
 * effective[x] 0..1 MS
 
-* value[x] 0..1 MS
-* value[x] only Attachment or string or CodeableConcept
-* valueCodeableConcept from https://terminology.dhp.uz/ValuSet/lab_result_20_type (required)
+* value[x] 0..1 MS //hardoim ^short da excelda yozilgan definitionni ingliz tiliga tarjima qilib qo'shib qo'ying
+* value[x] only Attachment or string or CodeableConcept 
+* valueCodeableConcept from HepatitisLabResultTypeVS (required)
 
 * performer 0..* MS
 * performer only Reference(Organization or PractitionerRole)
-
-* component 0..* MS
+/*
+* component 0..* MS //Compenenta faqat Zuhra tayyorlavotgan ObservationLabSSVPanels keladi
   * code 1..1 MS
   * code from https://terminology.dhp.uz/fhir/core/ValueSet/observation-codes-vs (required)
 
@@ -40,11 +42,11 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
     * comparator from http://hl7.org/fhir/ValueSet/quantity-comparator (required)
     * unit 0..1 MS
     * system 0..1 MS
-    * system = "http://unitsofmeasure.org"
+    * system = $ucum
     * code 0..1 MS
-
-* dataAbsentReason from http://hl7.org/fhir/ValueSet/data-absent-reason (extensible)
-* interpretation from http://hl7.org/fhir/ValueSet/observation-interpretation (extensible)
+*/
+* dataAbsentReason from DataAbsentReasonVS (extensible)
+* interpretation from ObservationInterpretationVS (extensible)
 * note 0..* MS
 
 
@@ -53,23 +55,17 @@ Instance: example-hepatitis-observation-analysis
 InstanceOf: HepatitisObservationAnalysis
 Description: "DNK Gepatit B tahlili namunasi"
 Usage: #example
-
+* language = #en
 * status = #final
-* identifier 
-  * system = "https://gepatit.sanepid.uz/observation"
-  * value = "PZR-2026-001"
+//* identifier 
+//  * system = "https://gepatit.sanepid.uz/observation"
+//  * value = "PZR-2026-001"
 
-* method = https://terminology.dhp.uz/fhir/core/CodeSystem/observation-lab-research-codes-cs#lab-method-1 "ПЦР"
-* code = https://terminology.dhp.uz/fhir/core/CodeSystem/observation-diagnostic-cs#lab-258 "Zardob yoki plazmadagi D vitamini + metabolitlari [Mass/hajm]"
+* method = $sct#258066000 "Polymerase chain reaction"
+* code = $loinc#22314-9 "Hepatitis A virus IgM Ab [Presence] in Serum"
 * subject = Reference(Patient/example-hepatitis-patient)
 * effectiveDateTime = "2026-01-27T09:57:00Z"
 * valueCodeableConcept = http://hl7.org/fhir/observation-referencerange-normalvalue#negative "Negative"
 * performer = Reference(Organization/samarkand-regional-hospital)
-* component[0]
-  * code = https://terminology.dhp.uz/fhir/core/CodeSystem/observation-diagnostic-cs#lab-259 "Zardob yoki plazmadagi androstenedion [mol/hajm]"
-  * valueQuantity 
-    * value = 100
-    * comparator = #< 
-    * unit = "mL"
-    * system = "http://unitsofmeasure.org"
-    * code = #mL
+
+
