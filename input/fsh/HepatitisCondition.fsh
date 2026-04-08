@@ -9,13 +9,13 @@ Description: "Bemorning asosiy va hamroh tashxislarini qayd etish uchun profil"
 
 * identifier 1..* MS SU
 * clinicalStatus 1..1 MS
-* clinicalStatus from http://hl7.org/fhir/ValueSet/condition-clinical (required)
+* clinicalStatus from HepatitisClinicalStatusVS (required)
 
 * extension contains http://hl7.org/fhir/StructureDefinition/condition-outcome named diagnosisType 0..1 MS
-* extension[diagnosisType].valueCodeableConcept from http://terminology.dhp.uz/fhir/core/ValueSet/DiagnosisType (required)
+* extension[diagnosisType].valueCodeableConcept from HepatitisConditionDiagnosisTypeVS (required)
 
 * code 0..1 MS
-* code from https://terminology.dhp.uz/fhir/core/ValueSet/ICD-10 (required)
+* code from HepatitisICDVS (required)
 
 * subject 1..1 MS
 * subject only Reference(Patient)
@@ -43,8 +43,6 @@ Usage: #example
   * value = "COND-2026-5541"
 
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active "Active"
-
-* extension[diagnosisType].valueCodeableConcept = http://terminology.dhp.uz/CodeSystem/DiagnosisType#gencl-0001-00003 "Asosiy tashxis"
 
 * code = http://hl7.org/fhir/sid/icd-10#B17.1 "Acute hepatitis C"
 

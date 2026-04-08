@@ -8,11 +8,11 @@ Description: "UZI natijalarini, xususan jigar sirrozi va o'smalarni qayd etish u
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
-* status from http://hl7.org/fhir/ValueSet/observation-status (required)
+* status from ObservationStatusVS (required)
 * status MS
 
 * code 1..1 MS
-* code from https://terminology.dhp.uz/fhir/core/ValueSet/typeOfUltrasound (required)
+* code from HepatitisTypeOfUltrasoundVS (required)
 * code.coding 0..* MS
   * system 0..1 MS
   * system = $sct

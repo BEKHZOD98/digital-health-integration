@@ -9,7 +9,7 @@ Description: "Bemorning tibbiy ko'rigi va tahlil jarayonlarini bog'lovchi qabul"
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS SU
-* status from http://hl7.org/fhir/ValueSet/encounter-status (required)
+* status from EncounterStatusVS (required)
 * status MS
 * status = #completed 
 
@@ -22,6 +22,8 @@ Description: "Bemorning tibbiy ko'rigi va tahlil jarayonlarini bog'lovchi qabul"
 * serviceProvider ^short = "Tibbiy muassasa"
 
 * participant 0..* MS
+  * type 0..* MS
+  * type from HepatitisEncounterParticipantTypeVS (extensible)
   * actor 0..1 MS
   * actor only Reference(Practitioner or PractitionerRole or RelatedPerson)
   * actor ^short = "Qabulni amalga oshirgan shifokor"

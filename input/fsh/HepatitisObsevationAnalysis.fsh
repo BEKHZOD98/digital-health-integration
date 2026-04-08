@@ -8,14 +8,14 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
-* status from http://hl7.org/fhir/ValueSet/observation-status (required)
+* status from ObservationStatusVS (required)
 * status 1..1 MS
 
 * method 0..1 MS
-* method from https://terminology.dhp.uz/fhir/core/ValueSet/typeOfMethod (extensible)
+* method from http://hl7.org/fhir/ValueSet/observation-methods (extensible)  //http://hl7.org/fhir/ValueSet/observation-methods
 
 * code 1..1 MS
-* code from https://dhp.uz/fhir/core/en/ValueSet-observation-codes-vs (required)
+* code from https://dhp.uz/fhir/core/en/ValueSet-observation-codes-vs (required) //change the URL after ObservationLabCodes branch merged to main branch
 
 * subject 0..1 MS
 * subject only Reference(Patient)
@@ -26,25 +26,25 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
 
 * value[x] 0..1 MS
 * value[x] only Attachment or string or CodeableConcept
-* valueCodeableConcept from https://terminology.dhp.uz/ValuSet/lab_result_20_type (required)
+* valueCodeableConcept from HepatitisLabResultTypeVS (required)
 
 * performer 0..* MS
 * performer only Reference(Organization or PractitionerRole)
 
 * component 0..* MS
   * code 1..1 MS
-  * code from https://terminology.dhp.uz/fhir/core/ValueSet/observation-codes-vs (required)
+  * code from HepatitisObservationAnalysisVS (required)
 
   * valueQuantity
     * value 0..1 MS
-    * comparator from http://hl7.org/fhir/ValueSet/quantity-comparator (required)
+    * comparator from QuantityComparatorVS (required)
     * unit 0..1 MS
     * system 0..1 MS
     * system = "http://unitsofmeasure.org"
     * code 0..1 MS
 
-* dataAbsentReason from http://hl7.org/fhir/ValueSet/data-absent-reason (extensible)
-* interpretation from http://hl7.org/fhir/ValueSet/observation-interpretation (extensible)
+* dataAbsentReason from DataAbsentReasonVS (extensible)
+* interpretation from ObservationInterpretationVS (extensible)
 * note 0..* MS
 
 
@@ -63,13 +63,13 @@ Usage: #example
 * code = https://terminology.dhp.uz/fhir/core/CodeSystem/observation-diagnostic-cs#lab-258 "Zardob yoki plazmadagi D vitamini + metabolitlari [Mass/hajm]"
 * subject = Reference(Patient/example-hepatitis-patient)
 * effectiveDateTime = "2026-01-27T09:57:00Z"
-* valueCodeableConcept = http://hl7.org/fhir/observation-referencerange-normalvalue#negative "Negative"
+* valueCodeableConcept = hep-lab-res-type-cs#lab_0001_00001 "Negative"
 * performer = Reference(Organization/samarkand-regional-hospital)
 * component[0]
-  * code = https://terminology.dhp.uz/fhir/core/CodeSystem/observation-diagnostic-cs#lab-259 "Zardob yoki plazmadagi androstenedion [mol/hajm]"
+  * code = $loinc#5195-3 "Hepatitis B virus surface Ag [Presence] in Serum"
   * valueQuantity 
-    * value = 12
-    * comparator = #<
+    * value = 100
+    * comparator = quantity-comparator-cs#< "Less than"
     * unit = "mL"
     * system = "http://unitsofmeasure.org"
     * code = #mL

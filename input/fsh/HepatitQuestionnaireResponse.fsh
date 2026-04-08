@@ -29,7 +29,7 @@ Description: "Gepatit so'rovnomasiga berilgan javoblarini saqlash uchun profil"
   * text 1..1 MS
   * answer 0..* MS
     * value[x] only boolean or string or Coding
-    * valueCoding from http://terminology.dhp.uz/ValueSet/Trimester (example)
+    * valueCoding from HepatitisTrimesterVS (example)
 
     * item 0..* MS
       * linkId 1..1 MS
@@ -46,7 +46,6 @@ Usage: #example
 
 * identifier 
   * system = "urn:ietf:rfc:3986"
-  // * value = "fa2cd841-a4f8-48c3-8c8b-a240c1e87d55"
 
 * status = #completed
 * questionnaire = "https://dhp.uz/fhir/Questionnaire/hepatitis-questionnaire"

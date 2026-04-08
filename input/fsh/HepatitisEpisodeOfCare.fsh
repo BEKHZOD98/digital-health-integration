@@ -1,19 +1,21 @@
 Profile: HepatitisEpisodeOfCare
 Parent: EpisodeOfCare
 Id: hepatitis-episode-of-care
-Title: "Bemorning gepatit bo'yicha hisobda (A, B, C, D uchyot) turish jarayonini boshqarish uchun profil"
+Title: "Hepatitis Episode of Care Profile"
+Description: "Bemorning gepatit bo'yicha hisobda (A, B, C, D uchyot) turish jarayonini boshqarish uchun profil"
 
 * ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
-* status from http://hl7.org/fhir/ValueSet/episode-of-care-status (required)
+* status from HepatitisEpisodeOfCareStatusVS (required)
 * status MS 
 
 * diagnosis MS
 * diagnosis.condition 1..1 MS
 * diagnosis.condition only CodeableReference(HepatitisCondition)
+* diagnosis.condition from HepatitisICDVS (required)
 * diagnosis.condition ^short = "Bemorning gepatit tashxisi"
 
 * diagnosis.use 0..1 MS
@@ -50,7 +52,7 @@ Usage: #example
   * system = "https://gepatit.sanepid.uz/episodeofcare"
   * value = "EOC-2026-1122"
 
-* status = #active
+* status = hep-episode-of-care-status-cs#planned "Rejalashtirilgan"
 * patient = Reference(example-hepatitis-patient)
 
 * diagnosis[0]
