@@ -3,7 +3,7 @@ Id: hep-enc-diag-use-cs
 Title: "Hepatitis enc diagnosis use codesystem"
 Description: "Description of hepatitis enc diagnosis use codesystem"
 
-* insert OriginalCodeSystemDraft(hep-enc-diag-use-cs)
+//* insert OriginalCodeSystemDraft(hep-enc-diag-use-cs)
 
 * #working "Ishlamoqda"
   * ^designation[+].language = #ru
@@ -15,4 +15,4 @@ Description: "Description of hepatitis enc diagnosis use codesystem"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Финал"
   * ^designation[0].language = #en
-  * ^designation[=].value = "Final "
+  * ^designation[=].value = "Final"

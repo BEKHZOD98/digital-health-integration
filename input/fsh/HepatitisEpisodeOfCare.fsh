@@ -8,16 +8,13 @@ Title: "Bemorning gepatit bo'yicha hisobda (A, B, C, D uchyot) turish jarayonini
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
-<<<<<<< HEAD
-* status from http://hl7.org/fhir/ValueSet/episode-of-care-status (required)
-=======
->>>>>>> 204f760 (Fix errors)
 * status MS 
 * status from HepatitisEpisodeOfCareStatusVS (required)
 
 * diagnosis MS
 * diagnosis.condition 1..1 MS
 * diagnosis.condition only CodeableReference(HepatitisCondition)
+* diagnosis.condition from HepatitisICDVS (required) // CodeSystem should be done
 * diagnosis.condition ^short = "Bemorning gepatit tashxisi"
 
 * diagnosis.use 0..1 MS

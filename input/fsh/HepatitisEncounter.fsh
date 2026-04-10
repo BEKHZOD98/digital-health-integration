@@ -8,8 +8,8 @@ Description: "Bemorning tibbiy ko'rigi va tahlil jarayonlarini bog'lovchi qabul"
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
-* identifier 1..* MS SU
-* status from http://hl7.org/fhir/ValueSet/encounter-status (required)
+* identifier 1..* MS //naming qilishim kk
+* status from EncounterStatusVS (required)
 * status MS
 * status = #completed 
 

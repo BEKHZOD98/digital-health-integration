@@ -11,7 +11,7 @@ Description: "Gepatit bilan bog'liq anamnez va klinik ma'lumotlarni yig'ish uchu
 * title 1..1 MS
 * title ^short = "HEPATITIS QUESTIONNAIRE"
 
-* title.extension contains http://hl7.org/fhir/StructureDefinition/translation named translation 0..* MS
+* title.extension contains http://hl7.org/fhir/StructureDefinition/translation named translation 0..* MS // Structure definitionga translation definition qoshish kk
 * description 0..1 MS
 * description.extension contains http://hl7.org/fhir/StructureDefinition/translation named translation 0..* MS
 

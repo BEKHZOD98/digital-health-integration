@@ -6,7 +6,7 @@ Description: "Gepatit kasalligi uchun ICD-10 kodlari tanlov qiymatlari"
 
 * include $icd-10#B15 "Acute hepatitis A"
   * ^designation[0].language = #ru
-  * ^designation[0].value = "Острый гепатит A"
+  * ^designation[=].value = "Острый гепатит A"
   * ^designation[1].language = #uz
   * ^designation[1].value = "Oq virusli gepatit A"
 
