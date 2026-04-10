@@ -68,8 +68,8 @@ Usage: #example
 * component[0]
   * code = https://terminology.dhp.uz/fhir/core/CodeSystem/observation-diagnostic-cs#lab-259 "Zardob yoki plazmadagi androstenedion [mol/hajm]"
   * valueQuantity 
-    * value = 12
-    * comparator = #<
+    * value = 100
+    * comparator = #< 
     * unit = "mL"
     * system = "http://unitsofmeasure.org"
     * code = #mL

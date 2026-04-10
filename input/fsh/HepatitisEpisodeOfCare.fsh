@@ -8,8 +8,12 @@ Title: "Bemorning gepatit bo'yicha hisobda (A, B, C, D uchyot) turish jarayonini
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
+<<<<<<< HEAD
 * status from http://hl7.org/fhir/ValueSet/episode-of-care-status (required)
+=======
+>>>>>>> 204f760 (Fix errors)
 * status MS 
+* status from HepatitisEpisodeOfCareStatusVS (required)
 
 * diagnosis MS
 * diagnosis.condition 1..1 MS
@@ -50,7 +54,7 @@ Usage: #example
   * system = "https://gepatit.sanepid.uz/episodeofcare"
   * value = "EOC-2026-1122"
 
-* status = #active
+* status = #planned 
 * patient = Reference(example-hepatitis-patient)
 
 * diagnosis[0]
