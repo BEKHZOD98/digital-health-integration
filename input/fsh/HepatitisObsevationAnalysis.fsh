@@ -9,9 +9,9 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
 
 * identifier MS
 * method 0..1 MS
-* method from $observation-methods (extensible)  //change the alieas to UZCoreObservation.method valueset url after merged ObservationLabCodes
+* method from $observation-methods (extensible)  //LabObservationMethodsVS 
 * category 0..* MS
-* category from hepatObsCategoryVS (required) //category qo'shildi
+* category from HepatObsCategoryVS (required) 
 * status from ObservationStatusVS (required)
 * status 1..1 MS
 
@@ -28,12 +28,13 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
 
 * value[x] 0..1 MS //hardoim ^short da excelda yozilgan definitionni ingliz tiliga tarjima qilib qo'shib qo'ying
 * value[x] only Attachment or string or CodeableConcept 
+* valueCodeableConcept MS
 * valueCodeableConcept from HepatitisLabResultTypeVS (required)
 
 * performer 0..* MS
 * performer only Reference(Organization or PractitionerRole)
 /*
-* component 0..* MS //Compenenta faqat Zuhra tayyorlavotgan ObservationLabSSVPanels keladi
+* component 0..* MS //Compenenta faqat Zuhra tayyorlavotgan LabObservationPanelVS keladi
   * code 1..1 MS
   * code from HepatitisObservationAnalysisVS (required)
 

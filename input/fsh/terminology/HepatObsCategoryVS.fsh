@@ -1,4 +1,4 @@
-ValueSet: hepatObsCategoryVS
+ValueSet: HepatObsCategoryVS
 Id: hepat-obs-category-vs
 Title: "Observation category from UZCoreObservation category"
 Description: "Observation category in Uzbekistan"

@@ -5,4 +5,4 @@ Description: "ValueSet for observation interpretation"
 * ^url = "https://terminology.dhp.uz/ValueSet/observation-interpretation-vs"
 * ^experimental = true
 
-* include codes from system https://terminology.dhp.uz/fhir/core/CodeSystem/observation-interpretation-cs
+* include codes from valueset https://terminology.dhp.uz/fhir/core/ValueSet/observation-interpretation-vs

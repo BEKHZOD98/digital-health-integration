@@ -15,7 +15,7 @@ Description: "Bemorning asosiy va hamroh tashxislarini qayd etish uchun profil"
 * extension[diagnosisType].valueCodeableConcept from HepatitisConditionDiagnosisTypeVS (required)
 
 * code 0..1 MS
-* code from HepatitisICDVS (required)
+* code from HepatitisICDVS (required) //CodeSystem should be done
 
 * subject 1..1 MS
 * subject only Reference(Patient)

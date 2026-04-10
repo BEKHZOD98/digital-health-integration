@@ -29,7 +29,7 @@ Description: "Gepatit so'rovnomasiga berilgan javoblarini saqlash uchun profil"
   * text 1..1 MS
   * answer 0..* MS
     * value[x] only boolean or string or Coding
-    * valueCoding from HepatitisTrimesterVS (example)
+    * valueCoding from HepatitisTrimesterVS (example) //CodeSystem should be done
 
     * item 0..* MS
       * linkId 1..1 MS
