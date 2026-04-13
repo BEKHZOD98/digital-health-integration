@@ -3,6 +3,6 @@ Id: nationality-vs
 Title: "Nationality ValueSet"
 Description: "ValueSet for patient nationality" 
 
-* ^url = "https://terminology.dhp.uz/ValueSet/nationality-vs"   
+* ^experimental = true 
 
 * include codes from valueset $nationality-vs 

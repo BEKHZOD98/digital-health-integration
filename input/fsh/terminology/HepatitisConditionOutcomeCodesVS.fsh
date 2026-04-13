@@ -3,7 +3,7 @@ Id: hep-condition-outcome-codes-vs
 Title: "Hepatitis condition outcome codes valueset"
 Description: "Gepatit kasalligi natijalari uchun tanlov qiymatlari"
 
-* ^url = "https://terminology.dhp.uz/ValueSet/hep-condition-outcome-codes-vs"
+* ^experimental = true
 
 * include $sct#1137679005 "Dori-darmonlar yaxshi ta'sir etdi"
   * ^designation[0].language = #ru

@@ -3,7 +3,6 @@ Id: quantity-comparator-cs
 Title: "Quantity comparator CodeSystem"
 Description: "CodeSystem for quantity comparator in Uzbek, Russian and English languages"
 
-* insert OriginalCodeSystemDraft(quantity-comparator-cs)
 
 * #<
   * ^designation[0].language = #ru

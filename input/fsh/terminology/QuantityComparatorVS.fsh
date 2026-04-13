@@ -3,6 +3,6 @@ Id: quantity-comparator-vs
 Title: "Quantity comparator ValueSet"
 Description: "ValueSet for quantity comparator"
 
-* ^url = "https://terminology.dhp.uz/ValueSet/quantity-comparator-vs"
+* ^experimental = true
 
-* include codes from system QuantityComparatorCS
+* include codes from system quantity-comparator-cs

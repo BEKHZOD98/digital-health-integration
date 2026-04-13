@@ -2,7 +2,8 @@ ValueSet: HepatitisICDVS
 Id: hep-icd-vs
 Title: "Hepatitis ICD-10 codes valueset"
 Description: "Gepatit kasalligi uchun ICD-10 kodlari tanlov qiymatlari"
-* ^url = "https://terminology.dhp.uz/ValueSet/hep-icd-vs"
+
+* ^experimental = true
 
 * include $icd-10#B15 "Acute hepatitis A"
   * ^designation[0].language = #ru
