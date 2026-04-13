@@ -2,7 +2,7 @@ Profile: HepatitisObservationUltraSound
 Parent: Observation
 Id: hepatitis-observation-ultra-sound
 Title: "Hepatitis UltraSound Observation"
-Description: "UZI natijalarini, xususan jigar sirrozi va o'smalarni qayd etish uchun profil"
+Description: "UZI natijalarini, xususan jigar sirrozi va o'smalarni qayd etish uchun profil" //please translate this description to English 
 * ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
@@ -40,7 +40,7 @@ Description: "UZI natijalarini, xususan jigar sirrozi va o'smalarni qayd etish u
 // Instance Example
 Instance: example-ultrasound-cirrhosis
 InstanceOf: HepatitisObservationUltraSound
-Description: "Jigar sirrozi belgilari aniqlangan holat uchun namuna"
+Description: "Instance of cirrhosis detected"
 Usage: #example
 * status = #final
 * identifier
@@ -56,13 +56,13 @@ Usage: #example
 * performer = Reference(PractitionerRole/muratova-gulshoda-role)
 
 * valueBoolean = true
-* note.text = "Jigar chetlari notekis, exogenligi oshgan"
+* note.text = "Liver texture note showing increased echogenicity"
 
 
 // Instance Example
 Instance: example-ultrasound-lesion
 InstanceOf: HepatitisObservationUltraSound
-Description: "Jigarda o'sma aniqlangan holat uchun namuna"
+Description: "Instance of liver lesion detected" 
 Usage: #example
 * status = #final
 

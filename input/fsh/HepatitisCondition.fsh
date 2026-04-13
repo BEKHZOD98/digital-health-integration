@@ -2,8 +2,7 @@ Profile: HepatitisCondition
 Parent: Condition
 Id: hepatitis-condition
 Title: "Hepatitis condition profile"
-Description: "Bemorning asosiy va hamroh tashxislarini qayd etish uchun profil"
-* ^experimental = true
+Description: "Bemorning asosiy va hamroh tashxislarini qayd etish uchun profil" //please translate this description to English
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
@@ -28,7 +27,7 @@ Description: "Bemorning asosiy va hamroh tashxislarini qayd etish uchun profil"
 * recordedDate 0..1 MS
 * participant 0..1 MS
   * actor only Reference(Practitioner)
-  * actor ^short = "Tashxisni qo'ygan shifokor"
+  * actor ^short = "Tashxisni qo'ygan shifokor" //please translate this definition to English and add for all item ^short = "Definition in English from excel file"
 
 * note 0..* MS
 
@@ -36,7 +35,7 @@ Description: "Bemorning asosiy va hamroh tashxislarini qayd etish uchun profil"
 // Instance Example
 Instance: example-hepatitis-condition
 InstanceOf: HepatitisCondition
-Description: "Bemorga qo'yilgan asosiy tashxis anmunasi"
+Description: "Bemorga qo'yilgan asosiy tashxis anmunasi" //Please translate this description to English
 Usage: #example
 * identifier 
   * system = "https://gepatit.sanepid.uz/condition"

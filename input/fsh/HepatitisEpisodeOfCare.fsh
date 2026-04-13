@@ -2,7 +2,7 @@ Profile: HepatitisEpisodeOfCare
 Parent: EpisodeOfCare
 Id: hepatitis-episode-of-care
 Title: "Hepatitis Episode of Care Profile"
-Description: "Bemorning gepatit bo'yicha hisobda (A, B, C, D uchyot) turish jarayonini boshqarish uchun profil"
+Description: "Bemorning gepatit bo'yicha hisobda (A, B, C, D uchyot) turish jarayonini boshqarish uchun profil"  //please translate this description to English 
 
 * ^experimental = true
 * ^status = #active
@@ -16,7 +16,7 @@ Description: "Bemorning gepatit bo'yicha hisobda (A, B, C, D uchyot) turish jara
 * diagnosis.condition 1..1 MS
 * diagnosis.condition only CodeableReference(HepatitisCondition)
 * diagnosis.condition from HepatitisICDVS (required) // CodeSystem should be done
-* diagnosis.condition ^short = "Bemorning gepatit tashxisi"
+* diagnosis.condition ^short = "Bemorning gepatit tashxisi"  //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
 
 * diagnosis.use 0..1 MS
 * diagnosis.use from http://hl7.org/fhir/ValueSet/diagnosis-role (required)

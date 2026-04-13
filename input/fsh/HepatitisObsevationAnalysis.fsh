@@ -9,7 +9,7 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
 
 * identifier MS
 * method 0..1 MS
-* method from $observation-methods (extensible)  //LabObservationMethodsVS 
+* method from $observation-methods (extensible)  //LabObservationMethodsVS add this value set after LabObsForIntegrationSys branch merged to main branch
 * category 0..* MS
 * category from HepatObsCategoryVS (required) 
 * status from ObservationStatusVS (required)
@@ -17,7 +17,7 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
 
 
 * code 1..1 MS
-* code from HepatitisObservationAnalysisVS (required) //change the URL after ObservationLabCodes branch merged to main branch 
+* code from HepatitisObservationAnalysisVS (required) //change the URL after LabObsForIntegrationSys branch merged to main branch 
 
 * subject 0..1 MS
 * subject only Reference(Patient)
@@ -34,9 +34,9 @@ Description: "Gepatit tahlillari natijalarini qayd etish uchun profil"
 * performer 0..* MS
 * performer only Reference(Organization or PractitionerRole)
 /*
-* component 0..* MS //Compenenta faqat Zuhra tayyorlavotgan LabObservationPanelVS keladi
+* component 0..* MS 
   * code 1..1 MS
-  * code from HepatitisObservationAnalysisVS (required)
+  * code from HepatitisObservationAnalysisVS (required) //after LabObsForIntegrationSys branch merged to main branch change this value set with LaboratoryObservationPanelCS
 
   * valueQuantity
     * value 0..1 MS
@@ -69,7 +69,7 @@ Usage: #example
 * valueCodeableConcept = hep-lab-res-type-cs#lab_0001_00001 "Negative"
 * performer = Reference(Organization/samarkand-regional-hospital)
 * component[0]
-  * code = $loinc#5195-3 "Hepatitis B virus surface Ag [Presence] in Serum"
+  * code = $loinc#5195-3 "Hepatitis B virus surface Ag [Presence] in Serum" //I think this example is incorrect , inside of component.code only use panel's analytes code
   * valueQuantity 
     * value = 100
     * comparator = #< 
