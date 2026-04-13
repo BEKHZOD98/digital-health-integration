@@ -1,0 +1,33 @@
+,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, Единицы
+lab-pan-A,,Siydikning makrosopik tekshiruvi,Макроскопическое исследование мочи,Urine macroscopic analysis,,,
+lab-pan-1,,Miqdori  ,Количество,Urine volume [Volume],3167-4,,mL
+lab-pan-2,,Rangi ,Цвет,Color of Urine,5778-6,,
+lab-pan-3,,Shaffofligi,Прозрачность,Appearance of Urine,5767-9,,
+lab-pan-4,,Nisbiy zichligi ,Относительная плотность,Specific gravity of Urine by Refractometry,5811-5,,
+lab-pan-5,,Reaksiya,Реакция,Urine pH,2756-5,,
+lab-pan-6,,Oqsil ,Белок,Protein [Mass/volume] in Urine by Test strip,5804-0,,г/л или г/%
+lab-pan-7,,Glyukoza ,Глюкоза,Glucose [Mass/volume] in Urine by Test strip,5792-7,,ммоль/л или г/%
+lab-pan-8,,Keton tanachalari,Кетоновые тела,Ketones [Mass/volume] in Urine by Test strip,5797-6,,
+lab-pan-9,,Qon borligini aniqlash ryeaksiyasi,Реакция на наличие крови,Hemoglobin [Presence] in Urine by Test strip,57751-0,,
+lab-pan-10,,Bilirubin ,Билирубин,Bilirubin [Presence] in Urine by Test strip,5770-3,,
+lab-pan-11,,Urobilinoidlar,Уробилиноген,Urobilinogen [Presence] in Urine by Test strip,20405-7,,
+lab-pan-12,,Oʻt kilotasi ,Желчные кислоты,Bile acids [Presence] in Urine,14631-0,,
+,,,,,,,
+,,,,,,,
+,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, Единицы
+lab-pan-AA,,Siydikning mikroskopik tekshiruvi,Микроскопическое исследование мочи,,,,
+lab-pan-13,,Epiteliy: yassi,Эпителий: плоский,Epithelial cells.squamous [#/area] in Urine sediment by Microscopy HPF,12258-0,,
+lab-pan-14,,Epiteliy: o‘tuvchi,Эпителий: переходный,Epithelial cells.transitional [#/area] in Urine sediment by Microscopy HPF,13654-9,,
+lab-pan-15,,Epiteliy: buyrak epiteliyasi,Эпителий: почечный,Epithelial cells.renal [#/area] in Urine sediment by Microscopy HPF,12257-2,,
+lab-pan-16,,Leykotsitlar,Лейкоциты,Leukocytes [#/area] in Urine sediment by Microscopy HPF,20408-1,,
+lab-pan-17,,Eritrotsitlar o‘zgargan,Эритроциты изменённые,Erythrocytes dysmorphic [#/area] in Urine sediment by Microscopy HPF,57986-7,,
+lab-pan-18,,Eritrotsitlar o‘zgarmagan,Эритроциты неизменённые,Erythrocytes [#/area] in Urine sediment by Microscopy HPF,20409-9,,
+lab-pan-19,,Silindrlar: gialinli,Цилиндры: гиалиновые,Casts.hyaline [#/area] in Urine sediment by Microscopy LPF,57974-3,,
+lab-pan-20,,Silindrlar: mumsimon,Цилиндры: восковидные,Casts.waxy [#/area] in Urine sediment by Microscopy LPF,32162-6,,
+lab-pan-21,,Silindrlar: donador,Цилиндры: зернистые,Casts.granular [#/area] in Urine sediment by Microscopy LPF,33062-0,,
+lab-pan-22,,Silindrlar: eritrotsitar,Цилиндры: эритроцитарные,Casts.red blood cells [#/area] in Urine sediment by Microscopy LPF,33061-2,,
+lab-pan-23,,Silindrlar: leykotsitar,Цилиндры: лейкоцитарные,Casts.white blood cells [#/area] in Urine sediment by Microscopy LPF,33060-4,,
+lab-pan-24,,Silindrlar: epitelial,Цилиндры: эпителиальные,Casts.epithelial cells [#/area] in Urine sediment by Microscopy LPF,57976-8,,
+lab-pan-25,,Shilliq,Слизь,Mucus [Presence] in Urine sediment by Light microscopy,28545-2,,
+lab-pan-26,,Tuzlar,Соли,Crystals [Presence] in Urine sediment by Light microscopy,12261-9,,
+lab-pan-27,,Bakteriyalar,Бактерии,Bacteria [Presence] in Urine sediment by Light microscopy,5769-5,,

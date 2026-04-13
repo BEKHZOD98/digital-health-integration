@@ -1,0 +1,5 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, Единицы
+lab-pan-T,,Neonatal retest skrining tahlili,Неонатальный ретест-скрининг анализ,Neonatal retest screening analysis,,,
+lab-pan-375,,Immunoreaktiv tripsin (IRT),Иммунореактивный трипсин (IRT),Trypsinogen I Free [Mass/volume] in DBS,48633-2,<40,ng/ml
+lab-pan-376,,Fenilalanin (PA),Фенилаланин (PA),Phenylalanine [Moles/volume] in DBS,29573-3,<2,mg/dl
+lab-pan-377,,Tireotrop gormon (TSH),Тиреотропный гормон (TSH),Thyrotropin [Units/volume] in Serum or Plasma,3016-3,<5,mkME/ml

@@ -1,0 +1,30 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,LOINC code, Единицы,Норма
+lab-pan-X,,Klinik - diagnostik laboratoriya IXLA tahlili,"Клинико-диагностическая лаборатория, ИХЛА анализ","Clinical diagnostic laboratory, CLIA (chemiluminescent immunoassay) analysis",,,
+lab-pan-444,,Cytomegalovirus Ig G,Цитомегаловирус (антитела IgG),Cytomegalovirus immune globulin given [Volume],10391-1,AU/ml,0-2
+lab-pan-445,,Gerpes simplex virus1/2 Ig G,Вирус простого герпеса 1/2 типа (антитела IgG),Herpes simplex virus 1+2 IgG Ab [Units/volume] in Serum,31411-2,AU/ml,0-2
+lab-pan-446,,Toxoplasma gondil Ig G,Токсоплазма (антитела IgG),Toxoplasma gondii IgG Ab [Presence] in Serum,22580-5,IU/ml,0-2
+lab-pan-447,,Chlamedia pneumonia Ig G,Хламидия пневмонии (антитела IgG),Chlamydophila pneumoniae IgG Ab [Units/volume] in Serum,31302-3,AU/ml,<1 -neg >=1 +pos
+lab-pan-448,,Mycoplasma hominis Ig G,Микоплазма хоминис (антитела IgG),Mycoplasma pneumoniae IgG Ab [Presence] in Serum,46198-8,,"0,32"
+lab-pan-449,,Ureaplasma urealyticum Ig G,Уреаплазма уреалитикум (антитела IgG),Ureaplasma urealyticum [Presence] in Specimen by Organism specific culture,17825-5,,"0,3"
+lab-pan-450,,Anti -dsDNA Ig G,Антитела к двуспиральной ДНК (IgG),DNA double strand IgG Ab [Presence] in Serum,63379-2,IU/ml,<30 -neg >=30 +pos
+lab-pan-451,,Kollogen  C IV,Коллаген IV типа,Collagen crosslinked C-telopeptide [Mass/volume] in Urine,48586-2,ng/ml,0-30
+lab-pan-452,,Gialuronovaya kislota (NA),Гиалуроновая кислота,Collagen type 4 Ag [Presence] in Tissue by Immune stain,10474-5,ng/ml,0-100
+lab-pan-453,,Foliyevaya kislota (FA),Фолиевая кислота,Folate [Mass/volume] in Blood,2282-2,ng/ml,"5,21-24"
+lab-pan-454,,Immunoglobulin Ig A,Иммуноглобулин A (IgA),IgA [Presence] in Serum,44389-5,mkg/ml,1 yoshgacha: 0-842.0; 1-3 yosh: 197-1024; 4-6 yosh: 268-2007; 7-9 yosh: 335-3055; 10-11 yosh: 517-2053; 12-13 yosh: 563-3631; 14-15 yosh: 457-2547; 16-18 yosh: 603-3561; Kattalar: 745-4102.
+lab-pan-455,,Immunoglobulin Ig M,Иммуноглобулин M (IgM),IgM [Presence] in Serum,17009-2,mkg/ml,400-2500
+lab-pan-456,,Immunoglobulin Ig G,Иммуноглобулин G (IgG),IgG [Presence] in Serum,17007-6,mg/ml,1 yoshgacha: 2296-14246; 1-3 yosh: 4483-9218; 4-6 yosh: 4962-14813; 7-9 yosh: 5591-14944; 10-11 yosh: 6940-15962; 12-13 yosh: 7455-15820; 14-15 yosh: 6965-17219; 16-18 yosh: 5472-16021; Kattalar: 7454-16878
+lab-pan-457,,Anti-SSP (Anti-CCP),Антитела к циклическому цитруллинированному пептиду (Anti-CCP),Cyclic citrullinated peptide IgG Ab [Presence] in Serum,42898-7,U/ml,<17 -neg; >=17 +pos
+lab-pan-458,,25-ON Vitamin D,25-ОН витамин D,25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Mass/volume] in Serum or Plasma,62292-8,ng/ml,30-100
+lab-pan-459,,Alfa-fetoprotein (CAFP),Альфа-фетопротеин (АФП),Alpha-1-Fetoprotein [Presence] in Serum or Plasma,31993-9,IU/ml,"6,05"
+lab-pan-460,,Epshteyn-Barr (EBV VCA IgM),Вирус Эпштейна–Барр (VCA IgM),Epstein Barr virus capsid IgM Ab [Units/volume] in Serum,7886-5,AU/ml,<3 -neg; >=3 -pos
+lab-pan-461,,Mioglobin,Миоглобин,Myoglobin [Presence] in Serum or Plasma,32331-1,ng/ml,0-60
+lab-pan-462,,FT3 (свободный),FT3 (свободный),Triiodothyronine (T3) Free [Mass/volume] in Serum or Plasma,3051-0,pg/ml,"1-3 yosh: 1,81-5,01; 3-6 yosh: 2,08-5,20; 6-12 yosh: 1,90-4,94; 12-18 yosh: 2,51-4,92; Kattalar: 2,0-4,2."
+lab-pan-463,,FT4 (свободный),FT4 (свободный),Thyroxine (T4) free [Mass/volume] in Serum or Plasma,3024-7,pg/ml,"1-3 yosh: 8,04-17,9; 3-6 yosh: 9,47-17,9;  6-12 yosh: 9,36-19,2; 12-18 yosh: 9,95-15,9; Kattalar: 8,9-17,2"
+lab-pan-464,,Tireotrop gormon (TTG/TSH) [Birlik/hajm],Tиреотропный гормон (ТТГ/TSH) [концентраци,Thyrotropin [Units/volume] in Serum or Plasma,3016-3,mIU/ml,"1-3 yosh: 0,76-10,0; 3-6 yosh: 0,79-5,54; 6-12 yosh: 0,49-5,83; 12-18 yosh: 0,59-6,93; Kattalar: 0,3-4,5"
+lab-pan-465,,Erkin triyodtironin (T3) [Zichlik],Свободный трийодтиронин (T3) [концентрация],Triiodothyronine (T3) Free [Mass/volume] in Serum or Plasma,3051-0,ng/ml,"1-3 yosh: 0,27-2,48; 3-6 yosh: 0,59-2; 6-12 yosh: 0,80-2,59; 12-18 yosh: 0,97-2,22; Kattalar: 0,69-2,15"
+lab-pan-466,,Erkin tiroksin (T4) [Zichlik],Свободный тироксин (T4) [концентрация],Thyroxine (T4) free [Mass/volume] in Serum or Plasma,3024-7,ng/ml,"1-3 yosh: 60,5-141; 3-6 yosh: 59,1-115; 6-12 yosh: 48,1-125; 12-18 yosh: 53,1-102; Kattalar: 52-127"
+,,,,,,pg/ml,197-771
+,,,,,,U/ml,1 yoshgacha: <15; 1-5 yosh: 60; 6-9 yosh: 90; 10-17 yosh: 200; Kattalar: 0-100
+,,,,,,,
+,,,,,,,
+,,Qizilda belgilangan qatorlarni qayerdan olgansiz ?,,,,,

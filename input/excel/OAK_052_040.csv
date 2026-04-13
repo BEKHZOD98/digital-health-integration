@@ -1,0 +1,75 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, Единицы
+lab-pan-E,,Umumiy qon tahlili,Общий анализ крови,CBC panel,58410-2,,
+lab-pan-74,,Gemoglobin (HB),Гемоглобин (HB),Hemoglobin [Mass/volume] in Blood,718-7,"Э: 130,0 - 160,0   ;  А: 120,0 - 140,0",г/л
+lab-pan-75,,Eritrotsitlar (RBC),Эритроциты (RBC),Erythrocytes [#/volume] in Blood by Automated count,789-8,"Э: 4,0 - 5,0             А: 3,9 - 4,7",10^12/л
+lab-pan-76,,Rang ko‘rsatkichi,Цветовой показатель,,,"0,85 - 1,05",
+lab-pan-77,,Eritrotsitlarning o‘rtacha hajmi (MCV),Средний объём эритроцитов (MCV),MCV [Entitic volume] by Automated count,787-2,80-100,мкм^3
+lab-pan-78,,1 dona eritrotsitdagi gemoglobin miqdori (MCH),Среднее содержание гемоглобина в одном эритроците (MCH),MCH [Entitic mass] by Automated count,785-6,30-35,
+lab-pan-79,,Eritrotsitdagi gemoglobin konsentratsiyasi (MCHC),Средняя концентрация гемоглобина в эритроците (MCHC),MCHC [Mass/volume] by Automated count,786-4,320-360,г/л
+lab-pan-80,,Eritrotsitlar anizotsitozi (RDW-CV),Анизоцитоз эритроцитов (RDW-CV),Erythrocyte distribution width (RDW-CV) [Ratio] by Automated count,788-0,"11,5-14,5",%
+lab-pan-81,,Gematokrit (HCT),Гематокрит (HCT),Hematocrit [Volume Fraction] of Blood by Automated count,4544-3,Э: 35-49            А: 32-45,%
+lab-pan-82,,Trombotsitlar (PLT),Тромбоциты (PLT),Platelets [#/volume] in Blood by Automated count,777-3,"180,0 – 320,0",10^9/л
+lab-pan-83,,Trombotsitlarning o‘rtacha hajmi (MPV),Средний объём тромбоцитов (MPV),Mean platelet volume [Entitic volume] in Blood by Automated count,32623-1,"3,6-9,4",мкм^3
+lab-pan-84,,Trombotsitlar anizotsitozi (PDW),Анизоцитоз тромбоцитов (PDW),Platelet distribution width [Entitic volume] in Blood by Automated count,32207-3,"""1-20""",%
+lab-pan-85,,Trombokrit (PCT),Тромбокрит (PCT),Plateletcrit [Volume Fraction] of Blood by Automated count,28542-9,"0,15-0,45",%
+lab-pan-86,,Leykotsitlar (WBC),Лейкоциты (WBC),Leukocytes [#/volume] in Blood by Automated count,6690-2,"4,0 - 9,0",10^9/л
+lab-pan-87,,Miyelotsitlar,Миелоциты,Myelocytes [#/volume] in Blood by Manual count,30446-9,,
+lab-pan-88,,Metamiyelotsitlar,Метамиелоциты,Metamyelocytes/100 leukocytes in Blood by Manual count,28541-1,,
+lab-pan-89,,Tayoqchasimon yadroli neytrofillar,Палочкоядерные нейтрофилы,Neutrophils.band form/100 leukocytes in Blood by Manual count,764-1,1 – 6,%
+lab-pan-90,,Segment yadroli neytrofillar,Сегментоядерные нейтрофилы,Neutrophils [#/volume] in Blood by Automated count,751-8,47 – 72,%
+lab-pan-91,,Eozinofillar,Эозинофилы,Eosinophils [#/volume] in Blood by Automated count,711-2,"0,5-5",%
+lab-pan-92,,Bazofillar,Базофилы,Basophils [#/volume] in Blood by Automated count,704-7,0 - 1,%
+lab-pan-93,,Monotsitlar,Моноциты,Monocytes/100 leukocytes in Blood by Automated count,5905-5,"""3-11""",%
+lab-pan-94,,Limfotsitlar,Лимфоциты,Lymphocytes [#/volume] in Blood by Automated count,731-0,19-37,%
+lab-pan-95,,Plazmatik hujayralar,Плазматические клетки,,,,%
+lab-pan-96,,Eritrotsitlarning cho‘kish tezligi (ECHT),Скорость оседания эритроцитов (СОЭ),Erythrocyte sedimentation rate (ESR) by Westergren method,4537-7,Э: 2-10; А: 2-15,мм/соат
+,Эритроцитлар  морфологияси,,,,,,
+lab-pan-97,,"Anizotsitoz (mikrotsitlar, makrotsitlar, megalotsitlar)","Анизоцитоз (микроциты, макроциты, мегалоциты)",Platelet anisocytosis [Presence] in Blood by Light microscopy,51640-1,,
+lab-pan-98,,Poykilotsitoz,Пойкилоцитоз,Poikilocytosis [Presence] in Blood by Light microscopy,779-9,,
+lab-pan-99,,Eritrotsitlarning bazofil donadorligi,Базофильная зернистость эритроцитов,Basophilic stippling [Presence] in Blood by Light microscopy,703-9,,
+lab-pan-100,,Polixromatofiliya,Полихроматофилия, Polychromasia [Presence] in Blood by Light microscopy, 10378-8,,
+lab-pan-101,,Jolli tanachalari,Тельца Жолли, Howell-Jolly bodies [Presence] in Blood by Light microscopy,7793-3,,
+lab-pan-102,,Kebot halqalari,Кольца Кебота,Cabot rings [Presence] in Blood by Light microscopy,11280-5,,
+lab-pan-103,,Eritronormoblastlar (100 ta leykotsitga nisbatan),Эритронормобласты (на 100 лейкоцитов),Nucleated erythrocytes/Leukocytes [Ratio] in Blood by Manual count, 	18309-5,,
+lab-pan-104,,Megaloblastlar,Мегалобласты, Megaloblasts/cells in Bone marrow,52127-8,,
+,Лейкоцитлар морфологияси,,,,,,
+lab-pan-105,,Yadro gipersegmentatsiyasi,Гиперсегментация ядер,Neutrophils.hypersegmented [Presence] in Blood by Light microscopy 	, 765-8,,
+lab-pan-106,,Toksogen donadorlik,Токсическая зернистость,Toxic granules [Presence] in Blood by Light microscopy,803-7,,
+,,,,,,,
+,,,,,,,
+,Тип исследовании(Панел),Analitlar(parametrlar),Аналиты(параметры),Long common name,LOINC,Юнит,Диапазон результата
+lab-pan-CC,Общий анализ крови,Umumiy qon tahlili,Complete blood count,CBC panel,58410-2,,
+lab-pan-107,,Leykositlar (WBC),Лейкоциты (WBC),Leukocytes [#/volume] in Blood by Automated count,6690-2,10^9/L,"4,00 - 10,00"
+lab-pan-108,,Barcha neurofil elementlar (Neu#),Абсолютное количество нейтрофилов (Neu#),Neutrophils [#/volume] in Blood by Automated count,751-8,10^9/L,"2,00 - 7,00"
+lab-pan-109,,Limfotsitlar soni (Lym#),Абсолютное количество лимфоцитов (Lym#),Lymphocytes [#/volume] in Blood by Automated count,731-0,10^9/L,"0,80 - 4,00"
+lab-pan-110,,Monotsitlar soni (Mon#),Абсолютное количество моноцитов (Mon#),Monocytes [#/volume] in Blood by Automated count,"Automated count
+742-7",10^9/L,"0,12 - 1,20"
+lab-pan-111,,Eozinofillar soni (Eos#),Абсолютное количество эозинофилов (Eos#),Eosinophils [#/volume] in Blood by Automated count,711-2,10^9/L,"0,02 - 0,50"
+lab-pan-112,,Bazofillar soni (Bas#),Абсолютное количество базофилов (Bas#),Basophils [#/volume] in Blood by Automated count,704-7,10^9/L,"0,00 - 0,10"
+lab-pan-113,,Neytrofillar yetilish indeksi (Neu%),Нейтрофилы (Neu%),Neutrophils/100 leukocytes in Blood by Automated count,770-8,%,"50,0 - 70,0"
+lab-pan-114,,Limfotsitlar (Lym%) ,Лимфоциты (Lym%),Lymphocytes/100 leukocytes in Blood by Automated count,736-9,%,"20,0 - 40,0"
+lab-pan-115,,Monositlar (Mon%),Моноциты (Mon%),Monocytes/100 leukocytes in Blood by Automated count,5905-5,%,"3,0 - 12,0"
+lab-pan-116,,Eozinofillar (Eos%),Эозинофилы (Eos%),Eosinophils/100 leukocytes in Blood by Automated count,713-8,%,"0,5 - 5,0"
+lab-pan-117,,Bazofillar (Bas%),Базофилы (Bas%),Basophils/100 leukocytes in Blood by Automated count,706-2,%,"0,0 - 1,0"
+lab-pan-118,,Eritrotsitlar (RBC),Эритроциты (RBC),Erythrocytes [#/volume] in Blood by Automated count,789-8,10^12/L,"3,50 - 5,00"
+lab-pan-119,,Gemoglobin (HGB),Гемоглобин (HGB),Hemoglobin [Mass/volume] in Blood,718-7,g/L,110-150
+lab-pan-120,,Gematokrit (HCT),Гематокрит (HCT),Hematocrit [Volume Fraction] of Blood by Automated count,4544-3,%,"37,0 - 47,0"
+lab-pan-121,,Eritrotsit o'rtacha hajmi (MCV),Средний объем эритроцита (MCV),MCV [Entitic volume] by Automated count,787-2,fL,"80,0 - 100,0"
+lab-pan-122,,1 dona eritrotsitdagi gemoglobinning miqdori (MCH),Среднее содержание гемоглобина в эритроците (MCH),MCH [Entitic mass] by Automated count,785-6,pg,"27,0 - 34,0"
+lab-pan-123,,Eritrotsitdagi gemoglobin konsentratsiyasi (MCHC),Средняя концентрация гемоглобина в эритроците (MCHC),MCHC [Mass/volume] by Automated count,786-4,g/L,320 - 360
+lab-pan-124,,Eritrotsitlar anizotsitozi (RDW-CV),Ширина распределения эритроцитов по объему (RDW-CV),Erythrocyte distribution width (RDW-CV) [Ratio] by Automated count,788-0,%,"11,0 - 16,0"
+lab-pan-125,,Eritrotsit hajmi standart og‘ishi (RDW-SD),Стандартное отклонение распределения эритроцитов по объему (RDW-SD),Erythrocyte distribution width (RDW-SD) [Entitic volume] by Automated count,21000-5,fL,"35,0 -56,0"
+lab-pan-126,,Trombotsitlar (PLT),Тромбоциты (PLT),Platelets [#/volume] in Blood by Automated count,777-3,10^9/L,180 - 320
+lab-pan-127,,Trombotsitlar o'rtacha hajmi (MPV),Средний объем тромбоцитов (MPV),Mean platelet volume [Entitic volume] in Blood by Automated count,32623-1,fL,"6,5 - 12"
+lab-pan-128,,Trombotsitlar anizotsitozi (PDW),Ширина распределения тромбоцитов (PDW),Platelet distribution width [Entitic volume] in Blood by Automated count,32207-3,,"9,0 - 17,0"
+lab-pan-129,,Trombokrit (PCT),Тромбокрит (PCT),Plateletcrit [Volume Fraction] of Blood by Automated count,28542-9,%,"0,108 - 0,282"
+lab-pan-130,,Yirik trombotsitlar soni (P-LCC),Количество крупных тромбоцитов (P-LCC),Platelet large cell count [#/volume] in Blood by Automated count,49498-9,10^9/L,30 - 90
+lab-pan-131,,Yirik trombotsitlar ulushi (P-LCR),Доля крупных тромбоцитов (P-LCR),Platelet large cell ratio [#] in Blood by Automated count,49138-3,%,"11,0 45,0"
+lab-pan-132,,Eritrotsitning cho'kish tezligi (ЭЧТ),Скорость оседания эритроцитов (СОЭ),Erythrocyte sedimentation rate (ESR) by Westergren method,4537-7,,
+lab-pan-133,,IMG#,IMG#,Immature granulocytes [#/volume] in Blood by Automated count (IMG#),53115-2,10^9/L,
+lab-pan-134,,NRBC#,NRBC#,Nucleated erythrocytes/Leukocytes [Ratio] in Blood (NRBC#),771-6,10^9/L,
+lab-pan-135,,NRBC%,NRBC%,Nucleated erythrocytes/Leukocytes [Ratio] in Blood (NRBC%) ,19048-8,/10WBC,
+lab-pan-136,,Miyelositlar,Миелоциты,Myelocytes [#/volume] in Blood,30446-9,,
+lab-pan-137,,Metamiyelositlar,Метамиелоциты,Metamyelocytes [Presence] in Blood,40651-2 	,,
+lab-pan-138,,Tayoqcha yadroli neytrofil,Tayoqcha yadroli neytrofil,Band form neutrophils/Leukocytes in Blood,26508-2,,
+lab-pan-139,,Plazmatik hujayralar,Плазматические клетки,Plasma cells/Leukocytes in Blood,13047-6,%,

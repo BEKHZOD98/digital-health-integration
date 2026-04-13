@@ -2,10 +2,15 @@ CodeSystem: ObservationLabMethodsCS
 Id: observation-lab-methods-cs
 Title: "Laboratory technique (method of measurement)"
 Description: "Laboratory technique (method of measurement) used for the result measurement"
+<<<<<<< HEAD
 * ^experimental = true
 * ^caseSensitive = true
 * ^language = #uz
 
+=======
+* insert OriginalCodeSystemDraft(observation-lab-methods-cs)
+//temporary
+>>>>>>> 6a3f730 (initial commit)
 * #lab-method-1 "PZR (Polimeraza zanjir reaksiyasi)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "ПЦР"
@@ -76,4 +81,8 @@ Description: "Laboratory technique (method of measurement) used for the result m
   * ^designation[0].language = #ru
   * ^designation[=].value = "Экспресс-иммуноанализ"
   * ^designation[+].language = #en
+<<<<<<< HEAD
   * ^designation[=].value = "Rapid immunoassay technique"
+=======
+  * ^designation[=].value = "Rapid immunoassay technique"
+>>>>>>> 6a3f730 (initial commit)

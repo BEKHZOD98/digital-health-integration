@@ -1,0 +1,10 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, единицы
+lab-pan-Q,,Qon zardobidagi lipoproteinlarni tekshirish,Исследование сывороточных липопротеинов,Serum lipoprotein analysis,,,
+lab-pan-360,,Umumiy xolesterin,Общий холестерин,Cholesterol [Mass/volume] in Serum or Plasma,2093-3,"2,5-5,20",ммол/л
+lab-pan-361,,Triglitserid,Триглицериды,Triglyceride [Mass/volume] in Serum or Plasma,2571-8,"Er: 0,45-1,8  Ayol: 0,39-1,5 ",ммол/л
+lab-pan-362,,XS-LPVP,Холестерин ЛПВП (липопротеины высокой плотности),Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation,13457-7,"Er: 1,0-2,10
+Ayol: 0,90-1,80
+",ммол/л
+lab-pan-363,,XS-LPNP,Холестерин ЛПНП (липопротеины низкой плотности),Cholesterol in HDL [Mass/volume] in Serum or Plasma,2085-9,"<3,9",ммол/л
+lab-pan-364,,XS-LPONP,Холестерин ЛПОНП (липопротеины очень низкой плотности), Cholesterol in VLDL [Mass/volume] in Serum or Plasma by calculation,13458-5,"0,35-0,55",yed
+lab-pan-365,,Xolesterin koeffisenti,Коэффициент атерогенности (коэффициент холестерина),Cholesterol.total/Cholesterol in HDL [Mass Ratio] in Serum or Plasma,9830-1,Er: <4.0 Ayol: <3.4,ммол/л
