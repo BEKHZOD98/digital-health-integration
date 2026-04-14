@@ -16,10 +16,9 @@ Description: "Composition profile for Form 011 (Hemodialysis Session Record) doc
 * author only Reference(UZCorePractitioner)
 
 // Section slicing by code pattern
-* section ^slicing.discriminator.type = #pattern
+* section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
-* section ^slicing.ordered = true
 
 * section contains
     vitalSigns 1..1 and
