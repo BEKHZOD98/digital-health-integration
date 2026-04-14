@@ -2,7 +2,8 @@ Profile: HepatitisCondition
 Parent: Condition
 Id: hepatitis-condition
 Title: "Hepatitis condition profile"
-Description: "Bemorning asosiy va hamroh tashxislarini qayd etish uchun profil" //please translate this description to English
+Description: "Profile for representing hepatitis conditions in the context of a digital health integration project. This profile extends the base Condition resource to include specific elements and extensions relevant to hepatitis diagnosis, clinical status, and treatment outcomes."
+* ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
