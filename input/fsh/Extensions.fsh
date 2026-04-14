@@ -1,3 +1,9 @@
+Extension: DrugEfficacy
+Id: drug-efficacy
+Title: "Drug Efficacy Extension"
+Description: "Extension to indicate the efficacy of a drug for a specific patient, based on their individual response to the medication."
+* value[x] only boolean
+* valueBoolean MS
 Extension: PatientPlaceOfBirthType
 Id: patient-placeOfBirthType
 Title: "Place of Birth Type"
