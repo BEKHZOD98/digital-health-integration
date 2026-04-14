@@ -1,7 +1,7 @@
 CodeSystem: HepatitisLabResultTypeCS
 Id: hep-lab-res-type-cs 
 Title: "Hepatitis lab result type codesystem"
-Description: "Gepatit testi natijalari"
+Description: "Description of hepatitis lab result type codesystem"
 
 * insert OriginalCodeSystemDraft(hep-lab-res-type-cs)
 

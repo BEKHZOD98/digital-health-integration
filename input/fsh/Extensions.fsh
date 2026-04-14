@@ -228,10 +228,3 @@ Title: "Drug Efficacy Extension"
 Description: "Preparatning samaradorligini (ha/yo'q) belgilash uchun maxsus kengaytma"
 * value[x] only boolean
 * valueBoolean MS
-//change context
-* ^context.type = #element
-* ^context.expression = "Patient"
-
-* value[x] 1..1 MS
-* value[x] only dateTime
-* valueDateTime ^short = "Exact birth time of the newborn"

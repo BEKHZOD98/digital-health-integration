@@ -25,7 +25,6 @@ Description: "Profile for hepatitis patient resource"
 // * identifier ^slicing.description = "Ways patient can be identitifed"
 // * identifier ^slicing.ordered = false
 
-// * identifier contains nationalId 0..1 MS
 * identifier[nationalId]
   // * use = #usual
   // * type.coding 1..* MS
@@ -40,7 +39,6 @@ Description: "Profile for hepatitis patient resource"
   * value 1..1 MS
   * value = "515050500505"
 
-// * identifier contains passportLocal 0..1 MS
 * identifier[passportLocal]
   // * type.coding 1..* MS
   //   * system 1..1 MS
@@ -94,7 +92,6 @@ Description: "Profile for hepatitis patient resource"
 // * address ^slicing.discriminator.path = "country"
 // * address ^slicing.rules = #open
 
-// * address contains uzAddress 0..* MS
 * address[uzAddress].country = "UZ"
 
 * address[uzAddress]

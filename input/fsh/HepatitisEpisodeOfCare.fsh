@@ -1,7 +1,8 @@
 Profile: HepatitisEpisodeOfCare
 Parent: EpisodeOfCare
 Id: hepatitis-episode-of-care
-Title: "Bemorning gepatit bo'yicha hisobda (A, B, C, D uchyot) turish jarayonini boshqarish uchun profil"
+Title: "Hepatitis Episode of Care Profile"
+Description: "Profile for representing episodes of care related to hepatitis patients in the context of a digital health integration project. This profile extends the base EpisodeOfCare resource to include specific elements and extensions relevant to hepatitis patient care, such as diagnosis details, clinical status, and care management information."
 
 * ^experimental = true
 * ^status = #active
