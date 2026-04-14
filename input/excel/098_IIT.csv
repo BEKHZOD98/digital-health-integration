@@ -1,0 +1,8 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, единицы
+lab-pan-S,,TORCH infeksiyasi IXLA  tahlili,Анализ на TORCH-инфекции методом ИХЛА,TORCH infection IXLA analysis,,,
+lab-pan-369,,Cytomegalovirus Ig G,Цитомегаловирус IgG, Cytomegalovirus IgG Ab [Presence] in Serum or Plasma by Immunoassay,13949-3,0-2,AU/ml
+lab-pan-370,,Gerpes simplex virus1/2 Ig G,Вирус простого герпеса 1/2 типа IgG,Herpes simplex virus 1+2 IgG Ab [Units/volume] in Serum by Immunoassay,27948-9,0-2,AU/ml
+lab-pan-371,,Toxoplasma gondii IgG,Toxoplasma gondil Ig G,Toxoplasma gondii IgG Ab [Presence] in Serum,22580-5,0-2,IU/ml
+lab-pan-372,,Chlamydia pneumoniae IgG,Chlamedia pneumonia Ig G,Chlamydophila pneumoniae IgG Ab [Presence] in Serum,44981-9,< 1 -manfiy ≥1-musbat,AU/ml
+lab-pan-373,,Mycoplasma hominis IgG,Mycoplasma hominis Ig G,Mycoplasma hominis Ab [Presence] in Serum,17301-3,0.345,
+lab-pan-374,,Ureaplasma urealyticum IgG,Ureaplasma urealyticum Ig G,Ureaplasma urealyticum [Presence] in Specimen by Organism specific culture,17852-5,0.300,

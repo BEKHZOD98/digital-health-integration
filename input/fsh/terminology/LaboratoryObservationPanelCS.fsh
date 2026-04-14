@@ -2,6 +2,7 @@ CodeSystem: LaboratoryObservationPanelCS
 Id: lab-observation-pan-cs
 Title: "Laboratory Observation Panels and Analytes"
 Description: "Code system defining laboratory observation panels and individual analytes used in Ministry of Health Uzbekistan ."
+* ^hierarchyMeaning = #is-a
 * ^experimental = true
 * ^caseSensitive = true
 * ^language = #uz
@@ -502,7 +503,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цветовой показатель"
     * ^designation[+].language = #en
-    * ^designation[=].value = ""
+    * ^designation[=].value = "Color index"
 
   * #lab-pan-77 "Eritrotsitlarning o‘rtacha hajmi (MCV)"
     * ^designation[0].language = #ru
@@ -616,7 +617,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Плазматические клетки"
     * ^designation[+].language = #en
-    * ^designation[=].value = ""
+    * ^designation[=].value = "Plasma cells"
 
   * #lab-pan-96 "Eritrotsitlarning cho‘kish tezligi (ECHT)"
     * ^designation[0].language = #ru
@@ -2406,7 +2407,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Фолиевая кислота (FA)"
     * ^designation[+].language = #en
-    * ^designation[=].value = ""
+    * ^designation[=].value = "Folate [Mass/volume] in Serum or Plasma"
 
   * #lab-pan-385 "25-ON Vitamin D"
     * ^designation[0].language = #ru

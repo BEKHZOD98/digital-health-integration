@@ -1,0 +1,20 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, Единицы
+lab-pan-U,,Immunoxemilyuminestsent tahlil (IXLA),Иммунохемилюминесцентный анализ (ИХЛА),Immunochemiluminescent analysis (IXLA),,,
+lab-pan-378,,SA 125,CA 125,Cancer Ag 125 [Units/volume] in Serum or Plasma,10334-1,0-35,U/l
+lab-pan-379,,HВsAg quant,HBsAg количественный,Hepatitis B virus surface Ag [Presence] in Serum,5195-3,"0-0,05",iU/ml
+lab-pan-380,,Anti-HCV,Антитела к вирусу гепатита C (Anti-HCV),Hepatitis C virus Ab [Presence] in Serum or Plasma by Immunoassay,13955-0,0-1,AU/ml
+lab-pan-381,,Insulin,Инсулин,Insulin [Units/volume] in Serum or Plasma,20448-7,"2,7-24,8",iU/ml
+lab-pan-382,,Insulinga o'xshash o'sish omili (IGF-1),Инсулиноподобный фактор роста (IGF-1),Insulin-like growth factor-I [Mass/volume] in Serum or Plasma,2484-4,11.4-505.0,ng/ml
+lab-pan-383,,Somatotrop gormon (CH),Соматотропный гормон (СТГ),Somatotropin [Mass/volume] in Serum or Plasma,2963-7,0-11.2,ng/ml
+lab-pan-384,,Foliyevaya kislota (FA),Фолиевая кислота (FA),,2284-8,"5,21-24",ng/ml
+lab-pan-385,,25-ON Vitamin D,25-ОН витамин D,25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Mass/volume] in Serum or Plasma,62292-8,30-100,ng/ml
+lab-pan-386,,Alfa-fetoprotein (CAFP),Альфа-фетопротеин (AFP),Alpha-1-Fetoprotein [Mass/volume] in Serum or Plasma,1834-1,"6,05",IU/ml
+lab-pan-387,,Mioglobin,Миоглобин,Myoglobin [Mass/volume] in Serum or Plasma,2639-3,0-60,ng/ml
+lab-pan-388,,Vitamin V 12,Витамин B12,Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma,2132-9,197-771,pg/ml
+lab-pan-389,,Gomoctictein,Гомоцистеин,Homocysteine [Moles/volume] in Serum or Plasma,13965-9,,
+lab-pan-390,,Ferritin,Ферритин,Ferritin [Mass/volume] in Serum or Plasma,2276-4,,
+lab-pan-391,,Кreatinkinaza -МВ,Креатинкиназа-МВ (CK-MB),Creatine kinase.MB [Mass/volume] in Serum or Plasma,13969-1,,
+lab-pan-392,,Troponin I,Тропонин I,Troponin I.cardiac [Mass/volume] in Serum or Plasma,10839-9,,
+lab-pan-393,,Prokalsitonin,Прокальцитонин,Procalcitonin [Mass/volume] in Serum or Plasma,33959-8,,
+lab-pan-394,,Kortizol,Кортизол,Cortisol [Mass/volume] in Serum or Plasma,2143-6,,
+lab-pan-395,,HIV Ab/Ag Combi,Комбинированный тест на ВИЧ (HIV Ag/Ab Combo),HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay,56888-1,,

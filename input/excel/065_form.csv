@@ -1,0 +1,13 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,loinc code,,
+lab-pan-W,,Vasserman reaksiyasiga qon tahlili va boshqalar (Zaxm uchun serologik reaksiyalar paneli),"Анализ крови на реакцию Вассермана и другие (панель серологических реакций на сифилис)
+",Treponema pallidum Ab [Presence] in Serum by Immunoassay,24110-9,,"Panel: Syphilis serology panel
+   ├── Wassermann reaction
+   ├── Kahn test
+   ├── Sachs-Vitebsky test
+   ├── Sachs-Georgi test
+   └── Meinicke test"
+lab-pan-439,,Vasserman bo'yicha natija,Результат по Вассерману,Reagin Ab [Presence] in Serum by VDRL,5292-8,,
+lab-pan-440,,Kan natija,Результат по Кану,Reagin Ab [Presence] in Serum,5290-2,,5290-2
+lab-pan-441,,Zaks vitebskiy natija,Результат по Заксу-Витебскому,Reagin Ab [Presence] in Serum,5290-2,,
+lab-pan-442,,Zaks georgiy natija,Результат по Заксу-Георгию,Reagin Ab [Presence] in Serum,5290-2,,non-treponemal serologic tests
+lab-pan-443,,Meynik natija,Результат по Мейнику,Reagin Ab [Presence] in Serum,5290-2,,

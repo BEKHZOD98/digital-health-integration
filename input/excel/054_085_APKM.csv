@@ -1,0 +1,47 @@
+,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Единицы ,Норма
+lab-pan-N,,Suyak ilik punktati tahlili,Анализ пунктата костного мозга,,,,
+lab-pan-277,,Miyelokariotsitlar soni ,Количество миелокариоцитов,Myelokaryocytes [#/volume] in Bone marrow by Manual count,74466-5,,"50,0-150,0 минг 1мкл /50,0-150,0х109/л-СИ бирлик/"
+lab-pan-278,,Megakariotsitlar soni,Количество мегакариоцитов,Megakaryocytes [Presence] in Bone marrow by Light microscopy,74467-3,,"23,0-103,0 1 мкл/0,023-0, 103х109/л-СИ бирлик/"
+lab-pan-279,,Yetilmagan blastlar,Незрелые бласты,Blast cells immature [#/100 cells] in Bone marrow by Manual count,26444-0,,"0,7-1,3"
+lab-pan-280,,Miyeloblastlar,Миелобласты,Myeloblasts/100 leukocytes in Bone marrow by Manual count,26445-7,,"0,1-0,3"
+lab-pan-281,,Promiyelotsitlar,Промиелоциты,Promyelocytes/100 leukocytes in Bone marrow by Manual count,26446-5,,"0,9-1,6"
+lab-pan-282,,Miyelotsitlar,Миелоциты,Myelocytes/100 leukocytes in Bone marrow by Manual count,26447-3,,"8,9-13,9"
+lab-pan-283,,Metamiyelotsitlar,Метамиелоциты,Metamyelocytes/100 leukocytes in Bone marrow by Manual count,26448-1,,"11,2-14,6"
+lab-pan-284,,Tayoqchayadrolilar,Палочкоядерные нейтрофилы,Neutrophils.band form/100 leukocytes in Bone marrow by Manual count,26449-9,,"12,0-18,0"
+lab-pan-285,,Segmentyadrolilar,Сегментоядерные нейтрофилы,Neutrophils.segmented/100 leukocytes in Bone marrow by Manual count,26450-7,,"17,9-26,1"
+lab-pan-286,,Miyelotsitlar,Миелоциты,,,,"0,5-0,9"
+lab-pan-287,,Metamiyelotsitlar,Метамиелоциты,,,,"0,1-0,3"
+lab-pan-288,,Tayoqchayadrolilar,Палочкоядерные нейтрофилы,,,,"0-0,2"
+lab-pan-289,,Segmentyadrolilar,Сегментоядерные нейтрофилы,,,,"0,4-1,6"
+lab-pan-290,,Miyelotsitlar,Миелоциты,,,,
+lab-pan-291,,Metamiyelotsitlar,Метамиелоциты,,,,
+lab-pan-292,,Tayoqchayadrolilar,Палочкоядерные нейтрофилы,,,,
+lab-pan-293,,Segmentyadrolilar,Сегментоядерные нейтрофилы,,,,"0-0,6"
+lab-pan-294,,Limfoblastlar,Лимфобласты,Lymphoblasts/100 leukocytes in Bone marrow by Manual count,26453-1,,
+lab-pan-295,,Prolimfotsitlar,Пролимфоциты,Prolymphocytes/100 leukocytes in Bone marrow by Manual count,26454-9,,
+lab-pan-296,,Limfotsitlar,Лимфоциты,Lymphocytes/100 leukocytes in Bone marrow by Manual count,26455-6,,"9,4-14,4"
+lab-pan-297,,Monoblastlar,Монобласты,Monoblasts/100 leukocytes in Bone marrow by Manual count,26456-4,,
+lab-pan-298,,Promonotsitlar,Промоноциты,Promonocytes/100 leukocytes in Bone marrow by Manual count,26457-2,,
+lab-pan-299,,Monotsitlar,Моноциты,Monocytes/100 leukocytes in Bone marrow by Manual count,26458-0,,"0,5-1,9"
+lab-pan-300,,Leyko-eritroblastik nisbat,Лейко-эритробластическое соотношение,Myeloid/erythroid ratio in Bone marrow,26459-8,,3:1-4:1
+lab-pan-301,,Neytrofillar yetilish indeksi,Индекс созревания нейтрофилов,Neutrophil maturation index in Bone marrow,26460-6,,
+lab-pan-302,,Proeritroblastlar,Проэритробласты,Proerythroblasts/100 erythroid cells in Bone marrow by Manual count,26461-4,,"0,8-1,4"
+lab-pan-303,,Bazofil eritroblastlar,Базофильные эритробласты,Erythroblasts.basophilic/100 erythroid cells in Bone marrow by Manual count,26462-2,,"0,7-4,3"
+lab-pan-304,,Polixromafil eritroblastlar,Полихроматофильные эритробласты,Erythroblasts.polychromatophilic/100 erythroid cells in Bone marrow by Manual count,26463-0,,"9,0-15,0"
+lab-pan-305,,Oksifil eritroblastlar,Оксифильные эритробласты,Erythroblasts.oxyphilic/100 erythroid cells in Bone marrow by Manual count,26464-8,,"0,3-0,7"
+lab-pan-306,,Polixromatofil normoblastlar,Полихроматофильные нормобласты,Normoblasts.polychromatophilic/100 erythroid cells in Bone marrow by Manual count,26465-5,,"1,6-4,4"
+lab-pan-307,,Oksifil normoblastlar,Оксифильные нормобласты,Normoblasts.oxyphilic/100 erythroid cells in Bone marrow by Manual count,26466-3,,"0,3-0,5"
+lab-pan-308,,Promegaloblastlar,Промегалобласты,Megaloblasts.pro/100 erythroid cells in Bone marrow by Manual count,74452-5,,
+lab-pan-309,,Bazofil megaloblastlar,Базофильные мегалобласты,Megaloblasts.basophilic/100 erythroid cells in Bone marrow by Manual count,74453-3,,
+lab-pan-310,,Polixromatofil megaloblastlar,Полихроматофильные мегалобласты,Megaloblasts.polychromatophilic/100 erythroid cells in Bone marrow by Manual count,74454-1,,
+lab-pan-311,,Oksifil megaloblastlar,Оксифильные мегалобласты,Megaloblasts.oxyphilic/100 erythroid cells in Bone marrow by Manual count,74455-8,,
+lab-pan-312,,Megakarioblastlar,Мегакариобласты,Megakaryoblasts/100 cells in Bone marrow by Manual count,74456-6,,
+lab-pan-313,,Promegakariotsitlar,Промегакариоциты,Promegakaryocytes/100 cells in Bone marrow by Manual count,74457-4,,
+lab-pan-314,,Megokariotsitlar,Мегакариоциты,Megakaryocytes/100 cells in Bone marrow by Manual count,74458-2,,"0-0,2"
+lab-pan-315,,Retikulyar hujayralar,Ретикулярные клетки,Reticular cells [#/100 cells] in Bone marrow by Manual count,74459-0,,"0-0,5"
+lab-pan-316,,Plazmoblastlar,Плазмобласты,Plasmablasts/100 leukocytes in Bone marrow by Manual count,26467-1,,
+lab-pan-317,,Proplazmotsitlar,Проплазмоциты,Proplasmocytes/100 leukocytes in Bone marrow by Manual count,74460-8,,
+lab-pan-318,Plazmotik xujayralar,Плазматические клетки,Plasma cells/100 leukocytes in Bone marrow by Manual count,26468-9,,"0,1-0,9"
+lab-pan-319,,Xujayralar mitozi granulopoez,Митоз клеток гранулопоэза,Myelopoiesis cells mitosis [Presence] in Bone marrow,74461-6,,"0,2-0,4"
+lab-pan-320,,Eritropoez hujayra mitozi,Митоз клеток эритропоэза,Erythropoiesis cells mitosis [Presence] in Bone marrow,74462-4,,"0,2-1,0"
+lab-pan-321,,Eritroblast va normoblastlar sitoplazmasining yetilish indeksi,Индекс зрелости цитоплазмы эритробластов и нормобластов,Cytoplasmic maturation index of erythroid cells in Bone marrow,74463-2,,"0,73-0,85"

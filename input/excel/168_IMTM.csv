@@ -1,0 +1,45 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,LOINC, Единицы,Норма
+lab-pan-V,,Tandem mass-spektrometriya tahlili,Исследование методом тандемной масс-спектрометрии (MS/MS),Tandem mass spectrometry analysis,,,
+lab-pan-396,,ALA(alanine),ALA (аланин),Alanine [Moles/volume] in Serum or Plasma,20636-7, мкмол/л,150-961
+lab-pan-397,,ARG (arginine),ARG (аргинин),Arginine [Moles/volume] in Serum or Plasma,20637-5, мкмол/л,5-100
+lab-pan-398,,CIT (sitruliv),CIT (цитруллин),Citrulline [Moles/volume] in Serum or Plasma,20640-9, мкмол/л,4-65
+lab-pan-399,,GLY (glisin),GLY (глицин),Glycine [Moles/volume] in Serum or Plasma,20644-1, мкмол/л,150-1500
+lab-pan-400,,LEU (leysin),LEU (лейцин), Leucine [Moles/volume] in Serum or Plasma,20649-0, мкмол/л,60-368
+lab-pan-401,,MET(metionin),MET (метионин), Methionine [Moles/volume] in DBS,47700-0, мкмол/л,6-60
+lab-pan-402,,ORN (оrnitin),ORN (орнитин),Ornithine [Moles/volume] in Serum or Plasma,20652-4 , мкмол/л,50-600
+lab-pan-403,,PHE (fenilalanin),PHE (фенилаланин),Phenylalanine [Moles/volume] in Serum or Plasma,14875-9, мкмол/л,25-150
+lab-pan-404,,PRO (prolin),PRO (пролин),Proline [Moles/volume] in DBS,47732-3, мкмол/л,100-645
+lab-pan-405,,SA (suksinilasiton),SA (сукцинилацетон),Succinylacetone [Moles/volume] in DBS,53231-7, мкмол/л,0-2
+lab-pan-406,,TYR (tirozin),TYR (тирозин),Tyrosine [Moles/volume] in DBS,35571-9, мкмол/л,20-220
+lab-pan-407,,VAL (valin),VAL (валин),Valine [Moles/volume] in DBS,47799-2, мкмол/л,50-365
+lab-pan-408,,CO (erkin karnitin),CO (свободный карнитин),Carnitine free (C0) [Moles/volume] in DBS,38481-8, мкмол/л,10-90
+lab-pan-409,,C2 (asetilkarnitil),C2 (ацетилкарнитин),Acetylcarnitine (C2) [Moles/volume] in DBS,50157-7, мкмол/л,5-65
+lab-pan-410,,C3 (propionilkornitin),C3 (пропионилкарнитин),Propionylcarnitine (C3) [Moles/volume] in DBS,53106-8, мкмол/л,"0,5-6,5"
+lab-pan-411,,C4 (butirilkornitin),C4 (бутирилкарнитин),Butyrylcarnitine (C4) [Moles/volume] in DBS,53065-9, мкмол/л,0-1
+lab-pan-412,,С4ОН/C3DC,C4OH/C3DC (гидроксибутирилкарнитин/малонилкарнитин),Malonylcarnitine (C3-DC)+3-Hydroxybutyrylcarnitine (C4-OH) [Moles/volume] in DBS,67708-8, мкмол/л,"0-0,74"
+lab-pan-413,,С5 (izovalerilkornitin),C5 (изовалерилкарнитин),Isovalerylcarnitine (C5) [Moles/volume] in DBS,42920-9, мкмол/л,"0-0,6"
+lab-pan-414,,С5:1(tiglilkornitin),C5:1 (тиглилкарнитин),Tiglylcarnitine (C5:1) [Moles/volume] in DBS,53170-7, мкмол/л,"0-0,55"
+lab-pan-415,,С5DC\C6OH,C5DC/C6OH (глутарилкарнитин/гидроксигексаноилкарнитин),Glutarylcarnitine (C5-DC)+3-Hydroxyhexanoylcarnitine (C6-OH) [Moles/volume] in DBS,67710-4, мкмол/л,"0-0,45"
+lab-pan-416,,C5OH\C4DC,C5OH/C4DC (гидроксиизовалерилкарнитин/сукцинилкарнитин),Methylmalonylcarnitine (C4-DC)/3-Hydroxyisovalerylcarnitine (C5-OH) [Molar ratio] in DBS,53181-4, мкмол/л,"0-0,8"
+lab-pan-417,,C6 (teksanoilkornitin),C6 (гексаноилкарнитин),Hexanoylcarnitine (C6) [Moles/volume] in DBS,45211-0, мкмол/л,"0-0,24"
+lab-pan-418,,C6DC (teksanoilkornitin),C6DC (адипоилкарнитин),Adipoylcarnitine (C6-DC) [Moles/volume] in DBS,74628-9, мкмол/л,"0-0,5"
+lab-pan-419,,C8 (оktanoilkornitin),C8 (октаноилкарнитин),Octanoylcarnitine (C8) [Moles/volume] in DBS,53175-6, мкмол/л,"0-0,36"
+lab-pan-420,,C8: 1(oktenoilkornitin),C8:1 (октеноилкарнитин),Octenoylcarnitine (C8:1) [Moles/volume] in DBS,53174-9, мкмол/л,"0-0,4"
+lab-pan-421,,C10 (dikanoilkornitin),C10 (деканоилкарнитин),Decanoylcarnitine (C10) [Moles/volume] in DBS,45197-1, мкмол/л,"0-0,36"
+lab-pan-422,,C10:1 (desinoilkornitin),C10:1 (деценоилкарнитин),Decenoylcarnitine (C10:1) [Moles/volume] in DBS,45198-9, мкмол/л,"0-0,4"
+lab-pan-423,,C10:2 (dekadienoilkornitin),C10:2 (декадиеноилкарнитин),Decadienoylcarnitine (C10:2) [Moles/volume] in DBS,53180-6, мкмол/л,"0-0,4"
+lab-pan-424,,C12 (dodekanoilkornitin),C12 (додеканоилкарнитин),Dodecanoylcarnitine (C12) [Moles/volume] in DBS,45199-7, мкмол/л,"0-0,36"
+lab-pan-425,,C12:1 (deodesenoikornitin),C12:1 (додеценоилкарнитин),Dodecenoylcarnitine (C12:1) [Moles/volume] in DBS,45200-3, мкмол/л,"0-0,4"
+lab-pan-426,,C1 (formilkarnitin),C1 (формилкарнитин),C1 (Formylcarnitine),, мкмол/л,"0-0,45"
+lab-pan-427,,C14:1 (tetradesenoilkornitin),C14:1 (тетрадценоилкарнитин),Tetradecenoylcarnitine (C14:1) [Moles/volume] in DBS,53191-3, мкмол/л,"0-0,36"
+lab-pan-428,,C14:2 (tetradekadienoilkornitin),C14:2 (тетрадцадиеноилкарнитин),Tetradecadienoylcarnitine (C14:2) [Moles/volume] in DBS,53190-5, мкмол/л,"0-0,5"
+lab-pan-429,,C14OH (3-gidroksi- tetradekadienoilkornitin),C14OH (3-гидрокситетрадеканоилкарнитин),3-Hydroxytetradecanoylcarnitine (C14-OH) [Moles/volume] in DBS,50281-5, мкмол/л,"0-0,2"
+lab-pan-430,,С16 (Palmitoylcarnitine),С16 (пальмитоилкарнитин),Palmitoylcarnitine (C16) [Moles/volume] in Blood,41040-7, мкмол/л,"0,8-7,4"
+lab-pan-431,,C16:1 (gексadetsenoil karnitin),С16:1 (гексадеценоилкарнитин),C16:1 (Hexadecenoylcarnitine),, мкмол/л,"0-0,5"
+lab-pan-432,,C16:1OH (3-gidroksi-gексadetsenoil karnitin),С16:1ОН (3-гидрокси-гексадеценоилкарнитин),3-Hydroxypalmitoleylcarnitine (C16:1-OH) [Moles/volume] in DBS,50121-3, мкмол/л,"0-0,2"
+lab-pan-433,,C16OH (3-gidroksi-gексadekanoil karnitin),C16OH (3-гидрокси-гекадеканоилкарнитин),3-Hydroxyhexanoylcarnitine (C6-OH) [Moles/volume] in DBS,53173-1, мкмол/л,"0-0,2"
+lab-pan-434,,C18 (stearoil karnitin),C18 (октадеканоилкарнитин),Stearoylcarnitine (C18) [Moles/volume] in DBS,53241-6, мкмол/л,"0,5-2,1"
+lab-pan-435,,C18:1 (oktadetsenoil karnitin),C18:1 (октадеценоилкарнитин),Oleoylcarnitine (C18:1) [Moles/volume] in DBS,53202-8, мкмол/л,"0,5-3,2"
+lab-pan-436,,C18:1OH (3-gidroksi-oktadetsenoil karnitin),C18:1OH (3-гидрокси-октадеценоилкарнитин),3-Hydroxyoleoylcarnitine (C18:1-OH) [Moles/volume] in DBS,50113-0, мкмол/л,"0-0,2"
+lab-pan-437,,C18:2 (linoleil karnitin),C18:2 (линолеилкарнитин),Linoleoylcarnitine (C18:2) [Moles/volume] in DBS,45217-7, мкмол/л,"0-0,9"
+lab-pan-438,,C18OH (3-gidroksi-oktadekanoil karnitin),C18OH (3-гидрокси-октадеканоилкарнитин),3-Hydroxystearoylcarnitine (C18-OH) [Moles/volume] in DBS,50132-0, мкмол/л,"0-0,2"

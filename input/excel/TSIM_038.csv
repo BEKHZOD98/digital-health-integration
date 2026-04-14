@@ -1,0 +1,8 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,LOINC,Результаты,,
+lab-pan-C,,Sitologik tahlil (mazok),Цитологическое исследование(мазок),Cytology study of genital specimen by Light microscopy,11529-5,Uretra,Cervix,Vaginal
+lab-pan-57,,Leykotsitlar,Лейкоциты,Leukocytes [Presence] in Genital specimen by Light microscopy,20408-1,"Признаков воспаления нет, норма",текст,текст
+lab-pan-58,,Epitelial hujayralar,Эпителиалные клетки,Epithelial cells [Presence] in Genital specimen by Light microscopy,20407-3,текст,текст,текст
+lab-pan-59,,Mikroflora,Микрофлора,Bacteria [Presence] in Genital specimen by Light microscopy,20409-9,текст,"Норма, возможно лёгкий цервицит (воспаление)",текст
+lab-pan-60,,Gonokokklar,Гонококки,Neisseria gonorrhoeae [Presence] in Genital specimen by Light microscopy,47972-9,текст,текст,текст
+lab-pan-61,,Trichomonadalar,Трихомонады,Trichomonas vaginalis [Presence] in Genital specimen by Light microscopy,47973-7,текст,текст,текст
+lab-pan-62,,Zamburug‘lar,Грибы,Yeast [Presence] in Genital specimen by Light microscopy,20410-7,текст,текст,текст
