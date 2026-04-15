@@ -1,0 +1,37 @@
+,,Показатели UZ,Показатели RU,Long common name,Единицы ,Норма
+lab-pan-P,,Klinik - diagnostik laboratoriya miyelogramma,КЛИНИК-ДИАГНОСТИК ЛАБОРАТОРИЯ МИЕЛОГРАММА,Clinical - diagnostic laboratory myelogram,,
+lab-pan-325,,Suyak ko'migi hujayralari,Клетки костного мозга,Bone marrow cells,,"0,3-2,8"
+lab-pan-326,,Blastlar,Бласты,Blasts,,"52,7-68,9"
+lab-pan-337,,Barcha neytrofil elementlar,Все нейтрофильные элементы,All neutrophil elements,,"1,0-4,1"
+lab-pan-328,,Promiyelositlar,Промиелоциты,Promyelocytes,,"6,9-12,2"
+lab-pan-329,,Miyelositlar,Миелоциты,Myelocytes,,"8,0-14,9"
+lab-pan-330,,Metamiyelositlar,Метамиелоциты,Metamyelocytes,,"12,8-23,7"
+lab-pan-331,,Tayoqcha yadrolilar,Палочкоядерные нейтрофилы,Band neutrophils,,"13,1-24,1"
+lab-pan-332,,Segment yadrolilar,Сегментоядерные нейтрофилы,Segmented neutrophils,,"0,5-5,8"
+lab-pan-333,,Eozinofillar,Эозинофилы,Eosinophils,,
+lab-pan-334,,- Miyelosit eozinofillar,Эозинофильные миелоциты,- Eosinophilic myelocytes,,
+lab-pan-335,,- Metamiyelosit eozinofillar,Эозинофильные метамиелоциты,- Eosinophilic metamyelocytes,,
+lab-pan-336,,- Tayoqcha yadroli eozinofillar,Палочкоядерные эозинофилы,- Band eosinophils,,
+lab-pan-337,,- Segment yadroli eozinofillar,Сегментоядерные эозинофилы,- Segmented eosinophils,,"0-0,5"
+lab-pan-338,,Bazofillar,Базофилы,Basophils,,
+lab-pan-339,,Limfoblastlar,Лимфобласты,Lymphoblasts,,
+lab-pan-340,,Prolimfositlar,Пролимфоциты,Prolymphocytes,,"4,3-13,7"
+lab-pan-341,,Limfositlar,Лимфоциты,Lymphocytes,,
+lab-pan-342,,Monoblastlar,Монобласты,Monoblasts,,
+lab-pan-343,,Promonositlar,Промоноциты,Promonocytes,,"0,7-3,1"
+lab-pan-344,,Monositlar,Моноциты,Monocytes,,
+lab-pan-345,,Plazmoblastlar,Плазмобласты,Plasmablasts,,
+lab-pan-346,,Proplazmositlar,Проплазмоциты,Proplasmacytes,,"0,1-1,8"
+lab-pan-347,,Plazmositlar,Плазмоциты,Plasma cells,,"0,1-1,6"
+lab-pan-348,,Retikulyar hujayralar,Ретикулярные клетки,Reticular cells,,"14,5-26,5"
+lab-pan-349,,Barcha eritron elementlar,Все элементы эритрона,All erythroid elements,,"0,2-1,1"
+lab-pan-350,,Eritroblastlar,Эритробласты,Erythroblasts,,"0,2-1,2"
+lab-pan-351,,Pronormositlar,Пронормоциты,Pronormocytes,,"1,4-4,6"
+lab-pan-352,,Bazofil normositlar,Базофильные нормоциты,Basophilic normocytes,,"8,9-16,9"
+lab-pan-353,,Polixromotofil normositlar,Полихроматофильные нормоциты,Polychromatophilic normocytes,,"0,8-5,6"
+lab-pan-354,,Oksifil normositlar,Оксифильные нормоциты,Oxyphilic normocytes,,
+lab-pan-355,,Mitoz shakllari,Фигуры митоза,Mitotic figures,,
+lab-pan-356,,Indekslar,Индексы,Indices,,"2,1-4,5:1"
+lab-pan-357,,Leyko-eritroblastik nisbat,Лейко-эритробластическое соотношение,Leukoerythroblastic ratio,,"0,7-0,9"
+lab-pan-358,,Eritrokariositlar yetilish indeksi,Индекс созревания эритрокариоцитов,Erythrokaryocyte maturation index,,"0,5-0,9"
+lab-pan-359,,Neytrofillar yetilish indeksi,Индекс созревания нейтрофилов,Neutrophil maturation index,,

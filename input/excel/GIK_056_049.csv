@@ -1,0 +1,13 @@
+,Тип исследовании,Показатели UZ,Показатели,Long common name,LOINC,Диапазон, Единицы
+lab-pan-G,,Gormonal qon tahlili,Гормональное исследование крови,Hormone studies (panel) – Serum or Plasma,24357-5,,
+lab-pan-164,,T3,Т3,Triiodothyronine (T3) [Mass/volume] in Serum or Plasma,3053-6,"1,3–3,1 нмоль/л",
+lab-pan-165,,T4,Т4,Thyroxine (T4) [Mass/volume] in Serum or Plasma,3026-2,66–181  нмоль/л,
+lab-pan-166,, TTG,ТТГ,Thyrotropin (TSH) [Units/volume] in Serum or Plasma,3016-3,"0,4–4,0  мЕд/л",
+lab-pan-167,,Estradiol,Эстрадиол,Estradiol (E2) [Mass/volume] in Serum or Plasma,2243-4,Фолликул. фаза: 30–120 пг/млОвуляция: 130–370 пг/млЛютеин. фаза: 70–250 пг/млМенопауза: 15–60 пг/мл,
+lab-pan-168,,Testosteron,Тестостерон,Testosterone [Mass/volume] in Serum or Plasma,2986-8,"Муж.: 4,4–10,8 нг/млЖен.: 0,4–2,0 нг/мл",
+lab-pan-169,,Kortizol,Кортизол,Cortisol [Mass/volume] in Serum or Plasma,2143-6,Утро: 140–690 нмоль/лВечер: 70–330 нмоль/л,
+lab-pan-170,,Prolaktin,Пролактин,Prolactin [Mass/volume] in Serum or Plasma,2842-3,"Жен.: 1,2–15,5 нг/млПосле менопаузы: 1,1–12,5 нг/млМуж.: 1,5–12,0 нг/мл",
+lab-pan-171,,LG,ЛГ,Luteinizing hormone (LH) [Units/volume] in Serum or Plasma,10501-5,"Фолликул. фаза: 3,8–10,5 МЕ/лОвуляция: 8,0–76,3 МЕ/лЛютеин. фаза: 8,0–10,5 МЕ/лМенопауза: ~40,8 МЕ/лМуж.: 0,7–7,4 МЕ/л",
+lab-pan-172,,FSG,ФСГ,Follicle stimulating hormone (FSH) [Units/volume] in Serum or Plasma,15067-2,"Фолликул. фаза: 3,0–12,0 МЕ/лОвуляция: 8,0–22,0 МЕ/лЛютеин. фаза: 2,0–12,0 МЕ/лМенопауза: 35,0–151,0 МЕ/лМуж.: 1,0–14,0 МЕ/л",
+lab-pan-173,,Progesteron,Прогестерон,Progesterone [Mass/volume] in Serum or Plasma,2839-9,"Фолликул. фаза: 0,3–1,1 нг/млЛютеин. фаза: 3,0–30,0 нг/млМенопауза: 0,1–1,1 нг/млМуж.: ≤0,4 нг/мл",
+lab-pan-174,,PSA,ПСА,Prostate specific Ag (PSA) [Mass/volume] in Serum or Plasma,2857-1,"Муж.: до 4,0 нг/млЖен.: —",

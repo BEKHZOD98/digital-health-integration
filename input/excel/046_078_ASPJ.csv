@@ -1,0 +1,17 @@
+,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, Единицы
+lab-pan-J,,Prostata bezi shirasi tahlili,Анализ секрета предстательной железы,,,,
+lab-pan-214,,Miqdori,Количество,Prostatic fluid volume [Volume],19133-6,,мл
+lab-pan-215,,Rangi,Цвет,Prostatic fluid color [Type],19134-4,,"визуально (бесцветный, желтоватый и т.д.)"
+lab-pan-216,,Shaffofligi,Прозрачность,Prostatic fluid clarity [Type],19135-1,,прозрачный / мутный
+lab-pan-217,,Konsistensiyasi,Консистенция,Prostatic fluid consistency [Type],19136-9,,жидкая / вязкая
+lab-pan-218,,Leykositlar,Лейкоциты,Leukocytes [#/area] in Prostatic fluid by Microscopy HPF,19137-7,,определяются микроскопически
+lab-pan-219,,Eritrositlar,Эритроциты,Erythrocytes [Presence] in Prostatic fluid by Light microscopy,19138-5,,—
+lab-pan-220,,Epiteliy,Эпителий,Epithelial cells [Presence] in Prostatic fluid by Light microscopy,19139-3,,—
+lab-pan-221,,Makrofaglar,Макрофаги,Macrophages [Presence] in Prostatic fluid by Light microscopy,19140-1,,—
+lab-pan-222,,Letsitin donachalari,Лецитиновые зёрна,Lecithin bodies [Presence] in Prostatic fluid by Light microscopy,19141-9,,показатель секреторной функции простаты
+lab-pan-223,,Amiloid tanachalar,Амилоидные тельца,Amyloid bodies [Presence] in Prostatic fluid by Light microscopy,19142-7,,встречаются при застоях секрета
+lab-pan-224,,Spermatozoidlar,Сперматозоиды,Spermatozoa [Presence] in Prostatic fluid by Light microscopy,19143-5,,могут присутствовать в норме
+lab-pan-225,,Trixomonadalar,Трихомонады,Trichomonas vaginalis [Presence] in Prostatic fluid by Light microscopy,19144-3,,—
+lab-pan-226,,Gonokokklar,Гонококки,Neisseria gonorrhoeae [Presence] in Prostatic fluid by Light microscopy,19145-0,,—
+lab-pan-227,,Boshqa flora,Другая флора,Bacteria [Presence] in Prostatic fluid by Light microscopy,19146-8,,неспецифическая микрофлора
+lab-pan-228,,Atipik belgili hujayralar,Клетки с атипичными признаками,Epithelial cells atypical [Presence] in Prostatic fluid by Cytology,19147-6,,подозрение на неопластические изменения

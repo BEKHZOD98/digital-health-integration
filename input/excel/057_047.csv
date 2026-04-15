@@ -1,0 +1,13 @@
+,Тип исследовании(Панел),Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, Единицы
+lab-pan-D,,Qon koagulogrammasi,Коагулограммы крови,Coagulation panel,34552-5 ,,
+lab-pan-63,,Protrombin indeks,Протромбиновый индекс,Prothrombin activity (Quick) [Ratio] in Platelet poor plasma by Coagulation assay,5901-4,70-130%,
+lab-pan-64,,Protrombin vaqti,Протромбиновое время,Prothrombin time (PT) [Time] in Platelet poor plasma by Coagulation assay,5902-2,"11"" - 14""(секунд)",
+lab-pan-65,,Tromin vaqti (TB),Тромбиновое время (ТВ),Thrombin time (TT) [Time] in Platelet poor plasma by Coagulation assay,3243-3,"11"" - 24 (секунд)",
+lab-pan-66,,Fibrinogen,Фибриноген,Fibrinogen [Mass/volume] in Platelet poor plasma by Coagulation assay,3255-7,2-4 г/л,
+lab-pan-67,,Fibrin-monomer eruvchi komplekslari (FMEK),Растворимые фибрин-мономерные комплексы (РФМК),Fibrin monomer [Presence] in Platelet poor plasma by Hemagglutination,40702-3,,негатив/позитив
+lab-pan-68,,Plazmaning geparinga tolerantligi ,Толерантность плазмы к гепарину,Clotting time of Blood by Heparin protamine titration,66747-7,3-7,минута
+lab-pan-69,,Rekalsifikatsiya vaqti,Время рекальцификации,Recalcification time in Platelet poor plasma by Coagulation assay,3242-5,,
+lab-pan-70,,МНО,МНО (Международное нормализованное отношение),INR (International normalized ratio) in Platelet poor plasma by Coagulation assay,6301-6,0.80 - 1.3,
+lab-pan-71,,Trombotest,Тромботест,Thrombotest [Interpretation] in Platelet poor plasma,3244-3,IV-V-VI c,
+lab-pan-72,,Qisman faollashtirilgan tromboplastin vaqti (ҚФТВ),Частично активированное тромбопластиновое время (ЧАСТВ),Activated partial thromboplastin time (APTT) [Time] in Platelet poor plasma by Coagulation assay,3173-2,,
+lab-pan-73,,Etanol,Этанол,Ethanol [Presence] in Blood,5639-0,"22"" - 34"" (секунд)",
