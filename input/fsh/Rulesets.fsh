@@ -31,7 +31,8 @@ RuleSet: IntAndUzAddressRules
   * type from https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs (required)
   * use from https://terminology.dhp.uz/fhir/core/ValueSet/address-use-vs (required)
   * use ^short = "Type of address, home | temp"
-  * country from https://terminology.dhp.uz/fhir/core/ValueSet/iso-3166-2-vs-sans-uz (required)
+  // * country from https://terminology.dhp.uz/fhir/core/ValueSet/iso-3166-2-vs-sans-uz (required)
+  * country from https://dhp.uz/fhir/integrations/ValueSet/iso-3166-2-vs-sans-uz (required)
   * country 1..
   * country ^short = "Country code (ISO 3166-1 2 letter code)"
   * text ^short = "Text part of the address"
@@ -79,8 +80,6 @@ RuleSet: TaxIdentifier
   * type = $identifier-type#TAX "Tax ID number"
   * use = #official
   * value 1..1 MS
-
-
 
 RuleSet: OriginalCodeSystemDraft(id)
 * ^url = "https://terminology.dhp.uz/CodeSystem/{id}"

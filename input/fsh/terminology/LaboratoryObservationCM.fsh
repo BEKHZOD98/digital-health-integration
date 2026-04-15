@@ -12,7 +12,7 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * group.source = Canonical(LaboratoryObservationPanelCS)
 * sourceScopeCanonical = Canonical(ObservationLabCodesVS)
 * group.target = $loinc
-* targetScopeCanonical = $loinc
+// * targetScopeCanonical = $loinc
 
 * group.element[+].code = #lab-pan-1
 * group.element[=].display = "Miqdori"
