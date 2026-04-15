@@ -16,18 +16,18 @@ Description: "Profile for representing episodes of care related to hepatitis pat
 * diagnosis.condition 1..1 MS
 * diagnosis.condition only CodeableReference(HepatitisCondition)
 * diagnosis.condition from HepatitisICDVS (required) // CodeSystem should be done
-* diagnosis.condition ^short = "Bemorning gepatit tashxisi"  //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
+* diagnosis.condition ^short = "Patient's hepatitis diagnosis"  //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
 
 * diagnosis.use 0..1 MS
-* diagnosis.use from http://hl7.org/fhir/ValueSet/diagnosis-role (required)
+* diagnosis.use from HepatitisEncDiagnosisUseVs (preferred)
 
 * patient 1..1 MS
 * patient only Reference(Patient)
-* patient ^short = "Hisobda turgan bemor"
+* patient ^short = "Patient associated with this episode of care"
 
 * managingOrganization 0..1 MS
 * managingOrganization only Reference(Organization)
-* managingOrganization ^short = "Hisobni yurituvchi tibbiy muassasa"
+* managingOrganization ^short = "Organization managing this episode of care"
 
 * period 0..1 MS
   * start 0..1 MS
@@ -35,17 +35,17 @@ Description: "Profile for representing episodes of care related to hepatitis pat
 
 * careManager 0..1 MS
 * careManager only Reference(Practitioner)
-* careManager ^short = "Uchyotni nazorat qiluvchi shifokor"
+* careManager ^short = "Care manager"
 
 * referralRequest 0..* MS
 * referralRequest only Reference(ServiceRequest)
-* referralRequest ^short = "Ixtisoslashgan markazga yo'llanmalar"
+* referralRequest ^short = "Referral requests"
 
 
 // Instance Example
 Instance: example-hepatitis-episode
 InstanceOf: HepatitisEpisodeOfCare
-Description: "Bemorning D-uchyotda turishi haqida namuna"
+Description: "Example of a patient's D-registration"
 Usage: #example
 
 * identifier 
@@ -55,9 +55,8 @@ Usage: #example
 * status = #planned 
 * patient = Reference(example-hepatitis-patient)
 
-* diagnosis[0]
-  * condition = Reference(example-hepatitis-condition)
-  * use = http://terminology.hl7.org/CodeSystem/diagnosis-role#AD "Admission diagnosis"
+* diagnosis.condition = Reference(example-hepatitis-condition)
+* diagnosis.use = $hep-enc-diag-use#working "Working"
 
 * managingOrganization = Reference(Organization/samarkand-infectious-hospital)
 

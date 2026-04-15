@@ -373,7 +373,11 @@ ECHO jar_location is: %jar_location%
 IF NOT "%jar_location%"=="not_found" (
 	java %JAVA_OPTS% -jar "%jar_location%" -ig . %txoption% -watch %extraArgs%
 ) ELSE (
+<<<<<<< HEAD
 	ECHO IG Publisher NOT FOUND in input-cache or parent folder.  Please run the script and update the publisher.  Aborting...
+=======
+	ECHO IG Publisher NOT FOUND in input-cache or parent folder.  Please run _updatePublisher.  Aborting...
+>>>>>>> facd44b (fixed some issues)
 )
 
 GOTO endscript

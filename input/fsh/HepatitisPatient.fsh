@@ -11,8 +11,8 @@ Description: "Profile for hepatitis patient resource"
 //   http://hl7.org/fhir/StructureDefinition/patient-nationality named nationality 0..1 MS and
 //   http://hl7.org/fhir/StructureDefinition/patient-citizenship named citizenship 0..1 MS
 
-* extension[nationality].extension[code].value[x] from NationalityVS (required)
-* extension[citizenship].extension[code].value[x] from CitizenshipVS (required)
+* extension[nationality].extension[code].valueCodeableConcept from NationalityVS (required)
+* extension[citizenship].extension[code].valueCodeableConcept from CitizenshipVS (required)
 
 * identifier 1..* MS SU
   // * extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1 MS
