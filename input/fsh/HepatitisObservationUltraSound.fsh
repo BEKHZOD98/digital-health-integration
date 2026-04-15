@@ -32,7 +32,7 @@ Description: "Profile for representing ultrasound observations related to hepati
 
 * value[x] only boolean
 * value[x] MS
-* valueBoolean ^short = "Natija mavjudligi (ha/yo'q)"
+* valueBoolean ^short = "Availability of the result (yes/no)"
 
 * note 0..* MS
 
@@ -45,14 +45,14 @@ Usage: #example
 * status = #final
 * identifier
   * system = "https://gepatit.sanepid.uz/observation/ultrasound"
-  * value = "UZI-2026-777"
+  * value = "UZI-2023-777"
 
 * code 
   * coding = $sct#19943007 "Cirrhosis of liver"
   * text = "Signs of cirrhosis"
 
 * subject = Reference(example-hepatitis-patient)
-* effectiveDateTime = "2026-01-26"
+* effectiveDateTime = "2023-01-26"
 * performer = Reference(PractitionerRole/muratova-gulshoda-role)
 
 * valueBoolean = true
@@ -68,12 +68,12 @@ Usage: #example
 
 * identifier[0]
   * system = "https://gepatit.sanepid.uz/observation/ultrasound"
-  * value = "UZI-2026-888"
+  * value = "UZI-2024-888"
   
 * code 
   * coding = $sct#716203000 "Decompensated cirrhosis of liver (disorder)"
   * text = "Signs of masses in the liver"
 
 * subject = Reference(example-hepatitis-patient)
-* effectiveDateTime = "2027-01-26"
+* effectiveDateTime = "2024-01-26"
 * valueBoolean = true

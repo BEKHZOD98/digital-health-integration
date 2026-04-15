@@ -9,13 +9,16 @@ Description: "Profile for representing encounters related to hepatitis patients 
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS //For this item you need to write namingsytem (namingsystem url's you can find in excel file)
+  * system = $hep-encounter-id-sys 
+  * system ^short = "Hepatitis encounter identifier system"
+  * value ^short = "Unique identifier for the encounter"
 * status from EncounterStatusVS (required)
 * status MS
 * status = #completed 
 
 * subject 1..1 MS
 * subject only Reference(Patient)
-* subject ^short = "Qabul qilinayotgan bemor" //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
+* subject ^short = "Patient being admitted" //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
 
 * serviceProvider 0..1 MS
 * serviceProvider only Reference(Organization)
@@ -26,26 +29,26 @@ Description: "Profile for representing encounters related to hepatitis patients 
   * type from HepatitisEncounterParticipantTypeVS (extensible)
   * actor 0..1 MS
   * actor only Reference(Practitioner or PractitionerRole or RelatedPerson)
-  * actor ^short = "Qabulni amalga oshirgan shifokor"
+  * actor ^short = "Physician who examined the patient"
 
 * actualPeriod 0..1 MS
-* actualPeriod ^short = "Qabulning haqiqiy vaqti"
+* actualPeriod ^short = "Actual encounter time"
 
 * plannedStartDate 0..1 MS
-* plannedStartDate ^short = "Rejalashtirilgan qabul vaqti"
+* plannedStartDate ^short = "Planned encounter start date"
 
 * partOf 0..1 MS
 * partOf only Reference(Encounter)
-* partOf ^short = "Ushbu qabul jarayonining bir qismi ekanligi"
+* partOf ^short = "Part of the overall encounter process"
 
 
 // Instance Example
 Instance: example-hepatitis-encounter
 InstanceOf: HepatitisEncounter
-Description: "Yusupova Xalida uchun 2026-yil 26-yanvardagi qabul namunasi" //Please translate this description to English 
+Description: "Example of a consultation for Yusupova Khalida on January 26, 2026" //Please translate this description to English 
 Usage: #example
 * identifier 
-  * system = "https://gepatit.sanepid.uz/encounter"
+  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
   * value = "ENC-2026-9901"
 
 * status = #completed

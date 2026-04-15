@@ -12,7 +12,7 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * method 0..1 MS
 * method from $observation-methods (extensible)  //LabObservationMethodsVS add this value set after LabObsForIntegrationSys branch merged to main branch
 * category 0..* MS
-* category from HepatObsCategoryVS (required) 
+* category from HepatObsCategoryVS (required)
 * status from ObservationStatusVS (required)
 * status 1..1 MS
 
@@ -46,6 +46,8 @@ Description: "Profile for representing hepatitis observation analysis in the con
     * system 0..1 MS
     * system = $ucum
     * code 0..1 MS
+  * valueCodeableConcept
+    * valueCodeableConcept from HepatitisLabResultTypeVS (required) //after LabObsForIntegrationSys branch merged to main branch change this value set with LaboratoryObservationPanelCS
 */
 * dataAbsentReason from DataAbsentReasonVS (extensible)
 * interpretation from ObservationInterpretationVS (extensible)
@@ -70,7 +72,7 @@ Usage: #example
 * valueCodeableConcept = hep-lab-res-type-cs#lab_0001_00001 "Negative"
 * performer = Reference(Organization/samarkand-regional-hospital)
 * component[0]
-  * code = $loinc#5195-3 "Hepatitis B virus surface Ag [Presence] in Serum" //I think this example is incorrect , inside of component.code only use panel's analytes code
+  * code = $loinc#5195-3 "Hepatitis B virus surface Ag [Presence] in Serum" //This example is incorrect , inside of component.code only use panel's analytes code
   * valueQuantity 
     * value = 100
     * comparator = #< 

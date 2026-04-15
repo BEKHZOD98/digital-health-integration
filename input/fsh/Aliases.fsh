@@ -192,3 +192,5 @@ Alias: $encounter-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/enco
 Alias: $encounter-participant-type-vs = https://terminology.dhp.uz/fhir/core/ValueSet/encounter-participant-type-vs
 Alias: $hepatitis-condition-diagnosis-type-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs
 Alias: $condition-clinical-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/clinical-status-vs
+Alias: $hep-enc-diag-use = http://hl7.org/fhir/encounter-diagnosis-use
+Alias: $hep-encounter-id-sys = https://dhp.uz/fhir/core/sid/pid/uz/hepatitis
