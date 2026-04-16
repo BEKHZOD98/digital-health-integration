@@ -20,12 +20,12 @@ Description: "Example mother patient for the newborn birth profile"
 
 
 
-Instance: organization-birth-hospital-example
-InstanceOf: Organization
-Title: "Birth Hospital Example"
-Description: "Example birth hospital organization in Uzbekistan"
+Instance: organization1-example
+InstanceOf: UZCoreOrganization
+Title: "Birth and Death  Hospital Example"
+Description: "Example birth and death hospital organization in Uzbekistan"
 Usage: #example
-* name = "Tashkent Maternity Hospital №1"
+* name = "Republican Clinical Hospital"
 
 
 Instance: encounter-mother-delivery-example
@@ -81,8 +81,8 @@ Title: "Practitioner Role Example"
 Description: "Role of practitioner for authoring the birth composition"
 
 * practitioner = Reference(practitioner-003)
-* organization = Reference(organization-birth-hospital-example)
-
+* organization = Reference(organization1-example)
+* code.text = "Paramedic"
 
 Instance: patient-gender-other-example
 InstanceOf: Patient
@@ -139,3 +139,24 @@ Description: "Example demonstrating the NewbornBirthTime extension."
 
 * extension.url = "https://dhp.uz/fhir/integrations/StructureDefinition/newborn-birth-time"
 * extension.valueDateTime = "2026-04-01T10:00:00+05:00"
+
+
+
+Instance: practitioner-death-example
+InstanceOf: UZCorePractitioner
+Title: "Practitioner Death Example"
+Description: "Example practitioner for death certificate"
+Usage: #example
+
+* name.family = "Karimov"
+* name.given = "Akmal"
+
+
+
+Instance: location-death-example
+InstanceOf: UZCoreLocation
+Title: "Location Death Example"
+Description: "Example location for death encounter"
+Usage: #example
+
+* name = "Republican Clinical Hospital"

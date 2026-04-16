@@ -50,16 +50,7 @@ Description: "gender 'other' implies differentiation of the gender indication 'o
 * severity = #error
 * expression = "gender.exists() and gender = 'other' implies gender.extension('https://dhp.uz/fhir/integrations/StructureDefinition/gender-other').exists()"
 
-// Extension: ManagingOrganizationAttachment
-// Id: managing-organization-attachment
-// Title: "Managing organization attachment date"
-// Description: "Date when the patient was attached to the managing organization. In Uzbekistan, patients can only change their managing organization once a year."
-// Context: Patient
-// * ^context.type = #element
-// * ^context.expression = "Patient"
-// * ^experimental = true
-// * value[x] 1..
-// * value[x] only date
+
 
 Extension: ManagingOrganizationAttachment
 Id: managing-organization-attachment
@@ -100,10 +91,31 @@ Description: "Birth time of each newborn in a multiple birth."
 * ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/newborn-birth-time"
 * ^experimental = true
 
-//change context
+
 * ^context.type = #element
 * ^context.expression = "Patient"
 
 * value[x] 1..1 MS
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
+
+
+
+// DEATH EXTENSIONS
+Extension: DeathPlaceType
+Id: death-place-type
+Title: "Death Place Type"
+Description: "Type which indicates the death place type (home, street, hospital, etc.)"
+
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/death-place-type"
+* ^version = "1.0.0"
+* ^context.type = #element
+* ^context.expression = "Encounter"
+* ^status = #active
+* ^experimental = true
+
+* value[x] only CodeableConcept
+* value[x] 1..1
+* value[x] from  DeathPlaceTypeVS (extensible)
+* value[x] ^short = "Death place type"
+* value[x] ^definition = "Type which is that death place type (home, street, hospital etc)"

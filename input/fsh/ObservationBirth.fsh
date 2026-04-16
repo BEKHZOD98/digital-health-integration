@@ -69,3 +69,32 @@ Which child is this for the mother:"
 * component.value[x] ^short = "Actual result by component"
 * component.valueBoolean MS
 * component.valueBoolean ^short = "Type  life criteria - true or false"
+
+
+
+
+Instance: observation-of-birth-example
+InstanceOf: ObservationOfBirth
+Usage: #example
+Title: "Observation of Birth Example"
+Description: "Example observation of birth for a newborn in Uzbekistan"
+
+* status = #final
+* category[0].coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
+* category[0].coding.code = #vital-signs
+* code = http://loinc.org#8339-4 "Birth weight Measured"
+* subject = Reference(patient-of-birth-example)
+* effectiveDateTime = "2026-04-01T10:08:00+05:00"
+* performer[0] = Reference(practitioner-003)
+
+* valueQuantity.value = 50
+* valueQuantity.unit = "cm"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #cm
+
+* component[0].code = ObservationLifeCriteriaCS#birth0003_00001 "Breathing"
+* component[0].valueBoolean = true
+* component[1].code = ObservationLifeCriteriaCS#birth0003_00002 "Heartbeat"
+* component[1].valueBoolean = true
+* component[2].code = ObservationLifeCriteriaCS#birth0003_00004 "Involuntary muscle contractions"
+* component[2].valueBoolean = true
