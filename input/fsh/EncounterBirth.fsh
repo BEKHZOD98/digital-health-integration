@@ -72,3 +72,34 @@ Clinical assessments related to birth (e.g., signs of infection, abnormal Apgar 
 * location.location 1..1 MS
 * location.location only Reference(UZCoreLocation)
 * location.location ^short = "The place where the baby was born"
+
+
+
+Instance: encounter-of-birth-example
+InstanceOf: EncounterOfBirth
+Usage: #example
+Title: "Encounter of Birth Example"
+Description: "Example birth encounter for a newborn in Uzbekistan"
+
+* status = #completed
+* class = $v3-ActCode#IMP "inpatient encounter"
+
+* subject = Reference(patient-of-birth-example)
+
+* serviceProvider = Reference(organization1-example)
+* partOf = Reference(encounter-mother-delivery-example)
+
+* participant[participantAttendant].type.coding[0].system = "http://loinc.org"
+* participant[participantAttendant].type.coding[0].code = #87286-1
+* participant[participantAttendant].type.coding[0].display = "Birth attendant [Extended Identifier]"
+* participant[participantAttendant].actor = Reference(practitioner-birth-attendant-example)
+
+* participant[participantCertifier].type.coding[0].system = "http://loinc.org"
+* participant[participantCertifier].type.coding[0].code = #87287-9
+* participant[participantCertifier].type.coding[0].display = "Birth certifier [Extended Identifier]"
+* participant[participantCertifier].actor = Reference(practitioner-birth-certifier-example)
+* participant[participantCertifier].period.start = "2026-04-01T10:30:00+05:00"
+
+* diagnosis[0].condition = Reference(condition-neonatal-jaundice-example)
+
+* location[0].location = Reference(location-delivery-room-example)

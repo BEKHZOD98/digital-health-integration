@@ -56,3 +56,27 @@ Description: "Apgar score must be between 1 and 10"
 //changed from value to $this
 Expression: "$this >= 1 and $this <= 10"
 Severity: #error
+
+
+
+Instance: observation-of-apgar-example
+InstanceOf: ObservationOfAPGAR
+Usage: #example
+Title: "Observation APGAR Example"
+Description: "Example APGAR observation for a newborn"
+
+* status = #final
+
+* category[0].coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
+* category[0].coding.code = #vital-signs
+
+* code = http://loinc.org#9274-2 "5 minute Apgar Score"
+
+* subject = Reference(patient-of-birth-example)
+* effectiveDateTime = "2026-04-01T10:08:00+05:00"
+
+* performer[0] = Reference(practitioner-003)
+
+* valueQuantity.value = 8
+* valueQuantity.unit = "score"
+* valueQuantity.system = "http://unitsofmeasure.org"
