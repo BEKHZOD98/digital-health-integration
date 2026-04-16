@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Extension: AdmissionOrigin
 Id: admission-origin
 Title: "Admission Origin"
@@ -115,6 +116,15 @@ Description: "Date of birth of the related person"
 
 * value[x] 1..1 MS
 
+=======
+Extension: DrugEfficacy
+Id: drug-efficacy
+Title: "Drug Efficacy Extension"
+Description: "Extension to indicate the efficacy of a drug for a specific patient, based on their individual response to the medication."
+* value[x] only boolean
+* valueBoolean MS
+/*
+>>>>>>> c92c474 (removed all Birth  profiles)
 Extension: PatientPlaceOfBirthType
 Id: patient-placeOfBirthType
 Title: "Place of Birth Type"
@@ -129,7 +139,7 @@ Description: "Extension to indicate the type of place where the patient was born
 * value[x] only CodeableConcept
 * valueCodeableConcept from BirthPlaceVS (required)
 * valueCodeableConcept ^short = "Type of the place where the patient was born"
-
+*/
 Extension: RelatedPersonEducation
 Id: relatedperson-education
 Title: "Related Person Education"
@@ -191,7 +201,7 @@ Description: "Date when the patient was attached to the managing organization. I
 * value[x] 1..1
 * value[x] only date
 
-
+/*
 Extension: MultipleBirthFlag
 Id: multiple-birth-flag
 Title: "Multiple Birth Flag"

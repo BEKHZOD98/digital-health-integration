@@ -5,4 +5,4 @@ Description: "ValueSet for observation interpretation"
 
 * ^experimental = true
 
-* include codes from valueset https://terminology.dhp.uz/fhir/core/ValueSet/observation-interpretation-vs
+* include codes from valueset $observation-interpretation-vs
