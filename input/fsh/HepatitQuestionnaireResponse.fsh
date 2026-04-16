@@ -16,13 +16,13 @@ Description: "Profile for representing responses to a hepatitis-related question
 
 * subject 0..1 MS
 * subject only Reference(HepatitisPatientProfile)
-* subject ^short = "Javob bergan bemor"
+* subject ^short = "Patient respondent"
 
 * encounter 0..1 MS
 * encounter only Reference(HepatitisEncounter)
 
 * authored 0..1 MS
-* authored ^short = "To'ldirilgan sana va vaqt"
+* authored ^short = "Date and time of completion"
 
 * item 0..1 MS
   * linkId 1..1 MS
@@ -41,7 +41,7 @@ Description: "Profile for representing responses to a hepatitis-related question
 // Instance Example 
 Instance: example-hcv-response
 InstanceOf: QuestionnaireResponse
-Description: "Bemor tomonidan to'ldirilgan anamnez javoblari namunasi"
+Description: "Example of anamnesis responses completed by the patient for hepatitis B and C treatment questionnaire"
 Usage: #example
 
 * identifier 
@@ -55,18 +55,18 @@ Usage: #example
 
 * item[0]
   * linkId = "hx-tx-hcv-hbv"
-  * text = "Лечение от ВГС/ВГВ (в анамнезе)"
+  * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
   * answer[0]
     * valueBoolean = true
     
     * item[0]
       * linkId = "hx-tx-hvc-hbv-meds"
-      * text = "Какие лекарства принимались против ВГС/ВГВ?"
+      * text = "What medications were taken against HCV/HBV?"
       * answer[0]
         * valueString = "Sofosbuvir + Declatasvir"
 
 * item[1]
   * linkId = "pregnancy-trimester"
-  * text = "Срок беременности"
+  * text = "Pregnancy duration"
   * answer[0]
     * valueCoding = http://snomed.info/sct#255246003 "First trimester"

@@ -28,7 +28,7 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 * recordedDate 0..1 MS
 * participant 0..1 MS
   * actor only Reference(Practitioner)
-  * actor ^short = "Tashxisni qo'ygan shifokor" //please translate this definition to English and add for all item ^short = "Definition in English from excel file"
+  * actor ^short = "Physician who made the diagnosis"
 
 * note 0..* MS
 
@@ -36,7 +36,7 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 // Instance Example
 Instance: example-hepatitis-condition
 InstanceOf: HepatitisCondition
-Description: "Bemorga qo'yilgan asosiy tashxis anmunasi" //Please translate this description to English
+Description: "Example of a hepatitis condition"
 Usage: #example
 * identifier 
   * system = "https://gepatit.sanepid.uz/condition"
@@ -53,4 +53,4 @@ Usage: #example
 * participant.actor = Reference(Practitioner/simonov-farkhod)
 
 * extension[drugEfficacy].valueBoolean = false
-* note.text = "Bemorda simptomlar 2 hafta oldin boshlangan"
+* note.text = "Symptoms started 2 weeks ago in the patient"

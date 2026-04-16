@@ -8,7 +8,7 @@ Description: "Profile for representing encounters related to hepatitis patients 
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
-* identifier 1..* MS //For this item you need to write namingsytem (namingsystem url's you can find in excel file)
+* identifier 1..* MS
   * system = $hep-encounter-id-sys 
   * system ^short = "Hepatitis encounter identifier system"
   * value ^short = "Unique identifier for the encounter"
@@ -18,11 +18,11 @@ Description: "Profile for representing encounters related to hepatitis patients 
 
 * subject 1..1 MS
 * subject only Reference(Patient)
-* subject ^short = "Patient being admitted" //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
+* subject ^short = "Patient being admitted" 
 
 * serviceProvider 0..1 MS
 * serviceProvider only Reference(Organization)
-* serviceProvider ^short = "Tibbiy muassasa"
+* serviceProvider ^short = "Medical institution"
 
 * participant 0..* MS
   * type 0..* MS
