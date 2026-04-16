@@ -18,10 +18,10 @@ Description: "Uzbekistan Laboratory Observation profile, for integration medical
 * component.dataAbsentReason from DataAbsentReasonVS (extensible)
 * component.interpretation from ObservationInterpretationVS (extensible)
 
-Instance: cbc-panel-example
+Instance: afp-example
 InstanceOf: LaboratoryObservation
 Usage: #example
-Description: "Example of CBC (Umumiy qon tahlili) as a laboratory panel with analytes from ObservationLabPanelCodesCS"
+Description: "Example of Alpha-1-Fetoprotein (AFP) [Mass/volume] in Serum or Plasma laboratory observation using ObservationLabPanelCodesCS"
 * meta.profile[0] = "https://dhp.uz/fhir/integrations/StructureDefinition/lab-observation"
 * status = #final
 * category = $observation-category#laboratory "Laboratory"
@@ -32,5 +32,3 @@ Description: "Example of CBC (Umumiy qon tahlili) as a laboratory panel with ana
 * issued = "2025-11-04T09:00:00Z"
 * performer = Reference(Practitioner/example-practitioner)
 * specimen = Reference(Specimen/specimen-example-blood)
-// * component[0].code = $lab-panels#lab-pan-378 "Alfa-fetoprotein (CAFP)"
-// * component[=].valueQuantity = 6,05 "IU/ml"
