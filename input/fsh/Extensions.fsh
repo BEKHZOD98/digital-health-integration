@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Extension: AdmissionOrigin
 Id: admission-origin
 Title: "Admission Origin"
@@ -117,14 +118,21 @@ Description: "Date of birth of the related person"
 * value[x] 1..1 MS
 
 =======
+=======
+/*
+>>>>>>> 567a164 (updated all profiles and codesystems)
 Extension: DrugEfficacy
 Id: drug-efficacy
 Title: "Drug Efficacy Extension"
 Description: "Extension to indicate the efficacy of a drug for a specific patient, based on their individual response to the medication."
 * value[x] only boolean
 * valueBoolean MS
+<<<<<<< HEAD
 /*
 >>>>>>> c92c474 (removed all Birth  profiles)
+=======
+
+>>>>>>> 567a164 (updated all profiles and codesystems)
 Extension: PatientPlaceOfBirthType
 Id: patient-placeOfBirthType
 Title: "Place of Birth Type"
@@ -227,6 +235,7 @@ Description: "Birth time of each newborn in a multiple birth."
 * ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/newborn-birth-time"
 * ^experimental = true
 
+<<<<<<< HEAD
 * value[x] 1..1 MS
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
@@ -238,3 +247,24 @@ Title: "Drug Efficacy Extension"
 Description: "Preparatning samaradorligini (ha/yo'q) belgilash uchun maxsus kengaytma"
 * value[x] only boolean
 * valueBoolean MS
+=======
+//change context
+* ^context.type = #element
+* ^context.expression = "Patient"
+ 
+* value[x] 1..1 MS
+* value[x] only dateTime
+* valueDateTime ^short = "Exact birth time of the newborn"
+*/
+Extension: ConditionOutcome
+Id: hepatitis-condition-outcome
+Title: "Hepatitis condition outcome extension"
+Description: "Represents the effectiveness of treatment at the time of removal from the A, B, C, D, E registry follow-up."
+
+* ^status = #active
+* ^experimental = true
+
+* value[x] only CodeableConcept
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept from HepatitisConditionOutcomeCodesVS (required)
+>>>>>>> 567a164 (updated all profiles and codesystems)

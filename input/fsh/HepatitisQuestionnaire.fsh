@@ -1,3 +1,4 @@
+/*
 Profile: HepatitisQuestionnaire
 Parent: Questionnaire
 Id: hepatitis-questionnaire
@@ -11,12 +12,10 @@ Description: "Profile for representing a questionnaire related to hepatitis pati
 
 * title 1..1 MS
 * title ^short = "HEPATITIS QUESTIONNAIRE"
-* description 0..1 MS
-/*
 * title.extension contains $translation-extension named translation 0..* MS // Structure definitionga translation definition qoshish kk
-
+* description 0..1 MS
 * description.extension contains $translation-extension named translation 0..* MS
-*/
+
 * subjectType MS 
 * subjectType from $fhir-types
 * status from $publication-status (required)
@@ -39,7 +38,7 @@ Description: "Profile for representing a questionnaire related to hepatitis pati
 
     * answerOption 0..* MS
       * value[x] only string or Coding
-      * valueCoding from $preparation-patient-prior-specimen-collection  (example)
+      * valueCoding from $sct (example)
 
 
 // Instance Example
@@ -79,4 +78,5 @@ Usage: #example
     * linkId = "pregnancy-trimester"
     * text = "Pregnancy duration (Homiladorlik muddati)"
     * type = #coding
-    * answerOption[0].valueCoding = http://terminology.dhp.uz/CodeSystem/trimester#707723000 "Twenty four hours after peritoneal dialysis"
+    * answerOption[0].valueCoding = $sct#707723000 "Twenty four hours after peritoneal dialysis"
+*/

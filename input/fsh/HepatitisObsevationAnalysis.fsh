@@ -34,6 +34,13 @@ Description: "Profile for representing hepatitis observation analysis in the con
 
 * performer 0..* MS
 * performer only Reference(Organization or PractitionerRole)
+* component.value[x] only Quantity
+* component.valueQuantity.value 0..1 MS
+* component.valueQuantity.comparator from QuantityComparatorVS (required)
+* component.valueQuantity.unit 0..1 MS
+* component.valueQuantity.system 0..1 MS
+* component.valueQuantity.system = $ucum
+* component.valueQuantity.code 0..1 MS
 /*
 * component 0..* MS 
   * code 1..1 MS
@@ -71,5 +78,16 @@ Usage: #example
 * effectiveDateTime = "2026-01-27T09:57:00Z"
 * valueCodeableConcept = http://hl7.org/fhir/observation-referencerange-normalvalue#negative "Negative"
 * performer = Reference(Organization/samarkand-regional-hospital)
+<<<<<<< HEAD
 
 
+=======
+* component[0]
+  * code = $loinc#5195-3 "Hepatitis B virus surface Ag [Presence] in Serum" //This example is incorrect , inside of component.code only use panel's analytes code
+  * valueQuantity 
+    * value = 100
+    * comparator = #< "Less than"
+    * unit = "mL"
+    * system = "http://unitsofmeasure.org"
+    * code = #mL
+>>>>>>> 567a164 (updated all profiles and codesystems)
