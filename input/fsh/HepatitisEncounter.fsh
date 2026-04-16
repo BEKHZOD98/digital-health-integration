@@ -11,7 +11,27 @@ Description: "Profile for representing encounters related to hepatitis patients 
 * identifier 1..* MS
   * system = $hep-encounter-id-sys 
   * system ^short = "Hepatitis encounter identifier system"
-  * value ^short = "Unique identifier for the encounter"
+  * value ^short = "Unique identifier for the encounter: UUID"
+* identifier.type 0..1 MS
+* identifier.type from IdentifierTypeVS (required)
+
+* identifier.type.coding 0..* MS
+* identifier.type.coding.system 0..1 MS
+* identifier.type.coding.system = $identifier-type
+
+* identifier.type.coding.code 0..1 MS
+* identifier.type.coding.code = #PHC
+
+* identifier.type.coding.display 0..1 MS
+* identifier.type.coding.display = "Public Health Case Identifier"
+
+* identifier.use 0..1 MS
+* identifier.use from IdentifierUseVS (required)
+
+* class MS
+* class from HepatitisEncounterClassVS (required)
+* class ^short = "Classification of the encounter with the patient"
+
 * status from EncounterStatusVS (required)
 * status MS
 * status = #completed 
@@ -48,7 +68,7 @@ InstanceOf: HepatitisEncounter
 Description: "Example of a consultation for Yusupova Khalida on January 26, 2026" //Please translate this description to English 
 Usage: #example
 * identifier 
-  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
+  * system = "https://dhp.uz/fhir/core/sid/reg/uz/hepatitis"
   * value = "ENC-2026-9901"
 
 * status = #completed

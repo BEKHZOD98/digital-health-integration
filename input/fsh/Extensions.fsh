@@ -1,10 +1,11 @@
+/*
 Extension: DrugEfficacy
 Id: drug-efficacy
 Title: "Drug Efficacy Extension"
 Description: "Extension to indicate the efficacy of a drug for a specific patient, based on their individual response to the medication."
 * value[x] only boolean
 * valueBoolean MS
-/*
+
 Extension: PatientPlaceOfBirthType
 Id: patient-placeOfBirthType
 Title: "Place of Birth Type"
@@ -110,8 +111,19 @@ Description: "Birth time of each newborn in a multiple birth."
 //change context
 * ^context.type = #element
 * ^context.expression = "Patient"
-
+ 
 * value[x] 1..1 MS
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
 */
+Extension: ConditionOutcome
+Id: hepatitis-condition-outcome
+Title: "Hepatitis condition outcome extension"
+Description: "Represents the effectiveness of treatment at the time of removal from the A, B, C, D, E registry follow-up."
+
+* ^status = #active
+* ^experimental = true
+
+* value[x] only CodeableConcept
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept from HepatitisConditionOutcomeCodesVS (required)

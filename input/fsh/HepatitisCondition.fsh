@@ -21,10 +21,10 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 * subject only Reference(Patient)
 * encounter 0..1 MS
 * encounter only Reference(Encounter)
-
-* extension contains drug-efficacy named drugEfficacy 0..* MS
-* extension[drugEfficacy].valueBoolean MS
-
+//condition outcomes 
+* extension contains ConditionOutcome named outcome 0..1 MS
+* extension[outcome] ^short = "Effectiveness of treatment at the time of removal from A, B, C, D, E registry follow-up"
+* extension[outcome] ^definition = "Represents the effectiveness of treatment at the time of removal from the A, B, C, D, E registry follow-up."
 * recordedDate 0..1 MS
 * participant 0..1 MS
   * actor only Reference(Practitioner)
@@ -52,5 +52,5 @@ Usage: #example
 * recordedDate = "2026-11-09T13:31:00Z"
 * participant.actor = Reference(Practitioner/simonov-farkhod)
 
-* extension[drugEfficacy].valueBoolean = false
+* extension[outcome].valueCodeableConcept = $sct#1137679005 "Good response to medication"
 * note.text = "Symptoms started 2 weeks ago in the patient"

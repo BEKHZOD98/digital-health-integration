@@ -1,3 +1,4 @@
+/*
 Profile: HepatitisQuestionnaireResponse
 Parent: QuestionnaireResponse
 Id: hepatitis-questionnaire-response
@@ -8,8 +9,8 @@ Description: "Profile for representing responses to a hepatitis-related question
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS SU
-* status from http://hl7.org/fhir/ValueSet/questionnaire-answers-status (required)
 * status MS
+* status from http://hl7.org/fhir/ValueSet/questionnaire-answers-status (required)
 
 * questionnaire 1..1 MS
 * questionnaire only Canonical(HepatitisQuestionnaire)
@@ -70,3 +71,4 @@ Usage: #example
   * text = "Pregnancy duration"
   * answer[0]
     * valueCoding = http://snomed.info/sct#255246003 "First trimester"
+*/

@@ -3,8 +3,10 @@ Id: quantity-comparator-cs
 Title: "Quantity comparator CodeSystem"
 Description: "CodeSystem for quantity comparator in Uzbek, Russian and English languages"
 * ^experimental = true
-* ^caseSensitive = true
-* ^language = #uz
+* ^content = #supplement
+* ^supplements = $comparator
+* ^version = "5.0.0"
+* ^language = #en
 
 * #<
   * ^designation[0].language = #ru
