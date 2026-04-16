@@ -105,7 +105,7 @@ Alias: $specialization = https://dhp.uz/fhir/core/CodeSystem/specialization
 Alias: $subordination-group = https://dhp.uz/fhir/core/CodeSystem/subordination-group
 Alias: $location-unit = https://dhp.uz/fhir/core/NamingSystem/location-unit
 
-// ===================== OTHER =====================
+// ===================== OTHER ====================
 Alias: $icd-10 = http://hl7.org/fhir/sid/icd-10
 Alias: $iso-3166 = urn:iso:std:iso:3166
 Alias: $iiv = https://gov.uz/ru/iiv
