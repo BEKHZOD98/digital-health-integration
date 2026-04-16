@@ -4,7 +4,7 @@ This page documents the mapping between Form 011 (Hemodialysis Session Protocol)
 
 ### Overview
 
-Form 011 captures clinical data from hemodialysis sessions. The form data maps to multiple FHIR resources bundled together as a FHIR Document. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
+Form 011 captures clinical data from hemodialysis sessions. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 011 Hemodialysis Composition](StructureDefinition-form-011-hemodialysis-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
 
 ### Field Mapping
 
@@ -38,11 +38,11 @@ Form 011 captures clinical data from hemodialysis sessions. The form data maps t
 
 ### Bundle structure
 
-The Form 011 document is structured as a FHIR Bundle containing:
+The Form 011 document is structured as a FHIR Bundle containing a [Form011HemodialysisComposition](StructureDefinition-form-011-hemodialysis-composition.html) Composition:
 
 ```
 Bundle (document)
-├── Composition (first entry; sections referencing all resources below)
+├── Composition (Form011HemodialysisComposition)
 ├── Patient (patient demographics)
 ├── Encounter (session encounter)
 ├── Procedure (hemodialysis procedure)
