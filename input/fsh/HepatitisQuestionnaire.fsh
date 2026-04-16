@@ -7,36 +7,39 @@ Description: "Profile for representing a questionnaire related to hepatitis pati
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
-* identifier 1..* MS 
+* identifier 1..* MS
+
 * title 1..1 MS
 * title ^short = "HEPATITIS QUESTIONNAIRE"
-
-* title.extension contains http://hl7.org/fhir/StructureDefinition/translation named translation 0..* MS // Structure definitionga translation definition qoshish kk
 * description 0..1 MS
-* description.extension contains http://hl7.org/fhir/StructureDefinition/translation named translation 0..* MS
+/*
+* title.extension contains $translation-extension named translation 0..* MS // Structure definitionga translation definition qoshish kk
 
-* subjectType = $fhir-types#Patient
-* status from http://hl7.org/fhir/ValueSet/publication-status (required)
+* description.extension contains $translation-extension named translation 0..* MS
+*/
+* subjectType MS 
+* subjectType from $fhir-types
+* status from $publication-status (required)
 * status = #active
 
 * item 0..* MS
   * linkId 1..1 MS
   * text 0..1 MS
-  * type from http://hl7.org/fhir/ValueSet/item-type (required)
+  * type from $item-type (required)
 
   * item 0..* MS
     * linkId 1..1 MS
     * text 0..1 MS
-    * type from http://hl7.org/fhir/ValueSet/item-type (required)
+    * type from $item-type (required)
 
     * enableWhen 0..* MS
       * question 1..1 MS
-      * operator from http://hl7.org/fhir/ValueSet/questionnaire-enable-operator (required)
+      * operator from $questionnaire-enable-operator (required)
       * answer[x] 1..1 MS
 
     * answerOption 0..* MS
       * value[x] only string or Coding
-      * valueCoding from http://hl7.org/fhir/ValueSet/prepare-patient-prior-specimen-collection  (example)
+      * valueCoding from $preparation-patient-prior-specimen-collection  (example)
 
 
 // Instance Example

@@ -7,6 +7,6 @@ Description: "ValueSet for hepatitis trimester"
 
 * include $sct#307159006 "Pregnancy time period" 
   * ^designation[0].language = #ru
-  * ^designation[0].value = "Срок беременности"
-  * ^designation[1].language = #uz
-  * ^designation[1].value = "Homiladorlik davri"
+  * ^designation[=].value = "Срок беременности"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Homiladorlik davri"

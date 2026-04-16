@@ -4,6 +4,7 @@ Title: "Drug Efficacy Extension"
 Description: "Extension to indicate the efficacy of a drug for a specific patient, based on their individual response to the medication."
 * value[x] only boolean
 * valueBoolean MS
+/*
 Extension: PatientPlaceOfBirthType
 Id: patient-placeOfBirthType
 Title: "Place of Birth Type"
@@ -18,7 +19,7 @@ Description: "Extension to indicate the type of place where the patient was born
 * value[x] only CodeableConcept
 * valueCodeableConcept from BirthPlaceVS (required)
 * valueCodeableConcept ^short = "Type of the place where the patient was born"
-
+*/
 Extension: RelatedPersonEducation
 Id: relatedperson-education
 Title: "Related Person Education"
@@ -80,7 +81,7 @@ Description: "Date when the patient was attached to the managing organization. I
 * value[x] 1..1
 * value[x] only date
 
-
+/*
 Extension: MultipleBirthFlag
 Id: multiple-birth-flag
 Title: "Multiple Birth Flag"
@@ -113,3 +114,4 @@ Description: "Birth time of each newborn in a multiple birth."
 * value[x] 1..1 MS
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
+*/
