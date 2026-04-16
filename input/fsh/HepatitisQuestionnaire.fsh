@@ -15,7 +15,7 @@ Description: "Profile for representing a questionnaire related to hepatitis pati
 * description 0..1 MS
 * description.extension contains http://hl7.org/fhir/StructureDefinition/translation named translation 0..* MS
 
-* subjectType = #Patient
+* subjectType = $fhir-types#Patient
 * status from http://hl7.org/fhir/ValueSet/publication-status (required)
 * status = #active
 
@@ -42,7 +42,7 @@ Description: "Profile for representing a questionnaire related to hepatitis pati
 // Instance Example
 Instance: example-hepatitis-questionnaire
 InstanceOf: HepatitisQuestionnaire
-Description: "Gepatit B va C bo'yicha o'tkazilgan davolash muolajalari so'rovnomasi"
+Description: "Hepatitis B and C treatment questionnaire"
 Usage: #example
 * status = #active
 * title = "HEPATITIS QUESTIONNAIRE"
@@ -50,17 +50,17 @@ Usage: #example
 
 * item[0]
   * linkId = "grp-1"
-  * text = "ОСНОВНАЯ ИНФОРМАЦИЯ"
+  * text = "MAIN INFORMATION"
   * type = #group 
 
   * item[0]
     * linkId = "hx-tx-hcv-hbv"
-    * text = "Проводилось ли лечение от ВГС/ВГВ в прошлом (в анамнезе)?"
+    * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
     * type = #boolean
 
   * item[1]
     * linkId = "hx-tx-hcv-hbv-meds"
-    * text = "Какие лекарства принимались против ВГС/ВГВ?"
+    * text = "What medications were taken against HCV/HBV?"
     * type = #string
     * enableWhen[0]
       * question = "hx-tx-hcv-hbv"
@@ -69,11 +69,11 @@ Usage: #example
 
 * item[1]
   * linkId = "grp-pregnancy"
-  * text = "Гинекологическое лечение / Беременность"
+  * text = "Gynecological treatment / Pregnancy"
   * type = #group
 
   * item[0]
     * linkId = "pregnancy-trimester"
-    * text = "Срок беременности (Homiladorlik muddati)"
+    * text = "Pregnancy duration (Homiladorlik muddati)"
     * type = #coding
     * answerOption[0].valueCoding = http://terminology.dhp.uz/CodeSystem/trimester#707723000 "Twenty four hours after peritoneal dialysis"

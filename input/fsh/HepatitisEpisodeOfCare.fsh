@@ -30,8 +30,11 @@ Description: "Profile for representing episodes of care related to hepatitis pat
 * managingOrganization ^short = "Organization managing this episode of care"
 
 * period 0..1 MS
+  * ^short = "Duration of hepatitis patient observation/monitoring process"
   * start 0..1 MS
+    * ^short = "Date and time when hepatitis patient follow-up started"
   * end 0..1 MS
+    * ^short = "Date and time of removal of hepatitis (A, B, C, D) from the follow-up register"
 
 * careManager 0..1 MS
 * careManager only Reference(Practitioner)

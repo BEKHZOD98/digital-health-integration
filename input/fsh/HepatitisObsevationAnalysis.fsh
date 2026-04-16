@@ -27,7 +27,7 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * effective[x] only dateTime or Period
 * effective[x] 0..1 MS
 
-* value[x] 0..1 MS //hardoim ^short da excelda yozilgan definitionni ingliz tiliga tarjima qilib qo'shib qo'ying
+* value[x] 0..1 MS
 * value[x] only Attachment or string or CodeableConcept 
 * valueCodeableConcept MS
 * valueCodeableConcept from HepatitisLabResultTypeVS (required)
