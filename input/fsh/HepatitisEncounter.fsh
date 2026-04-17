@@ -9,7 +9,7 @@ Description: "Profile for representing encounters related to hepatitis patients 
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
-  * system = $hep-encounter-id-sys 
+  * system = $hep-id-sys
   * system ^short = "Hepatitis encounter identifier system"
   * value ^short = "Unique identifier for the encounter: UUID"
 * identifier.type 0..1 MS
@@ -68,8 +68,13 @@ InstanceOf: HepatitisEncounter
 Description: "Example of a consultation for Yusupova Khalida on January 26, 2026" //Please translate this description to English 
 Usage: #example
 * identifier 
-  * system = "https://dhp.uz/fhir/core/sid/reg/uz/hepatitis"
+  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
   * value = "ENC-2026-9901"
+  * type.coding
+    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+    * code = #PHC
+    * display = "Public Health Case Identifier"
+  * use = #official
 
 * status = #completed
 
