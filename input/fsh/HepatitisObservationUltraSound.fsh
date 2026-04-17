@@ -43,10 +43,14 @@ InstanceOf: HepatitisObservationUltraSound
 Description: "Instance of cirrhosis detected"
 Usage: #example
 * status = #final
-* identifier
-  * system = "https://gepatit.sanepid.uz/observation/ultrasound"
-  * value = "UZI-2023-777"
-
+* identifier 
+  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
+  * value = "OBS-2026-5541"
+  * type.coding
+    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+    * code = #PHC
+    * display = "Public Health Case Identifier"
+  * use = #official
 * code 
   * coding = $sct#19943007 "Cirrhosis of liver"
   * text = "Signs of cirrhosis"
@@ -65,11 +69,14 @@ InstanceOf: HepatitisObservationUltraSound
 Description: "Instance of liver lesion detected" 
 Usage: #example
 * status = #final
-
-* identifier[0]
-  * system = "https://gepatit.sanepid.uz/observation/ultrasound"
-  * value = "UZI-2024-888"
-  
+* identifier 
+  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
+  * value = "OBS-2026-5541"
+  * type.coding
+    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+    * code = #PHC
+    * display = "Public Health Case Identifier"
+  * use = #official
 * code 
   * coding = $sct#716203000 "Decompensated cirrhosis of liver (disorder)"
   * text = "Signs of masses in the liver"

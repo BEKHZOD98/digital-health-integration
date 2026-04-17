@@ -50,10 +50,14 @@ Instance: example-hepatitis-episode
 InstanceOf: HepatitisEpisodeOfCare
 Description: "Example of a patient's D-registration"
 Usage: #example
-
 * identifier 
-  * system = "https://gepatit.sanepid.uz/episodeofcare"
+  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
   * value = "EOC-2026-1122"
+  * type.coding
+    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+    * code = #PHC
+    * display = "Public Health Case Identifier"
+  * use = #official
 
 * status = #planned 
 * patient = Reference(example-hepatitis-patient)

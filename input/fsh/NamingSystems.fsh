@@ -152,4 +152,18 @@ Usage: #definition
 * usage = "Used in CarePlan.identifier[series] for the sick leave certificate number (e.g., 01ТШ 005591125)"
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/sickleave"
+Instance: hepatitis-identifier-system
+InstanceOf: NamingSystem
+Usage: #definition
+* url = "https://dhp.uz/fhir/integrations/NamingSystem/hepatitis-identifier-system"
+* name = "HepatitisPatientIdentifierSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-04-17"
+* publisher = "Uzinfocom"
+* responsible = "Uzinfocom"
+* description = "Identifier system used for hepatitis observation records in the Digital Health Platform."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
 * uniqueId[=].preferred = true
