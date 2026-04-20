@@ -18,9 +18,9 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 * clinicalStatus 1..1 MS
 * clinicalStatus from HepatitisClinicalStatusVS (required)
 
-* extension contains http://hl7.org/fhir/StructureDefinition/condition-outcome named diagnosisType 0..1 MS
-* extension[diagnosisType].valueCodeableConcept from HepatitisConditionDiagnosisTypeVS (required)
-* extension[diagnosisType].valueCodeableConcept ^short = "Type of diagnosis (e.g., primary, secondary, etc.)"
+* extension contains HepatitisDiagnosisType named diagnosisType 0..1 MS
+//* extension[diagnosisType].valueCodeableConcept from HepatitisConditionDiagnosisTypeVS (required)
+//* extension[diagnosisType].valueCodeableConcept ^short = "Type of diagnosis (e.g., primary, secondary, etc.)"
 
 * code 0..1 MS
 * code from HepatitisICDVS (required) //CodeSystem should be done
@@ -59,7 +59,7 @@ Usage: #example
   * use = #official
 
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active "Active"
-
+* extension[diagnosisType].valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs#gencl-0001-00003 "Main diagnosis"
 * code = http://hl7.org/fhir/sid/icd-10#B17.1 "Acute hepatitis C"
 
 * subject = Reference(example-hepatitis-patient)

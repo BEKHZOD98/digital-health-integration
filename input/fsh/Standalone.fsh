@@ -102,6 +102,7 @@ Instance: example-hepatitis-questionnaire
 InstanceOf: Questionnaire
 Description: "Hepatitis B and C treatment questionnaire"
 Usage: #example
+* url = "https://dhp.uz/fhir/Questionnaire/hepatitis-questionnaire"
 * status = #active
 * title = "HEPATITIS QUESTIONNAIRE"
 * identifier.value = "HCV-HBV-QS-2026"
@@ -134,7 +135,9 @@ Usage: #example
     * linkId = "pregnancy-trimester"
     * text = "Pregnancy duration (Homiladorlik muddati)"
     * type = #coding
-    * answerOption[0].valueCoding = $sct#707723000 "Twenty four hours after peritoneal dialysis"
+    * answerOption[0].valueCoding = $sct#255246003 "First trimester"
+    * answerOption[1].valueCoding = $sct#255247007 "Second trimester"
+    * answerOption[2].valueCoding = $sct#255248002 "Third trimester"
 
 // Instance Example 
 Instance: example-hcv-response
@@ -142,8 +145,9 @@ InstanceOf: QuestionnaireResponse
 Description: "Example of anamnesis responses completed by the patient for hepatitis B and C treatment questionnaire"
 Usage: #example
 
-* identifier 
+* identifier
   * system = "urn:ietf:rfc:3986"
+  * value = "urn:uuid:6f9b9d8e-3b7d-4d87-8f6e-123456789abc"
 
 * status = #completed
 * questionnaire = "https://dhp.uz/fhir/Questionnaire/hepatitis-questionnaire"
@@ -152,19 +156,25 @@ Usage: #example
 * author = Reference(muratova-gulshoda-role)
 
 * item[0]
-  * linkId = "hx-tx-hcv-hbv"
-  * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
-  * answer[0]
-    * valueBoolean = true
-    
-    * item[0]
-      * linkId = "hx-tx-hvc-hbv-meds"
-      * text = "What medications were taken against HCV/HBV?"
-      * answer[0]
-        * valueString = "Sofosbuvir + Declatasvir"
+  * linkId = "grp-1"
+  * text = "MAIN INFORMATION"
+
+  * item[0]
+    * linkId = "hx-tx-hcv-hbv"
+    * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
+    * answer[0].valueBoolean = true
+
+  * item[1]
+    * linkId = "hx-tx-hcv-hbv-meds"
+    * text = "What medications were taken against HCV/HBV?"
+    * answer[0].valueString = "Sofosbuvir + Declatasvir"
 
 * item[1]
-  * linkId = "pregnancy-trimester"
-  * text = "Pregnancy duration"
-  * answer[0]
-    * valueCoding = http://snomed.info/sct#255246003 "First trimester"
+  * linkId = "grp-pregnancy"
+  * text = "Gynecological treatment / Pregnancy"
+
+  * item[0]
+    * linkId = "pregnancy-trimester"
+    * text = "Pregnancy duration (Homiladorlik muddati)"
+    * answer[0]
+      * valueCoding = $sct#255246003 "First trimester"

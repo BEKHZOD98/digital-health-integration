@@ -120,10 +120,22 @@ Extension: ConditionOutcome
 Id: hepatitis-condition-outcome
 Title: "Hepatitis condition outcome extension"
 Description: "Represents the effectiveness of treatment at the time of removal from the A, B, C, D, E registry follow-up."
-
+Context: Condition
 * ^status = #active
 * ^experimental = true
 
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1 MS
 * valueCodeableConcept from HepatitisConditionOutcomeCodesVS (required)
+
+Extension: HepatitisDiagnosisType
+Id: hepatitis-diagnosis-type
+Title: "Hepatitis diagnosis type"
+Description: "Type of diagnosis (primary, secondary, etc.)"
+Context: Condition
+* ^status = #active
+* ^experimental = true
+
+* value[x] only CodeableConcept
+* valueCodeableConcept from HepatitisConditionDiagnosisTypeVS (required)
+* valueCodeableConcept ^short = "Type of diagnosis (e.g., primary, secondary)"
