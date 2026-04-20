@@ -83,4 +83,5 @@ Usage: #example
 
 * subject = Reference(example-hepatitis-patient)
 * effectiveDateTime = "2024-01-26"
+* performer = Reference(PractitionerRole/muratova-gulshoda-role)
 * valueBoolean = true

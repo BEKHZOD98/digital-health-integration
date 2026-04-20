@@ -42,13 +42,15 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * value[x] only Attachment or Quantity or CodeableConcept
 * value[x] ^short = "Actual code"
 
+* valueAttachment MS
 * valueAttachment ^short = "Attached file"
 * valueAttachment ^definition = "The actual analysis results can be found here."
 
+* valueQuantity MS
 * valueQuantity ^short = "Manually entered result"
 * valueQuantity ^definition = "The result value entered manually."
 
-//* valueCodeableConcept MS
+* valueCodeableConcept MS
 * valueCodeableConcept ^short = "Positive or negative laboratory test result"
 * valueCodeableConcept ^definition = "Indicates whether the laboratory test result is positive or negative."
 * valueCodeableConcept from HepatitisLabResultTypeVS (required)
