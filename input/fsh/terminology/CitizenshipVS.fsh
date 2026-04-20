@@ -7,4 +7,5 @@ Description: "Description of citizenship valueset"
 * ^status = #draft
 * ^experimental = true
 
-* include codes from system urn:iso:std:iso:3166
+//* include codes from system urn:iso:std:iso:3166
+* include codes from valueset  https://terminology.dhp.uz/fhir/core/ValueSet/iso-3166-2-vs

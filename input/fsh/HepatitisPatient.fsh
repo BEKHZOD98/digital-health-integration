@@ -115,9 +115,7 @@ InstanceOf: HepatitisPatientProfile
 Description: "Gepatit profili uchun Tolibjon To'lanboev misolida namuna"
 Usage: #example
 
-// * extension[nationality].extension[code].valueCodeableConcept = #UZ "Uzbekistan"
 * extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#UZ "Uzbekistan"
-
 * identifier[nationalId]
   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
   * value = "515050500505"
