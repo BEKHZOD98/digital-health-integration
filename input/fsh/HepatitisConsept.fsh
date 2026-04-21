@@ -1,5 +1,5 @@
 // Profile: HepatitisConsentProfile
-// Parent: Consent
+// Parent: UZCoreConsent
 // Id: hepatitis-consent-profile
 // Title: "Hepatitis Consent Profile"
 // Description: "Bemorning tibbiy xizmatlar va ma'lumotlarni qayta ishlashga roziligini qayd etish uchun profil"

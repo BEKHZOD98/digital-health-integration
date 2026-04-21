@@ -1,5 +1,5 @@
 Profile: HepatitisEncounter
-Parent: Encounter
+Parent: UZCoreEncounter
 Id: hepatitis-encounter
 Title: "Hepatitis patient encounter profile"
 Description: "Profile for representing encounters related to hepatitis patients in the context of a digital health integration project. This profile extends the base Encounter resource to include specific elements and extensions relevant to hepatitis patient encounters, such as clinical status, participant types, and encounter outcomes."
@@ -8,7 +8,7 @@ Description: "Profile for representing encounters related to hepatitis patients 
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
-* identifier 1..* MS
+* identifier 0..1 MS
   * system = $hep-id-sys
   * system ^short = "Hepatitis encounter identifier system"
   * value ^short = "Unique identifier for the encounter: UUID"
@@ -37,7 +37,7 @@ Description: "Profile for representing encounters related to hepatitis patients 
 * status = #completed 
 
 * subject 1..1 MS
-* subject only Reference(Patient)
+* subject only Reference(UZCorePatient)
 * subject ^short = "Patient being admitted" 
 
 * serviceProvider 0..1 MS
@@ -65,7 +65,7 @@ Description: "Profile for representing encounters related to hepatitis patients 
 // Instance Example
 Instance: example-hepatitis-encounter
 InstanceOf: HepatitisEncounter
-Description: "Example of a consultation for Yusupova Khalida on January 26, 2026" //Please translate this description to English 
+Description: "Example of a consultation for Yusupova Khalida on January 26, 2026"
 Usage: #example
 * identifier 
   * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
@@ -81,7 +81,7 @@ Usage: #example
 * subject = Reference(example-hepatitis-patient)
 * serviceProvider = Reference(Organization/samarkand-regional-hospital)
 
-* participant[0].actor = Reference(Practitioner/muratova-goolshod)
+* participant[0].actor = Reference(Practitioner/muratova-gulshoda)
 * actualPeriod 
   * start = "2026-01-26T09:41:00Z"
 * plannedStartDate = "2026-01-26T09:41:00Z"

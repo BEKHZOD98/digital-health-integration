@@ -1,5 +1,5 @@
 Profile: HepatitisObservationAnalysis
-Parent: Observation
+Parent: UZCoreObservation
 Id: hepatitis-observation-analysis
 Title: "Hepatitis observation analysis profile"
 Description: "Profile for representing hepatitis observation analysis in the context of a digital health integration project. This profile extends the base Observation resource to include specific elements and extensions relevant to hepatitis observation analysis, such as laboratory result types, clinical significance, and associated notes."
@@ -18,8 +18,8 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * identifier.type 0..1 MS
 * identifier.type from IdentifierTypeVS (required)
 
-* method 0..1 MS
-* method from $observation-methods (extensible)  //LabObservationMethodsVS add this value set after LabObsForIntegrationSys branch merged to main branch
+//* method 0..1 MS
+//* method from $observation-methods (extensible)  //LabObservationMethodsVS add this value set after LabObsForIntegrationSys branch merged to main branch
 * category 0..* MS
 * category from HepatObsCategoryVS (required)
 * status from ObservationStatusVS (required)
@@ -30,9 +30,9 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * code from HepatitisObservationAnalysisVS (required) //change the URL after LabObsForIntegrationSys branch merged to main branch 
 
 * subject 0..1 MS
-* subject only Reference(Patient)
+* subject only Reference(UZCorePatient)
 * encounter 0..1 MS
-* encounter only Reference(Encounter)
+* encounter only Reference(UZCoreEncounter)
 * encounter ^short = "When a healthcare professional enters patient information into the system, it is used to associate this information with the patient's active encounter record."
 * effective[x] only dateTime or Period
 * effective[x] 0..1 MS
@@ -56,7 +56,7 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * valueCodeableConcept from HepatitisLabResultTypeVS (required)
 
 * performer 0..* MS
-* performer only Reference(Organization or PractitionerRole)
+* performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
 * performer ^short = "Organization responsible for performing this observation"
 
 //* component.value[x] only Quantity or string or CodeableConcept 
@@ -78,9 +78,8 @@ Description: "Profile for representing hepatitis observation analysis in the con
   * valueCodeableConcept
     * valueCodeableConcept from HepatitisLabResultTypeVS (required) //after LabObsForIntegrationSys branch merged to main branch change this value set with LaboratoryObservationPanelCS
 */
-* dataAbsentReason from DataAbsentReasonVS (extensible)
-* interpretation from ObservationInterpretationVS (extensible)
-* note 0..* MS
+//* dataAbsentReason from DataAbsentReasonVS (extensible)
+//* interpretation from ObservationInterpretationVS (extensible)
 
 
 // Instance Example

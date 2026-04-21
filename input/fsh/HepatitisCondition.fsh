@@ -1,5 +1,5 @@
 Profile: HepatitisCondition
-Parent: Condition
+Parent: UZCoreCondition
 Id: hepatitis-condition
 Title: "Hepatitis condition profile"
 Description: "Profile for representing hepatitis conditions in the context of a digital health integration project. This profile extends the base Condition resource to include specific elements and extensions relevant to hepatitis diagnosis, clinical status, and treatment outcomes."
@@ -18,17 +18,15 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 * clinicalStatus 1..1 MS
 * clinicalStatus from HepatitisClinicalStatusVS (required)
 
-* extension contains HepatitisDiagnosisType named diagnosisType 0..1 MS
-//* extension[diagnosisType].valueCodeableConcept from HepatitisConditionDiagnosisTypeVS (required)
-//* extension[diagnosisType].valueCodeableConcept ^short = "Type of diagnosis (e.g., primary, secondary, etc.)"
+//* extension contains HepatitisDiagnosisType named diagnosisType 0..1 MS
 
 * code 0..1 MS
-* code from HepatitisICDVS (required) //CodeSystem should be done
+* code from HepatitisICDVS (required)
 
 * subject 1..1 MS
-* subject only Reference(Patient)
+* subject only Reference(UZCorePatient)
 * encounter 0..1 MS
-* encounter only Reference(Encounter)
+* encounter only Reference(UZCoreEncounter)
 * encounter ^short = "When a healthcare professional enters patient information into the system, it is used to associate this information with the patient's active encounter record."
 //condition outcomes 
 * extension contains ConditionOutcome named outcome 0..1 MS
@@ -37,10 +35,9 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 * recordedDate 0..1 MS
 * recordedDate ^short = "Date when the condition was recorded"
 * participant 0..1 MS
-  * actor only Reference(Practitioner)
+  * actor only Reference(UZCorePractitioner)
   * actor ^short = "Physician who made the diagnosis"
-
-* note 0..* MS
+* note 
 * note.text ^short = "Additional information about the condition, such as symptoms, duration, or relevant medical history."
 
 
@@ -66,7 +63,7 @@ Usage: #example
 * encounter = Reference(example-hepatitis-encounter)
 
 * recordedDate = "2026-11-09T13:31:00Z"
-* participant.actor = Reference(Practitioner/simonov-farkhod)
+* participant.actor = Reference(Practitioner/example-practitioner)
 
 * extension[outcome].valueCodeableConcept = $sct#1137679005 "Good response to medication"
 * note.text = "Symptoms started 2 weeks ago in the patient"

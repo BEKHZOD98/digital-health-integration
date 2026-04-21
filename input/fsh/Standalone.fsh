@@ -1,11 +1,3 @@
-Instance: muratova-goolshod
-InstanceOf: Practitioner
-Usage: #example
-
-* id = "muratova-goolshod"
-* name.family = "Muratova"
-* name.given[0] = "Gulshod"
-
 Instance: samarkand-regional-hospital
 InstanceOf: Organization
 Usage: #example
@@ -19,14 +11,6 @@ Usage: #example
 
 * id = "samarkand-infectious-hospital"
 * name = "Samarkand Infectious Hospital"
-
-Instance: simonov-farkhod
-InstanceOf: Practitioner
-Usage: #example
-
-* id = "simonov-farkhod"
-* name.family = "Simonov"
-* name.given[0] = "Farkhod"
 
 Instance: example-practitioner
 InstanceOf: Practitioner
