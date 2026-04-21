@@ -1,5 +1,5 @@
 Profile: HepatitisObservationUltraSound
-Parent: Observation
+Parent: UZCoreObservation
 Id: hepatitis-observation-ultra-sound
 Title: "Hepatitis UltraSound Observation"
 Description: "Profile for representing ultrasound observations related to hepatitis patients in the context of a digital health integration project. This profile extends the base Observation resource to include specific elements and extensions relevant to ultrasound findings, such as the type of ultrasound, clinical significance, and associated notes."
@@ -21,20 +21,18 @@ Description: "Profile for representing ultrasound observations related to hepati
 * code.text 0..1 MS
 
 * subject 0..1 MS
-* subject only Reference(Patient)
+* subject only Reference(UZCorePatient)
 * encounter 0..1 MS
-* encounter only Reference(Encounter)
+* encounter only Reference(UZCoreEncounter)
 
 * effective[x] only dateTime or Period
 * effective[x] MS
 * performer 0..* MS
-* performer only Reference(Organization or PractitionerRole)
+* performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
 
 * value[x] only boolean
 * value[x] MS
 * valueBoolean ^short = "Availability of the result (yes/no)"
-
-* note 0..* MS
 
 
 // Instance Example
