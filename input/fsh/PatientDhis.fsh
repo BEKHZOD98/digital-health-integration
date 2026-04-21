@@ -1,7 +1,7 @@
-Profile: PatientProfile
+Profile: DhisPatient
 Parent: Patient
-Id: patient-profile
-Title: "Patient Profile"
+Id: dhis-patient
+Title: "Dhis Patient Profile"
 Description: "Profile for patient resource"
 * ^experimental = true
 * ^status = #active
@@ -78,7 +78,7 @@ Description: "Profile for patient resource"
 
 // Instance example
 Instance: example-patient-john
-InstanceOf: PatientProfile
+InstanceOf: DhisPatient
 Description: "John Deera uchun namuna"
 Usage: #example
 

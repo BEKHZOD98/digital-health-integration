@@ -130,3 +130,45 @@ Description: "Condition code codeSystem description"
   * ^designation[=].value = "ТБ прочих органов"
   * ^designation[+].language = #en
   * ^designation[=].value = "Tuberculosis of other specified organs"
+
+* #tub001-0022 "Qandli diabet"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Сахарный диабет"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Diabetes"
+
+* #tub001-0023 "Yurak ishemik kasalligi"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "ИБС"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Coronary heart disease"
+
+* #tub001-0024 "Gipertenziya"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "ГБ"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "hypertension"
+
+* #tub001-0025 "Surunkali nonspesifik o'pka kasalliklari"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Хронические неспецифические заболевания легких"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Chronic obstructive lung disease"
+
+* #tub001-0026 "Yara"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Язва"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Ulcer"
+
+* #tub001-0027 "Ruhiy kasallik"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Психическое заболевание"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Mental illness"
+
+* #tub001-0028 "Onkologiya"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Онкология"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Oncology"

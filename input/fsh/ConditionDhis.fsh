@@ -1,7 +1,7 @@
-Profile: ConditionProfile
+Profile: DhisCondition
 Parent: Condition
-Id: condition-profile   
-Title: "Condition Profile"
+Id: dhis-condition  
+Title: "Dhis Condition Profile"
 Description: "Подробная информация о состояниях, проблемах или диагнозах"
 * ^experimental = true
 * ^status = #active
@@ -15,7 +15,7 @@ Description: "Подробная информация о состояниях, �
 * code from ConditionCodeVS
 * code ^short = "Идентификация состояния, проблемы или диагноза."
 * subject 1..1 MS
-* subject only Reference(PatientProfile)
+* subject only Reference(DhisPatient)
 * encounter 0..1 MS 
 * encounter only Reference(Encounter)
 * onset[x] MS
@@ -32,7 +32,7 @@ Description: "Подробная информация о состояниях, �
 
 // Instance Example
 Instance: example-tbc-diagnosis
-InstanceOf: ConditionProfile
+InstanceOf: DhisCondition
 Description: "Bakteriologik tasdiqlangan o'pka sili namunasi"
 Usage: #example
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active "Active"

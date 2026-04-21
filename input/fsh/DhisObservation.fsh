@@ -1,7 +1,7 @@
-Profile: ObservationProfile
+Profile: DhisObservation
 Parent: Observation
-Id: observation-profile
-Title: "Observation Profile"
+Id: dhis-observation
+Title: "Dhis Observation Profile"
 Description: "Measurement and simple assertions"
 * ^experimental = true
 * ^status = #active
@@ -11,10 +11,10 @@ Description: "Measurement and simple assertions"
 * identifier ^short = "Идентификатор для наблюдения"
 
 * status 1..1 MS
-* status from http://hl7.org/fhir/ValueSet/observation-status
+* status from ObservationStatusVS
 
 * category 0..* MS
-* category from http://hl7.org/fhir/ValueSet/observation-category (required)
+* category from ObservationCategoryVS (required)
 * category = $observation-category#laboratory
 
 * code 1..1 MS
@@ -22,7 +22,7 @@ Description: "Measurement and simple assertions"
 * code ^short = "Classification of type of observation"
 
 * subject 1..1 MS
-* subject only Reference(PatientProfile)
+* subject only Reference(DhisPatient)
 
 * effective[x] only dateTime
 * effectiveDateTime 1..1 MS SU
@@ -55,7 +55,7 @@ Description: "Measurement and simple assertions"
 
 // Instance Example
 Instance: example-tb-microscopy
-InstanceOf: ObservationProfile
+InstanceOf: DhisObservation
 Description: "Mikroskopiya tahlili va uning gradatsiyasi namunasi"
 Usage: #example
 * status = #final
@@ -69,11 +69,11 @@ Usage: #example
 
 * component[0] 
   * code = https://terminology.dhp.uz/CodeSystem/observation-component-code-cs#Tub004-0009 "Ethambutol (5.0 mg/mL)"
-  * valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/observation-codeable-concept-cs#Tub003-0011 "1–9 AFB / 40 fields"
+  * valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/observation-codeable-concept-cs#Tub003-0011 "1+ / 100 fields"
 
 // Instance: Example
 Instance: example-tb-xpert
-InstanceOf: ObservationProfile
+InstanceOf: DhisObservation
 Description: "Xpert MTB/RIF tahlili (Rifampitsinga chidamlilik bilan)"
 Usage: #example
 * status = #final

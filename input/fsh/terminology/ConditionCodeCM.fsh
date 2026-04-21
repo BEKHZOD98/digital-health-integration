@@ -127,3 +127,51 @@ Description: "Maps local tuberculosis codes to SNOMED CT based on the provided E
 * group.element[=].target[+].code = #49107007
 * group.element[=].target[=].display = "Tuberculosis of eye"
 * group.element[=].target[=].relationship = #equivalent
+
+* group.element[+].code = #tub001-0021
+* group.element[=].display = "Boshqa a’zolar sili"
+* group.element[=].target[+].code = #56717001
+* group.element[=].target[=].display = "Tuberculosis of other specified organs"
+* group.element[=].target[=].relationship = #equivalent
+
+* group.element[+].code = #tub001-0022
+* group.element[=].display = "Qandli diabet"
+* group.element[=].target[+].code = #73211009
+* group.element[=].target[=].display = "Diabetes"
+* group.element[=].target[=].relationship = #equivalent
+
+* group.element[+].code = #tub001-0023
+* group.element[=].display = "Yurak ishemik kasalligi"
+* group.element[=].target[+].code = #414545008
+* group.element[=].target[=].display = "Coronary heart disease"
+* group.element[=].target[=].relationship = #equivalent
+
+* group.element[+].code = #tub001-0024
+* group.element[=].display = "Gipertenziya"
+* group.element[=].target[+].code = #38341003
+* group.element[=].target[=].display = "Hypertension"
+* group.element[=].target[=].relationship = #equivalent
+
+* group.element[+].code = #tub001-0025
+* group.element[=].display = "Surunkali nonspesifik o'pka kasalliklari"
+* group.element[=].target[+].code = #13645005
+* group.element[=].target[=].display = "Chronic obstructive lung disease"
+* group.element[=].target[=].relationship = #related-to
+
+* group.element[+].code = #tub001-0026
+* group.element[=].display = "Yara"
+* group.element[=].target[+].code = #13200003
+* group.element[=].target[=].display = "Ulcer"
+* group.element[=].target[=].relationship = #equivalent
+
+* group.element[+].code = #tub001-0027
+* group.element[=].display = "Ruhiy kasallik"
+* group.element[=].target[+].code = #74732009
+* group.element[=].target[=].display = "Mental illness"
+* group.element[=].target[=].relationship = #source-is-broader-than-target
+
+* group.element[+].code = #tub001-0028
+* group.element[=].display = "Onkologiya"
+* group.element[=].target[+].code = #363346000
+* group.element[=].target[=].display = "Oncology"
+* group.element[=].target[=].relationship = #source-is-broader-than-target

@@ -131,32 +131,98 @@ Description: "Component Codes"
   * ^designation[+].language = #en
   * ^designation[=].value = "Pretomanid (1.0 mg/mL)"
 
-* #Tub004-0022 "Dekontaminatsiya turi"
+* #Tub004-0022 "Rifampcin"
   * ^designation[+].language = #ru
-  * ^designation[=].value = "Вид деконтаминации"
+  * ^designation[=].value = "Рифампциин"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Type of decontamination"
+  * ^designation[=].value = "Rifampcin"
 
-* #Tub004-0023 "Gradatsiya"
+* #Tub004-0023 "Isoniazid ↑MIC"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Изониазид ↑МИК"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Isoniazid ↑MIC"
+
+* #Tub004-0024 "Isoniazid ↓MIC"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Изониазид ↓МИК"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Isoniazid ↓MIC"
+
+* #Tub004-0025 "Ethionamide-Prothionamide"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Этионамид-Протионамид"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Ethionamide-Prothionamide"
+
+* #Tub004-0026 "Moxifloxacin ↑MIC"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Моксифлоксацин ↑МИК"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Moxifloxacin ↑MIC"
+
+* #Tub004-0027 "Moxifloxacin ↓MIC"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Моксифлоксацин ↓МИК"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Moxifloxacin ↓MIC"
+
+* #Tub004-0028 "Levofloxacin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Левофлоксацин"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Levofloxacin"
+
+* #Tub004-0029 "Amikacin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Амикацин"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Amikacin"
+
+* #Tub004-0030 "Kanamycin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Канамицин"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Kanamycin"
+
+* #Tub004-0031 "CM/AS izolyatini identifikatsiya qilish"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Идентификация изолята CM/AS"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "CM/AS isolate identification"
+
+* #Tub004-0032 "Gradatsiya"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Градация"
   * ^designation[+].language = #en
   * ^designation[=].value = "Grading"
 
-* #Tub004-0024 "Madaniyat identifikatsiyasi"
+* #Tub004-0033 "Kultura identifikatsiyasi"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Идентификация культуры"
   * ^designation[+].language = #en
   * ^designation[=].value = "Culture identification"
 
-* #Tub004-0025 "M. tuberculosis complex aniqlash natijasi"
+* #Tub004-0034 "M. tuberculosis complex aniqlash natijasi"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Результат определения M. tuberculosis complex"
   * ^designation[+].language = #en
   * ^designation[=].value = "Result of M. tuberculosis complex detection"
 
-* #Tub004-0026 "CM/AS izolyatini identifikatsiya qilish"
+* #Tub004-0035 "CM/AS izolyatini identifikatsiya qilish"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Идентификация изолята CM/AS"
   * ^designation[+].language = #en
-  * ^designation[=].value = "CM/AS isolate identification"
+  * ^designation[=].value = "CM/AS isolate identification "
+
+* #Tub004-0036 "ARVT (Antiretrovirusli terapiya)"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "АРВТ (антиретровирусная терапия)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "ART (Antiretroviral Therapy)"
+
+* #Tub004-0037 "KTR boshlandi"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "КТР начато"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "KTR begin"

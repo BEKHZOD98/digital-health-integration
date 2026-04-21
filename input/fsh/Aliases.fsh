@@ -112,4 +112,4 @@ Alias: $loinc_code = http://loinc.org
 Alias: $mahalla-vs = https://terminology.dhp.uz/fhir/core/ValueSet/mahalla-vs
 Alias: $regions-vs = https://terminology.dhp.uz/fhir/core/ValueSet/regions-vs
 Alias: $state-vs = https://terminology.dhp.uz/fhir/core/ValueSet/state-vs
-Alias: $observation-interpretation-vs = https://terminology.dhp.uz/fhir/core/ValueSet/observation-interpretation-vs
+Alias: $observation-interpretation-vs = https://terminology.dhp.uz/fhir/core/CodeSystem/observation-interpretation-cs
