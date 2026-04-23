@@ -87,7 +87,7 @@ Description: "Profile for representing hepatitis observation analysis in the con
 */
 //* dataAbsentReason from DataAbsentReasonVS (extensible)
 //* interpretation from ObservationInterpretationVS (extensible)
-
+*/
 
 // Instance Example
 Instance: example-hepatitis-observation-analysis
@@ -118,9 +118,8 @@ Usage: #example
 =======
 =======
 * valueCodeableConcept.coding
-  * code = hep-lab-res-type-cs#lab_0001_00001 "Negative"
+  * code = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#NEG
   * display = "Negative"
-  * system = "https://terminology.dhp.uz/CodeSystem/hep-lab-res-type-cs"
 
 * performer[0] = Reference(PractitionerRole/muratova-gulshoda-role)
 * performer[1] = Reference(Organization/samarkand-regional-hospital)

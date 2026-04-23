@@ -20,7 +20,7 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 
 //* extension contains HepatitisDiagnosisType named diagnosisType 0..1 MS
 
-* code 1..* MS
+* code 0..1 MS
 * code from HepatitisICDVS (required)
 
 * subject 1..1 MS
