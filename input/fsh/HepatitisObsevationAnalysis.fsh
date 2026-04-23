@@ -53,7 +53,7 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * valueCodeableConcept MS
 * valueCodeableConcept ^short = "Positive or negative laboratory test result"
 * valueCodeableConcept ^definition = "Indicates whether the laboratory test result is positive or negative."
-* valueCodeableConcept from HepatitisLabResultTypeVS (required)
+* valueCodeableConcept from ObservationInterpretationVS (required)
 
 * performer 0..* MS
 * performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
@@ -69,7 +69,7 @@ Description: "Profile for representing hepatitis observation analysis in the con
 
 * component.valueString ^short = "The result value entered manually by a healthcare professional."
 * component.valueCodeableConcept ^short = "Positive or negative laboratory test result"
-* component.valueCodeableConcept from HepatitisLabResultTypeVS (required) 
+* component.valueCodeableConcept from ObservationInterpretationVS (required) 
 /*
 * component 0..* MS 
   * code 1..1 MS
