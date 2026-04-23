@@ -27,7 +27,7 @@ Description: "Maps local tuberculosis codes to SNOMED CT based on the provided E
 * group.element[=].target[=].relationship = #equivalent
 
 * group.element[+].code = #tub001-0003
-* group.element[=].display = "Miliar sil"
+* group.element[=].display = "Miliyar sil"
 * group.element[=].target[+].code = #724541008
 * group.element[=].target[=].display = "Acute miliary tuberculosis of a single specified site"
 * group.element[=].target[=].relationship = #equivalent

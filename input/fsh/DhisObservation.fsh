@@ -56,7 +56,7 @@ Description: "Measurement and simple assertions"
 // Instance Example
 Instance: example-tb-microscopy
 InstanceOf: DhisObservation
-Description: "Mikroskopiya tahlili va uning gradatsiyasi namunasi"
+Description: "Mikroskopiya tahlili namunasi"
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory

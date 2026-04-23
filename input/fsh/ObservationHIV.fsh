@@ -43,3 +43,17 @@ Description: "Measurement and simple assertions"
   * valueCodeableConcept from ObservationCodeableConceptVS
 
 * note 0..* MS      
+
+//Instance Example
+Instance: example-obs-hiv
+InstanceOf: DhisObservationHIV
+Description: "Observation HIV tahlili"
+Usage: #example
+* status = #final
+* category = $observation-category#laboratory "Laboratory"
+* code = https://terminology.dhp.uz/CodeSystem/observation-code-cs#Tub002-0011 "HIV testing"
+* subject = Reference(example-patient-john)
+* effectiveDateTime = "2026-03-10T10:00:00Z"
+* issued = "2026-03-15T11:00:00Z"
+* valueCodeableConcept =  $observation-interpretation#POS "Positive"
+* performer.reference = "Organization/example-organization"

@@ -34,7 +34,7 @@ Description: "Measurement and simple assertions"
 * performer only Reference(Organization)
 
 * method 0..1 MS
-* code from $observation-methods
+* method from $observation-methods
 
 * specimen 0..1 MS
 * specimen only Reference(Specimen)
@@ -46,7 +46,25 @@ Description: "Measurement and simple assertions"
   * value[x] only CodeableConcept
   * valueCodeableConcept 1..1 MS
   * valueCodeableConcept from ObservationCodeableConceptVS
+  * interpretation from ObservationInterprationVS
 
 * hasMember 0..* MS
 
 * note 0..* MS
+
+//Instance Example
+Instance: example-microscopy
+InstanceOf: DhisObservationMicroscopy
+Description: "Mikroskopiya tahlili va uning gradatsiyasi namunasi"
+Usage: #example
+* status = #final
+* category = $observation-category#laboratory
+* code = https://terminology.dhp.uz/CodeSystem/observation-code-cs#Tub002-0001 "Sputum smear microscopy (fluorescent)"
+* subject = Reference(example-patient-john)
+* effectiveDateTime = "2026-03-12T12:00:00Z"
+* issued = "2026-03-12T11:00:00Z"
+* performer.reference = "Organization/example-organization"
+* component[0]
+  * code = https://terminology.dhp.uz/CodeSystem/observation-component-code-cs#Tub004-0005 "AMK/KAN/CAP result"
+  * valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/observation-codeable-concept-cs#Tub003-0040 "Macrota sample sediment"
+  * interpretation = $observation-interpretation#POS "Positive"

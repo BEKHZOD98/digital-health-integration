@@ -32,8 +32,22 @@ Description: "Measurement and simple assertions"
 * performer 0..* MS
 * performer only Reference(Organization)
 
-* value[x] only boolean
-* valueBoolean 0..1 MS
-* valueBoolean ^short = "Actual result"
+* value[x] only CodeableConcept
+* valueCodeableConcept 0..1 MS
+* valueCodeableConcept ^short = "Actual result"
 
 * note 0..* MS
+
+// Instance Example
+Instance: example-observation-xray
+InstanceOf: DhisObservationXray
+Description: "Xray Observation tahlili namunasi"
+Usage: #example
+* status = #final
+* category =  $observation-category#imaging
+* code = https://terminology.dhp.uz/CodeSystem/observation-code-cs#Tub002-0010 "Chest X-ray"
+* subject = Reference(example-patient-john)
+* effectiveDateTime = "2026-03-10T10:00:00Z"
+* issued = "2026-03-12T11:00:00Z"
+* performer.reference = "Organization/example-organization"
+* valueCodeableConcept = $observation-interpretation#POS "Positive"
