@@ -46,8 +46,8 @@ Description: "Measurement and simple assertions"
 * component 0..* MS
   * code 1..1 MS
   * code from ObservationComponentCodeVS (required)
-  * value[x] only CodeableConcept
-  * valueCodeableConcept 1..1 MS
+  * value[x] 1..1 MS
+  * value[x] only CodeableConcept or dateTime or string
   * valueCodeableConcept from ObservationCodeableConceptVS
 
 * hasMember 0..* MS
@@ -60,28 +60,14 @@ Description: "Mikroskopiya tahlili namunasi"
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory
-* code = https://terminology.dhp.uz/CodeSystem/observation-code-cs#Tub002-0001 "Sputum smear microscopy (fluorescent)"
+* code = https://terminology.dhp.uz/CodeSystem/observation-code-cs#Tub002-0008 "LPA MTBDR plus (Rif/Inh/Eto-Pto)"
 * subject = Reference(example-patient-john)
-* effectiveDateTime = "2026-03-12T10:00:00Z"
-* issued = "2026-03-12T11:00:00Z"
+* effectiveDateTime = "2025-09-12T10:00:00Z"
+* issued = "2025-09-12T11:00:00Z"
 * performer.reference = "Organization/example-organization"
-* valueCodeableConcept =  $observation-interpretation#POS "Positive"
+* valueCodeableConcept =  http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#POS "Positive"
+* specimen = Reference(example-dhis-specimen)
 
-* component[0] 
-  * code = https://terminology.dhp.uz/CodeSystem/observation-component-code-cs#Tub004-0009 "Ethambutol (5.0 mg/mL)"
-  * valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/observation-codeable-concept-cs#Tub003-0011 "1+ / 100 fields"
+* component[0].code = https://terminology.dhp.uz/CodeSystem/observation-component-code-cs#Tub004-0008 "Isoniazid (0.1 mg/mL)"
+* component[0].valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/observation-codeable-concept-cs#Tub003-0040 "Macrota sample sediment"
 
-// Instance: Example
-Instance: example-tb-xpert
-InstanceOf: DhisObservation
-Description: "Xpert MTB/RIF tahlili (Rifampitsinga chidamlilik bilan)"
-Usage: #example
-* status = #final
-* category = $observation-category#laboratory "Laboratory"
-* code = https://terminology.dhp.uz/CodeSystem/observation-code-cs#Tub002-0002 "Sputum smear microscopy (Ziehl–Neelsen)"
-* subject = Reference(example-patient-john)
-* effectiveDateTime = "2026-03-12T12:00:00Z"
-
-* component[0]
-  * code = https://terminology.dhp.uz/CodeSystem/observation-component-code-cs#Tub004-0017 "Linezolid (1.0 mg/mL)"
-  * valueCodeableConcept =  $observation-interpretation#R "Resistant"

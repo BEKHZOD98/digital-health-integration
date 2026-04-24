@@ -51,7 +51,7 @@ Description: "Observation code codesystem description"
   * ^designation[0].language = #ru
   * ^designation[=].value = "LPA MTBDR plus (Rif/Inh/Eto-Pto)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "LPA MTBDRplus"
+  * ^designation[=].value = "LPA MTBDR plus (Rif/Inh/Eto-Pto)"
 
 * #Tub002-0009 "LPA MTBDR SL"
   * ^designation[0].language = #ru

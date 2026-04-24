@@ -50,4 +50,3 @@ Usage: #example
 * effectiveDateTime = "2026-03-10T10:00:00Z"
 * issued = "2026-03-12T11:00:00Z"
 * performer.reference = "Organization/example-organization"
-* valueCodeableConcept = $observation-interpretation#POS "Positive"

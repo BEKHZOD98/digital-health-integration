@@ -6,4 +6,3 @@ Description: "Collection of information on the place of birth of citizens born i
 * ^url = "https://terminology.dhp.uz/ValueSet/observation-codeable-concept-vs"
 
 * include codes from system observation-codeable-concept-cs
-* include codes from valueset $observation-interpretation-vs

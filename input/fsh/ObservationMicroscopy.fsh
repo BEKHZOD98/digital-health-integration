@@ -1,5 +1,5 @@
 Profile: DhisObservationMicroscopy
-Parent: Observation
+Parent: UZCoreObservation
 Id: dhis-observation-microscopy
 Title: "DHis Observation Microscopy Profile"
 Description: "Measurement and simple assertions"
@@ -22,7 +22,7 @@ Description: "Measurement and simple assertions"
 * code ^short = "Classification of type of observation"
 
 * subject 0..1 MS
-* subject only Reference(DhisPatient)
+* subject only Reference(UZCorePatient)
 * subject ^short = "Who and/or what the observation is about"
 
 * effective[x] only dateTime
@@ -31,7 +31,7 @@ Description: "Measurement and simple assertions"
 * issued 0..1 MS
 
 * performer 0..1 MS
-* performer only Reference(Organization)
+* performer only Reference(UZCoreOrganization)
 
 * method 0..1 MS
 * method from $observation-methods
@@ -46,7 +46,6 @@ Description: "Measurement and simple assertions"
   * value[x] only CodeableConcept
   * valueCodeableConcept 1..1 MS
   * valueCodeableConcept from ObservationCodeableConceptVS
-  * interpretation from ObservationInterprationVS
 
 * hasMember 0..* MS
 
@@ -67,4 +66,4 @@ Usage: #example
 * component[0]
   * code = https://terminology.dhp.uz/CodeSystem/observation-component-code-cs#Tub004-0005 "AMK/KAN/CAP result"
   * valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/observation-codeable-concept-cs#Tub003-0040 "Macrota sample sediment"
-  * interpretation = $observation-interpretation#POS "Positive"
+  * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#POS "Positive"
