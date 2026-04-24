@@ -1,5 +1,5 @@
 Profile: LaboratoryObservation
-Parent: Observation
+Parent: UZCoreObservation
 Id: lab-observation
 Title: "Laboratory Observation profile for Integration systems"
 Description: "Uzbekistan Laboratory Observation profile, for integration medical information systems"
@@ -15,8 +15,8 @@ Description: "Uzbekistan Laboratory Observation profile, for integration medical
 * component.code MS
 * component.code from ObservationLabCodesVS
 * component.value[x] MS
-* component.dataAbsentReason from DataAbsentReasonVS (extensible)
-* component.interpretation from ObservationInterpretationVS (extensible)
+//* component.dataAbsentReason from DataAbsentReasonVS (extensible)
+//* component.interpretation from ObservationInterpretationVS (extensible)
 
 Instance: cbc-panel-example
 InstanceOf: LaboratoryObservation
@@ -26,6 +26,7 @@ Description: "Example of CBC (Umumiy qon tahlili) as a laboratory panel with ana
 * status = #final
 * category = $observation-category#laboratory "Laboratory"
 * code = lab-observation-pan-cs#lab-pan-E "CBC panel"
+* method = observation-lab-methods-cs#lab-method-3 "ELISA (Enzyme-Linked Immunosorbent Assay)"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-encounter)
 * effectiveDateTime = "2025-11-04T08:10:00Z"
