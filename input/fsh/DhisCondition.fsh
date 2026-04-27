@@ -1,5 +1,5 @@
 Profile: DhisCondition
-Parent: Condition
+Parent: UZCoreCondition
 Id: dhis-condition  
 Title: "Dhis Condition Profile"
 Description: "Подробная информация о состояниях, проблемах или диагнозах"
@@ -15,7 +15,7 @@ Description: "Подробная информация о состояниях, �
 * code from ConditionCodeVS
 * code ^short = "Идентификация состояния, проблемы или диагноза."
 * subject 1..1 MS
-* subject only Reference(DhisPatient)
+* subject only Reference(UZCorePatient)
 * bodySite 0..1 MS
 * onset[x] MS
 * onset[x] ^short = "Предполагаемая или фактическая дата, дата-время или возраст"
@@ -24,8 +24,6 @@ Description: "Подробная информация о состояниях, �
 * participant MS 
   * function 0..1 MS
   * function from http://terminology.hl7.org/ValueSet/provenance-agent-type 
-  * actor 1..1 MS 
-  * actor only Reference(Practitioner)
 
 // Instance Example
 Instance: example-tbc-diagnosis

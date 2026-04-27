@@ -1,17 +1,17 @@
 CodeSystem: ObservationCodeCS
-Id: observation-code-cs
+Id: observation-dhis-code-cs
 Title: "Observation Code CodeSystem"
 Description: "Observation code codesystem description"
 
-* insert OriginalCodeSystemDraft(observation-code-cs)
+* insert OriginalCodeSystemDraft(observation-dhis-code-cs)
 
-* #Tub002-0001 "Balg‘am surtmasi, FL"
+* #Tub002-0001 "Balg'am surtmasi, FL"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Микроскопия мазка мокроты (флуоресцентная)"
   * ^designation[+].language = #en
   * ^designation[=].value = "Sputum smear microscopy (fluorescent)"
 
-* #Tub002-0002 "Balg‘am surtmasi, ZN"
+* #Tub002-0002 "Balg'am surtmasi, ZN"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Микроскопия мазка мокроты (Циль–Нильсен)"
   * ^designation[+].language = #en
@@ -59,7 +59,7 @@ Description: "Observation code codesystem description"
   * ^designation[+].language = #en
   * ^designation[=].value = "LPA MTBDRsl"
 
-* #Tub002-0010 "Ko‘krak qafasi rentgenografiyasi"
+* #Tub002-0010 "Ko'krak qafasi rentgenografiyasi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Рентгенография органов грудной клетки"
   * ^designation[+].language = #en

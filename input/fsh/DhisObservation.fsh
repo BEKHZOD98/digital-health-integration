@@ -1,5 +1,5 @@
 Profile: DhisObservation
-Parent: Observation
+Parent: UZCoreObservation
 Id: dhis-observation
 Title: "Dhis Observation Profile"
 Description: "Measurement and simple assertions"
@@ -9,36 +9,24 @@ Description: "Measurement and simple assertions"
 
 * identifier 0..* MS
 * identifier ^short = "Идентификатор для наблюдения"
-
+/*
 * status 1..1 MS
 * status from ObservationStatusVS
 
 * category 0..* MS
-* category from ObservationCategoryVS (required)
+* category from ObservationCategoryVS (required)*/
 * category = $observation-category#laboratory
 
 * code 1..1 MS
 * code from ObservationCodeVS (required)
 * code ^short = "Classification of type of observation"
-
 * subject 1..1 MS
-* subject only Reference(DhisPatient)
-
-* effective[x] only dateTime
-* effectiveDateTime 1..1 MS SU
-
-* issued 0..1 MS
-
-* performer 0..* MS
-* performer only Reference(Organization)
-
+* subject only Reference(UZCorePatient)
 * value[x] only CodeableConcept
 * valueCodeableConcept 0..1 MS
 * valueCodeableConcept ^short = "Результат тестов"
 
-* method 0..1 MS
-* method from $observation-methods 
-
+* method = $sct#278289002 "Microscopy technique (qualifier value)"
 * specimen 0..1 MS
 * specimen only Reference(Specimen)
 * specimen ^short = "Specimen used for this observation + Rule: If Observation.specimen is a reference to Group, the group can only have specimens"
@@ -60,7 +48,7 @@ Description: "Mikroskopiya tahlili namunasi"
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory
-* code = https://terminology.dhp.uz/CodeSystem/observation-code-cs#Tub002-0008 "LPA MTBDR plus (Rif/Inh/Eto-Pto)"
+* code = https://terminology.dhp.uz/CodeSystem/observation-dhis-code-cs#Tub002-0008 "LPA MTBDR plus (Rif/Inh/Eto-Pto)"
 * subject = Reference(example-patient-john)
 * effectiveDateTime = "2025-09-12T10:00:00Z"
 * issued = "2025-09-12T11:00:00Z"

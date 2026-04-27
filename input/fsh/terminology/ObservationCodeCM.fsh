@@ -14,13 +14,13 @@ Description: "Description"
 * group.target = $loinc_code
 
 * group[=].element[+].code = #Tub002-0001
-* group[=].element[=].display = "Balg‘am surtmasi, FL"
+* group[=].element[=].display = "Balg'am surtmasi, FL"
 * group[=].element[=].target[+].code = #53904-9
 * group[=].element[=].target[=].display = "Sputum smear microscopy (fluorescent)"
 * group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #Tub002-0002
-* group[=].element[=].display = "Balg‘am surtmasi, ZN"
+* group[=].element[=].display = "Balg'am surtmasi, ZN"
 * group[=].element[=].target[+].code = #647-8
 * group[=].element[=].target[=].display = "Sputum smear microscopy (Ziehl–Neelsen)"
 * group[=].element[=].target[=].relationship = #equivalent
@@ -68,7 +68,7 @@ Description: "Description"
 * group[=].element[=].target[=].relationship = #related-to
 
 * group[=].element[+].code = #Tub002-0010
-* group[=].element[=].display = "Ko‘krak qafasi rentgenografiyasi"
+* group[=].element[=].display = "Ko'krak qafasi rentgenografiyasi"
 * group[=].element[=].target[+].code = #30745-4
 * group[=].element[=].target[=].display = "Chest X-ray"
 * group[=].element[=].target[=].relationship = #equivalent

@@ -9,12 +9,13 @@ Description: "Measurement and simple assertions"
 
 * identifier 0..* MS
 * identifier ^short = "Идентификатор для наблюдения"
-
+/*
 * status 1..1 MS
 * status from http://hl7.org/fhir/ValueSet/observation-status (required)
 
-* category 1..1 MS
+* category 0..* MS
 * category from http://hl7.org/fhir/ValueSet/observation-category (required)
+*/
 * category =  $observation-category#imaging
 
 * code 1..1 MS
@@ -22,7 +23,7 @@ Description: "Measurement and simple assertions"
 * code ^short = "Classification of type of observation"
 
 * subject 1..1 MS
-* subject only Reference(DhisPatient)
+* subject only Reference(PatientDhis)
 
 * effective[x] 0..1 MS SU
 * effective[x] only dateTime
@@ -32,9 +33,9 @@ Description: "Measurement and simple assertions"
 * performer 0..* MS
 * performer only Reference(Organization)
 
-* value[x] only CodeableConcept
-* valueCodeableConcept 0..1 MS
-* valueCodeableConcept ^short = "Actual result"
+* value[x] only boolean
+* valueBoolean 0..1 MS
+* valueBoolean ^short = "Actual result"
 
 * note 0..* MS
 
@@ -45,8 +46,9 @@ Description: "Xray Observation tahlili namunasi"
 Usage: #example
 * status = #final
 * category =  $observation-category#imaging
-* code = https://terminology.dhp.uz/CodeSystem/observation-code-cs#Tub002-0010 "Chest X-ray"
+* code = https://terminology.dhp.uz/CodeSystem/observation-dhis-code-cs#Tub002-0010 "Chest X-ray"
 * subject = Reference(example-patient-john)
 * effectiveDateTime = "2026-03-10T10:00:00Z"
 * issued = "2026-03-12T11:00:00Z"
 * performer.reference = "Organization/example-organization"
+* valueBoolean = false

@@ -5,4 +5,4 @@ Description: "Observation Code description"
 
 * ^url = "https://terminology.dhp.uz/ValueSet/observation-code-vs"
 
-* include codes from system observation-code-cs
+* include codes from system observation-dhis-code-cs

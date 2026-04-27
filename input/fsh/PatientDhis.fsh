@@ -1,4 +1,4 @@
-Profile: DhisPatient
+Profile: PatientDhis
 Parent: Patient
 Id: dhis-patient
 Title: "Dhis Patient Profile"
@@ -78,7 +78,7 @@ Description: "Profile for patient resource"
 
 // Instance example
 Instance: example-patient-john
-InstanceOf: DhisPatient
+InstanceOf: PatientDhis
 Description: "John Deera uchun namuna"
 Usage: #example
 

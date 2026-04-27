@@ -15,10 +15,8 @@ Description: "Example for analysis"
 
 * type 0..1 MS
 * type from SpecimenTypeVS (required)
-
 * subject 0..1 MS
-* subject only Reference(DhisPatient)
-
+* subject only Reference(PatientDhis)
 * receivedTime 0..1 MS
 * receivedTime only dateTime
 

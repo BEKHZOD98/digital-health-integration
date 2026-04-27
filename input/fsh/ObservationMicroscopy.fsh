@@ -9,19 +9,20 @@ Description: "Measurement and simple assertions"
 
 * identifier 0..* MS
 * identifier ^short = "Идентификатор для наблюдения"
-
+/*
 * status 1..1 MS
 * status from https://www.hl7.org/fhir/valueset-observation-status.html
 
 * category 0..* MS
 * category from https://build.fhir.org/ig/vadi2/DHP-temp/uz/ValueSet-observation-category-vs.html (required)
+*/
 * category = $observation-category#laboratory
 
 * code 1..1 MS
 * code from ObservationCodeVS
 * code ^short = "Classification of type of observation"
 
-* subject 0..1 MS
+* subject 1..1 MS
 * subject only Reference(UZCorePatient)
 * subject ^short = "Who and/or what the observation is about"
 
@@ -33,8 +34,7 @@ Description: "Measurement and simple assertions"
 * performer 0..1 MS
 * performer only Reference(UZCoreOrganization)
 
-* method 0..1 MS
-* method from $observation-methods
+* method = $sct#278289002 "Microscopy technique (qualifier value)"
 
 * specimen 0..1 MS
 * specimen only Reference(Specimen)
@@ -58,7 +58,7 @@ Description: "Mikroskopiya tahlili va uning gradatsiyasi namunasi"
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory
-* code = https://terminology.dhp.uz/CodeSystem/observation-code-cs#Tub002-0001 "Sputum smear microscopy (fluorescent)"
+* code = https://terminology.dhp.uz/CodeSystem/observation-dhis-code-cs#Tub002-0001 "Sputum smear microscopy (fluorescent)"
 * subject = Reference(example-patient-john)
 * effectiveDateTime = "2026-03-12T12:00:00Z"
 * issued = "2026-03-12T11:00:00Z"

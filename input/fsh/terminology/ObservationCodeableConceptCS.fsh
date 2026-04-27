@@ -1,7 +1,7 @@
 CodeSystem: ObservationCodeableConceptCS
 Id: observation-codeable-concept-cs
-Title: "Observation Result CodeSystem"
-Description: "Observation Results"
+Title: "DHIS Observation Result CodeSystem"
+Description: "DHIS observation results codes for valueCodeableConcept"
 
 * insert OriginalCodeSystemDraft(observation-codeable-concept-cs)
 
