@@ -20,10 +20,10 @@ Description: "Profile for representing hepatitis observation analysis in the con
 
 //* method 0..1 MS
 //* method from $observation-methods (extensible)  //LabObservationMethodsVS add this value set after LabObsForIntegrationSys branch merged to main branch
-* category 0..* MS
+/* * category 0..* MS
 * category from HepatObsCategoryVS (required)
 * status from ObservationStatusVS (required)
-* status 1..1 MS
+* status 1..1 MS*/
 
 
 * code 1..1 MS
@@ -53,7 +53,7 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * valueCodeableConcept MS
 * valueCodeableConcept ^short = "Positive or negative laboratory test result"
 * valueCodeableConcept ^definition = "Indicates whether the laboratory test result is positive or negative."
-* valueCodeableConcept from ObservationInterpretationVS (required)
+* valueCodeableConcept from ObservationInterpretationVS (extensible)
 
 * performer 0..* MS
 * performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
@@ -69,7 +69,8 @@ Description: "Profile for representing hepatitis observation analysis in the con
 
 * component.valueString ^short = "The result value entered manually by a healthcare professional."
 * component.valueCodeableConcept ^short = "Positive or negative laboratory test result"
-* component.valueCodeableConcept from ObservationInterpretationVS (required) 
+* component.valueCodeableConcept from ObservationInterpretationVS (extensible)
+//* component.valueCodeableConcept from ObservationInterpretationVS (extensible)
 /*
 * component 0..* MS 
   * code 1..1 MS
@@ -79,6 +80,34 @@ Description: "Profile for representing hepatitis observation analysis in the con
 */
 
 // Instance Example
+Instance: example-hepatitis-observation-analysis
+InstanceOf: HepatitisObservationAnalysis
+Description: "DNK Gepatit B tahlili namunasi"
+Usage: #example
+* language = #en
+* status = #final
+* identifier 
+  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
+  * value = "PZR-2026-001"
+  * type.coding
+    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+    * code = #PHC
+    * display = "Public Health Case Identifier"
+  * use = #official
+
+* method = $sct#258066000 "Polymerase chain reaction"
+* code = $loinc#22314-9 "Hepatitis A virus IgM Ab [Presence] in Serum"
+* subject = Reference(Patient/example-hepatitis-patient)
+* effectiveDateTime = "2026-01-27T09:57:00Z"
+* valueCodeableConcept.coding
+  * code = observation-interpretation-cs#NEG
+  * display = "Negative"
+
+* performer[0] = Reference(PractitionerRole/muratova-gulshoda-role)
+* performer[1] = Reference(Organization/samarkand-regional-hospital)
+
+
+/*
 Instance: example-hepatitis-observation-analysis
 InstanceOf: HepatitisObservationAnalysis
 Description: "DNK Gepatit B tahlili namunasi"
@@ -112,3 +141,4 @@ Usage: #example
     * unit = "mL"
     * system = "http://unitsofmeasure.org"
     * code = #mL
+*/

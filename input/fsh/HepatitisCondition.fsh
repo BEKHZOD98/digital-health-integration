@@ -14,10 +14,10 @@ Description: "Profile for representing hepatitis conditions in the context of a 
   * value ^short = "Unique identifier for the condition: UUID"
 * identifier.type 0..1 MS
 * identifier.type from IdentifierTypeVS (required)
-
+/*
 * clinicalStatus 1..1 MS
 * clinicalStatus from HepatitisClinicalStatusVS (required)
-
+*/
 //* extension contains HepatitisDiagnosisType named diagnosisType 0..1 MS
 
 * code 0..1 MS

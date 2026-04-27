@@ -8,8 +8,10 @@ Description: "Profile for representing ultrasound observations related to hepati
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
+/*
 * status from ObservationStatusVS (required)
-* status MS
+* status MS 
+*/
 
 * code 1..1 MS
 * code from HepatitisTypeOfUltrasoundVS (required)
