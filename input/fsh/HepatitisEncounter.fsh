@@ -27,15 +27,15 @@ Description: "Profile for representing encounters related to hepatitis patients 
 
 * identifier.use 0..1 MS
 * identifier.use from IdentifierUseVS (required)
-
+/*
 * class MS
-* class from HepatitisEncounterClassVS (required)
+* class from HepatitisEncounterClassVS (required) 
 * class ^short = "Classification of the encounter with the patient"
 
 * status from EncounterStatusVS (required)
 * status MS
 * status = #completed 
-
+*/
 * subject 1..1 MS
 * subject only Reference(UZCorePatient)
 * subject ^short = "Patient being admitted" 

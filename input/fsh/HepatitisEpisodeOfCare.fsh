@@ -9,8 +9,9 @@ Description: "Profile for representing episodes of care related to hepatitis pat
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
+/*
 * status MS 
-* status from HepatitisEpisodeOfCareStatusVS (required)
+* status from HepatitisEpisodeOfCareStatusVS (required)*/
 
 * diagnosis MS
 * diagnosis.condition 0..* MS
