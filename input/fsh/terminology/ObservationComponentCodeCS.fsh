@@ -213,7 +213,7 @@ Description: "DHIS observation component codes"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Идентификация изолята CM/AS"
   * ^designation[+].language = #en
-  * ^designation[=].value = "CM/AS isolate identification "
+  * ^designation[=].value = "CM/AS isolate identification"
 
 * #Tub004-0036 "ARVT (Antiretrovirusli terapiya)"
   * ^designation[0].language = #ru
