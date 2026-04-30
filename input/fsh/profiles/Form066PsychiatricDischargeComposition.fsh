@@ -56,7 +56,7 @@ Description: "Composition profile for Form 066-1."
 * section[personalInformation].code = $loinc#11329-0 "History general Narrative - Reported"
 * section[personalInformation].code ^short = "1.1–1.22: Personal Identification Number (PIN), surname, first name, patronymic, date of birth, gender, citizenship, ID or passport, social status, benefit category, residential address, phone number, email, assigned institution, education, source of livelihood, workplace, position."
 * section[personalInformation].entry 1..*
-* section[personalInformation].entry only Reference(UZCorePatient or RelatedPerson or Organization or UZCoreObservation or UZCoreSocioeconomicObservation)
+* section[personalInformation].entry only Reference(UZCorePatient or RelatedPerson or Organization or UZCoreSocioeconomicObservation)
 * section[personalInformation].entry ^short = "1.1–1.22: Personal Identification Number (PIN), surname, first name, patronymic, date of birth, gender, citizenship, ID or passport, social status, benefit category, residential address, phone number, email, assigned institution, education, source of livelihood, workplace, position."
 
 // 2. Shifoxonaga yotqizish ma'lumotlari

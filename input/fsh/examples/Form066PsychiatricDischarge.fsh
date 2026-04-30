@@ -221,17 +221,16 @@ Usage: #inline
 * serviceProvider = Reference(urn:uuid:06600004-1111-2222-3333-444444444444)
 * extension[EncounterAdmissionCount].valueInteger = 5
 * basedOn = Reference(urn:uuid:06600013-1111-2222-3333-444444444444)
-* admission.origin.extension[AdmissionOrigin].valueCodeableConcept = admit-source-home-cs#mserv-0003-00001 "From home"
+* admission.origin.extension[admissionOrigin].valueCodeableConcept = admit-source-home-cs#mserv-0003-00001 "From home"
 * admission.origin.display = "From home"
 
-//Comments will be removed in this section after UpdatedCodeSystems_And_ValueSets is merged into the main branch.
 * admission.reAdmission = $re-admission-local-cs#first-time "First time"
 * reason.use = https://terminology.dhp.uz/CodeSystem/encounter-purpose-cs#enc-001 "Diagnostics"
 * priority = $encounter-local-priority-cs#transferred "Transferred from another facility"
-* admission.admitSource = $admit-source-local-cs#mserv-0003-00002 "Dispensary"
-* admission.dischargeDisposition = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-discharge-disposition-home-cs#mserv-0004-00001 "Kasalxonaga yotqizildi"
+* admission.admitSource = $admit-source-local-cs#mserv-0006-00002 "Dispensary"
+* admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00001 "Hospitalized"
 * subjectStatus =  $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
-* location[0].form = organizational-specialization-cs#101.0 "Therapy"
+* location[0].form = $location-form#102.0 "Cardiology"
 
 
 * length = 10 'd' "days"
@@ -353,7 +352,7 @@ Usage: #inline
 
 
 Instance: condition-referral-diagnosis-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -375,7 +374,7 @@ Usage: #inline
 * code.concept.text = "Referral for inpatient psychiatric/narcological treatment"
 
 Instance: condition-admission-diagnosis-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -386,7 +385,7 @@ Usage: #inline
 * onsetDateTime = "2026-01-05"
 
 Instance: condition-main-diagnosis-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -396,7 +395,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
 Instance: condition-competing-diagnosis-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -406,7 +405,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
 Instance: condition-comorbid-diagnosis-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -416,7 +415,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
 Instance: condition-background-diagnosis-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -426,7 +425,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
 Instance: condition-complication-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -490,8 +489,7 @@ Usage: #inline
 * status = #active
 * beneficiary = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * kind = #insurance
-//Comments will be removed in this section after UpdatedCodeSystems_And_ValueSets is merged into the main branch.
-// * type = https://terminology.dhp.uz/fhir/core/CodeSystem/coverage-type-cs#dtsj-treated-case "State Health Insurance treated case (Resolution No. PQ-311)"
+* type = $coverage-type#dtsj-treated-case "State Health Insurance treated case (Resolution No. PQ-311)"
 
 
 
@@ -542,8 +540,6 @@ Usage: #inline
 * status = #active
 * name = "Therapy"
 * mode = #instance
-//Comments will be removed in this section after UpdatedCodeSystems_And_ValueSets is merged into the main branch.
-// * location.form = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-specialization-cs#101.0 "Therapy"
 
 
 Instance: observation-disability-group-066
@@ -561,7 +557,7 @@ Usage: #inline
 
 
 Instance: condition-immediate-cause-of-death-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -571,7 +567,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
 Instance: condition-underlying-cause-of-death-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -581,7 +577,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
 Instance: condition-primary-disease-death-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
@@ -591,7 +587,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
 Instance: condition-other-significant-death-066
-InstanceOf: UZCoreClinicalCondition
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active

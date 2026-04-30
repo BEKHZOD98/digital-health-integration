@@ -252,6 +252,8 @@ Alias: $encounter-local-priority-cs = https://terminology.dhp.uz/fhir/core/CodeS
 Alias: $encounter-local-subject-status-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-local-subject-status-cs
 Alias: $admit-source-local-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/admit-source-local-cs
 Alias: $re-admission-local-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/re-admission-local-cs
-
+Alias: $discharge-disposition-home-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-discharge-disposition-home-cs
+Alias: $location-form = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-specialization-cs
+Alias: $coverage-type = https://terminology.dhp.uz/fhir/core/CodeSystem/coverage-type-cs
 
 
