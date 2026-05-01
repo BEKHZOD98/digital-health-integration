@@ -1,22 +1,23 @@
 ,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, Единицы
 lab-pan-I,,Balg'am tahlili,Анализ мокроты,Sputum analysis,,,
-lab-pan-194,,Miqdori,Количество,Sputum volume [Volume],40868-5,,мл
-lab-pan-195,,Hidi,Запах,Sputum odor [Type],10588-2,,"качественно (характерный, гнилостный и т.д.)"
+lab-pan-194,,Miqdori,Количество,Volume of Sputum,38200-2,,мл
+lab-pan-195,,Hidi,Запах,Odor of Lower respiratory specimen,96723-2,,"качественно (характерный, гнилостный и т.д.)"
 lab-pan-196,,Rangi,Цвет,Sputum color [Type],11526-1,,"желтый, зеленый, кровянистый и т.п."
 lab-pan-197,,Xususiyati (ta'rifi),Характер (описание),Sputum gross description,11525-3,,"слизистая, слизисто-гнойная, гнойная"
 lab-pan-198,,Aralashmalar,Примеси,Sputum inclusions [Type],11527-9,,"прожилки крови, гной и др."
-lab-pan-199,,Konsistensiyasi,Консистенция,Sputum consistency [Type],11528-7,,"жидкая, густая, вязкая"
+lab-pan-199,,Konsistensiyasi,Консистенция,Appearance of Sputum,33455-7,,"жидкая, густая, вязкая"
 lab-pan-200,,Epiteliy,Эпителий,Epithelial cells [Presence] in Sputum by Light microscopy,12248-1,,—
-lab-pan-201,,Alveolyar makrofaglar,Альвеолярные макрофаги,Macrophages [Presence] in Sputum by Light microscopy,12249-9,,—
-lab-pan-202,,Leykositlar,Лейкоциты,Leukocytes [#/area] in Sputum by Light microscopy,12250-7,,—
+lab-pan-201,,Alveolyar makrofaglar,Альвеолярные макрофаги,Alveolar macrophages [#/volume] in Lower respiratory specimen by Manual count,96724-0,,—
+lab-pan-202,,Leykositlar,Лейкоциты,Leukocytes [#/area] in Sputum by Light microscopy HPF,12225-9,,—
 lab-pan-203,,Eritrositalr,Эритроциты,Erythrocytes [Presence] in Sputum by Light microscopy,12251-5,,—
-lab-pan-204,,Tolalar,Волокна,Fibers [Presence] in Sputum by Light microscopy,22768-2,,—
+lab-pan-204,,Tolalar,Волокна,Elastic fibers [#/volume] in Lower respiratory specimen by Manual count,96728-1,,—
 lab-pan-205,,Elastik tolalar,Эластические волокна,Elastic fibers [Presence] in Sputum by Light microscopy,12252-3,,—
 lab-pan-206,,Kalsiylangan (toshga aylangan zarrachalar),Обызвествлённые (окаменевшие частицы),Calcified bodies [Presence] in Sputum by Light microscopy,12253-1,,—
 lab-pan-207,,Tuberkulyoz mikrobakteriyalari,Микобактерии туберкулёза,Mycobacterium tuberculosis [Presence] in Sputum by Microscopy (Ziehl–Neelsen stain),11545-1,,—
-lab-pan-208,,Eozinofillar,Эозинофилы,Eosinophils [#/area] in Sputum by Light microscopy,12254-9,,—
-lab-pan-209,,Zamburug'lar,Грибы,Fungi [Presence] in Sputum by Light microscopy,12255-6,,—
-lab-pan-210,,Boshqa flora,Другая флора,Bacteria [Presence] in Sputum by Light microscopy,12256-4,,—
-lab-pan-211,,Kurshman spirallari,Спирали Куршмана,Curschmann's spirals [Presence] in Sputum by Light microscopy,19148-4,,—
+lab-pan-208,,Eozinofillar,Эозинофилы,Eosinophils/Leukocytes in Sputum,30381-8,,—
+lab-pan-209,,Zamburug'lar,Грибы,Fungus [Presence] in Sputum by KOH preparation,55304-0,,—
+lab-pan-210,,Boshqa flora,Другая флора,"Bacteria identified in Sputum by Culture
+",6460-0,,—
+lab-pan-211,,Kurshman spirallari,Спирали Куршмана,Curschmann's spirals [Presence] in Sputum by Light microscopy,96731-5,,—
 lab-pan-212,,Sharko-Leyden kristallari,Кристаллы Шарко–Лейдена,Charcot–Leyden crystals [Presence] in Sputum by Light microscopy,19149-2,,—
 lab-pan-213,,Atipik belgili hujayralar,Клетки с атипичными признаками,Epithelial cells atypical [Presence] in Sputum by Cytology,12247-3,,—

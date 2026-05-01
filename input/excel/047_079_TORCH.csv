@@ -1,8 +1,8 @@
 ,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Юниты,Норма
 lab-pan-K,,TORCH-infeksiya tahlili, Анализ на TORCH-инфекцию,TORCH-infection analysis,,,"0,7 — отрицательно
 Титр 1:10"
-lab-pan-229,,Xlamidiya (IgG antitanachalar),Хламидия (антитела IgG),Chlamydia trachomatis IgG Ab [Presence] in Serum by Immunoassay,50964-2,,До 25 МЕ — отрицательно
+lab-pan-229,,Xlamidiya (IgG antitanachalar),Хламидия (антитела IgG),Chlamydia trachomatis IgG Ab [Presence] in Serum by Immunoassay,45135-1,,До 25 МЕ — отрицательно
 lab-pan-230,,Toksopazmoz (IgG antitanachalar),Токсоплазмоз (антитела IgG),Toxoplasma gondii IgG Ab [Presence] in Serum by Immunoassay,40677-7,,От 25 до 40 — слабо положительно
 lab-pan-231,,Sitomegalovirus (IgG antitanachalar),Цитомегаловирус (антитела IgG),Cytomegalovirus IgG Ab [Presence] in Serum by Immunoassay,13949-3,,"До 0,25 — отрицательно"
-lab-pan-232,,Oddiy gerpes virusi (IgG antitanachalar),Вирус простого герпеса (антитела IgG),Herpes simplex virus 1+2 IgG Ab [Presence] in Serum by Immunoassay,48346-1,,"До 0,200 — отрицательно"
-lab-pan-233,,Ureaplazma,Уреаплазма,Ureaplasma urealyticum DNA [Presence] in Specimen by NAA with probe detection,32703-1,,"До 0,25 — отрицательно"
+lab-pan-232,,Oddiy gerpes virusi (IgG antitanachalar),Вирус простого герпеса (антитела IgG),HIV 1+O+2 Ab [Units/volume] in Serum or Plasma,48346-1 ,,"До 0,200 — отрицательно"
+lab-pan-233,,Ureaplazma,Уреаплазма,Ureaplasma urealyticum DNA [Presence] in Specimen by NAA with probe detection,51988-4,,"До 0,25 — отрицательно"
