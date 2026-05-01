@@ -227,3 +227,33 @@ Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-s
 Alias: $drs = http://hl7.org/fhir/document-reference-status
 Alias: $drcs = http://hl7.org/fhir/composition-status
 Alias: $drca = http://hl7.org/fhir/composition-attestation-mode
+
+
+
+
+
+Alias: $admit-source = http://terminology.hl7.org/CodeSystem/admit-source
+Alias: $discharge-disposition = http://terminology.hl7.org/CodeSystem/discharge-disposition
+Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
+Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+Alias: $icd10 = http://hl7.org/fhir/sid/icd-10
+Alias: $education-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/education-cs
+Alias: $occupation-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
+Alias: $benefit-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs
+Alias: $citizenship = https://terminology.dhp.uz/fhir/core/CodeSystem/iso3166-two-letter-cs
+Alias: $practioner-role = http://terminology.hl7.org/CodeSystem/practitioner-role 
+Alias: $social-status = https://terminology.dhp.uz/fhir/core/CodeSystem/social-status-cs
+Alias: $admission-origin = https://terminology.dhp.uz/fhir/core/CodeSystem/admit-source-local-cs
+Alias: $admission-origin-vs = https://terminology.dhp.uz/fhir/core/ValueSet/admission-origin-vs
+Alias: $v3-ObservationInterpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+
+
+Alias: $encounter-local-priority-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-local-priority-cs
+Alias: $encounter-local-subject-status-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-local-subject-status-cs
+Alias: $admit-source-local-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/admit-source-local-cs
+Alias: $re-admission-local-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/re-admission-local-cs
+Alias: $discharge-disposition-home-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-discharge-disposition-home-cs
+Alias: $location-form = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-specialization-cs
+Alias: $coverage-type = https://terminology.dhp.uz/fhir/core/CodeSystem/coverage-type-cs
+
+

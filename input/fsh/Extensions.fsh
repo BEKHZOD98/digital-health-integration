@@ -107,3 +107,24 @@ Description: "Birth time of each newborn in a multiple birth."
 * value[x] 1..1 MS
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
+
+
+
+// mine
+Extension: EncounterAdmissionCount
+Id: encounter-admission-count
+Title: "Encounter Admission Count"
+Description: "Number of times the patient has been admitted"
+* ^context.type = #element
+* ^context.expression = "Encounter"
+* value[x] only integer
+
+Extension: AdmissionOrigin
+Id: admission-origin
+Title: "Admission Origin"
+Description: "Extension to represent the origin from which the patient came before admission."
+Context: Encounter.admission.origin
+* ^experimental = true
+* value[x] only CodeableConcept
+* valueCodeableConcept from EncounterAdmissionOriginVS (required)
+
