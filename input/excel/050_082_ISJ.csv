@@ -1,20 +1,20 @@
-,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Норма,Единицы 
+`,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Норма,Единицы 
 lab-pan-M,,Orqa miya suyuqligi (MS) tahlili,Исследование цереброспинальной жидкости (ликвора),Cerebrospinal fluid (CSF) analysis,,,
-lab-pan-259,,Miqdori,Количество,Cerebrospinal fluid volume [Volume],19102-5,,прозрачный / желтоватый и т.п.
-lab-pan-260,,Sentrefugadan keyingi rangi,Цвет после центрифугирования,CSF color [Type],10335-8,,положительная / отрицательная
-lab-pan-261,,Sentrefugagacha ksantoxromiya,Ксантохромия до центрифугирования,CSF xanthochromia [Presence],10336-6,,прозрачная / мутная
-lab-pan-262,,Sentrefugadan keyingi shaffofligi,Прозрачность после центрифугирования,CSF clarity [Type],10337-4,,г/л
+lab-pan-259,,Miqdori,Количество,Volume of Cerebral spinal fluid,17607-3,,прозрачный / желтоватый и т.п.
+lab-pan-260,,Sentrefugadan keyingi rangi,Цвет после центрифугирования,Color of Cerebral spinal fluid,10335-8,,положительная / отрицательная
+lab-pan-261,,Sentrefugagacha ksantoxromiya,Ксантохромия до центрифугирования,Xanthochromia [Presence] of Cerebral spinal fluid Qualitative,13532-7,,прозрачная / мутная
+lab-pan-262,,Sentrefugadan keyingi shaffofligi,Прозрачность после центрифугирования,Clarity of Cerebral spinal fluid,49736-2,,г/л
 lab-pan-263,,Oqsil,Белок,Protein [Mass/volume] in Cerebrospinal fluid,2880-3,,положительная / отрицательная
 lab-pan-264,,Pandi reaksiyasi,Реакция Панди,Pandy test [Interpretation] in Cerebrospinal fluid,19103-3,,кл/мкл
 lab-pan-265,,Limfositlar,Лимфоциты,Lymphocytes [#/volume] in Cerebrospinal fluid by Manual count,10328-3,,кл/мкл
-lab-pan-266,,Eozinoffillar,Эозинофилы,Eosinophils [#/volume] in Cerebrospinal fluid by Manual count,10329-1,,кл/мкл
-lab-pan-267,,Neytrofillar,Нейтрофилы,Neutrophils [#/volume] in Cerebrospinal fluid by Manual count,10330-9,,—
-lab-pan-268,,Makrofaglar,Макрофаги,Macrophages [Presence] in Cerebrospinal fluid by Light microscopy,19104-1,,атипичные клетки
-lab-pan-269,,O'zgargan hujayralar,Изменённые клетки,Cells abnormal [Presence] in Cerebrospinal fluid by Cytology,19105-8,,—
+lab-pan-266,,Eozinoffillar,Эозинофилы,Eosinophils [#/volume] in Cerebral spinal fluid by Manual count,34957-1,,кл/мкл
+lab-pan-267,,Neytrofillar,Нейтрофилы,Neutrophils [#/volume] in Cerebral spinal fluid by Manual count,755-9,,—
+lab-pan-268,,Makrofaglar,Макрофаги,Monocytes+Macrophages [Presence] in Cerebral spinal fluid by Light microscopy,32191-9,,атипичные клетки
+lab-pan-269,,O'zgargan hujayralar,Изменённые клетки,Abnormal lymphocytes/Leukocytes in Cerebral spinal fluid,30414-7,,—
 lab-pan-270,,Poliblastlar,Полибласты,Polynuclear cells [Presence] in Cerebrospinal fluid by Light microscopy,19106-6,,—
-lab-pan-271,,Plazmatik hujayralar,Плазматические клетки,Plasma cells [Presence] in Cerebrospinal fluid by Light microscopy,19107-4,,—
+lab-pan-271,,Plazmatik hujayralar,Плазматические клетки,Plasma cells/Leukocytes in Cerebral spinal fluid by Microscopy,40541-5,,—
 lab-pan-272,,Araxnoidal endoteliy hujayralari,Клетки арахноидального эндотелия,Arachnoid cells [Presence] in Cerebrospinal fluid by Light microscopy,19108-2,,—
-lab-pan-273,,Ependima hujayralari,Клетки эпендимы,Ependymal cells [Presence] in Cerebrospinal fluid by Light microscopy,19109-0,,—
+lab-pan-273,,Ependima hujayralari,Клетки эпендимы,Arachnoid cells [Presence] in Cerebrospinal fluid by Light microscopy,19109-0,,—
 lab-pan-274,,Donador sharlar,Зернистые шары,Granular corpuscles [Presence] in Cerebrospinal fluid by Light microscopy,19110-8,,—
 lab-pan-275,,Zamburug'lar,Грибы,Fungi [Presence] in Cerebrospinal fluid by Light microscopy,19111-6,,кл/мкл
-lab-pan-276,,Eritrositlar,Эритроциты,Erythrocytes [#/volume] in Cerebrospinal fluid by Manual count,10331-7,,
+lab-pan-276,,Eritrositlar,Эритроциты,Erythrocytes [#/volume] in Cerebral spinal fluid by Manual count,792-2,,
