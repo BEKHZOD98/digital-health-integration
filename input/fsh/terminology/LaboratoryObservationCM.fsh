@@ -360,7 +360,7 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * group.element[=].display = "Epitelial hujayralar"
 * group.element[=].target[+].code = #32762-7
 * group.element[=].target[=].display = "Эпителиалные клетки"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-59
 * group.element[=].display = "Mikroflora"
