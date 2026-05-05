@@ -305,7 +305,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Растительная клетчатка перевариваемая"
     * ^designation[+].language = #en
-    * ^designation[=].value = " 	Vegetable fibers [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = "Vegetable fibers [Presence] in Stool by Light microscopy"
 
   * #lab-pan-47 "Kraxmal"
     * ^designation[0].language = #ru
