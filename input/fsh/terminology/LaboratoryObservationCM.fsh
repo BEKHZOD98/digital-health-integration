@@ -285,13 +285,13 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * group.element[=].display = "Sovunlar"
 * group.element[=].target[+].code = #96734-9
 * group.element[=].target[=].display = "Мыла"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #related-to
 
 * group.element[+].code = #lab-pan-46
 * group.element[=].display = "O‘simlik kletchatkasi (hazm bo‘ladigan)"
 * group.element[=].target[+].code = #55835-3
 * group.element[=].target[=].display = "Растительная клетчатка перевариваемая"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-broader-than-target
 
 * group.element[+].code = #lab-pan-47
 * group.element[=].display = "Kraxmal"
