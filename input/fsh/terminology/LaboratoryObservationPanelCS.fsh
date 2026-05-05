@@ -29,7 +29,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Прозрачность"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Appearance of Urine"
+    * ^designation[=].value = "Appearance of Stool"
 
   * #lab-pan-4 "Nisbiy zichligi"
     * ^designation[0].language = #ru

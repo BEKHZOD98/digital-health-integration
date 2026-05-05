@@ -1,21 +1,21 @@
-,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Диапазон, Единицы
-lab-pan-H,,Spermogramma tahlili,Исследование спермограммы,,,,
-lab-pan-175,,Hajm,Объём,Semen volume [Volume],10586-6,,мл
-lab-pan-176,,Rangi,Цвет,Semen color [Type],10587-4,,—
-lab-pan-177,,Hidi,Запах,Semen odor [Type],10588-2,,—
-lab-pan-178,,Suyulish vaqti,Время разжижения,Semen liquefaction time,10590-8,,мин
-lab-pan-179,,Kislotalilik (pH,Кислотность (pH),Semen pH,10589-0,,—
-lab-pan-180,,Qovushqoqlik,Вязкость,Semen viscosity [Presence],10591-6,,—
-lab-pan-181,,1 ml dagi spermatozoidlar soni,Количество сперматозоидов в 1 мл,Spermatozoa [#/volume] in Semen,11068-0,,млн/мл
-lab-pan-182,,Umumiy hajdagi spermatozoidlar soni,Количество сперматозоидов в общем объёме,Spermatozoa total count [#] in Ejaculate,72514-3,,млн
-lab-pan-183,,Harakatchanlik - faol,Подвижность — активные,Spermatozoa progressive motility [#/volume] in Semen,10610-4,,%
-lab-pan-184,,Harakatchanlik - sust,Подвижность — вялые,Spermatozoa non-progressive motility [#/volume] in Semen,10611-2,,%
-lab-pan-185,,Harakatchanlik - harakatsiz,Подвижность — неподвижные,Spermatozoa immotile [#/volume] in Semen,10612-0,,%
-lab-pan-186,,Tirik spermatozoidlar,Живые сперматозоиды,Spermatozoa viability [#/volume] in Semen by Stain,11070-6,,%
-lab-pan-187,,Patologik shakldagi sermatozoidlar,Патологические формы сперматозоидов,Spermatozoa abnormal forms [#/volume] in Semen,10613-8,,%
-lab-pan-188,,Spermatogenez epiteliysi,Эпителий сперматогенеза,Epithelial cells [Presence] in Semen,10614-6,,—
-lab-pan-189,,Leykositlar,Лейкоциты,Leukocytes [#/volume] in Semen,10592-4,,млн/мл
-lab-pan-190,,Letsitin donachalari,Лецитиновые зёрна,Lecithin bodies [Presence] in Semen by Microscopy,19159-1,,—
-lab-pan-191,,Agglyutinatsiya,Агглютинация,Spermatozoa agglutination [Presence] in Semen,10615-3,,—
-lab-pan-192,,Fruktoza,Фруктоза,Fructose [Moles/volume] in Semen,10593-2,,ммоль/л
-lab-pan-193,,Limon kislotasi,Лимонная кислота,Citric acid [Moles/volume] in Semen,10594-0,,ммоль/л
+,Тип исследовании,Показатели UZ,Показатели RU,Long common name,LOINC,Relationship,Диапазон, Единицы
+lab-pan-H,,Spermogramma tahlili,Исследование спермограммы,Spermogram analysis,,,,
+lab-pan-175,,Hajm,Объём,Volume of Semen,3160-9,equivalent,,мл
+lab-pan-176,,Rangi,Цвет,Semen color [Type],10587-4,equivalent,,—
+lab-pan-177,,Hidi,Запах,Semen odor [Type],10588-2,equivalent,,—
+lab-pan-178,,Suyulish vaqti,Время разжижения,Semen liquefaction time,10590-8,equivalent,,мин
+lab-pan-179,,Kislotalilik (pH,Кислотность (pH),Semen pH,10589-0,equivalent,,—
+lab-pan-180,,Qovushqoqlik,Вязкость,Semen viscosity [Presence],10591-6,equivalent,,—
+lab-pan-181,,1 ml dagi spermatozoidlar soni,Количество сперматозоидов в 1 мл,Spermatozoa [#/volume] in Semen,9780-8,equivalent,,млн/мл
+lab-pan-182,,Umumiy hajmdagi spermatozoidlar soni,Количество сперматозоидов в общем объёме,Spermatozoa total count [#] in Ejaculate,72514-3,equivalent,,млн
+lab-pan-183,,Harakatchanlik - faol,Подвижность — активные,Spermatozoa progressive motility [#/volume] in Semen,10610-4,equivalent,,%
+lab-pan-184,,Harakatchanlik - sust,Подвижность — вялые,Spermatozoa non-progressive motility [#/volume] in Semen,10611-2,equivalent,,%
+lab-pan-185,,Harakatchanlik - harakatsiz,Подвижность — неподвижные,Spermatozoa immotile [#/volume] in Semen,10612-0,equivalent,,%
+lab-pan-186,,Tirik spermatozoidlar,Живые сперматозоиды,Spermatozoa Viable/Spermatozoa in Semen,10613-8,source-is-narrower-than-target,,%
+lab-pan-187,,Patologik shakldagi sermatozoidlar,Патологические формы сперматозоидов,Spermatozoa abnormal forms [#/volume] in Semen,10613-8,equivalent,,%
+lab-pan-188,,Spermatogenez epiteliysi,Эпителий сперматогенеза,Epithelial cells [Presence] in Semen by Light microscopy,12452-9,equivalent,,—
+lab-pan-189,,Leykositlar,Лейкоциты,Leukocytes [#/volume] in Semen,10592-4,equivalent,,млн/мл
+lab-pan-190,,Letsitin donachalari,Лецитиновые зёрна,Lecithin bodies [Presence] in Semen by Microscopy,98027-6,equivalent,,—
+lab-pan-191,,Agglyutinatsiya,Агглютинация,Spermatozoa agglutination [Presence] in Semen,10615-3,equivalent,,—
+lab-pan-192,,Fruktoza,Фруктоза,Fructose [Moles/volume] in Semen,10593-2,equivalent,,ммоль/л
+lab-pan-193,,Limon kislotasi,Лимонная кислота,Citric acid [Moles/volume] in Semen,10594-0,equivalent,,ммоль/л
