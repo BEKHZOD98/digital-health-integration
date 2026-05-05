@@ -298,13 +298,13 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * group.element[=].target[+].code = #2967-8
 * group.element[=].target[=].display = "Крахмал"
 * group.element[=].target[=].relationship = #equivalent
-
+/*
 * group.element[+].code = #lab-pan-48
 * group.element[=].display = "Yodofil flora"
 * group.element[=].target[+].code = #19124-5
 * group.element[=].target[=].display = "Йодофильная флора"
-* group.element[=].target[=].relationship = #equivalent
-
+* group.element[=].target[=].relationship = #not-related-to
+*/
 * group.element[+].code = #lab-pan-49
 * group.element[=].display = "Kristallar"
 * group.element[=].target[+].code = #98029-2
@@ -439,8 +439,8 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-71
 * group.element[=].display = "Trombotest"
-* group.element[=].target[+].code = #3244-3
-* group.element[=].target[=].display = "Тромботест"
+* group.element[=].target[+].code = #3289-6
+* group.element[=].target[=].display = "Протромбин.активность актуальный/нормальный"
 * group.element[=].target[=].relationship = #equivalent
 
 * group.element[+].code = #lab-pan-72
@@ -575,7 +575,6 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * group.element[=].target[=].display = "Лимфоциты"
 * group.element[=].target[=].relationship = #equivalent
 
-// there is no concept map for lab-pan-95, so I added it
 * group.element[+].code = #lab-pan-95
 * group.element[=].display = "Plazmatik hujayralar"
 * group.element[=].target[+].code = #93362-2 
@@ -1236,19 +1235,19 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * group.element[=].display = "Tolalar"
 * group.element[=].target[+].code = #96728-1
 * group.element[=].target[=].display = "Волокна"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #related-to
 
 * group.element[+].code = #lab-pan-205
 * group.element[=].display = "Elastik tolalar"
-* group.element[=].target[+].code = #12252-3
+* group.element[=].target[+].code = #96728-1
 * group.element[=].target[=].display = "Эластические волокна"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #related-to
 
 * group.element[+].code = #lab-pan-206
 * group.element[=].display = "Kalsiylangan (toshga aylangan zarrachalar)"
-* group.element[=].target[+].code = #12253-1
+* group.element[=].target[+].code = #98028-4
 * group.element[=].target[=].display = "Обызвествлённые (окаменевшие частицы)"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #related-to
 
 * group.element[+].code = #lab-pan-207
 * group.element[=].display = "Tuberkulyoz mikrobakteriyalari"
@@ -1282,13 +1281,13 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-212
 * group.element[=].display = "Sharko-Leyden kristallari"
-* group.element[=].target[+].code = #19149-2
-* group.element[=].target[=].display = "Кристаллы Шарко–Лейдена"
+* group.element[=].target[+].code = #11102-1
+* group.element[=].target[=].display = "Шарко-Лейден кристаллы"
 * group.element[=].target[=].relationship = #equivalent
 
 * group.element[+].code = #lab-pan-213
 * group.element[=].display = "Atipik belgili hujayralar"
-* group.element[=].target[+].code = #12247-3
+* group.element[=].target[+].code = #15376-7
 * group.element[=].target[=].display = "Клетки с атипичными признаками"
 * group.element[=].target[=].relationship = #equivalent
 
@@ -1307,15 +1306,15 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 //changed code
 * group.element[+].code = #lab-pan-216
 * group.element[=].display = "Shaffofligi"
-* group.element[=].target[+].code = #29636-8
+* group.element[=].target[+].code = #9335-1
 * group.element[=].target[=].display = "Прозрачность"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-217
 * group.element[=].display = "Konsistensiyasi"
-* group.element[=].target[+].code = #19136-9
+* group.element[=].target[+].code = #9335-1
 * group.element[=].target[=].display = "Консистенция"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-218
 * group.element[=].display = "Leykositlar"
@@ -1355,9 +1354,9 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-224
 * group.element[=].display = "Spermatozoidlar"
-* group.element[=].target[+].code = #19143-5
+* group.element[=].target[+].code = #9780-8
 * group.element[=].target[=].display = "Сперматозоиды"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #related-to
 
 * group.element[+].code = #lab-pan-225
 * group.element[=].display = "Trixomonadalar"
@@ -1367,7 +1366,7 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-226
 * group.element[=].display = "Gonokokklar"
-* group.element[=].target[+].code = #19145-0
+* group.element[=].target[+].code = #691-6
 * group.element[=].target[=].display = "Гонококки"
 * group.element[=].target[=].relationship = #equivalent
 
@@ -1376,13 +1375,13 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * group.element[=].target[+].code = #72340-3
 * group.element[=].target[=].display = "Другая флора"
 * group.element[=].target[=].relationship = #equivalent
-
+/*
 * group.element[+].code = #lab-pan-228
 * group.element[=].display = "Atipik belgili hujayralar"
 * group.element[=].target[+].code = #19147-6
 * group.element[=].target[=].display = "Клетки с атипичными признаками"
-* group.element[=].target[=].relationship = #equivalent
-
+* group.element[=].target[=].relationship = #not-related-to
+*/
 * group.element[+].code = #lab-pan-229
 * group.element[=].display = "Xlamidiya (IgG antitanachalar)"
 * group.element[=].target[+].code = #45135-1
@@ -1469,9 +1468,9 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-264
 * group.element[=].display = "Pandi reaksiyasi"
-* group.element[=].target[+].code = #19103-3
+* group.element[=].target[+].code = #2879-5
 * group.element[=].target[=].display = "Реакция Панди"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #related-to
 
 * group.element[+].code = #lab-pan-265
 * group.element[=].display = "Limfositlar"
@@ -1505,9 +1504,9 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-270
 * group.element[=].display = "Poliblastlar"
-* group.element[=].target[+].code = #19106-6
+* group.element[=].target[+].code = #55792-6
 * group.element[=].target[=].display = "Полибласты"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-271
 * group.element[=].display = "Plazmatik hujayralar"
@@ -1517,27 +1516,27 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-272
 * group.element[=].display = "Araxnoidal endoteliy hujayralari"
-* group.element[=].target[+].code = #19108-2
+* group.element[=].target[+].code = #26470-5
 * group.element[=].target[=].display = "Клетки арахноидального эндотелия"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-273
 * group.element[=].display = "Ependima hujayralari"
-* group.element[=].target[+].code = #19109-0
+* group.element[=].target[+].code = #99060-6
 * group.element[=].target[=].display = "Клетки эпендимы"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-274
 * group.element[=].display = "Donador sharlar"
-* group.element[=].target[+].code = #19110-8
+* group.element[=].target[+].code = #70034-4
 * group.element[=].target[=].display = "Зернистые шары"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #related-to
 
 * group.element[+].code = #lab-pan-275
 * group.element[=].display = "Zamburug'lar"
-* group.element[=].target[+].code = #19111-6
+* group.element[=].target[+].code = #569-4
 * group.element[=].target[=].display = "Грибы"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #related-to
 
 * group.element[+].code = #lab-pan-276
 * group.element[=].display = "Eritrositlar"
@@ -1646,7 +1645,7 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * group.element[=].display = "Neytrofillar yetilish indeksi"
 * group.element[=].target[+].code = #11128-6
 * group.element[=].target[=].display = "Индекс созревания нейтрофилов"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #related-to
 
 * group.element[+].code = #lab-pan-302
 * group.element[=].display = "Proeritroblastlar"
@@ -1662,7 +1661,7 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-304
 * group.element[=].display = "Polixromafil eritroblastlar"
-* group.element[=].target[+].code = #26463-0
+* group.element[=].target[+].code = #11119-5
 * group.element[=].target[=].display = "Полихроматофильные эритробласты"
 * group.element[=].target[=].relationship = #equivalent
 
@@ -1676,7 +1675,7 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * group.element[=].display = "Polixromatofil normoblastlar"
 * group.element[=].target[+].code = #11119-5
 * group.element[=].target[=].display = "Полихроматофильные нормобласты"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-broader-than-target
 
 * group.element[+].code = #lab-pan-307
 * group.element[=].display = "Oksifil normoblastlar"
@@ -1693,21 +1692,21 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 // changed code and relationship
 * group.element[+].code = #lab-pan-309
 * group.element[=].display = "Bazofil megaloblastlar"
-* group.element[=].target[+].code = #52127-8
+* group.element[=].target[+].code = #11104-7
 * group.element[=].target[=].display = "Базофильные мегалобласты"
-* group.element[=].target[=].relationship = #source-is-broader-than-target
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-310
 * group.element[=].display = "Polixromatofil megaloblastlar"
-* group.element[=].target[+].code = #74454-1
+* group.element[=].target[+].code = #11119-5
 * group.element[=].target[=].display = "Полихроматофильные мегалобласты"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-311
 * group.element[=].display = "Oksifil megaloblastlar"
-* group.element[=].target[+].code = #74455-8
+* group.element[=].target[+].code = #11116-1
 * group.element[=].target[=].display = "Оксифильные мегалобласты"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-312
 * group.element[=].display = "Megakarioblastlar"
@@ -1729,21 +1728,21 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-315
 * group.element[=].display = "Retikulyar hujayralar"
-* group.element[=].target[+].code = #74459-0
+* group.element[=].target[+].code = #50726-9
 * group.element[=].target[=].display = "Ретикулярные клетки"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-316
 * group.element[=].display = "Plazmoblastlar"
-* group.element[=].target[+].code = #26467-1
+* group.element[=].target[+].code = #11117-9
 * group.element[=].target[=].display = "Плазмобласты"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-317
 * group.element[=].display = "Proplazmotsitlar"
-* group.element[=].target[+].code = #74460-8
+* group.element[=].target[+].code = #11117-9
 * group.element[=].target[=].display = "Проплазмоциты"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-318
 * group.element[=].display = "Plazmotik xujayralar"
@@ -1753,9 +1752,9 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-319
 * group.element[=].display = "Xujayralar mitozi granulopoez"
-* group.element[=].target[+].code = #74461-6
+* group.element[=].target[+].code = #11114-6
 * group.element[=].target[=].display = "Митоз клеток гранулопоэза"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-320
 * group.element[=].display = "Eritropoez hujayra mitozi"
@@ -1765,9 +1764,9 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-321
 * group.element[=].display = "Eritroblast va normoblastlar sitoplazmasining yetilish indeksi"
-* group.element[=].target[+].code = #74463-2
+* group.element[=].target[+].code = #47286-0
 * group.element[=].target[=].display = "Индекс зрелости цитоплазмы эритробластов и нормобластов"
-* group.element[=].target[=].relationship = #equivalent
+* group.element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group.element[+].code = #lab-pan-322
 * group.element[=].display = "S-reyeaktiv oqsil"
