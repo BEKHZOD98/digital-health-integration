@@ -29,7 +29,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Прозрачность"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Appearance of Stool"
+    * ^designation[=].value = "Appearance of Urine"
 
   * #lab-pan-4 "Nisbiy zichligi"
     * ^designation[0].language = #ru
@@ -101,7 +101,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Эпителий: переходный"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Epithelial cells.transitional [#/area] in Urine sediment by Microscopy HPF"
+    * ^designation[=].value = "Transitional cells [#/area] in Urine sediment by Microscopy high power field"
 
   * #lab-pan-15 "Epiteliy: buyrak epiteliyasi"
     * ^designation[0].language = #ru
@@ -131,37 +131,37 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цилиндры: гиалиновые"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Casts.hyaline [#/area] in Urine sediment by Microscopy LPF"
+    * ^designation[=].value = "Hyaline casts [#/area] in Urine sediment by Microscopy LPF"
 
   * #lab-pan-20 "Silindrlar: mumsimon"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цилиндры: восковидные"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Casts.waxy [#/area] in Urine sediment by Microscopy LPF"
+    * ^designation[=].value = "Waxy casts [#/area] in Urine sediment by Microscopy LPF"
 
   * #lab-pan-21 "Silindrlar: donador"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цилиндры: зернистые"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Casts.granular [#/area] in Urine sediment by Microscopy LPF"
+    * ^designation[=].value = "Granular casts [#/area] in Urine sediment by Microscopy LPF"
 
   * #lab-pan-22 "Silindrlar: eritrotsitar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цилиндры: эритроцитарные"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Casts.red blood cells [#/area] in Urine sediment by Microscopy LPF"
+    * ^designation[=].value = "RBC casts [#/area] in Urine sediment by Microscopy LPF"
 
   * #lab-pan-23 "Silindrlar: leykotsitar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цилиндры: лейкоцитарные"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Casts.white blood cells [#/area] in Urine sediment by Microscopy LPF"
+    * ^designation[=].value = "WBC casts [#/area] in Urine sediment by Microscopy LPF"
 
   * #lab-pan-24 "Silindrlar: epitelial"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цилиндры: эпителиальные"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Casts.epithelial cells [#/area] in Urine sediment by Microscopy LPF"
+    * ^designation[=].value = "Epithelial casts [#/area] in Urine sediment by Microscopy LPF"
 
   * #lab-pan-25 "Shilliq"
     * ^designation[0].language = #ru
@@ -191,49 +191,49 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Количество"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Stool volume [Type]"
+    * ^designation[=].value = "Volume of Stool"
 
   * #lab-pan-29 "Konsistensiyasi"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Консистенция"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Stool consistency [Type]"
+    * ^designation[=].value = "Consistency of Stool"
 
   * #lab-pan-30 "Shakli"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Форма"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Stool form [Type]"
+    * ^designation[=].value = "Appearance of Stool"
 
   * #lab-pan-31 "Hidi"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Запах"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Stool odor [Type]"
+    * ^designation[=].value = "Appearance of Stool"
 
   * #lab-pan-32 "Rangi"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цвет"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Stool color [Type]"
+    * ^designation[=].value = "Color of Stool"
 
   * #lab-pan-33 "Muhit (pH reaksiyasi)"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Среда (реакция pH)"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Stool pH"
+    * ^designation[=].value = "pH of Stool"
 
   * #lab-pan-34 "Shilliq"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Слизь"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Mucus [Presence] in Stool"
+    * ^designation[=].value = "Mucus [Presence] in Stool by Light microscopy"
 
   * #lab-pan-35 "Qon"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Кровь"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Blood [Presence] in Stool"
+    * ^designation[=].value = "Hemoglobin [Presence] in Stool from gastrointestinal"
 
   * #lab-pan-36 "Hazm bo‘lmagan ovqat qoldiqlari"
     * ^designation[0].language = #ru
@@ -245,7 +245,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Реакция на скрытую кровь"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Occult blood [Presence] in Stool by Guaiac test"
+    * ^designation[=].value = "Hemoglobin [Presence] in Stool from gastrointestinal lower by Immunoassay --1st specimen"
 
   * #lab-pan-38 "Sterkobilinga reaksiya"
     * ^designation[0].language = #ru
@@ -257,7 +257,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Реакция на билирубин"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Bilirubin [Presence] in Stool"
+    * ^designation[=].value = "Bilirubin.total [Presence] in Stool"
 
 * #lab-pan-BB "Najasning mikroskopik tekshiruvi"
   * ^designation[0].language = #ru
@@ -269,13 +269,13 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Мышечные волокна:С исчерченностью"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Muscle fibers striated [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = "Meat fibers [Presence] in Stool by Light microscopy"
 
   * #lab-pan-41 "Mushak tolalari: ko‘ndalang chiziqsiz"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Мышечные волокна:Без исчерченности"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Muscle fibers non-striated [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = "Meat fibers [Presence] in Stool by Light microscopy"
 
   * #lab-pan-42 "Biriktiruvchi to‘qima"
     * ^designation[0].language = #ru
@@ -287,25 +287,25 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Жир нейтральный"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Neutral fat [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = "Fat.neutral [Presence] in Stool"
 
   * #lab-pan-44 "Yog‘ kislotalari"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Жирные кислоты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Fatty acids [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = "Fatty acids [Presence] in Stool"
 
   * #lab-pan-45 "Sovunlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Мыла"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Soaps [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = "Fatty acid salts [Presence] in Stool by Light microscopy"
 
   * #lab-pan-46 "O‘simlik kletchatkasi (hazm bo‘ladigan)"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Растительная клетчатка перевариваемая"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Plant fibers digested [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = " 	Vegetable fibers [Presence] in Stool by Light microscopy"
 
   * #lab-pan-47 "Kraxmal"
     * ^designation[0].language = #ru
@@ -323,7 +323,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Кристаллы"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Crystals [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = "Crystals [type] in Stool by Light microscopy"
 
   * #lab-pan-50 "Shilliq"
     * ^designation[0].language = #ru
@@ -353,13 +353,13 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Простейшие"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Protozoa [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = "Protozoa identified in Specimen"
 
   * #lab-pan-55 "Gelmint tuxumlari"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Яйца глистов"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Ova (helminth) [Presence] in Stool by Light microscopy"
+    * ^designation[=].value = "Ova and parasites identified in Stool by Light microscopy"
 
   * #lab-pan-56 "Achitqi zamburug‘lar"
     * ^designation[0].language = #ru
@@ -383,19 +383,19 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Эпителиалные клетки"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Epithelial cells [Presence] in Genital specimen by Light microscopy"
+    * ^designation[=].value = "Epithelial cells [Presence] in Specimen by Wet preparation"
 
   * #lab-pan-59 "Mikroflora"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Микрофлора"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Bacteria [Presence] in Genital specimen by Light microscopy"
+    * ^designation[=].value = "Bacteria [Presence] in Genital specimen by Wet preparation"
 
   * #lab-pan-60 "Gonokokklar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Гонококки"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Neisseria gonorrhoeae [Presence] in Genital specimen by Light microscopy"
+    * ^designation[=].value = "Neisseria gonorrhoeae [Presence] in Urethra by Organism specific culture"
 
   * #lab-pan-61 "Trichomonadalar"
     * ^designation[0].language = #ru
@@ -407,7 +407,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Грибы"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Yeast [Presence] in Genital specimen by Light microscopy"
+    * ^designation[=].value = "Yeast [Presence] in Genital specimen by Wet preparation"
 
 * #lab-pan-D "Qon koagulogrammasi"
   * ^designation[0].language = #ru
@@ -617,7 +617,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Плазматические клетки"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Plasma cells"
+    * ^designation[=].value = "Plasma cells monotypic population [Identifier] in Bone marrow by Flow cytometry (FC)"
 
   * #lab-pan-96 "Eritrotsitlarning cho‘kish tezligi (ECHT)"
     * ^designation[0].language = #ru
@@ -829,17 +829,18 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[+].language = #en
     * ^designation[=].value = "Plateletcrit [Volume Fraction] of Blood by Automated count"
 
+// changed english display
   * #lab-pan-130 "Yirik trombotsitlar soni (P-LCC)"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Количество крупных тромбоцитов (P-LCC)"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Platelet large cell count [#/volume] in Blood by Automated count"
+    * ^designation[=].value = "Leukocytes [#/volume] in Blood by Estimate"
 
   * #lab-pan-131 "Yirik trombotsitlar ulushi (P-LCR)"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Доля крупных тромбоцитов (P-LCR)"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Platelet large cell ratio [#] in Blood by Automated count"
+    * ^designation[=].value = "Platelets Large/Platelets in Blood by Automated count"
 
   * #lab-pan-132 "Eritrotsitning cho'kish tezligi (ЭЧТ)"
     * ^designation[0].language = #ru
@@ -1121,7 +1122,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Объём"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Semen volume [Volume]"
+    * ^designation[=].value = "Volume of Semen"
 
   * #lab-pan-176 "Rangi"
     * ^designation[0].language = #ru
@@ -1187,7 +1188,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Живые сперматозоиды"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Spermatozoa viability [#/volume] in Semen by Stain"
+    * ^designation[=].value = "Spermatozoa Viable/Spermatozoa in Semen"
 
   * #lab-pan-187 "Patologik shakldagi sermatozoidlar"
     * ^designation[0].language = #ru
@@ -1199,7 +1200,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Эпителий сперматогенеза"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Epithelial cells [Presence] in Semen"
+    * ^designation[=].value = "Epithelial cells [Presence] in Semen by Light microscopy"
 
   * #lab-pan-189 "Leykositlar"
     * ^designation[0].language = #ru
@@ -1241,13 +1242,13 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Количество"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Sputum volume [Volume]"
+    * ^designation[=].value = "Volume of Sputum"
 
   * #lab-pan-195 "Hidi"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Запах"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Sputum odor [Type]"
+    * ^designation[=].value = "Odor of Lower respiratory specimen"
 
   * #lab-pan-196 "Rangi"
     * ^designation[0].language = #ru
@@ -1271,7 +1272,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Консистенция"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Sputum consistency [Type]"
+    * ^designation[=].value = "Appearance of Sputum"
 
   * #lab-pan-200 "Epiteliy"
     * ^designation[0].language = #ru
@@ -1283,7 +1284,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Альвеолярные макрофаги"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Macrophages [Presence] in Sputum by Light microscopy"
+    * ^designation[=].value = "Alveolar macrophages [#/volume] in Lower respiratory specimen by Manual count"
 
   * #lab-pan-202 "Leykositlar"
     * ^designation[0].language = #ru
@@ -1301,7 +1302,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Волокна"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Fibers [Presence] in Sputum by Light microscopy"
+    * ^designation[=].value = "Elastic fibers [#/volume] in Lower respiratory specimen by Manual count"
 
   * #lab-pan-205 "Elastik tolalar"
     * ^designation[0].language = #ru
@@ -1325,19 +1326,19 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Эозинофилы"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Eosinophils [#/area] in Sputum by Light microscopy"
+    * ^designation[=].value = "Eosinophils/Leukocytes in Sputum"
 
   * #lab-pan-209 "Zamburug'lar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Грибы"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Fungi [Presence] in Sputum by Light microscopy"
+    * ^designation[=].value = "Fungus [Presence] in Sputum by KOH preparation"
 
   * #lab-pan-210 "Boshqa flora"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Другая флора"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Bacteria [Presence] in Sputum by Light microscopy"
+    * ^designation[=].value = "Bacteria identified in Sputum by Culture"
 
   * #lab-pan-211 "Kurshman spirallari"
     * ^designation[0].language = #ru
@@ -1367,19 +1368,20 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Количество"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Prostatic fluid volume [Volume]"
+    * ^designation[=].value = "Volume of Prostatic fluid"
 
   * #lab-pan-215 "Rangi"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цвет"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Prostatic fluid color [Type]"
+    * ^designation[=].value = "Color of Prostatic fluid"
 
+// changed english display
   * #lab-pan-216 "Shaffofligi"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Прозрачность"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Prostatic fluid clarity [Type]"
+    * ^designation[=].value = "Appearance of Stool"
 
   * #lab-pan-217 "Konsistensiyasi"
     * ^designation[0].language = #ru
@@ -1391,7 +1393,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Лейкоциты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Leukocytes [#/area] in Prostatic fluid by Microscopy HPF"
+    * ^designation[=].value = "Leukocytes [#/area] in Prostatic fluid by Light microscopy"
 
   * #lab-pan-219 "Eritrositlar"
     * ^designation[0].language = #ru
@@ -1409,7 +1411,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Макрофаги"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Macrophages [Presence] in Prostatic fluid by Light microscopy"
+    * ^designation[=].value = "Macrophages [#/area] in Prostatic fluid by Light microscopy"
 
   * #lab-pan-222 "Letsitin donachalari"
     * ^designation[0].language = #ru
@@ -1481,7 +1483,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Вирус простого герпеса (антитела IgG)"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Herpes simplex virus 1+2 IgG Ab [Presence] in Serum by Immunoassay"
+    * ^designation[=].value = "HIV 1+O+2 Ab [Units/volume] in Serum or Plasma"
 
   * #lab-pan-233 "Ureaplazma"
     * ^designation[0].language = #ru
@@ -1655,25 +1657,25 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Количество"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Cerebrospinal fluid volume [Volume]"
+    * ^designation[=].value = "Volume of Cerebral spinal fluid"
 
   * #lab-pan-260 "Sentrefugadan keyingi rangi"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Цвет после центрифугирования"
     * ^designation[+].language = #en
-    * ^designation[=].value = "CSF color [Type]"
+    * ^designation[=].value = "Color of Cerebral spinal fluid"
 
   * #lab-pan-261 "Sentrefugagacha ksantoxromiya"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Ксантохромия до центрифугирования"
     * ^designation[+].language = #en
-    * ^designation[=].value = "CSF xanthochromia [Presence]"
+    * ^designation[=].value = "Xanthochromia [Presence] of Cerebral spinal fluid Qualitative"
 
   * #lab-pan-262 "Sentrefugadan keyingi shaffofligi"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Прозрачность после центрифугирования"
     * ^designation[+].language = #en
-    * ^designation[=].value = "CSF clarity [Type]"
+    * ^designation[=].value = "Clarity of Cerebral spinal fluid"
 
   * #lab-pan-263 "Oqsil"
     * ^designation[0].language = #ru
@@ -1709,13 +1711,13 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Макрофаги"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Macrophages [Presence] in Cerebrospinal fluid by Light microscopy"
+    * ^designation[=].value = "Monocytes+Macrophages [Presence] in Cerebral spinal fluid by Light microscopy"
 
   * #lab-pan-269 "O'zgargan hujayralar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Изменённые клетки"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Cells abnormal [Presence] in Cerebrospinal fluid by Cytology"
+    * ^designation[=].value = "Abnormal lymphocytes/Leukocytes in Cerebral spinal fluid"
 
   * #lab-pan-270 "Poliblastlar"
     * ^designation[0].language = #ru
@@ -1727,7 +1729,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Плазматические клетки"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Plasma cells [Presence] in Cerebrospinal fluid by Light microscopy"
+    * ^designation[=].value = "Plasma cells/Leukocytes in Cerebral spinal fluid by Microscopy"
 
   * #lab-pan-272 "Araxnoidal endoteliy hujayralari"
     * ^designation[0].language = #ru
@@ -1739,7 +1741,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Клетки эпендимы"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Ependymal cells [Presence] in Cerebrospinal fluid by Light microscopy"
+    * ^designation[=].value = "Arachnoid cells [Presence] in Cerebrospinal fluid by Light microscopy"
 
   * #lab-pan-274 "Donador sharlar"
     * ^designation[0].language = #ru
@@ -1769,7 +1771,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Количество миелокариоцитов"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Myelokaryocytes [#/volume] in Bone marrow by Manual count"
+    * ^designation[=].value = "Nucleated cells [#/volume] in Bone marrow"
 
   * #lab-pan-278 "Megakariotsitlar soni"
     * ^designation[0].language = #ru
@@ -1781,43 +1783,43 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Незрелые бласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Blast cells immature [#/100 cells] in Bone marrow by Manual count"
+    * ^designation[=].value = "Blasts/cells in Bone marrow"
 
   * #lab-pan-280 "Miyeloblastlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Миелобласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Myeloblasts/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Myeloblasts/cells in Bone marrow by Manual count"
 
   * #lab-pan-281 "Promiyelotsitlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Промиелоциты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Promyelocytes/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Promyelocytes/cells in Bone marrow by Manual count"
 
   * #lab-pan-282 "Miyelotsitlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Миелоциты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Myelocytes/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Myelocytes/cells in Bone marrow by Manual count"
 
   * #lab-pan-283 "Metamiyelotsitlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Метамиелоциты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Metamyelocytes/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Myelocytes/cells in Bone marrow by Manual count"
 
   * #lab-pan-284 "Tayoqchayadrolilar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Палочкоядерные нейтрофилы"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Neutrophils.band form/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Band form neutrophils/cells in Bone marrow by Manual count"
 
   * #lab-pan-285 "Segmentyadrolilar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Сегментоядерные нейтрофилы"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Neutrophils.segmented/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Segmented neutrophils/Leukocytes in Bone marrow by Manual count"
 
   // In Form 085, the analytes lab-pan-282, 283, 284, and 285 are repeated three times, and the only difference between them is the reference values. This should be taken into consideration during implementation in the Admin panel.
 
@@ -1825,61 +1827,61 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Лимфобласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Lymphoblasts/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Lymphoblasts/Leukocytes in Bone marrow by Manual count"
 
   * #lab-pan-295 "Prolimfotsitlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Пролимфоциты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Prolymphocytes/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Prolymphocytes/cells in Bone marrow by Manual count"
 
   * #lab-pan-296 "Limfotsitlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Лимфоциты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Lymphocytes/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Lymphocytes/cells in Bone marrow by Manual count"
 
   * #lab-pan-297 "Monoblastlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Монобласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Monoblasts/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Monoblasts/Leukocytes in Bone marrow by Manual count"
 
   * #lab-pan-298 "Promonotsitlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Промоноциты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Promonocytes/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Promonocytes/cells in Bone marrow by Manual count"
 
   * #lab-pan-299 "Monotsitlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Моноциты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Monocytes/100 leukocytes in Bone marrow by Manual count"
+    * ^designation[=].value = "Monocytes/cells in Bone marrow by Manual count"
 
   * #lab-pan-300 "Leyko-eritroblastik nisbat"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Лейко-эритробластическое соотношение"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Myeloid/erythroid ratio in Bone marrow"
+    * ^designation[=].value = "Myeloid cells/Erythroid cells [# Ratio] in Bone marrow"
 
   * #lab-pan-301 "Neytrofillar yetilish indeksi"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Индекс созревания нейтрофилов"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Neutrophil maturation index in Bone marrow"
+    * ^designation[=].value = "Segmented neutrophils/cells in Bone marrow"
 
   * #lab-pan-302 "Proeritroblastlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Проэритробласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Proerythroblasts/100 erythroid cells in Bone marrow by Manual count"
+    * ^designation[=].value = "Pronormoblasts/cells in Bone marrow by Manual count"
 
   * #lab-pan-303 "Bazofil eritroblastlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Базофильные эритробласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Erythroblasts.basophilic/100 erythroid cells in Bone marrow by Manual count"
+    * ^designation[=].value = "Normoblasts Basophils/cells in Bone marrow by Manual count"
 
   * #lab-pan-304 "Polixromafil eritroblastlar"
     * ^designation[0].language = #ru
@@ -1891,31 +1893,31 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Оксифильные эритробласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Erythroblasts.oxyphilic/100 erythroid cells in Bone marrow by Manual count"
+    * ^designation[=].value = "Normoblasts oxyphilic+polychromatophilic/Normoblasts.total in Bone marrow by Manual count"
 
   * #lab-pan-306 "Polixromatofil normoblastlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Полихроматофильные нормобласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Normoblasts.polychromatophilic/100 erythroid cells in Bone marrow by Manual count"
+    * ^designation[=].value = "Normoblasts Polychromatophilic/cells in Bone marrow by Manual count"
 
   * #lab-pan-307 "Oksifil normoblastlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Оксифильные нормобласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Normoblasts.oxyphilic/100 erythroid cells in Bone marrow by Manual count"
+    * ^designation[=].value = "Normoblasts Orthochromic/cells in Bone marrow by Manual count"
 
   * #lab-pan-308 "Promegaloblastlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Промегалобласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Megaloblasts.pro/100 erythroid cells in Bone marrow by Manual count"
+    * ^designation[=].value = "Megaloblasts/cells in Bone marrow by Manual count"
 
   * #lab-pan-309 "Bazofil megaloblastlar"
     * ^designation[0].language = #ru
     * ^designation[=].value = "Базофильные мегалобласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Megaloblasts.basophilic/100 erythroid cells in Bone marrow by Manual count"
+    * ^designation[=].value = "Megaloblasts/cells in Bone marrow by Manual count"
 
   * #lab-pan-310 "Polixromatofil megaloblastlar"
     * ^designation[0].language = #ru
@@ -1933,7 +1935,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Мегакариобласты"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Megakaryoblasts/100 cells in Bone marrow by Manual count"
+    * ^designation[=].value = "Megakaryoblasts/cells in Bone marrow by Manual count"
 
   * #lab-pan-313 "Promegakariotsitlar"
     * ^designation[0].language = #ru
@@ -1981,7 +1983,7 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[0].language = #ru
     * ^designation[=].value = "Митоз клеток эритропоэза"
     * ^designation[+].language = #en
-    * ^designation[=].value = "Erythropoiesis cells mitosis [Presence] in Bone marrow"
+    * ^designation[=].value = "Erythropoiesis assessment in Bone marrow Narrative"
 
   * #lab-pan-321 "Eritroblast va normoblastlar sitoplazmasining yetilish indeksi"
     * ^designation[0].language = #ru
