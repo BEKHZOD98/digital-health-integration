@@ -1,5 +1,5 @@
-CodeSystem: ObservationLabMethodsCS
-Id: observation-lab-methods-cs
+CodeSystem: LabMethodsCS
+Id: lab-methods-cs
 Title: "Laboratory technique (method of measurement)"
 Description: "Laboratory technique (method of measurement) used for the result measurement"
 * ^experimental = true

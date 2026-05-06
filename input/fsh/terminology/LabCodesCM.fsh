@@ -9,8 +9,8 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 * experimental = false
 * publisher = "Uzinfocom"
 
-* group.source = Canonical(LaboratoryObservationPanelCS)
-* sourceScopeCanonical = Canonical(ObservationLabCodesVS)
+* group.source = Canonical(LabPanelCS)
+* sourceScopeCanonical = Canonical(LabCodesVS)
 * group.target = $loinc
 * targetScopeCanonical = $loinc
 
@@ -1516,7 +1516,7 @@ Description: "Maps local UZ laboratory analytes codes to LOINC."
 
 * group.element[+].code = #lab-pan-272
 * group.element[=].display = "Araxnoidal endoteliy hujayralari"
-* group.element[=].target[+].code = #26470-5
+* group.element[=].target[+].code = #26470-5 
 * group.element[=].target[=].display = "Клетки арахноидального эндотелия"
 * group.element[=].target[=].relationship = #source-is-narrower-than-target
 

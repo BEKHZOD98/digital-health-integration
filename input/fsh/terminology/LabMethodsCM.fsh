@@ -9,8 +9,8 @@ Description: "Maps local UZ laboratory method (technique of measurement) codes t
 * experimental = false
 * publisher = "Uzinfocom"
 
-* group.source = Canonical(ObservationLabMethodsCS)
-* sourceScopeCanonical = Canonical(ObservationLabMethodsVS)
+* group.source = Canonical(LabMethodsCS)
+* sourceScopeCanonical = Canonical(LabMethodsVS)
 * group.target = $sct
 * targetScopeCanonical = $sct
 

@@ -1,5 +1,5 @@
-CodeSystem: LaboratoryObservationPanelCS
-Id: lab-observation-pan-cs
+CodeSystem: LabPanelCS
+Id: lab-pan-cs
 Title: "Laboratory Observation Panels and Analytes"
 Description: "Code system defining laboratory observation panels and individual analytes used in Ministry of Health Uzbekistan ."
 * ^hierarchyMeaning = #is-a
