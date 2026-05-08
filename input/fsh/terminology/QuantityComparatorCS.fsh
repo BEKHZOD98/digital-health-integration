@@ -2,7 +2,7 @@ CodeSystem: QuantityComparatorCS
 Id: quantity-comparator-cs
 Title: "Quantity comparator CodeSystem"
 Description: "CodeSystem for quantity comparator in Uzbek, Russian and English languages"
-
+* ^experimental = true
 
 * #<
   * ^designation[0].language = #ru

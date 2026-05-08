@@ -2,6 +2,9 @@ CodeSystem: HepatitisEncDiagnosisUseCS
 Id: hep-enc-diag-use-cs
 Title: "Hepatitis enc diagnosis use codesystem"
 Description: "Description of hepatitis enc diagnosis use codesystem"
+* ^experimental = true
+* ^caseSensitive = true
+* ^language = #uz
 
 * #working "Ishlamoqda"
   * ^designation[+].language = #ru

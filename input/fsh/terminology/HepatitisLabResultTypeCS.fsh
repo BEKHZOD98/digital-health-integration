@@ -2,6 +2,9 @@ CodeSystem: HepatitisLabResultTypeCS
 Id: hep-lab-res-type-cs 
 Title: "Hepatitis lab result type codesystem"
 Description: "Description of hepatitis lab result type codesystem"
+* ^experimental = true
+* ^caseSensitive = true
+* ^language = #uz
 
 * #lab_0001_00001 "Salbiy"
   * ^designation[+].language = #ru
