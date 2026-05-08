@@ -109,7 +109,6 @@ Usage: #example
 //     * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
 //     * type = #boolean
 
-<<<<<<< HEAD
 //   * item[1]
 //     * linkId = "hx-tx-hcv-hbv-meds"
 //     * text = "What medications were taken against HCV/HBV?"
@@ -131,15 +130,6 @@ Usage: #example
 //     * answerOption[0].valueCoding = $sct#255246003 "First trimester"
 //     * answerOption[1].valueCoding = $sct#255247007 "Second trimester"
 //     * answerOption[2].valueCoding = $sct#255248002 "Third trimester"
-=======
-  * item[0]
-    * linkId = "pregnancy-trimester"
-    * text = "Pregnancy duration (Homiladorlik muddati)"
-    * type = #coding
-    * answerOption[0].valueCoding = $sct#255246003 "First trimester"
-    * answerOption[1].valueCoding = $sct#255247007 "Second trimester"
-    * answerOption[2].valueCoding = $sct#255248002 "Third trimester"
->>>>>>> 6bf8c51 (resolved some warnings)
 
 // Instance Example 
 // Instance: example-hcv-response
@@ -147,7 +137,6 @@ Usage: #example
 // Description: "Example of anamnesis responses completed by the patient for hepatitis B and C treatment questionnaire"
 // Usage: #example
 
-<<<<<<< HEAD
 // * identifier
 //   * system = "urn:ietf:rfc:3986"
 //   * value = "urn:uuid:6f9b9d8e-3b7d-4d87-8f6e-123456789abc"
@@ -326,15 +315,9 @@ InstanceOf: UZCoreEncounter
 Usage: #example
 Title: "Encounter Example"
 Description: "Example encounter representing a tuberculosis patient's inpatient admission."
-=======
-* identifier
-  * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:6f9b9d8e-3b7d-4d87-8f6e-123456789abc"
->>>>>>> 6bf8c51 (resolved some warnings)
 
 * status = #completed
 
-<<<<<<< HEAD
 * class = $v3-ActCode#IMP "inpatient encounter"
 
 * type[nationalType] = EncounterTypeCS#mserv-0001-00004 "Treatment services"
@@ -354,28 +337,3 @@ Description: "Example encounter representing a tuberculosis patient's inpatient 
 * diagnosis[0].condition = Reference(example-tbc-diagnosis)
 
 * diagnosis[0].use = $encounter-diagnosis-use-cs#final "Final"
-=======
-* item[0]
-  * linkId = "grp-1"
-  * text = "MAIN INFORMATION"
-
-  * item[0]
-    * linkId = "hx-tx-hcv-hbv"
-    * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
-    * answer[0].valueBoolean = true
-
-  * item[1]
-    * linkId = "hx-tx-hcv-hbv-meds"
-    * text = "What medications were taken against HCV/HBV?"
-    * answer[0].valueString = "Sofosbuvir + Declatasvir"
-
-* item[1]
-  * linkId = "grp-pregnancy"
-  * text = "Gynecological treatment / Pregnancy"
-
-  * item[0]
-    * linkId = "pregnancy-trimester"
-    * text = "Pregnancy duration (Homiladorlik muddati)"
-    * answer[0]
-      * valueCoding = $sct#255246003 "First trimester"
->>>>>>> 6bf8c51 (resolved some warnings)

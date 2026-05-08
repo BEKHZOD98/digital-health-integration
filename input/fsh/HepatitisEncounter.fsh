@@ -68,12 +68,8 @@ Usage: #example
 * identifier 
   * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
   * value = "ENC-2026-9901"
-  * type.coding
-    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
-    * code = #PHC
-    * display = "Public Health Case Identifier"
   * use = #official
-
+* type[nationalType] = EncounterTypeCS#mserv-0001-00004 "Treatment services"
 * status = #completed
 
 * subject = Reference(example-hepatitis-patient)

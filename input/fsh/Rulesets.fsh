@@ -3,8 +3,6 @@ RuleSet: IntegrationsValueSet(id)
 // draws from an original or a supplement code system, so one URL rule covers all.
 * ^url = "https://terminology.dhp.uz/fhir/integrations/ValueSet/{id}"
 
-RuleSet: OriginalCodeSystemDraft(id)
-* ^url = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/{id}"
 RuleSet: IntAndUzAddressRules
 * address MS
 * address ^slicing.discriminator.type = #value
@@ -89,7 +87,7 @@ RuleSet: TaxIdentifier
   * value 1..1 MS
 
 RuleSet: OriginalCodeSystemDraft(id)
-* ^url = "https://terminology.dhp.uz/CodeSystem/{id}"
+* ^url = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/{id}"
 * ^status = #draft
 * ^content = #complete
 * ^caseSensitive = true

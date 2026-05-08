@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 Extension: AdmissionOrigin
 Id: admission-origin
 Title: "Admission Origin"
@@ -116,38 +114,30 @@ Description: "Date of birth of the related person"
 * ^context.expression = "RelatedPerson"
 
 * value[x] 1..1 MS
+* value[x] only date
 
-=======
-=======
-/*
->>>>>>> 567a164 (updated all profiles and codesystems)
 Extension: DrugEfficacy
 Id: drug-efficacy
 Title: "Drug Efficacy Extension"
 Description: "Extension to indicate the efficacy of a drug for a specific patient, based on their individual response to the medication."
 * value[x] only boolean
 * valueBoolean MS
-<<<<<<< HEAD
-/*
->>>>>>> c92c474 (removed all Birth  profiles)
-=======
 
->>>>>>> 567a164 (updated all profiles and codesystems)
-Extension: PatientPlaceOfBirthType
-Id: patient-placeOfBirthType
-Title: "Place of Birth Type"
-Description: "Extension to indicate the type of place where the patient was born (e.g. home, hospital, other)."
+// Extension: PatientPlaceOfBirthType
+// Id: patient-placeOfBirthType
+// Title: "Place of Birth Type"
+// Description: "Extension to indicate the type of place where the patient was born (e.g. home, hospital, other)."
 
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/patient-placeOfBirthType"
-* ^status = #active
-* ^context.type = #element
-* ^experimental = true
-* ^context.expression = "Patient"
+// * ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/patient-placeOfBirthType"
+// * ^status = #active
+// * ^context.type = #element
+// * ^experimental = true
+// * ^context.expression = "Patient"
 
-* value[x] only CodeableConcept
-* valueCodeableConcept from BirthPlaceVS (required)
-* valueCodeableConcept ^short = "Type of the place where the patient was born"
-*/
+// * value[x] only CodeableConcept
+// * valueCodeableConcept from BirthPlaceVS (required)
+// * valueCodeableConcept ^short = "Type of the place where the patient was born"
+
 Extension: RelatedPersonEducation
 Id: relatedperson-education
 Title: "Related Person Education"
@@ -185,17 +175,6 @@ Description: "gender 'other' implies differentiation of the gender indication 'o
 * severity = #error
 * expression = "gender.exists() and gender = 'other' implies gender.extension('https://dhp.uz/fhir/integrations/StructureDefinition/gender-other').exists()"
 
-// Extension: ManagingOrganizationAttachment
-// Id: managing-organization-attachment
-// Title: "Managing organization attachment date"
-// Description: "Date when the patient was attached to the managing organization. In Uzbekistan, patients can only change their managing organization once a year."
-// Context: Patient
-// * ^context.type = #element
-// * ^context.expression = "Patient"
-// * ^experimental = true
-// * value[x] 1..
-// * value[x] only date
-
 Extension: ManagingOrganizationAttachment
 Id: managing-organization-attachment
 Title: "Managing organization attachment date"
@@ -209,7 +188,6 @@ Description: "Date when the patient was attached to the managing organization. I
 * value[x] 1..1
 * value[x] only date
 
-/*
 Extension: MultipleBirthFlag
 Id: multiple-birth-flag
 Title: "Multiple Birth Flag"
@@ -235,27 +213,14 @@ Description: "Birth time of each newborn in a multiple birth."
 * ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/newborn-birth-time"
 * ^experimental = true
 
-<<<<<<< HEAD
-* value[x] 1..1 MS
-* value[x] only dateTime
-* valueDateTime ^short = "Exact birth time of the newborn"
-
-
-Extension: DrugEfficacy
-Id: drug-efficacy
-Title: "Drug Efficacy Extension"
-Description: "Preparatning samaradorligini (ha/yo'q) belgilash uchun maxsus kengaytma"
-* value[x] only boolean
-* valueBoolean MS
-=======
 //change context
 * ^context.type = #element
 * ^context.expression = "Patient"
- 
+
 * value[x] 1..1 MS
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
-*/
+
 Extension: ConditionOutcome
 Id: hepatitis-condition-outcome
 Title: "Hepatitis condition outcome extension"
@@ -267,9 +232,6 @@ Context: Condition
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1 MS
 * valueCodeableConcept from HepatitisConditionOutcomeCodesVS (required)
-<<<<<<< HEAD
->>>>>>> 567a164 (updated all profiles and codesystems)
-=======
 
 Extension: HepatitisDiagnosisType
 Id: hepatitis-diagnosis-type
@@ -282,4 +244,3 @@ Context: Condition
 * value[x] only CodeableConcept
 * valueCodeableConcept from HepatitisConditionDiagnosisTypeVS (required)
 * valueCodeableConcept ^short = "Type of diagnosis (e.g., primary, secondary)"
->>>>>>> 6bf8c51 (resolved some warnings)

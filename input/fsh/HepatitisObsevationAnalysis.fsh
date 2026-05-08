@@ -60,6 +60,9 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * performer ^short = "Organization responsible for performing this observation"
 
 //* component.value[x] only Quantity or string or CodeableConcept 
+* component 0..* MS 
+* component.code 1..1 MS
+* component.code from HepatitisObservationAnalysisVS (required)
 * component.valueQuantity.value 0..1 MS
 * component.valueQuantity.comparator from QuantityComparatorVS (required)
 * component.valueQuantity.unit 0..1 MS
@@ -70,25 +73,9 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * component.valueString ^short = "The result value entered manually by a healthcare professional."
 * component.valueCodeableConcept ^short = "Positive or negative laboratory test result"
 * component.valueCodeableConcept from ObservationInterpretationVS (extensible)
-//* component.valueCodeableConcept from ObservationInterpretationVS (extensible)
-/*
-* component 0..* MS 
-  * code 1..1 MS
-  * code from HepatitisObservationAnalysisVS (required) //after LabObsForIntegrationSys branch merged to main branch change this value set with LaboratoryObservationPanelCS
+* component.dataAbsentReason from DataAbsentReasonVS (extensible)
+* component.interpretation from ObservationInterpretationVS (extensible)
 
-  * valueQuantity
-    * value 0..1 MS
-    * comparator from http://hl7.org/fhir/ValueSet/quantity-comparator (required)
-    * unit 0..1 MS
-    * system 0..1 MS
-    * system = $ucum
-    * code 0..1 MS
-  * valueCodeableConcept
-    * valueCodeableConcept from HepatitisLabResultTypeVS (required) //after LabObsForIntegrationSys branch merged to main branch change this value set with LaboratoryObservationPanelCS
-*/
-//* dataAbsentReason from DataAbsentReasonVS (extensible)
-//* interpretation from ObservationInterpretationVS (extensible)
-*/
 
 // Instance Example
 Instance: example-hepatitis-observation-analysis
@@ -110,16 +97,10 @@ Usage: #example
 * code = $loinc#22314-9 "Hepatitis A virus IgM Ab [Presence] in Serum"
 * subject = Reference(Patient/example-hepatitis-patient)
 * effectiveDateTime = "2026-01-27T09:57:00Z"
-<<<<<<< HEAD
-* valueCodeableConcept = http://hl7.org/fhir/observation-referencerange-normalvalue#negative "Negative"
-* performer = Reference(Organization/samarkand-regional-hospital)
-<<<<<<< HEAD
 
-
-=======
-=======
 * valueCodeableConcept.coding
-  * code = observation-interpretation-cs#NEG
+  * system = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+  * code = #NEG
   * display = "Negative"
 
 * performer[0] = Reference(PractitionerRole/muratova-gulshoda-role)
@@ -152,7 +133,6 @@ Usage: #example
 
 * performer[0] = Reference(PractitionerRole/muratova-gulshoda-role)
 * performer[1] = Reference(Organization/samarkand-regional-hospital)
->>>>>>> 507b81e (deleted Questionnaire and QResponse profiles and modified some profiles)
 * component[0]
   * code = $loinc#5195-3 "Hepatitis B virus surface Ag [Presence] in Serum" //This example is incorrect , inside of component.code only use panel's analytes code
   * valueQuantity 
@@ -165,4 +145,3 @@ Usage: #example
 >>>>>>> 567a164 (updated all profiles and codesystems)
 =======
 */
->>>>>>> 11cba1c (updated codesystems and valuesets)

@@ -80,6 +80,12 @@ Alias: $v2-0487 = http://terminology.hl7.org/CodeSystem/v2-0487
 Alias: $v2-0916 = http://terminology.hl7.org/CodeSystem/v2-0916
 Alias: $v2-admission = http://terminology.hl7.org/CodeSystem/v2-0092
 
+Alias: $sct = http://snomed.info/sct
+Alias: $iso-3166 = urn:iso:std:iso:3166
+Alias: $sct-vs = http://snomed.info/sct?fhir_vs
+Alias: $observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+Alias: $loinc-vs = http://loinc.org/vs
+
 Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias: $v3ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
 Alias: $v3-ActReason = http://terminology.hl7.org/CodeSystem/v3-ActReason

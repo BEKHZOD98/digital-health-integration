@@ -96,7 +96,7 @@ Description: "Profile for hepatitis patient resource"
 
 * address[uzAddress]
   * use from AddressUseVS (required)
-  * type from $address-vs (required)
+  * type from $address-type-vs (required)
   * text 0..1 MS
   * line 0..* MS
   * city from MahallaVS (required)
@@ -130,7 +130,7 @@ Usage: #example
   * family = "To'lanboyev"
   * given = "Tolibjon"
 
-* gender = #male 
+* gender = #male "Male"
 * birthDate = "1990-02-01"
 
 * address[uzAddress]

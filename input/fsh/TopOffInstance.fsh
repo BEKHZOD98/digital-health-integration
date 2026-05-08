@@ -1,4 +1,4 @@
-Instance: example
+Instance: example-boltayev-birth
 InstanceOf: Patient
 Usage: #example
 Description: "Example patient for the birth profile"
