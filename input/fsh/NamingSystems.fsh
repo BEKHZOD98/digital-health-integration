@@ -92,3 +92,21 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
 * uniqueId[0].preferred = true
+
+
+
+
+Instance: department-code-ns
+InstanceOf: NamingSystem
+Usage: #definition
+
+* name = "DepartmentCodeNamingSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-05-07"
+* publisher = "Uzinfocom"
+* responsible = "UZINFOCOM"
+* description = "NamingSystem for Uzbekistan department codes"
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/department-code"
+* uniqueId[0].preferred = true
