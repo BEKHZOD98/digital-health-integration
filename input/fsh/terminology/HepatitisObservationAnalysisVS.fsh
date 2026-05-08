@@ -8,4 +8,4 @@ Description: "ValueSet for hepatitis observation analysis"
 * ^extension.valueCanonical = Canonical(HepatitisObservationAnalysisCS)
 
 * include codes from system $loinc
-// * include codes from valueset LabObservationPanelVS //observation laboratory paneli integration uchun tayyor bo'ganida qoyib ketishimiz kerak
+

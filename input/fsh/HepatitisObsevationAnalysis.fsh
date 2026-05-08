@@ -60,6 +60,9 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * performer ^short = "Organization responsible for performing this observation"
 
 //* component.value[x] only Quantity or string or CodeableConcept 
+* component 0..* MS 
+* component.code 1..1 MS
+* component.code from HepatitisObservationAnalysisVS (required)
 * component.valueQuantity.value 0..1 MS
 * component.valueQuantity.comparator from QuantityComparatorVS (required)
 * component.valueQuantity.unit 0..1 MS
@@ -70,14 +73,9 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * component.valueString ^short = "The result value entered manually by a healthcare professional."
 * component.valueCodeableConcept ^short = "Positive or negative laboratory test result"
 * component.valueCodeableConcept from ObservationInterpretationVS (extensible)
-//* component.valueCodeableConcept from ObservationInterpretationVS (extensible)
-/*
-* component 0..* MS 
-  * code 1..1 MS
-  * code from HepatitisObservationAnalysisVS (required) //after LabObsForIntegrationSys branch merged to main branch change this value set with LaboratoryObservationPanelCS
-//* dataAbsentReason from DataAbsentReasonVS (extensible)
-//* interpretation from ObservationInterpretationVS (extensible)
-*/
+* component.dataAbsentReason from DataAbsentReasonVS (extensible)
+* component.interpretation from ObservationInterpretationVS (extensible)
+
 
 // Instance Example
 Instance: example-hepatitis-observation-analysis
@@ -100,7 +98,8 @@ Usage: #example
 * subject = Reference(Patient/example-hepatitis-patient)
 * effectiveDateTime = "2026-01-27T09:57:00Z"
 * valueCodeableConcept.coding
-  * code = observation-interpretation-cs#NEG
+  * system = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+  * code = #NEG
   * display = "Negative"
 
 * performer[0] = Reference(PractitionerRole/muratova-gulshoda-role)

@@ -132,7 +132,7 @@ Usage: #example
   * family = "To'lanboyev"
   * given = "Tolibjon"
 
-* gender = #male 
+* gender = #male "Male"
 * birthDate = "1990-02-01"
 
 * address[uzAddress]

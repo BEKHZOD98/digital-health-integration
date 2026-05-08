@@ -3,7 +3,7 @@ Id: hep-observation-analysis-cs
 Title: "Hepatitis observation analysis codesystem"
 Description: "Description of hepatitis observation analysis codesystem"
 
-* insert SupplementCodeSystemDraft(hep-observation-analysis-cs, http://loinc.org, 2.77)
+* insert SupplementCodeSystemDraft(hep-observation-analysis-cs, http://loinc.org, 5.0.0)
 
 * #22314-9 "Hepatitis A virus IgM Ab [Presence] in Serum"
   * ^designation[0].language = #ru
@@ -100,4 +100,3 @@ Description: "Description of hepatitis observation analysis codesystem"
   * ^designation[=].value = "РНК вирусного гепатита Д — количественный (IU/mL)"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Gepatit D virusi RNKsi — miqdoriy (IU/mL)"
-// * include codes from valueset LabObservationPanelVS //observation laboratory paneli integration uchun tayyor bo'ganida qoyib ketishimiz kerak
