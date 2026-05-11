@@ -1,5 +1,5 @@
 ValueSet: HepatitisEncounterParticipantTypeVS
-Id: encounter-participant-type-vs
+Id: hepatitis-encounter-participant-type-vs
 Title: "Encounter participant type ValueSet"
 Description: "ValueSet for encounter participant type"
 

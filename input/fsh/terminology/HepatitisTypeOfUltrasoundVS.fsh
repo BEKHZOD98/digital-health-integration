@@ -11,7 +11,7 @@ Description: "ValueSet for hepatitis type of ultrasound"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Jigar sirrozi belgilari"
 
-* $sct#716203000 "Decompensated cirrhosis of liver"
+* $sct#300332007 "Mass of liver (finding)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Признаки образований в печени"
   * ^designation[+].language = #uz

@@ -13,7 +13,7 @@ Description: "Profile for representing hepatitis conditions in the context of a 
   * system ^short = "Hepatitis condition identifier system"
   * value ^short = "Unique identifier for the condition: UUID"
 * identifier.type 0..1 MS
-* identifier.type from IdentifierTypeVS (required)
+* identifier.type from $identifier-type-vs (required)
 * code 0..1 MS
 * code from HepatitisICDVS (required)
 * subject 1..1 MS
@@ -21,8 +21,9 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 * encounter 0..1 MS
 * encounter only Reference(UZCoreEncounter)
 * encounter ^short = "When a healthcare professional enters patient information into the system, it is used to associate this information with the patient's active encounter record."
-//condition outcomes 
-* extension contains ConditionOutcome named outcome 0..1 MS
+* extension[diagnosisType] 1..1 MS
+//condition outcomes
+* extension contains HepatitisConditionOutcome named outcome 0..1 MS
 * extension[outcome] ^short = "Effectiveness of treatment at the time of removal from A, B, C, D, E registry follow-up"
 * extension[outcome] ^definition = "Represents the effectiveness of treatment at the time of removal from the A, B, C, D, E registry follow-up."
 * recordedDate 0..1 MS

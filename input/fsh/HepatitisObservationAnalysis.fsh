@@ -16,7 +16,7 @@ Description: "Profile for representing hepatitis observation analysis in the con
   * system ^short = "Hepatitis observation identifier system"
   * value ^short = "Unique identifier for the observation: UUID"
 * identifier.type 0..1 MS
-* identifier.type from IdentifierTypeVS (required)
+* identifier.type from $identifier-type-vs (required)
 
 //* method 0..1 MS
 //* method from $observation-methods (extensible)  //LabObservationMethodsVS add this value set after LabObsForIntegrationSys branch merged to main branch
@@ -29,51 +29,35 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * code 1..1 MS
 * code from HepatitisObservationAnalysisVS (required) //change the URL after LabObsForIntegrationSys branch merged to main branch 
 
-* subject 0..1 MS
 * subject only Reference(UZCorePatient)
-* encounter 0..1 MS
-* encounter only Reference(UZCoreEncounter)
 * encounter ^short = "When a healthcare professional enters patient information into the system, it is used to associate this information with the patient's active encounter record."
 * effective[x] only dateTime or Period
-* effective[x] 0..1 MS
 * effective[x] ^short = "Date and time when the observation occurred"
 
-* value[x] 0..1 MS
 * value[x] only Attachment or Quantity or CodeableConcept
 * value[x] ^short = "Actual code"
 
-* valueAttachment MS
 * valueAttachment ^short = "Attached file"
 * valueAttachment ^definition = "The actual analysis results can be found here."
 
-* valueQuantity MS
 * valueQuantity ^short = "Manually entered result"
 * valueQuantity ^definition = "The result value entered manually."
 
-* valueCodeableConcept MS
 * valueCodeableConcept ^short = "Positive or negative laboratory test result"
 * valueCodeableConcept ^definition = "Indicates whether the laboratory test result is positive or negative."
 * valueCodeableConcept from ObservationInterpretationVS (extensible)
 
-* performer 0..* MS
 * performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
 * performer ^short = "Organization responsible for performing this observation"
 
-//* component.value[x] only Quantity or string or CodeableConcept 
-* component 0..* MS 
 * component.code 1..1 MS
 * component.code from HepatitisObservationAnalysisVS (required)
-* component.valueQuantity.value 0..1 MS
 * component.valueQuantity.comparator from QuantityComparatorVS (required)
-* component.valueQuantity.unit 0..1 MS
-* component.valueQuantity.system 0..1 MS
 * component.valueQuantity.system = $ucum
-* component.valueQuantity.code 0..1 MS
 
 * component.valueString ^short = "The result value entered manually by a healthcare professional."
 * component.valueCodeableConcept ^short = "Positive or negative laboratory test result"
 * component.valueCodeableConcept from ObservationInterpretationVS (extensible)
-* component.dataAbsentReason from DataAbsentReasonVS (extensible)
 * component.interpretation from ObservationInterpretationVS (extensible)
 
 

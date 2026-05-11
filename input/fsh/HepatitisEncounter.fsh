@@ -13,7 +13,7 @@ Description: "Profile for representing encounters related to hepatitis patients 
   * system ^short = "Hepatitis encounter identifier system"
   * value ^short = "Unique identifier for the encounter: UUID"
 * identifier.type 0..1 MS
-* identifier.type from IdentifierTypeVS (required)
+* identifier.type from $identifier-type-vs (required)
 
 * identifier.type.coding 0..* MS
 * identifier.type.coding.system 0..1 MS
@@ -26,7 +26,7 @@ Description: "Profile for representing encounters related to hepatitis patients 
 * identifier.type.coding.display = "Public Health Case Identifier"
 
 * identifier.use 0..1 MS
-* identifier.use from IdentifierUseVS (required)
+* identifier.use from $identifier-use-vs (required)
 /*
 * class MS
 * class from HepatitisEncounterClassVS (required) 

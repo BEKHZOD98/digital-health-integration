@@ -20,7 +20,7 @@ Description: "Profile for representing episodes of care related to hepatitis pat
 * diagnosis.condition ^short = "Patient's hepatitis diagnosis"  //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
 
 * diagnosis.use 0..1 MS
-* diagnosis.use from HepatitisEncDiagnosisUseVs (preferred)
+* diagnosis.use from HepatitisEncDiagnosisUseVS (required)
 
 * patient 1..1 MS
 * patient only Reference(UZCorePatient)
@@ -38,7 +38,7 @@ Description: "Profile for representing episodes of care related to hepatitis pat
     * ^short = "Date and time of removal of hepatitis (A, B, C, D) from the follow-up register"
 
 * careManager 0..1 MS
-* careManager only Reference(UZCorePractitioner)
+* careManager only Reference(UZCorePractitioner or UZCorePractitionerRole)
 * careManager ^short = "Care manager"
 
 * referralRequest 0..* MS

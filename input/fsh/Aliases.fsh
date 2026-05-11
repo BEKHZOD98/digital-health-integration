@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ===================== GENERAL =====================
 Alias: $data-absent-reason = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias: $document-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/document-category-cs
@@ -7,19 +6,11 @@ Alias: $gender-other = https://dhp.uz/fhir/core/StructureDefinition/gender-other
 Alias: $observation-status = http://hl7.org/fhir/observation-status
 Alias: $address-type = http://hl7.org/fhir/address-type
 Alias: $address-use = http://hl7.org/fhir/address-use
-=======
-Alias: $address-type-vs = https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs
-Alias: $address-use-vs = https://terminology.dhp.uz/fhir/core/ValueSet/address-use-vs
->>>>>>> a3809a0 (sort aliases alphabetically)
 Alias: $audit-event-action = http://hl7.org/fhir/audit-event-action
 Alias: $birthcertificate = https://adliya.uz/identifier/birthcertificate
 Alias: $bodysite = http://hl7.org/fhir/ValueSet/body-site
 Alias: $bodySite-condition = http://hl7.org/fhir/ValueSet/body-site
 Alias: $clinical-findings = http://hl7.org/fhir/ValueSet/clinical-findings
-<<<<<<< HEAD
-=======
-Alias: $comparator = http://hl7.org/fhir/quantity-comparator
->>>>>>> a3809a0 (sort aliases alphabetically)
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $condition-clinical-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/clinical-status-vs
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
@@ -72,11 +63,6 @@ Alias: $issue-severity = http://hl7.org/fhir/issue-severity
 Alias: $item-type = http://hl7.org/fhir/ValueSet/item-type
 Alias: $location-status = http://hl7.org/fhir/location-status
 Alias: $location-unit = https://dhp.uz/fhir/core/NamingSystem/location-unit
-<<<<<<< HEAD
-=======
-Alias: $loinc = http://loinc.org
-Alias: $mahalla-vs = https://terminology.dhp.uz/fhir/core/ValueSet/mahalla-vs
->>>>>>> a3809a0 (sort aliases alphabetically)
 Alias: $mfa = https://gov.uz/ru/mfa
 Alias: $militaryID = https://gov.uz/mudofaa/identifier/militaryID
 Alias: $mudofaa = https://gov.uz/ru/mudofaa
@@ -85,11 +71,11 @@ Alias: $nationality-vs = https://terminology.dhp.uz/fhir/core/ValueSet/nationali
 Alias: $nationaluniqueID = https://dpm.uz/identifier/national-unique-id
 Alias: $nomenclature-group = https://dhp.uz/fhir/core/CodeSystem/nomenclature-group
 Alias: $object-role = http://terminology.hl7.org/CodeSystem/object-role
-<<<<<<< HEAD
-=======
+
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
+
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category //http://hl7.org/fhir/observation-category
->>>>>>> a3809a0 (sort aliases alphabetically)
+
 Alias: $observation-codes = http://hl7.org/fhir/ValueSet/observation-codes
 Alias: $observation-interpretation-vs = https://terminology.dhp.uz/fhir/core/ValueSet/observation-interpretation-vs
 Alias: $observation-methods = http://hl7.org/fhir/ValueSet/observation-methods
@@ -112,10 +98,7 @@ Alias: $qualification-codes = http://terminology.hl7.org/CodeSystem/v2-0360
 Alias: $questionnaire-enable-operator = http://hl7.org/fhir/ValueSet/questionnaire-enable-operator
 Alias: $reference-meaning = http://terminology.hl7.org/CodeSystem/referencerange-meaning
 Alias: $regions-vs = https://terminology.dhp.uz/fhir/core/ValueSet/regions-vs
-<<<<<<< HEAD
 Alias: $resource-types = http://hl7.org/fhir/ValueSet/resource-types
-=======
->>>>>>> a3809a0 (sort aliases alphabetically)
 Alias: $sample-security-structural-codes = http://hl7.org/fhir/sample-security-structural-roles
 Alias: $sct = http://snomed.info/sct
 Alias: $sct-vs = http://snomed.info/sct?fhir_vs
@@ -152,7 +135,6 @@ Alias: $v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
 Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
 Alias: $v3-RoleClass = http://terminology.hl7.org/CodeSystem/v3-RoleClass
 Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
-<<<<<<< HEAD
 Alias: $ucum = http://unitsofmeasure.org
 Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-supplement
 Alias: $drs = http://hl7.org/fhir/document-reference-status
@@ -231,7 +213,3 @@ Alias: $questionnaire-enable-operator = http://hl7.org/fhir/ValueSet/questionnai
 Alias: $preparation-patient-prior-specimen-collection = http://hl7.org/fhir/ValueSet/prepare-patient-prior-specimen-collection
 Alias: $comparator = http://hl7.org/fhir/quantity-comparator
 Alias: $hep-encounter-class = https://terminology.dhp.uz/fhir/core/ValueSet/encounter-class-vs
-=======
-Alias: $v3ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
-Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-supplement
->>>>>>> a3809a0 (sort aliases alphabetically)
