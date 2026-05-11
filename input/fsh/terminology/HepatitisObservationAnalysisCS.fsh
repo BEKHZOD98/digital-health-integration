@@ -9,7 +9,7 @@ Description: "Description of hepatitis observation analysis codesystem"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Антитела к вирусному гепатиту A — anti-HAV"
   * ^designation[+].language = #uz
-  * ^designation[=].value = "Gepatit A virusiga qarshi antitanalar — anti-HAV1234"
+  * ^designation[=].value = "Gepatit A virusiga qarshi antitanalar — anti-HAV"
 
 * #29610-3 "Hepatitis B virus DNA [Presence] in Serum or Plasma by NAA with probe detection"
   * ^designation[0].language = #ru

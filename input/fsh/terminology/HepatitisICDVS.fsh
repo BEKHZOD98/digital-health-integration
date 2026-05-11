@@ -43,13 +43,13 @@ Description: "ValueSet for hepatitis ICD-10 codes"
 
 * include $icd-10#B16.2 "Fulminant viral hepatitis B without delta agent, with hepatic coma"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Острый гепатит B без дельта-agenta c гепатальной комы"
+  * ^designation[=].value = "Острый гепатит B без дельта-агента c гепатальной комы"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Oq virusli gepatit B delta agentisiz va gepatal koma bilan"
 
 * include $icd-10#B16.9 "Fulminant viral hepatitis B without delta agent, without hepatic coma"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Острый гепатит B без дельта-agenta и без гепатальной комы"
+  * ^designation[=].value = "Острый гепатит B без дельта-агента и без гепатальной комы"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Oq virusli gepatit B delta agentisiz va gepatal komasiz"   
 
@@ -137,7 +137,7 @@ Description: "ValueSet for hepatitis ICD-10 codes"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Aniqlanmagan virusli gepatit gepatatal komasiz"
 
-* include $icd-10#K74.0 "Cirossis of liver"
+* include $icd-10#K74.0 "Cirrhosis of liver"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Цирроз печени"
   * ^designation[+].language = #uz

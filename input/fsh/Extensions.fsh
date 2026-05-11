@@ -116,11 +116,12 @@ Description: "Birth time of each newborn in a multiple birth."
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
 */
-Extension: ConditionOutcome
+Extension: HepatitisConditionOutcome
 Id: hepatitis-condition-outcome
 Title: "Hepatitis condition outcome extension"
 Description: "Represents the effectiveness of treatment at the time of removal from the A, B, C, D, E registry follow-up."
 Context: Condition
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/hepatitis-condition-outcome"
 * ^status = #active
 * ^experimental = true
 
@@ -133,6 +134,7 @@ Id: hepatitis-diagnosis-type
 Title: "Hepatitis diagnosis type"
 Description: "Type of diagnosis (primary, secondary, etc.)"
 Context: Condition
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/hepatitis-diagnosis-type"
 * ^status = #active
 * ^experimental = true
 

@@ -69,7 +69,6 @@ Alias: $nationaluniqueID = https://dpm.uz/identifier/national-unique-id
 Alias: $nomenclature-group = https://dhp.uz/fhir/core/CodeSystem/nomenclature-group
 Alias: $object-role = http://terminology.hl7.org/CodeSystem/object-role
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
-Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category //http://hl7.org/fhir/observation-category
 Alias: $observation-codes = http://hl7.org/fhir/ValueSet/observation-codes
 Alias: $observation-interpretation-vs = https://terminology.dhp.uz/fhir/core/ValueSet/observation-interpretation-vs
 Alias: $observation-methods = http://hl7.org/fhir/ValueSet/observation-methods

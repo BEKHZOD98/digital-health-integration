@@ -1,4 +1,4 @@
-ValueSet: HepatitisEncDiagnosisUseVs
+ValueSet: HepatitisEncDiagnosisUseVS
 Id: hep-enc-diag-use-vs
 Title: "Hepatitis enc diagnosis use valueset"
 Description: "Hepatitis enc diagnosis use valueset"

@@ -56,7 +56,7 @@ Usage: #example
   * text = "Signs of cirrhosis"
 
 * subject = Reference(example-hepatitis-patient)
-* effectiveDateTime = "2023-01-26"
+* effectiveDateTime = "2026-01-26"
 * performer = Reference(PractitionerRole/muratova-gulshoda-role)
 
 * valueBoolean = true
@@ -66,12 +66,12 @@ Usage: #example
 // Instance Example
 Instance: example-ultrasound-lesion
 InstanceOf: HepatitisObservationUltraSound
-Description: "Instance of liver lesion detected" 
+Description: "Instance of liver lesion detected"
 Usage: #example
 * status = #final
-* identifier 
+* identifier
   * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
-  * value = "OBS-2026-5541"
+  * value = "OBS-2026-5542"
   * type.coding
     * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
     * code = #PHC
@@ -82,6 +82,6 @@ Usage: #example
   * text = "Signs of masses in the liver"
 
 * subject = Reference(example-hepatitis-patient)
-* effectiveDateTime = "2024-01-26"
+* effectiveDateTime = "2026-01-26"
 * performer = Reference(PractitionerRole/muratova-gulshoda-role)
 * valueBoolean = true

@@ -45,48 +45,46 @@ Usage: #example
 * practitioner = Reference(Practitioner/muratova-gulshoda)
 * organization = Reference(Organization/samarkand-regional-hospital)
 
-// Instance: example-hepatitis-patient
-// InstanceOf: HepatitisPatientProfile
-// Description: "Gepatit profili uchun Tolibjon To'lanboev misolida namuna"
-// Usage: #example
+Instance: example-hepatitis-patient
+InstanceOf: UZCorePatient
+Description: "Gepatit profili uchun Tolibjon To'lanboev misolida namuna"
+Usage: #example
 
-// // * extension[nationality].extension[code].valueCodeableConcept = #UZ "Uzbekistan"
-// * extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* identifier[nationalId]
+  * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
+  * value = "515050500505"
+  * use = #official
 
-// * identifier[nationalId]
-//   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
-//   * value = "515050500505"
-//   * use = #usual
+* identifier[passportLocal]
+  * system = "https://dhp.uz/fhir/core/sid/pid/uz/ppn/local"
+  * value = "AB1234567"
+  * use = #official
 
-// * identifier[passportLocal]
-//   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ppn/local"
-//   * value = "AB1234567"
-//   * use = #usual
+* name
+  * use = #official
+  * text = "To'lanboev Tolibjon"
+  * family = "To'lanboyev"
+  * given = "Tolibjon"
 
-// * name 
-//   * use = #official
-//   * text = "To'lanboev Tolibjon"
-//   * family = "To'lanboyev"
-//   * given = "Tolibjon"
+* gender = #male
+* birthDate = "1990-02-01"
 
-// * gender = #male 
-// * birthDate = "1990-02-01"
-
-// * address[uzAddress]
-//   * use = #temp
-//   * type = #physical
-//   * text = "Iltifot MFY, 58-Harbiy shaharcha mavzesi, 53 Uy, 104 Kvartira"
-//   * city = #17150085
-//   * district = #1726262
-//   * state = #1726
-//   * country = "UZ"
+* address[uzAddress]
+  * use = #home
+  * type = #physical
+  * text = "Iltifot MFY, 58-Harbiy shaharcha mavzesi, 53 Uy, 104 Kvartira"
+  * city = #17150085
+  * district = #1726262
+  * state = #1726
+  * country = "UZ"
 
 // Instance Example
 Instance: example-hepatitis-questionnaire
 InstanceOf: Questionnaire
 Description: "Hepatitis B and C treatment questionnaire"
 Usage: #example
-* url = "https://dhp.uz/fhir/Questionnaire/hepatitis-questionnaire"
+* url = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
 * status = #active
 * title = "HEPATITIS QUESTIONNAIRE"
 * identifier.value = "HCV-HBV-QS-2026"
@@ -134,7 +132,7 @@ Usage: #example
   * value = "urn:uuid:6f9b9d8e-3b7d-4d87-8f6e-123456789abc"
 
 * status = #completed
-* questionnaire = "https://dhp.uz/fhir/Questionnaire/hepatitis-questionnaire"
+* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
 * subject = Reference(example-hepatitis-patient)
 * authored = "2026-03-19T12:00:00Z"
 * author = Reference(muratova-gulshoda-role)
