@@ -76,7 +76,7 @@ Usage: #example
     * display = "Public Health Case Identifier"
   * use = #official
 * code 
-  * coding = $sct#716203000 "Decompensated cirrhosis of liver (disorder)"
+  * coding = $sct#300332007 "Mass of liver (finding)"
   * text = "Signs of masses in the liver"
 
 * subject = Reference(example-hepatitis-patient)

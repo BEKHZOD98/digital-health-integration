@@ -220,7 +220,7 @@ Description: "Birth time of each newborn in a multiple birth."
 * value[x] 1..1 MS
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
-*/
+
 Extension: HepatitisConditionOutcome
 Id: hepatitis-condition-outcome
 Title: "Hepatitis condition outcome extension"
