@@ -8,72 +8,91 @@ Description: "Example of a psychiatric/narcological hospital discharge statistic
 * identifier.value = "urn:uuid:760e8400-e29b-41d4-a716-446655440066"
 * type = #document
 * timestamp = "2026-01-15T14:30:00+05:00"
+
 * entry[0].fullUrl = "urn:uuid:06600001-1111-2222-3333-444444444444"
 * entry[=].resource = composition-066-001
+
 * entry[+].fullUrl = "urn:uuid:06600002-1111-2222-3333-444444444444"
 * entry[=].resource = patient-066-001
+
 * entry[+].fullUrl = "urn:uuid:06600003-1111-2222-3333-444444444444"
 * entry[=].resource = encounter-066-001
+
 * entry[+].fullUrl = "urn:uuid:06600004-1111-2222-3333-444444444444"
 * entry[=].resource = organization-066-001
+
 * entry[+].fullUrl = "urn:uuid:06600005-1111-2222-3333-444444444444"
 * entry[=].resource = practitioner-066-001
 
 * entry[+].fullUrl = "urn:uuid:06600006-1111-2222-3333-444444444444"
 * entry[=].resource = practitioner-066-002
+
 * entry[+].fullUrl = "urn:uuid:06600007-1111-2222-3333-444444444444"
 * entry[=].resource = practitioner-066-003
+
 * entry[+].fullUrl = "urn:uuid:06600008-1111-2222-3333-444444444444"
 * entry[=].resource = observation-social-status-066
+
 * entry[+].fullUrl = "urn:uuid:06600009-1111-2222-3333-444444444444"
 * entry[=].resource = observation-benefits-066
+
 * entry[+].fullUrl = "urn:uuid:06600010-1111-2222-3333-444444444444"
 * entry[=].resource = observation-education-066
 
 * entry[+].fullUrl = "urn:uuid:06600011-1111-2222-3333-444444444444"
 * entry[=].resource = observation-employment-066
+
 * entry[+].fullUrl = "urn:uuid:06600012-1111-2222-3333-444444444444"
 * entry[=].resource = condition-referral-diagnosis-066
+
 * entry[+].fullUrl = "urn:uuid:06600013-1111-2222-3333-444444444444"
 * entry[=].resource = service-request-066
+
 * entry[+].fullUrl = "urn:uuid:06600014-1111-2222-3333-444444444444"
 * entry[=].resource = condition-admission-diagnosis-066
+
 * entry[+].fullUrl = "urn:uuid:06600015-1111-2222-3333-444444444444"
 * entry[=].resource = condition-main-diagnosis-066
 
 * entry[+].fullUrl = "urn:uuid:06600016-1111-2222-3333-444444444444"
 * entry[=].resource = condition-competing-diagnosis-066
+
 * entry[+].fullUrl = "urn:uuid:06600017-1111-2222-3333-444444444444"
 * entry[=].resource = condition-comorbid-diagnosis-066
+
 * entry[+].fullUrl = "urn:uuid:06600018-1111-2222-3333-444444444444"
 * entry[=].resource = condition-background-diagnosis-066
+
 * entry[+].fullUrl = "urn:uuid:06600019-1111-2222-3333-444444444444"
 * entry[=].resource = condition-complication-066
+
 * entry[+].fullUrl = "urn:uuid:06600020-1111-2222-3333-444444444444"
 * entry[=].resource = observation-hiv-066
 
 * entry[+].fullUrl = "urn:uuid:06600021-1111-2222-3333-444444444444"
 * entry[=].resource = observation-rw-066
+
 * entry[+].fullUrl = "urn:uuid:06600022-1111-2222-3333-444444444444"
 * entry[=].resource = observation-hepb-066
+
 * entry[+].fullUrl = "urn:uuid:06600023-1111-2222-3333-444444444444"
 * entry[=].resource = observation-hepc-066
+
 * entry[+].fullUrl = "urn:uuid:06600024-1111-2222-3333-444444444444"
 * entry[=].resource = coverage-066
-* entry[+].fullUrl = "urn:uuid:06600025-1111-2222-3333-444444444444"
-* entry[=].resource = basic-disability-start-066
 
-* entry[+].fullUrl = "urn:uuid:06600026-1111-2222-3333-444444444444"
-* entry[=].resource = basic-disability-end-066
 * entry[+].fullUrl = "urn:uuid:06600027-1111-2222-3333-444444444444"
 * entry[=].resource = provenance-signature-066
+
 * entry[+].fullUrl = "urn:uuid:06600028-1111-2222-3333-444444444444"
 * entry[=].resource = observation-tb-drug-sensitivity-066
 
 * entry[+].fullUrl = "urn:uuid:06600029-1111-2222-3333-444444444444"
 * entry[=].resource = practitionerrole-066-001
+
 * entry[+].fullUrl = "urn:uuid:06600030-1111-2222-3333-444444444444"
 * entry[=].resource = practitionerrole-066-002
+
 * entry[+].fullUrl = "urn:uuid:06600031-1111-2222-3333-444444444444"
 * entry[=].resource = practitionerrole-066-003
 
@@ -85,13 +104,48 @@ Description: "Example of a psychiatric/narcological hospital discharge statistic
 
 * entry[+].fullUrl = "urn:uuid:06600034-1111-2222-3333-444444444444"
 * entry[=].resource = condition-immediate-cause-of-death-066
+
 * entry[+].fullUrl = "urn:uuid:06600035-1111-2222-3333-444444444444"
 * entry[=].resource = condition-underlying-cause-of-death-066
+
 * entry[+].fullUrl = "urn:uuid:06600036-1111-2222-3333-444444444444"
 * entry[=].resource = condition-primary-disease-death-066
+
 * entry[+].fullUrl = "urn:uuid:06600037-1111-2222-3333-444444444444"
 * entry[=].resource = condition-other-significant-death-066
 
+* entry[+].fullUrl = "urn:uuid:06600038-1111-2222-3333-444444444444"
+* entry[=].resource = observation-disease-duration-066
+
+* entry[+].fullUrl = "urn:uuid:06600040-1111-2222-3333-444444444444"
+* entry[=].resource = observation-registration-date-066
+
+* entry[+].fullUrl = "urn:uuid:06600041-1111-2222-3333-444444444444"
+* entry[=].resource = observation-emergency-care-provided-066
+
+* entry[+].fullUrl = "urn:uuid:06600042-1111-2222-3333-444444444444"
+* entry[=].resource = observation-arrived-by-ambulance-066
+
+* entry[+].fullUrl = "urn:uuid:06600043-1111-2222-3333-444444444444"
+* entry[=].resource = observation-referral-available-066
+
+* entry[+].fullUrl = "urn:uuid:06600044-1111-2222-3333-444444444444"
+* entry[=].resource = organization-referring-066
+
+* entry[+].fullUrl = "urn:uuid:06600045-1111-2222-3333-444444444444"
+* entry[=].resource = observation-admitted-to-hospital-066
+
+* entry[+].fullUrl = "urn:uuid:06600046-1111-2222-3333-444444444444"
+* entry[=].resource = observation-icu-days-066
+
+* entry[+].fullUrl = "urn:uuid:06600047-1111-2222-3333-444444444444"
+* entry[=].resource = organization-discharge-department-066
+
+* entry[+].fullUrl = "urn:uuid:06600048-1111-2222-3333-444444444444"
+* entry[=].resource = observation-inhospital-leave-days-066
+
+* entry[+].fullUrl = "urn:uuid:06600051-1111-2222-3333-444444444444"
+* entry[=].resource = observation-temporary-disability-period-066
 
 
 Instance: composition-066-001
@@ -102,7 +156,6 @@ Usage: #inline
 * identifier[=].value = "urn:uuid:861f9511-f30c-52e5-b827-557766550666"
 * identifier[+].system = "https://dhp.uz/fhir/core/sid/doc/uz/form-number"
 * identifier[=].value = "066-1"
-
 * status = #final
 * type = $loinc#18842-5 "Discharge summary"
 * category = $document-category-cs#form-066-1 "Psychiatric/narcological discharge statistical card"
@@ -117,7 +170,7 @@ Usage: #inline
 * title = "Form 066-1 - Psychiatric/Narcological Hospital Discharge Statistical Card"
 
 * section[personalInformation].title = "Personal Information"
-* section[=].code = $loinc#11329-0 "History general Narrative - Reported"
+* section[=].code = $loinc#LP36348-8 "Patient Information"
 * section[=].entry[0] = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600004-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600008-1111-2222-3333-444444444444)
@@ -126,22 +179,30 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:06600011-1111-2222-3333-444444444444)
 
 * section[admissionInformation].title = "Admission Information"
-* section[=].code = $loinc#46241-6 "Hospital admission diagnosis Narrative - Reported"
+* section[=].code = $loinc#LP74442-2 "Admission Information"
 * section[=].entry[0] = Reference(urn:uuid:06600012-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600013-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600004-1111-2222-3333-444444444444)
+* section[=].entry[0] = Reference(urn:uuid:06600015-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600040-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600041-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600042-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600043-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600044-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600045-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600038-1111-2222-3333-444444444444)
 
 * section[hospitalizationInformation].title = "Hospitalization Information"
 * section[=].code = $loinc#8648-8 "Hospital course note"
 * section[=].entry[0] = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600014-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600004-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600046-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600047-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600033-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600048-1111-2222-3333-444444444444)
 
 * section[finalDiagnosis].title = "Final Diagnosis"
-* section[=].code = $loinc#11535-2 "Hospital discharge diagnosis note"
-* section[=].entry[0] = Reference(urn:uuid:06600015-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600016-1111-2222-3333-444444444444)
+* section[=].code = $loinc#LA32800-7 "Final diagnosis (discharge)"
+* section[=].entry[0] = Reference(urn:uuid:06600016-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600017-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600018-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600019-1111-2222-3333-444444444444)
@@ -149,7 +210,6 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:06600035-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600036-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600037-1111-2222-3333-444444444444)
-
 
 * section[laboratoryResults].title = "Laboratory Results"
 * section[=].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data note"
@@ -166,17 +226,16 @@ Usage: #inline
 * section[=].code = $loinc#18769-0 "Microbial susceptibility tests Set"
 * section[=].entry = Reference(urn:uuid:06600028-1111-2222-3333-444444444444)
 
-
 * section[temporaryDisability].title = "Temporary Disability"
 * section[=].code = $loinc#34109-9 "Note"
-* section[=].entry[0] = Reference(urn:uuid:06600025-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600026-1111-2222-3333-444444444444)
+* section[=].entry[0] = Reference(urn:uuid:06600051-1111-2222-3333-444444444444)
 
 * section[responsiblePersons].title = "Responsible Persons"
-* section[=].code = $loinc#51899-3 "Details Document"
+* section[=].code = $loinc#LP35157-4 "Responsible party"
 * section[=].entry[0] = Reference(urn:uuid:06600029-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600030-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600031-1111-2222-3333-444444444444)
+
 
 Instance: patient-066-001
 InstanceOf: UZCorePatient
@@ -186,9 +245,10 @@ Usage: #inline
 * identifier[healthCardId].value = "HC-2026-00066"
 * identifier[passportLocal].value = "AC1234567"
 * name.use = #official
-* name.text = "Tursunov Alisher"
+* name.text = "Tursunov Alisher Valiyevich"
 * name.family = "Tursunov"
-* name.given = "Alisher"
+* name.given[0] = "Alisher"
+* name.given[+] = "Valiyevich"
 * birthDate = "1990-04-12"
 * extension[nationality].extension[code].valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/nationality-cs#23 "Azerbaijanis"
 * gender = #male
@@ -196,9 +256,15 @@ Usage: #inline
 * telecom[0].value = "+998901234567"
 * telecom[1].system = #email
 * telecom[1].value = "test@mail.com"
-* address[uzAddress].text = "Toshkent sh., Yunusobod tumani, 12-mavze, 15-uy, 24-xonadon"
 * address[uzAddress].postalCode = "100017"
+* address[uzAddress].district = "1726266"
+* address[uzAddress].state = "1726"
+* address[uzAddress].city = "16090011"
+* address[uzAddress].line[0] = "12-mavze"
+* address[uzAddress].line[+] = "15-uy"
+* address[uzAddress].line[+] = "24-xonadon"
 * managingOrganization = Reference(urn:uuid:06600004-1111-2222-3333-444444444444)
+
 
 Instance: organization-066-001
 InstanceOf: Organization
@@ -207,6 +273,7 @@ Usage: #inline
 * identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
 * identifier.value = "200001"
 * name = "Toshkent shahar ruhiy kasalliklar shifoxonasi"
+
 
 Instance: encounter-066-001
 InstanceOf: UZCoreEncounter066
@@ -223,22 +290,17 @@ Usage: #inline
 * basedOn = Reference(urn:uuid:06600013-1111-2222-3333-444444444444)
 * admission.origin.extension[admissionOrigin].valueCodeableConcept = admit-source-home-cs#mserv-0003-00001 "From home"
 * admission.origin.display = "From home"
-
 * admission.reAdmission = $re-admission-local-cs#first-time "First time"
-* reason.use = https://terminology.dhp.uz/CodeSystem/encounter-purpose-cs#enc-001 "Diagnostics"
+* reason.value.concept = $encounter-purpose-cs#enc-001 "Diagnostics"
 * priority = $encounter-local-priority-cs#transferred "Transferred from another facility"
 * admission.admitSource = $admit-source-local-cs#mserv-0006-00002 "Dispensary"
 * admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00001 "Hospitalized"
-* subjectStatus =  $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
-* location[0].form = $location-form#102.0 "Cardiology"
-
-
+* subjectStatus = $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
+* location[0].form = $location-form#161.0 "Narcological"
 * length = 10 'd' "days"
 * location[0].period.start = "2026-01-05T10:00:00+05:00"
 * location[0].period.end = "2026-01-15T14:00:00+05:00"
 * location[0].location = Reference(urn:uuid:06600032-1111-2222-3333-444444444444)
-
-
 * participant[0].actor = Reference(urn:uuid:06600029-1111-2222-3333-444444444444)
 * participant[1].actor = Reference(urn:uuid:06600030-1111-2222-3333-444444444444)
 * participant[2].actor = Reference(urn:uuid:06600031-1111-2222-3333-444444444444)
@@ -299,6 +361,7 @@ Usage: #inline
 * name.given[0] = "D."
 * name.given[+] = "D."
 
+
 Instance: observation-social-status-066
 InstanceOf: UZCoreSocioeconomicObservation
 Usage: #inline
@@ -313,6 +376,7 @@ Usage: #inline
 * code.coding[=].display = "Social status"
 * valueCodeableConcept = $social-status#regis0010.00004 "Unemployed"
 
+
 Instance: observation-benefits-066
 InstanceOf: UZCoreSocioeconomicObservation
 Usage: #inline
@@ -324,6 +388,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
 * code.coding[socioeconomicType] = $sct#1303306008 "Eligible for benefit"
 * valueCodeableConcept = $benefit-cs#regis0004.00019 "Medical staff"
+
 
 Instance: observation-education-066
 InstanceOf: UZCoreSocioeconomicObservation
@@ -351,6 +416,98 @@ Usage: #inline
 * valueCodeableConcept = $occupation-cs#2351.32 "Teacher"
 
 
+Instance: service-request-066
+InstanceOf: ServiceRequest
+Usage: #inline
+* language = #en
+* status = #completed
+* intent = #order
+* code = $sct#183524004 "Referral to psychiatry service"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* authoredOn = "2026-01-05"
+* requester = Reference(urn:uuid:06600044-1111-2222-3333-444444444444)
+
+
+// Observation was used because Form 066 contains registration date as a separate field.
+Instance: observation-registration-date-066
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = http://loinc.org#8656-1 "Hospital admission date"
+* code.text = "Date of registration at a psychoneurological/narcological hospital"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-01-05T09:30:00+05:00"
+* valueDateTime = "2026-01-05T09:30:00+05:00"
+
+// Observation was used because Form 066 contains emergency care information as a separate yes/no field.
+Instance: observation-emergency-care-provided-066
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = http://loinc.org#57276-8 "Emergent care utilized during assessment period [CMS Assessment]"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-01-05T09:40:00+05:00"
+* valueBoolean = true
+
+// Observation was used because Form 066 contains ambulance arrival information as a separate yes/no field.
+Instance: observation-arrived-by-ambulance-066
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = http://loinc.org#LP97912-7 "Ambulance transport"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-01-05T09:45:00+05:00"
+* valueBoolean = true
+
+// Observation was used because Form 066 contains referral availability as a separate yes/no field.
+Instance: observation-referral-available-066
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = http://loinc.org#57133-1 "Referral note"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-01-05T09:50:00+05:00"
+* valueBoolean = true
+
+
+Instance: organization-referring-066
+InstanceOf: Organization
+Usage: #inline
+* language = #en
+* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
+* identifier.value = "200002"
+* name = "Yunusobod tuman psixonevrologik dispanseri"
+
+
+// 2.8 Hospital admission status was modeled as Observation because
+// the form contains this as an explicit yes/no field.
+// Using Observation preserves the original medical form semantics
+// and supports document-based data extraction.
+Instance: observation-admitted-to-hospital-066
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = http://snomed.info/sct#32485007 "Hospital admission"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-01-05T10:00:00+05:00"
+* valueBoolean = true
+
+
 Instance: condition-referral-diagnosis-066
 InstanceOf: UZCoreCondition
 Usage: #inline
@@ -362,16 +519,23 @@ Usage: #inline
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * onsetDateTime = "2025-12-20"
 
-Instance: service-request-066
-InstanceOf: ServiceRequest
+
+// Observation was used because there is no dedicated base FHIR element for illness duration.
+Instance: observation-disease-duration-066
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-* status = #completed
-* intent = #order
+* status = #final
+* code = $loinc#77977-7 "Illness duration"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
-* authoredOn = "2026-01-05"
-* requester = Reference(urn:uuid:06600004-1111-2222-3333-444444444444)
-* code.concept.text = "Referral for inpatient psychiatric/narcological treatment"
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-01-05T10:00:00+05:00"
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* valueQuantity.value = 3
+* valueQuantity.unit = "day"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #d
+
 
 Instance: condition-admission-diagnosis-066
 InstanceOf: UZCoreCondition
@@ -384,6 +548,55 @@ Usage: #inline
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * onsetDateTime = "2026-01-05"
 
+// Observation was used because there is no dedicated base FHIR element for ICU day count.
+Instance: observation-icu-days-066
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = http://loinc.org#LP76050-1 "Intensive care unit"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-01-15T14:00:00+05:00"
+* valueQuantity = 0 'd' "days"
+
+// Organization was used because discharge department information is represented as a healthcare organization entity in FHIR.
+Instance: organization-discharge-department-066
+InstanceOf: Organization
+Usage: #inline
+* language = #en
+* identifier.system = "https://dhp.uz/fhir/core/sid/uz/department-code"
+* identifier.value = "DEP-001"
+* name = "Narcology department"
+
+// Observation was used because there is no dedicated base FHIR element for disability group information.
+Instance: observation-disability-group-066
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#101720-1 "Disability status"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-01-15T14:00:00+05:00"
+* valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/disability-cs#regis0011.00002 "Group II"
+
+// Observation was used because there is no dedicated base FHIR element for in-hospital leave day count.
+Instance: observation-inhospital-leave-days-066
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = http://loinc.org#LA17962-4 "Medical leave of absence"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-01-15T14:00:00+05:00"
+* valueQuantity = 0 'd' "days"
+
+
 Instance: condition-main-diagnosis-066
 InstanceOf: UZCoreCondition
 Usage: #inline
@@ -393,6 +606,7 @@ Usage: #inline
 * code.coding.code = #F10.2
 * code.coding.display = "Mental and behavioural disorders due to use of alcohol : Dependence syndrome"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+
 
 Instance: condition-competing-diagnosis-066
 InstanceOf: UZCoreCondition
@@ -404,6 +618,7 @@ Usage: #inline
 * code.coding.display = "Mental and behavioural disorders due to use of tobacco : Dependence syndrome"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
+
 Instance: condition-comorbid-diagnosis-066
 InstanceOf: UZCoreCondition
 Usage: #inline
@@ -413,6 +628,7 @@ Usage: #inline
 * code.coding.code = #I10
 * code.coding.display = "Essential (primary) hypertension"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+
 
 Instance: condition-background-diagnosis-066
 InstanceOf: UZCoreCondition
@@ -424,6 +640,7 @@ Usage: #inline
 * code.coding.display = "Gastritis, unspecified"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
+
 Instance: condition-complication-066
 InstanceOf: UZCoreCondition
 Usage: #inline
@@ -433,6 +650,51 @@ Usage: #inline
 * code.coding.code = #G47.0
 * code.coding.display = "Disorders of initiating and maintaining sleep [insomnias]"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+
+
+Instance: condition-immediate-cause-of-death-066
+InstanceOf: UZCoreCondition
+Usage: #inline
+* language = #en
+* clinicalStatus = $condition-clinical#inactive
+* code.coding.system = $icd10
+* code.coding.code = #R99
+* code.coding.display = "Other ill-defined and unspecified causes of mortality"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+
+
+Instance: condition-underlying-cause-of-death-066
+InstanceOf: UZCoreCondition
+Usage: #inline
+* language = #en
+* clinicalStatus = $condition-clinical#inactive
+* code.coding.system = $icd10
+* code.coding.code = #R99
+* code.coding.display = "Other ill-defined and unspecified causes of mortality"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+
+
+Instance: condition-primary-disease-death-066
+InstanceOf: UZCoreCondition
+Usage: #inline
+* language = #en
+* clinicalStatus = $condition-clinical#inactive
+* code.coding.system = $icd10
+* code.coding.code = #R99
+* code.coding.display = "Other ill-defined and unspecified causes of mortality"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+
+
+Instance: condition-other-significant-death-066
+InstanceOf: UZCoreCondition
+Usage: #inline
+* language = #en
+* clinicalStatus = $condition-clinical#inactive
+* code.coding.system = $icd10
+* code.coding.code = #R99
+* code.coding.display = "Other ill-defined and unspecified causes of mortality"
+* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+
 
 Instance: observation-hiv-066
 InstanceOf: UZCoreObservation
@@ -446,6 +708,7 @@ Usage: #inline
 * effectiveDateTime = "2026-01-06T09:00:00+05:00"
 * valueCodeableConcept = $v3-ObservationInterpretation#NEG "Negative"
 
+
 Instance: observation-rw-066
 InstanceOf: UZCoreObservation
 Usage: #inline
@@ -457,6 +720,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-06T09:10:00+05:00"
 * valueCodeableConcept = $v3-ObservationInterpretation#NEG "Negative"
+
 
 Instance: observation-hepb-066
 InstanceOf: UZCoreObservation
@@ -470,6 +734,7 @@ Usage: #inline
 * effectiveDateTime = "2026-01-06T09:20:00+05:00"
 * valueCodeableConcept = $v3-ObservationInterpretation#NEG "Negative"
 
+
 Instance: observation-hepc-066
 InstanceOf: UZCoreObservation
 Usage: #inline
@@ -482,6 +747,7 @@ Usage: #inline
 * effectiveDateTime = "2026-01-06T09:30:00+05:00"
 * valueCodeableConcept = $v3-ObservationInterpretation#NEG "Negative"
 
+
 Instance: coverage-066
 InstanceOf: Coverage
 Usage: #inline
@@ -490,7 +756,6 @@ Usage: #inline
 * beneficiary = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * kind = #insurance
 * type = $coverage-type#dtsj-treated-case "State Health Insurance treated case (Resolution No. PQ-311)"
-
 
 
 Instance: observation-tb-drug-sensitivity-066
@@ -505,19 +770,24 @@ Usage: #inline
 * performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
 * valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/tb-drug-sensitivity#Tub-004-001 "Drug-sensitive"
 
-Instance: basic-disability-start-066
-InstanceOf: Basic
-Usage: #inline
-* language = #en
-* code.text = "Temporary disability certificate opened date"
-* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 
-Instance: basic-disability-end-066
-InstanceOf: Basic
+// Observation was used because there is no dedicated base FHIR element for temporary disability period dates.
+Instance: observation-temporary-disability-period-066
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-* code.text = "Temporary disability certificate closed date"
+* status = #final
+* code = $loinc#105583-9 "Worker Sick leave form"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
+* effectivePeriod.start = "2026-01-05T10:00:00+05:00"
+* effectivePeriod.end = "2026-01-15T14:00:00+05:00"
+* component[0].code.text = "Disability start date"
+* component[0].valueDateTime = "2026-01-05T10:00:00+05:00"
+* component[1].code.text = "Disability end date"
+* component[1].valueDateTime = "2026-01-15T14:00:00+05:00"
+
 
 Instance: provenance-signature-066
 InstanceOf: Provenance
@@ -538,60 +808,5 @@ Instance: location-066-001
 InstanceOf: Location
 Usage: #inline
 * status = #active
-* name = "Therapy"
+* name = "Narcology department"
 * mode = #instance
-
-
-Instance: observation-disability-group-066
-InstanceOf: UZCoreObservation
-Usage: #inline
-* language = #en
-* status = #final
-* code = $loinc#101720-1 "Disability status"
-* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
-* encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
-* effectiveDateTime = "2026-01-15T14:00:00+05:00"
-* performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
-* valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/disability-cs#regis0011.00002 "Group II"
-
-
-
-Instance: condition-immediate-cause-of-death-066
-InstanceOf: UZCoreCondition
-Usage: #inline
-* language = #en
-* clinicalStatus = $condition-clinical#active
-* code.coding.system = $icd10
-* code.coding.code = #I46.9
-* code.coding.display = "Cardiac arrest, unspecified"
-* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
-
-Instance: condition-underlying-cause-of-death-066
-InstanceOf: UZCoreCondition
-Usage: #inline
-* language = #en
-* clinicalStatus = $condition-clinical#active
-* code.coding.system = $icd10
-* code.coding.code = #I21.9
-* code.coding.display = "Acute myocardial infarction, unspecified"
-* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
-
-Instance: condition-primary-disease-death-066
-InstanceOf: UZCoreCondition
-Usage: #inline
-* language = #en
-* clinicalStatus = $condition-clinical#active
-* code.coding.system = $icd10
-* code.coding.code = #I25.1
-* code.coding.display = "Atherosclerotic heart disease"
-* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
-
-Instance: condition-other-significant-death-066
-InstanceOf: UZCoreCondition
-Usage: #inline
-* language = #en
-* clinicalStatus = $condition-clinical#active
-* code.coding.system = $icd10
-* code.coding.code = #E11.9
-* code.coding.display = "Type 2 diabetes mellitus : Without complications"
-* subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
