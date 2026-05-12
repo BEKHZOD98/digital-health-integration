@@ -84,7 +84,6 @@ Instance: example-hepatitis-questionnaire
 InstanceOf: Questionnaire
 Description: "Hepatitis B and C treatment questionnaire"
 Usage: #example
-* url = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
 * status = #active
 * title = "HEPATITIS QUESTIONNAIRE"
 * identifier.value = "HCV-HBV-QS-2026"
@@ -160,3 +159,90 @@ Usage: #example
     * text = "Pregnancy duration (Homiladorlik muddati)"
     * answer[0]
       * valueCoding = $sct#255246003 "First trimester"
+
+Instance: specimen-example-blood
+InstanceOf: Specimen
+Usage: #example
+Description: "Temporary Specimen instance for lab (based on drafted UZCoreSpecimen Excel structure)"
+/* * identifier.system = "https://dhp.uz/fhir/identifier/specimen-id"
+* identifier.value = "SPC-2025-000001"
+* accessionIdentifier.system = "https://dhp.uz/fhir/identifier/lab-accession-id"
+* accessionIdentifier.value = "ACC-2025-000045" */
+* status = #available
+* type = $v2-0487#BLD "Whole blood"
+* subject = Reference(Patient/example-salim)
+* receivedTime = "2025-11-04T08:30:00Z"
+* request[0] = Reference(ServiceRequest/example-cbc-order)
+* role[0] = $specimen-role#p "Patient"
+* collection.collector = Reference(Practitioner/example-practitioner)
+* collection.collectedDateTime = "2025-11-04T08:10:00Z"
+* collection.duration = 5 'min'
+* collection.quantity = 3 'mL' "mL"
+* collection.fastingStatusCodeableConcept = $v2-0916#NF "The patient indicated they did not fast prior to the procedure."
+* note[0].text = "Venous blood collected into EDTA tube. No visible hemolysis."
+
+Instance: example-cbc-order
+InstanceOf: ServiceRequest
+Usage: #example
+Description: "Example ServiceRequest for CBC (Umumiy qon tahlili) order"
+* status = #active
+* intent = #order
+* code = observation-lab-research-codes-cs#lab-A "CBC panel"
+* subject = Reference(Patient/example-salim)
+* requester = Reference(Practitioner/example-practitioner)
+* authoredOn = "2025-11-04T08:00:00Z"
+* specimen[0] = Reference(Specimen/specimen-example-blood)
+
+
+Instance: example-salim
+InstanceOf: UZCorePatient
+Description: "Example of a patient named Salim"
+Usage: #example
+* language = #ru
+* identifier[nationalId]
+  * value = "30211975910033"
+* identifier[passportLocal]
+  * value = "AC1234567"
+* identifier[passportInternational]
+  * value = "AA1234567"
+* identifier[birthCertificate]
+  * value = "I-МЯ №123456"
+* identifier[driversLicense]
+  * value = "AAA123456"
+* identifier[diplomaticPassport]
+  * value = "D1234567"
+* identifier[healthCardId]
+  * value = "01234567890123"
+* identifier[militaryId]
+  * value = "ВБ1234567"
+* identifier[penitentiaryInstitution]
+  * value = "УИН123456789012"
+* active = true
+* name
+  * use = #usual
+  * text = "Усманов Салим Салиевич"
+  * family = "Усманов"
+  * given = "Салим"
+  * suffix = "Салиевич"
+* telecom
+  * system = #phone
+  * use = #mobile
+  * rank = 1
+  * period.start = "2021-05-13"
+* birthDate = "1994-01-27"
+* address
+  * use = #home
+  * type = #postal
+  * line = "ул.Муминова 4"
+  * country = "182"
+  * district = "1703202"
+  * city = "22070013"
+  * period.start = "1999-04-06"
+* gender = #male
+* contact
+  * relationship = $v2-0131#N "Next-of-Kin"
+  * name.text = "Ваисов Раис"
+  * gender = #male
+* maritalStatus = $v3-MaritalStatus#W "Вдовец, вдова"
+* extension[nationality].extension[code].valueCodeableConcept = $nationality-cs#44 "Венгры"
+* extension[managingOrganizationAttachment].valueDate = "2024-03-15"

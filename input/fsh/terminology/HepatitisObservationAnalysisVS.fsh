@@ -8,4 +8,5 @@ Description: "ValueSet for hepatitis observation analysis"
 * ^extension.valueCanonical = Canonical(HepatitisObservationAnalysisCS)
 
 * include codes from system $loinc
+* include codes from system $lab-pan
 
