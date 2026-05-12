@@ -85,7 +85,7 @@ Usage: #example
 Instance: cbc-panel-example
 InstanceOf: HepatitisObservationAnalysis
 Usage: #example
-Description: "Example of CBC (Umumiy qon tahlili) as a laboratory panel with analytes from observation-lab-research-codes-cs"
+Description: "Example of CBC ( Umumiy qon tahlili ) as a laboratory panel with analytes from observation-lab-research-codes-cs"
 * identifier 
   * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
   * value = "PZR-2026-002"
@@ -166,4 +166,3 @@ Description: "Example of CBC (Umumiy qon tahlili) as a laboratory panel with ana
 * component[=].valueString = "not detected"
 * component[+].code = $lab-pan#lab-pan-106 "Toxic granules [Presence] in Blood by Light microscopy"
 * component[=].valueString = "not detected"
-*/
