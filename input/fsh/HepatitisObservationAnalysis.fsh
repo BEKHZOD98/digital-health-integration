@@ -80,7 +80,7 @@ Usage: #example
 * performer[0] = Reference(PractitionerRole/muratova-gulshoda-role)
 * performer[1] = Reference(Organization/samarkand-regional-hospital)
 
-
+/* temporary commented out until the new version of dhp-core is released
 // CBC - panel with components
 Instance: cbc-panel-example
 InstanceOf: HepatitisObservationAnalysis
@@ -166,3 +166,4 @@ Description: "Example of CBC ( Umumiy qon tahlili ) as a laboratory panel with a
 * component[=].valueString = "not detected"
 * component[+].code = $lab-pan#lab-pan-106 "Toxic granules [Presence] in Blood by Light microscopy"
 * component[=].valueString = "not detected"
+*/
