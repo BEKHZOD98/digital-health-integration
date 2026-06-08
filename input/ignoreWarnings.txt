@@ -17,3 +17,6 @@ Resource has a language (ru), and the XHTML has a lang (en), but they differ
 # per identifiers.md in the main DHP IG (uz.dhp.core)
 No definition could be found for URL value 'https://dhp.uz/fhir/core/sid/pid/uz/prn/200935935/%
 
+
+Unable to check if https://dhp.uz/fhir/integrations/ValueSet/hep-icd-vs is a proper subset of http://hl7.org/fhir/ValueSet/icd-10|5.0.0 - value set is too large to check
+Binding https://dhp.uz/fhir/integrations/ValueSet/quantity-comparator-vs could not be expanded

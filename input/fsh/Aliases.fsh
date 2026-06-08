@@ -29,20 +29,20 @@ Alias: $ee-mpi-socialhistory-education-level = https://fhir.ee/mpi/StructureDefi
 Alias: $encounter-admit-source = http://terminology.hl7.org/CodeSystem/admit-source
 Alias: $encounter-diagnosis-use = http://hl7.org/fhir/ValueSet/encounter-diagnosis-use
 Alias: $encounter-discharge-disposition = http://terminology.hl7.org/CodeSystem/discharge-disposition
-Alias: $encounter-participant-type-vs = https://terminology.dhp.uz/fhir/core/ValueSet/encounter-participant-type-vs
+
 Alias: $encounter-status = http://hl7.org/fhir/encounter-status
 Alias: $encounter-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/encounter-status-vs
-Alias: $episode-of-care-status = https://dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs
+
 Alias: $extra-security-role-type = http://terminology.hl7.org/CodeSystem/extra-security-role-type
 Alias: $fhir-types = http://hl7.org/fhir/ValueSet/resource-types
 Alias: $gender = http://hl7.org/fhir/administrative-gender
 Alias: $general-condition = https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition
 Alias: $healthcard = https://gov.uz/ssv/identifier/healthcard
 Alias: $hep-enc-diag-use = http://hl7.org/fhir/encounter-diagnosis-use
-Alias: $hep-encounter-class = https://terminology.dhp.uz/fhir/core/ValueSet/encounter-class-vs
+
 Alias: $hep-id-sys = https://dhp.uz/fhir/core/sid/pid/uz/hepatitis
 Alias: $hep-observation-lab-codes-vs = https://terminology.dhp.uz/fhir/core/ValueSet/observation-codes-vs
-Alias: $hepatitis-condition-diagnosis-type-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs
+
 Alias: $http-interaction = http://hl7.org/fhir/restful-interaction
 Alias: $icd-10 = http://hl7.org/fhir/sid/icd-10
 Alias: $icd-10-vs = http://hl7.org/fhir/ValueSet/icd-10
@@ -124,3 +124,5 @@ Alias: $v2-0487 = http://terminology.hl7.org/CodeSystem/v2-0487
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
 Alias: $v2-0916 = http://terminology.hl7.org/CodeSystem/v2-0916
 Alias: $nationality-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/nationality-cs
+
+Alias: $diagnosis-type = https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs

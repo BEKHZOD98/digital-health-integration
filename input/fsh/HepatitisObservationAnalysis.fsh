@@ -36,7 +36,7 @@ Description: "Profile for representing hepatitis observation analysis in the con
 
 * valueCodeableConcept ^short = "Positive or negative laboratory test result"
 * valueCodeableConcept ^definition = "Indicates whether the laboratory test result is positive or negative."
-* valueCodeableConcept from ObservationInterpretationVS (extensible)
+* valueCodeableConcept from $observation-interpretation-vs (extensible)
 
 * performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
 * performer ^short = "Organization responsible for performing this observation"
@@ -48,8 +48,8 @@ Description: "Profile for representing hepatitis observation analysis in the con
 
 * component.valueString ^short = "The result value entered manually by a healthcare professional."
 * component.valueCodeableConcept ^short = "Positive or negative laboratory test result"
-* component.valueCodeableConcept from ObservationInterpretationVS (extensible)
-* component.interpretation from ObservationInterpretationVS (extensible)
+* component.valueCodeableConcept from $observation-interpretation-vs (extensible)
+* component.interpretation from $observation-interpretation-vs  (extensible)
 
 
 // Instance Example
@@ -60,10 +60,10 @@ Usage: #example
 * language = #en
 * status = #final
 * identifier 
-  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
+  * system = $hep-id-sys 
   * value = "PZR-2026-001"
   * type.coding
-    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+    * system = $v2-0203
     * code = #PHC
     * display = "Public Health Case Identifier"
   * use = #official
