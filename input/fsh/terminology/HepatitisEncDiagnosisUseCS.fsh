@@ -2,11 +2,8 @@ CodeSystem: HepatitisEncDiagnosisUseCS
 Id: hep-enc-diag-use-cs
 Title: "Hepatitis enc diagnosis use codesystem"
 Description: "Description of hepatitis enc diagnosis use codesystem"
-* ^experimental = true
-* ^content = #supplement
-* ^supplements = $hep-enc-diag-use
-* ^version = "5.0.0"
-* ^language = #en
+
+* insert SupplementCodeSystemDraft(hep-enc-diag-use-cs,$hep-enc-diag-use, 5.0.0)
 
 * #working
   * ^designation[+].language = #ru

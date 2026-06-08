@@ -244,5 +244,5 @@ Context: Condition
 * ^experimental = true
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from HepatitisConditionDiagnosisTypeVS (required)
+* valueCodeableConcept MS
 * valueCodeableConcept ^short = "Type of diagnosis (e.g., primary, secondary)"

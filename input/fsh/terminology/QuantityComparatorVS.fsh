@@ -7,4 +7,8 @@ Description: "ValueSet for quantity comparator"
 * ^extension[0].url = $valueset-supplement
 * ^extension[=].valueCanonical = Canonical(QuantityComparatorCS)
 
-* include codes from system $comparator
+* $comparator#<
+* $comparator#<=
+* $comparator#>=
+* $comparator#>
+* $comparator#ad
