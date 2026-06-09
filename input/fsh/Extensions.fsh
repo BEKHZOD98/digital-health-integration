@@ -1,276 +1,208 @@
-Invariant: uzcore-gender-other-1
-Description: "The differentiation of the gender indication 'other' may only be filled if the gender 'other' is specified."
-* severity = #error
-* expression = "%resource.gender = 'other'"
+Extension: LateralityQualifier
+Id: laterality-qualifier
+Title: "Laterality Qualifier"
+Description: "Cancer laterality qualifier."
+Context: Condition
 
-Invariant: uzcore-gender-other-2
-Description: "gender 'other' implies differentiation of the gender indication 'other'."
-* severity = #error
-* expression = "gender.exists() and gender = 'other' implies gender.extension.exists()"
-
-Extension: GenderOtherUZ
-Id: gender-other
-Title: "Differentiation of the administrative gender 'other'"
-Description: "Extension for more precise differentiation of the administrative gender 'other', aligned with German base profiles representation of the same concept."
-Context: Patient.gender, RelatedPerson.gender, Person.gender, Practitioner.gender, Patient.contact.gender
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/gender-other"
-* ^status = #draft
+* ^status = #active
 * ^experimental = true
-* ^date = "2025-03-12"
 
-* value[x] 1..1
-* value[x] only Coding
-* value[x] from gender-other-vs (required)
-* value[x] obeys uzcore-gender-other-1
+* value[x] only CodeableConcept
+* valueCodeableConcept from LateralityQualifierVS (required)
 
-// ===================== MANAGING ORGANIZATION ATTACHMENT =====================
-Extension: ManagingOrganizationAttachment
-Id: managing-organization-attachment
-Title: "Managing organization attachment date"
-Description: "Date when the patient was attached to the managing organization. In Uzbekistan, patients can only change their managing organization once a year."
-Context: EpisodeOfCare
-* ^context.type = #element
-* ^context.expression = "EpisodeOfCare"
+Extension: Topography
+Id: topography
+Title: "Topography"
+Description: "ICD-O-3 topography."
+Context: Condition
+
+* ^status = #active
 * ^experimental = true
-* value[x] 1..
-* value[x] only date
 
+* value[x] only CodeableConcept
+* valueCodeableConcept from ICD3TopographyVS (required)
 
-// ===================== MORPHOLOGY =====================
 Extension: Morphology
 Id: morphology
-Title: "Tumor Morphology Extension"
-Description: "Morphological classification of tumor"
+Title: "Morphology"
+Description: "ICD-O-3 morphology."
+Context: Condition
 
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/morphology"
-* ^status = #draft
+* ^status = #active
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Condition"
 
 * value[x] only CodeableConcept
+* valueCodeableConcept from ICD3MorphologyVS (required)
 
-
-// ===================== DIAGNOSIS SOURCE =====================
-Extension: DiagnosisSource
-Id: diagnosis-source
-Title: "Diagnosis Source Extension"
-Description: "Source of diagnostic information"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/diagnosis-source"
-* ^status = #draft
-* ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Condition"
-
-* value[x] only CodeableConcept
-
-
-// ===================== DETECTION CONDITION =====================
-Extension: DetectionCondition
-Id: detection-condition
-Title: "Detection Condition Extension"
-Description: "Condition under which disease is detected"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/detection-condition"
-* ^status = #draft
-* ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Condition"
-
-* value[x] only CodeableConcept
-
-
-// ===================== ICCC3 GROUP =====================
-Extension: ICCC3Group
-Id: iccc3-group
-Title: "ICCC-3 Group Extension"
-Description: "Grouped classification of childhood cancer (ICCC-3)"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/iccc3-group"
-* ^status = #draft
-* ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Condition"
-
-* value[x] only CodeableConcept
-
-
-// ===================== ICCC3 =====================
-Extension: ICCC3
-Id: iccc3
-Title: "ICCC-3 Classification Extension"
-Description: "Classification of childhood cancer (ICCC-3)"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/iccc3"
-* ^status = #draft
-* ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Condition"
-
-* value[x] only CodeableConcept
-
-
-// ===================== SIDE OF LESION =====================
-Extension: SideOfLesion
-Id: side-of-lesion
-Title: "Side of Lesion Extension"
-Description: "Side of the body where lesion is located"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/side-of-lesion"
-* ^status = #draft
-* ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Observation.bodySite"
-
-* value[x] only CodeableConcept
-
-
-// ===================== GRADE =====================
 Extension: GradeDifferentiation
 Id: grade-differentiation
-Title: "Tumor Grade Extension"
-Description: "Degree of tumor differentiation"
+Title: "Grade Differentiation"
+Description: "Degree of tumor differentiation."
+Context: Condition
 
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/grade-differentiation"
-* ^status = #draft
+* ^status = #active
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Condition"
 
 * value[x] only CodeableConcept
+* valueCodeableConcept from DegreeOfTumorDifferentiationVS (required)
 
+Extension: TumorBehavior
+Id: tumor-behavior
+Title: "Tumor Behavior"
+Description: "Tumor behavior classification."
+Context: Condition
 
-// ===================== CHARACTER TREATMENT =====================
-Extension: CharacterTreatment
-Id: character-treatment
-Title: "Character of Treatment Extension"
-Description: "Characteristics of treatment provided"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/character-treatment"
-* ^status = #draft
+* ^status = #active
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "EpisodeOfCare"
 
 * value[x] only CodeableConcept
+* valueCodeableConcept from TumorBehaviorVS (required)
 
+Extension: DetectionCircumstance
+Id: detection-circumstance
+Title: "Detection Circumstance"
+Description: "Circumstance of cancer detection."
+Context: Condition
 
-// ===================== SPECIAL TREATMENT =====================
+* ^status = #active
+* ^experimental = true
+
+* value[x] only CodeableConcept
+* valueCodeableConcept from DetectionCircumstanceVS (required)
+
+Extension: ICCC3Group
+Id: iccc3-group
+Title: "ICCC-3 Group"
+Description: "International Classification of Childhood Cancer group."
+Context: Condition
+
+* ^status = #active
+* ^experimental = true
+
+* value[x] only CodeableConcept
+* valueCodeableConcept from ICCC3VS (required)
+
+Extension: RelatedCondition
+Id: related-condition
+Title: "Related Condition"
+Description: "Reference to a related condition."
+Context: Condition
+
+* ^status = #active
+* ^experimental = true
+
+* value[x] only Reference(ConditionCancerPrimary)
+
 Extension: SpecialTreatment
 Id: special-treatment
-Title: "Special Treatment Type Extension"
-Description: "Type of special or advanced treatment"
+Title: "Special Treatment Extension"
+Description: "Special treatment provided to a cancer patient."
+Context: EpisodeOfCare
 
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/special-treatment"
-* ^status = #draft
+* ^status = #active
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "EpisodeOfCare"
 
 * value[x] only CodeableConcept
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept from SpecialTreatmentVS (required)
 
+Extension: CharacterTreatment
+Id: character-treatment
+Title: "Character Treatment Extension"
+Description: "Character of treatment provided to a cancer patient."
+Context: EpisodeOfCare
 
-// ===================== DOSE UNIT =====================
-Extension: DoseUnit
-Id: dose-unit
-Title: "Dose Unit Extension"
-Description: "Unit used to measure dose"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/dose-unit"
-* ^status = #draft
+* ^status = #active
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "MedicationAdministration.dosage.dose"
 
 * value[x] only CodeableConcept
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept from CharacterTreatmentVS (required)
 
+Extension: ProcedureMethod
+Id: procedure-method
+Title: "Procedure Method"
+Description: "Method used to perform the surgical procedure."
+Context: Procedure
 
-// ===================== RADIOTHERAPY MODIFIERS =====================
-Extension: RadiotherapyModifiers
-Id: radiotherapy-modifiers
-Title: "Radiotherapy Modifiers Extension"
-Description: "Modifiers applied to radiotherapy procedures"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/radiotherapy-modifiers"
-* ^status = #draft
+* ^status = #active
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Procedure"
 
 * value[x] only CodeableConcept
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept from ProcedureMethodVS (required)
 
+Extension: AdditionalProcedure
+Id: additional-procedure
+Title: "Additional Procedure"
+Description: "Additional procedure performed during the surgical intervention."
+Context: Procedure
 
-// ===================== RADIOPHARMACEUTICAL DRUG =====================
-Extension: RadiopharmaceuticalDrug
-Id: radiopharmaceutical-drug
-Title: "Radiopharmaceutical Drug Extension"
-Description: "Radiopharmaceutical drug used in treatment"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/radiopharmaceutical-drug"
-* ^status = #draft
+* ^status = #active
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Procedure"
 
 * value[x] only CodeableConcept
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept from NameOperationsVS (required)
 
-
-// ===================== IRRADIATION ORGAN TEXT =====================
-Extension: IrradiationOrganText
-Id: irradiation-organ-text
-Title: "Irradiation Organ Text Extension"
-Description: "Text description of irradiated organ"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/irradiation-organ-text"
-* ^status = #draft
-* ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Procedure.bodySite"
-
-* value[x] only string
-
-
-// ===================== SINGLE DOSE =====================
-Extension: SingleDose
+Extension: RadiotherapySingleDose
 Id: radiotherapy-single-dose
-Title: "Radiotherapy Single Dose Extension"
-Description: "Single dose administered during radiotherapy"
+Title: "Radiotherapy Single Dose"
+Description: "Single radiation dose."
+Context: Procedure
 
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/radiotherapy-single-dose"
 * ^status = #draft
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Procedure"
 
 * value[x] only Quantity
+* valueQuantity 0..1 MS
 
-
-// ===================== EQUIVALENT DOSE =====================
-Extension: EquivalentDose
-Id: radiotherapy-equivalent-dose
-Title: "Radiotherapy Equivalent Dose Extension"
-Description: "Equivalent dose in radiotherapy"
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/radiotherapy-equivalent-dose"
-* ^status = #draft
-* ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Procedure"
-
-* value[x] only Quantity
-
-
-// ===================== TOTAL DOSE =====================
-Extension: TotalDose
+Extension: RadiotherapyTotalDose
 Id: radiotherapy-total-dose
 Title: "Radiotherapy Total Dose"
-Description: "Total dose administered during radiotherapy"
+Description: "Total radiation dose."
+Context: Procedure
 
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/radiotherapy-total-dose"
 * ^status = #draft
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "Procedure"
 
 * value[x] only Quantity
+* valueQuantity 0..1 MS
+
+Extension: RadiotherapyEquivalentDose
+Id: radiotherapy-equivalent-dose
+Title: "Radiotherapy Equivalent Dose"
+Description: "Equivalent radiation dose."
+Context: Procedure
+
+* ^status = #draft
+* ^experimental = true
+
+* value[x] only Quantity
+* valueQuantity 0..1 MS
+
+Extension: RadiotherapyZone
+Id: radiotherapy-zone
+Title: "Radiotherapy Zone"
+Description: "Radiotherapy treatment zone."
+Context: Procedure
+
+* ^status = #active
+* ^experimental = true
+
+* value[x] only CodeableConcept
+* valueCodeableConcept 0..1 MS
+* valueCodeableConcept from ImpactZoneVS (required)
+
+Extension: RadiotherapyModifiers
+Id: radiotherapy-modifiers
+Title: "Radiotherapy Modifiers"
+Description: "Radiotherapy modifiers."
+Context: Procedure
+
+* ^status = #active
+* ^experimental = true
+
+* value[x] only CodeableConcept
+* valueCodeableConcept 0..1 MS
+* valueCodeableConcept from ModifiersVS (required)

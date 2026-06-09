@@ -1,117 +1,109 @@
-Profile: ProcedureCancerRadiotherapy
+Profile: ProcedureCancerRadiationtherapy
 Parent: Procedure
-Id: procedure-cancer-radiotherapy
-Title: "Cancer Radiotherapy Procedure"
-Description: "Procedure representing radiotherapy treatment in oncology"
+Id: procedure-cancer-radiationtherapy
+Title: "Procedure Cancer Radiation Therapy"
+Description: "Radiation therapy procedure for cancer patients."
 
 * ^status = #draft
 * ^experimental = true
-* ^publisher = "Uzinfocom"
-* ^language = #en
 
-// ===================== IDENTIFIER =====================
-* identifier 0..*
+* identifier MS
 
+* status 1..1 MS
 
-// ===================== STATUS =====================
-* status 1..1
+* category 0..* MS
+* category from CharacterRadiationTherapyVS (required)
 
-
-// ===================== CATEGORY =====================
-* category 0..*
-* category ^short = "Character of radiotherapy"
-* category from CharacterRadiotherapyVS (required)
-
-
-// ===================== CODE =====================
-* code 0..1
-* code ^short = "Type of radiation impact"
+* code 0..1 MS
 * code from ImpactTypeVS (required)
 
-
-// ===================== SUBJECT =====================
-* subject 1..1
-* subject only Reference(CancerPatient)
-
 * extension contains
-    RadiotherapyModifiers named modifiers 0..1 and
-    RadiopharmaceuticalDrug named radiopharmaceutical 0..1 and
-    SingleDose named singleDose 0..1 and
-    TotalDose named totalDose 0..1 and
-    EquivalentDose named equivalentDose 0..1
+    RadiotherapyZone named radiotherapyZone 0..1 MS and
+    RadiotherapyModifiers named radiotherapyModifiers 0..* MS and
+    RadiotherapySingleDose named radiotherapySingleDose 0..1 MS and
+    RadiotherapyTotalDose named radiotherapyTotalDose 0..1 MS and
+    RadiotherapyEquivalentDose named radiotherapyEquivalentDose 0..1 MS
 
-* bodySite.extension contains IrradiationOrganText named organText 0..1
-// ===================== BODY SITE =====================
-* bodySite 0..*
-* bodySite ^short = "Irradiation zone"
-* bodySite from ImpactZoneVS (required)
+* extension[radiotherapyZone].valueCodeableConcept 0..1 MS
+* extension[radiotherapyZone].valueCodeableConcept from ImpactZoneVS (required)
 
+* extension[radiotherapyModifiers].valueCodeableConcept 0..1 MS
+* extension[radiotherapyModifiers].valueCodeableConcept from ModifiersVS (required)
 
-// ===================== OCCURRENCE =====================
+* bodySite 0..* MS
+* bodySite from AnatomicalLocationVS (required)
+
+* note 0..* MS
+
+* extension[radiotherapySingleDose].valueQuantity 0..1 MS
+* extension[radiotherapyTotalDose].valueQuantity 0..1 MS
+* extension[radiotherapyEquivalentDose].valueQuantity 0..1 MS
+
+* subject 1..1 MS
+* subject only Reference(UZCorePatient)
+
+* encounter 0..1 MS
+* encounter only Reference(UZCoreEncounter)
+
 * occurrence[x] only Period
-* occurrencePeriod 0..1
+* occurrencePeriod 0..1 MS
+
+* performer 1..* MS
+* performer.actor 1..1 MS
+* performer.actor only Reference(UZCorePractitioner or UZCoreHealthcareService)
+
+* performer.onBehalfOf 0..1
+* performer.onBehalfOf only Reference(UZCoreOrganization)
+
+* reason 0..* MS
+* reason only CodeableReference(ConditionCancerPrimary)
+
+* used 0..* MS
+* used only CodeableReference
+* used from NameDrugVS (required)
 
 
-// ===================== PERFORMER =====================
-* performer 0..*
-* performer.actor only Reference(Organization)
-
-
-// ===================== NOTE =====================
-* note 0..*
-
-
-
-
-
-Instance: procedure-cancer-radiotherapy-example
-InstanceOf: ProcedureCancerRadiotherapy
+Instance: example-procedure-cancer-radiationtherapy
+InstanceOf: ProcedureCancerRadiationtherapy
+Title: "Example Cancer Radiation Therapy Procedure"
+Description: "Example of radiation therapy procedure for a cancer patient."
 Usage: #example
-Description: "Example of radiotherapy procedure."
 
-// * language = #en
-* status = #completed
+* status = $event-status#completed "Completed"
 
+* category = character-radiation-therapy-cs#cancr0025.00004 "Independent radical"
 
-// ===================== CATEGORY =====================
-* category[0] = $CancerCS#cancr0034.00001 "Preoperative"
+* code = impact-type-cs#cancr0026.00001 "Remote"
 
+* extension[radiotherapyZone].valueCodeableConcept =
+    impact-zone-cs#cancr0027.00001 "Primary focus"
 
-// ===================== CODE =====================
-* code = $CancerCS#cancr0035.00001 "Remote"
+* extension[radiotherapyModifiers][0].valueCodeableConcept =
+    modifiers-cs#cancr0028.00002 "Radiosensitizers"
 
+* extension[radiotherapySingleDose].valueQuantity.value = 10
+* extension[radiotherapySingleDose].valueQuantity.unit = "Gy"
 
-// ===================== SUBJECT =====================
-* subject.reference = "Patient/cancer-patient-example"
+* extension[radiotherapyTotalDose].valueQuantity.value = 20
+* extension[radiotherapyTotalDose].valueQuantity.unit = "Gy"
 
+* extension[radiotherapyEquivalentDose].valueQuantity.value = 25
+* extension[radiotherapyEquivalentDose].valueQuantity.unit = "Gy"
 
-// ===================== BODY SITE =====================
-* bodySite[0] = $CancerCS#cancr0036.00001 "Primary focus"
-* bodySite[0].extension[organText].valueString = "Left lung upper lobe"
+* bodySite = anatomical-location-cs#cancr0007.00003 "Liver"
+* bodySite.text = "Lymph nodes"
 
+* subject = Reference(example-patient)
+* encounter = Reference(encounter-cancer-example)
 
-// ===================== PERIOD =====================
 * occurrencePeriod.start = "2026-01-05"
 * occurrencePeriod.end = "2026-02-06"
 
-* extension[modifiers].valueCodeableConcept = $CancerCS#cancr0037.00001 "Radioprotectors"
-* extension[radiopharmaceutical].valueCodeableConcept = $CancerCS#cancr0041.00001 "Bromine-82"
+* performer.actor = Reference(example-healthcare-service)
+* performer.onBehalfOf = Reference(example-lab)
 
-* extension[singleDose].valueQuantity.value = 2
-* extension[singleDose].valueQuantity.unit = "Gy"
-* extension[singleDose].valueQuantity.system = "http://unitsofmeasure.org"
-* extension[singleDose].valueQuantity.code = #Gy
+* reason[0].reference = Reference(condition-cancer-primary-example)
 
-* extension[totalDose].valueQuantity.value = 20
-* extension[totalDose].valueQuantity.unit = "Gy"
-* extension[totalDose].valueQuantity.system = "http://unitsofmeasure.org"
-* extension[totalDose].valueQuantity.code = #Gy
+* used = name-drug-cs#cancr0029.00002 "Actinomycin"
 
-* extension[equivalentDose].valueQuantity.value = 22
-* extension[equivalentDose].valueQuantity.unit = "Gy"
-* extension[equivalentDose].valueQuantity.system = "http://unitsofmeasure.org"
-* extension[equivalentDose].valueQuantity.code = #Gy
-
-
-// ===================== PERFORMER =====================
-* performer[0].actor.reference = "Organization/hospital-1"
+* note.text = "Additional description of the primary lesion."

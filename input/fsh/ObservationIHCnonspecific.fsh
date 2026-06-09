@@ -1,97 +1,59 @@
 Profile: ObservationIHCnonspecific
-Parent: Observation
+Parent: UZCoreObservation
 Id: observation-ihc-nonspecific
-Title: "IHC Nonspecific Observation"
-Description: "Observation for nonspecific immunohistochemistry (IHC) tests in oncology"
+Title: "Observation IHC Nonspecific"
+Description: "Observation profile for non-specific immunohistochemistry (IHC) antibody testing."
 
-* ^status = #draft
 * ^experimental = true
-* ^publisher = "Uzinfocom"
-* ^language = #en
+* ^status = #active
 
-// ===================== IDENTIFIER =====================
-* identifier 0..*
-* identifier ^short = "Business identifier for the laboratory test"
+* identifier MS
 
-
-// ===================== CODE =====================
-* code 1..1
-* code ^short = "Type of laboratory test (e.g. IHC nonspecific)"
+* code 1..1 MS
 * code from NameTestsVS (required)
 
+* subject 1..1 MS
+* subject only Reference(UZCorePatient)
 
-// ===================== SUBJECT =====================
-* subject 1..1
-* subject ^short = "Patient who is the subject of the test"
-* subject only Reference(CancerPatient)
+* focus MS
+* focus only Reference(UZCoreCondition)
 
+* effectiveDateTime MS
 
-// ===================== EFFECTIVE =====================
-* effective[x] only dateTime
-* effectiveDateTime 1..1
-* effectiveDateTime ^short = "Date and time when the test was performed"
+* performer MS
+* performer only Reference(UZCoreOrganization)
 
-
-// ===================== PERFORMER =====================
-* performer 0..*
-* performer ^short = "Organization or laboratory performing the test"
-* performer only Reference(Organization)
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept from IHCNameAntibodyVS (required)
 
 
-// ===================== VALUE =====================
-* value[x] 0..1
-* value[x] only CodeableConcept
-* valueCodeableConcept ^short = "Antibody or biomarker tested (e.g. CD3)"
+* interpretation MS
+* interpretation from $observation-interpretation-vs (required)
 
-* valueCodeableConcept from IHCNameAntibodyVS (extensible)
-
-
-// ===================== INTERPRETATION =====================
-* interpretation 0..*
-* interpretation ^short = "Interpretation of test result (e.g. positive, negative)"
-* interpretation from CancerResultVS (required)
+* hasMember MS
+* hasMember only Reference(UZCoreObservation)
 
 
-// ===================== HAS MEMBER =====================
-* hasMember 0..*
-* hasMember ^short = "Related or grouped laboratory observations"
-* hasMember only Reference(Observation)
 
-
-Instance: observation-ihc-nonspecific-example
+Instance: observation-ihc-nonspecific-cd3-example
 InstanceOf: ObservationIHCnonspecific
-Title: "IHC Nonspecific Observation Example"
-Description: "Example of nonspecific IHC test with antibody and result"
 Usage: #example
-// * language = #en
+Description: "Example of a non-specific IHC observation with CD3 antibody detected."
+
 
 * status = #final
 
-// ===================== CODE =====================
-* code.coding[0].system = $CancerCS
-* code.coding[0].code = #cancr0013.00001
-* code.coding[0].display = "IHC specific"
+* code = name-tests-cs#cancr0011.00002 "IHC non-specific"
 
+* subject = Reference(example-patient)
 
-// ===================== SUBJECT =====================
-* subject.reference = "Patient/cancer-patient-example"
+* focus = Reference(condition-cancer-primary-example)
 
+* effectiveDateTime = "2026-02-25"
 
-// ===================== EFFECTIVE =====================
-* effectiveDateTime = "2026-02-25T10:00:00+05:00"
+//put refernce
+* performer = Reference(example-lab)
 
+* valueCodeableConcept = ihc-hormone-antibody-cs#cancr0002.00004 "CD3(Protein complex)"
 
-// ===================== PERFORMER =====================
-* performer[0].reference = "Organization/lab-1"
-
-
-// ===================== VALUE (ANTIBODY) =====================
-* valueCodeableConcept.coding[0].system = $CancerCS
-* valueCodeableConcept.coding[0].code = #cancr0003.00001
-* valueCodeableConcept.coding[0].display = "pS2 (TFF1, Trefoil Factor 1)"
-
-
-// ===================== INTERPRETATION =====================
-* interpretation[0].coding[0].system = $CancerCS
-* interpretation[0].coding[0].code = #cancr0002.00001
-* interpretation[0].coding[0].display = "detected"
+* interpretation = $observation-interpretation#DET "Detected"

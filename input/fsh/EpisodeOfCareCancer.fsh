@@ -1,103 +1,67 @@
 Profile: EpisodeOfCareCancer
-Parent: EpisodeOfCare
+Parent: UZCoreEpisodeOfCare
 Id: episode-of-care-cancer
-Title: "Cancer Treatment EpisodeOfCare"
-Description: "Episode of care representing cancer treatment course"
+Title: "Episode Of Care Cancer"
+Description: "Episode of care profile for cancer treatment and follow-up."
 
-* ^status = #draft
 * ^experimental = true
-* ^publisher = "Uzinfocom"
-* ^language = #en
+* ^status = #active
 
-// ===================== IDENTIFIER =====================
-* identifier 0..*
-* identifier ^short = "Business identifier for treatment episode"
+* status 1..1 MS
 
+* type MS
 
-// ===================== TYPE =====================
-* type 0..*
-* type ^short = "Type of treatment (e.g. inpatient, outpatient)"
-* type from TypeTreatmentVS (required)
+* extension contains
+    SpecialTreatment named specialTreatment 0..1 MS and
+    CharacterTreatment named characterTreatment 0..1 MS
 
-
-// ===================== PATIENT =====================
-* patient 1..1
-* patient ^short = "Patient receiving treatment"
-* patient only Reference(Patient)
-
-
-// ===================== MANAGING ORGANIZATION =====================
-* managingOrganization 0..1
-* managingOrganization only Reference(Organization)
-* managingOrganization ^short = "Organization managing the cancer treatment episode"
-
-
-// ===================== PERIOD =====================
-* period 0..1
-* period.start 0..1
-* period.start ^short = "Treatment start date"
-
-* period.end 0..1
-* period.end ^short = "Treatment end date"
-
-
-// ===================== EXTENSIONS =====================
-* extension contains 
-    CharacterTreatment named characterTreatment 0..1 and
-    SpecialTreatment named specialTreatment 0..1 and
-    //re-check it is correct or not
-    ManagingOrganizationAttachment named managingOrganizationAttachment 0..1
-* extension[managingOrganizationAttachment].value[x] only date
-* extension[managingOrganizationAttachment] ^short = "Date when patient was attached to managing organization"
-
-// ===================== CHARACTER OF TREATMENT =====================
-* extension[characterTreatment].value[x] only CodeableConcept
-* extension[characterTreatment].valueCodeableConcept ^short = "Character of treatment (e.g. radical)"
-* extension[characterTreatment].valueCodeableConcept from CharacterTreatmentVS (required)
-
-
-// ===================== SPECIAL TREATMENT =====================
-* extension[specialTreatment].value[x] only CodeableConcept
-* extension[specialTreatment].valueCodeableConcept ^short = "Type of special treatment (e.g. surgery)"
+* extension[specialTreatment].valueCodeableConcept 1..1 MS
 * extension[specialTreatment].valueCodeableConcept from SpecialTreatmentVS (required)
 
+* extension[characterTreatment].valueCodeableConcept 1..1 MS
+* extension[characterTreatment].valueCodeableConcept from CharacterTreatmentVS (required)
 
+* diagnosis MS
+* diagnosis.condition MS
+* diagnosis.condition only CodeableReference(ConditionCancerPrimary or ConditionCancerSecondary)
+
+* diagnosis.use MS
+
+
+* patient 1..1 MS
+* patient only Reference(UZCorePatient)
+
+* managingOrganization 0..1 MS
+* managingOrganization only Reference(UZCoreOrganization)
+
+* period.start MS
+* period.end MS
+
+* careManager MS
+* careManager only Reference(UZCorePractitionerRole)
 
 
 Instance: episode-of-care-cancer-example
 InstanceOf: EpisodeOfCareCancer
-Title: "Cancer Treatment Example"
-Description: "Example of cancer treatment episode"
 Usage: #example
-// * language = #en
+Description: "Example cancer episode of care."
 
 * status = #active
-// ===================== TYPE =====================
-* type[0].coding[0].system = $CancerCS
-* type[0].coding[0].code = #cancr0009.00002
-* type[0].coding[0].display = "Treated on an outpatient basis"
 
+* type = $episode-of-care-type#mserv-0001-00004 "Treatment services"
 
-// ===================== PATIENT =====================
-* patient.reference = "Patient/cancer-patient-example"
+* extension[specialTreatment].valueCodeableConcept = special-treatment-cs#cancr0009.00001 "Surgical"
+    
 
+* extension[characterTreatment].valueCodeableConcept = character-treatment-cs#cancr0008.00002 "Radical"
 
-// ===================== ORGANIZATION =====================
-* managingOrganization.reference = "Organization/hospital-1"
-* extension[managingOrganizationAttachment].valueDate = "2026-01-15"
+* diagnosis[0].condition = Reference(condition-cancer-primary-example)
+* diagnosis[0].use = $diagnosis-role#DD "Discharge diagnosis"
 
-// ===================== PERIOD =====================
+* patient = Reference(example-patient)
+
+* managingOrganization = Reference(example-organization)
 * period.start = "2026-02-12"
 * period.end = "2026-03-12"
 
-
-// ===================== CHARACTER =====================
-* extension[characterTreatment].valueCodeableConcept.coding[0].system = $CancerCS
-* extension[characterTreatment].valueCodeableConcept.coding[0].code = #cancr0010.00002
-* extension[characterTreatment].valueCodeableConcept.coding[0].display = "Radical"
-
-
-// ===================== SPECIAL TREATMENT =====================
-* extension[specialTreatment].valueCodeableConcept.coding[0].system = $CancerCS
-* extension[specialTreatment].valueCodeableConcept.coding[0].code = #cancr0011.00002
-* extension[specialTreatment].valueCodeableConcept.coding[0].display = "Surgical"
+* careManager = Reference(example-practitioner-role)

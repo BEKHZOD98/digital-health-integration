@@ -1,114 +1,73 @@
 Profile: ProcedureCancerSurgicalOperation
+// After new version is published, parent will be changed from Procedure to UZCoreProcedure
 Parent: Procedure
 Id: procedure-cancer-surgical-operation
-Title: "Cancer Surgical Procedure"
-Description: "Procedure representing surgical or interventional cancer treatment"
+Title: "Procedure Cancer Surgical Operation"
+Description: "Procedure profile for documenting surgical cancer operations."
 
-* ^status = #draft
 * ^experimental = true
-* ^publisher = "Uzinfocom"
-* ^language = #en
+* ^status = #active
 
+* status MS
 
-// ===================== IDENTIFIER =====================
-* identifier 0..*
-* identifier ^short = "Business identifier for procedure"
+* category MS
+* category from CharacterTreatmentVS (required)
 
-
-// ===================== PART OF =====================
-* partOf 0..*
-* partOf only Reference(Procedure)
-* partOf ^short = "Parent procedure (if part of a larger procedure)"
-
-
-// ===================== CATEGORY =====================
-* category 0..*
-* category ^short = "Character of operation (e.g. radical)"
-* category from CharacterOperationsVS (required)
-
-
-// ===================== CODE =====================
-* code 0..1
-* code ^short = "Name of operation"
+* code 1..1 MS
 * code from NameOperationsVS (required)
 
+* subject MS
+* subject only Reference(UZCorePatient)
 
-// ===================== SUBJECT =====================
-* subject 1..1
-* subject ^short = "Patient undergoing procedure"
-* subject only Reference(CancerPatient)
+* encounter MS
+* encounter only Reference(EncounterCancer)
 
+* occurrenceDateTime MS
 
-// ===================== OCCURRED =====================
-* occurrence[x] only dateTime
-* occurrenceDateTime 0..1
-* occurrenceDateTime ^short = "Date of procedure"
+* note MS
 
+* extension contains
+    ProcedureMethod named procedureMethod 0..1 MS and
+    AdditionalProcedure named additionalProcedure 0..* MS
 
-// ===================== NOTE =====================
-* note 0..*
-* note ^short = "Description of operation"
+* performer MS
+* performer.actor 1..1 MS
+* performer.actor only Reference(UZCorePractitioner or UZCoreHealthcareService)
 
+* performer.onBehalfOf 0..1 MS
+* performer.onBehalfOf only Reference(UZCoreOrganization)
 
-// ===================== FOCAL DEVICE =====================
-* focalDevice 0..*
-* focalDevice.action 0..1
-* focalDevice.action ^short = "Type of operation (e.g. laparoscopic)"
-* focalDevice.action from TypeOperationsVS (required)
-
-
-// ===================== PERFORMER =====================
-* performer 0..*
-* performer.actor 1..1
-* performer.actor only Reference(Organization)
-* performer.actor ^short = "Organization performing procedure"
-
+* reason MS
+* reason only CodeableReference(ConditionCancerPrimary)
 
 
 Instance: procedure-cancer-surgical-operation-example
 InstanceOf: ProcedureCancerSurgicalOperation
-Title: "Cancer Operation Example"
-Description: "Example of cancer surgery"
 Usage: #example
+Description: "Example cancer surgical operation."
 
-// * language = #en
+* status = $event-status#completed "Completed"
 
-* status = #completed
-// ===================== CATEGORY =====================
-* category[0].coding[0].system = $CancerCS
-* category[0].coding[0].code = #cancr0032.00001
-* category[0].coding[0].display = "Radical"
+* category = character-treatment-cs#cancr0008.00002 "Radical"
 
+* code = name-operations-cs#cancr0018.00005 "plastic surgery with TDL flap after radical resection"
 
-// ===================== CODE =====================
-* code.coding[0].system = $CancerCS
-* code.coding[0].code = #cancr0022.00001
-* code.coding[0].display = "simple amputation of the mammary gland"
+* subject = Reference(example-patient)
 
+* encounter = Reference(encounter-cancer-example)
 
-// ===================== SUBJECT =====================
-* subject.reference = "Patient/cancer-patient-example"
+* occurrenceDateTime = "2026-02-18T10:00:00+05:00"
 
+* note.text = "Surgical procedure completed without complications."
 
-// ===================== DATE =====================
-* occurrenceDateTime = "2026-03-20"
+* extension[procedureMethod].valueCodeableConcept =
+    procedure-method-cs#cancr0024.00001 "Laparoscopic"
 
+* extension[additionalProcedure].valueCodeableConcept =
+    name-operations-cs#cancr0018.00127 "axillary lymphadenectomy"
 
-// ===================== NOTE =====================
-* note[0].text = "Operation completed successfully"
+* performer.actor = Reference(example-healthcare-service)
 
+* performer.onBehalfOf = Reference(example-organization)
 
-// ===================== TYPE (FOCAL DEVICE ACTION) =====================
-* focalDevice[0].manipulated = Reference(Device/surgical-tool-1)
-* focalDevice[0].action = $CancerCS#cancr0033.00001 "Laparoscopic"
-
-
-
-// ===================== PERFORMER =====================
-* performer[0].actor.reference = "Organization/hospital-1"
-
-Instance: surgical-tool-1
-InstanceOf: Device
-Description: "Example of a surgical tool device."
-* status = #active
-* type = $CancerCS#cancr0033.00001 "Laparoscopic"
+* reason[0].reference = Reference(condition-cancer-primary-example)

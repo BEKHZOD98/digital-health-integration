@@ -1,75 +1,67 @@
 Profile: ObservationIHCSpecific
-Parent: Observation
+Parent: UZCoreObservation
 Id: observation-ihc-specific
 Title: "Observation IHC Specific"
-Description: "Specific immunohistochemistry (IHC) hormone test observation used to detect presence or absence of tumor process."
+Description: "Observation profile for specific immunohistochemistry (IHC) hormone studies used to determine the presence or absence of tumor processes."
 
-* ^status = #draft
 * ^experimental = true
-* ^publisher = "Uzinfocom"
-* ^language = #en
+* ^status = #active
 
-* identifier 0..* MS
+* identifier MS
 
 * code 1..1 MS
 * code from NameTestsVS (required)
 
-* subject 1..1 MS
-* subject only Reference(Patient)
 
-* effective[x] 0..1
-* effective[x] only dateTime
+* subject MS
+* subject only Reference(UZCorePatient)
 
-* performer 0..* MS
-* performer only Reference(Organization)
+* focus MS
+* focus only Reference(UZCoreCondition)
 
-* component 0..*
+* effectiveDateTime MS
 
-* component.code 1..1
+* performer MS
+* performer only Reference(UZCoreOrganization)
+
+* component MS
+* component.code 1..1 MS
 * component.code from IHCHormoneVS (required)
 
-* component.value[x] 0..1
-* component.value[x] only Quantity or CodeableConcept
-
-* component.valueQuantity.unit 0..1
-
+* component.valueQuantity MS
+* component.valueCodeableConcept MS
 * component.valueCodeableConcept from IHCHormoneResultVS (required)
 
-* interpretation 0..*
-* interpretation from CancerResultVS (required)
+* interpretation MS
+* interpretation from $observation-interpretation-vs (required)
 
-* hasMember 0..*
-* hasMember only Reference(Observation)
+* hasMember MS
+* hasMember only Reference(UZCoreObservation)
 
 
-
-Instance: example-ihc-specific-example
+Instance: observation-ihc-specific-example
 InstanceOf: ObservationIHCSpecific
 Usage: #example
-Description: "Example IHC estrogen hormone test"
+Description: "Example of a specific IHC hormone study showing estrogen receptor expression."
 
-// * language = #en
+
 * status = #final
 
-* code =  $CancerCS#cancr0013.00001 "IHC specific"
+* code = name-tests-cs#cancr0011.00001 "IHC specific"
 
-* subject = Reference(Patient/cancer-patient-example)
-* performer = Reference(Organization/lab-1)
+* subject = Reference(example-patient)
+
+* focus = Reference(condition-cancer-primary-example)
 
 * effectiveDateTime = "2026-02-01"
 
+* performer = Reference(example-lab)
 
-
-* component[0].code = $CancerCS#cancr0012.00001 "Estrogen"
-
+* component[0].code = ihc-hormone-cs#cancr0010.00001 "Estrogen"
 * component[0].valueQuantity.value = 20
 * component[0].valueQuantity.unit = "%"
 
+* component[1].code = ihc-hormone-cs#cancr0010.00002 "Progesterone"
+* component[1].valueCodeableConcept = ihc-hormone-result-cs#cancr0001.00002 "Weak (+)"
 
-* component[1].code = $CancerCS#cancr0012.00001 "Estrogen"
-
-* component[1].valueCodeableConcept = $CancerCS#cancr0001.00002 "Weak (+)" 
-
-
-* interpretation[0] = $CancerCS#cancr0002.00001 "detected"
-    
+* interpretation = $observation-interpretation#DET "Detected"

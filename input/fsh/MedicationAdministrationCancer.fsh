@@ -1,92 +1,61 @@
-Profile: MedicationAdministrationCancer
+Profile: MedicationAdmCancerChemotherapy
+// there is no UZCoreMedicationAdministration, so I used MedicationAdministration 
 Parent: MedicationAdministration
-Id: medicationadministration-cancer
-Title: "Cancer Medication Administration"
-Description: "Administration of anticancer drugs (chemotherapy, etc.)"
+Id: medication-adm-cancer-chemotherapy
+Title: "Medication Administration Cancer Chemotherapy"
+Description: "Medication administration profile for documenting chemotherapy treatment."
 
-* ^status = #draft
 * ^experimental = true
-* ^publisher = "Uzinfocom"
-* ^language = #en
+* ^status = #active
 
-// ===================== IDENTIFIER =====================
-* identifier 0..*
-* identifier ^short = "Business identifier for medication administration"
+* status MS
 
-
-// ===================== BASED ON =====================
-* basedOn 0..*
-* basedOn only Reference(CarePlan)
-* basedOn ^short = "Treatment plan reference"
-
-
-// ===================== MEDICATION =====================
-* medication only CodeableReference(Medication)
-* medication ^short = "Anticancer drug"
-* medication 1..1 MS
+* medication MS
 * medication from NameDrugVS (required)
 
+* subject MS
+* subject only Reference(UZCorePatient)
 
-// ===================== SUBJECT =====================
-* subject 1..1
-* subject only Reference(CancerPatient)
-* subject ^short = "Patient receiving medication"
+* encounter MS
+* encounter only Reference(EncounterCancer)
 
-
-// ===================== OCCURRENCE =====================
-* occurence[x] 1..1 MS
 * occurence[x] only dateTime
+* occurenceDateTime	 1..1 MS
 
+* reason MS
+* reason only CodeableReference(ConditionCancerPrimary)
 
-// ===================== DOSAGE =====================
-* dosage 0..1
-* dosage ^short = "Dosage details"
+* dosage MS
 
-// ---- Dose (Quantity) ----
-* dosage.dose 0..1
-* dosage.dose ^short = "Dose amount"
-
-// ---- Unit extension ----
-* dosage.dose.extension contains DoseUnit named unit 0..1
-* dosage.dose.extension[unit].value[x] only CodeableConcept
-* dosage.dose.extension[unit].valueCodeableConcept from UnitDoseVS (required)
-
-// ===================== ROUTE / METHOD =====================
-* dosage.method 0..1
-* dosage.method ^short = "Method of dosage"
+* dosage.method 0..1 MS
 * dosage.method from DrugAdministrationVS (required)
 
+* dosage.dose MS
+
+* dosage.dose.value 0..1 MS
+
+* dosage.dose.unit 0..1 MS
+* dosage.dose.unit from UnitsDrugVS (required)
 
 
-Instance: medication-administration-cancer-example
-InstanceOf: MedicationAdministrationCancer
-Title: "Chemotherapy Example"
-Description: "Example of chemotherapy administration"
+Instance: medication-adm-cancer-chemotherapy-example
+InstanceOf: MedicationAdmCancerChemotherapy
 Usage: #example
-// * language = #en
-
+Description: "Example chemotherapy medication administration."
 
 * status = #completed
 
-* identifier[0].system = "https://dhp.uz/cancer/chemotherapy"
-* identifier.value = "MedicationAdministrationCancerChemotherapy-001"
+* medication = name-drug-cs#cancr0029.00002 "Actinomycin"
 
-* medication.concept = $CancerCS#cancr0038.00001 "L.Asparginase"
+* subject = Reference(example-patient)
 
-* subject = Reference(Patient/cancer-patient-example)
+* encounter = Reference(encounter-cancer-example)
 
 * occurenceDateTime = "2025-10-10"
 
-* dosage.text = "Cyclophosphamide IV infusion"
+* reason[0].reference = Reference(condition-cancer-primary-example)
 
-* dosage.dose.value = 20
-* dosage.dose.system = "https://terminology.dhp.uz/CodeSystem/cancer-codesystem"
-* dosage.dose.code = #cancr0042.00006
-* dosage.dose.unit = "mg/mL"
+* dosage.method = drug-administration-cs#cancr0030.00002  "Intravenous"
 
-* dosage.dose.extension[unit].valueCodeableConcept = $CancerCS#cancr0042.00006 "mg/ml"
-
-* dosage.method = $CancerCS#cancr0040.00004 "Intravesical"
-
-
-
+* dosage.dose.value = 1
+* dosage.dose.unit = units-drug-cs#cancr0032.00001 "G"

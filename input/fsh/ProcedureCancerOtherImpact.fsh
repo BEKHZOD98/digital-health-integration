@@ -1,84 +1,57 @@
 Profile: ProcedureCancerOtherImpact
+// After new version is published, parent will be changed from Procedure to UZCoreProcedure
 Parent: Procedure
-Id: procedure-cancer-other
-Title: "Cancer Other Procedure"
-Description: "Procedure representing other types of cancer-related interventions"
+Id: procedure-cancer-other-impact
+Title: "Procedure Cancer Other Impact"
+Description: "Procedure profile for documenting other therapeutic impacts in oncology."
 
-* ^status = #draft
 * ^experimental = true
-* ^publisher = "Uzinfocom"
-* ^language = #en
+* ^status = #active
 
-// ===================== IDENTIFIER =====================
-* identifier 0..*
-* identifier ^short = "Business identifier for procedure"
+* status 1..1 MS
 
-
-// ===================== STATUS =====================
-* status 1..1
-* status ^short = "Procedure status (preparation | in-progress | completed)"
-* status = #completed 
-
-
-// ===================== CODE =====================
-* code 0..1
-* code ^short = "Type of intervention"
+* code 1..1 MS
 * code from OtherImpactVS (required)
 
+* subject MS
+* subject only Reference(UZCorePatient)
 
-// ===================== SUBJECT =====================
-* subject 1..1
-* subject only Reference(CancerPatient)
-* subject ^short = "Patient receiving intervention"
+* encounter MS
+* encounter only Reference(EncounterCancer)
 
+* occurrencePeriod 0..1 MS
+* occurrencePeriod.start MS
+* occurrencePeriod.end MS
 
-// ===================== OCCURRENCE =====================
-* occurrence[x] only Period
-* occurrencePeriod 0..1
+* performer MS
+* performer.actor MS
+* performer.actor only Reference(UZCorePractitioner or UZCoreHealthcareService)
 
-* occurrencePeriod.start 0..1
-* occurrencePeriod.start ^short = "Start date of intervention"
+* performer.onBehalfOf 0..1 MS
+* performer.onBehalfOf only Reference(UZCoreOrganization)
 
-* occurrencePeriod.end 0..1
-* occurrencePeriod.end ^short = "End date of intervention"
-
-
-// ===================== PERFORMER =====================
-* performer 0..*
-* performer.actor 1..1
-* performer.actor only Reference(Organization)
-* performer.actor ^short = "Organization performing procedure"
-
+* reason MS
+* reason only CodeableReference(ConditionCancerPrimary)
 
 
 Instance: procedure-cancer-other-impact-example
 InstanceOf: ProcedureCancerOtherImpact
-Title: "Other Cancer Procedure Example"
-Description: "Example of non-surgical cancer intervention"
 Usage: #example
+Description: "Example other impact procedure."
 
+* status = $event-status#completed "Completed"
 
-// ===================== STATUS =====================
-// * language = #en
-* status = #completed
+* code = other-impact-cs#cancr0033.00001 "Hyperthermia"
 
+* subject = Reference(example-patient)
 
-// ===================== CODE =====================
-* code.coding[0].system = $CancerCS
-* code.coding[0].code = #cancr0043.00001
-* code.coding[0].display = "Hyperthermia"
+* encounter = Reference(encounter-cancer-example)
 
-
-// ===================== SUBJECT =====================
-* subject.reference = "Patient/cancer-patient-example"
-
-
-// ===================== PERIOD =====================
 * occurrencePeriod.start = "2026-01-05"
 * occurrencePeriod.end = "2026-02-06"
 
+* performer.actor = Reference(example-healthcare-service)
 
-// ===================== PERFORMER =====================
-* performer[0].actor.reference = "Organization/hospital-1"
+* performer.onBehalfOf = Reference(example-organization)
 
-
+* reason[0].reference = Reference(condition-cancer-primary-example)

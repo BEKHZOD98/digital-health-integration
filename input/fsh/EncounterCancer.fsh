@@ -1,127 +1,65 @@
 Profile: EncounterCancer
-Parent: Encounter
+Parent: UZCoreEncounter
 Id: encounter-cancer
-Title: "Cancer Encounter"
-Description: "Encounter representing patient visit/admission for cancer care"
+Title: "Encounter Cancer"
+Description: "Encounter profile for oncology care used to document patient visits, diagnoses, and treatment-related information."
 
-* ^status = #draft
 * ^experimental = true
-* ^publisher = "Uzinfocom"
-* ^language = #en
+* ^status = #active
 
-// ===================== IDENTIFIER =====================
-* identifier 0..*
-* identifier ^short = "Business identifier for encounter"
+* status MS
 
+* class MS
 
-// ===================== CLASS =====================
-* class 0..*
-* class ^short = "Type of encounter (e.g. inpatient, outpatient)"
-* class from TypeTreatmentVS (required)
+* subject MS
+* subject only Reference(UZCorePatient)
 
 
-// ===================== SUBJECT =====================
-* subject 1..1
-* subject ^short = "Patient receiving care"
-* subject only Reference(CancerPatient)
-
-
-// ===================== SUBJECT STATUS =====================
-* subjectStatus 0..1
-* subjectStatus ^short = "Patient condition status (e.g. alive)"
-* subjectStatus from PatientConditionVS (required)
-
-
-// ===================== EPISODE OF CARE =====================
-* episodeOfCare 0..*
+* episodeOfCare MS
 * episodeOfCare only Reference(EpisodeOfCareCancer)
 
+* serviceProvider MS
+* serviceProvider only Reference(UZCoreOrganization)
 
-// ===================== BASED ON =====================
-* basedOn 0..*
-* basedOn only Reference(ServiceRequest)
+* participant MS
+* participant.type MS
 
+* participant.actor MS
+* participant.actor only Reference(UZCorePractitionerRole)
 
-// ===================== SERVICE PROVIDER =====================
-* serviceProvider 0..1
-* serviceProvider only Reference(Organization)
+* actualPeriod MS
 
+* diagnosis MS
+* diagnosis.condition MS
+* diagnosis.condition only CodeableReference(ConditionCancerPrimary or ConditionCancerSecondary)
 
-// ===================== PERIOD =====================
-* actualPeriod 0..1
-* actualPeriod.start 0..1
-* actualPeriod.start ^short = "Start date of encounter"
+* diagnosis.use MS
 
-* actualPeriod.end 0..1
-* actualPeriod.end ^short = "End date of encounter"
-
-
-// ===================== PARTICIPANT =====================
-* participant 0..*
-* participant.actor only Reference(Patient)
-
-
-// ===================== DIAGNOSIS =====================
-* diagnosis 0..*
-* diagnosis.condition 0..1
-* diagnosis.condition only CodeableReference(ConditionCancer)
-
-// ===================== TYPE =====================
-* type 0..*
-* type ^short = "Encounter type"
-* type from TypeTreatmentVS (required)
-
+* admission.dischargeDisposition MS
 
 
 Instance: encounter-cancer-example
 InstanceOf: EncounterCancer
-Title: "Cancer Encounter Example"
-Description: "Example of oncology encounter"
 Usage: #example
-// * language = #en
+Description: "Example oncology encounter."
 
 * status = #completed "Completed"
-// ===================== CLASS =====================
-* class[0].coding[0].system = $CancerCS
-* class[0].coding[0].code = #cancr0009.00002
-* class[0].coding[0].display = "Treated on an outpatient basis"
 
+* class = $v3-ActCode#IMP "Inpatient encounter"
 
-// ===================== SUBJECT =====================
-* subject = Reference(Patient/cancer-patient-example)
+* subject = Reference(example-patient)
 
-// ===================== SUBJECT STATUS =====================
-* subjectStatus = $CancerCS#cancr0044.00001 "Alive"
+* episodeOfCare[0] = Reference(episode-of-care-cancer-example)
 
+* serviceProvider = Reference(example-organization)
 
-// ===================== EPISODE =====================
-* episodeOfCare[0] = Reference(EpisodeOfCare/episode-of-care-cancer-example)
+* participant[0].type = $v3-ParticipationType#ATND "attender"
+* participant[0].actor = Reference(example-practitioner-role)
 
-// ===================== ORGANIZATION =====================
-* serviceProvider = Reference(Organization/hospital-1)
+* actualPeriod.start = "2026-02-18T09:00:00+05:00"
+* actualPeriod.end = "2026-02-18T11:30:00+05:00"
 
-// ===================== PERIOD =====================
-* actualPeriod.start = "2026-03-18"
-* actualPeriod.end = "2026-03-25"
+* diagnosis[0].condition = Reference(condition-cancer-primary-example)
+* diagnosis[0].use = $diagnosis-role#DD "Discharge diagnosis"
 
-
-// ===================== PARTICIPANT =====================
-* participant[0].actor = Reference(Patient/cancer-patient-example)
-
-// ===================== DIAGNOSIS =====================
-* diagnosis[0].condition = Reference(Condition/condition-cancer-example)
-
-// ===================== TYPE =====================
-* type[0].coding[0].system = $CancerCS
-* type[0].coding[0].code = #cancr0009.00002
-* type[0].coding[0].display = "Treated on an outpatient basis"
-
-
-
-Instance: example-practitioner-role
-InstanceOf: PractitionerRole
-Description: "Example instance of a practitioner role for a cancer encounter"
-Usage: #example
-
-* practitioner = Reference(Practitioner/example-practitioner)
-* organization = Reference(Organization/example-organization)
+* admission.dischargeDisposition = $encounter-discharge-disposition#exp "Expired"

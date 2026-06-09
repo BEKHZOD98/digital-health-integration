@@ -1,113 +1,68 @@
 Profile: ObservationMGR
-Parent: Observation
+Parent: UZCoreObservation
 Id: observation-mgr
-Title: "Molecular Genetic Research Observation"
-Description: "Observation for molecular genetic testing to detect genetic variants"
+Title: "Observation Molecular Genetic Research"
+Description: "Observation profile for molecular genetic testing used to identify variants of genetic disorders."
 
-* ^status = #draft
 * ^experimental = true
-* ^publisher = "Uzinfocom"
-* ^language = #en
+* ^status = #active
 
-// ===================== IDENTIFIER =====================
-* identifier 0..*
-* identifier ^short = "Business identifier for molecular genetic research"
+* identifier MS
 
-
-// ===================== CODE =====================
-* code 1..1
-* code ^short = "Type of molecular genetic test"
+* code 1..1 MS
 * code from NameTestsVS (required)
 
 
-// ===================== SUBJECT =====================
-* subject 1..1
-* subject only Reference(CancerPatient)
-* subject ^short = "Patient undergoing molecular genetic testing"
+* subject MS
+* subject only Reference(UZCorePatient)
 
+* focus MS
+* focus only Reference(UZCoreCondition)
 
-// ===================== EFFECTIVE =====================
-* effective[x] only dateTime
-* effectiveDateTime 0..1
-* effectiveDateTime ^short = "Date and time of the test"
+* effectiveDateTime MS
 
+* performer MS
+* performer only Reference(UZCoreOrganization)
 
-// ===================== PERFORMER =====================
-* performer 0..*
-* performer only Reference(Organization)
-* performer ^short = "Laboratory performing the test"
-
-
-// ===================== METHOD =====================
-* method 0..1
-* method ^short = "Research method (e.g. PCR)"
+* method 1..1 MS
 * method from ResearchMethodVS (required)
 
+* component MS
 
-// ===================== COMPONENT =====================
-* component 0..*
+* component.code 1..1 MS
+* component.code from MGRMarkerVS (required)
 
-* component ^slicing.discriminator.type = #value
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
+* component.valueCodeableConcept 1..1 MS
+* component.valueCodeableConcept from GeneticDisorderVS (required)
 
-* component contains geneMarker 1..*
+* interpretation MS
+* interpretation from $observation-interpretation-vs (required)
 
-// Marker (gene)
-* component[geneMarker].code 1..1
-* component[geneMarker].code from MGRMarkerVS (required)
-* component[geneMarker].code ^short = "Gene or marker tested (e.g. ACD)"
-
-// Mutation result
-* component[geneMarker].value[x] only CodeableConcept
-* component[geneMarker].valueCodeableConcept 0..1
-* component[geneMarker].valueCodeableConcept from GeneticDisorderVS (required)
-* component[geneMarker].valueCodeableConcept ^short = "Detected genetic variant or mutation"
-
-
-// ===================== INTERPRETATION =====================
-* interpretation 0..*
-* interpretation from CancerResultVS (required)
-* interpretation ^short = "Interpretation of genetic test result"
-
-
-// ===================== HAS MEMBER =====================
-* hasMember 0..*
-* hasMember only Reference(Observation)
-* hasMember ^short = "Related genetic observations"
-
+* hasMember MS
+* hasMember only Reference(UZCoreObservation)
 
 
 Instance: observation-mgr-example
 InstanceOf: ObservationMGR
 Usage: #example
-Description: "Example observation for metastasis grading."
+Description: "Example molecular genetic research observation identifying a mutation."
 
 
 * status = #final
-// * language = #en
 
-// ===================== CODE =====================
-* code = $CancerCS#cancr0013.00001
+* code = name-tests-cs#cancr0011.00003 "Molecular genetic testing"
 
+* subject = Reference(example-patient)
 
-// ===================== SUBJECT =====================
-* subject.reference = "Patient/cancer-patient-example"
+* focus = Reference(condition-cancer-primary-example)
 
+* effectiveDateTime = "2026-02-01"
 
-// ===================== EFFECTIVE =====================
-* effectiveDateTime = "2026-02-01T10:00:00+05:00"
+* performer = Reference(example-lab)
 
-* performer[0] = Reference(Organization/example-organization)
+* method = research-method-cs#cancr0003.00003 "PCR"
 
-// ===================== METHOD =====================
-* method = $CancerCS#cancr0004.00001 "FISH"
+* component.code = mgr-marker-cs#cancr0004.00003 "ACD (Adrenocortical Dysplasia Homolog) Protein involved in telomere maintenance"
+* component.valueCodeableConcept = genetic-disorder-cs#cancr0005.00001 "Mutation"
 
-
-// ===================== COMPONENT =====================
-* component[geneMarker].code = $CancerCS#cancr0005.00001 "ABCB11 ATP-Binding Cassette Sub-Family B Member 11) Protein, bile acid transporter in the liver"
-* component[geneMarker].valueCodeableConcept = $CancerCS#cancr0006.00001 "Mutation"
-
-
-// ===================== INTERPRETATION =====================
-* interpretation[0] = $CancerCS#cancr0002.00001 "detected"
+* interpretation = $observation-interpretation#DET "Detected"
