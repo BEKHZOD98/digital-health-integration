@@ -107,3 +107,18 @@ Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-s
 Alias: $drs = http://hl7.org/fhir/document-reference-status
 Alias: $drcs = 	http://hl7.org/fhir/composition-status
 Alias: $drca = http://hl7.org/fhir/composition-attestation-mode
+
+
+Alias: $request-status = http://hl7.org/fhir/request-status
+Alias: $request-intent = http://hl7.org/fhir/request-intent
+Alias: $uzcore-patient = https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient
+Alias: $uzcore-relatedperson = https://dhp.uz/fhir/core/StructureDefinition/uz-core-relatedperson
+Alias: $uzcore-encounter = https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter
+Alias: $uzcore-practitioner = https://dhp.uz/fhir/core/StructureDefinition/uz-core-practitioner
+Alias: $uzcore-organization = https://dhp.uz/fhir/core/StructureDefinition/uz-core-organization
+Alias: $uzcore-specimen = https://dhp.uz/fhir/core/StructureDefinition/uz-core-specimen
+
+Alias: $iso-3166 = urn:iso:std:iso:3166
+Alias: $identifier-type = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $service-request-lab-research-codes-cs =  https://terminology.dhp.uz/fhir/core/CodeSystem/service-request-lab-research-codes-cs
+Alias: $sr-lab-research-vs = https://terminology.dhp.uz/fhir/core/ValueSet/sr-lab-research-vs
