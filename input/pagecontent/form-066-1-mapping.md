@@ -43,7 +43,7 @@ Form 066-1 captures administrative and clinical data for patients discharged fro
 | Jinsi | Пол | Patient.gender | AdministrativeGender | male |
 | Fuqaroligi | Гражданство | Patient.extension[nationality] | Local code | Azerbaijanis |
 | ID yoki Pasport | ID или паспорт | Patient.identifier[passportLocal] | - | AC1234567 |
-| Ijtimoiy holati | Социальное положение | UZCoreSocioeconomicObservation.valueCodeableConcept | Local code | Unemployed |
+| Ijtimoiy holati | Социальное положение | [UZCoreSocioeconomicObservation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html).valueCodeableConcept | Local code | Unemployed |
 | Imtiyoz toifasi | Льготная категория | UZCoreSocioeconomicObservation.valueCodeableConcept | Local code | Medical staff |
 | Telefon | Телефон | Patient.telecom[phone].value | - | +998901234567 |
 | E-mail | E-mail | Patient.telecom[email].value | - | test@mail.com |
