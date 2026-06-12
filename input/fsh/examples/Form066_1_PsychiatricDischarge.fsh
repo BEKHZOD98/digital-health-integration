@@ -1,4 +1,4 @@
-Instance: example-form-066-psychiatric-discharge
+Instance: example-form-066-1-psychiatric-discharge
 InstanceOf: Bundle
 Usage: #example
 Title: "Form 066-1 - Psychiatric/Narcological discharge statistical card"
@@ -802,7 +802,7 @@ Instance: provenance-signature-066-1
 InstanceOf: Provenance
 Usage: #inline
 * language = #en
-* target = Reference(Bundle/example-form-066-psychiatric-discharge)
+* target = Reference(Bundle/example-form-066-1-psychiatric-discharge)
 * recorded = "2026-01-06T13:45:00+05:00"
 * agent.type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#attester "Attester"
 * agent.who = Reference(urn:uuid:06600004-1111-2222-3333-444444444444) "Karimov A.A."
