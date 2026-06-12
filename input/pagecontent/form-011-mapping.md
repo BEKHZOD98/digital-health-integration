@@ -27,7 +27,7 @@ Form 011 captures clinical data from hemodialysis sessions. The form data maps t
 | Bemor | Пациент | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).name | - | Aziz John |
 | Sana | Дата | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).period.start | - | 2026-06-01 |
 | Amb № | Амбулаторный № | Patient.identifier | - | 1245 |
-| Seans № | № сеанса | Procedure.identifier | - | 128 |
+| Seans № | № сеанса | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).identifier | - | 128 |
 | Dializ turi | Тип диализа | Procedure.code | SNOMED CT `302497006` "Hemodialysis (procedure)" | Hemodialysis |
 | Dializ boshlanishi | Начало диализа | Procedure.occurrencePeriod.start | - | 2026-06-01T09:00:00 |
 | Dializ tugashi | Окончание диализа | Procedure.occurrencePeriod.end | - | 2026-06-01T13:00:00 |
