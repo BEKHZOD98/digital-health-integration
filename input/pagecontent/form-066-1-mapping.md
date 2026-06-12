@@ -19,6 +19,8 @@ This page documents the mapping between Form 066-1 (Psychiatric/Narcological Hos
 
 Form 066-1 captures administrative and clinical data for patients discharged from psychiatric or narcological inpatient care. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 066-1 Psychiatric Discharge Composition](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
 
+For a complete reference instance, see the [Form 066-1 psychiatric/narcological discharge example](Bundle-example-form-066-1-psychiatric-discharge.html).
+
 ---
 
 ### Field Mapping

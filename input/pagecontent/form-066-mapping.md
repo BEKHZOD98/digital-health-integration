@@ -19,6 +19,8 @@ This page documents the mapping between Form 066 (Hospital Discharge Statistical
 
 Form 066 captures administrative and clinical data for patients discharged from inpatient hospital care. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 066 Hospital Discharge Composition](StructureDefinition-form-066-hospital-discharge-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
 
+For a complete reference instance, see the [Form 066 hospital discharge example](Bundle-example-form-066-hospital-discharge.html).
+
 ---
 
 ### Field Mapping
