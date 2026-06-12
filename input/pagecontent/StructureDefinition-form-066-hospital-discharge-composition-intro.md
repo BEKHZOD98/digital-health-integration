@@ -1,0 +1,1 @@
+See the [Form 066 mapping guide](form-066-mapping.html) for how to populate this Composition: a field-by-field mapping of the Form 066 hospital discharge statistical card to FHIR, with example values and the UZ Core profiles each bundled resource uses.

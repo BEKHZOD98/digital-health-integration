@@ -1,0 +1,1 @@
+See the [Form 011 mapping guide](form-011-mapping.html) for how to populate this Composition: a field-by-field mapping of the Form 011 hemodialysis session protocol to FHIR, with example values and the UZ Core profiles each bundled resource uses.
