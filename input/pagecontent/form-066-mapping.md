@@ -1,3 +1,14 @@
+<style>
+/* Per-form mapping-table column widths (066: long UZ/RU phrases, short codes). */
+.col-12 table { table-layout: fixed; width: 100%; }
+.col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
+.col-12 th:nth-child(1), .col-12 td:nth-child(1) { width: 23%; }
+.col-12 th:nth-child(2), .col-12 td:nth-child(2) { width: 23%; }
+.col-12 th:nth-child(3), .col-12 td:nth-child(3) { width: 24%; }
+.col-12 th:nth-child(4), .col-12 td:nth-child(4) { width: 13%; }
+.col-12 th:nth-child(5), .col-12 td:nth-child(5) { width: 17%; }
+</style>
+
 ### Form 066 - Hospital Discharge Statistical Card
 
 This page documents the mapping between Form 066 (Hospital Discharge Statistical Card) fields and FHIR resources.

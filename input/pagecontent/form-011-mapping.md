@@ -1,3 +1,15 @@
+<style>
+/* Per-form mapping-table column widths (011: short UZ/RU labels, long multi-code
+   Code cells - so Code gets the room UZ/RU don't need). */
+.col-12 table { table-layout: fixed; width: 100%; }
+.col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
+.col-12 th:nth-child(1), .col-12 td:nth-child(1) { width: 11%; }
+.col-12 th:nth-child(2), .col-12 td:nth-child(2) { width: 18%; }
+.col-12 th:nth-child(3), .col-12 td:nth-child(3) { width: 21%; }
+.col-12 th:nth-child(4), .col-12 td:nth-child(4) { width: 35%; }
+.col-12 th:nth-child(5), .col-12 td:nth-child(5) { width: 15%; }
+</style>
+
 ### Form 011 - Hemodialysis session protocol
 
 This page documents the mapping between Form 011 (Hemodialysis Session Protocol) fields and FHIR resources.
