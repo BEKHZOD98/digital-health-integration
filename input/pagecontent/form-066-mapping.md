@@ -31,10 +31,10 @@ Form 066 captures administrative and clinical data for patients discharged from 
 
 | UZ-066 | RU-066 | FHIR Path | Code | Example Value |
 |--------|--------|------------|------|---------------|
-| Muassasa kodi | Код учреждения | Organization.identifier | Local | 200001 |
+| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier | Local | 200001 |
 | Muassasa nomi | Наименование учреждения | Organization.name | - | Toshkent shahar klinik shifoxonasi |
 | Bemor tibbiy bayoni qayd raqami | Регистрационный номер медицинской карты | Composition.identifier | - | 066-2026-001 |
-| JShShIR | ПИНФЛ | Patient.identifier[nationalId].value | NI | 31234567890123 |
+| JShShIR | ПИНФЛ | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).identifier[nationalId].value | NI | 31234567890123 |
 | Familiyasi | Фамилия | Patient.name.family | - | Tursunov |
 | Ismi | Имя | Patient.name.given | - | Alisher |
 | Otasining ismi | Отчество | Patient.name.given | - | Valiyevich |
@@ -42,7 +42,7 @@ Form 066 captures administrative and clinical data for patients discharged from 
 | Jinsi | Пол | Patient.gender | AdministrativeGender | male |
 | Fuqaroligi | Гражданство | Patient.extension[nationality] | Local code | Uzbekistan |
 | ID yoki Pasport | ID или паспорт | Patient.identifier[passportLocal] | - | AC1234567 |
-| Ijtimoiy holati | Социальное положение | Observation.valueCodeableConcept | Local code | Unemployed |
+| Ijtimoiy holati | Социальное положение | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueCodeableConcept | Local code | Unemployed |
 | Imtiyoz toifasi mavjud | Наличие льготной категории | Observation.valueCodeableConcept | Local code | Medical staff |
 | Telefon | Телефон | Patient.telecom[phone].value | - | +998901234567 |
 | E-mail | E-mail | Patient.telecom[email].value | - | test@mail.com |
@@ -69,12 +69,12 @@ Form 066 captures administrative and clinical data for patients discharged from 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
 | Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` | true |
-| Yotqizish turi | Тип госпитализации | Encounter.admission.admitSource | Local code | Without referral / Self-referred |
+| Yotqizish turi | Тип госпитализации | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).admission.admitSource | Local code | Without referral / Self-referred |
 | Kasallik yoki jarohatlangandan so'ng necha soatda | Через сколько часов после заболевания/травмы | Observation.valueCodeableConcept | Local code | Within first 6 hours |
 | Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` | true |
 | Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | LOINC `57133-1` | true |
 | Yo'llagan muassasa | Направившее учреждение | Organization.name | Organization | Yunusobod tuman tibbiyot birlashmasi |
-| Yo'llagan muassasa tashxisi | Диагноз направившего учреждения | Condition.code | ICD-10 | J18.9 |
+| Yo'llagan muassasa tashxisi | Диагноз направившего учреждения | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | J18.9 |
 | Ayni shu kasallik bilan shifoxonaga oxirgi 30 kun ichida qayta yotqizilgan | Повторная госпитализация в течение 30 дней | Observation.valueBoolean | LOINC `LP73229-4` | false |
 
 ---
@@ -122,11 +122,11 @@ Form 066 captures administrative and clinical data for patients discharged from 
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| Sana va vaqti | Дата и время операции | Procedure.occurrenceDateTime | - | 2026-01-08T11:30:00+05:00 |
+| Sana va vaqti | Дата и время операции | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).occurrenceDateTime | - | 2026-01-08T11:30:00+05:00 |
 | Kod (ICHI) | Код операции | Procedure.code | SNOMED CT / ICHI | 123.AB.45 |
 | Asosiy | Основная операция | Procedure.category | Local | Main |
 | Nomi | Наименование операции | Procedure.code.text | - | Surgical procedure |
-| Shifokor | Врач | Procedure.performer.actor | Practitioner | Rasulov B.B. |
+| Shifokor | Врач | Procedure.performer.actor | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) | Rasulov B.B. |
 
 ---
 
@@ -155,7 +155,7 @@ Form 066 captures administrative and clinical data for patients discharged from 
 |----|----|------------|------|---------|
 | Vazni | Вес | Observation.valueQuantity | LOINC `8339-4` | 3200 g |
 | Bo'yi | Рост | Observation.valueQuantity | LOINC `89269-5` | 51 cm |
-| Onasining JShShIRi | ПИНФЛ матери | RelatedPerson.identifier[nationalId] | NI | 39876543210987 |
+| Onasining JShShIRi | ПИНФЛ матери | [RelatedPerson](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-relatedperson.html).identifier[nationalId] | NI | 39876543210987 |
 
 ---
 
@@ -180,7 +180,7 @@ Form 066 captures administrative and clinical data for patients discharged from 
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| Davolovchi shifokor | Лечащий врач | PractitionerRole.practitioner | Local code | Rasulov B.B. |
+| Davolovchi shifokor | Лечащий врач | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html).practitioner | Local code | Rasulov B.B. |
 | Bo'lim boshlig'i | Заведующий отделением | PractitionerRole.practitioner | Local code | Qodirov A.A. |
 | Katta hamshira | Старшая медсестра | PractitionerRole.practitioner | Local code | Karimova D.D. |
 

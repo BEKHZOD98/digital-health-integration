@@ -31,10 +31,10 @@ Form 066-1 captures administrative and clinical data for patients discharged fro
 
 | UZ-066-1 | RU-066-1 | FHIR Path | Code | Example Value |
 |----------|----------|------------|------|---------------|
-| Muassasa kodi | Код учреждения | Organization.identifier | Local | 200001 |
+| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier | Local | 200001 |
 | Muassasa nomi | Наименование учреждения | Organization.name | - | Toshkent shahar ruhiy kasalliklar shifoxonasi |
 | Bemor ro'yxat raqami | Регистрационный номер | Composition.identifier | - | 066-1-2026-001 |
-| Tibbiy bayonnoma № | № медицинской карты | Patient.identifier[healthCardId] | MR | HC-2026-00066 |
+| Tibbiy bayonnoma № | № медицинской карты | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).identifier[healthCardId] | MR | HC-2026-00066 |
 | JShShIR | ПИНФЛ | Patient.identifier[nationalId].value | NI | 31234567890123 |
 | Familiyasi | Фамилия | Patient.name.family | - | Tursunov |
 | Ismi | Имя | Patient.name.given | - | Alisher |
@@ -72,15 +72,15 @@ Form 066-1 captures administrative and clinical data for patients discharged fro
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| Psixonevrologik (narkologik) muassasa ro'yxatga olingan sana | Дата регистрации | Observation.valueDateTime | LOINC `8656-1` | 2026-01-05T09:30:00+05:00 |
-| Avval necha marta shifoxonada davolangan | Количество предыдущих госпитализаций | Encounter.extension[EncounterAdmissionCount] | Local | 5 |
+| Psixonevrologik (narkologik) muassasa ro'yxatga olingan sana | Дата регистрации | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueDateTime | LOINC `8656-1` | 2026-01-05T09:30:00+05:00 |
+| Avval necha marta shifoxonada davolangan | Количество предыдущих госпитализаций | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).extension[EncounterAdmissionCount] | Local | 5 |
 | Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` | true |
 | Yotqizish turi | Тип госпитализации | Encounter.class | v3-ActCode | EMER |
 | Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` | true |
 | Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | LOINC `57133-1` | true |
 | Kim tomonidan yo'llangan | Кем направлен | ServiceRequest.requester | SNOMED CT | Referral to psychiatry service |
 | Yo'llagan muassasa | Направившее учреждение | Organization.name | - | Yunusobod tuman psixonevrologik dispanseri |
-| Yo'llagan muassasa tashxisi | Диагноз направившего учреждения | Condition.code | ICD-10 | F10.2 |
+| Yo'llagan muassasa tashxisi | Диагноз направившего учреждения | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | F10.2 |
 | Yo'llashdan maqsad | Цель направления | Encounter.reason.value.concept | Local | Diagnostics |
 | Shifoxonaga yotqizildi | Госпитализирован | Observation.valueBoolean | SNOMED CT `32485007` | true |
 | Qaerdan keldi | Откуда поступил | Encounter.admission.origin | Local code | From home |
@@ -170,7 +170,7 @@ Form 066-1 captures administrative and clinical data for patients discharged fro
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
 | Davolovchi shifokor | Лечащий врач | Local code.practitioner | Local code | Rasulov B.B. |
-| Bo'lim boshlig'i | Заведующий отделением | PractitionerRole.practitioner | Local code | Qodirova M.M. |
+| Bo'lim boshlig'i | Заведующий отделением | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html).practitioner | Local code | Qodirova M.M. |
 | Katta hamshira | Старшая медсестра | PractitionerRole.practitioner | Local code | Karimova D.D. |
 
 ---
