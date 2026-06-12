@@ -188,20 +188,22 @@ Form 066 captures administrative and clinical data for patients discharged from 
 
 ### Bundle structure
 
-```text
+The Form 066 document is structured as a FHIR Bundle containing a [Form066HospitalDischargeComposition](StructureDefinition-form-066-hospital-discharge-composition.html) Composition:
+
+```
 Bundle (document)
 ├── Composition (Form066HospitalDischargeComposition)
-├── Patient
-├── Encounter
-├── Organization[]
-├── Practitioner[]
-├── PractitionerRole[]
-├── Condition[]
-├── Observation[]
-├── Procedure[]
-├── Coverage
-├── RelatedPerson
-└── Provenance
+├── Patient (patient demographics)
+├── Encounter (inpatient admission and discharge)
+├── Organization[] (hospital, departments, referring facility)
+├── Practitioner[] (treating and operating clinicians)
+├── PractitionerRole[] (responsible persons: doctor, department head, nurse)
+├── Condition[] (admission, final and pathological diagnoses)
+├── Observation[] (clinical and administrative measurements, lab results)
+├── Procedure[] (surgical procedures)
+├── Coverage (payment type)
+├── RelatedPerson (newborn's mother)
+└── Provenance (record authorship and provenance)
 ```
 
 ### Example
