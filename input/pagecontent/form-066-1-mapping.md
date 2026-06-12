@@ -177,20 +177,22 @@ Form 066-1 captures administrative and clinical data for patients discharged fro
 
 ### Bundle structure
 
-```text
+The Form 066-1 document is structured as a FHIR Bundle containing a [Form066_1_PsychiatricDischargeComposition](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) Composition:
+
+```
 Bundle (document)
 ├── Composition (Form066_1_PsychiatricDischargeComposition)
-├── Patient
-├── Encounter
-├── Organization[]
-├── Practitioner[]
-├── PractitionerRole[]
-├── Condition[]
-├── Observation[]
-├── Coverage
-├── ServiceRequest
-├── Location
-└── Provenance
+├── Patient (patient demographics)
+├── Encounter (inpatient admission and discharge)
+├── Organization[] (hospital, departments, referring facility)
+├── Practitioner[] (treating clinicians)
+├── PractitionerRole[] (responsible persons: doctor, department head, nurse)
+├── Condition[] (admission and final diagnoses)
+├── Observation[] (clinical and administrative measurements)
+├── Coverage (payment type)
+├── ServiceRequest (psychiatric service referral)
+├── Location (care location / ward)
+└── Provenance (record authorship and provenance)
 ```
 
 ### Example
