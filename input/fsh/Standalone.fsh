@@ -1,5 +1,6 @@
 Instance: samarkand-regional-hospital
 InstanceOf: Organization
+Description: "Example regional hospital organization in Samarkand."
 Usage: #example
 
 * id = "samarkand-regional-hospital"
@@ -7,6 +8,7 @@ Usage: #example
 
 Instance: samarkand-infectious-hospital
 InstanceOf: Organization
+Description: "Example infectious diseases hospital organization in Samarkand."
 Usage: #example
 
 * id = "samarkand-infectious-hospital"
@@ -14,6 +16,7 @@ Usage: #example
 
 Instance: example-practitioner
 InstanceOf: Practitioner
+Description: "Example healthcare practitioner."
 Usage: #example
 
 * id = "example-practitioner"
@@ -22,6 +25,7 @@ Usage: #example
 
 Instance: referral-to-specialist
 InstanceOf: ServiceRequest
+Description: "Example referral request to a specialist."
 Usage: #example
 
 * id = "referral-to-specialist"
@@ -31,6 +35,7 @@ Usage: #example
 
 Instance: muratova-gulshoda
 InstanceOf: Practitioner
+Description: "Example practitioner Gulshoda Muratova."
 Usage: #example
 
 * id = "muratova-gulshoda"
@@ -39,6 +44,7 @@ Usage: #example
 
 Instance: muratova-gulshoda-role
 InstanceOf: PractitionerRole
+Description: "Example practitioner role for Gulshoda Muratova at Samarkand Regional Hospital."
 Usage: #example
 
 * id = "muratova-gulshoda-role"
@@ -84,6 +90,11 @@ Instance: example-hepatitis-questionnaire
 InstanceOf: Questionnaire
 Description: "Hepatitis B and C treatment questionnaire"
 Usage: #example
+
+* id = "hepatitis-questionnaire"
+* url = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
+* version = "1.0.0"
+
 * status = #active
 * title = "HEPATITIS QUESTIONNAIRE"
 * identifier.value = "HCV-HBV-QS-2026"

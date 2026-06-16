@@ -17,14 +17,14 @@ Description: "Profile for representing ultrasound observations related to hepati
   * display 0..1 MS 
 * code.text 0..1 MS
 
-* subject 0..1 MS
+* subject MS
 * subject only Reference(UZCorePatient)
-* encounter 0..1 MS
+* encounter MS
 * encounter only Reference(UZCoreEncounter)
 
 * effective[x] only dateTime or Period
 * effective[x] MS
-* performer 0..* MS
+* performer MS
 * performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
 
 * value[x] only boolean
@@ -39,10 +39,10 @@ Description: "Instance of cirrhosis detected"
 Usage: #example
 * status = #final
 * identifier 
-  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
+  * system = $hep-id-sys 
   * value = "OBS-2026-5541"
   * type.coding
-    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+    * system = $v2-0203
     * code = #PHC
     * display = "Public Health Case Identifier"
   * use = #official
@@ -65,10 +65,10 @@ Description: "Instance of liver lesion detected"
 Usage: #example
 * status = #final
 * identifier
-  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
+  * system = $hep-id-sys 
   * value = "OBS-2026-5542"
   * type.coding
-    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+    * system = $v2-0203
     * code = #PHC
     * display = "Public Health Case Identifier"
   * use = #official

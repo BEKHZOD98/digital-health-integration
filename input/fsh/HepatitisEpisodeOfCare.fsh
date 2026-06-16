@@ -9,39 +9,36 @@ Description: "Profile for representing episodes of care related to hepatitis pat
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
-/*
-* status MS 
-* status from HepatitisEpisodeOfCareStatusVS (required)*/
 
 * diagnosis MS
-* diagnosis.condition 0..* MS
+* diagnosis.condition MS
 * diagnosis.condition only CodeableReference(HepatitisCondition)
 * diagnosis.condition from HepatitisICDVS (required) // CodeSystem should be done
 * diagnosis.condition ^short = "Patient's hepatitis diagnosis"  //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
 
-* diagnosis.use 0..1 MS
+* diagnosis.use MS
 * diagnosis.use from HepatitisEncDiagnosisUseVS (required)
 
 * patient 1..1 MS
 * patient only Reference(UZCorePatient)
 * patient ^short = "Patient associated with this episode of care"
 
-* managingOrganization 0..1 MS
+* managingOrganization MS
 * managingOrganization only Reference(UZCoreOrganization)
 * managingOrganization ^short = "Organization managing this episode of care"
 
-* period 0..1 MS
+* period MS
   * ^short = "Duration of hepatitis patient observation/monitoring process"
   * start 0..1 MS
     * ^short = "Date and time when hepatitis patient follow-up started"
   * end 0..1 MS
     * ^short = "Date and time of removal of hepatitis (A, B, C, D) from the follow-up register"
 
-* careManager 0..1 MS
+* careManager MS
 * careManager only Reference(UZCorePractitioner or UZCorePractitionerRole)
 * careManager ^short = "Care manager"
 
-* referralRequest 0..* MS
+* referralRequest MS
 * referralRequest only Reference(ServiceRequest)
 * referralRequest ^short = "Referral requests"
 
@@ -52,10 +49,10 @@ InstanceOf: HepatitisEpisodeOfCare
 Description: "Example of a patient's D-registration"
 Usage: #example
 * identifier 
-  * system = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
+  * system = $hep-id-sys 
   * value = "EOC-2026-1122"
   * type.coding
-    * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+    * system = $v2-0203
     * code = #PHC
     * display = "Public Health Case Identifier"
   * use = #official
