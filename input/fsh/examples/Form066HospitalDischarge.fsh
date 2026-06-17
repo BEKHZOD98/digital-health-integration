@@ -382,7 +382,7 @@ Usage: #inline
 
 
 Instance: observation-social-status-066
-InstanceOf: UZCoreObservation
+InstanceOf: UZCoreSocioeconomicObservation
 Usage: #inline
 * language = #en
 * status = #final
@@ -396,7 +396,7 @@ Usage: #inline
 
 
 Instance: observation-benefit-category-066
-InstanceOf: UZCoreObservation
+InstanceOf: UZCoreSocioeconomicObservation
 Usage: #inline
 * language = #en
 * status = #final

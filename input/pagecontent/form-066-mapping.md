@@ -44,8 +44,8 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 | Jinsi | Пол | Patient.gender | AdministrativeGender | male |
 | Fuqaroligi | Гражданство | Patient.extension[nationality] | Local code | Uzbekistan |
 | ID yoki Pasport | ID или паспорт | Patient.identifier[passportLocal] | - | AC1234567 |
-| Ijtimoiy holati | Социальное положение | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueCodeableConcept | Local code | Unemployed |
-| Imtiyoz toifasi mavjud | Наличие льготной категории | Observation.valueCodeableConcept | Local code | Medical staff |
+| Ijtimoiy holati | Социальное положение | [UZCoreSocioeconomicObservation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html).valueCodeableConcept | Local code | Unemployed |
+| Imtiyoz toifasi mavjud | Наличие льготной категории | UZCoreSocioeconomicObservation.valueCodeableConcept | Local code | Medical staff |
 | Telefon | Телефон | Patient.telecom[phone].value | - | +998901234567 |
 | E-mail | E-mail | Patient.telecom[email].value | - | test@mail.com |
 | Bemor biriktirilgan muassasa | Прикреплённое учреждение | Patient.managingOrganization | Organization | Yunusobod tuman oilaviy poliklinikasi |
