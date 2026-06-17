@@ -206,19 +206,37 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:06600048-1111-2222-3333-444444444444)
 
 * section[finalDiagnosis].title = "Final Diagnosis"
-* section[=].code = $loinc#LA32800-7 "Final diagnosis (discharge)"
-* section[=].entry[0] = Reference(urn:uuid:06600015-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600016-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600017-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600018-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600019-1111-2222-3333-444444444444)
+* section[finalDiagnosis].code = $loinc#11535-2 "Hospital discharge diagnosis note"
+* section[finalDiagnosis].section[main].title = "Main diagnosis"
+* section[finalDiagnosis].section[main].code = $diagnosis-role#main
+* section[finalDiagnosis].section[main].entry = Reference(urn:uuid:06600015-1111-2222-3333-444444444444)
+* section[finalDiagnosis].section[competing].title = "Competing diagnosis"
+* section[finalDiagnosis].section[competing].code = $diagnosis-role#competing
+* section[finalDiagnosis].section[competing].entry = Reference(urn:uuid:06600016-1111-2222-3333-444444444444)
+* section[finalDiagnosis].section[concomitant].title = "Concomitant diagnosis"
+* section[finalDiagnosis].section[concomitant].code = $diagnosis-role#concomitant
+* section[finalDiagnosis].section[concomitant].entry = Reference(urn:uuid:06600017-1111-2222-3333-444444444444)
+* section[finalDiagnosis].section[background].title = "Background diagnosis"
+* section[finalDiagnosis].section[background].code = $diagnosis-role#background
+* section[finalDiagnosis].section[background].entry = Reference(urn:uuid:06600018-1111-2222-3333-444444444444)
+* section[finalDiagnosis].section[complication].title = "Complication"
+* section[finalDiagnosis].section[complication].code = $diagnosis-role#complication
+* section[finalDiagnosis].section[complication].entry = Reference(urn:uuid:06600019-1111-2222-3333-444444444444)
 
 * section[pathologoanatomicDiagnosis].title = "Pathologoanatomical Diagnosis"
-* section[=].code = $loinc#60567-5 "Comprehensive pathology report panel"
-* section[=].entry[0] = Reference(urn:uuid:06600034-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600035-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600036-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:06600037-1111-2222-3333-444444444444)
+* section[pathologoanatomicDiagnosis].code = $loinc#60567-5 "Comprehensive pathology report panel"
+* section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].title = "Immediate cause of death"
+* section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].code = $diagnosis-role#immediate-cause-of-death
+* section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].entry = Reference(urn:uuid:06600034-1111-2222-3333-444444444444)
+* section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].title = "Underlying cause of death"
+* section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].code = $diagnosis-role#underlying-cause-of-death
+* section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].entry = Reference(urn:uuid:06600035-1111-2222-3333-444444444444)
+* section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].title = "Main disease (cause of death)"
+* section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].code = $diagnosis-role#main-disease-death
+* section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].entry = Reference(urn:uuid:06600036-1111-2222-3333-444444444444)
+* section[pathologoanatomicDiagnosis].section[otherSignificantDeath].title = "Other significant diseases"
+* section[pathologoanatomicDiagnosis].section[otherSignificantDeath].code = $diagnosis-role#other-significant-death
+* section[pathologoanatomicDiagnosis].section[otherSignificantDeath].entry = Reference(urn:uuid:06600037-1111-2222-3333-444444444444)
 
 * section[laboratoryResults].title = "Laboratory Results"
 * section[=].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data note"
@@ -522,6 +540,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
+* category = $diagnosis-role#referral
 * code.coding.system = $icd10
 * code.coding.code = #F10.2
 * code.coding.display = "Mental and behavioural disorders due to use of alcohol : Dependence syndrome"
@@ -551,6 +570,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
+* category = $diagnosis-role#admission
 * code.coding.system = $icd10
 * code.coding.code = #F10.2
 * code.coding.display = "Mental and behavioural disorders due to use of alcohol : Dependence syndrome"
@@ -611,6 +631,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
+* category = $diagnosis-role#main
 * code.coding.system = $icd10
 * code.coding.code = #F10.2
 * code.coding.display = "Mental and behavioural disorders due to use of alcohol : Dependence syndrome"
@@ -622,6 +643,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
+* category = $diagnosis-role#competing
 * code.coding.system = $icd10
 * code.coding.code = #F17.2
 * code.coding.display = "Mental and behavioural disorders due to use of tobacco : Dependence syndrome"
@@ -633,6 +655,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
+* category = $diagnosis-role#concomitant
 * code.coding.system = $icd10
 * code.coding.code = #I10
 * code.coding.display = "Essential (primary) hypertension"
@@ -644,6 +667,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
+* category = $diagnosis-role#background
 * code.coding.system = $icd10
 * code.coding.code = #K29.7
 * code.coding.display = "Gastritis, unspecified"
@@ -655,6 +679,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#active
+* category = $diagnosis-role#complication
 * code.coding.system = $icd10
 * code.coding.code = #G47.0
 * code.coding.display = "Disorders of initiating and maintaining sleep [insomnias]"
@@ -666,6 +691,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#inactive
+* category = $diagnosis-role#immediate-cause-of-death
 * code.coding.system = $icd10
 * code.coding.code = #R99
 * code.coding.display = "Other ill-defined and unspecified causes of mortality"
@@ -677,6 +703,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#inactive
+* category = $diagnosis-role#underlying-cause-of-death
 * code.coding.system = $icd10
 * code.coding.code = #R99
 * code.coding.display = "Other ill-defined and unspecified causes of mortality"
@@ -688,6 +715,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#inactive
+* category = $diagnosis-role#main-disease-death
 * code.coding.system = $icd10
 * code.coding.code = #R99
 * code.coding.display = "Other ill-defined and unspecified causes of mortality"
@@ -699,6 +727,7 @@ InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
 * clinicalStatus = $condition-clinical#inactive
+* category = $diagnosis-role#other-significant-death
 * code.coding.system = $icd10
 * code.coding.code = #R99
 * code.coding.display = "Other ill-defined and unspecified causes of mortality"
@@ -792,8 +821,10 @@ Usage: #inline
 * performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
 * effectivePeriod.start = "2026-01-05T10:00:00+05:00"
 * effectivePeriod.end = "2026-01-15T14:00:00+05:00"
+* component[0].code.coding = $discharge-card-slot#disability-period-start
 * component[0].code.text = "Disability start date"
 * component[0].valueDateTime = "2026-01-05T10:00:00+05:00"
+* component[1].code.coding = $discharge-card-slot#disability-period-end
 * component[1].code.text = "Disability end date"
 * component[1].valueDateTime = "2026-01-15T14:00:00+05:00"
 

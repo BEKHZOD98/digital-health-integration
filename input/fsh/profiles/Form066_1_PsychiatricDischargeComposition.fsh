@@ -94,15 +94,58 @@ Description: "Composition profile for Form 066-1."
 * section[finalDiagnosis].code 1..1
 * section[finalDiagnosis].code = $loinc#11535-2 "Hospital discharge diagnosis note"
 * section[finalDiagnosis].code ^short = "4.1–4.9 Primary diagnosis, competing diagnosis, comorbid diagnosis, background diagnosis, complications, pathological diagnosis, immediate cause of death, underlying cause of death, primary disease, other significant conditions"
-* section[finalDiagnosis].entry 1..*
-* section[finalDiagnosis].entry only Reference(Condition)
-* section[finalDiagnosis].entry ^short = "4.1–4.9 All diagnoses and causes of death"
+// Diagnoses are carried in per-role sub-sections (coded with diagnosis-role) so the
+// form can be reconstructed without relying on entry order. No diagnoses sit directly here.
+* section[finalDiagnosis].entry 0..0
+* section[finalDiagnosis].section ^slicing.discriminator.type = #value
+* section[finalDiagnosis].section ^slicing.discriminator.path = "code"
+* section[finalDiagnosis].section ^slicing.rules = #open
+* section[finalDiagnosis].section contains
+    main 1..1 and
+    competing 0..1 and
+    concomitant 0..1 and
+    background 0..1 and
+    complication 0..1
+* section[finalDiagnosis].section[main].code = $diagnosis-role#main
+* section[finalDiagnosis].section[main].entry 1..*
+* section[finalDiagnosis].section[main].entry only Reference(UZCoreCondition)
+* section[finalDiagnosis].section[competing].code = $diagnosis-role#competing
+* section[finalDiagnosis].section[competing].entry 1..*
+* section[finalDiagnosis].section[competing].entry only Reference(UZCoreCondition)
+* section[finalDiagnosis].section[concomitant].code = $diagnosis-role#concomitant
+* section[finalDiagnosis].section[concomitant].entry 1..*
+* section[finalDiagnosis].section[concomitant].entry only Reference(UZCoreCondition)
+* section[finalDiagnosis].section[background].code = $diagnosis-role#background
+* section[finalDiagnosis].section[background].entry 1..*
+* section[finalDiagnosis].section[background].entry only Reference(UZCoreCondition)
+* section[finalDiagnosis].section[complication].code = $diagnosis-role#complication
+* section[finalDiagnosis].section[complication].entry 1..*
+* section[finalDiagnosis].section[complication].entry only Reference(UZCoreCondition)
 
 * section[pathologoanatomicDiagnosis].title 1..1
 * section[pathologoanatomicDiagnosis].code 1..1
 * section[pathologoanatomicDiagnosis].code = $loinc#60567-5 "Comprehensive pathology report panel"
-* section[pathologoanatomicDiagnosis].entry 1..*
-* section[pathologoanatomicDiagnosis].entry only Reference(UZCoreCondition)
+* section[pathologoanatomicDiagnosis].entry 0..0
+* section[pathologoanatomicDiagnosis].section ^slicing.discriminator.type = #value
+* section[pathologoanatomicDiagnosis].section ^slicing.discriminator.path = "code"
+* section[pathologoanatomicDiagnosis].section ^slicing.rules = #open
+* section[pathologoanatomicDiagnosis].section contains
+    immediateCauseOfDeath 0..1 and
+    underlyingCauseOfDeath 0..1 and
+    mainDiseaseDeath 0..1 and
+    otherSignificantDeath 0..1
+* section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].code = $diagnosis-role#immediate-cause-of-death
+* section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].entry 1..*
+* section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].entry only Reference(UZCoreCondition)
+* section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].code = $diagnosis-role#underlying-cause-of-death
+* section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].entry 1..*
+* section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].entry only Reference(UZCoreCondition)
+* section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].code = $diagnosis-role#main-disease-death
+* section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].entry 1..*
+* section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].entry only Reference(UZCoreCondition)
+* section[pathologoanatomicDiagnosis].section[otherSignificantDeath].code = $diagnosis-role#other-significant-death
+* section[pathologoanatomicDiagnosis].section[otherSignificantDeath].entry 1..*
+* section[pathologoanatomicDiagnosis].section[otherSignificantDeath].entry only Reference(UZCoreCondition)
 
 // 5. Tahlil natijasi
 * section[laboratoryResults].title 1..1
