@@ -1,11 +1,11 @@
 <style>
-/* Per-form mapping-table column widths (066: long UZ/RU phrases, short codes). */
+/* Per-form mapping-table column widths (066: long UZ/RU phrases, codes carry display names). */
 .col-12 table { table-layout: fixed; width: 100%; }
 .col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
 .col-12 th:nth-child(1), .col-12 td:nth-child(1) { width: 23%; }
 .col-12 th:nth-child(2), .col-12 td:nth-child(2) { width: 23%; }
-.col-12 th:nth-child(3), .col-12 td:nth-child(3) { width: 24%; }
-.col-12 th:nth-child(4), .col-12 td:nth-child(4) { width: 13%; }
+.col-12 th:nth-child(3), .col-12 td:nth-child(3) { width: 18%; }
+.col-12 th:nth-child(4), .col-12 td:nth-child(4) { width: 19%; }
 .col-12 th:nth-child(5), .col-12 td:nth-child(5) { width: 17%; }
 </style>
 
@@ -70,14 +70,14 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` | true |
+| Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` "Emergent care utilized during assessment period [CMS Assessment]" | true |
 | Yotqizish turi | Тип госпитализации | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).admission.admitSource | Local code | Without referral / Self-referred |
 | Kasallik yoki jarohatlangandan so'ng necha soatda | Через сколько часов после заболевания/травмы | Observation.valueCodeableConcept | Local code | Within first 6 hours |
-| Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` | true |
-| Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | LOINC `57133-1` | true |
+| Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` "Ambulance transport" | true |
+| Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | LOINC `57133-1` "Referral note" | true |
 | Yo'llagan muassasa | Направившее учреждение | Organization.name | Organization | Yunusobod tuman tibbiyot birlashmasi |
 | Yo'llagan muassasa tashxisi | Диагноз направившего учреждения | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | J18.9 |
-| Ayni shu kasallik bilan shifoxonaga oxirgi 30 kun ichida qayta yotqizilgan | Повторная госпитализация в течение 30 дней | Observation.valueBoolean | LOINC `LP73229-4` | false |
+| Ayni shu kasallik bilan shifoxonaga oxirgi 30 kun ichida qayta yotqizilgan | Повторная госпитализация в течение 30 дней | Observation.valueBoolean | LOINC `LP73229-4` "Readmission to the same hospital within 30D of surgical discharge" | false |
 
 ---
 
@@ -89,8 +89,8 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 | Yotqizilgan sanasi va vaqti | Дата и время госпитализации | Encounter.actualPeriod.start | - | 2026-01-05T10:00:00+05:00 |
 | O'rin joy turi | Тип койки | Encounter.class | v3-ActCode | IMP |
 | Chiqarilgan sanasi va vaqti | Дата и время выписки | Encounter.actualPeriod.end | - | 2026-01-15T14:00:00+05:00 |
-| Jami o'rin kunlar | Койко-дни | Observation.valueQuantity / Encounter.length | LOINC `78033-8` | 10 days |
-| Shundan, reanimatsiyada | Из них, в реанимации | Observation.valueQuantity | LOINC `LP76050-1` | 0 days |
+| Jami o'rin kunlar | Койко-дни | Observation.valueQuantity / Encounter.length | LOINC `78033-8` "Hospital stay duration" | 10 days |
+| Shundan, reanimatsiyada | Из них, в реанимации | Observation.valueQuantity | LOINC `LP76050-1` "Intensive care unit" | 0 days |
 | Chiqarilgan bo'lim | Отделение выписки | Organization.name | Local code | Therapeutic department |
 | Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.subjectStatus | Local code | Recovered |
 | Bemor holati | Состояние пациента | Encounter.admission.dischargeDisposition | Local code | Hospitalized |
@@ -136,10 +136,10 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| OITS | ВИЧ/СПИД | Observation.valueCodeableConcept | LOINC `56888-1` | Negative |
-| RW | RW / сифилис | Observation.valueCodeableConcept | LOINC `47236-5` | Negative |
-| Gepatit B | Гепатит B | Observation.valueCodeableConcept | LOINC `5196-1` | Negative |
-| Gepatit C | Гепатит C | Observation.valueCodeableConcept | LOINC `13955-0` | Negative |
+| OITS | ВИЧ/СПИД | Observation.valueCodeableConcept | LOINC `56888-1` "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay" | Negative |
+| RW | RW / сифилис | Observation.valueCodeableConcept | LOINC `47236-5` "Treponema pallidum IgG+IgM Ab [Presence] in Serum or Plasma by Immunoassay" | Negative |
+| Gepatit B | Гепатит B | Observation.valueCodeableConcept | LOINC `5196-1` "Hepatitis B virus surface Ag [Presence] in Serum or Plasma by Immunoassay" | Negative |
+| Gepatit C | Гепатит C | Observation.valueCodeableConcept | LOINC `13955-0` "Hepatitis C virus Ab [Presence] in Serum or Plasma by Immunoassay" | Negative |
 
 ---
 
@@ -155,8 +155,8 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| Vazni | Вес | Observation.valueQuantity | LOINC `8339-4` | 3200 g |
-| Bo'yi | Рост | Observation.valueQuantity | LOINC `89269-5` | 51 cm |
+| Vazni | Вес | Observation.valueQuantity | LOINC `8339-4` "Birth weight Measured" | 3200 g |
+| Bo'yi | Рост | Observation.valueQuantity | LOINC `89269-5` "Body height Measured --at birth" | 51 cm |
 | Onasining JShShIRi | ПИНФЛ матери | [RelatedPerson](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-relatedperson.html).identifier[nationalId] | NI | 39876543210987 |
 
 ---
@@ -165,7 +165,7 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| O'pka silida doriga sezgirlik | Чувствительность туберкулёза к препаратам | Observation.valueCodeableConcept | LOINC `18769-0` | Drug-sensitive |
+| O'pka silida doriga sezgirlik | Чувствительность туберкулёза к препаратам | Observation.valueCodeableConcept | LOINC `18769-0` "Microbial susceptibility tests Set" | Drug-sensitive |
 
 ---
 
@@ -173,8 +173,8 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| Ochilgan sana | Дата открытия | Observation.component.valueDateTime | LOINC `105583-9` | 2026-01-05 |
-| Berkitilgan sana | Дата закрытия | Observation.component.valueDateTime | LOINC `105583-9` | 2026-01-15 |
+| Ochilgan sana | Дата открытия | Observation.component.valueDateTime | LOINC `105583-9` "Worker Sick leave form" | 2026-01-05 |
+| Berkitilgan sana | Дата закрытия | Observation.component.valueDateTime | LOINC `105583-9` "Worker Sick leave form" | 2026-01-15 |
 
 ---
 

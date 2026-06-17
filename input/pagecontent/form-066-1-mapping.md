@@ -1,11 +1,11 @@
 <style>
-/* Per-form mapping-table column widths (066-1: long UZ/RU phrases, short codes). */
+/* Per-form mapping-table column widths (066-1: long UZ/RU phrases, codes carry display names). */
 .col-12 table { table-layout: fixed; width: 100%; }
 .col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
 .col-12 th:nth-child(1), .col-12 td:nth-child(1) { width: 23%; }
 .col-12 th:nth-child(2), .col-12 td:nth-child(2) { width: 23%; }
-.col-12 th:nth-child(3), .col-12 td:nth-child(3) { width: 24%; }
-.col-12 th:nth-child(4), .col-12 td:nth-child(4) { width: 13%; }
+.col-12 th:nth-child(3), .col-12 td:nth-child(3) { width: 18%; }
+.col-12 th:nth-child(4), .col-12 td:nth-child(4) { width: 19%; }
 .col-12 th:nth-child(5), .col-12 td:nth-child(5) { width: 17%; }
 </style>
 
@@ -74,19 +74,19 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| Psixonevrologik (narkologik) muassasa ro'yxatga olingan sana | Дата регистрации | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueDateTime | LOINC `8656-1` | 2026-01-05T09:30:00+05:00 |
+| Psixonevrologik (narkologik) muassasa ro'yxatga olingan sana | Дата регистрации | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueDateTime | LOINC `8656-1` "Hospital admission date" | 2026-01-05T09:30:00+05:00 |
 | Avval necha marta shifoxonada davolangan | Количество предыдущих госпитализаций | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).extension[EncounterAdmissionCount] | Local | 5 |
-| Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` | true |
+| Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` "Emergent care utilized during assessment period [CMS Assessment]" | true |
 | Yotqizish turi | Тип госпитализации | Encounter.class | v3-ActCode | EMER |
-| Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` | true |
-| Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | LOINC `57133-1` | true |
+| Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` "Ambulance transport" | true |
+| Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | LOINC `57133-1` "Referral note" | true |
 | Kim tomonidan yo'llangan | Кем направлен | ServiceRequest.requester | SNOMED CT | Referral to psychiatry service |
 | Yo'llagan muassasa | Направившее учреждение | Organization.name | - | Yunusobod tuman psixonevrologik dispanseri |
 | Yo'llagan muassasa tashxisi | Диагноз направившего учреждения | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | F10.2 |
 | Yo'llashdan maqsad | Цель направления | Encounter.reason.value.concept | Local | Diagnostics |
-| Shifoxonaga yotqizildi | Госпитализирован | Observation.valueBoolean | SNOMED CT `32485007` | true |
+| Shifoxonaga yotqizildi | Госпитализирован | Observation.valueBoolean | SNOMED CT `32485007` "Hospital admission" | true |
 | Qaerdan keldi | Откуда поступил | Encounter.admission.origin | Local code | From home |
-| Kasallikning davomiyligi | Продолжительность заболевания | Observation.valueQuantity | LOINC `77977-7` | 3 days |
+| Kasallikning davomiyligi | Продолжительность заболевания | Observation.valueQuantity | LOINC `77977-7` "Illness duration" | 3 days |
 
 ---
 
@@ -98,13 +98,13 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 | Yotqizilgan sanasi va vaqti | Дата и время госпитализации | Encounter.actualPeriod.start | - | 2026-01-05T10:00:00+05:00 |
 | O'rin joy turi | Тип койки | Encounter.location.form | Local code | Narcological |
 | Chiqarilgan sanasi va vaqti | Дата и время выписки | Encounter.actualPeriod.end | - | 2026-01-15T14:00:00+05:00 |
-| Reanimatsiyada yotgan kunlar | Дни в реанимации | Observation.valueQuantity | LOINC `LP76050-1` | 0 days |
+| Reanimatsiyada yotgan kunlar | Дни в реанимации | Observation.valueQuantity | LOINC `LP76050-1` "Intensive care unit" | 0 days |
 | O'rin kunlari | Койко-дни | Encounter.length | UCUM | 10 days |
 | Chiqarilgan bo'lim | Отделение выписки | Organization.name | Local code | Narcology department |
 | Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.subjectStatus | Local code | Recovered |
 | Bemor holati | Состояние пациента | Encounter.admission.dischargeDisposition | Local code | Hospitalized |
 | Nogironlik | Инвалидность | Observation.valueCodeableConcept | Local code | Group II |
-| Shifoxona ichidagi ta'til kunlari soni | Дни отпуска внутри стационара | Observation.valueQuantity | LOINC `LA17962-4` | 0 days |
+| Shifoxona ichidagi ta'til kunlari soni | Дни отпуска внутри стационара | Observation.valueQuantity | LOINC `LA17962-4` "Medical leave of absence" | 0 days |
 
 ---
 
@@ -135,10 +135,10 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| OITS | ВИЧ/СПИД | Observation.valueCodeableConcept | LOINC `56888-1` | Negative |
-| RW | RW / сифилис | Observation.valueCodeableConcept | LOINC `47236-5` | Negative |
-| Gepatit B | Гепатит B | Observation.valueCodeableConcept | LOINC `5196-1` | Negative |
-| Gepatit C | Гепатит C | Observation.valueCodeableConcept | LOINC `13955-0` | Negative |
+| OITS | ВИЧ/СПИД | Observation.valueCodeableConcept | LOINC `56888-1` "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay" | Negative |
+| RW | RW / сифилис | Observation.valueCodeableConcept | LOINC `47236-5` "Treponema pallidum IgG+IgM Ab [Presence] in Serum or Plasma by Immunoassay" | Negative |
+| Gepatit B | Гепатит B | Observation.valueCodeableConcept | LOINC `5196-1` "Hepatitis B virus surface Ag [Presence] in Serum or Plasma by Immunoassay" | Negative |
+| Gepatit C | Гепатит C | Observation.valueCodeableConcept | LOINC `13955-0` "Hepatitis C virus Ab [Presence] in Serum or Plasma by Immunoassay" | Negative |
 
 ---
 
@@ -154,7 +154,7 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| O'pka silida doriga sezgirlik | Чувствительность туберкулёза к препаратам | Observation.valueCodeableConcept | LOINC `18769-0` | Drug-sensitive |
+| O'pka silida doriga sezgirlik | Чувствительность туберкулёза к препаратам | Observation.valueCodeableConcept | LOINC `18769-0` "Microbial susceptibility tests Set" | Drug-sensitive |
 
 ---
 
@@ -162,8 +162,8 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
-| Ochilgan sana | Дата открытия | Observation.component.valueDateTime | LOINC `105583-9` | 2026-01-05T10:00:00+05:00 |
-| Berkitilgan sana | Дата закрытия | Observation.component.valueDateTime | LOINC `105583-9` | 2026-01-15T14:00:00+05:00 |
+| Ochilgan sana | Дата открытия | Observation.component.valueDateTime | LOINC `105583-9` "Worker Sick leave form" | 2026-01-05T10:00:00+05:00 |
+| Berkitilgan sana | Дата закрытия | Observation.component.valueDateTime | LOINC `105583-9` "Worker Sick leave form" | 2026-01-15T14:00:00+05:00 |
 
 ---
 
