@@ -187,7 +187,7 @@ Usage: #inline
 * section[=].code = $loinc#LP74442-2 "Admission Information"
 * section[=].entry[0] = Reference(urn:uuid:06600012-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600013-1111-2222-3333-444444444444)
-* section[=].entry[0] = Reference(urn:uuid:06600015-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:06600015-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600040-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600041-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:06600042-1111-2222-3333-444444444444)
