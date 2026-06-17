@@ -72,6 +72,8 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 
 ### Admission Information
 
+<!-- Рассогласование 066/066-1: поле «Тип госпитализации» (Yotqizish turi) здесь сопоставлено с Encounter.class, а в 066 - с Encounter.admission.admitSource. Нужно привести к одному элементу (вероятно Encounter.priority; в encounter-priority-vs пока нет кода EL «плановый»). -->
+
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
 | Psixonevrologik (narkologik) muassasa ro'yxatga olingan sana | Дата регистрации | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueDateTime | LOINC `8656-1` "Hospital admission date" | 2026-01-05T09:30:00+05:00 |
