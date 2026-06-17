@@ -99,6 +99,8 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 ### Final Diagnosis
 
+Each diagnosis is tagged with `Condition.category` from the [Diagnosis Role](CodeSystem-diagnosis-role.html) code system and placed in a matching per-role sub-section of the Composition, so the role is preserved without relying on entry order - Основной → `main`, Конкурирующий → `competing`, Сопутствующий → `concomitant`, Фоновый → `background`, Осложнение → `complication`.
+
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
 | Asosiy tashxis | Основной диагноз | Condition.code | ICD-10 | J18.9 |
@@ -110,6 +112,8 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 ---
 
 ### Pathologoanatomical Diagnosis
+
+Causes of death are tagged the same way (`Condition.category`, [Diagnosis Role](CodeSystem-diagnosis-role.html)) in per-role sub-sections - Непосредственная причина смерти → `immediate-cause-of-death`, вызвавшее её заболевание → `underlying-cause-of-death`, Основное заболевание → `main-disease-death`, Другие значимые заболевания → `other-significant-death`.
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
@@ -170,6 +174,8 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 ---
 
 ### Temporary Disability
+
+The two dates are told apart by `Observation.component.code` from the [Discharge Card Slot](CodeSystem-discharge-card-slot.html) code system, not free text - Дата открытия → `disability-period-start`, Дата закрытия → `disability-period-end`.
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
