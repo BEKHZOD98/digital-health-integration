@@ -68,8 +68,6 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 ### Admission Information
 
-<!-- Рассогласование 066/066-1: поле «Тип госпитализации» (Yotqizish turi) здесь сопоставлено с Encounter.admission.admitSource, а в 066-1 - с Encounter.class. Нужно привести к одному элементу (вероятно Encounter.priority; в encounter-priority-vs пока нет кода EL «плановый»). -->
-
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
 | Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` "Emergent care utilized during assessment period [CMS Assessment]" | true |

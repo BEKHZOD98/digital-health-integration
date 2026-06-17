@@ -72,14 +72,12 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 
 ### Admission Information
 
-<!-- Рассогласование 066/066-1: поле «Тип госпитализации» (Yotqizish turi) здесь сопоставлено с Encounter.class, а в 066 - с Encounter.admission.admitSource. Нужно привести к одному элементу (вероятно Encounter.priority; в encounter-priority-vs пока нет кода EL «плановый»). -->
-
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
 | Psixonevrologik (narkologik) muassasa ro'yxatga olingan sana | Дата регистрации | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueDateTime | LOINC `8656-1` "Hospital admission date" | 2026-01-05T09:30:00+05:00 |
 | Avval necha marta shifoxonada davolangan | Количество предыдущих госпитализаций | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueInteger | [Local](CodeSystem-local-observation-code.html) `num-previous-hospitalizations` | 5 |
 | Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` "Emergent care utilized during assessment period [CMS Assessment]" | true |
-| Yotqizish turi | Тип госпитализации | Encounter.class | v3-ActCode | EMER |
+| Yotqizish turi | Тип госпитализации | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).admission.admitSource | Local code | Dispensary |
 | Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` "Ambulance transport" | true |
 | Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | LOINC `57133-1` "Referral note" | true |
 | Kim tomonidan yo'llangan | Кем направлен | ServiceRequest.requester | SNOMED CT | Referral to psychiatry service |
