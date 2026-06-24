@@ -20,3 +20,7 @@ No definition could be found for URL value 'https://dhp.uz/fhir/core/sid/pid/uz/
 
 Unable to check if https://dhp.uz/fhir/integrations/ValueSet/hep-icd-vs is a proper subset of http://hl7.org/fhir/ValueSet/icd-10|5.0.0 - value set is too large to check
 Binding https://dhp.uz/fhir/integrations/ValueSet/quantity-comparator-vs could not be expanded
+
+# IG Publisher generates inline scripts for table filters then warns they're illegal - bug reported, can be ignored
+The <script> containing the javascript '//%
+
