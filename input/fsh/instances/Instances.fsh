@@ -84,20 +84,6 @@ Description: "Role of practitioner for authoring the birth composition"
 * organization = Reference(organization1-example)
 * code.text = "Paramedic"
 
-Instance: patient-gender-other-example
-InstanceOf: Patient
-Usage: #example
-Title: "Patient with Other Gender"
-Description: "Example patient using gender-other extension"
-
-* gender = #other
-* gender.extension[0].url = "https://dhp.uz/fhir/integrations/StructureDefinition/gender-other"
-* gender.extension[0].valueCoding.system = "https://terminology.dhp.uz/fhir/core/CodeSystem/gender-other-cs"
-* gender.extension[0].valueCoding.code = #regis0007.00004
-* gender.extension[0].valueCoding.display = "Changed gender to female"
-
-
-
 
 
 Instance: patient-managing-organization-attachment-example

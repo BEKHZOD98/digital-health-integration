@@ -53,7 +53,6 @@ Description: "Assessment of the newborn's condition"
 
 Invariant: apgar-range
 Description: "Apgar score must be between 1 and 10"
-//changed from value to $this
 Expression: "$this >= 0 and $this <= 10"
 Severity: #error
 

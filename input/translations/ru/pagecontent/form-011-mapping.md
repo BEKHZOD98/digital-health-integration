@@ -10,21 +10,23 @@
 .col-12 th:nth-child(5), .col-12 td:nth-child(5) { width: 15%; }
 </style>
 
-### Form 011 - Hemodialysis session protocol
+> **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
 
-This page documents the mapping between Form 011 (Hemodialysis Session Protocol) fields and FHIR resources.
+### Форма 011 - Протокол сеанса гемодиализа
 
-### Overview
+На этой странице описано сопоставление полей Формы 011 (Протокол сеанса гемодиализа) с ресурсами FHIR.
 
-Form 011 captures clinical data from hemodialysis sessions. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 011 Hemodialysis Composition](StructureDefinition-form-011-hemodialysis-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
+### Обзор
 
-For a complete reference instance, see the [Form 011 hemodialysis example](Bundle-example-form-011-hemodialysis.html).
+Форма 011 фиксирует клинические данные сеансов гемодиализа. Данные формы сопоставляются с несколькими ресурсами FHIR, объединёнными в FHIR-документ, который соответствует профилю [Form 011 Hemodialysis Composition](StructureDefinition-form-011-hemodialysis-composition.html). Где это возможно, ресурсы соответствуют профилям [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html).
 
-### Field Mapping
+Полный пример экземпляра см. в разделе [Пример гемодиализа по Форме 011](Bundle-example-form-011-hemodialysis.html).
 
-# UZ-011 Hemodialysis Session Form - FHIR Mapping
+### Сопоставление полей
 
-| UZ-011 | RU-011 | FHIR Path | Code | Example Value |
+# UZ-011 Форма сеанса гемодиализа - сопоставление с FHIR
+
+| UZ-011 | RU-011 | Путь FHIR | Код | Пример значения |
 |--------|--------|-----------|------|---------------|
 | Bemor | Пациент | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).name | - | Aziz John |
 | Sana | Дата | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).period.start | - | 2026-06-01 |
@@ -50,21 +52,21 @@ For a complete reference instance, see the [Form 011 hemodialysis example](Bundl
 | Hamshira | Медсестра | Encounter.participant.actor | Encounter.participant.type: SNOMED CT `106292003` "Professional nurse" | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) (Рахматова М.М.) |
 | Fistul | Фистула | Procedure.bodySite | SNOMED CT `439786007` "Surgically constructed arteriovenous fistula" + laterality qualifier | Левая AV-фистула |
 
-### Bundle structure
+### Структура Bundle
 
-The Form 011 document is structured as a FHIR Bundle containing a [Form011HemodialysisComposition](StructureDefinition-form-011-hemodialysis-composition.html) Composition:
+Документ Формы 011 структурирован как FHIR Bundle, содержащий Composition [Form011HemodialysisComposition](StructureDefinition-form-011-hemodialysis-composition.html):
 
 ```
-Bundle (document)
+Bundle (документ)
 ├── Composition (Form011HemodialysisComposition)
-├── Patient (patient demographics)
-├── Encounter (session encounter)
-├── Procedure (hemodialysis procedure)
-├── Observation[] (vital signs, measurements)
-├── MedicationAdministration (medications given)
-└── Practitioner[] (doctor, nurse)
+├── Patient (демографические данные пациента)
+├── Encounter (случай обслуживания сеанса)
+├── Procedure (процедура гемодиализа)
+├── Observation[] (показатели жизненно важных функций, измерения)
+├── MedicationAdministration (введённые препараты)
+└── Practitioner[] (врач, медсестра)
 ```
 
-### Example
+### Пример
 
-See [Form 011 hemodialysis example](Bundle-example-form-011-hemodialysis.html) for a complete FHIR document example.
+Полный пример FHIR-документа см. в разделе [Пример гемодиализа по Форме 011](Bundle-example-form-011-hemodialysis.html).
