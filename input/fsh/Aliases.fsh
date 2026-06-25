@@ -143,3 +143,103 @@ Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-Particip
 Alias: $v3-RoleClass = http://terminology.hl7.org/CodeSystem/v3-RoleClass
 Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-supplement
+Alias: $v3ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
+
+// ===================== IDENTIFIERS (UZ) =====================
+Alias: $birthcertificate = https://adliya.uz/identifier/birthcertificate
+Alias: $passport-international = https://dpm.uz/identifier/passport-international
+Alias: $passport-local = https://dpm.uz/identifier/passport-local
+Alias: $nationaluniqueID = https://dpm.uz/identifier/national-unique-id
+Alias: $driverslicense = https://gov.uz/iiv/identifier/driverslicense
+Alias: $penitentiaryinstitution = https://gov.uz/iiv/identifier/penitentiaryinstitution
+Alias: $militaryID = https://gov.uz/mudofaa/identifier/militaryID
+Alias: $healthcard = https://gov.uz/ssv/identifier/healthcard
+Alias: $diplomaticpassport = https://gov.uz/mfa/identifier/diplomaticpassport
+
+// ===================== ORGANIZATION =====================
+Alias: $organization-argos-id-system = https://hrm.argos.uz
+Alias: $organization-tax-id-system = https://soliq.uz
+Alias: $organization-type-cs = http://terminology.hl7.org/CodeSystem/organization-type
+Alias: $organization-type-vs = http://hl7.org/fhir/ValueSet/organization-type
+
+// ===================== UZ CORE =====================
+Alias: $general-condition = https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition
+Alias: $socieeconomic-observation = https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation
+
+Alias: $organizational-service-group = https://dhp.uz/fhir/core/CodeSystem/organizational-service-group
+Alias: $organizational-structure = https://dhp.uz/fhir/core/CodeSystem/organizational-structure
+Alias: $nomenclature-group = https://dhp.uz/fhir/core/CodeSystem/nomenclature-group
+Alias: $specialization = https://dhp.uz/fhir/core/CodeSystem/specialization
+Alias: $subordination-group = https://dhp.uz/fhir/core/CodeSystem/subordination-group
+Alias: $location-unit = https://dhp.uz/fhir/core/NamingSystem/location-unit
+
+// ===================== OTHER =====================
+Alias: $icd-10 = http://hl7.org/fhir/sid/icd-10
+Alias: $iso-3166 = urn:iso:std:iso:3166
+Alias: $iiv = https://gov.uz/ru/iiv
+Alias: $mfa = https://gov.uz/ru/mfa
+Alias: $mudofaa = https://gov.uz/ru/mudofaa
+Alias: $ssv = https://gov.uz/ru/ssv
+
+Alias: $dicom-dcm = http://dicom.nema.org/resources/ontology/DCM
+Alias: $ee-mpi-socialhistory-education-level = https://fhir.ee/mpi/StructureDefinition/ee-mpi-socialhistory-education-level
+
+Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
+Alias: $translation-extension = http://hl7.org/fhir/StructureDefinition/translation
+Alias: $triggered-by-type = http://hl7.org/fhir/observation-triggeredbytype
+
+Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-supplement
+Alias: $drs = http://hl7.org/fhir/document-reference-status
+Alias: $drcs = http://hl7.org/fhir/composition-status
+Alias: $drca = http://hl7.org/fhir/composition-attestation-mode
+
+
+
+
+
+Alias: $admit-source = http://terminology.hl7.org/CodeSystem/admit-source
+Alias: $discharge-disposition = http://terminology.hl7.org/CodeSystem/discharge-disposition
+Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
+Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+Alias: $icd10 = http://hl7.org/fhir/sid/icd-10
+Alias: $diagnosis-role = https://terminology.dhp.uz/CodeSystem/diagnosis-role
+Alias: $local-observation-code = https://terminology.dhp.uz/CodeSystem/local-observation-code
+Alias: $education-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/education-cs
+Alias: $occupation-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
+Alias: $benefit-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs
+Alias: $citizenship = https://terminology.dhp.uz/fhir/core/CodeSystem/iso3166-two-letter-cs
+Alias: $practioner-role = http://terminology.hl7.org/CodeSystem/practitioner-role 
+Alias: $social-status = https://terminology.dhp.uz/fhir/core/CodeSystem/social-status-cs
+Alias: $admission-origin = https://terminology.dhp.uz/fhir/core/CodeSystem/admit-source-local-cs
+Alias: $admission-origin-vs = https://terminology.dhp.uz/fhir/core/ValueSet/admission-origin-vs
+Alias: $v3-ObservationInterpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+
+
+Alias: $encounter-local-priority-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-local-priority-cs
+Alias: $encounter-local-subject-status-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-local-subject-status-cs
+Alias: $admit-source-local-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/admit-source-local-cs
+Alias: $re-admission-local-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/re-admission-local-cs
+Alias: $discharge-disposition-home-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-discharge-disposition-home-cs
+Alias: $location-form = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-specialization-cs
+Alias: $coverage-type = https://terminology.dhp.uz/fhir/core/CodeSystem/coverage-type-cs
+Alias: $encounter-purpose-cs = https://terminology.dhp.uz/CodeSystem/encounter-purpose-cs
+Alias: $encounter-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-type-cs
+
+// ===================== SCREENING =====================
+Alias: $organizational-subordination-group-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-subordination-group-cs
+Alias: $organizational-structure-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-structure-cs
+Alias: $organizational-service-group-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-service-group-cs
+Alias: $states-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/states-cs
+Alias: $organization-tax-id-system-dhp = https://dhp.uz/fhir/core/sid/org/uz/soliq
+Alias: $screening-local-id = https://dhp.uz/fhir/core/sid/uz/screening
+Alias: $screening-patient-id = https://dhp.uz/fhir/core/sid/pid/uz/screening
+Alias: $screening-practitioner-id = https://dhp.uz/fhir/core/sid/pro/uz/screening
+Alias: $nationality-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/nationality-cs
+
+Alias: $doc-typecodes = http://hl7.org/fhir/ValueSet/doc-typecodes
+Alias: $mimetypes = http://hl7.org/fhir/ValueSet/mimetypes
+Alias: $drs-vs = http://hl7.org/fhir/ValueSet/document-reference-status
+Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
+Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
+
+
