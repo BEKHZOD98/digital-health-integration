@@ -47,3 +47,56 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
 * uniqueId[=].preferred = true
+
+
+
+//mine
+Instance: organization-code
+InstanceOf: NamingSystem
+Description: "NamingSystem defining the canonical URI for organization codes used in Uzbekistan healthcare systems."
+Usage: #definition
+* name = "OrganizationCode"
+* status = #active
+* kind = #identifier
+* date = "2026-04-22"
+* publisher = "UZINFOCOM"
+* responsible = "UZINFOCOM"
+* description = "Identifier system for organization codes."
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/organization-code"
+* uniqueId[0].preferred = true
+
+
+
+Instance: department-code-ns
+InstanceOf: NamingSystem
+Usage: #definition
+
+* name = "DepartmentCodeNamingSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-05-07"
+* publisher = "Uzinfocom"
+* responsible = "UZINFOCOM"
+* description = "NamingSystem for Uzbekistan department codes"
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/department-code"
+* uniqueId[0].preferred = true
+
+
+Instance: medical-record-number-system
+InstanceOf: NamingSystem
+Usage: #definition
+
+* url = "https://dhp.uz/fhir/integrations/NamingSystem/medical-record-number-system"
+* name = "UzbekistanMedicalRecordNumberSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-06-22"
+* publisher = "Uzinfocom"
+* responsible = "Uzinfocom"
+* description = "Identifier system used for medical record numbers assigned to encounters and inpatient records in the Digital Health Platform."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
+* uniqueId[=].preferred = true

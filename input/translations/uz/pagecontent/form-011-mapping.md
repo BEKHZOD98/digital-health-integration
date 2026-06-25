@@ -10,21 +10,23 @@
 .col-12 th:nth-child(5), .col-12 td:nth-child(5) { width: 15%; }
 </style>
 
-### Form 011 - Hemodialysis session protocol
+> **Mashina tarjimasi, inson tomonidan tekshirilishi zarur.** Ushbu sahifa ingliz tilidan sun'iy intellekt yordamida avtomatik tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday nomuvofiqlikda asl inglizcha versiya ustuvor hisoblanadi.
 
-This page documents the mapping between Form 011 (Hemodialysis Session Protocol) fields and FHIR resources.
+### 011-shakl - Gemodializ seansi bayonnomasi
 
-### Overview
+Ushbu sahifada 011-shakl (Gemodializ seansi bayonnomasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
 
-Form 011 captures clinical data from hemodialysis sessions. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 011 Hemodialysis Composition](StructureDefinition-form-011-hemodialysis-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
+### Umumiy ma'lumot
 
-For a complete reference instance, see the [Form 011 hemodialysis example](Bundle-example-form-011-hemodialysis.html).
+011-shakl gemodializ seanslarining klinik ma'lumotlarini qayd etadi. Shakl ma'lumotlari [Form 011 Hemodialysis Composition](StructureDefinition-form-011-hemodialysis-composition.html) profiliga mos keluvchi FHIR hujjatiga birlashtirilgan bir nechta FHIR resurslari bilan moslashtiriladi. Imkoni bo'lgan joyda resurslar [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profillariga mos keladi.
 
-### Field Mapping
+To'liq namunaviy nusxa uchun [011-shakl gemodializ misoli](Bundle-example-form-011-hemodialysis.html)ga qarang.
 
-# UZ-011 Hemodialysis Session Form - FHIR Mapping
+### Maydonlarni moslashtirish
 
-| UZ-011 | RU-011 | FHIR Path | Code | Example Value |
+# UZ-011 Gemodializ seansi shakli - FHIR bilan moslashtirish
+
+| UZ-011 | RU-011 | FHIR yo'li | Kod | Misol qiymati |
 |--------|--------|-----------|------|---------------|
 | Bemor | Пациент | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).name | - | Aziz John |
 | Sana | Дата | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).period.start | - | 2026-06-01 |
@@ -50,21 +52,21 @@ For a complete reference instance, see the [Form 011 hemodialysis example](Bundl
 | Hamshira | Медсестра | Encounter.participant.actor | Encounter.participant.type: SNOMED CT `106292003` "Professional nurse" | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) (Рахматова М.М.) |
 | Fistul | Фистула | Procedure.bodySite | SNOMED CT `439786007` "Surgically constructed arteriovenous fistula" + laterality qualifier | Левая AV-фистула |
 
-### Bundle structure
+### Bundle tuzilishi
 
-The Form 011 document is structured as a FHIR Bundle containing a [Form011HemodialysisComposition](StructureDefinition-form-011-hemodialysis-composition.html) Composition:
+011-shakl hujjati [Form011HemodialysisComposition](StructureDefinition-form-011-hemodialysis-composition.html) Composition'ini o'z ichiga olgan FHIR Bundle sifatida tuzilgan:
 
 ```
-Bundle (document)
+Bundle (hujjat)
 ├── Composition (Form011HemodialysisComposition)
-├── Patient (patient demographics)
-├── Encounter (session encounter)
-├── Procedure (hemodialysis procedure)
-├── Observation[] (vital signs, measurements)
-├── MedicationAdministration (medications given)
-└── Practitioner[] (doctor, nurse)
+├── Patient (bemorning demografik ma'lumotlari)
+├── Encounter (seans uchrashuvi)
+├── Procedure (gemodializ muolajasi)
+├── Observation[] (hayotiy ko'rsatkichlar, o'lchovlar)
+├── MedicationAdministration (berilgan dorilar)
+└── Practitioner[] (shifokor, hamshira)
 ```
 
-### Example
+### Misol
 
-See [Form 011 hemodialysis example](Bundle-example-form-011-hemodialysis.html) for a complete FHIR document example.
+To'liq FHIR hujjati misoli uchun [011-shakl gemodializ misoli](Bundle-example-form-011-hemodialysis.html)ga qarang.
