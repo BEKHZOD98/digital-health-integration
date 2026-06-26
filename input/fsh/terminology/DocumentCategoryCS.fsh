@@ -183,8 +183,6 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[=].value = "Лист нетрудоспособности"
 
 
-
-
 * #form-066-1 "Psixiatrik/narkologik chiqarish statistik kartasi"
   * ^designation[0].language = #en
   * ^designation[=].value = "Psychiatric/narcological discharge statistical card"
