@@ -12,6 +12,7 @@ Description: "Description"
 * group.source = Canonical(ObservationCodeCS)
 * sourceScopeCanonical = Canonical(ObservationCodeVS)
 * group.target = $loinc
+* targetScopeCanonical = $loinc-vs
 
 * group[=].element[+].code = #Tub002-0001
 * group[=].element[=].display = "Balg'am surtmasi, FL"

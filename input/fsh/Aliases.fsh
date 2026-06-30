@@ -264,6 +264,7 @@ Alias: $reference-meaning = http://terminology.hl7.org/CodeSystem/referencerange
 Alias: $sample-security-structural-codes = http://hl7.org/fhir/sample-security-structural-roles
 Alias: $sct = http://snomed.info/sct
 Alias: $sct-vs = http://snomed.info/sct?fhir_vs
+Alias: $loinc-vs = http://loinc.org/vs
 Alias: $security-source-type = http://terminology.hl7.org/CodeSystem/security-source-type
 Alias: $socieeconomic-observation = https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation
 Alias: $specialization = https://dhp.uz/fhir/core/CodeSystem/specialization
