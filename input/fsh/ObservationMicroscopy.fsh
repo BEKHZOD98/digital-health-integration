@@ -1,4 +1,4 @@
-Profile: DhisObservationMicroscopy
+Profile: DHISObservationMicroscopy
 Parent: UZCoreObservation
 Id: dhis-observation-microscopy
 Title: "DHIS Observation Microscopy Profile"
@@ -37,7 +37,7 @@ Description: "Profile for recording sputum smear microscopy results, including a
 
 //Instance Example
 Instance: example-microscopy
-InstanceOf: DhisObservationMicroscopy
+InstanceOf: DHISObservationMicroscopy
 Description: "Example observation recording a sputum smear microscopy result with its acid-fast bacilli load grade."
 Usage: #example
 * status = #final

@@ -1,4 +1,4 @@
-Profile: DhisCondition
+Profile: DHISCondition
 Parent: UZCoreCondition
 Id: dhis-condition  
 Title: "DHIS Condition Profile"
@@ -27,7 +27,7 @@ Description: "Profile for recording a tuberculosis diagnosis or related conditio
 
 // Instance Example
 Instance: example-tbc-diagnosis
-InstanceOf: DhisCondition
+InstanceOf: DHISCondition
 Description: "Example condition representing a bacteriologically confirmed case of pulmonary tuberculosis."
 Usage: #example
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active "Active"

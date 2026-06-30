@@ -1,4 +1,4 @@
-Profile: DhisSpecimen
+Profile: DHISSpecimen
 Parent: Specimen
 Id: dhis-specimen
 Title: "DHIS Specimen Profile"
@@ -16,7 +16,7 @@ Description: "Profile for a biological specimen collected for tuberculosis labor
 * type 0..1 MS
 * type from SpecimenTypeVS (required)
 * subject 0..1 MS
-* subject only Reference(PatientDhis)
+* subject only Reference(DHISPatient)
 * receivedTime 0..1 MS
 * receivedTime only dateTime
 
@@ -28,7 +28,7 @@ Description: "Profile for a biological specimen collected for tuberculosis labor
 
 // Instance example
 Instance: example-dhis-specimen
-InstanceOf: DhisSpecimen
+InstanceOf: DHISSpecimen
 Description: "Example specimen representing a sputum sample collected for tuberculosis testing."
 Usage: #example
 * status = #available

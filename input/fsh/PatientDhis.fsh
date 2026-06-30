@@ -1,4 +1,4 @@
-Profile: PatientDhis
+Profile: DHISPatient
 Parent: UZCorePatient
 Id: dhis-patient
 Title: "DHIS Patient Profile"
@@ -14,7 +14,7 @@ Description: "Profile for a patient registered in the DHIS tuberculosis informat
 
 // Instance example
 Instance: example-patient-john
-InstanceOf: PatientDhis
+InstanceOf: DHISPatient
 Description: "Example patient registered in the DHIS information system."
 Usage: #example
 

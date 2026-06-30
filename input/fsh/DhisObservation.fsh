@@ -1,4 +1,4 @@
-Profile: DhisObservation
+Profile: DHISObservation
 Parent: UZCoreObservation
 Id: dhis-observation
 Title: "DHIS Observation Profile"
@@ -35,7 +35,7 @@ Description: "Profile for recording tuberculosis diagnostic test results and cli
 
 // Instance Example
 Instance: example-tb-microscopy
-InstanceOf: DhisObservation
+InstanceOf: DHISObservation
 Description: "Example observation recording a sputum smear microscopy result for tuberculosis."
 Usage: #example
 * status = #final

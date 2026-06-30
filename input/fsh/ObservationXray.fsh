@@ -1,4 +1,4 @@
-Profile: DhisObservationXray
+Profile: DHISObservationXray
 Parent: UZCoreObservation
 Id: dhis-observation-xray
 Title: "DHIS Observation X-ray Profile"
@@ -12,7 +12,7 @@ Description: "Profile for recording chest X-ray findings used in tuberculosis sc
 * category =  $observation-category#imaging
 
 * subject 1..1 MS
-* subject only Reference(PatientDhis)
+* subject only Reference(DHISPatient)
 
 * effective[x] 0..1 MS SU
 * effective[x] only dateTime
@@ -27,7 +27,7 @@ Description: "Profile for recording chest X-ray findings used in tuberculosis sc
 
 // Instance Example
 Instance: example-observation-xray
-InstanceOf: DhisObservationXray
+InstanceOf: DHISObservationXray
 Description: "Example observation recording a chest X-ray finding for tuberculosis screening."
 Usage: #example
 * status = #final
