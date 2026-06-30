@@ -1,8 +1,10 @@
 ValueSet: SpecimenFeatureTypeVS
 Id: specimen-feature-type-vs
 Title: "DHIS Specimen Feature Type ValueSet"
-Description: "Value set of tuberculosis specimen feature types drawn from the DHIS specimen feature type code system."
+Description: "Value set of tuberculosis specimen feature types used by the DHIS information system. A culture isolate is expressed as a SNOMED CT code; the remaining processing states use local codes that have no 1:1 SNOMED CT match."
 * ^experimental = true
 * ^url = "https://terminology.dhp.uz/ValueSet/specimen-feature-type-vs"
 
 * include codes from system specimen-feature-type-cs
+
+* include $sct#119303007

@@ -2,7 +2,7 @@ Instance: observation-tuberculosis-code
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "Tuberculosis observation local codes to LOINC"
-Description: "Maps local tuberculosis diagnostic test codes to LOINC."
+Description: "Maps the local DHIS tuberculosis diagnostic test codes that have no 1:1 LOINC equivalent (culture media and assay variants that share a single LOINC code) to their closest (broader or related) LOINC concept. Tests with an exact LOINC match are represented directly by LOINC and are not listed here."
 * url = "https://dhp.uz/fhir/integrations/ConceptMap/observation-tuberculosis-code"
 * name = "ObservationCodeToLoinc"
 * status = #draft
@@ -14,24 +14,6 @@ Description: "Maps local tuberculosis diagnostic test codes to LOINC."
 * group.target = $loinc
 * targetScopeCanonical = $loinc-vs
 
-* group[=].element[+].code = #Tub002-0001
-* group[=].element[=].display = "Balg'am surtmasi, FL"
-* group[=].element[=].target[+].code = #53904-9
-* group[=].element[=].target[=].display = "Sputum smear microscopy (fluorescent)"
-* group[=].element[=].target[=].relationship = #equivalent
-
-* group[=].element[+].code = #Tub002-0002
-* group[=].element[=].display = "Balg'am surtmasi, ZN"
-* group[=].element[=].target[+].code = #647-8
-* group[=].element[=].target[=].display = "Sputum smear microscopy (Ziehl–Neelsen)"
-* group[=].element[=].target[=].relationship = #equivalent
-
-* group[=].element[+].code = #Tub002-0003
-* group[=].element[=].display = "Xpert MTB/RIF Ultra"
-* group[=].element[=].target[+].code = #89371-9
-* group[=].element[=].target[=].display = "Xpert MTB/RIF Ultra"
-* group[=].element[=].target[=].relationship = #equivalent
-
 * group[=].element[+].code = #Tub002-0004
 * group[=].element[=].display = "Xpert MTB/XDR"
 * group[=].element[=].target[+].code = #94053-6
@@ -42,40 +24,22 @@ Description: "Maps local tuberculosis diagnostic test codes to LOINC."
 * group[=].element[=].display = "LJ muhitida ekish"
 * group[=].element[=].target[+].code = #539-7
 * group[=].element[=].target[=].display = "Culture on Löwenstein–Jensen medium"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #Tub002-0006
 * group[=].element[=].display = "MGIT muhitida ekish"
 * group[=].element[=].target[+].code = #539-7
 * group[=].element[=].target[=].display = "MGIT BACTEC culture"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #Tub002-0007
 * group[=].element[=].display = "MGITda fenotipik TLU"
-* group[=].element[=].target[+].code = #29579-0 
+* group[=].element[=].target[+].code = #29579-0
 * group[=].element[=].target[=].display = "Phenotypic DST on MGIT"
 * group[=].element[=].target[=].relationship = #related-to
-
-* group[=].element[+].code = #Tub002-0008
-* group[=].element[=].display = "LPA MTBDR plus (Rif/Inh/Eto-Pto)"
-* group[=].element[=].target[+].code = #89876-7
-* group[=].element[=].target[=].display = "LPA MTBDRplus (Rif/Inh/Eto-Pto)"
-* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #Tub002-0009
 * group[=].element[=].display = "LPA MTBDR SL (Fql/SLI)"
 * group[=].element[=].target[+].code = #94053-6
 * group[=].element[=].target[=].display = "LPA MTBDRsl (Fql/SLI)"
 * group[=].element[=].target[=].relationship = #related-to
-
-* group[=].element[+].code = #Tub002-0010
-* group[=].element[=].display = "Ko'krak qafasi rentgenografiyasi"
-* group[=].element[=].target[+].code = #30745-4
-* group[=].element[=].target[=].display = "Chest X-ray"
-* group[=].element[=].target[=].relationship = #equivalent
-
-* group[=].element[+].code = #Tub002-0011
-* group[=].element[=].display = "OIV testi"
-* group[=].element[=].target[+].code = #56888-1
-* group[=].element[=].target[=].display = "HIV testing"
-* group[=].element[=].target[=].relationship = #equivalent

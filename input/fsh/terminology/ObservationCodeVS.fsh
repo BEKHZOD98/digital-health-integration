@@ -1,8 +1,15 @@
 ValueSet: ObservationCodeVS
 Id: observation-code-vs
 Title: "DHIS Observation Code ValueSet"
-Description: "Value set of local tuberculosis diagnostic test codes drawn from the DHIS observation code system."
+Description: "Value set of tuberculosis diagnostic test codes used by the DHIS information system. Tests with an exact LOINC equivalent are expressed as LOINC codes; the remaining tests (culture medium and assay variants) use local codes that have no 1:1 LOINC match."
 * ^url = "https://terminology.dhp.uz/ValueSet/observation-code-vs"
 * ^experimental = true
 
 * include codes from system observation-dhis-code-cs
+
+* include $loinc#53904-9
+* include $loinc#647-8
+* include $loinc#89371-9
+* include $loinc#89876-7
+* include $loinc#30745-4
+* include $loinc#56888-1

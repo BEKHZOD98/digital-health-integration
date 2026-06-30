@@ -1,7 +1,7 @@
 CodeSystem: SpecimenFeatureTypeCS
 Id: specimen-feature-type-cs
 Title: "DHIS Specimen Feature Type CodeSystem"
-Description: "Local code system describing the processing state of a tuberculosis specimen (primary sample, sediment, culture isolate) used in the DHIS information system."
+Description: "Local code system describing the processing state of a tuberculosis specimen (primary sample, sediment) used in the DHIS information system, retained only for states that have no 1:1 SNOMED CT equivalent. A culture isolate is represented directly by its SNOMED CT code."
 
 * insert OriginalCodeSystemDraft(specimen-feature-type-cs)
 
@@ -22,9 +22,3 @@ Description: "Local code system describing the processing state of a tuberculosi
   * ^designation[=].value = "Осадок образца макроты"
   * ^designation[+].language = #en
   * ^designation[=].value = "Macrota sample sediment"
-
-* #Spec002-0004 "Kultura izolati"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Изолят культуры"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Culture isolate"

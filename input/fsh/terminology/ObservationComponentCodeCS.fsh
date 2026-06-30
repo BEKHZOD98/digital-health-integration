@@ -131,12 +131,6 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[+].language = #en
   * ^designation[=].value = "Pretomanid (1.0 mg/mL)"
 
-* #Tub004-0022 "Rifampcin"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Рифампциин"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Rifampcin"
-
 * #Tub004-0023 "Isoniazid ↑MIC"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Изониazid ↑МИK"
@@ -166,24 +160,6 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[=].value = "Моксифлоксацин ↓МИК"
   * ^designation[+].language = #en
   * ^designation[=].value = "Moxifloxacin ↓MIC"
-
-* #Tub004-0028 "Levofloxacin"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Левофлоксацин"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Levofloxacin"
-
-* #Tub004-0029 "Amikacin"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Амикацин"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Amikacin"
-
-* #Tub004-0030 "Kanamycin"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Канамицин"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Kanamycin"
 
 * #Tub004-0031 "CM/AS izolyatini identifikatsiya qilish"
   * ^designation[0].language = #ru

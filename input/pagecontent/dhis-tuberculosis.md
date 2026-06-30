@@ -10,7 +10,7 @@ This page documents how tuberculosis case-management data is represented as FHIR
 
 The DHIS tuberculosis module captures the registration, diagnosis, laboratory work-up and treatment course of tuberculosis (TB) patients. The data originates from the DHIS tuberculosis information system and is added to the DHP as individual, atomic FHIR resources. Resources conform to the DHIS profiles linked in each section, and to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) or standard FHIR profiles otherwise.
 
-Because TB diagnoses, tests, results and specimen types are recorded in the source system with its own local codes, this guide defines a set of local code systems. The diagnosis, diagnostic-test and specimen-type code systems are mapped to a standard terminology (SNOMED CT or LOINC) through a ConceptMap so that receivers can translate to international codes; the result, component and specimen-feature code systems are local-only. See [Local code systems and standard mappings](#local-code-systems-and-standard-mappings) at the end. Each section below gives the governing profile, a concrete example resource, and a table of the value set and an example code for every field that carries a code.
+Wherever a concept has a standard equivalent, these resources carry the standard code directly - SNOMED CT for diagnoses, specimen types and identified species, LOINC for diagnostic tests. The source system records this data with its own local codes; those local codes are retained only for concepts that have no 1:1 standard equivalent (for example culture-medium variants, smear/culture grades and drug-susceptibility bands), and a ConceptMap documents their nearest standard concept. See [Local code systems and standard mappings](#local-code-systems-and-standard-mappings) at the end. Each section below gives the governing profile, a concrete example resource, and a table of the value set and an example code for every field that carries a code.
 
 A typical record links together: a [patient](#registering-a-patient-patient), one or more [TB diagnoses](#recording-a-tb-diagnosis-condition), an [episode of care](#grouping-the-treatment-course-episodeofcare) that groups the treatment course, the [specimens](#collecting-a-specimen-specimen) collected, and the [diagnostic test results](#recording-diagnostic-test-results-observation) produced from them.
 
@@ -31,7 +31,7 @@ Example: [example-patient-john](Patient-example-patient-john.html)
 
 ### Recording a TB diagnosis (Condition)
 
-Set `Condition.code` to the TB diagnosis (or a relevant comorbidity). Codes come from the local TB diagnosis list, which maps to SNOMED CT.
+Set `Condition.code` to the TB diagnosis (or a relevant comorbidity). Most diagnoses use SNOMED CT directly; a few that have no 1:1 SNOMED CT match use local codes.
 
 Profile: [DHISCondition](StructureDefinition-dhis-condition.html)
 
@@ -39,14 +39,14 @@ Example: [example-tbc-diagnosis](Condition-example-tbc-diagnosis.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Diagnosis | [ConditionCodeVS](ValueSet-condition-code-vs.html) | `condition-code-cs#tub001-0005` (Pulmonary tuberculosis, bacteriologically confirmed) | `Condition.code` |
-| Clinical status | [condition-clinical](http://terminology.hl7.org/CodeSystem/condition-clinical) | `condition-clinical#active` (Active) | `clinicalStatus` |
-| Verification status | [condition-ver-status](http://terminology.hl7.org/CodeSystem/condition-ver-status) | `condition-ver-status#confirmed` (Confirmed) | `verificationStatus` |
+| Diagnosis | [ConditionCodeVS](ValueSet-condition-code-vs.html) | `SNOMED CT#88356006` (Primary respiratory tuberculosis) | `Condition.code` |
+| Clinical status | [condition-clinical](https://dhp.uz/fhir/core/CodeSystem-clinical-status-cs.html) | `condition-clinical#active` (Active) | `clinicalStatus` |
+| Verification status | [condition-ver-status](https://dhp.uz/fhir/core/CodeSystem-condition-verification-status-cs.html) | `condition-ver-status#confirmed` (Confirmed) | `verificationStatus` |
 | Category | [condition-category](http://terminology.hl7.org/CodeSystem/condition-category) | `condition-category#encounter-diagnosis` (Encounter Diagnosis) | `category` |
 | When it started | - | `2025-06-03` | `onsetDateTime` |
 | Subject | - | reference to [Patient](#registering-a-patient-patient) | `subject` |
 
-Local diagnosis codes are translated to SNOMED CT by the [tuberculosis-to-snomed](ConceptMap-tuberculosis-to-snomed.html) ConceptMap.
+The few diagnoses without a 1:1 SNOMED CT match (e.g. fibro-cavitary TB and the non-TB comorbidities) keep a local code; the [tuberculosis-to-snomed](ConceptMap-tuberculosis-to-snomed.html) ConceptMap gives their nearest SNOMED CT concept.
 
 ### Grouping the treatment course (EpisodeOfCare)
 
@@ -75,19 +75,19 @@ Example: [example-dhis-specimen](Specimen-example-dhis-specimen.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Specimen type | [SpecimenTypeVS](ValueSet-specimen-type-vs.html) | `specimen-type-cs#Spec001-0002` (Macrota / sputum) | `Specimen.type` |
+| Specimen type | [SpecimenTypeVS](ValueSet-specimen-type-vs.html) | `SNOMED CT#119334006` (Sputum specimen) | `Specimen.type` |
 | Processing state | [SpecimenFeatureTypeVS](ValueSet-specimen-feature-type-vs.html) | `specimen-feature-type-cs#Spec002-0001` (Primary sample) | `feature.type` |
 | Status | [specimen-status](https://hl7.org/fhir/R5/valueset-specimen-status.html) | `available` | `status` |
 | Subject | - | reference to [Patient](#registering-a-patient-patient) | `subject` |
 | Derived from | - | reference to a parent Specimen | `parent` |
 
-Specimen types are translated to SNOMED CT by the [specimen-type-conceptmap](ConceptMap-specimen-type-conceptmap.html) ConceptMap.
+Most specimen types use SNOMED CT directly; the site groupings and culture media without a 1:1 SNOMED CT match keep a local code, mapped to their nearest SNOMED CT concept by the [specimen-type-conceptmap](ConceptMap-specimen-type-conceptmap.html) ConceptMap.
 
 ### Recording diagnostic test results (Observation)
 
-Every laboratory or imaging result is its own Observation. In all four profiles below, `Observation.code` identifies the test; use the DHIS test catalogue [ObservationCodeVS](ValueSet-observation-code-vs.html) (mapped to LOINC by the [observation-tuberculosis-code](ConceptMap-observation-tuberculosis-code.html) ConceptMap). What differs is how the result is carried:
+Every laboratory or imaging result is its own Observation. In all four profiles below, `Observation.code` identifies the test, drawn from [ObservationCodeVS](ValueSet-observation-code-vs.html) - LOINC where an exact code exists, otherwise a local code for culture-medium and assay variants (mapped to LOINC by the [observation-tuberculosis-code](ConceptMap-observation-tuberculosis-code.html) ConceptMap). What differs is how the result is carried:
 
-- coded results use [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) (local result codes plus HL7 interpretation codes such as `POS`/`NEG`),
+- coded results use [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) (SNOMED CT for identified species, local codes for smear/culture grades, plus HL7 interpretation codes such as `POS`/`NEG`),
 - result components (for example, one row per drug in a susceptibility panel) are labelled with [ObservationComponentCodeVS](ValueSet-observation-component-code-vs.html),
 - yes/no findings use a boolean.
 
@@ -110,7 +110,7 @@ Example: [example-microscopy](Observation-example-microscopy.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Test code | [ObservationCodeVS](ValueSet-observation-code-vs.html) | `observation-dhis-code-cs#Tub002-0001` (Sputum smear microscopy, fluorescent) | `Observation.code` |
+| Test code | [ObservationCodeVS](ValueSet-observation-code-vs.html) | `LOINC#53904-9` (Sputum smear microscopy, fluorescent) | `Observation.code` |
 | What the component reports | [ObservationComponentCodeVS](ValueSet-observation-component-code-vs.html) | `observation-component-code-cs#Tub004-0032` (Grading) | `component.code` |
 | AFB grade | [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) | `observation-codeable-concept-cs#Tub003-0008` (3+ / 40 fields) | `component.valueCodeableConcept` |
 | Specimen tested | - | reference to [DHISSpecimen](#collecting-a-specimen-specimen) | `specimen` |
@@ -126,10 +126,12 @@ Example: [example-tb-microscopy](Observation-example-tb-microscopy.html)
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Test code | [ObservationCodeVS](ValueSet-observation-code-vs.html) | `observation-dhis-code-cs#Tub002-0007` (Phenotypic DST on MGIT) | `Observation.code` |
-| Overall result | [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) | `observation-codeable-concept-cs#Tub003-0020` (M. tuberculosis complex) | `valueCodeableConcept` |
+| Overall result | [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) | `SNOMED CT#113858008` (M. tuberculosis complex) | `valueCodeableConcept` |
 | Drug tested (DST) | [ObservationComponentCodeVS](ValueSet-observation-component-code-vs.html) | `observation-component-code-cs#Tub004-0008` (Isoniazid 0.1 mg/mL) | `component.code` |
 | Susceptibility outcome | [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) | `v3-ObservationInterpretation#R` (Resistant) | `component.valueCodeableConcept` |
 | Specimen tested | - | reference to [DHISSpecimen](#collecting-a-specimen-specimen) | `specimen` |
+
+Plain drug-name DST components use the LOINC `<drug> [Susceptibility]` code directly; concentration-bearing components keep a local code (the critical concentration a standard code drops), mapped to LOINC by the [observation-component-to-loinc](ConceptMap-observation-component-to-loinc.html) ConceptMap.
 
 #### Chest X-ray
 
@@ -141,7 +143,7 @@ Example: [example-observation-xray](Observation-example-observation-xray.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Test code | [ObservationCodeVS](ValueSet-observation-code-vs.html) | `observation-dhis-code-cs#Tub002-0010` (Chest X-ray) | `Observation.code` |
+| Test code | [ObservationCodeVS](ValueSet-observation-code-vs.html) | `LOINC#30745-4` (Chest X-ray) | `Observation.code` |
 | Finding present | - | `false` | `Observation.value` (boolean) |
 
 #### HIV test
@@ -154,7 +156,7 @@ Example: [example-obs-hiv](Observation-example-obs-hiv.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Test code | [ObservationCodeVS](ValueSet-observation-code-vs.html) | `observation-dhis-code-cs#Tub002-0011` (HIV testing) | `Observation.code` |
+| Test code | [ObservationCodeVS](ValueSet-observation-code-vs.html) | `LOINC#56888-1` (HIV testing) | `Observation.code` |
 | Result | - | `true` | `Observation.value` (boolean) |
 
 ### Documenting the inpatient stay (Encounter)
@@ -167,7 +169,7 @@ Example: [example-dhis-encounter](Encounter-example-dhis-encounter.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Class | [v3-ActCode](https://terminology.hl7.org/CodeSystem-v3-ActCode.html) | `v3-ActCode#IMP` (inpatient encounter) | `class` |
+| Class | [v3-ActCode](https://dhp.uz/fhir/core/CodeSystem-actcode-cs.html) | `v3-ActCode#IMP` (inpatient encounter) | `class` |
 | Status | [EncounterStatus](https://hl7.org/fhir/R5/valueset-encounter-status.html) | `completed` | `status` |
 | Admission period | - | `2026-02-12` to `2026-02-18` | `actualPeriod` |
 | Diagnosis | - | reference to [DHISCondition](#recording-a-tb-diagnosis-condition) | `diagnosis.condition` |
@@ -185,13 +187,13 @@ These resources are referenced by the records above and use UZ Core profiles dir
 
 ### Local code systems and standard mappings
 
-The TB module defines the following local code systems. Where a standard equivalent exists, a ConceptMap translates the local codes to it; receivers should use the mapping to obtain international codes.
+This integration is standard-first: TB diagnoses, specimen types and identified species are coded with SNOMED CT, and diagnostic tests with LOINC, directly in the resources above. The local code systems below are retained only for concepts that have no 1:1 standard equivalent. Where such a local code has a usable but non-exact standard concept, a ConceptMap records the (broader or related) mapping.
 
-| What it codes | Code system | Value set | Standard mapping |
+| What it codes | Local code system (residual) | Value set | Standardization |
 | :--- | :--- | :--- | :--- |
-| TB diagnoses | [ConditionCodeCS](CodeSystem-condition-code-cs.html) | [ConditionCodeVS](ValueSet-condition-code-vs.html) | → SNOMED CT ([tuberculosis-to-snomed](ConceptMap-tuberculosis-to-snomed.html)) |
-| Diagnostic tests | [ObservationCodeCS](CodeSystem-observation-dhis-code-cs.html) | [ObservationCodeVS](ValueSet-observation-code-vs.html) | → LOINC ([observation-tuberculosis-code](ConceptMap-observation-tuberculosis-code.html)) |
-| Test results (smear grades, species, DST outcomes) | [ObservationCodeableConceptCS](CodeSystem-observation-codeable-concept-cs.html) | [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) | - |
-| Result components (DST agents and concentrations) | [ObservationComponentCodeCS](CodeSystem-observation-component-code-cs.html) | [ObservationComponentCodeVS](ValueSet-observation-component-code-vs.html) | - |
-| Specimen types | [SpecimenTypeCS](CodeSystem-specimen-type-cs.html) | [SpecimenTypeVS](ValueSet-specimen-type-vs.html) | → SNOMED CT ([specimen-type-conceptmap](ConceptMap-specimen-type-conceptmap.html)) |
-| Specimen processing state | [SpecimenFeatureTypeCS](CodeSystem-specimen-feature-type-cs.html) | [SpecimenFeatureTypeVS](ValueSet-specimen-feature-type-vs.html) | - |
+| TB diagnoses | [ConditionCodeCS](CodeSystem-condition-code-cs.html) | [ConditionCodeVS](ValueSet-condition-code-vs.html) | Mostly SNOMED CT direct; residual local codes → SNOMED CT ([tuberculosis-to-snomed](ConceptMap-tuberculosis-to-snomed.html)) |
+| Diagnostic tests | [ObservationCodeCS](CodeSystem-observation-dhis-code-cs.html) | [ObservationCodeVS](ValueSet-observation-code-vs.html) | Mostly LOINC direct; culture-medium/assay variants → LOINC ([observation-tuberculosis-code](ConceptMap-observation-tuberculosis-code.html)) |
+| Test results (smear grades, species, DST outcomes) | [ObservationCodeableConceptCS](CodeSystem-observation-codeable-concept-cs.html) | [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) | Identified species → SNOMED CT direct; grades and resistance bands local-only |
+| Result components (DST agents and concentrations) | [ObservationComponentCodeCS](CodeSystem-observation-component-code-cs.html) | [ObservationComponentCodeVS](ValueSet-observation-component-code-vs.html) | Plain drug names → LOINC `[Susceptibility]` direct; concentration-bearing agents local + LOINC map ([observation-component-to-loinc](ConceptMap-observation-component-to-loinc.html)); MIC-band and grading codes local-only |
+| Specimen types | [SpecimenTypeCS](CodeSystem-specimen-type-cs.html) | [SpecimenTypeVS](ValueSet-specimen-type-vs.html) | Mostly SNOMED CT direct; site groupings/media → SNOMED CT ([specimen-type-conceptmap](ConceptMap-specimen-type-conceptmap.html)) |
+| Specimen processing state | [SpecimenFeatureTypeCS](CodeSystem-specimen-feature-type-cs.html) | [SpecimenFeatureTypeVS](ValueSet-specimen-feature-type-vs.html) | Culture isolate → SNOMED CT direct; primary sample/sediment local-only |

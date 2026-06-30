@@ -42,7 +42,7 @@ Description: "Example observation recording a sputum smear microscopy result wit
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory
-* code = https://terminology.dhp.uz/CodeSystem/observation-dhis-code-cs#Tub002-0001 "Sputum smear microscopy (fluorescent)"
+* code = $loinc#53904-9 "Sputum smear microscopy (fluorescent)"
 * subject = Reference(example-patient-john)
 * effectiveDateTime = "2026-03-12T12:00:00Z"
 * issued = "2026-03-12T11:00:00Z"

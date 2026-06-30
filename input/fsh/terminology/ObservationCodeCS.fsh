@@ -1,27 +1,9 @@
 CodeSystem: ObservationCodeCS
 Id: observation-dhis-code-cs
 Title: "DHIS Observation Code CodeSystem"
-Description: "Local code system of tuberculosis diagnostic tests and investigations used by the DHIS information system, with Russian and English designations and mappings to LOINC."
+Description: "Local code system of tuberculosis diagnostic tests and investigations used by the DHIS information system, retained only for tests that have no 1:1 LOINC equivalent (culture medium and assay variants that share a single LOINC code). Tests with an exact LOINC match are represented directly by their LOINC code; the broader/related mappings of the codes below are documented in the DHIS Observation Code to LOINC ConceptMap."
 
 * insert OriginalCodeSystemDraft(observation-dhis-code-cs)
-
-* #Tub002-0001 "Balg'am surtmasi, FL"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Микроскопия мазка мокроты (флуоресцентная)"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Sputum smear microscopy (fluorescent)"
-
-* #Tub002-0002 "Balg'am surtmasi, ZN"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Микроскопия мазка мокроты (Циль–Нильсен)"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Sputum smear microscopy (Ziehl–Neelsen)"
-
-* #Tub002-0003 "Xpert MTB/RIF Ultra"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Xpert MTB/RIF Ultra"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Xpert MTB/RIF Ultra"
 
 * #Tub002-0004 "Xpert MTB/XDR"
   * ^designation[0].language = #ru
@@ -47,26 +29,8 @@ Description: "Local code system of tuberculosis diagnostic tests and investigati
   * ^designation[+].language = #en
   * ^designation[=].value = "Phenotypic DST on MGIT"
 
-* #Tub002-0008 "LPA MTBDR plus"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "LPA MTBDR plus (Rif/Inh/Eto-Pto)"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "LPA MTBDR plus (Rif/Inh/Eto-Pto)"
-
 * #Tub002-0009 "LPA MTBDR SL"
   * ^designation[0].language = #ru
   * ^designation[=].value = "LPA MTBDR SL (Fql/SLI)"
   * ^designation[+].language = #en
   * ^designation[=].value = "LPA MTBDRsl"
-
-* #Tub002-0010 "Ko'krak qafasi rentgenografiyasi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Рентгенография органов грудной клетки"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Chest X-ray"
-
-* #Tub002-0011 "OIV testi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Обследование на ВИЧ"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "HIV testing"
