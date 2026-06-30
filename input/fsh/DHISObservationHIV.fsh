@@ -13,7 +13,7 @@ Description: "Profile for recording the result of an HIV test performed as part 
 * category = $observation-category#laboratory
 
 * subject 1..1 MS
-* subject only Reference(DHISPatient)
+* subject only Reference(UZCorePatient)
 * effective[x] only dateTime
 * effectiveDateTime 1..1 MS SU
 

@@ -16,7 +16,7 @@ Description: "Profile for a biological specimen collected for tuberculosis labor
 * type 0..1 MS
 * type from SpecimenTypeVS (required)
 * subject 0..1 MS
-* subject only Reference(DHISPatient)
+* subject only Reference(UZCorePatient)
 * receivedTime 0..1 MS
 * receivedTime only dateTime
 

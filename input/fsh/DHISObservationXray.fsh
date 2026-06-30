@@ -12,7 +12,7 @@ Description: "Profile for recording chest X-ray findings used in tuberculosis sc
 * category =  $observation-category#imaging
 
 * subject 1..1 MS
-* subject only Reference(DHISPatient)
+* subject only Reference(UZCorePatient)
 
 * effective[x] 0..1 MS SU
 * effective[x] only dateTime

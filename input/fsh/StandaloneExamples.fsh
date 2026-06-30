@@ -1,3 +1,36 @@
+Instance: example-patient-john
+InstanceOf: UZCorePatient
+Usage: #example
+Title: "Example Patient"
+Description: "Example patient registered in the DHIS information system."
+
+* identifier[nationalId]
+  * value = "12345678901234"
+
+* active = false
+
+* name
+  * use = #official
+  * text = "John Smith"
+  * family = "Deera"
+  * given = "John"
+
+* gender = #unknown
+
+* birthDate = "2026-03-13"
+
+* address[uzAddress]
+  * use = #temp
+  * type = #physical
+  * text = "Iltifot MFY, 58-Harbiy shaharcha mavzesi, 53 Uy, 104 Kvartira"
+  * city = "104-0116"
+  * district = "1726290"
+  * state = "1726"
+  * country = "UZ"
+
+* managingOrganization = Reference(example-organization)
+
+
 Instance: example-organization
 InstanceOf: UZCoreOrganization
 Usage: #example
