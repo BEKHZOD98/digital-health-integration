@@ -77,7 +77,7 @@ Description: "Example location representing the delivery room where the birth to
 Instance: practitionerrole-birth-001
 InstanceOf: PractitionerRole
 Usage: #example
-Title: "Practitioner Role Example"
+Title: "Practitioner Role Example (Birth Composition)"
 Description: "Role of practitioner for authoring the birth composition"
 
 * practitioner = Reference(practitioner-003)
