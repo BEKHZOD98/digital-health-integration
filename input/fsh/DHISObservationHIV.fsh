@@ -38,7 +38,7 @@ Description: "Example observation recording an HIV test result for a tuberculosi
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory "Laboratory"
-* code = $loinc#56888-1 "HIV testing"
+* code = $loinc#56888-1
 * subject = Reference(example-patient-john)
 * effectiveDateTime = "2026-03-10T10:00:00Z"
 * issued = "2026-03-15T11:00:00Z"

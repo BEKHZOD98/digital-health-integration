@@ -39,7 +39,7 @@ Example: [example-tbc-diagnosis](Condition-example-tbc-diagnosis.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Diagnosis | [ConditionCodeVS](ValueSet-condition-code-vs.html) | `SNOMED CT#88356006` (Primary respiratory tuberculosis) | `Condition.code` |
+| Diagnosis | [ConditionCodeVS](ValueSet-condition-code-vs.html) | `SNOMED CT#88356006` (Primary tuberculous complex) | `Condition.code` |
 | Clinical status | [condition-clinical](https://dhp.uz/fhir/core/CodeSystem-clinical-status-cs.html) | `condition-clinical#active` (Active) | `clinicalStatus` |
 | Verification status | [condition-ver-status](https://dhp.uz/fhir/core/CodeSystem-condition-verification-status-cs.html) | `condition-ver-status#confirmed` (Confirmed) | `verificationStatus` |
 | Category | [condition-category](http://terminology.hl7.org/CodeSystem/condition-category) | `condition-category#encounter-diagnosis` (Encounter Diagnosis) | `category` |

@@ -33,7 +33,7 @@ Usage: #example
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active "Active"
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed "Confirmed"
 * category = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis "Encounter Diagnosis"
-* code = $sct#88356006 "Primary respiratory tuberculosis"
+* code = $sct#88356006 "Primary tuberculous complex"
 * subject = Reference(example-patient-john)
 * onsetDateTime = "2025-06-03"
 * recordedDate = "2025-08-22"
