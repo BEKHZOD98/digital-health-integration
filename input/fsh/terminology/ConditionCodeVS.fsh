@@ -31,3 +31,4 @@ Description: "Value set of tuberculosis diagnosis and comorbidity codes used by 
 * include $sct#414545008
 * include $sct#38341003
 * include $sct#13200003
+* include $sct#363346000

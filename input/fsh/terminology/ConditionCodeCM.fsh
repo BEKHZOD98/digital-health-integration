@@ -31,9 +31,3 @@ Description: "Maps the local DHIS tuberculosis/comorbidity codes that have no 1:
 * group.element[=].target[+].code = #74732009
 * group.element[=].target[=].display = "Mental illness"
 * group.element[=].target[=].relationship = #source-is-broader-than-target
-
-* group.element[+].code = #tub001-0028
-* group.element[=].display = "Onkologiya"
-* group.element[=].target[+].code = #363346000
-* group.element[=].target[=].display = "Oncology"
-* group.element[=].target[=].relationship = #source-is-broader-than-target

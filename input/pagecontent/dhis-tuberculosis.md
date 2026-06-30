@@ -16,7 +16,7 @@ A typical record links together: a [patient](#registering-a-patient-patient), on
 
 ### Registering a patient (Patient)
 
-The subject of every TB record. There is no DHIS-specific Patient profile; use UZ Core directly. `managingOrganization` records the facility responsible for the patient; identification, name and address follow UZ Core.
+The subject of every TB record. There is no DHIS-specific Patient profile; use UZ Core directly.
 
 Profile: [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html)
 

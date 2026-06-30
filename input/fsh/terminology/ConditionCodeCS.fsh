@@ -22,9 +22,3 @@ Description: "Local code system of tuberculosis diagnoses and comorbidities used
   * ^designation[=].value = "Психическое заболевание"
   * ^designation[+].language = #en
   * ^designation[=].value = "Mental illness"
-
-* #tub001-0028 "Onkologiya"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Онкология"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Oncology"
