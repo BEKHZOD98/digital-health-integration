@@ -1,7 +1,7 @@
 CodeSystem: ObservationCodeableConceptCS
 Id: observation-codeable-concept-cs
 Title: "DHIS Observation Result CodeSystem"
-Description: "DHIS observation results codes for valueCodeableConcept"
+Description: "Local code system of coded tuberculosis test results (smear grades, culture identification, drug-susceptibility outcomes) used as Observation.valueCodeableConcept in the DHIS information system."
 
 * insert OriginalCodeSystemDraft(observation-codeable-concept-cs)
 

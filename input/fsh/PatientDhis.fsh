@@ -1,8 +1,8 @@
 Profile: PatientDhis
 Parent: UZCorePatient
 Id: dhis-patient
-Title: "Dhis Patient Profile"
-Description: "Profile for patient resource"
+Title: "DHIS Patient Profile"
+Description: "Profile for a patient registered in the DHIS tuberculosis information system."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
@@ -15,7 +15,7 @@ Description: "Profile for patient resource"
 // Instance example
 Instance: example-patient-john
 InstanceOf: PatientDhis
-Description: "John Deera uchun namuna"
+Description: "Example patient registered in the DHIS information system."
 Usage: #example
 
 * identifier[nationalId]

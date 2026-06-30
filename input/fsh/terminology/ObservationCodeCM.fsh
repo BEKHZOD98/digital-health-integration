@@ -1,8 +1,8 @@
 Instance: observation-tuberculosis-code
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "Observation local codes to Loinc codes"
-Description: "Description"
+Title: "Tuberculosis observation local codes to LOINC"
+Description: "Maps local tuberculosis diagnostic test codes to LOINC."
 * url = "https://dhp.uz/fhir/integrations/ConceptMap/observation-tuberculosis-code"
 * name = "ObservationCodeToLoinc"
 * status = #draft

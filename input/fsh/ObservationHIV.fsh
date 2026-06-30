@@ -1,8 +1,8 @@
 Profile: DhisObservationHIV
 Parent: UZCoreObservation
 Id: dhis-observation-hiv
-Title: "Dhis Observation HIV Profile"
-Description: "Measurement and simple assertions"
+Title: "DHIS Observation HIV Profile"
+Description: "Profile for recording the result of an HIV test performed as part of tuberculosis/HIV co-infection screening in the DHIS information system."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
@@ -34,7 +34,7 @@ Description: "Measurement and simple assertions"
 //Instance Example
 Instance: example-obs-hiv
 InstanceOf: DhisObservationHIV
-Description: "Observation HIV tahlili"
+Description: "Example observation recording an HIV test result for a tuberculosis patient."
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory "Laboratory"

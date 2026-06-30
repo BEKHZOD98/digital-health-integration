@@ -1,8 +1,8 @@
 Profile: DhisSpecimen
 Parent: Specimen
 Id: dhis-specimen
-Title: "Dhis Specimen Profile"
-Description: "Example for analysis"
+Title: "DHIS Specimen Profile"
+Description: "Profile for a biological specimen collected for tuberculosis laboratory testing in the DHIS information system."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
@@ -29,7 +29,7 @@ Description: "Example for analysis"
 // Instance example
 Instance: example-dhis-specimen
 InstanceOf: DhisSpecimen
-Description: "Dhis Specimen namunasi"
+Description: "Example specimen representing a sputum sample collected for tuberculosis testing."
 Usage: #example
 * status = #available
 * type =  $specimen-type-cs#Spec001-0002 "Macrota"

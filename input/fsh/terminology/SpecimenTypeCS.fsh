@@ -1,7 +1,7 @@
 CodeSystem: SpecimenTypeCS
 Id: specimen-type-cs
-Title: "Specimen Type CodeSystem"
-Description: "Specimen Type codesystem description"
+Title: "DHIS Specimen Type CodeSystem"
+Description: "Local code system of specimen types collected for tuberculosis testing (sputum, bronchial fluid, pleural fluid, CSF, and others) used in the DHIS information system, with Russian and English designations and mappings to SNOMED CT."
 
 * insert OriginalCodeSystemDraft(specimen-type-cs)
 

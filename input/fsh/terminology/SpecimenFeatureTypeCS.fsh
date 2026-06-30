@@ -1,7 +1,7 @@
 CodeSystem: SpecimenFeatureTypeCS
 Id: specimen-feature-type-cs
-Title: "Speciment Feature Type CodeSystem"
-Description: "Specimen Feature Type codesystem description"
+Title: "DHIS Specimen Feature Type CodeSystem"
+Description: "Local code system describing the processing state of a tuberculosis specimen (primary sample, sediment, culture isolate) used in the DHIS information system."
 
 * insert OriginalCodeSystemDraft(specimen-feature-type-cs)
 

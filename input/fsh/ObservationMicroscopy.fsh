@@ -1,8 +1,8 @@
 Profile: DhisObservationMicroscopy
 Parent: UZCoreObservation
 Id: dhis-observation-microscopy
-Title: "DHis Observation Microscopy Profile"
-Description: "Measurement and simple assertions"
+Title: "DHIS Observation Microscopy Profile"
+Description: "Profile for recording sputum smear microscopy results, including acid-fast bacilli load grading, used in tuberculosis diagnosis in the DHIS information system."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
@@ -38,7 +38,7 @@ Description: "Measurement and simple assertions"
 //Instance Example
 Instance: example-microscopy
 InstanceOf: DhisObservationMicroscopy
-Description: "Mikroskopiya tahlili va uning gradatsiyasi namunasi"
+Description: "Example observation recording a sputum smear microscopy result with its acid-fast bacilli load grade."
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory

@@ -1,7 +1,7 @@
 ValueSet: SpecimenFeatureTypeVS
 Id: specimen-feature-type-vs
-Title: "Specimen Fetaure Type ValueSet"
-Description: "Specimen Feature Type valueset description"
+Title: "DHIS Specimen Feature Type ValueSet"
+Description: "Value set of tuberculosis specimen feature types drawn from the DHIS specimen feature type code system."
 * ^experimental = true
 * ^url = "https://terminology.dhp.uz/ValueSet/specimen-feature-type-vs"
 

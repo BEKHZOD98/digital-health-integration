@@ -1,8 +1,8 @@
 Profile: DhisObservationXray
 Parent: UZCoreObservation
 Id: dhis-observation-xray
-Title: "Dhis Observation Xray Profile"
-Description: "Measurement and simple assertions"
+Title: "DHIS Observation X-ray Profile"
+Description: "Profile for recording chest X-ray findings used in tuberculosis screening and diagnosis in the DHIS information system."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
@@ -28,7 +28,7 @@ Description: "Measurement and simple assertions"
 // Instance Example
 Instance: example-observation-xray
 InstanceOf: DhisObservationXray
-Description: "Xray Observation tahlili namunasi"
+Description: "Example observation recording a chest X-ray finding for tuberculosis screening."
 Usage: #example
 * status = #final
 * category =  $observation-category#imaging

@@ -1,7 +1,7 @@
 CodeSystem: ConditionCodeCS
 Id: condition-code-cs
-Title: "Codition Code CodeSystem"
-Description: "Condition code codeSystem description"
+Title: "DHIS Condition Code CodeSystem"
+Description: "Local code system of tuberculosis diagnoses used by the DHIS information system, with Russian and English designations and mappings to SNOMED CT."
 
 * insert OriginalCodeSystemDraft(condition-code-cs)
 

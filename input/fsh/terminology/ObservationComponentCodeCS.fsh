@@ -1,7 +1,7 @@
 CodeSystem: ObservationComponentCodeCS
 Id: observation-component-code-cs
-Title: "DHIS Observation Component Code"
-Description: "DHIS observation component codes"
+Title: "DHIS Observation Component Code CodeSystem"
+Description: "Local code system of tuberculosis observation component codes, including drug-susceptibility test agents and concentrations, used in Observation.component in the DHIS information system."
 
 * insert OriginalCodeSystemDraft(observation-component-code-cs)
 

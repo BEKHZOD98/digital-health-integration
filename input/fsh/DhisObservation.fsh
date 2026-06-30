@@ -1,8 +1,8 @@
 Profile: DhisObservation
 Parent: UZCoreObservation
 Id: dhis-observation
-Title: "Dhis Observation Profile"
-Description: "Measurement and simple assertions"
+Title: "DHIS Observation Profile"
+Description: "Profile for recording tuberculosis diagnostic test results and clinical observations in the DHIS information system."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
@@ -36,7 +36,7 @@ Description: "Measurement and simple assertions"
 // Instance Example
 Instance: example-tb-microscopy
 InstanceOf: DhisObservation
-Description: "Mikroskopiya tahlili namunasi"
+Description: "Example observation recording a sputum smear microscopy result for tuberculosis."
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory

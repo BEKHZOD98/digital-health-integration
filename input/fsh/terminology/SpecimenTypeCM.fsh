@@ -1,7 +1,7 @@
 Instance: specimen-type-conceptmap
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "Speciment types code to SNOMED CT"
+Title: "Tuberculosis specimen type local codes to SNOMED CT"
 Description: "Maps local UZ specimen codes to SNOMED CT."
 * url = "https://dhp.uz/fhir/integrations/ConceptMap/specimen-type-conceptmap"
 * name = "SpecimenTypesCodeToSnomed"

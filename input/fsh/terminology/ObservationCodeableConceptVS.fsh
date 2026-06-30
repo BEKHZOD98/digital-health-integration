@@ -1,7 +1,7 @@
 ValueSet: ObservationCodeableConceptVS
 Id: observation-codeable-concept-vs
-Title: "Observation codeable concept ValueSet"
-Description: "Collection of information on the place of birth of citizens born in the territory of the Republic of Uzbekistan"
+Title: "DHIS Observation Result ValueSet"
+Description: "Value set of coded tuberculosis test results, combining the DHIS observation result code system with HL7 observation interpretation codes, for use in Observation.valueCodeableConcept."
 * ^experimental = true
 * ^url = "https://terminology.dhp.uz/ValueSet/observation-codeable-concept-vs"
 

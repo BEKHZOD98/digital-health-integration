@@ -2,7 +2,7 @@ Profile: DHISEncounter
 Parent: UZCoreEncounter
 Id: dhis-encounter
 Title: "DHIS Encounter Profile"
-Description: "Profile for storing all information about a patient encounter/admission."
+Description: "Profile for documenting a patient encounter or hospital admission recorded in the DHIS tuberculosis information system."
 * ^status = #draft
 * ^experimental = true
 * ^publisher = "Uzinfocom"
@@ -12,7 +12,7 @@ Description: "Profile for storing all information about a patient encounter/admi
 Instance: example-dhis-encounter
 InstanceOf: DHISEncounter
 Usage: #example
-Description: "Example of a DHIS encounter"
+Description: "Example DHIS encounter representing a tuberculosis patient's inpatient admission."
 
 
 * status = #completed

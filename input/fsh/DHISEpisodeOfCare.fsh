@@ -1,8 +1,8 @@
 Profile: DHISEpisodeOfCare
 Parent: UZCoreEpisodeOfCare
 Id: dhis-episode-of-care
-Title: "DHIS Episode Of Care"
-Description: "Profile for episode of care in DHIS."
+Title: "DHIS Episode of Care Profile"
+Description: "Profile for an episode of care that groups a patient's tuberculosis diagnosis, treatment, and follow-up in the DHIS information system."
 * ^status = #draft
 * ^experimental = true
 * ^publisher = "Uzinfocom"
@@ -20,7 +20,7 @@ Description: "Profile for episode of care in DHIS."
 Instance: example-dhis-episode-of-care
 InstanceOf: DHISEpisodeOfCare
 Usage: #example
-Description: "Example of a DHIS episode of care"
+Description: "Example DHIS episode of care covering a patient's tuberculosis treatment course."
 
 * identifier[0].system = "http://dhp.uz/ids/episode-of-care"
 * identifier[0].value = "EOC-2026-0001"

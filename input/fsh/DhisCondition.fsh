@@ -1,8 +1,8 @@
 Profile: DhisCondition
 Parent: UZCoreCondition
 Id: dhis-condition  
-Title: "Dhis Condition Profile"
-Description: "Подробная информация о состояниях, проблемах или диагнозах"
+Title: "DHIS Condition Profile"
+Description: "Profile for recording a tuberculosis diagnosis or related condition in the DHIS information system."
 * ^experimental = true
 * ^status = #active
 
@@ -28,7 +28,7 @@ Description: "Подробная информация о состояниях, �
 // Instance Example
 Instance: example-tbc-diagnosis
 InstanceOf: DhisCondition
-Description: "Bakteriologik tasdiqlangan o'pka sili namunasi"
+Description: "Example condition representing a bacteriologically confirmed case of pulmonary tuberculosis."
 Usage: #example
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active "Active"
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed "Confirmed"

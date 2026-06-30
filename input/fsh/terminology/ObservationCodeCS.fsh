@@ -1,7 +1,7 @@
 CodeSystem: ObservationCodeCS
 Id: observation-dhis-code-cs
-Title: "Observation Code CodeSystem"
-Description: "Observation code codesystem description"
+Title: "DHIS Observation Code CodeSystem"
+Description: "Local code system of tuberculosis diagnostic tests and investigations used by the DHIS information system, with Russian and English designations and mappings to LOINC."
 
 * insert OriginalCodeSystemDraft(observation-dhis-code-cs)
 
