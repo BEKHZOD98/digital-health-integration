@@ -30,6 +30,6 @@ Description: "Value set of tuberculosis specimen type codes used by the DHIS inf
 * include $sct#119332005
 * include $sct#258441009
 * include $sct#258538002
-* include $sct#258473003
+* include $sct#119347001
 * include $sct#258439008
 * include $sct#119303007

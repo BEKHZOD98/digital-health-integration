@@ -135,8 +135,8 @@ Description: "Maps the local DHIS specimen type codes to SNOMED CT. Where the re
 
 * group[=].element[+].code = #Spec001-0020
 * group[=].element[=].display = "Sperma"
-* group[=].element[=].target[+].code = #258473003
-* group[=].element[=].target[=].display = "Semen sample"
+* group[=].element[=].target[+].code = #119347001
+* group[=].element[=].target[=].display = "Seminal fluid specimen"
 * group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #Spec001-0021

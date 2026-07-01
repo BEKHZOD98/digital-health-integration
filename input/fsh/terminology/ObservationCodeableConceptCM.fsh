@@ -33,7 +33,7 @@ Description: "Maps the local DHIS coded test-result codes that have an exact SNO
 
 * group.element[+].code = #Tub003-0022
 * group.element[=].display = "Aniqlanmagan"
-* group.element[=].target[+].code = #63069005
+* group.element[=].target[+].code = #373683006
 * group.element[=].target[=].display = "Living organism not identified"
 * group.element[=].target[=].relationship = #equivalent
 
@@ -45,8 +45,8 @@ Description: "Maps the local DHIS coded test-result codes that have an exact SNO
 
 * group.element[+].code = #Tub003-0024
 * group.element[=].display = "M. chelonae"
-* group.element[=].target[+].code = #73337005
-* group.element[=].target[=].display = "Mycobacterium chelonae"
+* group.element[=].target[+].code = #243377008
+* group.element[=].target[=].display = "Mycobacteroides chelonae"
 * group.element[=].target[=].relationship = #equivalent
 
 * group.element[+].code = #Tub003-0025
