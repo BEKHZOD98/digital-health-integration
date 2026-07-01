@@ -12,7 +12,7 @@ Ushbu sahifada sil holatlarini boshqarish ma'lumotlari FHIR resurslari sifatida 
 
 DHIS sil moduli sil (TB) bemorlarining ro'yxatga olinishini, tashxisini, laboratoriya tekshiruvini va davolanish jarayonini qamrab oladi. Ma'lumotlar DHIS sil axborot tizimidan keladi va DHP ga alohida, atomar FHIR resurslari sifatida qo'shiladi. Resurslar har bir bo'limda havola qilingan DHIS profillariga, aks holda esa [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) yoki standart FHIR profillariga mos keladi.
 
-Tushuncha standart ekvivalentga ega bo'lgan har qanday holatda, bu resurslar standart kodni bevosita o'z ichiga oladi - tashxislar, namuna turlari va aniqlangan turlar uchun SNOMED CT, diagnostik testlar uchun LOINC. Manba tizimi bu ma'lumotlarni o'zining lokal kodlari bilan qayd etadi; bu lokal kodlar faqat 1:1 standart ekvivalentga ega bo'lmagan tushunchalar uchun saqlanadi (masalan, o'stirish muhiti variantlari, surtma/o'stirma darajalari va dorilarga sezgirlik diapazonlari), va ConceptMap ularning eng yaqin standart tushunchasini hujjatlashtiradi. Quyidagi har bir bo'limda boshqaruvchi profil, aniq misol resursi, hamda kod tashuvchi har bir maydon uchun ma'lumotnoma va misol kodi jadvali keltirilgan.
+Tushuncha standart ekvivalentga ega bo'lgan har qanday holatda, resurslar standart kodni bevosita o'z ichiga oladi - tashxislar, namuna turlari, aniqlangan turlar va qayta ishlash holatlari uchun SNOMED CT, diagnostik testlar va dorilarga sezgirlikni aniqlash agentlari uchun LOINC. Manba tizimi bu ma'lumotlarni o'zining lokal kodlari bilan qayd etadi; har bir lokal kod o'zining DHIS CodeSystem'ida saqlanadi va ConceptMap orqali eng yaqin standart tushunchaga moslashtiriladi, shuning uchun integrator o'zida mavjud kod uchun standart kodni doimo topa oladi. Resurslarda aniq (`equivalent`) moslik mavjud bo'lgan har qanday holatda standart koddan foydalaning - har bir maydonga bog'langan ma'lumotnoma bunday tushunchalar uchun standart kodni taklif qiladi va faqat aniq standart ekvivalent bo'lmagan joyda lokal kodni saqlaydi (masalan, o'stirish muhiti variantlari, surtma/o'stirma darajalari va dorilarga sezgirlik diapazonlari). Quyidagi har bir bo'limda boshqaruvchi profil, aniq misol resursi, hamda kod tashuvchi har bir maydon uchun ma'lumotnoma va misol kodi jadvali keltirilgan.
 
 Odatdagi yozuv quyidagilarni bog'laydi: [bemor](#registering-a-patient-patient), bir yoki bir nechta [sil tashxislari](#recording-a-tb-diagnosis-condition), davolanish jarayonini guruhlaydigan [parvarish epizodi](#grouping-the-treatment-course-episodeofcare), olingan [namunalar](#collecting-a-specimen-specimen), va ulardan olingan [diagnostik test natijalari](#recording-diagnostic-test-results-observation).
 
@@ -48,7 +48,7 @@ Misol: [example-tbc-diagnosis](Condition-example-tbc-diagnosis.html)
 | Qachon boshlangani | - | `2025-06-03` | `onsetDateTime` |
 | Sub'ekt | - | [Patient](#registering-a-patient-patient) ga havola | `subject` |
 
-1:1 SNOMED CT mosligiga ega bo'lmagan bir nechta tashxis (masalan, fibro-kavernoz sil va sil bo'lmagan birga keladigan kasalliklar) lokal kodni saqlaydi; [tuberculosis-to-snomed](ConceptMap-tuberculosis-to-snomed.html) ConceptMap ularning eng yaqin SNOMED CT tushunchasini beradi.
+Aniq moslik mavjud bo'lgan har qanday holatda SNOMED CT kodidan foydalaning; faqat 1:1 SNOMED CT mosligiga ega bo'lmagan bir nechta tashxis (masalan, fibro-kavernoz sil va sil bo'lmagan birga keladigan kasalliklar) lokal kodni saqlaydi. [tuberculosis-to-snomed](ConceptMap-tuberculosis-to-snomed.html) ConceptMap har bir DHIS tashxis kodini uning SNOMED CT tushunchasiga moslashtiradi, shuning uchun integrator o'zida mavjud har qanday lokal kod uchun standart kodni topa oladi.
 
 ### Davolanish jarayonini guruhlash (EpisodeOfCare) {#grouping-the-treatment-course-episodeofcare}
 
@@ -83,11 +83,11 @@ Misol: [example-dhis-specimen](Specimen-example-dhis-specimen.html)
 | Sub'ekt | - | [Patient](#registering-a-patient-patient) ga havola | `subject` |
 | Nimadan olingan | - | ota Specimen ga havola | `parent` |
 
-Aksariyat namuna turlari bevosita SNOMED CT dan foydalanadi; 1:1 SNOMED CT mosligiga ega bo'lmagan joy guruhlari va o'stirish muhitlari lokal kodni saqlaydi, ular [specimen-type-conceptmap](ConceptMap-specimen-type-conceptmap.html) ConceptMap orqali eng yaqin SNOMED CT tushunchasiga moslashtiriladi.
+Aniq moslik mavjud bo'lgan har qanday holatda SNOMED CT kodidan foydalaning; faqat 1:1 SNOMED CT mosligiga ega bo'lmagan joy guruhlari va o'stirish muhitlari lokal kodni saqlaydi. [specimen-type-conceptmap](ConceptMap-specimen-type-conceptmap.html) ConceptMap har bir DHIS namuna turini uning SNOMED CT tushunchasiga moslashtiradi, [specimen-feature-type-to-snomed](ConceptMap-specimen-feature-type-to-snomed.html) ConceptMap esa qayta ishlash holatlari uchun xuddi shunday qiladi (kultura izolyati SNOMED CT kodidan foydalanadi; birlamchi namuna va cho'kma lokal kodni saqlaydi).
 
 ### Diagnostik test natijalarini qayd etish (Observation) {#recording-diagnostic-test-results-observation}
 
-Har bir laboratoriya yoki tasvirlash natijasi o'zining alohida Observation hisoblanadi. Quyidagi to'rtta profilning barchasida `Observation.code` testni aniqlaydi, u [ObservationCodeVS](ValueSet-observation-code-vs.html) dan olinadi - aniq kod mavjud bo'lganda LOINC, aks holda o'stirish muhiti va tahlil variantlari uchun lokal kod ([observation-tuberculosis-code](ConceptMap-observation-tuberculosis-code.html) ConceptMap orqali LOINC ga moslashtiriladi). Farqi - natija qanday saqlanishida:
+Har bir laboratoriya yoki tasvirlash natijasi o'zining alohida Observation hisoblanadi. Quyidagi to'rtta profilning barchasida `Observation.code` testni aniqlaydi, u [ObservationCodeVS](ValueSet-observation-code-vs.html) dan olinadi - aniq kod mavjud bo'lganda LOINC, aks holda o'stirish muhiti va tahlil variantlari uchun lokal kod. [observation-tuberculosis-code](ConceptMap-observation-tuberculosis-code.html) ConceptMap har bir DHIS test kodini uning LOINC tushunchasiga moslashtiradi. Farqi - natija qanday saqlanishida:
 
 - kodlangan natijalar [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) dan foydalanadi (aniqlangan turlar uchun SNOMED CT, surtma/o'stirma darajalari uchun lokal kodlar, hamda `POS`/`NEG` kabi HL7 interpretatsiya kodlari),
 - natija komponentlari (masalan, sezgirlik panelida har bir dori uchun bitta qator) [ObservationComponentCodeVS](ValueSet-observation-component-code-vs.html) bilan belgilanadi,
@@ -133,7 +133,9 @@ Misol: [example-tb-microscopy](Observation-example-tb-microscopy.html)
 | Sezgirlik natijasi | [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) | `v3-ObservationInterpretation#R` (Resistant) | `component.valueCodeableConcept` |
 | Tekshirilgan namuna | - | [DHISSpecimen](#collecting-a-specimen-specimen) ga havola | `specimen` |
 
-Oddiy dori nomli DST komponentlari bevosita LOINC `<drug> [Susceptibility]` kodidan foydalanadi; konsentratsiyani o'z ichiga olgan komponentlar lokal kodni saqlaydi (standart kod tushirib qoldiradigan kritik konsentratsiya), ular [observation-component-to-loinc](ConceptMap-observation-component-to-loinc.html) ConceptMap orqali LOINC ga moslashtiriladi.
+Aniqlangan turlar hamda iz va identifikatsiya kvalifikatorlari bevosita o'zining SNOMED CT kodidan foydalanadi; [observation-result-to-snomed](ConceptMap-observation-result-to-snomed.html) ConceptMap ularning har biri almashtiradigan DHIS natija kodini qayd etadi, surtma/o'stirma darajalari va standart ekvivalentga ega bo'lmagan chidamlilik diapazoni natijalari esa lokal kodni saqlaydi.
+
+DST komponentlari uchun oddiy dori nomli agentlar bevosita LOINC `<drug> [Susceptibility]` kodidan foydalanadi; konsentratsiyani o'z ichiga olgan agentlar lokal kodni saqlaydi (standart kod tushirib qoldiradigan kritik konsentratsiya). [observation-component-to-loinc](ConceptMap-observation-component-to-loinc.html) ConceptMap har bir DHIS dori agentini uning LOINC tushunchasiga moslashtiradi.
 
 #### Ko'krak qafasi rentgeni
 
