@@ -42,7 +42,7 @@ Description: "Value set of coded tuberculosis test results for use in Observatio
 
 * include $sct#113858008
 * include $sct#110379001
-* include $sct#373683006
+* include $sct#417831002
 * include $sct#83723009
 * include $sct#243377008
 * include $sct#113838007

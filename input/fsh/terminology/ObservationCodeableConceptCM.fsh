@@ -33,8 +33,8 @@ Description: "Maps the local DHIS coded test-result codes that have an exact SNO
 
 * group.element[+].code = #Tub003-0022
 * group.element[=].display = "Aniqlanmagan"
-* group.element[=].target[+].code = #373683006
-* group.element[=].target[=].display = "Living organism not identified"
+* group.element[=].target[+].code = #417831002
+* group.element[=].target[=].display = "Unidentified isolate"
 * group.element[=].target[=].relationship = #equivalent
 
 * group.element[+].code = #Tub003-0023
