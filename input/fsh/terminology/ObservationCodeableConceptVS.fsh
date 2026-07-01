@@ -5,7 +5,31 @@ Description: "Value set of coded tuberculosis test results for use in Observatio
 * ^experimental = true
 * ^url = "https://terminology.dhp.uz/ValueSet/observation-codeable-concept-vs"
 
-* include codes from system observation-codeable-concept-cs
+* include observation-codeable-concept-cs#Tub003-0001
+* include observation-codeable-concept-cs#Tub003-0002
+* include observation-codeable-concept-cs#Tub003-0004
+* include observation-codeable-concept-cs#Tub003-0005
+* include observation-codeable-concept-cs#Tub003-0006
+* include observation-codeable-concept-cs#Tub003-0007
+* include observation-codeable-concept-cs#Tub003-0008
+* include observation-codeable-concept-cs#Tub003-0009
+* include observation-codeable-concept-cs#Tub003-0010
+* include observation-codeable-concept-cs#Tub003-0011
+* include observation-codeable-concept-cs#Tub003-0012
+* include observation-codeable-concept-cs#Tub003-0013
+* include observation-codeable-concept-cs#Tub003-0014
+* include observation-codeable-concept-cs#Tub003-0015
+* include observation-codeable-concept-cs#Tub003-0016
+* include observation-codeable-concept-cs#Tub003-0017
+* include observation-codeable-concept-cs#Tub003-0018
+* include observation-codeable-concept-cs#Tub003-0019
+* include observation-codeable-concept-cs#Tub003-0026
+* include observation-codeable-concept-cs#Tub003-0027
+* include observation-codeable-concept-cs#Tub003-0038
+* include observation-codeable-concept-cs#Tub003-0039
+* include observation-codeable-concept-cs#Tub003-0040
+* include observation-codeable-concept-cs#Tub003-0041
+* include observation-codeable-concept-cs#Tub003-0042
 * include codes from system http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 
 * include $observation-interpretation#S

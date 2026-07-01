@@ -5,8 +5,14 @@ Description: "Value set of tuberculosis specimen type codes used by the DHIS inf
 * ^url = "https://terminology.dhp.uz/ValueSet/specimen-type-vs"
 * ^experimental = true
 
-* include codes from system specimen-type-cs
-
+* include specimen-type-cs#Spec001-0001
+* include specimen-type-cs#Spec001-0006
+* include specimen-type-cs#Spec001-0023
+* include specimen-type-cs#Spec001-0024
+* include specimen-type-cs#Spec001-0025
+* include specimen-type-cs#Spec001-0026
+* include specimen-type-cs#Spec001-0027
+* include specimen-type-cs#Spec001-0028
 * include $sct#119334006
 * include $sct#258610001
 * include $sct#258446004

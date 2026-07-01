@@ -5,6 +5,7 @@ Description: "Value set of tuberculosis specimen feature types used by the DHIS 
 * ^experimental = true
 * ^url = "https://terminology.dhp.uz/ValueSet/specimen-feature-type-vs"
 
-* include codes from system specimen-feature-type-cs
-
+* include specimen-feature-type-cs#Spec002-0001
+* include specimen-feature-type-cs#Spec002-0002
+* include specimen-feature-type-cs#Spec002-0003
 * include $sct#119303007

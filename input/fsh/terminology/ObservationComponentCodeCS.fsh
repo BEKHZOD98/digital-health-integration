@@ -1,7 +1,7 @@
 CodeSystem: ObservationComponentCodeCS
 Id: observation-component-code-cs
 Title: "DHIS Observation Component Code CodeSystem"
-Description: "Local code system of tuberculosis observation component codes, including drug-susceptibility test agents and concentrations, used in Observation.component in the DHIS information system."
+Description: "Local code system of tuberculosis observation component codes, including drug-susceptibility-test agents, used by the DHIS information system with Russian and English designations. The DHIS Observation Component Code to LOINC ConceptMap records the LOINC [Susceptibility] concept for the drug agents; in resources use the LOINC code directly wherever an exact match exists (see the DHIS Observation Component Code ValueSet), keeping a local code only where no exact LOINC match exists."
 
 * insert OriginalCodeSystemDraft(observation-component-code-cs)
 
@@ -131,6 +131,12 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[+].language = #en
   * ^designation[=].value = "Pretomanid (1.0 mg/mL)"
 
+* #Tub004-0022 "Rifampcin"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Рифампциин"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Rifampcin"
+
 * #Tub004-0023 "Isoniazid ↑MIC"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Изониazid ↑МИK"
@@ -160,6 +166,24 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[=].value = "Моксифлоксацин ↓МИК"
   * ^designation[+].language = #en
   * ^designation[=].value = "Moxifloxacin ↓MIC"
+
+* #Tub004-0028 "Levofloxacin"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Левофлоксацин"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Levofloxacin"
+
+* #Tub004-0029 "Amikacin"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Амикацин"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Amikacin"
+
+* #Tub004-0030 "Kanamycin"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Канамицин"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Kanamycin"
 
 * #Tub004-0031 "CM/AS izolyatini identifikatsiya qilish"
   * ^designation[0].language = #ru

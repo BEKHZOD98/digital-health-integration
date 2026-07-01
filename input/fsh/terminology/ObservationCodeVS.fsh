@@ -5,8 +5,11 @@ Description: "Value set of tuberculosis diagnostic test codes used by the DHIS i
 * ^url = "https://terminology.dhp.uz/ValueSet/observation-code-vs"
 * ^experimental = true
 
-* include codes from system observation-dhis-code-cs
-
+* include observation-dhis-code-cs#Tub002-0004
+* include observation-dhis-code-cs#Tub002-0005
+* include observation-dhis-code-cs#Tub002-0006
+* include observation-dhis-code-cs#Tub002-0007
+* include observation-dhis-code-cs#Tub002-0009
 * include $loinc#53904-9
 * include $loinc#647-8
 * include $loinc#89371-9

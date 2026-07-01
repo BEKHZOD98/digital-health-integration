@@ -10,7 +10,7 @@ This page documents how tuberculosis case-management data is represented as FHIR
 
 The DHIS tuberculosis module captures the registration, diagnosis, laboratory work-up and treatment course of tuberculosis (TB) patients. The data originates from the DHIS tuberculosis information system and is added to the DHP as individual, atomic FHIR resources. Resources conform to the DHIS profiles linked in each section, and to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) or standard FHIR profiles otherwise.
 
-Wherever a concept has a standard equivalent, these resources carry the standard code directly - SNOMED CT for diagnoses, specimen types and identified species, LOINC for diagnostic tests. The source system records this data with its own local codes; those local codes are retained only for concepts that have no 1:1 standard equivalent (for example culture-medium variants, smear/culture grades and drug-susceptibility bands), and a ConceptMap documents their nearest standard concept. Each section below gives the governing profile, a concrete example resource, and a table of the value set and an example code for every field that carries a code.
+Wherever a concept has a standard equivalent, resources carry the standard code directly - SNOMED CT for diagnoses, specimen types, identified species and processing states, LOINC for diagnostic tests and drug-susceptibility agents. The source system records this data with its own local codes; every local code is kept in its DHIS CodeSystem and mapped to its nearest standard concept by a ConceptMap, so an integrator can always look up the standard code for a code they hold. **In resources, use the standard code wherever an exact (`equivalent`) match exists** - the value set bound to each field offers the standard code for those concepts and keeps a local code only where no exact standard equivalent exists (for example culture-medium variants, smear/culture grades and drug-susceptibility bands). Each section below gives the governing profile, a concrete example resource, and a table of the value set and an example code for every field that carries a code.
 
 A typical record links together: a [patient](#registering-a-patient-patient), one or more [TB diagnoses](#recording-a-tb-diagnosis-condition), an [episode of care](#grouping-the-treatment-course-episodeofcare) that groups the treatment course, the [specimens](#collecting-a-specimen-specimen) collected, and the [diagnostic test results](#recording-diagnostic-test-results-observation) produced from them.
 
@@ -46,7 +46,7 @@ Example: [example-tbc-diagnosis](Condition-example-tbc-diagnosis.html)
 | When it started | - | `2025-06-03` | `onsetDateTime` |
 | Subject | - | reference to [Patient](#registering-a-patient-patient) | `subject` |
 
-The few diagnoses without a 1:1 SNOMED CT match (e.g. fibro-cavitary TB and the non-TB comorbidities) keep a local code; the [tuberculosis-to-snomed](ConceptMap-tuberculosis-to-snomed.html) ConceptMap gives their nearest SNOMED CT concept.
+Use the SNOMED CT code wherever an exact match exists; only the few diagnoses without a 1:1 SNOMED CT match (e.g. fibro-cavitary TB and the non-TB comorbidities) keep a local code. The [tuberculosis-to-snomed](ConceptMap-tuberculosis-to-snomed.html) ConceptMap maps every DHIS diagnosis code to its SNOMED CT concept, so an integrator can find the standard code for any local code they hold.
 
 ### Grouping the treatment course (EpisodeOfCare)
 
@@ -81,11 +81,11 @@ Example: [example-dhis-specimen](Specimen-example-dhis-specimen.html)
 | Subject | - | reference to [Patient](#registering-a-patient-patient) | `subject` |
 | Derived from | - | reference to a parent Specimen | `parent` |
 
-Most specimen types use SNOMED CT directly; the site groupings and culture media without a 1:1 SNOMED CT match keep a local code, mapped to their nearest SNOMED CT concept by the [specimen-type-conceptmap](ConceptMap-specimen-type-conceptmap.html) ConceptMap.
+Use the SNOMED CT code wherever an exact match exists; only the site groupings and culture media without a 1:1 SNOMED CT match keep a local code. The [specimen-type-conceptmap](ConceptMap-specimen-type-conceptmap.html) ConceptMap maps every DHIS specimen type to its SNOMED CT concept, and the [specimen-feature-type-to-snomed](ConceptMap-specimen-feature-type-to-snomed.html) ConceptMap does the same for the processing states (the culture isolate uses a SNOMED CT code; primary sample and sediment keep a local code).
 
 ### Recording diagnostic test results (Observation)
 
-Every laboratory or imaging result is its own Observation. In all four profiles below, `Observation.code` identifies the test, drawn from [ObservationCodeVS](ValueSet-observation-code-vs.html) - LOINC where an exact code exists, otherwise a local code for culture-medium and assay variants (mapped to LOINC by the [observation-tuberculosis-code](ConceptMap-observation-tuberculosis-code.html) ConceptMap). What differs is how the result is carried:
+Every laboratory or imaging result is its own Observation. In all four profiles below, `Observation.code` identifies the test, drawn from [ObservationCodeVS](ValueSet-observation-code-vs.html) - LOINC where an exact code exists, otherwise a local code for culture-medium and assay variants. The [observation-tuberculosis-code](ConceptMap-observation-tuberculosis-code.html) ConceptMap maps every DHIS test code to its LOINC concept. What differs is how the result is carried:
 
 - coded results use [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) (SNOMED CT for identified species, local codes for smear/culture grades, plus HL7 interpretation codes such as `POS`/`NEG`),
 - result components (for example, one row per drug in a susceptibility panel) are labelled with [ObservationComponentCodeVS](ValueSet-observation-component-code-vs.html),
@@ -131,7 +131,9 @@ Example: [example-tb-microscopy](Observation-example-tb-microscopy.html)
 | Susceptibility outcome | [ObservationCodeableConceptVS](ValueSet-observation-codeable-concept-vs.html) | `v3-ObservationInterpretation#R` (Resistant) | `component.valueCodeableConcept` |
 | Specimen tested | - | reference to [DHISSpecimen](#collecting-a-specimen-specimen) | `specimen` |
 
-Plain drug-name DST components use the LOINC `<drug> [Susceptibility]` code directly; concentration-bearing components keep a local code (the critical concentration a standard code drops), mapped to LOINC by the [observation-component-to-loinc](ConceptMap-observation-component-to-loinc.html) ConceptMap.
+Identified species and the trace and identification qualifiers use their SNOMED CT code directly; the [observation-result-to-snomed](ConceptMap-observation-result-to-snomed.html) ConceptMap records the DHIS result code each one replaces, while smear/culture grades and resistance-band outcomes without a standard equivalent keep a local code.
+
+For DST components, plain drug-name agents use the LOINC `<drug> [Susceptibility]` code directly; concentration-bearing agents keep a local code (the critical concentration a standard code drops). The [observation-component-to-loinc](ConceptMap-observation-component-to-loinc.html) ConceptMap maps every DHIS drug agent to its LOINC concept.
 
 #### Chest X-ray
 

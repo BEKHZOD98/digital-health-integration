@@ -5,8 +5,9 @@ Description: "Value set of tuberculosis diagnosis and comorbidity codes used by 
 * ^url = "https://terminology.dhp.uz/ValueSet/condition-code-vs"
 * ^experimental = true
 
-* include codes from system condition-code-cs
-
+* include condition-code-cs#tub001-0009
+* include condition-code-cs#tub001-0025
+* include condition-code-cs#tub001-0027
 * include $sct#88356006
 * include $sct#186278007
 * include $sct#724541008

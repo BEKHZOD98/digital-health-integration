@@ -1,8 +1,8 @@
 Instance: observation-component-to-loinc
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "Tuberculosis observation component local codes to LOINC"
-Description: "Maps the local DHIS drug-susceptibility-test (DST) component codes to their LOINC <drug> [Susceptibility] observation code. Concentration-bearing local codes are narrower than the generic LOINC observable (the critical concentration is not captured by LOINC); plain drug-name codes are equivalent. Non-drug component codes (MIC-band interpretations, grading, identification flags) have no standard equivalent and are not listed."
+Title: "Tuberculosis Drug Susceptibility Components to LOINC"
+Description: "Maps the local DHIS drug-susceptibility-test component codes to their LOINC [Susceptibility] code. Where the relationship is `equivalent` (plain drug-name agents), use the LOINC code directly in resources (see the DHIS Observation Component Code ValueSet); concentration-bearing agents are narrower and keep their local code. Non-drug component codes (interpretations, grading, identification flags) have no LOINC equivalent and are not listed."
 * url = "https://dhp.uz/fhir/integrations/ConceptMap/observation-component-to-loinc"
 * name = "ObservationComponentToLoinc"
 * status = #draft
@@ -10,7 +10,6 @@ Description: "Maps the local DHIS drug-susceptibility-test (DST) component codes
 * publisher = "Uzinfocom"
 
 * group.source = Canonical(ObservationComponentCodeCS)
-* sourceScopeCanonical = Canonical(ObservationComponentCodeVS)
 * group.target = $loinc
 * targetScopeCanonical = $loinc-vs
 
@@ -109,4 +108,28 @@ Description: "Maps the local DHIS drug-susceptibility-test (DST) component codes
 * group[=].element[=].target[+].code = #18922-5
 * group[=].element[=].target[=].display = "Ethionamide [Susceptibility]"
 * group[=].element[=].target[=].relationship = #related-to
+
+* group[=].element[+].code = #Tub004-0022
+* group[=].element[=].display = "Rifampcin"
+* group[=].element[=].target[+].code = #18974-6
+* group[=].element[=].target[=].display = "Rifampin [Susceptibility]"
+* group[=].element[=].target[=].relationship = #equivalent
+
+* group[=].element[+].code = #Tub004-0028
+* group[=].element[=].display = "Levofloxacin"
+* group[=].element[=].target[+].code = #20629-2
+* group[=].element[=].target[=].display = "Levofloxacin [Susceptibility]"
+* group[=].element[=].target[=].relationship = #equivalent
+
+* group[=].element[+].code = #Tub004-0029
+* group[=].element[=].display = "Amikacin"
+* group[=].element[=].target[+].code = #18860-7
+* group[=].element[=].target[=].display = "Amikacin [Susceptibility]"
+* group[=].element[=].target[=].relationship = #equivalent
+
+* group[=].element[+].code = #Tub004-0030
+* group[=].element[=].display = "Kanamycin"
+* group[=].element[=].target[+].code = #18935-7
+* group[=].element[=].target[=].display = "Kanamycin [Susceptibility]"
+* group[=].element[=].target[=].relationship = #equivalent
 

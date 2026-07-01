@@ -1,7 +1,7 @@
 CodeSystem: ObservationCodeableConceptCS
 Id: observation-codeable-concept-cs
 Title: "DHIS Observation Result CodeSystem"
-Description: "Local code system of coded tuberculosis test results (smear/culture grades, processing states and drug-susceptibility outcomes) used as Observation.valueCodeableConcept in the DHIS information system, retained only for results that have no 1:1 standard equivalent. Identified mycobacterial species and standard result qualifiers are represented directly by SNOMED CT."
+Description: "Local code system of coded tuberculosis test results (smear/culture grades, processing states, identified species and drug-susceptibility outcomes) used as Observation.valueCodeableConcept in the DHIS information system, with Russian and English designations. The DHIS Observation Result to SNOMED CT ConceptMap records the SNOMED CT concept for the species and standard result qualifiers; in resources use the SNOMED CT code directly wherever an exact match exists (see the DHIS Observation Result ValueSet), keeping a local code only where no exact standard match exists."
 
 * insert OriginalCodeSystemDraft(observation-codeable-concept-cs)
 
@@ -16,6 +16,12 @@ Description: "Local code system of coded tuberculosis test results (smear/cultur
   * ^designation[=].value = "Препарат не тестировался"
   * ^designation[+].language = #en
   * ^designation[=].value = "Drug not tested"
+
+* #Tub003-0003 "Izlar aniqlangan"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Следы"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Trace detected"
 
 * #Tub003-0004 "Test xatosi (takrorlash)"
   * ^designation[0].language = #ru
@@ -113,6 +119,42 @@ Description: "Local code system of coded tuberculosis test results (smear/cultur
   * ^designation[+].language = #en
   * ^designation[=].value = "0 – CFU not detected"
 
+* #Tub003-0020 "M. tuberculosis kompleksi (MTBC)"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M.Tuberculesis комплекс (MTBC)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. tuberculosis complex (MTBC)"
+
+* #Tub003-0021 "Silga oid bo‘lmagan mikobakteriyalar (NTM)"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Нетуберкулезные микобактерии (NTM)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Non-tuberculous mycobacteria (NTM)"
+
+* #Tub003-0022 "Aniqlanmagan"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Не определен"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Not identified"
+
+* #Tub003-0023 "M.avium ssp."
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M.avium ssp."
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M.avium ssp."
+
+* #Tub003-0024 "M. chelonae"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. chelonae"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. chelonae"
+
+* #Tub003-0025 "M. abscessus"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. abscessus"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. abscessus"
+
 * #Tub003-0026 "M. fortuitum 1"
   * ^designation[0].language = #ru
   * ^designation[=].value = "M. fortuitum 1"
@@ -124,6 +166,66 @@ Description: "Local code system of coded tuberculosis test results (smear/cultur
   * ^designation[=].value = "M. fortuitum 2"
   * ^designation[+].language = #en
   * ^designation[=].value = "M. fortuitum 2"
+
+* #Tub003-0028 "M. gordonae"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. gordonae"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. gordonae"
+
+* #Tub003-0029 "M. intracellulare"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. intracellulare"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. intracellulare"
+
+* #Tub003-0030 "M. scrofulaceum"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. scrofulaceum"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. scrofulaceum"
+
+* #Tub003-0031 "M. interjectum"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. interjectum"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. interjectum"
+
+* #Tub003-0032 "M. kansasii"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. kansasii"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. kansasii"
+
+* #Tub003-0033 "M. malmoense"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. malmoense"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. malmoense"
+
+* #Tub003-0034 "M. marinum"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. marinum"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. marinum"
+
+* #Tub003-0035 "M. peregrinum"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. peregrinum"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. peregrinum"
+
+* #Tub003-0036 "M. xenopi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "M. xenopi"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "M. xenopi"
+
+* #Tub003-0037 "Mycobacterium spp"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Mycobacterium spp"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Mycobacterium spp"
 
 * #Tub003-0038 "Birlamchi namuna"
   * ^designation[0].language = #ru
