@@ -22,7 +22,8 @@ Description: "Profile for recording sputum smear microscopy results, including a
 * performer 0..1 MS
 * performer only Reference(UZCoreOrganization)
 
-* method = $sct#278289002 "Microscopy technique (qualifier value)"
+* method 0..1 MS
+* method from DHISObservationMethodVS
 
 * specimen 0..1 MS
 * specimen only Reference(Specimen)
