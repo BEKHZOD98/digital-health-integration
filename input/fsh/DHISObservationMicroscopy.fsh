@@ -30,10 +30,10 @@ Description: "Profile for recording sputum smear microscopy results, including a
 
 * component 0..* MS
   * code 1..1 MS
-  * code from ObservationComponentCodeVS (required)
+  * code from DHISObservationComponentCodeVS (required)
   * value[x] only CodeableConcept
   * valueCodeableConcept 1..1 MS
-  * valueCodeableConcept from ObservationCodeableConceptVS
+  * valueCodeableConcept from DHISObservationCodeableConceptVS
 
 //Instance Example
 Instance: example-microscopy
@@ -48,6 +48,6 @@ Usage: #example
 * issued = "2026-03-12T11:00:00Z"
 * performer.reference = "Organization/example-organization"
 * component[0]
-  * code = https://terminology.dhp.uz/CodeSystem/observation-component-code-cs#Tub004-0005 "AMK/KAN/CAP result"
-  * valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/observation-codeable-concept-cs#Tub003-0040 "Macrota sample sediment"
+  * code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-component-code-cs#Tub004-0005 "AMK/KAN/CAP result"
+  * valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-codeable-concept-cs#Tub003-0040 "Macrota sample sediment"
   * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#POS "Positive"

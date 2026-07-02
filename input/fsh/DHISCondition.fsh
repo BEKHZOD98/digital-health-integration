@@ -12,7 +12,7 @@ Description: "Profile for recording a tuberculosis diagnosis or related conditio
 * verificationStatus 0..1 MS
 * category 0..* MS
 * code 0..1 MS 
-* code from ConditionCodeVS
+* code from DHISConditionCodeVS
 * code ^short = "Identification of a condition, problem, or diagnosis."
 * subject 1..1 MS
 * subject only Reference(UZCorePatient)
