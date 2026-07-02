@@ -1,9 +1,9 @@
-CodeSystem: ObservationComponentCodeCS
-Id: observation-component-code-cs
+CodeSystem: DHISObservationComponentCodeCS
+Id: dhis-observation-component-code-cs
 Title: "DHIS Observation Component Code CodeSystem"
 Description: "Local code system of tuberculosis observation component codes, including drug-susceptibility-test agents, used by the DHIS information system with Russian and English designations. The DHIS Observation Component Code to LOINC ConceptMap records the LOINC [Susceptibility] concept for the drug agents; in resources use the LOINC code directly wherever an exact match exists (see the DHIS Observation Component Code ValueSet), keeping a local code only where no exact LOINC match exists."
 
-* insert OriginalCodeSystemDraft(observation-component-code-cs)
+* insert OriginalCodeSystemDraft(dhis-observation-component-code-cs)
 
 * #Tub004-0001 "INH ↑ MIK natijasi"
   * ^designation[0].language = #ru
