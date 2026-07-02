@@ -17,6 +17,7 @@ Description: "Profile for recording a tuberculosis diagnosis or related conditio
 * subject 1..1 MS
 * subject only Reference(UZCorePatient)
 * bodySite 0..1 MS
+* bodySite from DHISBodySiteVS
 * onset[x] MS
 * onset[x] ^short = "Estimated or actual date, date-time, or age."
 * onsetDateTime 0..1 MS
