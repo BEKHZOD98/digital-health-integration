@@ -3,8 +3,12 @@ Id: laterality-qualifier-vs
 Title: "Laterality Qualifier ValueSet"
 Description: "Laterality qualifier codes with translations"
 
-* ^url = "https://dhp.uz/fhir/integrations/ValueSet/laterality-qualifier-vs"
+* ^url = "https://terminology.dhp.uz/fhir/integrations/ValueSet/laterality-qualifier-vs"
 * ^status = #draft
 * ^experimental = true
 
-* include codes from system laterality-qualifier-cs
+* include $cancer-cs#cancr0016.00001
+* include $cancer-cs#cancr0016.00002
+* include $cancer-cs#cancr0016.00003
+* include $cancer-cs#cancr0016.00004
+* include $cancer-cs#cancr0016.00005

@@ -4,14 +4,14 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    types: [opened, synchronize] # This will trigger the workflow only when a PR is opened or updated with new commits
+    types: [opened, synchronize, reopened, ready_for_review] # rebuild on open, new commits, reopen, and ready-for-review
 
 jobs:
   sushi:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install Jekyll
         run: sudo gem install jekyll

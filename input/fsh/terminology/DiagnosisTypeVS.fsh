@@ -3,7 +3,7 @@
 // Title: "Diagnosis Type ValueSet"
 // Description: "Diagnosis type codes with translations"
 
-// * ^url = "https://dhp.uz/fhir/integrations/ValueSet/diagnosis-type-vs"
+// * ^url = "https://terminology.dhp.uz/fhir/integrations/ValueSet/diagnosis-type-vs"
 // * ^status = #draft
 // * ^experimental = true
 

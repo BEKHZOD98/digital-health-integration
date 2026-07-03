@@ -3,12 +3,8 @@ Id: icd3-topography-cs
 Title: "ICD-3 Topography"
 Description: "A system of ICD-3 topography codes. This system indicates the anatomical location of cancers and provides translations in Uzbek and Russian."
 
-* ^url = "https://terminology.dhp.uz/CodeSystem/icd3-topography-cs"
+* insert OriginalCodeSystemDraft(icd3-topography-cs)
 
-
-* ^experimental = true
-* ^caseSensitive = true
-* ^language = #uz
 
 * #C000 "yuqori lab tashqi yuzasi"
   * ^designation[0].language = #ru

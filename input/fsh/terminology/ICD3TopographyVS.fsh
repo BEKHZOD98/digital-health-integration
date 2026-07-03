@@ -3,7 +3,7 @@ Id: icd-3-topography-vs
 Title: "ICD Topography"
 Description: "Tumor location (topography)"
 * ^language = #en
-* ^url = "https://dhp.uz/fhir/integrations/ValueSet/icd-3-topography-vs"
+* ^url = "https://terminology.dhp.uz/fhir/integrations/ValueSet/icd-3-topography-vs"
 * ^status = #draft
 * ^experimental = true
 

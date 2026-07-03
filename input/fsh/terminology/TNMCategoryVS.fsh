@@ -3,7 +3,7 @@ Id: tnm-category-vs
 Title: "TNM Category ValueSet"
 Description: "TNM category classification codes for clinical and pathological T, N, and M staging."
 
-* ^url = "https://dhp.uz/fhir/integrations/ValueSet/tnm-category-vs"
+* ^url = "https://terminology.dhp.uz/fhir/integrations/ValueSet/tnm-category-vs"
 * ^status = #draft
 * ^experimental = true
 

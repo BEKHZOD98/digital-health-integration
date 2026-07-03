@@ -3,11 +3,8 @@ Id: icd3-morphology-cs
 Title: "ICD-3 Morphology"
 Description: "A system of ICD-3 morphology codes. These codes describe the morphological characteristics of cancer cells and include translations in Uzbek and Russian."
 
-* ^url = "https://terminology.dhp.uz/CodeSystem/icd3-morphology-cs"
+* insert OriginalCodeSystemDraft(icd3-morphology-cs)
 
-* ^experimental = true
-* ^caseSensitive = true
-* ^language = #uz
 
 * #8000 "Xavfli o'smalar QA"
   * ^designation[0].language = #ru

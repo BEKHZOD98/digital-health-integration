@@ -3,8 +3,13 @@ Id: genetic-disorder-vs
 Title: "Genetic Disorder ValueSet"
 Description: "Variants of genetic mutations detected"
 
-* ^url = "https://dhp.uz/fhir/integrations/ValueSet/genetic-disorder-vs"
+* ^url = "https://terminology.dhp.uz/fhir/integrations/ValueSet/genetic-disorder-vs"
 * ^status = #draft
 * ^experimental = true
 
-* include codes from system genetic-disorder-cs
+* include $cancer-cs#cancr0005.00001
+* include $cancer-cs#cancr0005.00002
+* include $cancer-cs#cancr0005.00003
+* include $cancer-cs#cancr0005.00004
+* include $cancer-cs#cancr0005.00005
+* include $cancer-cs#cancr0005.00006
