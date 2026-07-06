@@ -31,4 +31,7 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screeni
 
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/dhis-observation-method-vs is a proper subset of http://hl7.org/fhir/ValueSet/observation-methods|5.0.0 - value set is too large to check
 
-Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000) (and Error from https://tx.fhir.org/r5: Error: The value set 'http://hl7.org/fhir/ValueSet/body-site' expansion has too many codes to produce (>10000) )
+# dhis-body-site-vs includes the whole FHIR body-site VS, which is too large to expand.
+# Trailing % => startsWith match: the real message has an embedded newline before its final ')',
+# so an exact-match line never matches. Cut at (>1000) to stay independent of tx-server wording.
+Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
