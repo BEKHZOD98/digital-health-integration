@@ -153,5 +153,4 @@ Alias: $drs-vs = http://hl7.org/fhir/ValueSet/document-reference-status
 Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
 Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
 
-Alias: $comparator = http://hl7.org/fhir/quantity-comparator
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
