@@ -3,7 +3,7 @@ InstanceOf: ConceptMap
 Usage: #definition
 Title: "Tuberculosis Diagnostic Tests to LOINC"
 Description: "Maps the local DHIS tuberculosis diagnostic test codes to LOINC. Where the relationship is `equivalent`, use the LOINC code directly in resources (see the DHIS Observation Code ValueSet); the remaining tests (culture media and assay variants) have only a broader or related LOINC concept and keep their local code."
-* url = "https://dhp.uz/fhir/integrations/ConceptMap/dhis-observation-tuberculosis-code"
+* url = "https://terminology.dhp.uz/fhir/integrations/ConceptMap/dhis-observation-tuberculosis-code"
 * name = "ObservationCodeToLoinc"
 * status = #draft
 * experimental = false

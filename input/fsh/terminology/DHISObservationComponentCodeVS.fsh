@@ -2,7 +2,7 @@ ValueSet: DHISObservationComponentCodeVS
 Id: dhis-observation-component-code-vs
 Title: "DHIS Observation Component Code ValueSet"
 Description: "Value set of tuberculosis observation component codes. Plain drug-name DST agents use their LOINC [Susceptibility] code directly; concentration-bearing agents and non-drug component codes use local codes from the DHIS observation component code system."
-* ^url = "https://dhp.uz/fhir/integrations/ValueSet/dhis-observation-component-code-vs"
+* insert IntegrationsValueSet(dhis-observation-component-code-vs)
 * ^experimental = true
 * ^language = #uz
 

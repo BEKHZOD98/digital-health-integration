@@ -3,7 +3,7 @@ InstanceOf: ConceptMap
 Usage: #definition
 Title: "Tuberculosis Drug Susceptibility Components to LOINC"
 Description: "Maps the local DHIS drug-susceptibility-test component codes to their LOINC [Susceptibility] code. Where the relationship is `equivalent` (plain drug-name agents), use the LOINC code directly in resources (see the DHIS Observation Component Code ValueSet); concentration-bearing agents are narrower and keep their local code. Non-drug component codes (interpretations, grading, identification flags) have no LOINC equivalent and are not listed."
-* url = "https://dhp.uz/fhir/integrations/ConceptMap/dhis-observation-component-to-loinc"
+* url = "https://terminology.dhp.uz/fhir/integrations/ConceptMap/dhis-observation-component-to-loinc"
 * name = "ObservationComponentToLoinc"
 * status = #draft
 * experimental = false

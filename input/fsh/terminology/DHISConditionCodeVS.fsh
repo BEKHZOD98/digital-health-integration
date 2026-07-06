@@ -2,7 +2,7 @@ ValueSet: DHISConditionCodeVS
 Id: dhis-condition-code-vs
 Title: "DHIS Condition Code ValueSet"
 Description: "Value set of tuberculosis diagnosis and comorbidity codes used by the DHIS information system. Concepts with an exact SNOMED CT equivalent are expressed as SNOMED CT codes; the remaining concepts use local codes that have no 1:1 SNOMED CT match."
-* ^url = "https://dhp.uz/fhir/integrations/ValueSet/dhis-condition-code-vs"
+* insert IntegrationsValueSet(dhis-condition-code-vs)
 * ^experimental = true
 
 * include dhis-condition-code-cs#tub001-0009

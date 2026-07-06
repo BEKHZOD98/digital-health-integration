@@ -3,8 +3,7 @@ Id: dhis-observation-codeable-concept-vs
 Title: "DHIS Observation Result ValueSet"
 Description: "Value set of coded tuberculosis test results for use in Observation.valueCodeableConcept. Identified mycobacterial species and standard result qualifiers are expressed as SNOMED CT codes; smear/culture grades, processing states and resistance-band outcomes that have no 1:1 standard equivalent use local codes; HL7 observation interpretation codes complete the set."
 * ^experimental = true
-* ^url = "https://dhp.uz/fhir/integrations/ValueSet/dhis-observation-codeable-concept-vs"
-
+* insert IntegrationsValueSet(dhis-observation-codeable-concept-vs)
 * include dhis-observation-codeable-concept-cs#Tub003-0001
 * include dhis-observation-codeable-concept-cs#Tub003-0002
 * include dhis-observation-codeable-concept-cs#Tub003-0004
