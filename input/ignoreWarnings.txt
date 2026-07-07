@@ -17,6 +17,7 @@ Resource has a language (ru), and the XHTML has a lang (en), but they differ
 # per identifiers.md in the main DHP IG (uz.dhp.core)
 No definition could be found for URL value 'https://dhp.uz/fhir/core/sid/pid/uz/prn/200935935/%
 
+Unable to check if https://dhp.uz/fhir/integrations/ValueSet/research-method-vs is a proper subset of http://hl7.org/fhir/ValueSet/observation-methods|5.0.0 - value set is too large to check
 # IG Publisher generates inline scripts for table filters then warns they're illegal - bug reported, can be ignored
 The <script> containing the javascript '//%
 
@@ -28,3 +29,11 @@ Unable to check if https://dhp.uz/fhir/integrations/ValueSet/screening-body-site
 
 # IG Publisher 2.2.10 emits an OID-assignment recommendation for every CodeSystem/ValueSet. We don't use OID-based terminology (e.g. CDA), so assigning OIDs IG-wide adds no value here.
 %should have an OID assigned to cater for possible use with OID based terminology systems%
+
+Unable to check if https://dhp.uz/fhir/integrations/ValueSet/dhis-observation-method-vs is a proper subset of http://hl7.org/fhir/ValueSet/observation-methods|5.0.0 - value set is too large to check
+
+Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000) (and Error from https://tx.fhir.org/r5: Error: The value set 'http://hl7.org/fhir/ValueSet/body-site' expansion has too many codes to produce (>10000) )
+Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
+Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/research-method-vs is a proper subset of http://hl7.org/fhir/ValueSet/observation-methods|5.0.0 - value set is too large to check
+Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/research-method-vs is a proper subset of http://hl7.org/fhir/ValueSet/observation-methods|5.0.0 - value set is too large to check
+Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/dhis-observation-method-vs is a proper subset of http://hl7.org/fhir/ValueSet/observation-methods|5.0.0 - value set is too large to check

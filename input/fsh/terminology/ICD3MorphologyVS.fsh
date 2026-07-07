@@ -1,0 +1,11 @@
+ValueSet: ICD3MorphologyVS
+Id: icd10-morphology-vs
+Title: "ICD-O Morphology"
+Description: "Tumor morphology classification"
+
+* ^url = "https://terminology.dhp.uz/fhir/integrations/ValueSet/icd10-morphology-vs"
+* ^status = #draft
+* ^experimental = true
+* ^language = #en
+
+* include codes from system icd3-morphology-cs

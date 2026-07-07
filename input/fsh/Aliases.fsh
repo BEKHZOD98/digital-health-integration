@@ -1,17 +1,14 @@
 Alias: $data-absent-reason = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias: $document-category-cs = https://dhp.uz/fhir/integrations/CodeSystem/document-category-cs
 Alias: $gender = http://hl7.org/fhir/administrative-gender
-Alias: $observation-status = http://hl7.org/fhir/observation-status
-Alias: $address-type = http://hl7.org/fhir/address-type
-Alias: $address-use = http://hl7.org/fhir/address-use
+Alias: $observation-status = https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs
+Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category 
 Alias: $audit-event-action = http://hl7.org/fhir/audit-event-action
 Alias: $birthcertificate = https://adliya.uz/identifier/birthcertificate
 Alias: $bodysite = http://hl7.org/fhir/ValueSet/body-site
 Alias: $bodySite-condition = http://hl7.org/fhir/ValueSet/body-site
 Alias: $clinical-findings = http://hl7.org/fhir/ValueSet/clinical-findings
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
-Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
-Alias: $condition-verification-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
 Alias: $consent-action = http://terminology.hl7.org/CodeSystem/consentaction
 Alias: $consent-provision-type = http://hl7.org/fhir/consent-provision-type
 Alias: $consent-state-codes = http://hl7.org/fhir/consent-state-codes
@@ -23,8 +20,7 @@ Alias: $diplomaticpassport = https://gov.uz/mfa/identifier/diplomaticpassport
 Alias: $driverslicense = https://gov.uz/iiv/identifier/driverslicense
 Alias: $ee-mpi-socialhistory-education-level = https://fhir.ee/mpi/StructureDefinition/ee-mpi-socialhistory-education-level
 Alias: $encounter-admit-source = http://terminology.hl7.org/CodeSystem/admit-source
-Alias: $encounter-diagnosis-use = http://hl7.org/fhir/ValueSet/encounter-diagnosis-use
-Alias: $encounter-discharge-disposition = http://terminology.hl7.org/CodeSystem/discharge-disposition
+// Alias: $encounter-diagnosis-use = http://hl7.org/fhir/ValueSet/encounter-diagnosis-use
 Alias: $encounter-status = http://hl7.org/fhir/encounter-status
 Alias: $episode-of-care-status = http://hl7.org/fhir/episode-of-care-status
 Alias: $extra-security-role-type = http://terminology.hl7.org/CodeSystem/extra-security-role-type
@@ -34,8 +30,9 @@ Alias: $healthcard = https://gov.uz/ssv/identifier/healthcard
 Alias: $http-interaction = http://hl7.org/fhir/restful-interaction
 Alias: $icd-10 = http://hl7.org/fhir/sid/icd-10
 Alias: $icd-10-vs = http://hl7.org/fhir/ValueSet/icd-10
+// Alias: $identifier-type = https://terminology.dhp.uz/fhir/core/ValueSet/identifier-type-vs
 Alias: $identifier-type = http://terminology.hl7.org/CodeSystem/v2-0203
-Alias: $identifier-use = http://hl7.org/fhir/identifier-use
+Alias: $identifier-use = https://terminology.dhp.uz/fhir/core/ValueSet/identifier-use-vs
 Alias: $iiv = https://gov.uz/ru/iiv
 Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
 Alias: $iso-3166 = urn:iso:std:iso:3166
@@ -51,10 +48,10 @@ Alias: $name-use = http://hl7.org/fhir/name-use
 Alias: $nationaluniqueID = https://dpm.uz/identifier/national-unique-id
 Alias: $nomenclature-group = https://dhp.uz/fhir/core/CodeSystem/nomenclature-group
 Alias: $object-role = http://terminology.hl7.org/CodeSystem/object-role
-Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category //http://hl7.org/fhir/observation-category
 Alias: $observation-codes = http://hl7.org/fhir/ValueSet/observation-codes
 Alias: $observation-dataAbsentReason = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias: $observation-interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+Alias: $observation-interpretation-vs = https://terminology.dhp.uz/fhir/core/ValueSet/observation-interpretation-vs
 Alias: $observation-methods = http://hl7.org/fhir/ValueSet/observation-methods
 Alias: $observation-referencerange-normalvalue = http://hl7.org/fhir/observation-referencerange-normalvalue
 Alias: $organization-argos-id-system = https://hrm.argos.uz
@@ -108,17 +105,37 @@ Alias: $drs = http://hl7.org/fhir/document-reference-status
 Alias: $drcs = 	http://hl7.org/fhir/composition-status
 Alias: $drca = http://hl7.org/fhir/composition-attestation-mode
 
+
+
+//mine
+Alias: $iso3166-vs = http://hl7.org/fhir/ValueSet/iso3166-1-2
+Alias: $address-type-vs = https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs
+Alias: $address-use-vs = https://terminology.dhp.uz/fhir/core/ValueSet/address-use-vs
+Alias: $mahalla-vs = https://terminology.dhp.uz/fhir/core/ValueSet/mahalla-vs
+Alias: $state-vs = https://terminology.dhp.uz/fhir/core/ValueSet/state-vs
+
+
+
+Alias: $citizenship-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/iso3166-two-letter-cs
+Alias: $CodeSystemICCC3 = https://terminology.dhp.uz/CodeSystem/codesystem-iccc-3
+Alias: $clinical-status = https://terminology.dhp.uz/fhir/core/ValueSet/clinical-status-vs
+Alias: $condition-verification-status = https://terminology.dhp.uz/fhir/core/ValueSet/condition-verification-status-vs
+Alias: $encounter-participant-type = https://terminology.dhp.uz/fhir/core/ValueSet/encounter-participant-type-vs
+Alias: $encounter-discharge-disposition-vs = https://terminology.dhp.uz/fhir/core/ValueSet/encounter-discharge-disposition-vs
+Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
+
+Alias: $event-status = http://hl7.org/fhir/event-status
 Alias: $encounter-diagnosis-use-cs = http://hl7.org/fhir/encounter-diagnosis-use
 Alias: $episode-of-care-type = https://terminology.dhp.uz/fhir/core/CodeSystem/episode-of-care-type-cs
 Alias: $specimen-type-cs = https://terminology.dhp.uz/CodeSystem/specimen-type-cs
 // ===================== MERGED FROM main (forms 066 / screening) =====================
 Alias: $admit-source = http://terminology.hl7.org/CodeSystem/admit-source
-Alias: $discharge-disposition = http://terminology.hl7.org/CodeSystem/discharge-disposition
+Alias: $encounter-discharge-disposition = http://terminology.hl7.org/CodeSystem/discharge-disposition
 Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
 Alias: $v3-ObservationInterpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 Alias: $icd10 = http://hl7.org/fhir/sid/icd-10
-Alias: $diagnosis-role = https://terminology.dhp.uz/CodeSystem/diagnosis-role
-Alias: $local-observation-code = https://terminology.dhp.uz/CodeSystem/local-observation-code
+Alias: $diagnosis-role = https://terminology.dhp.uz/fhir/integrations/CodeSystem/diagnosis-role
+Alias: $local-observation-code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/local-observation-code
 Alias: $education-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/education-cs
 Alias: $occupation-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
 Alias: $benefit-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs
@@ -134,7 +151,7 @@ Alias: $re-admission-local-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/
 Alias: $discharge-disposition-home-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-discharge-disposition-home-cs
 Alias: $location-form = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-specialization-cs
 Alias: $coverage-type = https://terminology.dhp.uz/fhir/core/CodeSystem/coverage-type-cs
-Alias: $encounter-purpose-cs = https://terminology.dhp.uz/CodeSystem/encounter-purpose-cs
+Alias: $encounter-purpose-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-purpose-cs
 Alias: $encounter-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-type-cs
 
 // ===================== SCREENING =====================
@@ -155,3 +172,5 @@ Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/Value
 
 Alias: $comparator = http://hl7.org/fhir/quantity-comparator
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
+
+Alias: $cancer-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-cs
