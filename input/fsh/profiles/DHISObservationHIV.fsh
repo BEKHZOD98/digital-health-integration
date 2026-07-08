@@ -45,5 +45,5 @@ Usage: #example
 * performer = Reference(Organization/example-organization)
 * valueBoolean = true
 * component[0]
-  * code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-component-code-cs#Tub004-0005 "AMK/KAN/CAP result"
+  * code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-component-code-cs#tub004-0005 "AMK/KAN/CAP result"
   * valueBoolean = true

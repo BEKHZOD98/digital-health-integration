@@ -6,5 +6,7 @@ Description: "Local value set for body sites used by the DHIS information system
 * ^experimental = true
 * ^language = #uz
 
-* include codes from system dhis-body-site-cs
 * include codes from valueset $bodySite-condition
+* $sct#154283005 "Pulmonary tuberculosis"
+* $sct#423997002 "Tuberculosis, extrapulmonary"
+* $sct#182159002 "Disseminated tuberculosis"        
