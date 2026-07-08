@@ -47,6 +47,6 @@ Usage: #example
 * issued = "2026-03-12T11:00:00Z"
 * performer.reference = "Organization/example-organization"
 * component[0]
-  * code = https://terminology.dhp.uz/CodeSystem/observation-component-code-cs#Tub004-0005 "AMK/KAN/CAP result"
-  * valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/observation-codeable-concept-cs#Tub003-0040 "Macrota sample sediment"
+  * code = ObservationComponentCodeCS#Tub004-0005 "AMK/KAN/CAP result"
+  * valueCodeableConcept = ObservationCodeableConceptCS#Tub003-0040 "Macrota sample sediment"
   * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#POS "Positive"
