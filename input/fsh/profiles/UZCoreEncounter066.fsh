@@ -9,6 +9,8 @@ Description: "Uzbekistan Core Encounter 066 profile, used to represent clinical 
 * ^date = "2025-08-01"
 * ^publisher = "Uzinfocom"
 
+* class from ./EncounterClassVS (required)
+
 * admission.origin.extension contains AdmissionOrigin named admissionOrigin 0..1
 
 Instance: example-encounter-066
