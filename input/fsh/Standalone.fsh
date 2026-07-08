@@ -320,6 +320,8 @@ Description: "Example encounter representing a tuberculosis patient's inpatient 
 
 * class = $v3-ActCode#IMP "inpatient encounter"
 
+* type[nationalType] = EncounterTypeCS#mserv-0001-00004 "Treatment services"
+
 * subject = Reference(example-patient-john)
 
 * actualPeriod.start = "2026-02-12T08:00:00+05:00"
