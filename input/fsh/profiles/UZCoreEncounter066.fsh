@@ -15,6 +15,8 @@ Description: "Uzbekistan Core Encounter 066 profile, used to represent clinical 
 
 * admission.origin.extension contains AdmissionOrigin named admissionOrigin 0..1
 
+* location.form from UZEncounter066LocationFormVS (required)
+
 Instance: example-encounter-066
 InstanceOf: UZCoreEncounter066
 Description: "This example represents a patient encounter used in the cancer registry system, including admission and clinical interaction details."
@@ -28,4 +30,7 @@ Usage: #example
 * admission.origin.display = "Home"
 * admission.origin.extension[admissionOrigin].valueCodeableConcept = admit-source-home-cs#mserv-0003-00001 "From home"
 
-* admission.dischargeDisposition = DMEDDischargeDispositionCS#enc-discharge-disposition-0001-00006 "Shifoxonadan sog'lom holatda chiqarildi"
+* admission.dischargeDisposition = DMEDDischargeDispositionCS#enc-discharge-disp-0001-0006 "Shifoxonadan sog'lom holatda chiqarildi"
+
+* location[0].location = Reference(ExampleLocation)
+* location[0].form = DMEDLocationFormCS#enc-location-form-0001-0001 "Geriatriya"

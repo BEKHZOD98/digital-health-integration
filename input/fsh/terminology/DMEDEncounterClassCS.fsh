@@ -1,4 +1,4 @@
-CodeSystem: EncounterClassCS
+CodeSystem: DMEDEncounterClassCS
 Id: encounter-class-cs
 Title: "Encounter Class CodeSystem"
 Description: "Code system for encounter class values."

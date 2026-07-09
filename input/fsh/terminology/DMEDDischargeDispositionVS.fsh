@@ -11,6 +11,6 @@ Description: "Allowed discharge disposition codes for UZ Core Encounter 066."
 * $discharge-disposition-home-cs#mserv-0004-00003 "Self letft from hospital"
 * $discharge-disposition-home-cs#mserv-0004-00004 "Discharged"
 
-* $encounter-discharge-disposition#other-hcf "Other healthcare facility"
+* $enc-discharge-disp#other-hcf "Other healthcare facility"
 
 * include codes from system DMEDDischargeDispositionCS
