@@ -11,6 +11,8 @@ Description: "Uzbekistan Core Encounter 066 profile, used to represent clinical 
 
 * class from EncounterClassVS (required)
 
+* admission.dischargeDisposition from DMEDDischargeDispositionVS (required)
+
 * admission.origin.extension contains AdmissionOrigin named admissionOrigin 0..1
 
 Instance: example-encounter-066
@@ -25,3 +27,5 @@ Usage: #example
 
 * admission.origin.display = "Home"
 * admission.origin.extension[admissionOrigin].valueCodeableConcept = admit-source-home-cs#mserv-0003-00001 "From home"
+
+* admission.dischargeDisposition = DMEDDischargeDispositionCS#enc-discharge-disposition-0001-00006 "Shifoxonadan sog'lom holatda chiqarildi"
