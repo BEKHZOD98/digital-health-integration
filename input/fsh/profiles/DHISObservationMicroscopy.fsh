@@ -23,7 +23,7 @@ Description: "Profile for recording sputum smear microscopy results, including a
 * performer only Reference(UZCoreOrganization)
 
 * method 0..1 MS
-* method = $lab-methods-cs#lab-method-8 "Microscopy"
+* method from DHISObservationMethodVS
 
 * specimen 0..1 MS
 * specimen ^short = "Specimen used for this observation + Rule: If Observation.specimen is a reference to Group, the group can only have specimens"
