@@ -26,6 +26,10 @@ Description: "Profile for a biological specimen collected for tuberculosis labor
 * feature 0..1 MS
 * feature.type from SpecimenFeatureTypeVS (required)
 
+* processing 0..* MS
+* processing.method 0..1 MS
+* processing.method from DHISSpecimenProcessingMethodVS (required)
+
 // Instance example
 Instance: example-dhis-specimen
 InstanceOf: DHISSpecimen
