@@ -1,5 +1,5 @@
 Alias: $data-absent-reason = http://terminology.hl7.org/CodeSystem/data-absent-reason
-Alias: $document-category-cs = https://dhp.uz/fhir/integrations/CodeSystem/document-category-cs
+Alias: $document-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/document-category-cs
 Alias: $gender = http://hl7.org/fhir/administrative-gender
 Alias: $observation-status = http://hl7.org/fhir/observation-status
 Alias: $address-type = http://hl7.org/fhir/address-type
@@ -117,8 +117,8 @@ Alias: $discharge-disposition = http://terminology.hl7.org/CodeSystem/discharge-
 Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
 Alias: $v3-ObservationInterpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 Alias: $icd10 = http://hl7.org/fhir/sid/icd-10
-Alias: $diagnosis-role = https://terminology.dhp.uz/CodeSystem/diagnosis-role
-Alias: $local-observation-code = https://terminology.dhp.uz/CodeSystem/local-observation-code
+Alias: $diagnosis-role = https://terminology.dhp.uz/fhir/integrations/CodeSystem/diagnosis-role
+Alias: $local-observation-code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/local-observation-code
 Alias: $education-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/education-cs
 Alias: $occupation-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
 Alias: $benefit-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs
@@ -134,7 +134,7 @@ Alias: $re-admission-local-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/
 Alias: $discharge-disposition-home-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-discharge-disposition-home-cs
 Alias: $location-form = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-specialization-cs
 Alias: $coverage-type = https://terminology.dhp.uz/fhir/core/CodeSystem/coverage-type-cs
-Alias: $encounter-purpose-cs = https://terminology.dhp.uz/CodeSystem/encounter-purpose-cs
+Alias: $encounter-purpose-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-purpose-cs
 Alias: $encounter-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-type-cs
 
 // ===================== SCREENING =====================
@@ -153,5 +153,4 @@ Alias: $drs-vs = http://hl7.org/fhir/ValueSet/document-reference-status
 Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
 Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
 
-Alias: $comparator = http://hl7.org/fhir/quantity-comparator
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
