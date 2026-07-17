@@ -6,5 +6,4 @@ Description: "Value set of tuberculosis observation method codes."
 * ^experimental = true
 * ^language = #uz
 
-* include DHISObservationMethodCS#Tub006-0001
-* include DHISObservationMethodCS#Tub006-0002
+* include codes from system dhis-observation-method-cs
