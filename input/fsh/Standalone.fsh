@@ -337,3 +337,116 @@ Description: "Example encounter representing a tuberculosis patient's inpatient 
 * diagnosis[0].condition = Reference(example-tbc-diagnosis)
 
 * diagnosis[0].use = $encounter-diagnosis-use-cs#final "Final"
+
+Instance: example-practitionerrole
+InstanceOf: UZCorePractitionerRole
+Description: "Example of a practitioner's role"
+Usage: #example
+* language = #uz
+* active = true
+* practitioner = Reference(Practitioner/example-practitioner)
+* organization = Reference(Organization/example-organization)
+* code = position-and-profession-cs#2212.14 "Vrach ginekolog"
+* specialty = profession-specialization-cs#394585009 "Akusherlik va ginekologiya"
+* healthcareService = Reference(HealthcareService/example-healthcareservice)
+
+Instance: example-headache
+InstanceOf: UZCoreCondition
+Title: "Example Uz Core Condition - Headache"
+Description: "Example instance of a headache condition documented during a patient encounter"
+Usage: #example
+* language = #en
+* clinicalStatus = $condition-clinical#active "Active"
+* verificationStatus = $condition-ver-status#confirmed "Confirmed"
+* severity = $sct#255604002 "Mild"
+* code = $icd-10#R51 "Headache"
+* extension[diagnosisType].valueCodeableConcept = diagnosis-type-cs#gencl-0001-00001 "Diagnosis of the referring institution"
+* bodySite = $sct#67169006 "Head of first metatarsal bone"
+* subject = Reference(example-patient)
+* onsetDateTime = "2025-07-25"
+* recordedDate = "2025-07-29"
+* participant
+  * actor = Reference(example-practitioner)
+  * function = $provenance-participant-type#author "Author"
+* note
+  * text = "Patient complained of mild headache for two days. Condition resolved after rest and hydration."
+
+Instance: example-patient
+InstanceOf: Patient
+Usage: #example
+Title: "example-patient"
+Description: "Example of a patient"
+* name
+  * family = "Ибрагимов"
+  * given = "Алишер"
+
+Instance: example-location
+InstanceOf: UZCoreLocation
+Usage: #example
+Description: "Example of psychiatric hospital"
+* language = #uz
+* status = #active
+* mode = #instance
+* name = "Toshkent shahar 1-sonli shifoxona"
+* address.text = "Toshkent shahar, Chilonzor tumani, Katta Qo'yliq 45"
+
+Instance: example-encounter
+InstanceOf: UZCoreEncounter
+Title: "Example Encounter"
+Description: "Example of an psychiatric encounter"
+Usage: #example
+* status = #completed "Completed"
+* class = $v3-ActCode#IMP "Inpatient encounter"
+* priority = $v3ActPriority#EM "Emergency"
+* type[0] = encounter-type-cs#mserv-0001-00004  "Treatment services"
+* serviceType[0] = Reference(example-healthcareservice)
+* subject = Reference(example-patient)
+* subjectStatus = encounter-subject-status-cs#gencl-0003-00001 "Awake"
+
+* participant.type = $v3-ParticipationType#ATND "attender"
+* participant.period
+  * start = "2024-01-01T10:00:00Z"
+  * end = "2024-01-01T11:00:00Z"
+
+* reason[0]
+  * use = encounter-reason-use-cs#mserv-0002-00001 "Disease"
+  * value = Reference(Condition/example-headache)
+
+* actualPeriod
+  * start = "2024-01-01T10:00:00Z"
+  * end = "2024-01-01T11:00:00Z"
+
+* plannedStartDate = "2024-01-01T10:00:00Z"
+* plannedEndDate = "2024-01-01T11:00:00Z" 
+
+* diagnosis[0].condition = Reference(Condition/example-headache)
+
+* admission
+  * admitSource = $encounter-admit-source#psych "From psychiatric hospital"
+  * reAdmission = $v2-admission#R "Re-admission"
+  * dischargeDisposition = $encounter-discharge-disposition#home "Home"
+
+* location[0].location = Reference(example-location)
+* location[0].status = #completed
+
+Instance: example-healthcareservice
+InstanceOf: UZCoreHealthcareService
+Description: "Example of a healthcare service"
+Usage: #example
+* active = true
+* category.coding[dhpCategory]
+  * code = #cancr0013.00000
+* type.coding[dhpService]
+  * code = #cancr0013.00001
+* language = #uz
+* name = "IHC-ga xos"
+  * extension[translation][0]
+    * extension[lang][0]
+      * valueCode = #ru
+    * extension[content][+]
+      * valueString = "ИГХ специфические"
+  * extension[translation][+]
+    * extension[lang][0]
+      * valueCode = #kaa
+    * extension[content][+]
+      * valueString = "IHC ushın arnawlı"

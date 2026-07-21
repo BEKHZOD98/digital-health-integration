@@ -135,3 +135,16 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://dhp.uz/fhir/core/sid/pro/uz/screening"
 * uniqueId[0].preferred = true
+Instance: narko-episodeofcare-identifier
+InstanceOf: NamingSystem
+Usage: #definition
+Title: "Narko Episode Of Care Identifier"
+Description: "Identifier system for Narko Episode Of Care records in Uzbekistan."
+* name = "NarkoEpisodeOfCareIdentifier"
+* status = #active
+* kind = #identifier
+* date = "2026-06-10"
+* publisher = "Uzinfocom"
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/reg/uz/narko"
+* uniqueId[0].preferred = true
