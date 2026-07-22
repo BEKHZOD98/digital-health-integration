@@ -116,3 +116,18 @@ Description: "Date of birth of the related person"
 * value[x] 1..1 MS
 
 * value[x] only date
+
+
+//narko-psix
+Extension: EpisodeOfCareTypeGroup
+Id: episode-of-care-type-group
+Title: "Episode of Care Type Group"
+Description: "Extension to represent the group classification associated with an episode of care type."
+Context: EpisodeOfCare.type
+* ^status = #active
+* ^experimental = true
+* value[x] only CodeableConcept
+* valueCodeableConcept from PsixEpisodeOfCareTypeGroupVS (required)
+
+
+

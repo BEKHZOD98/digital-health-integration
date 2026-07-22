@@ -1,0 +1,31 @@
+Profile: PsixCondition
+Parent: UZCoreCondition
+Id: psix-condition
+Title: "Psix Condition Profile"
+Description: "Condition profile for the Psix system."
+* ^status = #active
+* ^experimental = true
+* ^publisher = "DHP Integration"
+
+* identifier 0..* MS
+
+* onsetDateTime 0..1 MS
+
+* participant MS
+// comment will be removed after Reference(UZCoreOrganization) is added to IG and published
+// * participant.actor only Reference(UZCoreOrganization)
+
+Instance: example-psix-condition
+InstanceOf: PsixCondition
+Description: "Example condition representing a diagnosis of harmful use of substance (F15.1) in the Psix system."
+Usage: #example
+
+* clinicalStatus = $condition-clinical#active "Active"
+* verificationStatus = $condition-ver-status#confirmed "Confirmed"
+* code = $icd-10#F15.1 "Mental and behavioural disorders due to use of other stimulants, including caffeine : Harmful use"
+* subject = Reference(Patient/example-patient-john)
+* encounter = Reference(Encounter/example-psix-encounter)
+* onsetDateTime = "2026-03-10"
+* recordedDate = "2026-03-10"
+// comment will be removed after Reference(UZCoreOrganization) is added to IG and published
+// * participant[0].actor = Reference(Organization/example-organization)
