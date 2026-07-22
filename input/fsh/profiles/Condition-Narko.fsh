@@ -1,7 +1,7 @@
-Profile: UZCoreNarkoCondition
+Profile: ConditionNarko
 Parent: UZCoreCondition
-Id: uz-core-narko-condition
-Title: "UZ Core Narko Condition"
+Id: condition-narko
+Title: "Narko Condition"
 Description: "Uzbekistan Core Narko Condition profile, used to define the patient's clinical condition"
 * ^experimental = true
 * ^status = #active
@@ -9,7 +9,7 @@ Description: "Uzbekistan Core Narko Condition profile, used to define the patien
 * ^publisher = "Uzinfocom"
 
 Instance: example-narko-condition
-InstanceOf: UZCoreNarkoCondition
+InstanceOf: ConditionNarko
 Description: "Example of Narko Condition"
 Usage: #example
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/reg/uz/narko"

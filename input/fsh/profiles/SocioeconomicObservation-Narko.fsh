@@ -1,7 +1,7 @@
-Profile: UZCoreNarkoSocioeconomicObservation
+Profile: SocioeconomicObservationNarko
 Parent: UZCoreSocioeconomicObservation
-Id: uz-core-narko-socioeconomic-observation
-Title: "UZ Core Narko Socioeconomic Observation"
+Id: socioeconomic-observation-narko
+Title: "Narko Socioeconomic Observation"
 Description: "Uzbekistan Core Narko Socioeconomic Observation profile, used to define the patient's socioeconomic status"
 * ^experimental = true
 * ^status = #active
@@ -9,7 +9,7 @@ Description: "Uzbekistan Core Narko Socioeconomic Observation profile, used to d
 * ^publisher = "Uzinfocom"
 
 Instance: example-narko
-InstanceOf: UZCoreNarkoSocioeconomicObservation
+InstanceOf: SocioeconomicObservationNarko
 Description: "Example benefits observation for Salim"
 Usage: #example
 * language = #uz

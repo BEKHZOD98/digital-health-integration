@@ -1,7 +1,9 @@
-Profile: UZCoreNarkoFlag
+// codesystems and valuesets for status and code are added here,
+//because Profile for Flag in IG has not been created yet. 
+Profile: FlagNarko
 Parent: Flag
-Id: uz-core-narko-flag
-Title: "Flag"
+Id: flag-narko
+Title: "Narko Flag"
 Description: "Uzbekistan Flag profile, used to define the essential information that healthcare providers should be aware of when assessing, treating, or managing a patient."
 * ^experimental = true
 * ^status = #active
@@ -27,11 +29,11 @@ Description: "Uzbekistan Flag profile, used to define the essential information 
 
 
 Instance: example-flag
-InstanceOf: UZCoreNarkoFlag
+InstanceOf: FlagNarko
 Description: "Example of Narko Flag"
 Usage: #example
 * status = $flag-status-cs#active "Active"
-* code = registri-flag-cs#registri0001-00002 "Compulsory treatment"
+* code = registri-flag-cs#registri0001-00002 "Compulsory outpatient treatment"
 * subject = Reference(example-salim)
 * period.start = "2026-03-12"
 * encounter = Reference(example-encounter)

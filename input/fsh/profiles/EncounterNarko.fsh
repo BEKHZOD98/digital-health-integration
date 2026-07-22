@@ -1,7 +1,7 @@
-Profile: UZCoreNarkoEncounter
+Profile: EncounterNarko
 Parent: UZCoreEncounter
-Id: uz-core-narko-encounter
-Title: "UZ Core Narko Encounter"
+Id: encounter-narko
+Title: "Narko Encounter"
 Description: "Uzbekistan Core Narko Encounter profile, used to provide comprehensive information about a patient encounter, available for review when a healthcare professional opens the encounter record"
 * ^experimental = true
 * ^status = #active
@@ -9,7 +9,7 @@ Description: "Uzbekistan Core Narko Encounter profile, used to provide comprehen
 * ^publisher = "Uzinfocom"
 
 Instance: example-narko-encounter
-InstanceOf: UZCoreNarkoEncounter
+InstanceOf: EncounterNarko
 Title: "Example Narko Encounter"
 Description: "Example of Narko encounter"
 Usage: #example

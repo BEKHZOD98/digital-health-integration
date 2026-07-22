@@ -1,7 +1,7 @@
 Profile: UZCoreNarkoEpisodeOfCare
 Parent: UZCoreEpisodeOfCare
-Id: uz-core-narko-episode-of-care
-Title: "UZ Core Narko Episode Of Care"
+Id: episode-of-care-narko
+Title: "Narko Episode Of Care"
 Description: "Uzbekistan Core Narko Socioeconomic Observation profile, used to define patient treatment groups"
 * ^experimental = true
 * ^status = #active
