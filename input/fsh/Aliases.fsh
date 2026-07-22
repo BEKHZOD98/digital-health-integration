@@ -128,6 +128,7 @@ Alias: $benefit-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs
 Alias: $citizenship = https://terminology.dhp.uz/fhir/core/CodeSystem/iso3166-two-letter-cs
 Alias: $practioner-role = http://terminology.hl7.org/CodeSystem/practitioner-role
 Alias: $social-status = https://terminology.dhp.uz/fhir/core/CodeSystem/social-status-cs
+Alias: $social-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/social-status-vs
 Alias: $admission-origin = https://terminology.dhp.uz/fhir/core/CodeSystem/admit-source-local-cs
 Alias: $admission-origin-vs = https://terminology.dhp.uz/fhir/core/ValueSet/admission-origin-vs
 Alias: $encounter-local-priority-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-local-priority-cs
@@ -156,4 +157,10 @@ Alias: $drs-vs = http://hl7.org/fhir/ValueSet/document-reference-status
 Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
 Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
 
+Alias: $comparator = http://hl7.org/fhir/quantity-comparator
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
+Alias: $patient-nationality-vs = https://dhp.uz/fhir/core/ValueSet/nationality-vsAlias: 
+Alias: $nationality = http://hl7.org/fhir/StructureDefinition/patient-nationality
+Alias: $citizenship-ext = http://hl7.org/fhir/StructureDefinition/patient-citizenship
+
+

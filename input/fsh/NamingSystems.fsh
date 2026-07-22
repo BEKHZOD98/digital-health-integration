@@ -153,3 +153,21 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/sickleave"
 * uniqueId[=].preferred = true
+
+Instance: psix-identifier
+InstanceOf: NamingSystem
+Description: "Identifier system for PSIX registration numbers in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/psix-identifier"
+* name = "UzbekistanPSIXIdentifier"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-02-03"
+* description = "Identifier namespace used for PSIX registration identifiers in Uzbekistan"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in EpisodeOfCare.identifier when referencing PSIX registration identifiers"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/psix"
+* uniqueId[=].preferred = true
