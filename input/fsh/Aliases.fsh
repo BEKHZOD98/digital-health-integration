@@ -157,3 +157,6 @@ Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSy
 Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
 
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
+Alias: $organization-shif-id-system = https://dhp.uz/fhir/core/sid/org/uz/shif
+Alias: $narko-episode-of-care-group-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/narko-episode-of-care-group-cs
+Alias: $flag-status-cs = http://hl7.org/fhir/flag-status
