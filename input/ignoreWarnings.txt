@@ -47,3 +47,11 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/dhis-ob
 # Trailing % => startsWith match: the real message has an embedded newline before its final ')',
 # so an exact-match line never matches. Cut at (>1000) to stay independent of tx-server wording.
 Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
+
+Error from https://tx.fhir.org/r5: Error: The code System "http://snomed.info/sct" has a grammar, and cannot be enumerated directly
+
+Binding https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs could not be expanded
+
+Unable to expand included value set 'https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-diagnostic-procedure-vs': Error from 
+https://tx.fhir.org/r5: Error: The code System "http://snomed.info/sct" has a grammar, and cannot be enumerated directly (and Error from 
+https://tx.fhir.org/r5: Error: The code System "http://snomed.info/sct" has a grammar, and cannot be enumerated directly )
