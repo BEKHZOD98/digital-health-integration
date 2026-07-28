@@ -5,12 +5,12 @@ Title: "Narko Encounter"
 Description: "Uzbekistan Core Narko Encounter profile, used to provide comprehensive information about a patient encounter, available for review when a healthcare professional opens the encounter record"
 * ^experimental = true
 * ^status = #active
-* ^date = "2025-06-08"
+* ^date = "2026-07-27"
 * ^publisher = "Uzinfocom"
 
 Instance: example-narko-encounter
 InstanceOf: EncounterNarko
-Title: "Example Narko Encounter"
+Title: "Narko Encounter Example"
 Description: "Example of Narko encounter"
 Usage: #example
 * status = #completed "Completed"
@@ -28,3 +28,4 @@ Usage: #example
   * end = "2026-02-12T11:00:00Z"
 
 * diagnosis[0].condition = Reference(Condition/example-headache)
+* diagnosis[0].use = $encounter-diagnosis-use-cs#final "Final"

@@ -14,6 +14,6 @@ Description: "Type Resource CodeSystem used in Uzbekistan healthcare system."
 // this codesystem will be used in psix so it is added and not called in NarkoTypeResourceVS
 * #type-res-0002-0002 "Bayonnoma raqami/sud nomi"
   * ^designation[0].language = #ru
-  * ^designation[0].value = "Номер протокола/название суда"
+  * ^designation[=].value = "Номер протокола/название суда"
   * ^designation[+].language = #en
   * ^designation[=].value = "Protocol number/court name"

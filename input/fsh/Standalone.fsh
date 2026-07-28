@@ -450,3 +450,12 @@ Usage: #example
       * valueCode = #kaa
     * extension[content][+]
       * valueString = "IHC ushın arnawlı"
+
+
+
+Instance: organization-123
+InstanceOf: UZCoreOrganization
+Description: "Example of organization-123"
+Usage: #example
+
+* name = "Republican Hospital Center"

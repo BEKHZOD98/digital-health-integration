@@ -160,3 +160,4 @@ Alias: $specimen-role = http://hl7.org/fhir/specimen-role
 Alias: $organization-shif-id-system = https://dhp.uz/fhir/core/sid/org/uz/shif
 Alias: $narko-episode-of-care-group-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/narko-episode-of-care-group-cs
 Alias: $flag-status-cs = http://hl7.org/fhir/flag-status
+

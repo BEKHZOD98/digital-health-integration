@@ -5,6 +5,7 @@ Description: "Allowed group for Flag Status in Uzbekistan's health information e
 
 * ^url = "https://dhp.uz/fhir/integrations/ValueSet/flag-status-vs"
 * ^experimental = true
-* ^language = #uz
+* ^extension[0].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(FlagStatusCS)
 
 * include codes from system $flag-status-cs
