@@ -82,7 +82,7 @@ Misol: [sickleave-observation-01](Observation-sickleave-observation-01.html)
 | Boshqa shahardan kelgan | - | `false` (boolean) | `component[fromAnotherCity]` |
 | Yuqumli kasallik bilan aloqa | - | `false` (boolean) | `component[infectiousContact]` |
 | Qarindoshlik darajasi | [RelationDegreeVS](ValueSet-relation-degree-vs.html) | `relation-degree-cs#emdoc-0005-0001` (Ona) | `component[kinshipDegree]` |
-| Davolash rejimi | [EncounterClassVS](ValueSet-encounter-class-vs.html) | `v3-ActCode#AMB` (Ambulator) | `component[regime]` |
+| Davolash rejimi | [EncounterClassVS](ValueSet-encounter-class-sickleave-vs.html) | `v3-ActCode#AMB` (Ambulator) | `component[regime]` |
 | Rejim buzilishi | [RegimenViolationVS](ValueSet-regimen-violation-vs.html) | `regimen-violation-cs#emdoc-0007-0005` (Boshqa qoidabuzarliklar) | `component[regimenViolation]` |
 | Boshqa ishga vaqtincha o'tkazilgan sana | - | `2025-08-25` (dateTime) | `component[tempJobTransfer]` |
 | Xulosalar | [ConclusionsVS](ValueSet-conclusions-vs.html) | `conclusions-cs#emdoc-0008-0001` | `component[conclusions]` |
