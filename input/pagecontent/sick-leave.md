@@ -80,7 +80,7 @@ Example: [sickleave-observation-01](Observation-sickleave-observation-01.html)
 | Came from another city | - | `false` (boolean) | `component[fromAnotherCity]` |
 | Infectious contact | - | `false` (boolean) | `component[infectiousContact]` |
 | Kinship degree | [RelationDegreeVS](ValueSet-relation-degree-vs.html) | `relation-degree-cs#emdoc-0005-0001` (mother) | `component[kinshipDegree]` |
-| Treatment regime | [EncounterClassVS](ValueSet-encounter-class-vs.html) | `v3-ActCode#AMB` (ambulatory) | `component[regime]` |
+| Treatment regime | [EncounterClassVS](ValueSet-encounter-class-sickleave-vs.html) | `v3-ActCode#AMB` (ambulatory) | `component[regime]` |
 | Regimen violation | [RegimenViolationVS](ValueSet-regimen-violation-vs.html) | `regimen-violation-cs#emdoc-0007-0005` (other violations) | `component[regimenViolation]` |
 | Temporary job transfer date | - | `2025-08-25` (dateTime) | `component[tempJobTransfer]` |
 | Conclusions | [ConclusionsVS](ValueSet-conclusions-vs.html) | `conclusions-cs#emdoc-0008-0001` | `component[conclusions]` |
