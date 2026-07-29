@@ -38,7 +38,7 @@ Misol: [SickLeaveCarePlanExample](CarePlan-SickLeaveCarePlanExample.html)
 | Varaqani bergan shifokor | - | [Practitioner](#supporting-resources) ga havola | `contributor` |
 | Bo'lim mudiri | - | [Practitioner](#supporting-resources) ga havola | `custodian` |
 | Bemor | - | [Patient](#supporting-resources) ga havola | `subject` |
-| Parvarish qilinayotgan shaxs | - | [RelatedPerson](#family-care-the-person-cared-for-relatedperson) ga havola | `extension[relatedPerson]` |
+| Parvarish qilinayotgan shaxs | - | [RelatedPerson](#family-care-the-person-cared-for-relatedperson) ga havola | `extension[relatedPerson]` |vs
 
 Sabab va tashxis ular olinadigan kod tizimi bo'yicha farqlanadi: sabablar `care-plan-reason-cs` dan, tashxislar ICD-10 dan olinadi. `extension[relatedPerson]` va `extension[diagnosisUse]` faqat tegishli hollarda to'ldiriladi (mos ravishda oila a'zosini parvarish qilish va tashxis turini ko'rsatish). Holatning hayotiy sikl holati qanday qayd etilishi keyingi bo'limda tavsiflangan.
 

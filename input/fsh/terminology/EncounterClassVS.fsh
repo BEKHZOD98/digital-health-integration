@@ -1,6 +1,6 @@
 ValueSet: EncounterClassVS
 Id: encounter-class-sickleave-vs
-Title: "Encounter Class ValueSet"
+Title: "Encounter Class ValueSet"    
 Description: "ValueSet including both local and official encounter classes in Uzbekistan healthcare system"
 * insert IntegrationsValueSet(encounter-class-sickleave-vs)
 * ^experimental = true
