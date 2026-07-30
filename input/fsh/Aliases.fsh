@@ -26,6 +26,7 @@ Alias: $ee-mpi-socialhistory-education-level = https://fhir.ee/mpi/StructureDefi
 Alias: $encounter-admit-source = http://terminology.hl7.org/CodeSystem/admit-source
 Alias: $encounter-diagnosis-use = http://hl7.org/fhir/ValueSet/encounter-diagnosis-use
 Alias: $encounter-discharge-disposition = http://terminology.hl7.org/CodeSystem/discharge-disposition
+Alias: $enc-discharge-disp = http://terminology.hl7.org/CodeSystem/discharge-disposition
 Alias: $encounter-status = http://hl7.org/fhir/encounter-status
 Alias: $episode-of-care-status = http://hl7.org/fhir/episode-of-care-status
 Alias: $extra-security-role-type = http://terminology.hl7.org/CodeSystem/extra-security-role-type
@@ -155,5 +156,5 @@ Alias: $mimetypes = http://hl7.org/fhir/ValueSet/mimetypes
 Alias: $drs-vs = http://hl7.org/fhir/ValueSet/document-reference-status
 Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
 Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
-
+Alias: $comparator = http://hl7.org/fhir/quantity-comparator
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role

@@ -9,7 +9,13 @@ Description: "Uzbekistan Core Encounter 066 profile, used to represent clinical 
 * ^date = "2025-08-01"
 * ^publisher = "Uzinfocom"
 
+* class from EncounterClassVS (required)
+
+* admission.dischargeDisposition from DMEDDischargeDispositionVS (required)
+
 * admission.origin.extension contains AdmissionOrigin named admissionOrigin 0..1
+
+* location.form from UZEncounter066LocationFormVS (required)
 
 Instance: example-encounter-066
 InstanceOf: UZCoreEncounter066
@@ -23,3 +29,8 @@ Usage: #example
 
 * admission.origin.display = "Home"
 * admission.origin.extension[admissionOrigin].valueCodeableConcept = admit-source-home-cs#mserv-0003-00001 "From home"
+
+* admission.dischargeDisposition = DMEDDischargeDispositionCS#enc-discharge-disp-0001-0006 "Shifoxonadan sog'lom holatda chiqarildi"
+
+* location[0].location = Reference(ExampleLocation)
+* location[0].form = DMEDLocationFormCS#enc-location-form-0001-0001 "Geriatriya"

@@ -323,7 +323,7 @@ Usage: #inline
 * admission.origin.extension[admissionOrigin].valueCodeableConcept = admit-source-home-cs#mserv-0003-00001 "From home"
 * admission.origin.display = "From home"
 * admission.reAdmission = $re-admission-local-cs#first-time "First time"
-* reason.value.concept = $encounter-purpose-cs#enc-pur-001 "Diagnostics"
+* reason.value.concept = $encounter-purpose-cs#enc-pur-pur-001 "Diagnostics"
 * priority = $encounter-local-priority-cs#transferred "Transferred from another facility"
 * admission.admitSource = $admit-source-local-cs#mserv-0006-00002 "Dispensary"
 * admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00004 "Discharged"
@@ -823,7 +823,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-07T10:00:00+05:00"
 * performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
-* valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/tb-drug-sensitivity-cs#Tub-004-001 "Drug-sensitive"
+* valueCodeableConcept = https://dhp.uz/fhir/integrations/CodeSystem/tb-drug-sensitivity-cs#Tub-004-001 "Drug-sensitive"
 
 
 // Observation was used because there is no dedicated base FHIR element for temporary disability period dates.
