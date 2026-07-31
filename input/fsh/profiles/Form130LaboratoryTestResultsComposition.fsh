@@ -27,7 +27,7 @@ Description: "Composition profile for Form 130 laboratory test results."
     patientInformation 1..1 and
     laboratoryOrderInformation 1..1 and
     specimenInformation 1..1 and
-    completeBloodCountResults 1..1 and
+    laboratoryTestResults 1..1 and
     responsiblePersons 1..1
 
 // ---------------------------------------------------------------------
@@ -66,11 +66,11 @@ Description: "Composition profile for Form 130 laboratory test results."
 // Complete Blood Count Results
 // ---------------------------------------------------------------------
 
-* section[completeBloodCountResults].title 1..1
-* section[completeBloodCountResults].code 1..1
-* section[completeBloodCountResults].code = $loinc#58410-2 "CBC panel - Blood by Automated count"
-* section[completeBloodCountResults].entry 1..*
-* section[completeBloodCountResults].entry only
+* section[laboratoryTestResults].title 1..1
+* section[laboratoryTestResults].code 1..1
+* section[laboratoryTestResults].code = $loinc#58410-2 "Laboratory test results reported"
+* section[laboratoryTestResults].entry 1..*
+* section[laboratoryTestResults].entry only
     Reference(UZCoreDiagnosticReport or UZCoreObservation)
 
 // ---------------------------------------------------------------------

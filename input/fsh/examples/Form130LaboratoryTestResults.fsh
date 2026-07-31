@@ -189,8 +189,8 @@ Usage: #inline
 * section[=].code = $loinc#LP443467-8 "Specimen"
 * section[=].entry[0] = Reference(urn:uuid:13000011-1111-2222-3333-444444444444) // specimen-130
 
-* section[completeBloodCountResults].title = "Complete Blood Count (CBC)"
-* section[=].code = $loinc#58410-2 "CBC panel - Blood by Automated count"
+* section[laboratoryTestResults].title = "Laboratory test results"
+* section[=].code = $loinc#58410-2 "Laboratory test results reported"
 * section[=].entry[0] = Reference(urn:uuid:13000013-1111-2222-3333-444444444444) // observation-wbc-130
 * section[=].entry[+] = Reference(urn:uuid:13000014-1111-2222-3333-444444444444) // observation-neu-abs-130
 * section[=].entry[+] = Reference(urn:uuid:13000015-1111-2222-3333-444444444444) // observation-eos-abs-130
