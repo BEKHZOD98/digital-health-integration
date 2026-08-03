@@ -68,7 +68,7 @@ Description: "Composition profile for Form 130 laboratory test results."
 
 * section[laboratoryTestResults].title 1..1
 * section[laboratoryTestResults].code 1..1
-* section[laboratoryTestResults].code = $loinc#58410-2 "Laboratory test results reported"
+* section[laboratoryTestResults].code = $loinc#LP420386-7 "Laboratory test results reported"
 * section[laboratoryTestResults].entry 1..*
 * section[laboratoryTestResults].entry only
     Reference(UZCoreDiagnosticReport or UZCoreObservation)
