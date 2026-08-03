@@ -1,0 +1,41 @@
+CodeSystem: RegistriFlagsCS
+Id: registri-flag-cs
+Title: "Registry Flags Code System"
+Description: "Registri flag codesystem supplement with translations in uzbek and russian"
+* insert OriginalCodeSystemDraft(registri-flag-cs)
+
+* #registri0001-00001 "Ijtimoiy xavflilik"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Социальная опасность"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Social danger / Social risk"
+
+* #registri0001-00002 "Majburiy davolanish"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Принудительное лечение"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Compulsory treatment"
+
+* #registri0001-00003 "Majburiy ambulatoriya sharoitida davolanish"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Амбулаторное принудительное лечение"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Compulsory outpatient treatment"
+
+* #registri0001-00004 "Majburiy statsionar davolanish"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Стационарное принудительное лечение"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Compulsory inpatient treatment"
+
+* #registri0001-00005 "Vasiylik ostida"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Под опекой"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Under guardianship"
+
+* #registri0001-00006 "Nogironlik"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Инвалидность"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Disability"

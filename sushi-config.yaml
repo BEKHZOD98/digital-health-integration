@@ -101,14 +101,14 @@ pages:
     title: Form 066 Mapping
   form-066-1-mapping.md:
     title: Form 066 1 Mapping
-  form-130-mapping.md:
-    title: Form 130 Mapping
   cervical-breast-cancer-screening.md:
     title: Cervical and Breast Cancer Screening
   sick-leave.md:
     title: Sick Leave
   dhis-tuberculosis.md:
     title: Tuberculosis (DHIS)
+  narcology.md:
+    title: Narcology
   changelog.md:
     title: Changelog
   translationinfo.md:
@@ -122,11 +122,11 @@ menu:
     Form 011 Mapping: form-011-mapping.html
     Form 066 Mapping: form-066-mapping.html
     Form 066-1 Mapping: form-066-1-mapping.html
-    Form 130 Mapping: form-130-mapping.html
   Integrations:
     Cervical and Breast Cancer Screening: cervical-breast-cancer-screening.html
     Sick Leave: sick-leave.html
     Tuberculosis (DHIS): dhis-tuberculosis.html
+    Narcology: narcology.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 
