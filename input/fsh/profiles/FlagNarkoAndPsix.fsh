@@ -34,7 +34,7 @@ Description: "Example of Narko and Psix Flag"
 Title: "Narko and Psix Flag Example"
 Usage: #example
 * status = $flag-status-cs#active "Active"
-* code = registri-flag-cs#registri0001-00002 "Compulsory outpatient treatment"
+* code = registri-flag-cs#registri0001-00002 "Compulsory treatment"
 * subject = Reference(example-salim)
 * period.start = "2026-03-12"
 * encounter = Reference(example-encounter)
