@@ -157,3 +157,8 @@ Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSy
 Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
 
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
+
+Alias: $diagnostic-report-service-category = http://terminology.hl7.org/CodeSystem/v2-0074
+Alias: $lab-report-types-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/lab-report-types-cs
+Alias: $lab-pan-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/lab-pan-cs
+Alias: $signature-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/signature-type-cs
