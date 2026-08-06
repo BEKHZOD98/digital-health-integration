@@ -22,6 +22,4 @@ Usage: #example
 * subject = Reference(example-salim)
 * encounter = Reference(example-encounter)
 * recordedDate = "2026-03-10"
-// comment will be removed after UZCoreOrganization is added to UZCoreCondition reference
-// * participant
-//   * actor = Reference(Organization/organization-123)
+* participant.actor = Reference(Organization/organization-123)
