@@ -103,8 +103,8 @@ To'liq namunaviy nusxa uchun [066-1-shakl psixiatrik/narkologik chiqarish misoli
 | Reanimatsiyada yotgan kunlar | Дни в реанимации | Observation.valueQuantity | LOINC `LP76050-1` "Intensive care unit" | 0 days |
 | O'rin kunlari | Койко-дни | Encounter.length | UCUM | 10 days |
 | Chiqarilgan bo'lim | Отделение выписки | Organization.name | Local code | Narcology department |
-| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.subjectStatus | Local code | Recovered |
-| Bemor holati | Состояние пациента | Encounter.admission.dischargeDisposition | Local code | Hospitalized |
+| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.admission.dischargeDisposition | Local code | Discharged |
+| Bemor holati | Состояние пациента | Encounter.subjectStatus | Local code | Recovered |
 | Nogironlik | Инвалидность | Observation.valueCodeableConcept | Local code | Group II |
 | Shifoxona ichidagi ta'til kunlari soni | Дни отпуска внутри стационара | Observation.valueQuantity | LOINC `LA17962-4` "Medical leave of absence" | 0 days |
 
@@ -112,7 +112,7 @@ To'liq namunaviy nusxa uchun [066-1-shakl psixiatrik/narkologik chiqarish misoli
 
 ### Yakuniy tashxis
 
-Har bir tashxis [Diagnosis Role](CodeSystem-diagnosis-role.html) kod tizimidan olingan `Condition.category` bilan belgilanadi va Composition'ning rolga mos quyi bo'limiga joylashtiriladi, shu sababli rol kiritish tartibiga bog'liq bo'lmagan holda saqlanadi - Asosiy → `main`, Raqobat → `competing`, Yondosh → `concomitant`, Fon → `background`, Asorat → `complication`.
+Har bir tashxis [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) kod tizimidan olingan `Condition.category` bilan belgilanadi va Composition'ning rolga mos quyi bo'limiga joylashtiriladi, shu sababli rol kiritish tartibiga bog'liq bo'lmagan holda saqlanadi - Asosiy → `main`, Raqobat → `competing`, Yondosh → `concomitant`, Fon → `background`, Asorat → `complication`.
 
 | UZ | RU | FHIR yo'li | Kod | Misol |
 |----|----|------------|------|---------|
@@ -126,7 +126,7 @@ Har bir tashxis [Diagnosis Role](CodeSystem-diagnosis-role.html) kod tizimidan o
 
 ### Patologoanatomik tashxis
 
-O'lim sabablari xuddi shu tarzda (`Condition.category`, [Diagnosis Role](CodeSystem-diagnosis-role.html)) rollar bo'yicha quyi bo'limlarda belgilanadi - O'limning bevosita sababi → `immediate-cause-of-death`, uni keltirib chiqargan kasallik → `underlying-cause-of-death`, Asosiy kasallik → `main-disease-death`, Boshqa muhim kasalliklar → `other-significant-death`.
+O'lim sabablari xuddi shu tarzda (`Condition.category`, [Diagnosis Role](CodeSystem-diagnosis-role-integration.html)) rollar bo'yicha quyi bo'limlarda belgilanadi - O'limning bevosita sababi → `immediate-cause-of-death`, uni keltirib chiqargan kasallik → `underlying-cause-of-death`, Asosiy kasallik → `main-disease-death`, Boshqa muhim kasalliklar → `other-significant-death`.
 
 | UZ | RU | FHIR yo'li | Kod | Misol |
 |----|----|------------|------|---------|

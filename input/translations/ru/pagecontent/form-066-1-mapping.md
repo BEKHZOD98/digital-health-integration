@@ -103,8 +103,8 @@
 | Reanimatsiyada yotgan kunlar | Дни в реанимации | Observation.valueQuantity | LOINC `LP76050-1` "Intensive care unit" | 0 days |
 | O'rin kunlari | Койко-дни | Encounter.length | UCUM | 10 days |
 | Chiqarilgan bo'lim | Отделение выписки | Organization.name | Local code | Narcology department |
-| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.subjectStatus | Local code | Recovered |
-| Bemor holati | Состояние пациента | Encounter.admission.dischargeDisposition | Local code | Hospitalized |
+| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.admission.dischargeDisposition | Local code | Discharged |
+| Bemor holati | Состояние пациента | Encounter.subjectStatus | Local code | Recovered |
 | Nogironlik | Инвалидность | Observation.valueCodeableConcept | Local code | Group II |
 | Shifoxona ichidagi ta'til kunlari soni | Дни отпуска внутри стационара | Observation.valueQuantity | LOINC `LA17962-4` "Medical leave of absence" | 0 days |
 
@@ -112,7 +112,7 @@
 
 ### Заключительный диагноз
 
-Каждый диагноз помечается значением `Condition.category` из системы кодов [Diagnosis Role](CodeSystem-diagnosis-role.html) и помещается в соответствующий подраздел Composition по роли, поэтому роль сохраняется независимо от порядка ввода - Основной → `main`, Конкурирующий → `competing`, Сопутствующий → `concomitant`, Фоновый → `background`, Осложнение → `complication`.
+Каждый диагноз помечается значением `Condition.category` из системы кодов [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) и помещается в соответствующий подраздел Composition по роли, поэтому роль сохраняется независимо от порядка ввода - Основной → `main`, Конкурирующий → `competing`, Сопутствующий → `concomitant`, Фоновый → `background`, Осложнение → `complication`.
 
 | UZ | RU | Путь FHIR | Код | Пример |
 |----|----|------------|------|---------|
@@ -126,7 +126,7 @@
 
 ### Патологоанатомический диагноз
 
-Причины смерти помечаются таким же образом (`Condition.category`, [Diagnosis Role](CodeSystem-diagnosis-role.html)) в подразделах по ролям - Непосредственная причина смерти → `immediate-cause-of-death`, вызвавшее её заболевание → `underlying-cause-of-death`, Основное заболевание → `main-disease-death`, Другие значимые заболевания → `other-significant-death`.
+Причины смерти помечаются таким же образом (`Condition.category`, [Diagnosis Role](CodeSystem-diagnosis-role-integration.html)) в подразделах по ролям - Непосредственная причина смерти → `immediate-cause-of-death`, вызвавшее её заболевание → `underlying-cause-of-death`, Основное заболевание → `main-disease-death`, Другие значимые заболевания → `other-significant-death`.
 
 | UZ | RU | Путь FHIR | Код | Пример |
 |----|----|------------|------|---------|

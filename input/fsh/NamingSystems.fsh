@@ -73,7 +73,7 @@ Instance: medical-record-number-system
 InstanceOf: NamingSystem
 Usage: #definition
 
-* url = "https://dhp.uz/fhir/integrations/NamingSystem/medical-record-number-system"
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/medical-record-number-system"
 * name = "UzbekistanMedicalRecordNumberSystem"
 * status = #active
 * kind = #identifier
@@ -89,7 +89,7 @@ Instance: screening-identifier-system
 InstanceOf: NamingSystem
 Description: "Identifier system for the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System"
 Usage: #definition
-* url = "https://dhp.uz/fhir/integrations/NamingSystem/screening-identifier-system"
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/screening-identifier-system"
 * name = "ScreeningIdentifierSystem"
 * status = #active
 * kind = #identifier
@@ -106,7 +106,7 @@ Instance: screening-patient-identifier-system
 InstanceOf: NamingSystem
 Description: "Patient identifier system for the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System"
 Usage: #definition
-* url = "https://dhp.uz/fhir/integrations/NamingSystem/screening-patient-identifier-system"
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/screening-patient-identifier-system"
 * name = "ScreeningPatientIdentifierSystem"
 * status = #active
 * kind = #identifier
@@ -123,7 +123,7 @@ Instance: screening-practitioner-identifier-system
 InstanceOf: NamingSystem
 Description: "Practitioner identifier system for the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System"
 Usage: #definition
-* url = "https://dhp.uz/fhir/integrations/NamingSystem/screening-practitioner-identifier-system"
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/screening-practitioner-identifier-system"
 * name = "ScreeningPractitionerIdentifierSystem"
 * status = #active
 * kind = #identifier
@@ -135,3 +135,22 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://dhp.uz/fhir/core/sid/pro/uz/screening"
 * uniqueId[0].preferred = true
+
+Instance: sick-leave-number-system
+InstanceOf: NamingSystem
+Description: "Identifier system for sick leave certificate numbers (листок нетрудоспособности, ЛН) in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/sick-leave-number-system"
+* name = "UzbekistanSickLeaveNumber"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-07-20"
+* description = "Certificate series and number of a sick leave document (Номер ЛН), assigned when the листок нетрудоспособности is issued."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in CarePlan.identifier[series] for the sick leave certificate number (e.g., 01ТШ 005591125)"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/sickleave"
+* uniqueId[=].preferred = true
+
