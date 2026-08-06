@@ -82,7 +82,7 @@
 | Прибыл из другого города | - | `false` (boolean) | `component[fromAnotherCity]` |
 | Инфекционный контакт | - | `false` (boolean) | `component[infectiousContact]` |
 | Степень родства | [RelationDegreeVS](ValueSet-relation-degree-vs.html) | `relation-degree-cs#emdoc-0005-0001` (мать) | `component[kinshipDegree]` |
-| Режим лечения | [EncounterClassVS](ValueSet-encounter-class-vs.html) | `v3-ActCode#AMB` (амбулаторный) | `component[regime]` |
+| Режим лечения | [EncounterClassVS](ValueSet-encounter-class-sickleave-vs.html) | `v3-ActCode#AMB` (амбулаторный) | `component[regime]` |
 | Нарушение режима | [RegimenViolationVS](ValueSet-regimen-violation-vs.html) | `regimen-violation-cs#emdoc-0007-0005` (другие нарушения) | `component[regimenViolation]` |
 | Дата временного перевода на другую работу | - | `2025-08-25` (dateTime) | `component[tempJobTransfer]` |
 | Заключения | [ConclusionsVS](ValueSet-conclusions-vs.html) | `conclusions-cs#emdoc-0008-0001` | `component[conclusions]` |

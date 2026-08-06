@@ -120,7 +120,7 @@ Alias: $discharge-disposition = http://terminology.hl7.org/CodeSystem/discharge-
 Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
 Alias: $v3-ObservationInterpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 Alias: $icd10 = http://hl7.org/fhir/sid/icd-10
-Alias: $diagnosis-role = https://terminology.dhp.uz/fhir/integrations/CodeSystem/diagnosis-role
+Alias: $diagnosis-role = https://terminology.dhp.uz/fhir/integrations/CodeSystem/diagnosis-role-integration
 Alias: $local-observation-code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/local-observation-code
 Alias: $education-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/education-cs
 Alias: $occupation-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
@@ -164,3 +164,8 @@ Alias: $nationality = http://hl7.org/fhir/StructureDefinition/patient-nationalit
 Alias: $citizenship-ext = http://hl7.org/fhir/StructureDefinition/patient-citizenship
 
 
+
+Alias: $diagnostic-report-service-category = http://terminology.hl7.org/CodeSystem/v2-0074
+Alias: $lab-report-types-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/lab-report-types-cs
+Alias: $lab-pan-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/lab-pan-cs
+Alias: $signature-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/signature-type-cs
