@@ -16,24 +16,21 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 * identifier.type from $identifier-type-vs (required)
 * code MS
 * code from HepatitisICDVS (required)
-* subject 1..1 MS
-* subject only Reference(UZCorePatient)
-* encounter  MS
-* encounter only Reference(UZCoreEncounter)
 * encounter ^short = "When a healthcare professional enters patient information into the system, it is used to associate this information with the patient's active encounter record."
 * extension[diagnosisType] 1..1 MS
 //condition outcomes
 * extension contains HepatitisConditionOutcome named outcome 0..1 MS
 * extension[outcome] ^short = "Effectiveness of treatment at the time of removal from A, B, C, D, E registry follow-up"
 * extension[outcome] ^definition = "Represents the effectiveness of treatment at the time of removal from the A, B, C, D, E registry follow-up."
-* recordedDate  MS
+* extension[outcome].valueCodeableConcept 1..1 MS
+* extension[outcome].valueCodeableConcept from HepatitisConditionOutcomeCodesVS (required)
+
 * recordedDate ^short = "Date when the condition was recorded"
-* participant  MS
-  * actor only Reference(UZCorePractitioner)
+* participant  MS 
+  * actor only Reference(UZCorePractitionerRole)
   * actor ^short = "Physician who made the diagnosis"
 * note 
 * note.text ^short = "Additional information about the condition, such as symptoms, duration, or relevant medical history."
-
 
 // Instance Example
 Instance: example-hepatitis-condition
@@ -54,10 +51,9 @@ Usage: #example
 * code = $icd-10#B17.1 "Acute hepatitis C"
 
 * subject = Reference(example-hepatitis-patient)
-* encounter = Reference(example-hepatitis-encounter)
 
-* recordedDate = "2026-11-09T13:31:00Z"
-* participant.actor = Reference(Practitioner/example-practitioner)
+* recordedDate = "2025-11-09T13:31:00Z"
+* participant.actor = Reference(PractitionerRole/example-practitionerrole)
 
 * extension[outcome].valueCodeableConcept = $sct#1137679005 "Good response to medication"
-* note.text = "Symptoms started 2 weeks ago in the patient"
+* note.text = "test"

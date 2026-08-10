@@ -4,8 +4,6 @@ Title: "Hepatitis lab result type codesystem"
 Description: "Description of hepatitis lab result type codesystem"
 * insert OriginalCodeSystemDraft(hep-lab-res-type-cs)
 
-* insert OriginalCodeSystemDraft(hep-lab-res-type-cs)
-
 * #lab_0001_00001 "Salbiy"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Отрицательный"

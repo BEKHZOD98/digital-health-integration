@@ -8,24 +8,14 @@ Description: "Profile for representing episodes of care related to hepatitis pat
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
-* identifier 1..* MS
+* identifier MS
 
 * diagnosis MS
-* diagnosis.condition MS
 * diagnosis.condition only CodeableReference(HepatitisCondition)
 * diagnosis.condition from HepatitisICDVS (required) // CodeSystem should be done
 * diagnosis.condition ^short = "Patient's hepatitis diagnosis"  //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
 
-* diagnosis.use MS
 * diagnosis.use from HepatitisEncDiagnosisUseVS (required)
-
-* patient 1..1 MS
-* patient only Reference(UZCorePatient)
-* patient ^short = "Patient associated with this episode of care"
-
-* managingOrganization MS
-* managingOrganization only Reference(UZCoreOrganization)
-* managingOrganization ^short = "Organization managing this episode of care"
 
 * period MS
   * ^short = "Duration of hepatitis patient observation/monitoring process"
@@ -34,13 +24,8 @@ Description: "Profile for representing episodes of care related to hepatitis pat
   * end 0..1 MS
     * ^short = "Date and time of removal of hepatitis (A, B, C, D) from the follow-up register"
 
-* careManager MS
-* careManager only Reference(UZCorePractitioner or UZCorePractitionerRole)
+* careManager only Reference(UZCorePractitioner or UZCorePractitionerRole) 
 * careManager ^short = "Care manager"
-
-* referralRequest MS
-* referralRequest only Reference(ServiceRequest)
-* referralRequest ^short = "Referral requests"
 
 
 // Instance Example
@@ -73,4 +58,3 @@ Usage: #example
 
 * careManager = Reference(Practitioner/example-practitioner)
 
-* referralRequest[0] = Reference(ServiceRequest/referral-to-specialist)

@@ -7,12 +7,10 @@ Description: "Profile for representing ultrasound observations related to hepati
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
-* identifier 1..* MS
-* status from http://hl7.org/fhir/ValueSet/observation-status (required)
-* status MS
+* identifier 0..* MS
 
 * code 1..1 MS
-* code from https://terminology.dhp.uz/fhir/core/ValueSet/typeOfUltrasound (required)
+* code from HepatitisTypeOfUltrasoundVS (required)
 * code.coding 0..* MS
   * system 0..1 MS
   * system = $sct
@@ -22,16 +20,15 @@ Description: "Profile for representing ultrasound observations related to hepati
 
 * subject MS
 * subject only Reference(UZCorePatient)
-* encounter MS
-* encounter only Reference(UZCoreEncounter)
 
+* effective[x] MS              
 * effective[x] only dateTime or Period
-* effective[x] MS
+
 * performer MS
 * performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
 
+* value[x] MS    
 * value[x] only boolean
-* value[x] MS
 * valueBoolean ^short = "Availability of the result (yes/no)"
 
 
@@ -56,9 +53,7 @@ Usage: #example
 * subject = Reference(example-hepatitis-patient)
 * effectiveDateTime = "2026-01-26"
 * performer = Reference(PractitionerRole/muratova-gulshoda-role)
-
 * valueBoolean = true
-* note.text = "Liver texture note showing increased echogenicity"
 
 
 // Instance Example
@@ -76,10 +71,10 @@ Usage: #example
     * display = "Public Health Case Identifier"
   * use = #official
 * code 
-  * coding = $sct#300332007 "Mass of liver (finding)"
+  * coding = $sct#19943007 "Cirrhosis of liver"
   * text = "Signs of masses in the liver"
 
 * subject = Reference(example-hepatitis-patient)
-* effectiveDateTime = "2026-01-26"
+* effectiveDateTime = "2027-01-26"
 * performer = Reference(PractitionerRole/muratova-gulshoda-role)
-* valueBoolean = true
+* valueBoolean = false

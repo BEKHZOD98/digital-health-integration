@@ -11,12 +11,12 @@ Description: "Profile for representing hepatitis observation analysis in the con
     - If the laboratory test includes multiple analytes, the result SHALL be represented using Observation.component.
     - If the test contains a single analyte, the result SHALL be represented in Observation.value[x]."
 
-* identifier 1..* MS
+* identifier 0..* MS
   * system = $hep-id-sys
   * system ^short = "Hepatitis observation identifier system"
   * value ^short = "Unique identifier for the observation: UUID"
-* identifier.type 0..1 MS
-* identifier.type from $identifier-type-vs (required)
+* identifier.type 0..1 MS 
+* identifier.type from $identifier-type-vs (required) 
 * code 1..1 MS
 * code from HepatitisObservationAnalysisVS (required)
 
@@ -25,8 +25,8 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * effective[x] only dateTime or Period
 * effective[x] ^short = "Date and time when the observation occurred"
 
-* value[x] only Attachment or Quantity or CodeableConcept
-* value[x] ^short = "Actual code"
+* value[x] only Attachment or Quantity or CodeableConcept 
+* value[x] ^short = "Actual code"   
 
 * valueAttachment ^short = "Attached file"
 * valueAttachment ^definition = "The actual analysis results can be found here."
@@ -41,15 +41,22 @@ Description: "Profile for representing hepatitis observation analysis in the con
 * performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
 * performer ^short = "Organization responsible for performing this observation"
 
+
+
 * component.code 1..1 MS
 * component.code from HepatitisObservationAnalysisVS (required)
-* component.valueQuantity.comparator from QuantityComparatorVS (required)
-* component.valueQuantity.system = $ucum
+
+* component.value[x] only string or CodeableConcept or Quantity
 
 * component.valueString ^short = "The result value entered manually by a healthcare professional."
+
 * component.valueCodeableConcept ^short = "Positive or negative laboratory test result"
 * component.valueCodeableConcept from $observation-interpretation-vs (extensible)
-* component.interpretation from $observation-interpretation-vs  (extensible)
+
+* component.valueQuantity.system = $ucum 
+
+* component.interpretation from $observation-interpretation-vs (extensible)
+
 
 
 // Instance Example

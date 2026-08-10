@@ -1,78 +1,79 @@
 Profile: HepatitisEncounter
 Parent: UZCoreEncounter
 Id: hepatitis-encounter
-Title: "Hepatitis patient encounter profile"
-Description: "Profile for representing encounters related to hepatitis patients in the context of a digital health integration project. This profile extends the base Encounter resource to include specific elements and extensions relevant to hepatitis patient encounters, such as clinical status, participant types, and encounter outcomes."
-
+Title: "Hepatitis Encounter"
+Description: "Encounter profile for hepatitis-related clinical encounters"
 * ^experimental = true
 * ^status = #active
 * ^publisher = "Uzinfocom"
 
+
 * identifier 0..1 MS
   * system = $hep-id-sys
-  * system ^short = "Hepatitis encounter identifier system"
-  * value ^short = "Unique identifier for the encounter: UUID"
-* identifier.type 0..1 MS
-* identifier.type from $identifier-type-vs (required)
-
-* identifier.type.coding 0..* MS
-* identifier.type.coding.system 0..1 MS
-* identifier.type.coding.system = $identifier-type
-
-* identifier.type.coding.code 0..1 MS
-* identifier.type.coding.code = #PHC
-
-* identifier.type.coding.display 0..1 MS
-* identifier.type.coding.display = "Public Health Case Identifier"
-
-* identifier.use 0..1 MS
-* identifier.use from $identifier-use-vs (required)
+    * ^short = "Namespace for the encounter identifier"
+  * type from IdentifierTypeVS (required)
+  * type.coding 
+    * system = $v2-0203
+      * ^short = "Terminology system defining the identifier type"
+    * code = #PHC
+      * ^short = "Code identifying the identifier type" 
+    * display = "Public Health Case Identifier"
+      * ^short = "Human-readable name of the identifier type"
+  * use from IdentifierUseVS (required)
+    * ^short = "Purpose of the identifier"
 
 * subject 1..1 MS
+  * ^short = "Patient involved in the encounter"
 * subject only Reference(UZCorePatient)
-* subject ^short = "Patient being admitted" 
 
-* serviceProvider MS
-* serviceProvider only Reference(Organization)
-* serviceProvider ^short = "Medical institution"
+* serviceProvider 0..1 MS
+  * ^short = "Organization responsible for the encounter"
+* serviceProvider only Reference(UZCoreOrganization)
 
-* participant MS
-  * type MS
-  * actor MS
-  * actor only Reference(Practitioner or PractitionerRole or RelatedPerson)
-  * actor ^short = "Physician who examined the patient"
-
-* actualPeriod MS
-* actualPeriod ^short = "Actual encounter time"
-
-* plannedStartDate MS
-* plannedStartDate ^short = "Planned encounter start date"
-
-* partOf MS
-* partOf only Reference(Encounter)
-* partOf ^short = "Part of the overall encounter process"
+* participant 0..* MS
+  * ^short = "People or organizations participating in the encounter"
+  * type 0..* MS
+    * ^short = "Role of the participant in the encounter"
+  * type from EncounterParticipantTypeVS (extensible)
+  * period 0..1 MS
+    * ^short = "Period during which the participant was involved"
+  * actor 0..1 MS
+    * ^short = "Person or organization participating in the encounter"
+  * actor only Reference(UZCorePractitionerRole)
 
 
-// Instance Example
-Instance: example-hepatitis-encounter
+* actualPeriod 0..1 MS
+  * ^short = "Actual start and end time of the encounter"
+* plannedStartDate 1..1 MS
+  * ^short = "Planned start date and time of the encounter"
+
+* partOf 0..1 MS
+  * ^short = "Larger encounter of which this encounter is a part"
+* partOf only Reference(UZCoreEncounter)
+
+Instance: HepatitisEncounterExample
 InstanceOf: HepatitisEncounter
-Description: "Example of a consultation for Yusupova Khalida on January 26, 2026"
+Title: "Hepatitis Encounter Example"
+Description: "Example of a hepatitis-related clinical encounter"
 Usage: #example
-* identifier 
-  * system = $hep-id-sys 
-  * value = "ENC-2026-9901"
-  * type.coding
-    * system = $v2-0203
-    * code = #PHC
-    * display = "Public Health Case Identifier"
-  * use = #official
-* type[nationalType] = EncounterTypeCS#mserv-0001-00004 "Treatment services"
+
+* identifier.system = $hep-id-sys
+
+* identifier.type.coding.system = $v2-0203
+* identifier.type.coding.code = #PHC
+* identifier.type.coding.display = "Public Health Case Identifier"
+* identifier.use = #usual
+
+
+* class = $v3-ActCode#AMB "Ambulatory"
+* subject = Reference(example-salim)
+* serviceProvider = Reference(example-organization)
+
 * status = #completed
+* participant.type = $v3-ParticipationType#ATND "attender"
+* participant.actor = Reference(muratova-gulshoda-role)
+* type[nationalType] = encounter-type-cs#mserv-0001-00004 "Treatment services"
+* actualPeriod
+  * start = "2026-01-26"
 
-* subject = Reference(example-hepatitis-patient)
-* serviceProvider = Reference(Organization/samarkand-regional-hospital)
-
-* participant[0].actor = Reference(Practitioner/muratova-gulshoda)
-* actualPeriod 
-  * start = "2026-01-26T09:41:00Z"
-* plannedStartDate = "2026-01-26T09:41:00Z"
+* plannedStartDate = "2026-01-26T09:41:00+05:00"
