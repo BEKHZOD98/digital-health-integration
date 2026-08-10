@@ -16,17 +16,16 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 * subject only Reference(UZCorePatient)
 
 * encounter 1..1
-* encounter only Reference(UZCoreEncounter) // TODO: 066 kabi alohida UZCoreEncounter027 kerakmi, aniqlash kerak
+* encounter only Reference(UZCoreEncounter)
 
-* author 1..*
-* author only Reference(UZCorePractitionerRole) // TODO: loyihada boshqa joylarda UZCorePractitioner ishlatilgan (PractitionerRole emas) - qaysi biri standart konventsiya ekanini aniqlash kerak
+* author only Reference(UZCorePractitioner)
 
-* section ^slicing.discriminator.type = #value
+* section ^slicing.discriminator.type = #pattern
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 
 * section contains
-    registrationInformation 1..1 and
+    registrationInformation 0..1 and
     personalInformation 1..1 and
     residenceInformation 1..1 and
     referralAndDiagnosis 1..1 and
@@ -35,87 +34,73 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
     nextSteps 0..1 and
     responsiblePersons 1..1
 
-* section[registrationInformation].title 1..1
-* section[registrationInformation].code 1..1
-* section[registrationInformation].code = $loinc#TODO "Registration information"
-// TODO: mos LOINC section kodi hali topilmagan - qidirish kerak
+* section[registrationInformation].title 0..1
+* section[registrationInformation].code 0..1
+// mos LOINC section kodi YOQ
 * section[registrationInformation].entry 1..*
 * section[registrationInformation].entry only Reference(UZCoreOrganization or UZCoreEncounter)
 
 * section[personalInformation].title 1..1
 * section[personalInformation].code 1..1
-* section[personalInformation].code = $loinc#TODO "Patient Information"
-// TODO: LP36348-8 LOINC'da tasdiqlanmadi (topilmadi). Bundan tashqari, LP- prefiksli kodlar
-// LOINC "Part" kodlari bo'lib, LOINC'ning rasmiy qo'llanmasiga ko'ra mustaqil/alohida kod
-// sifatida ishlatilmasligi kerak. To'g'ri Document Ontology section kodi qidirilishi kerak.
+* section[personalInformation].code = $loinc#45970-1 "Demographic information section"
 * section[personalInformation].entry 1..*
 * section[personalInformation].entry only Reference(UZCorePatient)
 
 * section[residenceInformation].title 1..1
 * section[residenceInformation].code 1..1
-* section[residenceInformation].code = $loinc#TODO "Address"
-// TODO: 56799-0 LOINC'da real kod, lekin bu ADMIN.PATIENT sinfidagi alohida ma'lumot
-// elementi (Nominal scale), Document Ontology section kodi emas. Composition.section.code
-// uchun noto'g'ri "o'q" (axis). Mos section kodi qidirilishi kerak.
+// mos LOINC section kodi YOQ
 * section[residenceInformation].entry 1..*
 * section[residenceInformation].entry only Reference(UZCorePatient)
 
 * section[referralAndDiagnosis].title 1..1
 * section[referralAndDiagnosis].code 1..1
-* section[referralAndDiagnosis].code = $loinc#TODO "Referral and diagnosis"
-// TODO: 57133-1 "Referral note" LOINC'da real kod, lekin bu butun hujjat darajasidagi
-// (Document Ontology, Scale=Doc) kod - "bu butun hujjat Referral note" degan ma'noni bildiradi.
-// Uni bitta section kodi sifatida ishlatish konseptual jihatdan noto'g'ri, chunki
-// Composition.type allaqachon 34133-9 bilan belgilangan. Mos section kodi qidirilishi kerak.
-* section[referralAndDiagnosis].entry 0..*
-* section[referralAndDiagnosis].entry only Reference(UZCoreOrganization)
-* section[referralAndDiagnosis].section ^slicing.discriminator.type = #value
+* section[referralAndDiagnosis].code = $loinc#42349-1 "Reason for referral (narrative)"
+* section[referralAndDiagnosis].entry 1..*
+* section[referralAndDiagnosis].entry only Reference(UZCoreEncounter)
+
+* section[referralAndDiagnosis].section ^slicing.discriminator.type = #pattern
 * section[referralAndDiagnosis].section ^slicing.discriminator.path = "code"
 * section[referralAndDiagnosis].section ^slicing.rules = #open
 * section[referralAndDiagnosis].section contains
     main 1..1 and
     complication 0..1 and
     concomitant 0..1
+
 * section[referralAndDiagnosis].section[main].code = $diagnosis-role#main
 * section[referralAndDiagnosis].section[main].entry 1..*
-* section[referralAndDiagnosis].section[main].entry only Reference(UZCoreClinicalCondition)
+* section[referralAndDiagnosis].section[main].entry only Reference(UZCoreCondition)
+
 * section[referralAndDiagnosis].section[complication].code = $diagnosis-role#complication
-* section[referralAndDiagnosis].section[complication].entry 1..*
-* section[referralAndDiagnosis].section[complication].entry only Reference(UZCoreClinicalCondition)
+* section[referralAndDiagnosis].section[complication].entry 0..*
+* section[referralAndDiagnosis].section[complication].entry only Reference(UZCoreProcedure)
+
 * section[referralAndDiagnosis].section[concomitant].code = $diagnosis-role#concomitant
 * section[referralAndDiagnosis].section[concomitant].entry 1..*
-* section[referralAndDiagnosis].section[concomitant].entry only Reference(UZCoreClinicalCondition)
+* section[referralAndDiagnosis].section[concomitant].entry only Reference(UZCoreCondition)
 
 * section[clinicalInformation].title 1..1
 * section[clinicalInformation].code 1..1
-* section[clinicalInformation].code = $loinc#TODO "Clinical presentation"
-// TODO: 8709-8 LOINC'da umuman topilmadi - ehtimol xato yoki mavjud emas kod.
-// Bo'lim mazmuniga (shikoyatlar/anamnez/ko'rik/diagnostika) mos LOINC section kodi
-// qidirilishi kerak - ehtimol bir nechta alohida kod kerak bo'ladi (masalan har biri uchun).
+// mos LOINC section kodi YOQ
 * section[clinicalInformation].entry 1..*
-* section[clinicalInformation].entry only Reference(UZCoreObservation or DiagnosticReport)
+* section[clinicalInformation].entry only Reference(UZCoreEncounter or UZCoreObservation or UZCoreDiagnosticReport)
 
 * section[treatmentAndRecommendations].title 1..1
 * section[treatmentAndRecommendations].code 1..1
-* section[treatmentAndRecommendations].code = $loinc#TODO "Treatment and recommendations"
-// TODO: 18776-5 "Plan of care note" LOINC'da real kod, lekin bu ham butun hujjat
-// darajasidagi (Document Ontology, Scale=Doc) kod, section kodi emas - xuddi 57133-1
-// kabi muammo. Mos section kodi qidirilishi kerak.
+* section[treatmentAndRecommendations].code = $loinc#18776-5 "Plan of care note"
 * section[treatmentAndRecommendations].entry 1..*
 * section[treatmentAndRecommendations].entry only Reference(CarePlan or MedicationRequest)
+// Для CarePlan, MedicationRequest национальных профилей нет 
 
 * section[nextSteps].title 1..1
 * section[nextSteps].code 1..1
-* section[nextSteps].code = $loinc#TODO "Follow-up"
-// TODO: LOINC section kodi tanlanmagan
+// mos LOINC section kodi YOQ
 * section[nextSteps].entry 0..*
-* section[nextSteps].entry only Reference(CarePlan or EpisodeOfCare or UZCoreServiceRequest)
-
+// VAQTINCHALIK: umumiy UZCoreServiceRequest tayyor bo'lgach shu bilan almashtiriladi (Бехзодов bilan kelishilgan)
+* section[nextSteps].entry only Reference(CarePlan or UZCoreEpisodeOfCare or UZCoreServiceRequestLaboratory)
+// The reference will be changed to UZCoreMedicationRequest after UZCoreMedicationRequest is published in the IG
 * section[responsiblePersons].title 1..1
 * section[responsiblePersons].code 1..1
-* section[responsiblePersons].code = $loinc#TODO "Responsible party"
-// TODO: LP35157-4 LOINC'da tasdiqlanmadi (topilmadi), va LP- prefiksli kod bo'lgani uchun
-// baribir mustaqil section kodi sifatida ishlatilishi tavsiya etilmaydi.
+// mos LOINC section kodi YOQ
 * section[responsiblePersons].entry 1..*
-* section[responsiblePersons].entry only Reference(UZCorePractitionerRole)
-// TODO: avvalgi versiyada UZCorePractitioner edi - qaysi biri to'g'ri konventsiya ekanini aniqlash kerak
+* section[responsiblePersons].entry only Reference(UZCorePractitioner or UZCoreProvenance)
+
