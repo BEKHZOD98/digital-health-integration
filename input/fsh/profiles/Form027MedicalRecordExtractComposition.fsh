@@ -36,7 +36,7 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 
 * section[registrationInformation].title 1..1
 * section[registrationInformation].code 1..1
-* section[registrationInformation].code = $loinc#46240-8 "History of encounters"
+* section[registrationInformation].code = $loinc#46240-8 "History of Hospitalizations+Outpatient visits Narrative"
 * section[registrationInformation].entry 1..*
 * section[registrationInformation].entry only Reference(UZCoreOrganization or UZCoreEncounter)
 

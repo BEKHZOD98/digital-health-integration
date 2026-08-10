@@ -301,8 +301,7 @@ Usage: #inline
 * intent = #order
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
-* medication = Reference(medication-paracetamol-027)
-
+* medication = Reference(urn:uuid:02700021-1111-2222-3333-444444444444)
 
 Instance: medication-paracetamol-027
 InstanceOf: Medication
@@ -348,7 +347,7 @@ Usage: #inline
 
 
 Instance: provenance-doctor-signature-027
-InstanceOf: Provenance
+InstanceOf: UZCoreProvenance
 Usage: #inline
 * language = #en
 * target = Reference(Bundle/example-form-027-medical-record-extract)
@@ -363,7 +362,7 @@ Usage: #inline
 
 
 Instance: provenance-responsible-signature-027
-InstanceOf: Provenance
+InstanceOf: UZCoreProvenance
 Usage: #inline
 * language = #en
 * target = Reference(Bundle/example-form-027-medical-record-extract)
