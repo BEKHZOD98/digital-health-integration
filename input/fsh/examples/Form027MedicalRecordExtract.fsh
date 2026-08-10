@@ -51,6 +51,12 @@ Description: "Example of Form 027 extract from patient's medical record"
 * entry[=].resource = provenance-responsible-signature-027
 * entry[+].fullUrl = "urn:uuid:02700021-1111-2222-3333-444444444444"
 * entry[=].resource = medication-paracetamol-027
+* entry[+].fullUrl = "urn:uuid:02700022-1111-2222-3333-444444444444"
+* entry[=].resource = practitionerrole-doctor-027
+* entry[+].fullUrl = "urn:uuid:02700023-1111-2222-3333-444444444444"
+* entry[=].resource = practitionerrole-responsible-027
+* entry[+].fullUrl = "urn:uuid:02700024-1111-2222-3333-444444444444"
+* entry[=].resource = documentreference-027
 
 
 Instance: composition-027-001
@@ -165,6 +171,7 @@ Usage: #inline
 * serviceProvider = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
 * reason.value.concept.text = "Yuqori nafas yo'llari infeksiyasiga xos shikoyatlar" // Excel: UZCoreEncounter.reason.value - "Shikoyatlar"
 
+
 Instance: organization-027-001
 InstanceOf: UZCoreOrganization
 Usage: #inline
@@ -205,6 +212,18 @@ Usage: #inline
 * name.family = "Nazarov"
 * name.given[0] = "S."
 * name.given[+] = "K."
+
+
+Instance: practitionerrole-doctor-027
+InstanceOf: UZCorePractitionerRole
+Usage: #inline
+* practitioner = Reference(urn:uuid:02700006-1111-2222-3333-444444444444)
+
+
+Instance: practitionerrole-responsible-027
+InstanceOf: UZCorePractitionerRole
+Usage: #inline
+* practitioner = Reference(urn:uuid:02700007-1111-2222-3333-444444444444)
 
 
 Instance: condition-main-diagnosis-027
@@ -303,6 +322,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * medication = Reference(urn:uuid:02700021-1111-2222-3333-444444444444)
 
+
 Instance: medication-paracetamol-027
 InstanceOf: Medication
 Usage: #inline
@@ -346,17 +366,25 @@ Usage: #inline
 // * code =
 
 
+Instance: documentreference-027
+InstanceOf: DocumentReference
+Usage: #inline
+* status = #current
+* content.attachment.contentType = #application/pdf
+* content.attachment.title = "Form 027 - Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma"
+
+
 Instance: provenance-doctor-signature-027
 InstanceOf: UZCoreProvenance
 Usage: #inline
 * language = #en
-* target = Reference(Bundle/example-form-027-medical-record-extract)
+* target = Reference(urn:uuid:02700024-1111-2222-3333-444444444444)
 * recorded = "2026-02-10T09:20:00+05:00"
-* agent.type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#attester "Attester"
-* agent.who = Reference(urn:uuid:02700006-1111-2222-3333-444444444444) "Ismoilova M.T."
-* signature.type = urn:iso-astm:E1762-95:2013#1.2.840.10065.1.12.1.1 "Author's Signature"
+* agent.type = $provenance-participant-type#author "Author"
+* agent.who = Reference(urn:uuid:02700022-1111-2222-3333-444444444444) "Ismoilova M.T."
+* signature.type[nationalType] = $signature-type-cs#biometricAuth "Biometric authentication"
 * signature.when = "2026-02-10T09:20:00+05:00"
-* signature.who = Reference(urn:uuid:02700006-1111-2222-3333-444444444444) "Ismoilova M.T."
+* signature.who = Reference(urn:uuid:02700022-1111-2222-3333-444444444444) "Ismoilova M.T."
 * signature.sigFormat = #application/pdf
 * signature.data = "JVBERi0xLjQKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2Jq"
 
@@ -365,12 +393,12 @@ Instance: provenance-responsible-signature-027
 InstanceOf: UZCoreProvenance
 Usage: #inline
 * language = #en
-* target = Reference(Bundle/example-form-027-medical-record-extract)
+* target = Reference(urn:uuid:02700024-1111-2222-3333-444444444444)
 * recorded = "2026-02-10T09:25:00+05:00"
-* agent.type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#attester "Attester"
-* agent.who = Reference(urn:uuid:02700007-1111-2222-3333-444444444444) "Nazarov S.K."
-* signature.type = urn:iso-astm:E1762-95:2013#1.2.840.10065.1.12.1.1 "Author's Signature"
+* agent.type = $provenance-participant-type#author "Author"
+* agent.who = Reference(urn:uuid:02700023-1111-2222-3333-444444444444) "Nazarov S.K."
+* signature.type[nationalType] = $signature-type-cs#biometricAuth "Biometric authentication"
 * signature.when = "2026-02-10T09:25:00+05:00"
-* signature.who = Reference(urn:uuid:02700007-1111-2222-3333-444444444444) "Nazarov S.K."
+* signature.who = Reference(urn:uuid:02700023-1111-2222-3333-444444444444) "Nazarov S.K."
 * signature.sigFormat = #application/pdf
 * signature.data = "JVBERi0xLjQKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2Jq"
