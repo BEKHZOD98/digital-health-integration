@@ -50,7 +50,7 @@ Usage: #example
   * coding = $sct#19943007 "Cirrhosis of liver"
   * text = "Signs of cirrhosis"
 
-* subject = Reference(example-hepatitis-patient)
+* subject = Reference(example-salim)
 * effectiveDateTime = "2026-01-26"
 * performer = Reference(PractitionerRole/muratova-gulshoda-role)
 * valueBoolean = true
@@ -74,7 +74,7 @@ Usage: #example
   * coding = $sct#19943007 "Cirrhosis of liver"
   * text = "Signs of masses in the liver"
 
-* subject = Reference(example-hepatitis-patient)
+* subject = Reference(example-salim)
 * effectiveDateTime = "2027-01-26"
 * performer = Reference(PractitionerRole/muratova-gulshoda-role)
 * valueBoolean = false

@@ -42,10 +42,10 @@ Usage: #example
     * display = "Public Health Case Identifier"
   * use = #official
 
-* type[serviceType] = EpisodeOfCareTypeCS#mserv-0001-00004 "Davolash"
+* type[serviceType] = EpisodeOfCareTypeCS#mserv-0001-00004 "Treatment services"
 
 * status = #planned 
-* patient = Reference(example-hepatitis-patient)
+* patient = Reference(example-salim)
 
 * diagnosis.condition = Reference(example-hepatitis-condition)
 * diagnosis.use = $hep-enc-diag-use#working "Working"

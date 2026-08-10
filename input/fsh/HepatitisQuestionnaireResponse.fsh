@@ -15,11 +15,11 @@ Description: "Profile for representing responses to a hepatitis-related question
 * partOf only Reference(UZCoreSocioeconomicObservation) 
 
 * questionnaire ^short = "Name/canonical of the questionnaire this response is based on"
-* questionnaire only Canonical(HepatitisQuestionnaire)
+* questionnaire only Canonical(Questionnaire)
 
 
 * subject ^short = "The patient this response belongs to"
-* subject only Reference(HepatitisPatientProfile) 
+* subject only Reference(UZCorePatient) 
 
 * encounter ^short = "Encounter during which this questionnaire response was created"
 
@@ -71,7 +71,7 @@ Usage: #example
 
 * status = #completed
 * questionnaire = "https://dhp.uz/fhir/Questionnaire/hepatitis-questionnaire"
-* subject = Reference(example-hepatitis-patient)
+* subject = Reference(example-salim)
 * authored = "2026-03-19T12:00:00Z"
 * author = Reference(muratova-gulshoda-role)
 

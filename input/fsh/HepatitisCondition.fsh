@@ -50,7 +50,7 @@ Usage: #example
 * extension[diagnosisType].valueCodeableConcept = $diagnosis-type#gencl-0001-00003 "Main diagnosis"
 * code = $icd-10#B17.1 "Acute hepatitis C"
 
-* subject = Reference(example-hepatitis-patient)
+* subject = Reference(example-salim)
 
 * recordedDate = "2025-11-09T13:31:00Z"
 * participant.actor = Reference(PractitionerRole/example-practitionerrole)

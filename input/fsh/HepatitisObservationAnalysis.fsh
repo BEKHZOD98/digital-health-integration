@@ -75,7 +75,7 @@ Usage: #example
     * display = "Public Health Case Identifier"
   * use = #official
 
-* method = $sct#258066000 "Polymerase chain reaction"
+* method = LabMethodsCS#lab-method-1 "Polymerase chain reaction"
 * code = $loinc#22314-9 "Hepatitis A virus IgM Ab [Presence] in Serum"
 * subject = Reference(Patient/example-hepatitis-patient)
 * effectiveDateTime = "2026-01-27T09:57:00Z"
