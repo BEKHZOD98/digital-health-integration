@@ -7,10 +7,10 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 
 * identifier 1..*
 * status = #final
-* type = $loinc#34133-9 "Summarization of episode note"
+* type = $loinc#34133-9 "Summary of episode note"
 
 * category 1..1
-* category = $document-category-cs#form-027 "Extract from medical record"
+* category = $document-category-cs#form-027 "Extract from patient's medical record"
 
 * subject 1..1
 * subject only Reference(UZCorePatient)
@@ -20,7 +20,7 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 
 * author only Reference(UZCorePractitioner)
 
-* section ^slicing.discriminator.type = #pattern
+* section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 
@@ -58,7 +58,7 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 * section[referralAndDiagnosis].entry 1..*
 * section[referralAndDiagnosis].entry only Reference(UZCoreEncounter)
 
-* section[referralAndDiagnosis].section ^slicing.discriminator.type = #pattern
+* section[referralAndDiagnosis].section ^slicing.discriminator.type = #value
 * section[referralAndDiagnosis].section ^slicing.discriminator.path = "code"
 * section[referralAndDiagnosis].section ^slicing.rules = #open
 * section[referralAndDiagnosis].section contains

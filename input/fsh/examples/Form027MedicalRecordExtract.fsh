@@ -62,8 +62,8 @@ Usage: #inline
 * identifier[+].system = "https://dhp.uz/fhir/core/sid/doc/uz/form-number"
 * identifier[=].value = "027"
 * status = #final
-* type = $loinc#34133-9 "Summarization of episode note"
-* category = $document-category-cs#form-027 "Extract from medical record"
+* type = $loinc#34133-9 "Summary of episode note"
+* category = $document-category-cs#form-027 "Extract from patient's medical record"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * date = "2026-02-10T09:15:00+05:00"
@@ -147,8 +147,10 @@ Usage: #inline
 * telecom[=].value = "+998901112233"
 * telecom[+].system = #email
 * telecom[=].value = "nilufar.yusupova@mail.com"
-* address.text = "Toshkent sh., Chilonzor tumani, 12-mavze, 5-uy, 10-xonadon"
-
+* address[uzAddress].line[0] = "12-mavze"
+* address[uzAddress].line[+] = "5-uy"
+* address[uzAddress].line[+] = "10-xonadon"
+* address[uzAddress].country = "UZ"
 
 Instance: encounter-027-001
 InstanceOf: UZCoreEncounter
@@ -301,7 +303,7 @@ Usage: #inline
 * intent = #order
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
-* medication = Reference(medication-paracetamol-027)
+* medication = Reference(urn:uuid:02700021-1111-2222-3333-444444444444)
 
 
 Instance: medication-paracetamol-027
