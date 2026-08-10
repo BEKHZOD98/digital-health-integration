@@ -25,7 +25,7 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 * section ^slicing.rules = #open
 
 * section contains
-    registrationInformation 0..1 and
+    registrationInformation 1..1 and
     personalInformation 1..1 and
     residenceInformation 1..1 and
     referralAndDiagnosis 1..1 and
@@ -34,9 +34,9 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
     nextSteps 0..1 and
     responsiblePersons 1..1
 
-* section[registrationInformation].title 0..1
-* section[registrationInformation].code 0..1
-// mos LOINC section kodi YOQ
+* section[registrationInformation].title 1..1
+* section[registrationInformation].code 1..1
+* section[registrationInformation].code = $loinc#46240-8 "History of encounters"
 * section[registrationInformation].entry 1..*
 * section[registrationInformation].entry only Reference(UZCoreOrganization or UZCoreEncounter)
 
@@ -48,7 +48,7 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 
 * section[residenceInformation].title 1..1
 * section[residenceInformation].code 1..1
-// mos LOINC section kodi YOQ
+* section[residenceInformation].code = $loinc#56799-0 "Address"
 * section[residenceInformation].entry 1..*
 * section[residenceInformation].entry only Reference(UZCorePatient)
 
@@ -80,7 +80,7 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 
 * section[clinicalInformation].title 1..1
 * section[clinicalInformation].code 1..1
-// mos LOINC section kodi YOQ
+* section[clinicalInformation].code = $loinc#34117-2 "History and physical note"
 * section[clinicalInformation].entry 1..*
 * section[clinicalInformation].entry only Reference(UZCoreEncounter or UZCoreObservation or UZCoreDiagnosticReport)
 
@@ -93,14 +93,14 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 
 * section[nextSteps].title 1..1
 * section[nextSteps].code 1..1
-// mos LOINC section kodi YOQ
+* section[nextSteps].code = $loinc#74213-0 "Discharge instructions"
 * section[nextSteps].entry 0..*
 // VAQTINCHALIK: umumiy UZCoreServiceRequest tayyor bo'lgach shu bilan almashtiriladi (Бехзодов bilan kelishilgan)
 * section[nextSteps].entry only Reference(CarePlan or UZCoreEpisodeOfCare or UZCoreServiceRequestLaboratory)
 // The reference will be changed to UZCoreMedicationRequest after UZCoreMedicationRequest is published in the IG
 * section[responsiblePersons].title 1..1
 * section[responsiblePersons].code 1..1
-// mos LOINC section kodi YOQ
+* section[responsiblePersons].code = $loinc#LP35157-4 "Responsible party"
 * section[responsiblePersons].entry 1..*
 * section[responsiblePersons].entry only Reference(UZCorePractitioner or UZCoreProvenance)
 

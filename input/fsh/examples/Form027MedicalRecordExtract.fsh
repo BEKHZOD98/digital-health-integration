@@ -80,7 +80,7 @@ Usage: #inline
 * section[=].entry[0] = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 
 * section[residenceInformation].title = "Manzil va aloqa"
-* section[=].code.text = "Manzil va aloqa"
+* section[=].code = $loinc#56799-0 "Address"
 * section[=].entry[0] = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 
 * section[referralAndDiagnosis].title = "Yoʻllanma va tashxis"
@@ -100,7 +100,7 @@ Usage: #inline
 * section[referralAndDiagnosis].section[concomitant].entry = Reference(urn:uuid:02700010-1111-2222-3333-444444444444)
 
 * section[clinicalInformation].title = "Klinik maʼlumotlar"
-* section[=].code.text = "Klinik maʼlumotlar"
+* section[=].code = $loinc#34117-2 "History and physical note"
 * section[=].entry[0] = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700011-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700012-1111-2222-3333-444444444444)
@@ -112,13 +112,13 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:02700015-1111-2222-3333-444444444444)
 
 * section[nextSteps].title = "Keyingi tadbirlar"
-* section[=].code.text = "Keyingi tadbirlar"
+* section[=].code = $loinc#74213-0 "Discharge instructions"
 * section[=].entry[0] = Reference(urn:uuid:02700016-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700017-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700018-1111-2222-3333-444444444444)
 
 * section[responsiblePersons].title = "Masʼul shaxslar"
-* section[=].code.text = "Masʼul shaxslar"
+* section[=].code = $loinc#LP35157-4 "Responsible party"
 * section[=].entry[0] = Reference(urn:uuid:02700006-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700019-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700007-1111-2222-3333-444444444444)
@@ -147,10 +147,8 @@ Usage: #inline
 * telecom[=].value = "+998901112233"
 * telecom[+].system = #email
 * telecom[=].value = "nilufar.yusupova@mail.com"
-* address[uzAddress].line[0] = "12-mavze"
-* address[uzAddress].line[+] = "5-uy"
-* address[uzAddress].line[+] = "10-xonadon"
-* address[uzAddress].country = "UZ"
+* address.text = "Toshkent sh., Chilonzor tumani, 12-mavze, 5-uy, 10-xonadon"
+
 
 Instance: encounter-027-001
 InstanceOf: UZCoreEncounter
@@ -303,7 +301,7 @@ Usage: #inline
 * intent = #order
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
-* medication = Reference(urn:uuid:02700021-1111-2222-3333-444444444444)
+* medication = Reference(medication-paracetamol-027)
 
 
 Instance: medication-paracetamol-027
