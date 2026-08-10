@@ -75,9 +75,9 @@ Usage: #example
     * display = "Public Health Case Identifier"
   * use = #official
 
-* method = LabMethodsCS#lab-method-1 "Polymerase chain reaction"
+* method = LabMethodsCS#lab-method-1 "PCR (Polymerase Chain Reaction)"
 * code = $loinc#22314-9 "Hepatitis A virus IgM Ab [Presence] in Serum"
-* subject = Reference(Patient/example-hepatitis-patient)
+* subject = Reference(Patient/example-salim)
 * effectiveDateTime = "2026-01-27T09:57:00Z"
 
 * valueCodeableConcept.coding

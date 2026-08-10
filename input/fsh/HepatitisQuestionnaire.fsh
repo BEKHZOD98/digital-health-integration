@@ -5,7 +5,7 @@ Title: "Hepatitis Questionnaire"
 Description: "Questionnaire for hepatitis C and hepatitis B history and treatment information"
 
 * ^status = #active
-* ^experimental = false
+* ^experimental = true
 
 
 * identifier 0..*
@@ -19,7 +19,7 @@ Description: "Questionnaire for hepatitis C and hepatitis B history and treatmen
 
 
 * item.item 0..*
- 
+* item.item only BackboneElement
 // Enable behavior
 * item.item.enableWhen 0..*
   * question 1..1

@@ -33,7 +33,7 @@ Usage: #example
 * id = "referral-to-specialist"
 * status = #active
 * intent = #order
-* subject = Reference(Patient/example-hepatitis-patient)
+* subject = Reference(Patient/example-salim)
 
 Instance: muratova-gulshoda
 InstanceOf: Practitioner
