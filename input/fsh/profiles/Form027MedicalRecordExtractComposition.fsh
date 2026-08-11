@@ -95,7 +95,7 @@ Description: "Composition profile for Form 027 extract from outpatient/inpatient
 * section[nextSteps].code 1..1
 * section[nextSteps].code = $loinc#74213-0 "Discharge instructions"
 * section[nextSteps].entry 0..*
-// VAQTINCHALIK: umumiy UZCoreServiceRequest tayyor bo'lgach shu bilan almashtiriladi (Бехзодов bilan kelishilgan)
+// VAQTINCHALIK: umumiy UZCoreServiceRequest tayyor bo'lgach shu bilan almashtiriladi 
 * section[nextSteps].entry only Reference(CarePlan or UZCoreEpisodeOfCare or UZCoreServiceRequestLaboratory)
 // The reference will be changed to UZCoreMedicationRequest after UZCoreMedicationRequest is published in the IG
 * section[responsiblePersons].title 1..1
