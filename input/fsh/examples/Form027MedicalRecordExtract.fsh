@@ -145,10 +145,8 @@ Usage: #inline
 * name.given[+] = "Rustamovna"
 * birthDate = "1988-07-22"
 * gender = #female
-// TODO: mos kod bilan to'ldirish kerak (Ayol)
-// * extension[GenderOtherUZ].valueCodeableConcept =
-// TODO: fuqarolik kodi bilan to'ldirish kerak (masalan O'zbekiston)
-// * extension[citizenship].valueCodeableConcept =
+
+* extension[citizenship].extension[code].valueCodeableConcept = $iso-3166#UZ "Uzbekistan"
 * telecom[0].system = #phone
 * telecom[=].value = "+998901112233"
 * telecom[+].system = #email
@@ -255,8 +253,7 @@ InstanceOf: UZCoreProcedure
 Usage: #inline
 * language = #en
 * status = #completed
-// TODO: protsedura kodi bilan to'ldirish kerak
-// * code =
+* code = $sct#57485005 "Oxygen therapy"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * complication = $icd10#J96.0 "Acute respiratory failure"
 
@@ -307,8 +304,7 @@ Usage: #inline
 * intent = #plan
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
-// TODO: davolash turi kodi bilan to'ldirish kerak
-// * activity.detail.code =
+* activity.performedActivity.concept.text = "Ko'p suyuqlik ichish, dam olish"
 * note.text = "Ko'p suyuqlik ichish, dam olish tavsiya etiladi, 3 kundan keyin qayta ko'rikka kelish."
 
 
@@ -354,7 +350,7 @@ Usage: #inline
 
 
 Instance: servicerequest-027
-// VAQTINCHALIK: umumiy UZCoreServiceRequest tayyor bo'lgach shu bilan almashtiriladi (Бехзодов bilan kelishilgan)
+// VAQTINCHALIK until General ServiceRequest, as it is not yet defined in the UZCore profiles
 InstanceOf: UZCoreServiceRequestLaboratory
 Usage: #inline
 * language = #en
@@ -362,8 +358,7 @@ Usage: #inline
 * intent = #order
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * authoredOn = "2026-02-10"
-// TODO: laboratoriya tekshiruvi kodi bilan to'ldirish kerak (UZCoreServiceRequestLaboratory profiliga mos)
-// * code =
+* code = lab-pan-cs#lab-pan-E "CBC panel"
 
 
 Instance: documentreference-027
