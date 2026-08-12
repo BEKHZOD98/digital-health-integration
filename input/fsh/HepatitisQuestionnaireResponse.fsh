@@ -65,7 +65,7 @@ Description: "Profile for representing responses to a hepatitis-related question
 
 // Instance Example 
 Instance: example-hcv-response
-InstanceOf: QuestionnaireResponse
+InstanceOf: HepatitisQuestionnaireResponse
 Description: "Example of anamnesis responses completed by the patient for hepatitis B and C treatment questionnaire"
 Usage: #example
 
