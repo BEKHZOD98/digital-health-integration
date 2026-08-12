@@ -77,9 +77,10 @@ Usage: #inline
 * title = "Form 027 - Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma"
 
 * section[registrationInformation].title = "Roʻyxatga olish maʼlumotlari"
-* section[=].code.text = "Roʻyxatga olish maʼlumotlari"
+* section[=].code = $loinc#46240-8 "History of Hospitalizations+Outpatient visits Narrative"
 * section[=].entry[0] = Reference(urn:uuid:02700004-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
 
 * section[personalInformation].title = "Shaxsiy maʼlumotlar"
 * section[=].code = $loinc#45970-1 "Demographic information section"
@@ -166,7 +167,8 @@ Usage: #inline
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * actualPeriod.start = "2026-02-08T09:00:00+05:00"
 * actualPeriod.end = "2026-02-10T09:00:00+05:00"
-* serviceProvider = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
+* serviceProvider = Reference(urn:uuid:02700004-1111-2222-3333-444444444444)
+* admission.origin = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
 * reason.value.concept.text = "Yuqori nafas yo'llari infeksiyasiga xos shikoyatlar" // Excel: UZCoreEncounter.reason.value - "Shikoyatlar"
 
 
