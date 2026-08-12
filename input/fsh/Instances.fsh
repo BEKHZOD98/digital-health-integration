@@ -158,3 +158,28 @@ Description: "Example family-care sick leave linked to a related person"
 
 * extension[diagnosisUse].valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs#gencl-0001-00008 "Final diagnosis"
 * extension[relatedPerson].valueReference = Reference(SickLeaveRelatedPersonExample)
+
+//Narcoloy instances
+Instance: example-psychiatrist
+InstanceOf: Practitioner
+Title: "Psychiatrist Example"
+Description: "Example of a psychiatrist practitioner"
+Usage: #example
+
+* active = true
+* name
+  * family = "Toshmatov"
+  * given[0] = "Toshmat"
+  * given[1] = "Toshmatovich"
+
+Instance: example-psychiatrist-narcologist
+InstanceOf: PractitionerRole
+Title: "Psychiatrist Narcologist Example"
+Description: "Example of a psychiatrist-narcologist practitioner role"
+Usage: #example
+
+* active = true
+* practitioner = Reference(example-psychiatrist)
+* organization = Reference(organization-123)
+* code =  $practitioner-role#2212.93
+* specialty = $practioner-speciality#408467006

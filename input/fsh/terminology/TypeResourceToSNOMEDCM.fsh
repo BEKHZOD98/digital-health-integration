@@ -19,6 +19,6 @@ Description: "Mapping of Type Resource codes to SNOMED CT."
 
 * group[=].element[+].code = #type-res-0002-0001
 * group[=].element[=].display = "Komissiya qarori"
-* group[=].element[=].target.code = #365923008
-* group[=].element[=].target.display = "Finding related to decision making (finding)"
+* group[=].element[=].target.code = #444804000
+* group[=].element[=].target.display = "Multidisciplinary care conference report (record artifact)"
 * group[=].element[=].target.relationship = #equivalent

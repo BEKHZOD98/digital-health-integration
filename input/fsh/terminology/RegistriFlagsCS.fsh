@@ -22,12 +22,6 @@ Description: "Registri flag codesystem supplement with translations in uzbek and
   * ^designation[+].language = #en
   * ^designation[=].value = "Compulsory outpatient treatment"
 
-* #registri0001-00004 "Majburiy statsionar davolanish"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Стационарное принудительное лечение"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Compulsory inpatient treatment"
-
 * #registri0001-00005 "Vasiylik ostida"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Под опекой"

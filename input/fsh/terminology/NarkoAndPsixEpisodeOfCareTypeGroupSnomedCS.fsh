@@ -15,13 +15,13 @@ Description: "SNOMED CT supplement containing Uzbek and Russian designations for
   * ^designation[+].language = #uz
   * ^designation[=].value = "Profilaktik guruh"
 
-* #25861000087109 "Mental health and addiction center (environment)"
+* #225419007 "Surveillance"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Диспансерная группа"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Dispanser guruhi"
 
-* #286794000 "Detained in hospital under the Mental Health Act 1983"
+* #52748007 "Involuntary hospital admission (procedure)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Стационарное принудительное лечение"
   * ^designation[+].language = #uz

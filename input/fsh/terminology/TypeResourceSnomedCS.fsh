@@ -9,7 +9,7 @@ Description: "Type Resource Snomed CodeSystem used in Uzbekistan healthcare syst
     2026.1.0
 )
 
-* #365923008 "Finding related to decision making (finding)"
+* #444804000 "Multidisciplinary care conference report (record artifact)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Решение комиссии"
   * ^designation[+].language = #uz

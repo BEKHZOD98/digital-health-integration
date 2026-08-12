@@ -1,119 +1,116 @@
 <style>
 /* Even, full-width mapping tables (sections vary in column count). */
 .col-12 table { table-layout: fixed; width: 100%; }
-.col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
+.col-12 th, .col-12 td {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  vertical-align: top;
+}
 </style>
 
-> **Mashina tarjimasi, inson tomonidan tekshirilishi kerak.** Ushbu sahifa sun'iy intellekt yordamida ingliz tilidan avtomatik tarzda tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday tafovut yuzaga kelganda, ingliz tilidagi asl nusxa ustuvor hisoblanadi.
->
-> Ushbu sahifada Narkologiya registriga oid ma'lumotlar FHIR resurslari ko'rinishida qanday ifodalanishi tavsiflangan. Unda bemorning ijtimoiy holati, bemorni dinamik kuzatuv guruhiga ro'yxatga olish, tibbiy tashriflar, vrachlar-konsultativ komissiyasi qarorlari, klinik holatlar va registr flaglarini ifodalash tartibi yoritilgan.
+### Bemorning ijtimoiy holatini qayd etish (Observation)
 
-# Narkologiya registri resurslari
+Bemorning ijtimoiy holati [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observatio) profili yordamida ifodalanadi.
 
-## Umumiy ma'lumot
+**Examples:** [`example-narko`](Observation-example-narko.html)
 
-Ushbu sahifada Narkologiya registri doirasida bemorning ijtimoiy holati, dinamik kuzatuv guruhi, tibbiy tashriflari, vrachlar-konsultativ komissiyasi qarorlari, klinik holatlari va registrga oid flag ma'lumotlarini FHIR resurslari yordamida ifodalash tartibi hujjatlashtiriladi.
-
-Ma'lumotlar alohida FHIR resurslari ko'rinishida ifodalanadi. Resurslar bemor bilan hamda zarur hollarda tegishli tibbiy yordam epizodi, tashrif, tashkilot va tibbiyot xodimi roli bilan bog'lanadi.
-
-Ushbu bo'limda quyidagi asosiy resurslar tavsiflanadi:
-
-- `Observation` — bemorning ijtimoiy holatini qayd etadi.
-- `EpisodeOfCare` — bemorning Narkologiya registridagi hisobini va dinamik kuzatuv guruhini ifodalaydi.
-- `Encounter` — bemorning tibbiy tashrifi haqidagi ma'lumotlarni qayd etadi.
-- `Observation` — vrachlar-konsultativ komissiyasi qarori yoki xulosasini qayd etadi.
-- `Condition` — bemorning narkologiyaga oid klinik holatlari va tashxislarini qayd etadi.
-- `Flag` — tibbiyot xodimlariga yetkazilishi kerak bo'lgan muhim narkologiya registri ma'lumotlarini, masalan, ijtimoiy xavflilik yoki majburiy davolanishni qayd etadi.
-
----
-
-## Bemorning ijtimoiy holatini qayd etish (Observation)
-
-Bemorning ijtimoiy holati `Observation` resursi orqali ifodalanadi.
-
-Observation ijtimoiy holat kuzatuvini `82996008` SNOMED CT kodi bilan aniqlaydi. Bemorning aniq ijtimoiy holati `SocialStatusVS` ValueSet yordamida `valueCodeableConcept` elementida qayd etiladi.
-
-| Qayd etiladigan ma'lumot | ValueSet | Namuna kodi | Saqlanadigan element |
+| Qayd etiladigan ma'lumot | Value set | Misol kodi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Observation holati | ObservationStatus | `final` | `status` |
-| Observation turi | SocioeconomicObservationCodesVS (0.4.0) | `SNOMED CT#82996008` | `code` |
-| Ijtimoiy holat | SocialStatusVS (0.4.0) | `regis0010.00001` (O'quvchi) | `valueCodeableConcept` |
-| Bemor | - | `UZCorePatient` ga reference | `subject` |
-| Kuzatuv sanasi | - | `2026-03-10` | `effectiveDateTime` |
+| Kuzatuv holati | ObservationStatus | `final` | `status` |
+| Kuzatuv turi | [SocioeconomicObservationCodesVS](https://dhp.uz/fhir/core/ValueSet/socioeconomic-observation-codes-vs) | `SNOMED CT#82996008` | `code` |
+| Ijtimoiy holat | [SocialStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/social-status-vs) | `regis0010.00003` (Ishlaydi) | `valueCodeableConcept` |
+| Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) ga reference | `subject` |
+| Kuzatuv sanasi | - | `2026-03-12` | `effectiveDateTime` |
+| Bajaruvchi | - | UZCorePractitionerRole ga reference | `performer` |
 
-Observation holati majburiy bo'lib, `ObservationStatus` ValueSet dan foydalanadi.
-
-Observation kodi SNOMED CT `82996008` ga fixed qilingan.
-
-Ijtimoiy holat `SocialStatusVS` dan tanlanadi.
+Narkologiya registrida quyidagi ijtimoiy holat kodlari qo‘llanadi:
 
 | Kod | Tavsif |
 | :--- | :--- |
-| `regis0010.00001` | O'quvchi |
-| `regis0010.00003` | Ishlaydi |
-| `regis0010.00004` | Ishlamaydi |
-| `regis0010.00006` | Nafaqaxo'r |
+| `regis0010.00001` | O‘quvchi |
+| `regis0010.00003` | Ishlaydigan |
+| `regis0010.00004` | Ishlamaydigan |
+| `regis0010.00006` | Nafaqaxo‘r |
 
-`subject` elementi ijtimoiy holati qayd etilayotgan bemorga reference beradi.
+`subject` elementi ijtimoiy holati qayd etilayotgan bemorga reference saqlaydi.
 
 ---
 
-## Bemorni dinamik kuzatuv guruhiga ro'yxatga olish (EpisodeOfCare)
+### Bemorni dinamik kuzatuv guruhiga ro‘yxatga olish (EpisodeOfCare)
 
-`EpisodeOfCare` resursi bemorning Narkologiya registridagi hisobini va bemor tegishli bo'lgan dinamik kuzatuv guruhini ifodalaydi.
+Bemorning Narkologiya registridagi ro‘yxati va dinamik kuzatuv guruhi [Narko Episode Of Care](StructureDefinition-episode-of-care-narko.html) profili yordamida ifodalanadi.
 
-Episode bemorning identifikatori, hisob holati, dinamik kuzatuv guruhi, ushbu epizod bilan bog'liq tashxislar, bemor, boshqaruvchi tashkilot, hisobga olingan davr va mas'ul tibbiyot xodimi rolini o'z ichiga oladi.
+**Examples:** [`narko-episodeofcare-example`](EpisodeOfCare-narko-episodeofcare-example.html)
 
-| Qayd etiladigan ma'lumot | ValueSet | Namuna kodi | Saqlanadigan element |
+Episode bemorning ro‘yxatga olish holati, dinamik kuzatuv guruhi, epizod bilan bog‘liq tashxislar, bemor, mas'ul tashkilot, ro‘yxatga olish davri va mas'ul mutaxassisni o‘z ichiga oladi.
+
+| Qayd etiladigan ma'lumot | Value set | Misol kodi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Identifikator | - | `https://dhp.uz/fhir/core/sid/reg/uz/narko` | `identifier` |
-| Hisob holati | EpisodeOfCareStatusVS (0.4.0) | `active` | `status` |
-| Dinamik kuzatuv guruhi | Group | `narcr0001-00002` (Dispanser guruhi) | `type.extension[group]` |
-| Tashxis | ICD-10 / UZ Core Condition | `UZCoreCondition` ga reference | `diagnosis.condition` |
-| Tashxisdan foydalanish | Encounter Diagnosis Use | - | `diagnosis.use` |
-| Bemor | - | `UZCorePatient` ga reference | `patient` |
-| Boshqaruvchi tashkilot | - | `UZCoreOrganization` ga reference | `managingOrganization` |
-| Hisobga olingan sana | - | `2026-02-12` | `period` |
-| Mas'ul tibbiyot xodimi | - | `PractitionerRole` ga reference | `careManager` |
+| Identifikator | - | `https://dhp.uz/fhir/core/sid/reg/uz/narco` | `identifier` |
+| Ro‘yxatga olish holati | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `active` | `status` |
+| Dinamik kuzatuv guruhi | [NarkoAndPsixEpisodeOfCareTypeGroupVS](ValueSet-narko-and-psix-episode-of-care-group-vs.html) | `narcr0001-00001` | `type[group]` |
+| Tashxis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `diagnosis.condition` |
+| Tashxisdan foydalanish turi | Encounter Diagnosis Use | `working` | `diagnosis.use` |
+| Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) ga reference | `patient` |
+| Mas'ul tashkilot | - | [UZCoreOrganization](https://dhp.uz/fhir/core/StructureDefinition/uz-core-organization) ga reference | `managingOrganization` |
+| Ro‘yxatga olingan sana | - | `2026-03-10` | `period.start` |
+| Mas'ul mutaxassis | - | UZCorePractitionerRole ga reference | `careManager` |
 
-Bemor hisobga olinganda episode holati `active` bo'ladi.
+Bemor Narkologiya registriga ro‘yxatga olinganda episode holati `active` bo‘lishi kerak.
 
-Bemor hisobdan chiqarilganda holat `finished` ga o'zgartirilishi kerak.
+Bemor registrdan chiqarilganda episode holati `finished` ga o‘zgartirilishi kerak.
 
-Dinamik kuzatuv guruhi `EpisodeOfCare.type` elementidagi `group` extension orqali ifodalanadi.
+Dinamik kuzatuv guruhi `EpisodeOfCare.type` elementidagi `group` slice orqali ifodalanadi.
 
-Belgilangan guruh kodlari:
+Narkologiya va Psixiatriya registrlari uchun quyidagi guruh kodlari belgilangan:
 
 | Kod | SNOMED CT kodi | RU | UZ | ENG |
 | :--- | :--- | :--- | :--- | :--- |
 | `narcr0001-00001` | `302805002` | Профилактическая группа | Profilaktik guruh | Preventive group |
-| `narcr0001-00002` | `25861000087109` | Диспансерная группа | Dispanser guruhi | Dispensary group |
+| `narcr0001-00002` | `225419007` | Диспансерная группа | Dispanser guruhi | Dispensary group |
 
-Episode bir nechta tashxisni o'z ichiga olishi mumkin. Har bir tashxis bemorning tibbiy yordam epizodi bilan bog'liq `Condition` resursiga reference beradi.
+SNOMED CT mappinglari [Narko and Psix Episode Of Care Type Group to SNOMED CT ConceptMap](ConceptMap-narko-and-psix-episode-of-care-conceptmap.html) orqali aniqlangan.
+
+#### Tashxis kodlari
+
+Narkologik episode bilan bog‘liq tashxisni qayd etishda [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) tarkibidagi tegishli koddan foydalanish kerak.
+
+Belgilangan tashxis kodlari:
+
+| Klinik holat | Kodlash tizimi | Kod | Qachon qayd etiladi |
+| :--- | :--- | :--- | :--- |
+| Boshqa stimulyatorlar, shu jumladan kofeinni zararli iste'mol qilish bilan bog‘liq ruhiy va xulq-atvor buzilishlari | ICD-10 | `F15.1` | Ushbu narkologik tashxis bemorga tegishli bo‘lganda |
+| Boshqa holatlarga olib keluvchi OIV kasalligi | ICD-10 | `B23` | OIV Narkologiya registrida tanlangan yoki aniqlangan bo‘lsa, alohida `Condition` sifatida |
+| Nafas olish tizimi tuberkulyozi | ICD-10 | `A15.7` | Tuberkulyoz Narkologiya registrida tanlangan yoki aniqlangan bo‘lsa, alohida `Condition` sifatida |
+| Nogironlik | SNOMED CT | `21134002` | Nogironlik mavjud bo‘lsa, alohida `Condition` sifatida |
+
+`diagnosis.condition` tegishli [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition) ga reference qilishi kerak.
+
+Bitta episode bir nechta tashxisni o‘z ichiga olishi mumkin.
 
 ---
 
-## Tibbiy tashrifni qayd etish (Encounter)
+### Tibbiy tashrifni qayd etish (Encounter)
 
-`Encounter` resursi Narkologiya registri doirasida bemorning tibbiy tashrifi haqidagi ma'lumotlarni o'z ichiga oladi.
+Bemorning Narkologiya registridagi tibbiy tashrifi [UZ Core Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) profili yordamida ifodalanadi.
 
-Encounter shifokor tomonidan qayd etilgan tibbiy tashrifni ifodalaydi va bemorning `EpisodeOfCare` resursi bilan bog'lanishi mumkin.
+**Examples:** [`example-narko-encounter`](Encounter-example-narko-encounter.html)
 
-Tashrif davomida aniqlangan yoki ko'rib chiqilgan bir nechta tashxislar qayd etilishi mumkin.
+Encounter tibbiyot xodimi tomonidan qayd etilgan tibbiy tashrifni ifodalaydi va tegishli `EpisodeOfCare` bilan bog‘lanishi mumkin.
 
-| Qayd etiladigan ma'lumot | ValueSet | Namuna kodi | Saqlanadigan element |
+| Qayd etiladigan ma'lumot | Value set | Misol kodi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Tashrif identifikatori | - | - | `identifier` |
-| Tashrif holati | Encounter Status translations | `completed` | `status` |
-| Bemor | - | `UZCorePatient` ga reference | `subject` |
-| Tibbiy yordam epizodi | - | `EpisodeOfCare` ga reference | `episodeOfCare` |
-| Tashrifning haqiqiy davri | - | `2026-02-12` | `actualPeriod` |
+| Tashrif holati | Encounter Status | `completed` | `status` |
+| Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) ga reference | `subject` |
+| Tibbiy yordam epizodi | - | [NarkoEpisodeOfCare](StructureDefinition-episode-of-care-narko.html) ga reference | `episodeOfCare` |
+| Tashrif davri | - | `2026-03-10T10:00:00Z` – `2026-03-10T11:00:00Z` | `actualPeriod` |
 | Ishtirokchi turi | Participant Type | `ATND` | `participant.type` |
-| Tibbiyot xodimi | - | `UZCorePractitionerRole` ga reference | `participant.actor` |
-| Tashxis | - | `Condition` ga reference | `diagnosis.condition` |
-| Tashxisdan foydalanish | Encounter Diagnosis Use | `final` | `diagnosis.use` |
+| Tibbiyot xodimi | - | UZCorePractitionerRole ga reference | `participant.actor` |
+| Tashrif turi | - | `mserv-0001-00004` (Davolash xizmatlari) | `type[nationalType]` |
+| Tashxis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `diagnosis.condition` |
+| Tashxisdan foydalanish turi | Encounter Diagnosis Use | `final` | `diagnosis.use` |
 
-Tashrif holati quyidagi qiymatlardan biri bo'lishi mumkin:
+Encounter uchun quyidagi holatlar ishlatilishi mumkin:
 
 - `in-progress`
 - `on-hold`
@@ -121,162 +118,162 @@ Tashrif holati quyidagi qiymatlardan biri bo'lishi mumkin:
 - `cancelled`
 - `entered-in-error`
 
-`episodeOfCare` reference tashrifni bemorning narkologik hisob epizodi bilan bog'laydi.
+`episodeOfCare` reference tibbiy tashrifni bemorning tegishli narkologik ro‘yxat epizodi bilan bog‘laydi.
 
-Tashrif bir nechta tashxisni o'z ichiga olishi mumkin. Har bir tashxis `Condition` resursiga reference beradi va tegishli tashxisdan foydalanish qiymatiga ega bo'lishi mumkin.
+Encounter bir nechta tashxisni o‘z ichiga olishi mumkin. Har bir tashxis tegishli [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition) ga reference qiladi.
 
 ---
 
-## Vrachlar-konsultativ komissiyasi qarorini qayd etish (Observation)
+### Tibbiy-konsultativ komissiya qarorini qayd etish (Observation)
 
-Vrachlar-konsultativ komissiyasi qarori `Observation` resursi orqali ifodalanadi.
+Tibbiy-konsultativ komissiyaning qarori [ObservationNarko](StructureDefinition-observation-narko.html) profili yordamida ifodalanadi.
 
-Resurs komissiya qarori, bemor, tegishli tibbiy tashrif, qaror qabul qilingan sana, komissiya a'zolari, mas'ul tibbiyot xodimi roli va qo'shimcha izohlarni o'z ichiga oladi.
+**Examples:** [`example-narko-observation`](Observation-example-narko-observation.html)
 
-| Qayd etiladigan ma'lumot | ValueSet | Namuna kodi | Saqlanadigan element |
+Profil tibbiy-konsultativ komissiya tomonidan berilgan xulosa, natija va tavsiyalarni saqlash uchun ishlatiladi.
+
+| Qayd etiladigan ma'lumot | Value set | Misol kodi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Identifikator | - | `https://dhp.uz/fhir/core/sid/reg/uz/narko` | `identifier` |
-| Observation holati | Observation Status | `final` | `status` |
-| Komissiya qarori turi | type-resource | `narcr0002-0001` | `code` |
-| Bemor | - | `Patient` ga reference | `subject` |
-| Tibbiy tashrif | - | `Encounter` ga reference | `encounter` |
-| Komissiya qarori sanasi | - | `2026-03-10` | `effectiveDateTime` |
-| Komissiya a'zolari | - | `Тошматов Тошмат Тошматович` | `valueString` |
-| Ijrochi | - | `PractitionerRole` ga reference | `performer` |
-| Komissiya izohi | - | `Пациент нарко больной` | `note` |
+| Kuzatuv holati | Observation Status | `final` | `status` |
+| Komissiya qarori turi | [NarkoTypeResourceVS](ValueSet-narko-type-resource-vs.html) | `type-res-0002-0001` | `code` |
+| Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) ga reference | `subject` |
+| Tibbiy tashrif | - | [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) ga reference | `encounter` |
+| Komissiya qarori sanasi | - | `2026-03-12` | `effectiveDateTime` |
+| Komissiya a'zosi | - | UZCorePractitionerRole ga reference | `performer` |
+| Komissiya natijasi | - | komissiya qarori matni | `valueString` |
 
-Observation kodi resursni vrachlar-konsultativ komissiyasi qarori sifatida aniqlaydi.
-
-Belgilangan terminologik moslik:
+Komissiya qarori turi:
 
 | Kod | SNOMED CT kodi | RU | UZ | ENG |
 | :--- | :--- | :--- | :--- | :--- |
-| `narcr0002-0001` | `365923008` | Решение комиссии | Komissiya qarori | The commission's decision |
+| `type-res-0002-0001` | `444804000` | Решение комиссии | Komissiya qarori | The commission's decision |
 
-`subject` elementi bemorni aniqlaydi.
+Tegishli terminologiya [TypeResourceCS](CodeSystem-type-resource-cs.html) da, SNOMED CT mapping esa [Type Resource to SNOMED CT ConceptMap](ConceptMap-type-resource-conceptmap.html) da aniqlangan.
 
-`encounter` elementi komissiya qarorini tegishli tibbiy tashrif bilan bog'laydi.
+Komissiya a'zolari `performer` reference orqali ko‘rsatiladi. `performer` kardinaliteti `0..*` bo‘lgani sababli, zarur bo‘lganda bir nechta komissiya a'zosini qayd etish mumkin.
 
-`performer` elementi komissiya qarori uchun mas'ul tibbiyot xodimi roliga reference beradi.
-
-Komissiya haqidagi qo'shimcha ma'lumot `note` elementida qayd etilishi mumkin.
+Komissiyaning natijasi yoki xulosasi `valueString` elementida saqlanadi.
 
 ---
 
-## Bemorning klinik holatini qayd etish (Condition)
+### Bemorning klinik holatini qayd etish (Condition)
 
-`Condition` resursi Narkologiya registrida ro'yxatdan o'tgan bemorning klinik holatini ifodalaydi.
+Narkologiya bilan bog‘liq klinik holat [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition) profili yordamida ifodalanadi.
 
-U narkologik tashxislarni va boshqa klinik jihatdan muhim holatlarni qayd etish uchun ishlatilishi mumkin.
+**Examples:** [`example-narko-condition`](Condition-example-narko-condition.html)
 
-Resurs klinik holat, zarur hollarda og'irlik darajasi, tashxis kodi, bemor, tegishli tibbiy tashrif, hisobga olingan sana va bemor haqidagi ma'lumotni taqdim etgan tashkilotni o'z ichiga oladi.
+`Condition` klinik holat, tashxis, bemor, tegishli tibbiy tashrif, qayd sanasi va ma'lumotni taqdim etgan tashkilotni o‘z ichiga oladi.
 
-| Qayd etiladigan ma'lumot | ValueSet | Namuna kodi | Saqlanadigan element |
+| Qayd etiladigan ma'lumot | Value set | Misol kodi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Identifikator | - | `https://dhp.uz/fhir/core/sid/reg/uz/narco` | `identifier` |
 | Klinik holat | Condition Clinical Status Codes | `active` | `clinicalStatus` |
-| Nogironlik og'irligi | DisabilityVS | - | `severity` |
-| Tashxis (ICD-10) | ConditionCodeVS (preferred) | `F15.1` | `code` |
-| Bemor | - | `UZCorePatient` ga reference | `subject` |
-| Tibbiy tashrif | - | `UZCoreEncounter` ga reference | `encounter` |
-| Hisobga olingan sana | - | `2026-03-10` | `recordedDate` |
-| Ma'lumotni taqdim etgan tashkilot | - | `UZCoreOrganization` ga reference | `participant.actor` |
+| Nogironlik darajasi | [DisabilityVS](https://terminology.dhp.uz/fhir/core/ValueSet/disability-vs) | tegishli nogironlik darajasi | `severity` |
+| Tashxis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `code` |
+| Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) ga reference | `subject` |
+| Tibbiy tashrif | - | [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) ga reference | `encounter` |
+| Qayd sanasi | - | `2026-03-10` | `recordedDate` |
+| Ma'lumot taqdim etuvchi tashkilot | - | [UZCoreOrganization](https://dhp.uz/fhir/core/StructureDefinition/uz-core-organization) ga reference | `participant.actor` |
 
-Klinik holat majburiy hisoblanadi.
+#### Tashxis kodlari
 
-Bemor hisobga olinganda holat `active` bo'ladi.
+Tegishli tashxis [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) tarkibidan olinishi kerak.
 
-Bemor hisobdan chiqarilganda holat `resolved` ga o'zgartirilishi kerak.
+Narkologiya registrida quyidagi tashxis kodlari belgilangan:
 
-Tashxis `ConditionCodeVS` dan preferred binding bilan foydalanadi va bemorning ICD-10 bo'yicha narkologik tashxisini ifodalaydi.
+| Holat | Kodlash tizimi | Kod | Qachon qayd etiladi |
+| :--- | :--- | :--- | :--- |
+| Boshqa stimulyatorlarni, shu jumladan kofeinni zararli iste'mol qilish | ICD-10 | `F15.1` | Ushbu narkologik tashxis mavjud bo‘lganda |
+| Boshqa holatlarga olib keluvchi OIV kasalligi | ICD-10 | `B23` | OIV tanlangan yoki aniqlangan bo‘lsa, alohida `Condition` sifatida |
+| Nafas olish tizimi tuberkulyozi | ICD-10 | `A15.7` | Tuberkulyoz tanlangan yoki aniqlangan bo‘lsa, alohida `Condition` sifatida |
+| Nogironlik | SNOMED CT | `21134002` | Nogironlik mavjud bo‘lsa, alohida `Condition` sifatida |
 
-### Nogironlik
+Agar OIV yoki tuberkulyoz Narkologiya registrida tanlanmagan yoki aniqlanmagan bo‘lsa, tegishli qo‘shimcha `Condition` yaratilmasligi kerak.
 
-Nogironlik uchun quyidagi qoidalar qo'llaniladi:
+Har bir `Condition` `subject` orqali bemor bilan bog‘lanadi.
 
-1. `severity` faqat nogironlik mavjudligi tanlangan holatda to'ldirilishi kerak.
-2. Nogironlik mavjud bo'lganda alohida `Condition` resursi yaratilishi kerak.
-3. Nogironlik holati uchun SNOMED CT `21134002` (`Disability`) kodi ishlatiladi.
+Agar holat ma'lum bir tibbiy tashrif vaqtida aniqlangan yoki davolangan bo‘lsa, `encounter` to‘ldirilishi mumkin.
 
-### OIV va sil kasalligi
+#### Nogironlik
 
-Agar narkologiya tizimida bemorda OIV yoki sil kasalligi mavjudligi ko'rsatilgan bo'lsa, har bir tegishli holat uchun alohida `Condition` resursi yaratilishi kerak.
+Nogironlik uchun quyidagi qoidalar qo‘llanadi:
 
-Belgilangan qo'shimcha ICD-10 mosliklari:
-
-- OIV: ICD-10 `B23` kodi
-- Sil kasalligi: ICD-10 `A15.7` kodi
-
-Agar Narkologiya registrida OIV yoki sil kasalligi mavjudligi ko'rsatilmagan bo'lsa, tegishli qo'shimcha `Condition` resursi yaratilmaydi.
-
-Har bir holat `subject` orqali bemor bilan bog'lanadi.
-
-Agar holat muayyan tibbiy tashrif vaqtida aniqlangan bo'lsa, `encounter` reference to'ldirilishi mumkin.
+1. `severity` faqat nogironlik mavjud bo‘lganda va uning darajasi ma'lum bo‘lsa to‘ldiriladi.
+2. Nogironlik mavjud bo‘lganda alohida `Condition` yaratiladi.
+3. Alohida nogironlik `Condition` uchun SNOMED CT `21134002` (`Disability`) kodi ishlatiladi.
+4. Nogironlik holati `subject` orqali bemor bilan bog‘lanadi.
 
 ---
 
-## Ijtimoiy xavflilik va majburiy davolanishni qayd etish (Flag)
+### Ijtimoiy xavflilik va majburiy davolanishni qayd etish (Flag)
 
-`Flag` resursi tibbiyot xodimlariga yetkazilishi kerak bo'lgan muhim ma'lumotlarni qayd etish uchun ishlatiladi.
+Tibbiyot xodimlari bemorni baholash va davolashda bilishi kerak bo‘lgan Narkologiya registrining muhim ma'lumotlari [FlagNarkoAndPsix](StructureDefinition-flag-narko-and-psix.html) profili yordamida ifodalanadi.
 
-Narkologiya registrida u ijtimoiy xavflilik va majburiy davolanish kabi registr flaglarini qayd etish uchun ishlatiladi.
+**Examples:** [`example-flag`](Flag-example-flag.html)
 
-| Qayd etiladigan ma'lumot | ValueSet | Namuna kodi | Saqlanadigan element |
+`Flag` resursi ijtimoiy xavflilik va majburiy davolanish kabi registr belgilarini qayd etish uchun ishlatiladi.
+
+| Qayd etiladigan ma'lumot | Value set | Misol kodi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Flag holati | Flag Status | `active` | `status` |
-| Registr flagi | Registri-flags | `registri0001-00002` (Majburiy davolanish) | `code` |
-| Bemor | - | `Patient` ga reference | `subject` |
+| Flag holati | [FlagStatusVS](ValueSet-flag-status-vs.html) | `active` | `status` |
+| Registr flag kodi | [RegistriFlagVS](ValueSet-registry-flag-vs.html) | `registri0001-00002` | `code` |
+| Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) ga reference | `subject` |
 | Amal qilish davri | - | `2026-03-12` | `period` |
-| Tibbiy tashrif | - | `Encounter` ga reference | `encounter` |
-| Muallif | - | `UZCorePractitionerRole` ga reference | `author` |
+| Tibbiy tashrif | - | [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) ga reference | `encounter` |
+| Muallif | - | UZCorePractitionerRole ga reference | `author` |
 
-Flag holati majburiy bo'lib, quyidagi qiymatlardan biri bo'lishi mumkin:
+Flag holati majburiy bo‘lib, quyidagi qiymatlardan birini olishi mumkin:
 
 - `active`
 - `inactive`
 - `entered-in-error`
 
-Registr flaglari:
+Registr flag kodlari:
 
 | Kod | SNOMED CT kodi | SNOMED nomi | RU | UZ | ENG |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `registri0001-00001` | `389315000` | At risk of harming others | Социальная опасность | Ijtimoiy xavflilik | Social danger / Social risk |
-| `registri0001-00002` | `52748007` | Involuntary hospital admission | Принудительное лечение | Majburiy davolanish | Compulsory treatment |
+| `registri0001-00001` | `129707006` | At increased risk for other-directed violence (finding) | Социальная опасность | Ijtimoiy xavflilik | Social danger / Social risk |
+| `registri0001-00002` | `303163003` | Treatments administered under the provisions of the law | Принудительное лечение | Majburiy davolanish | Compulsory treatment |
+| `registri0001-00003` | `303163003` | Treatments administered under the provisions of the law | Принудительное амбулаторное лечение | Majburiy ambulatoriya sharoitida davolanish | Compulsory outpatient treatment |
+| `registri0001-00005` | `1193838006` | Legal guardian status | Под опекой | Vasiylik ostida | Legal guardian status |
+| `registri0001-00006` | `21134002` | Disability (finding) | Инвалидность | Nogironlik | Disability |
 
-`subject` elementi registr flagiga tegishli bemorni aniqlaydi.
+To‘liq mapping [Registry Flags to SNOMED CT ConceptMap](ConceptMap-registri-flags-conceptmap.html) da aniqlangan.
 
-`encounter` elementi flagni muayyan tibbiy tashrif bilan bog'lash uchun ishlatilishi mumkin.
+`subject` registr flag qaysi bemorga tegishli ekanini ko‘rsatadi.
 
-`author` elementi flagni qayd etish uchun mas'ul tibbiyot xodimi roliga reference beradi.
+`encounter` flagni muayyan tibbiy tashrif bilan bog‘lash uchun ishlatilishi mumkin.
+
+`author` flagni qayd etish uchun mas'ul tibbiyot xodimining roliga reference saqlaydi.
 
 ---
 
-## Terminologiya xulosasi
+### Terminologiya xulosasi
 
-Narkologiya registri resurslarida ishlatiladigan terminologiya quyida keltirilgan.
-
-| Terminologiya | Resurs / Element | Maqsadi |
+| Terminologiya | Resurs / element | Maqsadi |
 | :--- | :--- | :--- |
-| `SocialStatusVS` | `Observation.valueCodeableConcept` | Bemorning ijtimoiy holati |
-| `Group` | `EpisodeOfCare.type.extension[group]` | Dinamik kuzatuv guruhi |
-| `EpisodeOfCareStatusVS` | `EpisodeOfCare.status` | Narkologik hisob holati |
-| `type-resource` | `Observation.code` | Vrachlar-konsultativ komissiyasi qarori |
-| `ConditionCodeVS` | `Condition.code` | Narkologik tashxis |
-| `DisabilityVS` | `Condition.severity` | Nogironlik bilan bog'liq og'irlik darajasi |
-| `Registri-flags` | `Flag.code` | Narkologiya registri flaglari |
+| [SocialStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/social-status-vs) | `Observation.valueCodeableConcept` | Bemorning ijtimoiy holati |
+| [SocioeconomicObservationCodesVS](https://dhp.uz/fhir/core/ValueSet/socioeconomic-observation-codes-vs) | `Observation.code` | Ijtimoiy holat kuzatuvini aniqlash |
+| [NarkoAndPsixEpisodeOfCareTypeGroupVS](ValueSet-narko-and-psix-episode-of-care-group-vs.html) | `EpisodeOfCare.type[group]` | Dinamik kuzatuv guruhi |
+| [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `EpisodeOfCare.status` | Ro‘yxatga olish hayotiy sikli |
+| [NarkoTypeResourceVS](ValueSet-narko-type-resource-vs.html) | `Observation.code` | Tibbiy-konsultativ komissiya qarori |
+| [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code` | Narkologik tashxis |
+| [DisabilityVS](https://terminology.dhp.uz/fhir/core/ValueSet/disability-vs) | `Condition.severity` | Nogironlik darajasi |
+| [RegistriFlagVS](ValueSet-registry-flag-vs.html) | `Flag.code` | Narkologiya registri flaglari |
+| [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Flag hayotiy sikli |
 
 ---
 
-## Resurslar o'rtasidagi bog'lanishlar
+### Resurslar o‘rtasidagi bog‘lanishlar
 
-Narkologiya registrining odatiy yozuvi resurslarni quyidagicha bog'lashi mumkin:
+Narkologiya registrining odatiy yozuvi resurslarni quyidagicha bog‘lashi mumkin:
 
-- `Patient` markaziy obyekt hisoblanadi.
-- `EpisodeOfCare` bemorning narkologik hisobini va dinamik kuzatuv guruhini ifodalaydi.
-- `Encounter` tibbiy tashrifni qayd etadi va tegishli `EpisodeOfCare` ga reference berishi mumkin.
-- `Condition` bemor, tashrif yoki tibbiy yordam epizodi bilan bog'liq tashxislarni qayd etadi.
-- `Observation` bemorning ijtimoiy holatini qayd etadi.
-- Ikkinchi `Observation` vrachlar-konsultativ komissiyasi qarorini qayd etadi va tegishli `Encounter` ga reference berishi mumkin.
-- `Flag` ijtimoiy xavflilik yoki majburiy davolanish kabi muhim Narkologiya registri ma'lumotlarini qayd etadi.
+- `Patient` markaziy subyekt hisoblanadi.
+- [NarkoEpisodeOfCare](StructureDefinition-episode-of-care-narko.html) bemorning Narkologiya registridagi ro‘yxatini va dinamik kuzatuv guruhini ifodalaydi.
+- [UZ Core Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) tibbiy tashrifni qayd etadi va tegishli `EpisodeOfCare` ga reference qilishi mumkin.
+- [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition) bemor, tibbiy tashrif yoki episode bilan bog‘liq tashxislarni qayd etadi.
+- [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observatio) bemorning ijtimoiy holatini qayd etadi.
+- [ObservationNarko](StructureDefinition-observation-narko.html) tibbiy-konsultativ komissiya qarorini qayd etadi va tegishli `Encounter` ga reference qilishi mumkin.
+- [FlagNarkoAndPsix](StructureDefinition-flag-narko-and-psix.html) ijtimoiy xavflilik yoki majburiy davolanish kabi muhim Narkologiya registri ma'lumotlarini qayd etadi.
 
-Ushbu tuzilma bemorning narkologik hisob holati, klinik tashxislari, ijtimoiy holati, tibbiy tashriflari, komissiya qarorlari va muhim registr flaglarini o'zaro bog'langan FHIR resurslari sifatida ifodalash imkonini beradi.
+Ushbu resurslar bemor, episode, tibbiy tashrif, tashkilot va tibbiyot xodimi roli orqali bog‘lanib, bemorning Narkologiya registridagi ro‘yxati, klinik tashxislari, ijtimoiy holati, tibbiy tashriflari, komissiya qarorlari va muhim registr flaglarini to‘liq ifodalash imkonini beradi.

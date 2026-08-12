@@ -23,12 +23,12 @@ Description: "Mapping of Narko and Psix Episode Of Care Type Group to SNOMED CT.
 
 * group[=].element[+].code = #narcr0001-00002
 * group[=].element[=].display = "Dispanser guruhi"
-* group[=].element[=].target.code = #25861000087109
-* group[=].element[=].target.display = "Mental health and addiction center (environment)"
+* group[=].element[=].target.code = #225419007
+* group[=].element[=].target.display = "Surveillance"
 * group[=].element[=].target.relationship = #equivalent
 
 * group[=].element[+].code = #psycr0001-00001
 * group[=].element[=].display = "Majburiy statsionar davolanish"
-* group[=].element[=].target.code = #286794000
-* group[=].element[=].target.display = "Detained in hospital under the Mental Health Act 1983"
+* group[=].element[=].target.code = #52748007
+* group[=].element[=].target.display = "Involuntary hospital admission (procedure)"
 * group[=].element[=].target.relationship = #equivalent

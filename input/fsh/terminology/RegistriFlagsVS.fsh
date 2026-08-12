@@ -8,3 +8,4 @@ Description: "Allowed group for Registry Flag in Uzbekistan's health information
 * ^language = #uz
 
 * include codes from system registri-flag-cs
+* include narko-and-psix-episode-of-care-group-cs#psycr0001-00001 "Compulsory inpatient treatment"
