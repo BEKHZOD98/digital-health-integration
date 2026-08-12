@@ -8,7 +8,7 @@ Description: "Profile for representing hepatitis conditions in the context of a 
 * ^publisher = "Uzinfocom"
 * ^purpose = "Represents information about the patient's diagnosis, symptoms, or medical history."
 
-* identifier 1..* MS
+* identifier 0..* MS
   * system = $hep-id-sys
   * system ^short = "Hepatitis condition identifier system"
   * value ^short = "Unique identifier for the condition: UUID"

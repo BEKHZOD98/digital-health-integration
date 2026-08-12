@@ -12,10 +12,8 @@ Description: "Questionnaire for hepatitis C and hepatitis B history and treatmen
   * system = $hep-id-sys
   * system ^short = "Hepatitis questionnaire identifier system"
   * value ^short = "Unique identifier for the questionnaire: UUID"
-* title = "HEPATITIS QUESTIONNAIRE"
-  * ^short = "Questionnaire title"
-* description = "Clinical Structured Form"
-  * ^short = "Natural language description of the questionnaire"
+* identifier.type 0..1 MS 
+* identifier.type from $identifier-type-vs (required) 
 
 * item.answerOption.valueCoding from HepatitisTrimesterVS (required)
 
