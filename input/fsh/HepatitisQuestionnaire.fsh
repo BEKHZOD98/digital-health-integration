@@ -17,7 +17,7 @@ Description: "Questionnaire for hepatitis C and hepatitis B history and treatmen
 * description = "Clinical Structured Form"
   * ^short = "Natural language description of the questionnaire"
 
-* item.answerOption.valueCoding from http://hl7.org/fhir/ValueSet/prepare-patient-prior-specimen-collection (required)
+* item.answerOption.valueCoding from HepatitisTrimesterVS (required)
 
 
 Instance: HepatitisQuestionnaireExample
