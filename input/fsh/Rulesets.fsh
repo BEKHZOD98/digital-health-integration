@@ -1,3 +1,61 @@
+
+Instance: example-hcv-response
+InstanceOf: UZCoreQuestionnaireResponse
+Description: "Example of anamnesis responses completed by the patient for hepatitis B and C treatment questionnaire"
+Usage: #example
+
+* status = #completed
+* subject = Reference(example-salim)
+* authored = "2026-03-19T12:00:00Z"
+* author = Reference(muratova-gulshoda-role)
+
+* item[0]
+  * linkId = "hx-tx-hcv-hbv"
+  * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
+  * answer[0]
+    * valueBoolean = true
+    
+    * item[0]
+      * linkId = "hx-tx-hvc-hbv-meds"
+      * text = "What medications were taken against HCV/HBV?"
+      * answer[0]
+        * valueString = "Sofosbuvir + Declatasvir"
+
+* item[1]
+  * linkId = "pregnancy-trimester"
+  * text = "Pregnancy duration"
+  * answer[0]
+    * valueCoding = http://snomed.info/sct#255246003 "First trimester"
+
+
+Instance: HepatitisQuestionnaireExample
+InstanceOf: UZCoreQuestionnaire
+Usage: #example
+
+* identifier.value = "hepatitis-questionnaire-example"
+* title = "HEPATITIS QUESTIONNAIRE"
+* subjectType = #Patient
+* description = "Clinical Structured Form"
+* status = #active
+
+* item.linkId = "grp-1"
+* item.text = "GENERAL INFORMATION"
+* item.type = #group
+
+* item.item[0].linkId = "hx-tx-hcv-hbv"
+* item.item[0].text = "Have you previously received treatment for HCV/HBV?"
+* item.item[0].type = #boolean
+
+* item.item[1].linkId = "hx-tx-hcv-hbv-meds"
+* item.item[1].text = "What medications were taken for HCV/HBV?"
+* item.item[1].type = #string
+
+* item.item[1].enableWhen.question = "hx-tx-hcv-hbv"
+* item.item[1].enableWhen.operator = #=
+* item.item[1].enableWhen.answerBoolean = true
+
+
+
 RuleSet: IntegrationsValueSet(id)
 // A ValueSet's canonical is on the terminology host regardless of whether it
 // draws from an original or a supplement code system, so one URL rule covers all.
