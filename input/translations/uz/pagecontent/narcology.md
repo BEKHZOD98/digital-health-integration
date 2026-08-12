@@ -10,7 +10,7 @@
 
 ### Bemorning ijtimoiy holatini qayd etish (Observation)
 
-Bemorning ijtimoiy holati [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observatio) profili yordamida ifodalanadi.
+Bemorning ijtimoiy holati [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation) profili yordamida ifodalanadi.
 
 **Examples:** [`example-narko`](Observation-example-narko.html)
 
@@ -272,7 +272,7 @@ Narkologiya registrining odatiy yozuvi resurslarni quyidagicha bog‘lashi mumki
 - [NarkoEpisodeOfCare](StructureDefinition-episode-of-care-narko.html) bemorning Narkologiya registridagi ro‘yxatini va dinamik kuzatuv guruhini ifodalaydi.
 - [UZ Core Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) tibbiy tashrifni qayd etadi va tegishli `EpisodeOfCare` ga reference qilishi mumkin.
 - [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition) bemor, tibbiy tashrif yoki episode bilan bog‘liq tashxislarni qayd etadi.
-- [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observatio) bemorning ijtimoiy holatini qayd etadi.
+- [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation) bemorning ijtimoiy holatini qayd etadi.
 - [ObservationNarko](StructureDefinition-observation-narko.html) tibbiy-konsultativ komissiya qarorini qayd etadi va tegishli `Encounter` ga reference qilishi mumkin.
 - [FlagNarkoAndPsix](StructureDefinition-flag-narko-and-psix.html) ijtimoiy xavflilik yoki majburiy davolanish kabi muhim Narkologiya registri ma'lumotlarini qayd etadi.
 
