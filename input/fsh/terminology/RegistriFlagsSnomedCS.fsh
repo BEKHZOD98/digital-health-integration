@@ -9,31 +9,19 @@ Description: "SNOMED CT supplement containing Uzbek and Russian designations for
     2026.1.0
 )
 
-* #389315000 "At risk of harming others"
+* #129707006 "At increased risk for other-directed violence (finding)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Социальная опасность"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Ijtimoiy xavflilik"
 
-* #52748007 "Involuntary hospital admission"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Принудительное лечение"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Majburiy davolanish"
-
-* #14866005 "Hospital-based outpatient mental health clinic (environment)"
+* #303163003 "Treatments administered under the provisions of the law"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Амбулаторное принудительное лечение"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Majburiy ambulatoriya sharoitida davolanish"
 
-* #286794000 "Detained in hospital under the Mental Health Act 1983"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Стационарное принудительное лечение"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Majburiy statsionar davolanish"
-
-* #58626002 "Legal guardian (person)"
+* #1193838006 "Legal guardian status"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Под опекой"
   * ^designation[+].language = #uz

@@ -171,5 +171,5 @@ Usage: #definition
 * usage = "Used in EpisodeOfCare.identifier when referencing NARKO registration identifiers"
 
 * uniqueId[0].type = #uri
-* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/narko"
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/narco"
 * uniqueId[=].preferred = true

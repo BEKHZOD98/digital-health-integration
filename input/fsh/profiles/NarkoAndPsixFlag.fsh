@@ -2,7 +2,7 @@
 //because Profile for Flag in IG has not been created yet. 
 Profile: FlagNarkoAndPsix
 Parent: Flag
-Id: flag-narko
+Id: flag-narko-and-psix
 Title: "Narko and Psix Flag"
 Description: "Uzbekistan Flag profile, used to define the essential information that healthcare providers should be aware of when assessing, treating, or managing a patient."
 * ^experimental = true
@@ -37,5 +37,5 @@ Usage: #example
 * code = registri-flag-cs#registri0001-00002 "Compulsory treatment"
 * subject = Reference(example-salim)
 * period.start = "2026-03-12"
-* encounter = Reference(example-encounter)
-* author = Reference(example-practitionerrole)
+* encounter = Reference(example-narko-encounter)
+* author = Reference(example-psychiatrist-narcologist)

@@ -19,10 +19,9 @@ Description: "Example of a body height vital sign  observation"
 * status = #final
 * code = type-resource-cs#type-res-0002-0001 "The commission's decision"
 * subject = Reference(example-salim)
-* encounter = Reference(example-encounter)
-* performer = Reference(PractitionerRole/practitioner-role-nurse)
-* effectiveDateTime = "1999-07-02"
+* encounter = Reference(example-narko-encounter)
+* performer = Reference(PractitionerRole/example-psychiatrist-narcologist)
+* effectiveDateTime = "2026-03-12"
 * valueString = "Toshmatov Toshmat Toshmatovich"
-* performer = Reference(example-practitioner)
 * note[0].authorString = "Medical Consultation Commission"
-* note[0].text = "Patient with substance use disorder."
+* note[0].text = "Medical commission decision recorded for a patient with harmful stimulant use."
