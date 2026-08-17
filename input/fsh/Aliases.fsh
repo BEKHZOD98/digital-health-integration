@@ -163,9 +163,5 @@ Alias: $lab-report-types-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/la
 Alias: $lab-pan-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/lab-pan-cs
 Alias: $signature-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/signature-type-cs
 
-Alias: $organization-shif-id-system = https://dhp.uz/fhir/core/sid/org/uz/shif
-Alias: $narko-episode-of-care-group-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/narko-episode-of-care-group-cs
 Alias: $flag-status-cs = http://hl7.org/fhir/flag-status
-
-Alias: $practitioner-role = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
-Alias: $practioner-speciality = https://terminology.dhp.uz/fhir/core/CodeSystem/profession-specialization-cs
+Alias: $profession-specialization-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/profession-specialization-cs

@@ -1,8 +1,8 @@
-CodeSystem: RegistriFlagsCS
-Id: registri-flag-cs
-Title: "Registry Flags Code System"
-Description: "Registri flag codesystem supplement with translations in uzbek and russian"
-* insert OriginalCodeSystemDraft(registri-flag-cs)
+CodeSystem: NarcologyPsychiatryRegistryFlagCS
+Id: narcology-psychiatry-registry-flag-cs
+Title: "Narcology and Psychiatry Registry Flag CodeSystem"
+Description: "Registry flags raised on a patient in the narcology and psychiatry registries."
+* insert OriginalCodeSystemDraft(narcology-psychiatry-registry-flag-cs)
 
 * #registri0001-00001 "Ijtimoiy xavflilik"
   * ^designation[0].language = #ru

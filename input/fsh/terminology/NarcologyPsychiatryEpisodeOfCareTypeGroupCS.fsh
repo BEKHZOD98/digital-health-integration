@@ -1,9 +1,8 @@
-CodeSystem: NarkoAndPsixEpisodeOfCareTypeGroupCS
-Id: narko-and-psix-episode-of-care-group-cs
-Title: "Narko and Psix EpisodeOfCare Group CodeSystem"
-Description: "Narko and Psix Episode of care group in Uzbekistan"
-* insert OriginalCodeSystemDraft(narko-and-psix-episode-of-care-group-cs)
-
+CodeSystem: NarcologyPsychiatryEpisodeOfCareTypeGroupCS
+Id: narcology-psychiatry-episode-of-care-type-group-cs
+Title: "Narcology and Psychiatry EpisodeOfCare Type Group CodeSystem"
+Description: "Dynamic observation groups a patient can be placed in by the narcology and psychiatry registries."
+* insert OriginalCodeSystemDraft(narcology-psychiatry-episode-of-care-type-group-cs)
 
 * #narcr0001-00001 "Profilaktik guruh"
   * ^designation[0].language = #ru
@@ -13,7 +12,7 @@ Description: "Narko and Psix Episode of care group in Uzbekistan"
 
 * #narcr0001-00002 "Dispanser guruhi"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Диспансерская группа"
+  * ^designation[=].value = "Диспансерная группа"
   * ^designation[+].language = #en
   * ^designation[=].value = "Dispensary group"
 

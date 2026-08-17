@@ -1,14 +1,12 @@
-Instance: example-narko-condition
+Instance: example-narcology-condition
 InstanceOf: UZCoreCondition
-Title: "Narko Condition Example"
-Description: "Example of Narko Condition"
+Title: "Narcology Condition Example"
+Description: "Harmful stimulant use recorded for Salim during his narcology encounter."
 Usage: #example
 
-* identifier[0].system = "https://dhp.uz/fhir/core/sid/reg/uz/narco"
-* identifier[0].value = "EOC-2026-001"
 * clinicalStatus = $condition-clinical#active "Active"
 * code = $icd-10#F15.1 "Mental and behavioural disorders due to use of other stimulants, including caffeine : Harmful use"
 * subject = Reference(example-salim)
-* encounter = Reference(example-narko-encounter)
+* encounter = Reference(example-narcology-encounter)
 * recordedDate = "2026-03-10"
-* participant.actor = Reference(Organization/organization-123)
+* participant.actor = Reference(Organization/example-narcology-center)

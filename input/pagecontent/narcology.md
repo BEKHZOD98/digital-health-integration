@@ -12,7 +12,7 @@
 
 The patient's social status is represented using the [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation) profile.
 
-**Examples:** [`example-narko`](Observation-example-narko.html)
+**Examples:** [`example-narcology-socioeconomic`](Observation-example-narcology-socioeconomic.html)
 
 The observation identifies the social-status observation using SNOMED CT concept `82996008`. The patient's actual social status is recorded in `valueCodeableConcept` using [SocialStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/social-status-vs).
 
@@ -40,9 +40,9 @@ The `subject` references the patient whose social status is being recorded.
 
 ### Registering the patient in a dynamic observation group (EpisodeOfCare)
 
-The patient's narcology registration and dynamic observation group are represented using the [Narko Episode Of Care](StructureDefinition-episode-of-care-narko.html) profile.
+The patient's narcology registration and dynamic observation group are represented using the [Narcology Episode Of Care](StructureDefinition-narcology-episode-of-care.html) profile.
 
-**Examples:** [`narko-episodeofcare-example`](EpisodeOfCare-narko-episodeofcare-example.html)
+**Examples:** [`example-narcology-episode-of-care`](EpisodeOfCare-example-narcology-episode-of-care.html)
 
 The episode records the patient's registration status, dynamic observation group, diagnoses associated with the episode, patient, managing organization, registration period, and responsible practitioner role.
 
@@ -50,7 +50,7 @@ The episode records the patient's registration status, dynamic observation group
 | :--- | :--- | :--- | :--- |
 | Identifier | - | `https://dhp.uz/fhir/core/sid/reg/uz/narco` | `identifier` |
 | Registration status | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `active` | `status` |
-| Dynamic observation group | [NarkoAndPsixEpisodeOfCareTypeGroupVS](ValueSet-narko-and-psix-episode-of-care-group-vs.html) | `narcr0001-00001` | `type[group]` |
+| Dynamic observation group | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `narcr0001-00001` | `type[group]` |
 | Diagnosis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `diagnosis.condition` |
 | Diagnosis use | Encounter Diagnosis Use | `working` | `diagnosis.use` |
 | Patient | - | reference to [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `patient` |
@@ -64,14 +64,15 @@ When the patient is removed from registration, the episode status should be `fin
 
 The dynamic observation group is represented using the `group` slice on `EpisodeOfCare.type`.
 
-The defined Narko and Psix episode-of-care group codes are:
+The defined narcology and psychiatry episode-of-care group codes are:
 
 | Code | SNOMED CT code | RU | UZ | ENG |
 | :--- | :--- | :--- | :--- | :--- |
 | `narcr0001-00001` | `302805002` | Профилактическая группа | Profilaktik guruh | Preventive group |
 | `narcr0001-00002` | `225419007` | Диспансерная группа | Dispanser guruhi | Dispensary group |
+| `psycr0001-00001` | `52748007` | Стационарное принудительное лечение | Majburiy statsionar davolanish | Compulsory inpatient treatment |
 
-The SNOMED CT mappings are defined by the [Narko and Psix Episode Of Care Type Group to SNOMED CT ConceptMap](ConceptMap-narko-and-psix-episode-of-care-conceptmap.html).
+The SNOMED CT mappings are defined by the [Narcology and Psychiatry EpisodeOfCare Type Groups to SNOMED CT](ConceptMap-narcology-psychiatry-episode-of-care-type-group-to-snomed.html).
 
 #### Diagnosis codes
 
@@ -95,7 +96,7 @@ The episode may contain multiple diagnoses. Each `diagnosis.condition` reference
 
 A patient's medical visit within the Narcology Registry is represented using the [UZ Core Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) profile.
 
-**Examples:** [`example-narko-encounter`](Encounter-example-narko-encounter.html)
+**Examples:** [`example-narcology-encounter`](Encounter-example-narcology-encounter.html)
 
 The encounter represents the medical visit recorded by the healthcare provider and may be associated with the patient's `EpisodeOfCare`.
 
@@ -103,7 +104,7 @@ The encounter represents the medical visit recorded by the healthcare provider a
 | :--- | :--- | :--- | :--- |
 | Encounter status | Encounter Status | `completed` | `status` |
 | Patient | - | reference to [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
-| Episode of care | - | reference to [NarkoEpisodeOfCare](StructureDefinition-episode-of-care-narko.html) | `episodeOfCare` |
+| Episode of care | - | reference to [NarcologyEpisodeOfCare](StructureDefinition-narcology-episode-of-care.html) | `episodeOfCare` |
 | Actual encounter period | - | `2026-03-10T10:00:00Z` – `2026-03-10T11:00:00Z` | `actualPeriod` |
 | Participant type | Participant Type | `ATND` | `participant.type` |
 | Encounter practitioner | - | reference to [UZCorePractitionerRole](https://dhp.uz/fhir/core/StructureDefinition/uz-core-practitioner-role) | `participant.actor` |
@@ -127,21 +128,21 @@ An encounter may contain multiple diagnoses. Each diagnosis references a [UZ Cor
 
 ### Recording the medical-consultation commission decision (Observation)
 
-The medical-consultation commission's decision is represented using the [ObservationNarko](StructureDefinition-observation-narko.html) profile.
+The medical-consultation commission's decision is represented using the [NarcologyObservation](StructureDefinition-narcology-observation.html) profile.
 
-**Examples:** [`example-narko-observation`](Observation-example-narko-observation.html)
+**Examples:** [`example-narcology-commission`](Observation-example-narcology-commission.html)
 
 The profile is used to contain notes, findings, and recommendations issued by the Medical Advisory Commission.
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Observation status | Observation Status | `final` | `status` |
-| Commission decision type | [NarkoTypeResourceVS](ValueSet-narko-type-resource-vs.html) | `type-res-0002-0001` | `code` |
+| Commission decision type | [NarcologyTypeResourceVS](ValueSet-narcology-type-resource-vs.html) | `type-res-0002-0001` | `code` |
 | Patient | - | reference to [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Encounter | - | reference to [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) | `encounter` |
 | Commission decision date | - | `2026-03-12` | `effectiveDateTime` |
 | Commission member | - | reference to [UZCorePractitionerRole](https://dhp.uz/fhir/core/StructureDefinition/uz-core-practitioner-role) | `performer` |
-| Commission result | - | `Medical commission decision recorded for a patient with harmful stimulant use.` | `valueString` |
+| Commission result | - | `Dispensary observation is required. The patient is to be reviewed again in six months.` | `valueString` |
 
 The commission decision type is:
 
@@ -149,11 +150,9 @@ The commission decision type is:
 | :--- | :--- | :--- | :--- | :--- |
 | `type-res-0002-0001` | `444804000` | Решение комиссии | Komissiya qarori | The commission's decision |
 
-The corresponding terminology is defined in [TypeResourceCS](CodeSystem-type-resource-cs.html), and the SNOMED CT mapping is defined by the [Type Resource to SNOMED CT ConceptMap](ConceptMap-type-resource-conceptmap.html).
+The corresponding terminology is defined in [TypeResourceCS](CodeSystem-type-resource-cs.html), and the SNOMED CT mapping is defined by the [Type Resource to SNOMED CT ConceptMap](ConceptMap-type-resource-to-snomed.html).
 
-Commission members are represented as `performer` references. Because `performer` has cardinality `0..*`, multiple commission members can be recorded when applicable.
-
-The commission's result or conclusion is recorded in `valueString`.
+Each commission member is recorded as a separate `performer` reference. The decision the commission reached is recorded in `valueString`, which is required by this profile.
 
 ---
 
@@ -161,13 +160,12 @@ The commission's result or conclusion is recorded in `valueString`.
 
 A narcology-related clinical condition is represented using the [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition) profile.
 
-**Examples:** [`example-narko-condition`](Condition-example-narko-condition.html)
+**Examples:** [`example-narcology-condition`](Condition-example-narcology-condition.html)
 
 The `Condition` records the clinical status, diagnosis, patient, related encounter, registration date, and organization providing the information.
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Identifier | - | `https://dhp.uz/fhir/core/sid/reg/uz/narco` | `identifier` |
 | Clinical status | Condition Clinical Status Codes | `active` | `clinicalStatus` |
 | Disability severity | [DisabilityVS](https://terminology.dhp.uz/fhir/core/ValueSet/disability-vs) | applicable disability severity | `severity` |
 | Diagnosis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `code` |
@@ -214,16 +212,16 @@ The following rules apply to disability:
 
 ### Recording social danger and compulsory treatment (Flag)
 
-Important narcology registry information that healthcare providers should be aware of is represented using the [FlagNarkoAndPsix](StructureDefinition-flag-narko-and-psix.html) profile.
+Important narcology registry information that healthcare providers should be aware of is represented using the [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) profile.
 
-**Examples:** [`example-flag`](Flag-example-flag.html)
+**Examples:** [`example-narcology-flag`](Flag-example-narcology-flag.html)
 
 The `Flag` resource is used to record registry flags such as social danger and compulsory treatment.
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Flag status | [FlagStatusVS](ValueSet-flag-status-vs.html) | `active` | `status` |
-| Registry flag | [RegistriFlagVS](ValueSet-registry-flag-vs.html) | `registri0001-00002` | `code` |
+| Registry flag | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `registri0001-00002` | `code` |
 | Patient | - | reference to [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Validity period | - | `2026-03-12` | `period` |
 | Encounter | - | reference to [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) | `encounter` |
@@ -240,12 +238,13 @@ The registry flag codes are:
 | Code | SNOMED CT code | SNOMED name | RU | UZ | ENG |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `registri0001-00001` | `129707006` | At increased risk for other-directed violence (finding) | Социальная опасность | Ijtimoiy xavflilik | Social danger / Social risk |
-| `registri0001-00002` | `303163003` | Treatments administered under the provisions of the law | Принудительное лечение | Majburiy davolanish | Compulsory treatment |
-| `registri0001-00003` | `303163003` | Treatments administered under the provisions of the law | Принудительное амбулаторное лечение | Majburiy ambulatoriya sharoitida davolanish | Compulsory outpatient treatment |
-| `registri0001-00005` | `1193838006` | Legal guardian status | Под опекой | Vasiylik ostida | Legal guardian status |
+| `registri0001-00002` | `303163003` | Treatments administered under the provisions of the law (regime/therapy) | Принудительное лечение | Majburiy davolanish | Compulsory treatment |
+| `registri0001-00003` | `303163003` | Treatments administered under the provisions of the law (regime/therapy) | Принудительное амбулаторное лечение | Majburiy ambulatoriya sharoitida davolanish | Compulsory outpatient treatment |
+| `registri0001-00005` | `1193838006` | Legal guardian status (observable entity) | Под опекой | Vasiylik ostida | Legal guardian status |
 | `registri0001-00006` | `21134002` | Disability (finding) | Инвалидность | Nogironlik | Disability |
+| `psycr0001-00001` | `52748007` | Involuntary hospital admission (procedure) | Стационарное принудительное лечение | Majburiy statsionar davolanish | Compulsory inpatient treatment |
 
-The complete mapping is defined by the [Registry Flags to SNOMED CT ConceptMap](ConceptMap-registri-flags-conceptmap.html).
+The complete mapping is defined by the [Narcology and Psychiatry Registry Flags to SNOMED CT](ConceptMap-narcology-psychiatry-registry-flag-to-snomed.html).
 
 The `subject` identifies the patient to whom the registry flag applies.
 
@@ -263,12 +262,12 @@ The terminology used by the Narcology Registry resources is summarized below.
 | :--- | :--- | :--- |
 | [SocialStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/social-status-vs) | `Observation.valueCodeableConcept` | Patient's social status |
 | [SocioeconomicObservationCodesVS](https://dhp.uz/fhir/core/ValueSet/socioeconomic-observation-codes-vs) | `Observation.code` | Identifies the social-status observation |
-| [NarkoAndPsixEpisodeOfCareTypeGroupVS](ValueSet-narko-and-psix-episode-of-care-group-vs.html) | `EpisodeOfCare.type[group]` | Dynamic observation group |
+| [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `EpisodeOfCare.type[group]` | Dynamic observation group |
 | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `EpisodeOfCare.status` | Narcology registration lifecycle |
-| [NarkoTypeResourceVS](ValueSet-narko-type-resource-vs.html) | `Observation.code` | Medical-consultation commission decision |
+| [NarcologyTypeResourceVS](ValueSet-narcology-type-resource-vs.html) | `Observation.code` | Medical-consultation commission decision |
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code` | Narcology diagnosis |
 | [DisabilityVS](https://terminology.dhp.uz/fhir/core/ValueSet/disability-vs) | `Condition.severity` | Disability-related severity |
-| [RegistriFlagVS](ValueSet-registry-flag-vs.html) | `Flag.code` | Narcology registry flags |
+| [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Narcology registry flags |
 | [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Flag lifecycle |
 
 ---
@@ -278,11 +277,11 @@ The terminology used by the Narcology Registry resources is summarized below.
 A typical Narcology Registry record may connect the resources as follows:
 
 - `Patient` is the central subject.
-- [NarkoEpisodeOfCare](StructureDefinition-episode-of-care-narko.html) represents the patient's narcology registration and dynamic observation group.
+- [NarcologyEpisodeOfCare](StructureDefinition-narcology-episode-of-care.html) represents the patient's narcology registration and dynamic observation group.
 - [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) records a medical visit and may reference the relevant `EpisodeOfCare`.
 - [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition) records diagnoses associated with the patient, encounter, or episode of care.
 - [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation) records the patient's social status.
-- [ObservationNarko](StructureDefinition-observation-narko.html) records the medical-consultation commission decision and may reference the related `Encounter`.
-- [FlagNarkoAndPsix](StructureDefinition-flag-narko-and-psix.html) records important narcology registry information, such as social danger or compulsory treatment.
+- [NarcologyObservation](StructureDefinition-narcology-observation.html) records the medical-consultation commission decision and may reference the related `Encounter`.
+- [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) records important narcology registry information, such as social danger or compulsory treatment.
 
 These resources are linked through patient, episode-of-care, encounter, organization, and practitioner-role references to represent the patient's narcology registration, clinical diagnoses, social status, medical encounters, commission decisions, and important registry flags.

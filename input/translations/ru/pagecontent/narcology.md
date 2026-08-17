@@ -12,7 +12,7 @@
 
 Социальный статус пациента представляется с использованием профиля [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation).
 
-**Examples:** [`example-narko`](Observation-example-narko.html)
+**Examples:** [`example-narcology-socioeconomic`](Observation-example-narcology-socioeconomic.html)
 
 | Информация для записи | Value set | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
@@ -38,9 +38,9 @@
 
 ### Регистрация пациента в динамической группе наблюдения (EpisodeOfCare)
 
-Регистрация пациента в Наркологическом регистре и его динамическая группа наблюдения представляются с использованием профиля [Narko Episode Of Care](StructureDefinition-episode-of-care-narko.html).
+Регистрация пациента в Наркологическом регистре и его динамическая группа наблюдения представляются с использованием профиля [Narcology Episode Of Care](StructureDefinition-narcology-episode-of-care.html).
 
-**Examples:** [`narko-episodeofcare-example`](EpisodeOfCare-narko-episodeofcare-example.html)
+**Examples:** [`example-narcology-episode-of-care`](EpisodeOfCare-example-narcology-episode-of-care.html)
 
 Эпизод содержит статус регистрации пациента, динамическую группу наблюдения, диагнозы, связанные с эпизодом, пациента, ответственную организацию, период регистрации и ответственного специалиста.
 
@@ -48,7 +48,7 @@
 | :--- | :--- | :--- | :--- |
 | Идентификатор | - | `https://dhp.uz/fhir/core/sid/reg/uz/narco` | `identifier` |
 | Статус регистрации | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `active` | `status` |
-| Динамическая группа наблюдения | [NarkoAndPsixEpisodeOfCareTypeGroupVS](ValueSet-narko-and-psix-episode-of-care-group-vs.html) | `narcr0001-00001` | `type[group]` |
+| Динамическая группа наблюдения | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `narcr0001-00001` | `type[group]` |
 | Диагноз | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `diagnosis.condition` |
 | Использование диагноза | Encounter Diagnosis Use | `working` | `diagnosis.use` |
 | Пациент | - | ссылка на [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `patient` |
@@ -68,8 +68,9 @@
 | :--- | :--- | :--- | :--- | :--- |
 | `narcr0001-00001` | `302805002` | Профилактическая группа | Profilaktik guruh | Preventive group |
 | `narcr0001-00002` | `225419007` | Диспансерная группа | Dispanser guruhi | Dispensary group |
+| `psycr0001-00001` | `52748007` | Стационарное принудительное лечение | Majburiy statsionar davolanish | Compulsory inpatient treatment |
 
-Соответствующие отображения SNOMED CT определены в [Narko and Psix Episode Of Care Type Group to SNOMED CT ConceptMap](ConceptMap-narko-and-psix-episode-of-care-conceptmap.html).
+Соответствующие отображения SNOMED CT определены в [Narcology and Psychiatry EpisodeOfCare Type Groups to SNOMED CT](ConceptMap-narcology-psychiatry-episode-of-care-type-group-to-snomed.html).
 
 #### Коды диагнозов
 
@@ -94,7 +95,7 @@
 
 Медицинский приём пациента в рамках Наркологического регистра представляется с использованием профиля [UZ Core Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter).
 
-**Examples:** [`example-narko-encounter`](Encounter-example-narko-encounter.html)
+**Examples:** [`example-narcology-encounter`](Encounter-example-narcology-encounter.html)
 
 Encounter представляет медицинский визит, зарегистрированный медицинским работником, и может быть связан с соответствующим `EpisodeOfCare`.
 
@@ -102,7 +103,7 @@ Encounter представляет медицинский визит, зарег
 | :--- | :--- | :--- | :--- |
 | Статус приёма | Encounter Status | `completed` | `status` |
 | Пациент | - | ссылка на [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
-| Эпизод оказания помощи | - | ссылка на [NarkoEpisodeOfCare](StructureDefinition-episode-of-care-narko.html) | `episodeOfCare` |
+| Эпизод оказания помощи | - | ссылка на [NarcologyEpisodeOfCare](StructureDefinition-narcology-episode-of-care.html) | `episodeOfCare` |
 | Период приёма | - | `2026-03-10T10:00:00Z` – `2026-03-10T11:00:00Z` | `actualPeriod` |
 | Тип участника | Participant Type | `ATND` | `participant.type` |
 | Медицинский работник | - | ссылка на UZCorePractitionerRole | `participant.actor` |
@@ -126,21 +127,21 @@ Encounter может содержать несколько диагнозов. �
 
 ### Регистрация решения врачебно-консультационной комиссии (Observation)
 
-Решение врачебно-консультационной комиссии представляется с использованием профиля [ObservationNarko](StructureDefinition-observation-narko.html).
+Решение врачебно-консультационной комиссии представляется с использованием профиля [NarcologyObservation](StructureDefinition-narcology-observation.html).
 
-**Examples:** [`example-narko-observation`](Observation-example-narko-observation.html)
+**Examples:** [`example-narcology-commission`](Observation-example-narcology-commission.html)
 
 Профиль используется для хранения заключений, результатов и рекомендаций, выданных врачебно-консультационной комиссией.
 
 | Информация для записи | Value set | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Статус наблюдения | Observation Status | `final` | `status` |
-| Тип решения комиссии | [NarkoTypeResourceVS](ValueSet-narko-type-resource-vs.html) | `type-res-0002-0001` | `code` |
+| Тип решения комиссии | [NarcologyTypeResourceVS](ValueSet-narcology-type-resource-vs.html) | `type-res-0002-0001` | `code` |
 | Пациент | - | ссылка на [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Медицинский приём | - | ссылка на [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) | `encounter` |
 | Дата решения комиссии | - | `2026-03-12` | `effectiveDateTime` |
 | Член комиссии | - | ссылка на UZCorePractitionerRole | `performer` |
-| Результат комиссии | - | текст решения комиссии | `valueString` |
+| Результат комиссии | - | `Dispensary observation is required. The patient is to be reviewed again in six months.` | `valueString` |
 
 Код типа решения комиссии:
 
@@ -148,11 +149,9 @@ Encounter может содержать несколько диагнозов. �
 | :--- | :--- | :--- | :--- | :--- |
 | `type-res-0002-0001` | `444804000` | Решение комиссии | Komissiya qarori | The commission's decision |
 
-Соответствующая терминология определена в [TypeResourceCS](CodeSystem-type-resource-cs.html), а отображение в SNOMED CT — в [Type Resource to SNOMED CT ConceptMap](ConceptMap-type-resource-conceptmap.html).
+Соответствующая терминология определена в [TypeResourceCS](CodeSystem-type-resource-cs.html), а отображение в SNOMED CT — в [Type Resource to SNOMED CT ConceptMap](ConceptMap-type-resource-to-snomed.html).
 
-Члены комиссии должны представляться ссылками в `performer`. Поскольку `performer` имеет кардинальность `0..*`, можно зарегистрировать несколько членов комиссии.
-
-Результат или заключение комиссии записывается в `valueString`.
+Каждый член комиссии записывается отдельной ссылкой `performer`. Принятое комиссией решение записывается в `valueString`, который в этом профиле обязателен.
 
 ---
 
@@ -160,13 +159,12 @@ Encounter может содержать несколько диагнозов. �
 
 Наркологическое клиническое состояние пациента представляется с использованием профиля [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition).
 
-**Examples:** [`example-narko-condition`](Condition-example-narko-condition.html)
+**Examples:** [`example-narcology-condition`](Condition-example-narcology-condition.html)
 
 `Condition` содержит клинический статус, диагноз, пациента, связанный медицинский приём, дату регистрации и организацию, предоставившую информацию.
 
 | Информация для записи | Value set | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
-| Идентификатор | - | `https://dhp.uz/fhir/core/sid/reg/uz/narco` | `identifier` |
 | Клинический статус | Condition Clinical Status Codes | `active` | `clinicalStatus` |
 | Тяжесть инвалидности | [DisabilityVS](https://terminology.dhp.uz/fhir/core/ValueSet/disability-vs) | применимая степень инвалидности | `severity` |
 | Диагноз | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `code` |
@@ -205,16 +203,16 @@ Encounter может содержать несколько диагнозов. �
 
 ### Регистрация социальной опасности и принудительного лечения (Flag)
 
-Важная информация Наркологического регистра, о которой медицинские работники должны знать при оценке и лечении пациента, представляется с использованием профиля [FlagNarkoAndPsix](StructureDefinition-flag-narko-and-psix.html).
+Важная информация Наркологического регистра, о которой медицинские работники должны знать при оценке и лечении пациента, представляется с использованием профиля [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html).
 
-**Examples:** [`example-flag`](Flag-example-flag.html)
+**Examples:** [`example-narcology-flag`](Flag-example-narcology-flag.html)
 
 Ресурс `Flag` используется для регистрации таких признаков, как социальная опасность и принудительное лечение.
 
 | Информация для записи | Value set | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Статус флага | [FlagStatusVS](ValueSet-flag-status-vs.html) | `active` | `status` |
-| Флаг регистра | [RegistriFlagVS](ValueSet-registry-flag-vs.html) | `registri0001-00002` | `code` |
+| Флаг регистра | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `registri0001-00002` | `code` |
 | Пациент | - | ссылка на [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Период действия | - | `2026-03-12` | `period` |
 | Медицинский приём | - | ссылка на [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) | `encounter` |
@@ -231,12 +229,13 @@ Encounter может содержать несколько диагнозов. �
 | Код | Код SNOMED CT | Название SNOMED | RU | UZ | ENG |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `registri0001-00001` | `129707006` | At increased risk for other-directed violence (finding) | Социальная опасность | Ijtimoiy xavflilik | Social danger / Social risk |
-| `registri0001-00002` | `303163003` | Treatments administered under the provisions of the law | Принудительное лечение | Majburiy davolanish | Compulsory treatment |
-| `registri0001-00003` | `303163003` | Treatments administered under the provisions of the law | Принудительное амбулаторное лечение | Majburiy ambulatoriya sharoitida davolanish | Compulsory outpatient treatment |
-| `registri0001-00005` | `1193838006` | Legal guardian status | Под опекой | Vasiylik ostida | Legal guardian status |
+| `registri0001-00002` | `303163003` | Treatments administered under the provisions of the law (regime/therapy) | Принудительное лечение | Majburiy davolanish | Compulsory treatment |
+| `registri0001-00003` | `303163003` | Treatments administered under the provisions of the law (regime/therapy) | Принудительное амбулаторное лечение | Majburiy ambulatoriya sharoitida davolanish | Compulsory outpatient treatment |
+| `registri0001-00005` | `1193838006` | Legal guardian status (observable entity) | Под опекой | Vasiylik ostida | Legal guardian status |
 | `registri0001-00006` | `21134002` | Disability (finding) | Инвалидность | Nogironlik | Disability |
+| `psycr0001-00001` | `52748007` | Involuntary hospital admission (procedure) | Стационарное принудительное лечение | Majburiy statsionar davolanish | Compulsory inpatient treatment |
 
-Полное отображение определено в [Registry Flags to SNOMED CT ConceptMap](ConceptMap-registri-flags-conceptmap.html).
+Полное отображение определено в [Narcology and Psychiatry Registry Flags to SNOMED CT](ConceptMap-narcology-psychiatry-registry-flag-to-snomed.html).
 
 `subject` определяет пациента, к которому относится флаг регистра.
 
@@ -252,12 +251,12 @@ Encounter может содержать несколько диагнозов. �
 | :--- | :--- | :--- |
 | [SocialStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/social-status-vs) | `Observation.valueCodeableConcept` | Социальный статус пациента |
 | [SocioeconomicObservationCodesVS](https://dhp.uz/fhir/core/ValueSet/socioeconomic-observation-codes-vs) | `Observation.code` | Идентификация наблюдения социального статуса |
-| [NarkoAndPsixEpisodeOfCareTypeGroupVS](ValueSet-narko-and-psix-episode-of-care-group-vs.html) | `EpisodeOfCare.type[group]` | Динамическая группа наблюдения |
+| [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `EpisodeOfCare.type[group]` | Динамическая группа наблюдения |
 | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `EpisodeOfCare.status` | Жизненный цикл регистрации |
-| [NarkoTypeResourceVS](ValueSet-narko-type-resource-vs.html) | `Observation.code` | Решение врачебно-консультационной комиссии |
+| [NarcologyTypeResourceVS](ValueSet-narcology-type-resource-vs.html) | `Observation.code` | Решение врачебно-консультационной комиссии |
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code` | Диагноз |
 | [DisabilityVS](https://terminology.dhp.uz/fhir/core/ValueSet/disability-vs) | `Condition.severity` | Степень инвалидности |
-| [RegistriFlagVS](ValueSet-registry-flag-vs.html) | `Flag.code` | Флаги Наркологического регистра |
+| [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Флаги Наркологического регистра |
 | [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Жизненный цикл флага |
 
 ---
@@ -267,11 +266,11 @@ Encounter может содержать несколько диагнозов. �
 Типичная запись Наркологического регистра может связывать ресурсы следующим образом:
 
 - `Patient` является центральным субъектом.
-- [NarkoEpisodeOfCare](StructureDefinition-episode-of-care-narko.html) представляет регистрацию пациента в Наркологическом регистре и его динамическую группу наблюдения.
+- [NarcologyEpisodeOfCare](StructureDefinition-narcology-episode-of-care.html) представляет регистрацию пациента в Наркологическом регистре и его динамическую группу наблюдения.
 - [UZ Core Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) регистрирует медицинский приём и может ссылаться на соответствующий `EpisodeOfCare`.
 - [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition) регистрирует диагнозы, связанные с пациентом, медицинским приёмом или эпизодом оказания помощи.
 - [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation) регистрирует социальный статус пациента.
-- [ObservationNarko](StructureDefinition-observation-narko.html) регистрирует решение врачебно-консультационной комиссии и может ссылаться на соответствующий `Encounter`.
-- [FlagNarkoAndPsix](StructureDefinition-flag-narko-and-psix.html) регистрирует важную информацию Наркологического регистра, например социальную опасность или принудительное лечение.
+- [NarcologyObservation](StructureDefinition-narcology-observation.html) регистрирует решение врачебно-консультационной комиссии и может ссылаться на соответствующий `Encounter`.
+- [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) регистрирует важную информацию Наркологического регистра, например социальную опасность или принудительное лечение.
 
 Эти ресурсы связываются посредством ссылок на пациента, эпизод оказания помощи, медицинский приём, организацию и роль медицинского работника, что позволяет представить регистрацию пациента, клинические диагнозы, социальный статус, медицинские приёмы, решения комиссии и важные регистрационные флаги.
