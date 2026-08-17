@@ -111,6 +111,8 @@ pages:
     title: Tuberculosis (DHIS)
   narcology.md:
     title: Narcology
+  psychiatry.md:
+    title: Psychiatry
   forms.md:
     title: Forms
   changelog.md:
@@ -132,6 +134,7 @@ menu:
     Sick Leave: sick-leave.html
     Tuberculosis (DHIS): dhis-tuberculosis.html
     Narcology: narcology.html
+    Psychiatry: psychiatry.html
   Forms: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html
