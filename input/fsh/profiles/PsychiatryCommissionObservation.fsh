@@ -1,16 +1,14 @@
-Profile: PsychiatryObservationCommision
+Profile: PsychiatryObservationCommission
 Parent: UZCoreObservation
-Id: psychiatry-observation-commision
-Title: "Psix Observation Commision Profile"
-Description: "Observation profile representing the medical-consultation commission's decision notes for the Psix system."
+Id: psychiatry-observation-commission
+Title: "Psychiatry Observation Commission Profile"
+Description: "Observation profile representing the medical-consultation commission's decision notes for the Psychiatry system."
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"
 
-* identifier 0..1 MS
-
 * code MS
-* code from PsychiatryCommissionTypeVS (required)
+* code = type-resource-cs#type-res-0002-0001 "The commission's decision"
 
 * subject MS
 * subject only Reference(UZCorePatient)
@@ -35,13 +33,15 @@ Description: "Observation profile representing the medical-consultation commissi
 * component[protocolNumber].value[x] only string
 
 
-Instance: example-psychiatry-observation-commision
-InstanceOf: PsychiatryObservationCommision
-Title: "Psix Observation Commission Profile Instance"
-Description: "Example observation representing a medical-consultation commission's decision regarding compulsory inpatient treatment in the Psix system."
+Instance: example-psychiatry-observation-commission
+InstanceOf: PsychiatryObservationCommission
+Title: "Psychiatry Observation Commission Profile Instance"
+Description: "Example observation representing a medical-consultation commission's decision regarding compulsory inpatient treatment in the Psychiatry system."
 Usage: #example
 
 * status = #final
+* identifier[0].system = "https://dhp.uz/fhir/core/sid/reg/uz/psychiatry"
+* identifier[0].value = "a91c5d73-2b48-4e16-9f30-6d82c7a541be"
 * code = type-resource-cs#type-res-0002-0001 "The commission's decision"
 * subject = Reference(Patient/example-patient-john)
 * encounter = Reference(Encounter/example-psychiatry-encounter)
