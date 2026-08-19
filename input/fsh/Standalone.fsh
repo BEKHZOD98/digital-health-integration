@@ -1,3 +1,5 @@
+
+
 Instance: samarkand-regional-hospital
 InstanceOf: Organization
 Description: "Example regional hospital organization in Samarkand."
@@ -31,7 +33,7 @@ Usage: #example
 * id = "referral-to-specialist"
 * status = #active
 * intent = #order
-* subject = Reference(Patient/example-hepatitis-patient)
+* subject = Reference(Patient/example-salim)
 
 Instance: muratova-gulshoda
 InstanceOf: Practitioner
@@ -449,4 +451,12 @@ Title: "Example Narcology Centre"
 Description: "Republican Centre for Mental Health and Narcology, which keeps the narcology registry"
 Usage: #example
 
+<<<<<<< HEAD
 * name = "Respublika ruhiy salomatlik va narkologiya markazi"
+=======
+* name = "Respublika ruhiy salomatlik va narkologiya markazi"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4b2616e (Hepatit IG: things needed to change were changed and New profiles added)
+>>>>>>> d21b972 (Hepatit IG: things needed to change were changed and New profiles added)

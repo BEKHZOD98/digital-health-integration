@@ -1,0 +1,80 @@
+Profile: HepatitisObservationUltraSound
+Parent: UZCoreObservation
+Id: hepatitis-observation-ultra-sound
+Title: "Hepatitis UltraSound Observation"
+Description: "Profile for representing ultrasound observations related to hepatitis patients in the context of a digital health integration project. This profile extends the base Observation resource to include specific elements and extensions relevant to ultrasound findings, such as the type of ultrasound, clinical significance, and associated notes."
+* ^experimental = true
+* ^status = #active
+* ^publisher = "Uzinfocom"
+
+* identifier 0..* MS
+
+* code 1..1 MS
+* code from HepatitisTypeOfUltrasoundVS (required)
+* code.coding 0..* MS
+  * system 0..1 MS
+  * system = $sct
+  * code 0..1 MS
+  * display 0..1 MS 
+* code.text 0..1 MS
+
+* subject MS
+* subject only Reference(UZCorePatient)
+
+* effective[x] MS              
+* effective[x] only dateTime or Period
+
+* performer MS
+* performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
+
+* value[x] MS    
+* value[x] only boolean
+* valueBoolean ^short = "Availability of the result (yes/no)"
+
+
+// Instance Example
+Instance: example-ultrasound-cirrhosis
+InstanceOf: HepatitisObservationUltraSound
+Description: "Instance of cirrhosis detected"
+Usage: #example
+* status = #final
+* identifier 
+  * system = $hep-id-sys 
+  * value = "OBS-2026-5541"
+  * type.coding
+    * system = $v2-0203
+    * code = #PHC
+    * display = "Public Health Case Identifier"
+  * use = #official
+* code 
+  * coding = $sct#19943007 "Cirrhosis of liver"
+  * text = "Signs of cirrhosis"
+
+* subject = Reference(example-salim)
+* effectiveDateTime = "2026-01-26"
+* performer = Reference(PractitionerRole/muratova-gulshoda-role)
+* valueBoolean = true
+
+
+// Instance Example
+Instance: example-ultrasound-lesion
+InstanceOf: HepatitisObservationUltraSound
+Description: "Instance of liver lesion detected"
+Usage: #example
+* status = #final
+* identifier
+  * system = $hep-id-sys 
+  * value = "OBS-2026-5542"
+  * type.coding
+    * system = $v2-0203
+    * code = #PHC
+    * display = "Public Health Case Identifier"
+  * use = #official
+* code 
+  * coding = $sct#19943007 "Cirrhosis of liver"
+  * text = "Signs of masses in the liver"
+
+* subject = Reference(example-salim)
+* effectiveDateTime = "2027-01-26"
+* performer = Reference(PractitionerRole/muratova-gulshoda-role)
+* valueBoolean = false
