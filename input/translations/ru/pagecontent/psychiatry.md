@@ -29,10 +29,11 @@
 
 | Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
+| Идентификатор | - | `https://dhp.uz/fhir/core/sid/reg/uz/psychiatry` | `identifier` |
 | Статус постановки на учёт | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `active` | `status` |
 | Тип услуги | Episode Of Care Type | `mserv-0001-00004` (Лечебные услуги) | `type[serviceType]` |
-| Динамическая группа наблюдения | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `narcr0001-00001` | `type[group]` |
-| Диагноз | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F10.2` | `diagnosis.condition` |
+| Динамическая группа наблюдения | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `psycr0001-00001` | `type[group]` |
+| Диагноз | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `diagnosis.condition` |
 | Назначение диагноза | Encounter Diagnosis Use | `working` | `diagnosis.use` |
 | Пациент | - | ссылка на [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `patient` |
 | Организация, ведущая случай | - | ссылка на [UZCoreOrganization](https://dhp.uz/fhir/core/StructureDefinition/uz-core-organization) | `managingOrganization` |
@@ -63,7 +64,7 @@
 
 | Клиническое состояние | Система кодирования | Код | Когда записывать |
 | :--- | :--- | :--- | :--- |
-| Синдром зависимости вследствие употребления алкоголя | ICD-10 | `F10.2` | Записывать, когда данный психиатрический диагноз применим к пациенту |
+| Пагубное употребление других стимуляторов, включая кофеин | ICD-10 | `F15.1` | Записывать, когда данный психиатрический диагноз применим к пациенту |
 
 Эпизод может содержать несколько диагнозов. Каждый `diagnosis.condition` ссылается на соответствующий [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition).
 
@@ -82,7 +83,7 @@
 | Статус визита | Encounter Status | `completed` | `status` |
 | Пациент | - | ссылка на [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Эпизод наблюдения | - | ссылка на [PsychiatryEpisodeOfCare](StructureDefinition-psychiatry-episode-of-care.html) | `episodeOfCare` |
-| Фактический период визита | - | `2026-08-15T10:00:00Z` – `2026-08-15T11:00:00Z` | `actualPeriod` |
+| Фактический период визита | - | начинается `2026-08-15` | `actualPeriod` |
 | Тип участника | Participant Type | `ATND` | `participant.type` |
 | Практикующий специалист визита | - | ссылка на [UZCorePractitionerRole](https://dhp.uz/fhir/core/StructureDefinition/uz-core-practitioner-role) | `participant.actor` |
 | Тип визита | - | `mserv-0001-00004` (Лечебные услуги) | `type` |
@@ -105,17 +106,17 @@
 
 ### Регистрация решения врачебно-консультационной комиссии (Observation)
 
-Решение врачебно-консультационной комиссии представляется с использованием профиля [PsychiatryObservationCommission](StructureDefinition-psychiatry-observation-commission.html).
+Решение врачебно-консультационной комиссии представляется с использованием профиля [PsychiatryCommissionObservation](StructureDefinition-psychiatry-commission-observation.html).
 
-**Примеры:** [`example-psychiatry-observation-commission`](Observation-example-psychiatry-observation-commission.html)
+**Примеры:** [`example-psychiatry-commission-observation`](Observation-example-psychiatry-commission-observation.html)
 
 Профиль используется для записи решения врачебно-консультационной комиссии, включая результат решения и, при необходимости, номер протокола или наименование суда, на основании которого принято решение о принудительном лечении.
 
 | Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
-| Идентификатор | - | необязательно | `identifier` |
+| Идентификатор | - | `https://dhp.uz/fhir/core/sid/reg/uz/psychiatry` | `identifier` |
 | Статус наблюдения | Observation Status | `final` | `status` |
-| Тип решения комиссии | [PsychiatryCommissionTypeVS](ValueSet-psychiatry-commission-type-vs.html) | `type-res-0002-0001` | `code` |
+| Тип решения комиссии | [TypeResourceCS](CodeSystem-type-resource-cs.html) | `type-res-0002-0001` (фиксированный) | `code` |
 | Пациент | - | ссылка на [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Визит | - | ссылка на [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) | `encounter` |
 | Дата решения комиссии | - | `2026-08-15` | `effectiveDateTime` |
@@ -148,7 +149,7 @@
 
 | Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
-| Идентификатор | - | обязательно | `identifier` |
+| Идентификатор | - | `https://dhp.uz/fhir/core/sid/reg/uz/psychiatry` | `identifier` |
 | Клинический статус | Condition Clinical Status Codes | `active` | `clinicalStatus` |
 | Статус верификации | Condition Verification Status | `confirmed` | `verificationStatus` |
 | Диагноз | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `code` |
@@ -236,7 +237,7 @@
 | [SocioeconomicObservationCodesVS](https://dhp.uz/fhir/core/ValueSet/socioeconomic-observation-codes-vs) | `Observation.code` | Идентифицирует наблюдение о социальном статусе |
 | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `EpisodeOfCare.type[group]` | Динамическая группа наблюдения, общая с Наркологией |
 | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `EpisodeOfCare.status` | Жизненный цикл постановки на психиатрический учёт |
-| [PsychiatryCommissionTypeVS](ValueSet-psychiatry-commission-type-vs.html) | `Observation.code` | Решение врачебно-консультационной комиссии |
+| [TypeResourceCS](CodeSystem-type-resource-cs.html) | `Observation.code` | Решение врачебно-консультационной комиссии |
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code`, `EpisodeOfCare.diagnosis.condition` | Психиатрический диагноз |
 | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Флаги регистров Наркологии и Психиатрии |
 | [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Жизненный цикл флага |
@@ -252,7 +253,7 @@
 - [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) фиксирует медицинский визит и может ссылаться на соответствующий `PsychiatryEpisodeOfCare`.
 - [PsychiatryCondition](StructureDefinition-psychiatry-condition.html) фиксирует диагнозы, связанные с пациентом и визитом.
 - [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation) фиксирует социальный статус пациента.
-- [PsychiatryObservationCommission](StructureDefinition-psychiatry-observation-commission.html) фиксирует решение врачебно-консультационной комиссии, включая правовой протокол или суд, на основании которого принято решение о принудительном лечении.
+- [PsychiatryCommissionObservation](StructureDefinition-psychiatry-commission-observation.html) фиксирует решение врачебно-консультационной комиссии, включая правовой протокол или суд, на основании которого принято решение о принудительном лечении.
 - [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) фиксирует важную информацию регистра, применимую к Психиатрии, включая принудительное стационарное лечение, представленное кодом `psycr0001-00001`.
 
 Эти ресурсы связаны через ссылки на пациента, эпизод наблюдения, визит, организацию и роль практикующего специалиста, представляя постановку пациента на психиатрический учёт, клинические диагнозы, социальный статус, медицинские визиты, решения комиссии и важные флаги регистра.

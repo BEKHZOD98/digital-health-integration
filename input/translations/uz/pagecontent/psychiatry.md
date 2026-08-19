@@ -29,10 +29,11 @@ Epizod hisobga olish holatini, xizmat turini, dinamik kuzatuv guruhini, epizod b
 
 | Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod namunasi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
+| Identifikator | - | `https://dhp.uz/fhir/core/sid/reg/uz/psychiatry` | `identifier` |
 | Hisobga olish holati | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `active` | `status` |
 | Xizmat turi | Episode Of Care Type | `mserv-0001-00004` (Davolash xizmatlari) | `type[serviceType]` |
-| Dinamik kuzatuv guruhi | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `narcr0001-00001` | `type[group]` |
-| Tashxis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F10.2` | `diagnosis.condition` |
+| Dinamik kuzatuv guruhi | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `psycr0001-00001` | `type[group]` |
+| Tashxis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `diagnosis.condition` |
 | Tashxisning maqsadi | Encounter Diagnosis Use | `working` | `diagnosis.use` |
 | Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient)ga havola | `patient` |
 | Boshqaruvchi tashkilot | - | [UZCoreOrganization](https://dhp.uz/fhir/core/StructureDefinition/uz-core-organization)ga havola | `managingOrganization` |
@@ -63,7 +64,7 @@ Psixiatriya reestri misollarida quyidagi tashxis ishlatiladi:
 
 | Klinik holat | Kodlash tizimi | Kod | Qachon qayd etiladi |
 | :--- | :--- | :--- | :--- |
-| Spirtli ichimlik iste'moli tufayli qaramlik sindromi | ICD-10 | `F10.2` | Ushbu psixiatriya tashxisi bemorga tegishli bo'lganda qayd etiladi |
+| Kofein ham kiruvchi boshqa stimulyatorlarni zararli iste'mol qilish | ICD-10 | `F15.1` | Ushbu psixiatriya tashxisi bemorga tegishli bo'lganda qayd etiladi |
 
 Epizod bir nechta tashxisni o'z ichiga olishi mumkin. Har bir `diagnosis.condition` tegishli [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition)ga havola qiladi.
 
@@ -82,7 +83,7 @@ Tashrif tibbiyot xodimi tomonidan qayd etilgan tibbiy tashrifni ifodalaydi va be
 | Tashrif holati | Encounter Status | `completed` | `status` |
 | Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient)ga havola | `subject` |
 | Kuzatuv epizodi | - | [PsychiatryEpisodeOfCare](StructureDefinition-psychiatry-episode-of-care.html)ga havola | `episodeOfCare` |
-| Haqiqiy tashrif davri | - | `2026-08-15T10:00:00Z` – `2026-08-15T11:00:00Z` | `actualPeriod` |
+| Haqiqiy tashrif davri | - | `2026-08-15` dan boshlanadi | `actualPeriod` |
 | Ishtirokchi turi | Participant Type | `ATND` | `participant.type` |
 | Tashrifdagi amaliyotchi | - | [UZCorePractitionerRole](https://dhp.uz/fhir/core/StructureDefinition/uz-core-practitioner-role)ga havola | `participant.actor` |
 | Tashrif turi | - | `mserv-0001-00004` (Davolash xizmatlari) | `type` |
@@ -105,17 +106,17 @@ Tashrif bir nechta tashxisni o'z ichiga olishi mumkin. Har bir tashxis [UZ Core 
 
 ### Vrachlik-konsultatsiya komissiyasi qarorini qayd etish (Observation)
 
-Vrachlik-konsultatsiya komissiyasining qarori [PsychiatryObservationCommission](StructureDefinition-psychiatry-observation-commission.html) profili yordamida ifodalanadi.
+Vrachlik-konsultatsiya komissiyasining qarori [PsychiatryCommissionObservation](StructureDefinition-psychiatry-commission-observation.html) profili yordamida ifodalanadi.
 
-**Misollar:** [`example-psychiatry-observation-commission`](Observation-example-psychiatry-observation-commission.html)
+**Misollar:** [`example-psychiatry-commission-observation`](Observation-example-psychiatry-commission-observation.html)
 
 Profil vrachlik-konsultatsiya komissiyasining qarorini, jumladan qaror natijasi va, kerak bo'lganda, majburiy davolash qarorini asoslovchi protokol raqami yoki sud nomini qayd etish uchun ishlatiladi.
 
 | Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod namunasi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Identifikator | - | ixtiyoriy | `identifier` |
+| Identifikator | - | `https://dhp.uz/fhir/core/sid/reg/uz/psychiatry` | `identifier` |
 | Kuzatuv holati | Observation Status | `final` | `status` |
-| Komissiya qarori turi | [PsychiatryCommissionTypeVS](ValueSet-psychiatry-commission-type-vs.html) | `type-res-0002-0001` | `code` |
+| Komissiya qarori turi | [TypeResourceCS](CodeSystem-type-resource-cs.html) | `type-res-0002-0001` (qat'iy belgilangan) | `code` |
 | Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient)ga havola | `subject` |
 | Tashrif | - | [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter)ga havola | `encounter` |
 | Komissiya qarori sanasi | - | `2026-08-15` | `effectiveDateTime` |
@@ -148,7 +149,7 @@ Psixiatriyaga oid klinik holat [PsychiatryCondition](StructureDefinition-psychia
 
 | Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod namunasi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Identifikator | - | majburiy | `identifier` |
+| Identifikator | - | `https://dhp.uz/fhir/core/sid/reg/uz/psychiatry` | `identifier` |
 | Klinik holat | Condition Clinical Status Codes | `active` | `clinicalStatus` |
 | Tasdiqlash holati | Condition Verification Status | `confirmed` | `verificationStatus` |
 | Tashxis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `code` |
@@ -236,7 +237,7 @@ Psixiatriya reestri resurslari tomonidan ishlatiladigan terminologiya quyida kel
 | [SocioeconomicObservationCodesVS](https://dhp.uz/fhir/core/ValueSet/socioeconomic-observation-codes-vs) | `Observation.code` | Ijtimoiy holat kuzatuvini aniqlaydi |
 | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `EpisodeOfCare.type[group]` | Narkologiya bilan umumiy dinamik kuzatuv guruhi |
 | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `EpisodeOfCare.status` | Psixiatriya hisobiga qo'yilish hayot sikli |
-| [PsychiatryCommissionTypeVS](ValueSet-psychiatry-commission-type-vs.html) | `Observation.code` | Vrachlik-konsultatsiya komissiyasi qarori |
+| [TypeResourceCS](CodeSystem-type-resource-cs.html) | `Observation.code` | Vrachlik-konsultatsiya komissiyasi qarori |
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code`, `EpisodeOfCare.diagnosis.condition` | Psixiatriya tashxisi |
 | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Narkologiya va Psixiatriya reestr belgilari |
 | [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Belgi hayot sikli |
@@ -252,7 +253,7 @@ Tipik Psixiatriya reestri yozuvi resurslarni quyidagicha bog'lashi mumkin:
 - [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) tibbiy tashrifni qayd etadi va tegishli `PsychiatryEpisodeOfCare`ga havola qilishi mumkin.
 - [PsychiatryCondition](StructureDefinition-psychiatry-condition.html) bemor va tashrif bilan bog'liq tashxislarni qayd etadi.
 - [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation) bemorning ijtimoiy holatini qayd etadi.
-- [PsychiatryObservationCommission](StructureDefinition-psychiatry-observation-commission.html) vrachlik-konsultatsiya komissiyasi qarorini, jumladan majburiy davolash qarorini asoslovchi huquqiy protokol yoki sudni qayd etadi.
+- [PsychiatryCommissionObservation](StructureDefinition-psychiatry-commission-observation.html) vrachlik-konsultatsiya komissiyasi qarorini, jumladan majburiy davolash qarorini asoslovchi huquqiy protokol yoki sudni qayd etadi.
 - [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) Psixiatriyaga tegishli muhim reestr ma'lumotlarini, jumladan `psycr0001-00001` kodi bilan ifodalangan majburiy statsionar davolashni qayd etadi.
 
 Bu resurslar bemor, kuzatuv epizodi, tashrif, tashkilot va amaliyotchi roli havolalari orqali bog'lanib, bemorning psixiatriya hisobiga qo'yilishini, klinik tashxislarni, ijtimoiy holatni, tibbiy tashriflarni, komissiya qarorlarini va muhim reestr belgilarini ifodalaydi.

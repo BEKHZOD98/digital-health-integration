@@ -1,7 +1,7 @@
 Instance: example-psychiatry-encounter
 InstanceOf: UZCoreEncounter
-Title: "Psix Encounter Profile Instance"
-Description: "Example encounter representing a patient visit in the Psix system."
+Title: "Psychiatry Encounter Profile Instance"
+Description: "Example encounter representing a patient visit in the Psychiatry system."
 Usage: #example
 
 * status = #completed

@@ -39,10 +39,11 @@ The episode records the patient's registration status, service type, dynamic obs
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
+| Identifier | - | `https://dhp.uz/fhir/core/sid/reg/uz/psychiatry` | `identifier` |
 | Registration status | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `active` | `status` |
 | Service type | Episode Of Care Type | `mserv-0001-00004` (Treatment services) | `type[serviceType]` |
-| Dynamic observation group | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `narcr0001-00001` | `type[group]` |
-| Diagnosis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F10.2` | `diagnosis.condition` |
+| Dynamic observation group | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `psycr0001-00001` | `type[group]` |
+| Diagnosis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `diagnosis.condition` |
 | Diagnosis use | Encounter Diagnosis Use | `working` | `diagnosis.use` |
 | Patient | - | reference to [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `patient` |
 | Managing organization | - | reference to [UZCoreOrganization](https://dhp.uz/fhir/core/StructureDefinition/uz-core-organization) | `managingOrganization` |
@@ -73,7 +74,7 @@ The Psychiatry Registry examples use the following diagnosis:
 
 | Clinical condition | Code system | Code | When to record |
 | :--- | :--- | :--- | :--- |
-| Dependence syndrome due to use of alcohol | ICD-10 | `F10.2` | Record when this psychiatry diagnosis applies to the patient |
+| Harmful use of other stimulants, including caffeine | ICD-10 | `F15.1` | Record when this psychiatry diagnosis applies to the patient |
 
 The episode may contain multiple diagnoses. Each `diagnosis.condition` references the corresponding [UZ Core Condition](https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition).
 
@@ -92,7 +93,7 @@ The encounter represents the medical visit recorded by the healthcare provider a
 | Encounter status | Encounter Status | `completed` | `status` |
 | Patient | - | reference to [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Episode of care | - | reference to [PsychiatryEpisodeOfCare](StructureDefinition-psychiatry-episode-of-care.html) | `episodeOfCare` |
-| Actual encounter period | - | `2026-08-15T10:00:00Z` – `2026-08-15T11:00:00Z` | `actualPeriod` |
+| Actual encounter period | - | starts `2026-08-15` | `actualPeriod` |
 | Participant type | Participant Type | `ATND` | `participant.type` |
 | Encounter practitioner | - | reference to [UZCorePractitionerRole](https://dhp.uz/fhir/core/StructureDefinition/uz-core-practitioner-role) | `participant.actor` |
 | Encounter type | - | `mserv-0001-00004` (Treatment services) | `type` |
@@ -115,17 +116,17 @@ An encounter may contain multiple diagnoses. Each diagnosis references a [UZ Cor
 
 ### Recording the medical-consultation commission decision (Observation)
 
-The medical-consultation commission's decision is represented using the [PsychiatryObservationCommission](StructureDefinition-psychiatry-observation-commission.html) profile.
+The medical-consultation commission's decision is represented using the [PsychiatryCommissionObservation](StructureDefinition-psychiatry-commission-observation.html) profile.
 
-**Examples:** [`example-psychiatry-observation-commission`](Observation-example-psychiatry-observation-commission.html)
+**Examples:** [`example-psychiatry-commission-observation`](Observation-example-psychiatry-commission-observation.html)
 
 The profile is used to record the decision of the medical-consultation commission, including the decision result and, where applicable, the protocol number or court name supporting a compulsory-treatment decision.
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Identifier | - | optional | `identifier` |
+| Identifier | - | `https://dhp.uz/fhir/core/sid/reg/uz/psychiatry` | `identifier` |
 | Observation status | Observation Status | `final` | `status` |
-| Commission decision type | [PsychiatryCommissionTypeVS](ValueSet-psychiatry-commission-type-vs.html) | `type-res-0002-0001` | `code` |
+| Commission decision type | [TypeResourceCS](CodeSystem-type-resource-cs.html) | `type-res-0002-0001` (fixed) | `code` |
 | Patient | - | reference to [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Encounter | - | reference to [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) | `encounter` |
 | Commission decision date | - | `2026-08-15` | `effectiveDateTime` |
@@ -158,7 +159,7 @@ The `PsychiatryCondition` profile records the clinical status, verification stat
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Identifier | - | required | `identifier` |
+| Identifier | - | `https://dhp.uz/fhir/core/sid/reg/uz/psychiatry` | `identifier` |
 | Clinical status | Condition Clinical Status Codes | `active` | `clinicalStatus` |
 | Verification status | Condition Verification Status | `confirmed` | `verificationStatus` |
 | Diagnosis | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `F15.1` | `code` |
@@ -247,7 +248,7 @@ The terminology used by the Psychiatry Registry resources is summarized below.
 | [SocioeconomicObservationCodesVS](https://dhp.uz/fhir/core/ValueSet/socioeconomic-observation-codes-vs) | `Observation.code` | Identifies the social-status observation |
 | [NarcologyPsychiatryEpisodeOfCareTypeGroupVS](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html) | `EpisodeOfCare.type[group]` | Dynamic observation group shared with Narcology |
 | [EpisodeOfCareStatusVS](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-status-vs) | `EpisodeOfCare.status` | Psychiatry registration lifecycle |
-| [PsychiatryCommissionTypeVS](ValueSet-psychiatry-commission-type-vs.html) | `Observation.code` | Medical-consultation commission decision |
+| [TypeResourceCS](CodeSystem-type-resource-cs.html) | `Observation.code` | Medical-consultation commission decision |
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code`, `EpisodeOfCare.diagnosis.condition` | Psychiatry diagnosis |
 | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Narcology and Psychiatry registry flags |
 | [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Flag lifecycle |
@@ -263,7 +264,7 @@ A typical Psychiatry Registry record may connect the resources as follows:
 - [UZCoreEncounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) records a medical visit and may reference the relevant `PsychiatryEpisodeOfCare`.
 - [PsychiatryCondition](StructureDefinition-psychiatry-condition.html) records diagnoses associated with the patient and encounter.
 - [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation) records the patient's social status.
-- [PsychiatryObservationCommission](StructureDefinition-psychiatry-observation-commission.html) records the medical-consultation commission decision, including the legal protocol or court behind a compulsory-treatment order.
+- [PsychiatryCommissionObservation](StructureDefinition-psychiatry-commission-observation.html) records the medical-consultation commission decision, including the legal protocol or court behind a compulsory-treatment order.
 - [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) records important registry information applicable to Psychiatry, including compulsory inpatient treatment represented by `psycr0001-00001`.
 
 These resources are linked through patient, episode-of-care, encounter, organization, and practitioner-role references to represent the patient's psychiatry registration, clinical diagnoses, social status, medical encounters, commission decisions, and important registry flags.

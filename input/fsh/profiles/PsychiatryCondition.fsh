@@ -21,7 +21,7 @@ Description: "Example condition representing a diagnosis of harmful use of subst
 Usage: #example
 
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/reg/uz/psychiatry"
-* identifier[0].value = "153dcdd0a-5a68-4cc6-8503-5ab15a41c62d"
+* identifier[0].value = "53dcdd0a-5a68-4cc6-8503-5ab15a41c62d"
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
 * code = $icd-10#F15.1 "Mental and behavioural disorders due to use of other stimulants, including caffeine : Harmful use"

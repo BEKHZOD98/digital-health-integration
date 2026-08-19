@@ -1,7 +1,7 @@
-Profile: PsychiatryObservationCommission
+Profile: PsychiatryCommissionObservation
 Parent: UZCoreObservation
-Id: psychiatry-observation-commission
-Title: "Psychiatry Observation Commission Profile"
+Id: psychiatry-commission-observation
+Title: "Psychiatry Commission Observation Profile"
 Description: "Observation profile representing the medical-consultation commission's decision notes for the Psychiatry system."
 * ^status = #active
 * ^experimental = true
@@ -33,9 +33,9 @@ Description: "Observation profile representing the medical-consultation commissi
 * component[protocolNumber].value[x] only string
 
 
-Instance: example-psychiatry-observation-commission
-InstanceOf: PsychiatryObservationCommission
-Title: "Psychiatry Observation Commission Profile Instance"
+Instance: example-psychiatry-commission-observation
+InstanceOf: PsychiatryCommissionObservation
+Title: "Psychiatry Commission Observation Profile Instance"
 Description: "Example observation representing a medical-consultation commission's decision regarding compulsory inpatient treatment in the Psychiatry system."
 Usage: #example
 
