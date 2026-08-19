@@ -96,6 +96,7 @@ graph TB
 
 Для автономных ресурсов (например, CarePlan) используйте собственный `.identifier` ресурса.
 
+<<<<<<< HEAD
 ### Поиск документов
 
 Поиск [document Bundle](https://hl7.org/fhir/documents.html) выполняется через его Composition, а не по содержимому пакета. У самого `Bundle` всего пять параметров поиска, и доступ к клиническому содержимому даёт только `composition`, который разрешается в первый элемент пакета:
@@ -139,6 +140,8 @@ GET [base]/Bundle?identifier=urn:ietf:rfc:3986|urn:uuid:760e8400-e29b-41d4-a716-
 GET [base]/Bundle?type=document&composition.identifier=urn:ietf:rfc:3986|urn:uuid:861f9511-f30c-52e5-b827-557766550666
 ```
 
+=======
+>>>>>>> 4ed4de7 (address PR #14 review feedback)
 ### Сводка
 
 | Элемент | Назначение | Пример |

@@ -1,3 +1,5 @@
+
+
 Instance: samarkand-regional-hospital
 InstanceOf: Organization
 Description: "Example regional hospital organization in Samarkand."
@@ -31,7 +33,7 @@ Usage: #example
 * id = "referral-to-specialist"
 * status = #active
 * intent = #order
-* subject = Reference(Patient/example-hepatitis-patient)
+* subject = Reference(Patient/example-salim)
 
 Instance: muratova-gulshoda
 InstanceOf: Practitioner
@@ -51,125 +53,125 @@ Usage: #example
 * practitioner = Reference(Practitioner/muratova-gulshoda)
 * organization = Reference(Organization/samarkand-regional-hospital)
 
-Instance: example-hepatitis-patient
-InstanceOf: UZCorePatient
-Description: "Gepatit profili uchun Tolibjon To'lanboev misolida namuna"
-Usage: #example
+// Instance: example-hepatitis-patient
+// InstanceOf: UZCorePatient
+// Description: "Gepatit profili uchun Tolibjon To'lanboev misolida namuna"
+// Usage: #example
 
-* extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#UZ "Uzbekistan"
-* identifier[nationalId]
-  * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
-  * value = "515050500505"
-  * use = #official
+// * extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#UZ "Uzbekistan"
+// * identifier[nationalId]
+//   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
+//   * value = "515050500505"
+//   * use = #official
 
-* identifier[passportLocal]
-  * system = "https://dhp.uz/fhir/core/sid/pid/uz/ppn/local"
-  * value = "AB1234567"
-  * use = #official
+// * identifier[passportLocal]
+//   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ppn/local"
+//   * value = "AB1234567"
+//   * use = #official
 
-* name
-  * use = #official
-  * text = "To'lanboev Tolibjon"
-  * family = "To'lanboyev"
-  * given = "Tolibjon"
+// * name
+//   * use = #official
+//   * text = "To'lanboev Tolibjon"
+//   * family = "To'lanboyev"
+//   * given = "Tolibjon"
 
-* gender = #male
-* birthDate = "1990-02-01"
+// * gender = #male
+// * birthDate = "1990-02-01"
 
-* address[uzAddress]
-  * use = #home
-  * type = #physical
-  * text = "Iltifot MFY, 58-Harbiy shaharcha mavzesi, 53 Uy, 104 Kvartira"
-  * city = #17150085
-  * district = #1726262
-  * state = #1726
-  * country = "UZ"
+// * address[uzAddress]
+//   * use = #home
+//   * type = #physical
+//   * text = "Iltifot MFY, 58-Harbiy shaharcha mavzesi, 53 Uy, 104 Kvartira"
+//   * city = #17150085
+//   * district = #1726262
+//   * state = #1726
+//   * country = "UZ"
 
 // Instance Example
-Instance: example-hepatitis-questionnaire
-InstanceOf: Questionnaire
-Description: "Hepatitis B and C treatment questionnaire"
-Usage: #example
+// Instance: example-hepatitis-questionnaire
+// InstanceOf: Questionnaire
+// Description: "Hepatitis B and C treatment questionnaire"
+// Usage: #example
 
-* id = "hepatitis-questionnaire"
-* url = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
-* version = "1.0.0"
+// * id = "hepatitis-questionnaire"
+// * url = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
+// * version = "1.0.0"
 
-* status = #active
-* title = "HEPATITIS QUESTIONNAIRE"
-* identifier.value = "HCV-HBV-QS-2026"
+// * status = #active
+// * title = "HEPATITIS QUESTIONNAIRE"
+// * identifier.value = "HCV-HBV-QS-2026"
 
-* item[0]
-  * linkId = "grp-1"
-  * text = "MAIN INFORMATION"
-  * type = #group 
+// * item[0]
+//   * linkId = "grp-1"
+//   * text = "MAIN INFORMATION"
+//   * type = #group 
 
-  * item[0]
-    * linkId = "hx-tx-hcv-hbv"
-    * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
-    * type = #boolean
+//   * item[0]
+//     * linkId = "hx-tx-hcv-hbv"
+//     * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
+//     * type = #boolean
 
-  * item[1]
-    * linkId = "hx-tx-hcv-hbv-meds"
-    * text = "What medications were taken against HCV/HBV?"
-    * type = #string
-    * enableWhen[0]
-      * question = "hx-tx-hcv-hbv"
-      * operator = #=
-      * answerBoolean = true
+//   * item[1]
+//     * linkId = "hx-tx-hcv-hbv-meds"
+//     * text = "What medications were taken against HCV/HBV?"
+//     * type = #string
+//     * enableWhen[0]
+//       * question = "hx-tx-hcv-hbv"
+//       * operator = #=
+//       * answerBoolean = true
 
-* item[1]
-  * linkId = "grp-pregnancy"
-  * text = "Gynecological treatment / Pregnancy"
-  * type = #group
+// * item[1]
+//   * linkId = "grp-pregnancy"
+//   * text = "Gynecological treatment / Pregnancy"
+//   * type = #group
 
-  * item[0]
-    * linkId = "pregnancy-trimester"
-    * text = "Pregnancy duration (Homiladorlik muddati)"
-    * type = #coding
-    * answerOption[0].valueCoding = $sct#255246003 "First trimester"
-    * answerOption[1].valueCoding = $sct#255247007 "Second trimester"
-    * answerOption[2].valueCoding = $sct#255248002 "Third trimester"
+//   * item[0]
+//     * linkId = "pregnancy-trimester"
+//     * text = "Pregnancy duration (Homiladorlik muddati)"
+//     * type = #coding
+//     * answerOption[0].valueCoding = $sct#255246003 "First trimester"
+//     * answerOption[1].valueCoding = $sct#255247007 "Second trimester"
+//     * answerOption[2].valueCoding = $sct#255248002 "Third trimester"
 
 // Instance Example 
-Instance: example-hcv-response
-InstanceOf: QuestionnaireResponse
-Description: "Example of anamnesis responses completed by the patient for hepatitis B and C treatment questionnaire"
-Usage: #example
+// Instance: example-hcv-response
+// InstanceOf: QuestionnaireResponse
+// Description: "Example of anamnesis responses completed by the patient for hepatitis B and C treatment questionnaire"
+// Usage: #example
 
-* identifier
-  * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:6f9b9d8e-3b7d-4d87-8f6e-123456789abc"
+// * identifier
+//   * system = "urn:ietf:rfc:3986"
+//   * value = "urn:uuid:6f9b9d8e-3b7d-4d87-8f6e-123456789abc"
 
-* status = #completed
-* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
-* subject = Reference(example-hepatitis-patient)
-* authored = "2026-03-19T12:00:00Z"
-* author = Reference(muratova-gulshoda-role)
+// * status = #completed
+// * questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
+// * subject = Reference(example-hepatitis-patient)
+// * authored = "2026-03-19T12:00:00Z"
+// * author = Reference(muratova-gulshoda-role)
 
-* item[0]
-  * linkId = "grp-1"
-  * text = "MAIN INFORMATION"
+// * item[0]
+//   * linkId = "grp-1"
+//   * text = "MAIN INFORMATION"
 
-  * item[0]
-    * linkId = "hx-tx-hcv-hbv"
-    * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
-    * answer[0].valueBoolean = true
+//   * item[0]
+//     * linkId = "hx-tx-hcv-hbv"
+//     * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
+//     * answer[0].valueBoolean = true
 
-  * item[1]
-    * linkId = "hx-tx-hcv-hbv-meds"
-    * text = "What medications were taken against HCV/HBV?"
-    * answer[0].valueString = "Sofosbuvir + Declatasvir"
+//   * item[1]
+//     * linkId = "hx-tx-hcv-hbv-meds"
+//     * text = "What medications were taken against HCV/HBV?"
+//     * answer[0].valueString = "Sofosbuvir + Declatasvir"
 
-* item[1]
-  * linkId = "grp-pregnancy"
-  * text = "Gynecological treatment / Pregnancy"
+// * item[1]
+//   * linkId = "grp-pregnancy"
+//   * text = "Gynecological treatment / Pregnancy"
 
-  * item[0]
-    * linkId = "pregnancy-trimester"
-    * text = "Pregnancy duration (Homiladorlik muddati)"
-    * answer[0]
-      * valueCoding = $sct#255246003 "First trimester"
+//   * item[0]
+//     * linkId = "pregnancy-trimester"
+//     * text = "Pregnancy duration (Homiladorlik muddati)"
+//     * answer[0]
+//       * valueCoding = $sct#255246003 "First trimester"
 
 Instance: specimen-example-blood
 InstanceOf: Specimen
@@ -309,30 +311,26 @@ Title: "Practitioner Role Example"
 * practitioner = Reference(Practitioner/example-practitioner)
 * organization = Reference(Organization/example-organization)
 
-
 Instance: example-dhis-encounter
 InstanceOf: UZCoreEncounter
 Usage: #example
 Title: "Encounter Example"
 Description: "Example encounter representing a tuberculosis patient's inpatient admission."
-
 * status = #completed
-
-* class = $v3-ActCode#IMP "inpatient encounter"
-
-* type[nationalType] = EncounterTypeCS#mserv-0001-00004 "Treatment services"
-
 * subject = Reference(example-patient-john)
-
+* class = $v3-ActCode#IMP "inpatient encounter"
+* type[nationalType] = EncounterTypeCS#mserv-0001-00004 "Treatment services"
 * actualPeriod.start = "2026-02-12T08:00:00+05:00"
 * actualPeriod.end = "2026-02-18T14:00:00+05:00"
-
 * participant[0].type = $v3-ParticipationType#ATND "attender"
-
+* participant[0].period.start = "2026-02-12T08:00:00+05:00"
+* participant[0].period.end = "2026-02-18T14:00:00+05:00"
+* participant[0].actor = Reference(example-practitioner)
+* diagnosis[0].condition = Reference(example-tbc-diagnosis)
+* diagnosis[0].use = $encounter-diagnosis-use-cs#final "Final"
 * participant[0].period.start = "2026-02-12T08:00:00+05:00"
 * participant[0].period.end = "2026-02-18T14:00:00+05:00"
 
-* participant[0].actor = Reference(example-practitioner)
 
 * diagnosis[0].condition = Reference(example-tbc-diagnosis)
 
@@ -448,3 +446,4 @@ Description: "Republican Centre for Mental Health and Narcology, which keeps the
 Usage: #example
 
 * name = "Respublika ruhiy salomatlik va narkologiya markazi"
+
