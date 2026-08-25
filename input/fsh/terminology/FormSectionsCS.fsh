@@ -2,11 +2,34 @@ CodeSystem: FormSectionsCS
 Id: form-sections-cs
 Title: "Form Sections"
 Description: "Local codes for form fields and observation values that have no dedicated concept in LOINC or SNOMED CT, used across Ministry of Health Order 399 form implementations."
-* ^status = #active
-* ^content = #complete
+* insert OriginalCodeSystemDraft(form-sections-cs)
 
-* #destination-country "Destination country" "Country the patient is traveling to (forward-declared destination, not travel history)."
-* #trip-period "Business trip period" "Period covering the duration of an official business trip abroad."
-* #travel-clearance "Travel clearance" "Outcome of a medical commission's review of fitness to travel abroad."
-* #allowed "Allowed" "No medical contraindications to travel."
-* #denied "Denied" "Medical contraindications to travel identified."
+* #destination-country "Destination country"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Destination country"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Страна назначения"
+
+* #trip-period "Business trip period"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Business trip period"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Срок командировки"
+
+* #travel-clearance "Travel clearance"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Travel clearance"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Разрешение на выезд"
+
+* #allowed "Allowed"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Allowed"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Разрешено"
+
+* #denied "Denied"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Denied"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Не разрешено"

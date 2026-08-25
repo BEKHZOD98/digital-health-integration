@@ -61,7 +61,7 @@ Usage: #inline
 * section[=].entry = Reference(urn:uuid:04400002-1111-2222-3333-444444444444)
 
 * section[infectiousDiseaseHistory].title = "History of Infectious Diseases"
-* section[=].code = $loinc#11348-0 "History of Past illness Narrative"
+* section[=].code = $loinc#11348-0 "History of Past illness note"
 * section[=].entry[0] = Reference(urn:uuid:04400006-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:04400007-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:04400008-1111-2222-3333-444444444444)

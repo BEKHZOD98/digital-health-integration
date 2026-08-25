@@ -42,7 +42,7 @@ Description: "Composition profile for Form 044 medical certificate for travel ab
 
 * section[infectiousDiseaseHistory].title 1..1
 * section[infectiousDiseaseHistory].code 1..1
-* section[infectiousDiseaseHistory].code = $loinc#11348-0 "History of Past illness Narrative"
+* section[infectiousDiseaseHistory].code = $loinc#11348-0 "History of Past illness note"
 * section[infectiousDiseaseHistory].entry 1..*
 * section[infectiousDiseaseHistory].entry only Reference(UZCoreCondition)
 
