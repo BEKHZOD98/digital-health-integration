@@ -168,4 +168,4 @@ Alias: $flag-status-cs = http://hl7.org/fhir/flag-status
 Alias: $profession-specialization-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/profession-specialization-cs
 
 Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
-Alias: $travel-clearance-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/travel-clearance-cs
+Alias: $form-sections-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form-sections-cs
