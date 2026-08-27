@@ -129,7 +129,7 @@ InstanceOf: UZCorePractitionerRole
 Usage: #inline
 * practitioner = Reference(urn:uuid:04400004-1111-2222-3333-444444444444)
 * organization = Reference(urn:uuid:04400003-1111-2222-3333-444444444444)
-* code = $occupation-cs#1342.18 "Head of department (health institution)"
+* code = $position-and-profession-cs#1112.189 "Davlat komissiyasi (byurosi) raisi"
 // Represents "Komissiya raisi" (Commission chair) — closest available code in
 // position-and-profession-cs; confirmed as real/valid, no more specific
 // "chief physician"/commission-chair code found. Approximation accepted.
@@ -183,7 +183,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $form-sections-cs#travel-clearance "Travel clearance"
+* code = form-044-observation-type-cs#obtype-0044-0003
 * subject = Reference(urn:uuid:04400002-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-02-10T09:00:00+05:00"
 * performer = Reference(urn:uuid:04400004-1111-2222-3333-444444444444)
@@ -196,7 +196,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $form-sections-cs#destination-country "Destination country"
+* code = form-044-observation-type-cs#obtype-0044-0001
 * subject = Reference(urn:uuid:04400002-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-02-10T09:00:00+05:00"
 * performer = Reference(urn:uuid:04400004-1111-2222-3333-444444444444)
@@ -211,7 +211,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $form-sections-cs#trip-period "Business trip period"
+* code = form-044-observation-type-cs#obtype-0044-0002
 * subject = Reference(urn:uuid:04400002-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:04400004-1111-2222-3333-444444444444)
 * effectivePeriod.start = "2026-02-20"
