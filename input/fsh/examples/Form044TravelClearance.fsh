@@ -129,7 +129,7 @@ InstanceOf: UZCorePractitionerRole
 Usage: #inline
 * practitioner = Reference(urn:uuid:04400004-1111-2222-3333-444444444444)
 * organization = Reference(urn:uuid:04400003-1111-2222-3333-444444444444)
-* code = $position-and-profession-cs#1112.189 "Davlat komissiyasi (byurosi) raisi"
+* code = $position-and-profession-cs#1112.189 
 // Represents "Komissiya raisi" (Commission chair) — closest available code in
 // position-and-profession-cs; confirmed as real/valid, no more specific
 // "chief physician"/commission-chair code found. Approximation accepted.
@@ -187,7 +187,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:04400002-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-02-10T09:00:00+05:00"
 * performer = Reference(urn:uuid:04400004-1111-2222-3333-444444444444)
-* valueCodeableConcept = $form-sections-cs#allowed "Allowed"
+* valueCodeableConcept = form-044-travel-clearance-conclusion-cs#form-0044-0001 "Allowed"
 
 
 
