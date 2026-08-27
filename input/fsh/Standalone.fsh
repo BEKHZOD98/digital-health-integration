@@ -134,44 +134,44 @@ Usage: #example
     * answerOption[2].valueCoding = $sct#255248002 "Third trimester"
 
 // Instance Example 
-Instance: example-hcv-response
-InstanceOf: QuestionnaireResponse
-Description: "Example of anamnesis responses completed by the patient for hepatitis B and C treatment questionnaire"
-Usage: #example
+// Instance: example-hcv-response
+// InstanceOf: QuestionnaireResponse
+// Description: "Example of anamnesis responses completed by the patient for hepatitis B and C treatment questionnaire"
+// Usage: #example
 
-* identifier
-  * system = "urn:ietf:rfc:3986"
-  * value = "urn:uuid:6f9b9d8e-3b7d-4d87-8f6e-123456789abc"
+// * identifier
+//   * system = "urn:ietf:rfc:3986"
+//   * value = "urn:uuid:6f9b9d8e-3b7d-4d87-8f6e-123456789abc"
 
-* status = #completed
-* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
-* subject = Reference(example-hepatitis-patient)
-* authored = "2026-03-19T12:00:00Z"
-* author = Reference(muratova-gulshoda-role)
+// * status = #completed
+// * questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/hepatitis-questionnaire"
+// * subject = Reference(example-hepatitis-patient)
+// * authored = "2026-03-19T12:00:00Z"
+// * author = Reference(muratova-gulshoda-role)
 
-* item[0]
-  * linkId = "grp-1"
-  * text = "MAIN INFORMATION"
+// * item[0]
+//   * linkId = "grp-1"
+//   * text = "MAIN INFORMATION"
 
-  * item[0]
-    * linkId = "hx-tx-hcv-hbv"
-    * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
-    * answer[0].valueBoolean = true
+//   * item[0]
+//     * linkId = "hx-tx-hcv-hbv"
+//     * text = "Has treatment for HCV/HBV been conducted in the past (in the patient's history)?"
+//     * answer[0].valueBoolean = true
 
-  * item[1]
-    * linkId = "hx-tx-hcv-hbv-meds"
-    * text = "What medications were taken against HCV/HBV?"
-    * answer[0].valueString = "Sofosbuvir + Declatasvir"
+//   * item[1]
+//     * linkId = "hx-tx-hcv-hbv-meds"
+//     * text = "What medications were taken against HCV/HBV?"
+//     * answer[0].valueString = "Sofosbuvir + Declatasvir"
 
-* item[1]
-  * linkId = "grp-pregnancy"
-  * text = "Gynecological treatment / Pregnancy"
+// * item[1]
+//   * linkId = "grp-pregnancy"
+//   * text = "Gynecological treatment / Pregnancy"
 
-  * item[0]
-    * linkId = "pregnancy-trimester"
-    * text = "Pregnancy duration (Homiladorlik muddati)"
-    * answer[0]
-      * valueCoding = $sct#255246003 "First trimester"
+//   * item[0]
+//     * linkId = "pregnancy-trimester"
+//     * text = "Pregnancy duration (Homiladorlik muddati)"
+//     * answer[0]
+//       * valueCoding = $sct#255246003 "First trimester"
 
 Instance: specimen-example-blood
 InstanceOf: Specimen
@@ -451,12 +451,4 @@ Title: "Example Narcology Centre"
 Description: "Republican Centre for Mental Health and Narcology, which keeps the narcology registry"
 Usage: #example
 
-<<<<<<< HEAD
 * name = "Respublika ruhiy salomatlik va narkologiya markazi"
-=======
-* name = "Respublika ruhiy salomatlik va narkologiya markazi"
-<<<<<<< HEAD
-=======
-
->>>>>>> 4b2616e (Hepatit IG: things needed to change were changed and New profiles added)
->>>>>>> d21b972 (Hepatit IG: things needed to change were changed and New profiles added)

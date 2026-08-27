@@ -12,10 +12,8 @@ Description: "Profile for representing episodes of care related to hepatitis pat
 
 * diagnosis MS
 * diagnosis.condition only CodeableReference(HepatitisCondition)
-* diagnosis.condition from HepatitisICDVS (required) // CodeSystem should be done
-* diagnosis.condition ^short = "Patient's hepatitis diagnosis"  //Please translate this definition to English and add for all item ^short = "Definition in English from excel file"
 
-* diagnosis.use from HepatitisEncDiagnosisUseVS (required)
+* diagnosis.use from $encounter-diagnosis-use (required)
 
 * period MS
   * ^short = "Duration of hepatitis patient observation/monitoring process"

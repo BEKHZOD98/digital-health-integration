@@ -46,7 +46,7 @@ Description: "Profile for representing responses to a hepatitis-related question
       * ^short = "Free-text answer"
     * valueCoding MS
       * ^short = "Gestational age (Homiladorlik muddati)"
-    * valueCoding from HepatitisTrimesterVS (example) 
+    * valueCoding from $preparation-patient-prior-specimen-collection (example) 
     * item 0..* MS
       * ^short = "Additional sub-answers"
       * linkId 1..1 MS

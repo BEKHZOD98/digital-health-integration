@@ -10,7 +10,7 @@ Description: "Profile for representing ultrasound observations related to hepati
 * identifier 0..* MS
 
 * code 1..1 MS
-* code from HepatitisTypeOfUltrasoundVS (required)
+* code from HepatitisTypeOfUltraSoundVS (required)
 * code.coding 0..* MS
   * system 0..1 MS
   * system = $sct

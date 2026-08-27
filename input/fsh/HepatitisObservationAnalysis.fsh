@@ -17,8 +17,6 @@ Description: "Profile for representing hepatitis observation analysis in the con
   * value ^short = "Unique identifier for the observation: UUID"
 * identifier.type 0..1 MS 
 * identifier.type from $identifier-type-vs (required) 
-* code 1..1 MS
-* code from HepatitisObservationAnalysisVS (required)
 
 * subject only Reference(UZCorePatient)
 * encounter ^short = "When a healthcare professional enters patient information into the system, it is used to associate this information with the patient's active encounter record."
@@ -40,11 +38,6 @@ Description: "Profile for representing hepatitis observation analysis in the con
 
 * performer only Reference(UZCoreOrganization or UZCorePractitionerRole)
 * performer ^short = "Organization responsible for performing this observation"
-
-
-
-* component.code 1..1 MS
-* component.code from HepatitisObservationAnalysisVS (required)
 
 * component.value[x] only string or CodeableConcept or Quantity
 

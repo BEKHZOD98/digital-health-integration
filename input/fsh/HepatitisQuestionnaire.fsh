@@ -17,7 +17,7 @@ Description: "Questionnaire for hepatitis C and hepatitis B history and treatmen
 
 * quest
 
-* item.answerOption.valueCoding from HepatitisTrimesterVS (required)
+* item.answerOption.valueCoding from $preparation-patient-prior-specimen-collection (required)
 
 
 Instance: example-hcv-questionnaire

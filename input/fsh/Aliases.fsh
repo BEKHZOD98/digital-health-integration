@@ -159,10 +159,7 @@ Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSy
 Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
 
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
-<<<<<<< HEAD
-=======
 Alias: $mahalla-vs = https://terminology.dhp.uz/fhir/core/ValueSet/mahalla-vs
-<<<<<<< HEAD
 Alias: $identifier-use-vs = https://terminology.dhp.uz/fhir/core/ValueSet/identifier-use-vs
 Alias: $address-use-vs = https://terminology.dhp.uz/fhir/core/ValueSet/address-use-vs
 Alias: $address-type-vs = https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs
@@ -172,7 +169,6 @@ Alias: $comparator = http://hl7.org/fhir/quantity-comparator
 Alias: $hep-encounter-class = https://terminology.dhp.uz/fhir/core/ValueSet/encounter-class-vs
 
 Alias: $diagnosis-type = https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs
-=======
 Alias: $state-vs = https://terminology.dhp.uz/fhir/core/ValueSet/state-vs
 Alias: $hep-observation-lab-codes-vs = https://terminology.dhp.uz/fhir/core/ValueSet/observation-codes-vs
 Alias: $nationality-vs = https://terminology.dhp.uz/fhir/core/ValueSet/nationality-vs
@@ -202,9 +198,6 @@ Alias: $v2-0916 = http://terminology.hl7.org/CodeSystem/v2-0916
 Alias: $nationality-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/nationality-cs
 
 Alias: $diagnosis-type = https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs
-
->>>>>>> 4b2616e (Hepatit IG: things needed to change were changed and New profiles added)
->>>>>>> d21b972 (Hepatit IG: things needed to change were changed and New profiles added)
 
 Alias: $diagnostic-report-service-category = http://terminology.hl7.org/CodeSystem/v2-0074
 Alias: $lab-report-types-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/lab-report-types-cs
