@@ -96,7 +96,7 @@ Usage: #definition
 * date = "2026-06-03"
 * publisher = "Uzinfocom"
 * responsible = "Uzinfocom"
-* usage = "Business-identifier system for clinical and administrative records within the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System (e.g. Observation, Encounter, DiagnosticReport, ServiceRequest, Condition, QuestionnaireResponse, PractitionerRole). Person identities use the pid/pro systems instead."
+* usage = "Business-identifier system for clinical and administrative records within the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System (e.g. Observation, DiagnosticReport, ServiceRequest, Condition, QuestionnaireResponse, PractitionerRole). Person identities use the pid/pro systems instead."
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/screening"
@@ -188,4 +188,19 @@ Usage: #definition
 * usage = "Used in Encounter.identifier for the registration number"
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/registration-number"
+* uniqueId[=].preferred = true
+
+Instance: psychiatry-identifier
+InstanceOf: NamingSystem
+Description: "Identifier system for Psychiatry registration numbers in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/psychiatry-identifier"
+* name = "UzbekistanPsychiatryIdentifier"
+* status = #active
+* date = "2026-02-03"
+* description = "Identifier namespace used for Psychiatry registration identifiers in Uzbekistan"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in EpisodeOfCare.identifier when referencing Psychiatry registration identifiers"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/psychiatry"
 * uniqueId[=].preferred = true

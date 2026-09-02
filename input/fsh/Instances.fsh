@@ -209,3 +209,11 @@ Usage: #example
 * organization = Reference(example-narcology-center)
 * code = $position-and-profession-cs#2212.93 "Vrach psixiatr"
 * specialty = $profession-specialization-cs#394587001 "Psixiatriya"
+
+Instance: example-psychiatry-center
+InstanceOf: UZCoreOrganization
+Title: "Example Psychiatry Centre"
+Description: "Republican Centre for Mental Health and Psychiatry, which maintains the psychiatry registry"
+Usage: #example
+
+* name = "Respublika ruhiy salomatlik va psixiatriya markazi"
