@@ -197,6 +197,7 @@ Usage: #definition
 * url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/psychiatry-identifier"
 * name = "UzbekistanPsychiatryIdentifier"
 * status = #active
+* kind = #identifier
 * date = "2026-02-03"
 * description = "Identifier namespace used for Psychiatry registration identifiers in Uzbekistan"
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"

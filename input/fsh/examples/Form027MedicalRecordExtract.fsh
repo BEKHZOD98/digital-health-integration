@@ -217,13 +217,13 @@ Instance: practitionerrole-doctor-027
 InstanceOf: UZCorePractitionerRole
 Usage: #inline
 * practitioner = Reference(urn:uuid:02700006-1111-2222-3333-444444444444)
-
+* code = $practioner-role#doctor "Doctor"
 
 Instance: practitionerrole-responsible-027
 InstanceOf: UZCorePractitionerRole
 Usage: #inline
 * practitioner = Reference(urn:uuid:02700007-1111-2222-3333-444444444444)
-
+* code = $sct#303133007 "Responsible medical officer"
 
 Instance: condition-main-diagnosis-027
 InstanceOf: UZCoreCondition
@@ -352,7 +352,7 @@ Usage: #inline
 
 Instance: servicerequest-027
 // VAQTINCHALIK until General ServiceRequest, as it is not yet defined in the UZCore profiles
-InstanceOf: UZCoreServiceRequestLaboratory
+InstanceOf: UZCoreServiceRequest
 Usage: #inline
 * language = #en
 * status = #active
