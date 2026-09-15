@@ -146,7 +146,9 @@ Usage: #inline
 * birthDate = "1988-07-22"
 * gender = #female
 
-* extension[citizenship].extension[code].valueCodeableConcept = $iso-3166#UZ "Uzbekistan"
+// citizenship temporarily omitted, as in example-hepatitis-patient - restore once hapifhir/org.hl7.fhir.core#2636
+// is fixed in a publisher release:
+// * extension[citizenship].extension[code].valueCodeableConcept = $iso-3166#UZ "Uzbekistan"
 * telecom[0].system = #phone
 * telecom[=].value = "+998901112233"
 * telecom[+].system = #email
