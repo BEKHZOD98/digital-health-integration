@@ -1,3 +1,25 @@
+### Version 0.11.1
+
+#### Added
+
+The [screening plans and invitations](cervical-breast-cancer-screening.html#screening-plans) section of the screening page sets out how a screening program invites a patient and tracks the patient's plan with existing UZ Core profiles, without new profiles of its own. A UZ Core ActivityDefinition is the invitation template (`kind` = `ServiceRequest`, `intent` = `plan`), a UZ Core PlanDefinition pins it by version, and the patient's plan is a UZ Core ServiceRequest with `intent` = `plan`, the screening invitation category and one program identifier. The MIS owns the plan status: DMED completes its plan once the questionnaire is saved, while HPV keeps its plan active across screening rounds. DHP does not infer completion from results.
+
+#### Changed
+
+The guide is built against [UZ Core 0.11.1](https://dhp.uz/fhir/core/changelog.html), whose ActivityDefinition `kind` allows ServiceRequest.
+
+[Screening Pathology Service Request](StructureDefinition-screening-pathology-service-request.html) `basedOn` allows 1..* instead of 1..1, and [Screening Immunohistochemistry Observation](StructureDefinition-screening-immunohistochemistry-observation.html) `basedOn` 0..* instead of 0..1, so they can reference both the clinical order and the screening plan. Existing resources remain valid.
+
+[ScreeningComposition](StructureDefinition-screening-composition.html) is retired. New screening flows do not use it, but its canonical, structure and examples stay, so the documents HPV still sends continue to validate.
+
+#### Breaking changes
+
+The DMED [breast](Questionnaire-BreastCancerScreeningQuestionnaire.html) and [cervical](Questionnaire-CervicalCancerScreeningQuestionnaire.html) cancer screening questionnaires carry the program identifiers `mserv-0007-00007` and `mserv-0007-00009` instead of `268547008` and `171149006`, which now identify only the HPV screening programs. Their clinical codes and scoring are unchanged.
+
+#### Documentation
+
+The [cervical and breast cancer screening](cervical-breast-cancer-screening.html) page explains the program identifier as a short list of where it goes and its exceptions, and shows how a screening plan links to the record in a diagram of its own. The main screening diagram has its `basedOn` cardinalities corrected.
+
 ### Version 0.11.0
 
 #### Changed
