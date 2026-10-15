@@ -164,8 +164,20 @@ GET [base]/ServiceRequest?subject=Patient/{id}&intent=plan&status=draft,active&c
 | Записываемая информация | Справочник | Пример кода | Где хранится |
 | :--- | :--- | :--- | :--- |
 | Код процедуры | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `SNOMED CT#392003006` (кольпоскопия) | `Observation.code` |
-| Заключение кольпоскопии | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `screening-colposcopy-cs#scr-colpo-2` (LSIL) | `Observation.value` |
+| Заключение кольпоскопии | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `SNOMED CT#416030007` (LSIL) | `Observation.value` |
 | Тип зоны трансформации | [ScreeningTransformationZoneVS](ValueSet-screening-transformation-zone-vs.html) | `screening-transformation-zone-cs#scr-tz-2` (Type 2) | `component` (код `SNOMED CT#1285652007`) |
+
+Передавайте следующие коды из [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) в `Observation.valueCodeableConcept`. В `coding.system` указывайте `http://snomed.info/sct` для строк SNOMED CT, а для локальных строк — `https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-colposcopy-cs`.
+
+| Значение источника Screening | Код | Система кодирования | Значение |
+| :--- | :--- | :--- | :--- |
+| `NORM_NILM` | `373887005` | SNOMED CT | Отрицательно в отношении интраэпителиального поражения или злокачественности |
+| `LSIL` | `416030007` | SNOMED CT | Цервиковагинальная цитология: плоскоклеточное интраэпителиальное поражение низкой степени |
+| `HSIL` | `22725004` | SNOMED CT | Плоскоклеточное интраэпителиальное поражение высокой степени |
+| `ATYPICAL_CHANGE` | `scrn-0091-00004` | Локальная | Атипичные изменения |
+| `ASC_H` | `373878001` | SNOMED CT | Атипичные клетки плоского эпителия, нельзя исключить HSIL |
+| `CIN1` | `285836003` | SNOMED CT | Цервикальная интраэпителиальная неоплазия 1 степени |
+| `CIN2_PLUS` | `scrn-0091-00007` | Локальная | Цервикальная интраэпителиальная неоплазия 2 степени и выше (CIN 2+) |
 
 ### Описание маммографии
 

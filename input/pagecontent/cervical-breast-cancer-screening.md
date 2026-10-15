@@ -163,8 +163,20 @@ Example: [colposcopy-result](Observation-colposcopy-result.html)
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Procedure code | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `SNOMED CT#392003006` (colposcopy) | `Observation.code` |
-| Colposcopy impression | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `screening-colposcopy-cs#scr-colpo-2` (LSIL) | `Observation.value` |
+| Colposcopy impression | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `SNOMED CT#416030007` (LSIL) | `Observation.value` |
 | Transformation zone type | [ScreeningTransformationZoneVS](ValueSet-screening-transformation-zone-vs.html) | `screening-transformation-zone-cs#scr-tz-2` (Type 2) | `component` (code `SNOMED CT#1285652007`) |
+
+Use the following codes from [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) in `Observation.valueCodeableConcept`. Set `coding.system` to `http://snomed.info/sct` for SNOMED CT rows, or `https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-colposcopy-cs` for local rows.
+
+| Screening source value | Code | Coding system | Meaning |
+| :--- | :--- | :--- | :--- |
+| `NORM_NILM` | `373887005` | SNOMED CT | Negative for intraepithelial lesion or malignancy |
+| `LSIL` | `416030007` | SNOMED CT | Cervicovaginal cytology: Low grade squamous intraepithelial lesion |
+| `HSIL` | `22725004` | SNOMED CT | High-grade squamous intraepithelial lesion |
+| `ATYPICAL_CHANGE` | `scrn-0091-00004` | Local | Atypical change |
+| `ASC_H` | `373878001` | SNOMED CT | Atypical squamous cells, cannot exclude high-grade squamous intraepithelial lesion |
+| `CIN1` | `285836003` | SNOMED CT | Cervical intraepithelial neoplasia grade 1 |
+| `CIN2_PLUS` | `scrn-0091-00007` | Local | Cervical intraepithelial neoplasia grade 2 or worse (CIN 2+) |
 
 ### Mammography reading
 

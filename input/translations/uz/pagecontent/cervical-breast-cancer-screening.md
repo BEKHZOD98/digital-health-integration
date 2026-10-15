@@ -163,8 +163,20 @@ Misol: [colposcopy-result](Observation-colposcopy-result.html)
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Muolaja kodi | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `SNOMED CT#392003006` (kolposkopiya) | `Observation.code` |
-| Kolposkopiya xulosasi | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `screening-colposcopy-cs#scr-colpo-2` (LSIL) | `Observation.value` |
+| Kolposkopiya xulosasi | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `SNOMED CT#416030007` (LSIL) | `Observation.value` |
 | Transformatsiya zonasi turi | [ScreeningTransformationZoneVS](ValueSet-screening-transformation-zone-vs.html) | `screening-transformation-zone-cs#scr-tz-2` (Type 2) | `component` (kod `SNOMED CT#1285652007`) |
+
+Quyidagi [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) kodlarini `Observation.valueCodeableConcept` da yuboring. SNOMED CT qatorlari uchun `coding.system` qiymati `http://snomed.info/sct`, mahalliy qatorlar uchun esa `https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-colposcopy-cs` bo'ladi.
+
+| Screening manba qiymati | Kod | Kodlash tizimi | Ma'nosi |
+| :--- | :--- | :--- | :--- |
+| `NORM_NILM` | `373887005` | SNOMED CT | Intraepitelial shikastlanish yoki malignizatsiya aniqlanmadi |
+| `LSIL` | `416030007` | SNOMED CT | Servikovaginal sitologiya: past darajali yassi hujayrali intraepitelial shikastlanish |
+| `HSIL` | `22725004` | SNOMED CT | Yuqori darajali yassi hujayrali intraepitelial shikastlanish |
+| `ATYPICAL_CHANGE` | `scrn-0091-00004` | Mahalliy | Atipik o'zgarishlar |
+| `ASC_H` | `373878001` | SNOMED CT | Atipik yassi hujayralar, HSIL ni istisno qilib bo'lmaydi |
+| `CIN1` | `285836003` | SNOMED CT | Bachadon bo'yni intraepitelial neoplaziyasi 1-daraja |
+| `CIN2_PLUS` | `scrn-0091-00007` | Mahalliy | Bachadon bo'yni intraepitelial neoplaziyasi 2-daraja yoki og'irroq (CIN 2+) |
 
 ### Mammografiya tavsifi
 
