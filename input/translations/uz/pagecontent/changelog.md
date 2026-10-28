@@ -12,6 +12,10 @@
 
 #### Qo'shildi
 
+[Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi, 097-shakl](StructureDefinition-form-097-newborn-development-composition.html), FHIR hujjati sifatida profillandi: ona haqida ma'lumot va antenatal anamnez, tug'ruq, chaqaloqning birlamchi ko'rigi, oziqlantirish, kundalik kuzatuv va shifokor ko'rigi, tana vazni, profilaktika va immunizatsiya, skrining, chiqarish, o'tkazish yoki o'lim - Composition'ning 11 bo'limida. Hujjat namunalari, jumladan tirik va o'lik tug'ilish natijalari bilan, va [maydonlar moslashtirish sahifasi](form-097-mapping.html) qo'shildi.
+
+#### Qo'shildi
+
 Skrining sahifasidagi [Skrining rejalari va takliflari](cervical-breast-cancer-screening.html#screening-plans) bo'limi skrining dasturi bemorni qanday taklif qilishi va uning rejasini yangi profillarsiz, mavjud UZ Core profillarida qanday yuritishini tavsiflaydi. UZ Core ActivityDefinition taklif shabloni bo'ladi (`kind` = `ServiceRequest`, `intent` = `plan`), UZ Core PlanDefinition uni versiyasi bilan biriktiradi, bemorning rejasi esa `intent` = `plan`, skriningga taklif toifasi va bitta dastur identifikatoriga ega UZ Core ServiceRequest dir. Reja holatini MIS boshqaradi: DMED so'rovnoma saqlangach o'z rejasini yakunlaydi, OPV esa rejani skrining bosqichlari davomida faol saqlaydi. DHP natijalarga qarab rejani yakunlangan deb hisoblamaydi.
 
 #### Qo'shildi

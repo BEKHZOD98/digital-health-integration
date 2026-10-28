@@ -12,6 +12,10 @@ Form 111 preserves existing local code meanings, adds verified standard targets 
 
 #### Added
 
+[Form 097 newborn development medical record](StructureDefinition-form-097-newborn-development-composition.html) is profiled as a FHIR Document, covering the mother and antenatal history, the birth, the first newborn examination, feeding, daily observation and physician review, weight, prophylaxis and immunization, screening, and discharge, transfer or death across 11 Composition sections. It ships example document Bundles, including live birth and stillbirth outcomes, and a [field-by-field mapping page](form-097-mapping.html).
+
+#### Added
+
 The [screening plans and invitations](cervical-breast-cancer-screening.html#screening-plans) section of the screening page sets out how a screening program invites a patient and tracks the patient's plan with existing UZ Core profiles, without new profiles of its own. A UZ Core ActivityDefinition is the invitation template (`kind` = `ServiceRequest`, `intent` = `plan`), a UZ Core PlanDefinition pins it by version, and the patient's plan is a UZ Core ServiceRequest with `intent` = `plan`, the screening invitation category and one program identifier. The MIS owns the plan status: DMED completes its plan once the questionnaire is saved, while HPV keeps its plan active across screening rounds. DHP does not infer completion from results.
 
 #### Added
