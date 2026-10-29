@@ -379,9 +379,7 @@ InstanceOf: UZCoreEpisodeOfCare
 Usage: #inline
 * language = #en
 * status = #active
-* type[serviceType].coding.system = "https://terminology.dhp.uz/fhir/core/CodeSystem/episode-of-care-type-cs"
-* type[serviceType].coding.code = #mserv-0001-00004
-* type[serviceType].text = "Treatment services"
+* type[serviceType] = $episode-of-care-type#mserv-0001-00001 "Preventive services"
 * patient = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * managingOrganization = Reference(urn:uuid:02700004-1111-2222-3333-444444444444)
 
