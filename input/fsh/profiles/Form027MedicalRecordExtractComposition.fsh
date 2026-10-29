@@ -35,6 +35,9 @@ Description: "Composition profile for Form 027 (Tibbiy muassasadagi bemorning ti
 * author only Reference(UZCorePractitionerRole or UZCorePractitioner)
 * author ^short = "Attending doctor"
 
+* custodian only Reference(UZCoreOrganization)
+* custodian ^short = "Institution keeping the medical record"
+
 * title 1..1
 * title ^short = "Document title"
 
@@ -104,7 +107,7 @@ Description: "Composition profile for Form 027 (Tibbiy muassasadagi bemorning ti
 * section[referralAndDiagnosis].section[complication].title ^short = "Complication"
 * section[referralAndDiagnosis].section[complication].code = $diagnosis-role#complication
 * section[referralAndDiagnosis].section[complication].entry 0..*
-* section[referralAndDiagnosis].section[complication].entry only Reference(UZCoreProcedure)
+* section[referralAndDiagnosis].section[complication].entry only Reference(UZCoreCondition)
 
 * section[referralAndDiagnosis].section[concomitant].title ^short = "Concomitant disease"
 * section[referralAndDiagnosis].section[concomitant].code = $diagnosis-role#concomitant

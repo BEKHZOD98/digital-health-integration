@@ -45,6 +45,7 @@ For a complete reference instance, see the [Form 027 medical record extract exam
 | Murojaat yoki statsionarda davolanish | Обращение или пребывание в стационаре | Composition.encounter | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html) | 2026-02-08 - 2026-02-10 |
 | Hujjat shakllantirilgan sana | Дата составления документа | Composition.date | - | 2026-02-10T09:15:00+05:00 |
 | Davolovchi shifokor | Лечащий врач | Composition.author | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html), or [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) when the role is not known | Ismoilova M.T. |
+| Hujjat egasi | Организация-хранитель документа | Composition.custodian | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html) | Chilonzor tuman poliklinikasi |
 | Hujjat sarlavhasi | Заголовок документа | Composition.title | - | Form 027 - Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma |
 
 ---
@@ -74,7 +75,7 @@ Section code: LOINC `45970-1` "Demographic information section".
 | Med ID raqami | Медицинский идентификационный номер | Patient.identifier[healthCardId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | HC-2026-00027 |
 | Bemor FISh | ФИО пациента | Patient.name.text | - | Yusupova Nilufar Rustamovna |
 | Bemor tug'ilgan sanasi | Дата рождения | Patient.birthDate | - | 1988-07-22 |
-| Bemor jinsi | Пол пациента | Patient.gender | [AdministrativeGender](https://hl7.org/fhir/R5/valueset-administrative-gender.html) | `female` |
+| Bemor jinsi | Пол пациента | Patient.gender; gender.extension[gender-other] | [Administrative Gender](https://dhp.uz/fhir/core/en/ValueSet-administrative-gender-vs.html); `other` requires the [Gender Other](https://dhp.uz/fhir/core/en/StructureDefinition-gender-other.html) extension | `female` |
 | Bemor fuqaroligi | Гражданство пациента | Patient.extension[citizenship] | ISO 3166-1 | `UZ` "Uzbekistan" |
 | Bemor Pasport seriyasi va № | Серия и № паспорта | Patient.identifier[passportLocal] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`<br>`type` `PPN` | AC7654321 |
 
@@ -86,7 +87,7 @@ Section code: LOINC `56799-0` "Address".
 
 | UZ | RU | FHIR Path | Code | Example Value |
 |----|----|------------|------|---------------|
-| Bemor yashab kelayotgan manzili | Адрес проживания (фактический) | Patient.address.text | - | Toshkent sh., Chilonzor tumani, 12-mavze, 5-uy, 10-xonadon |
+| Bemor yashab kelayotgan manzili | Адрес проживания (фактический) | Patient.address: state, district, line, postalCode, text | - | 1726 (Toshkent shahar), 1726294 (Chilonzor tumani), 12-mavze, 5-uy, 10-xonadon |
 | Bemor telefoni | Телефон | Patient.telecom (`system` `phone`) | - | +998901112233 |
 | Bemor emaili | Email | Patient.telecom (`system` `email`) | - | nilufar.yusupova@mail.com |
 
@@ -102,7 +103,7 @@ Each diagnosis is tagged with `Condition.category` from the [Diagnosis Role](Cod
 |----|----|------------|------|---------------|
 | Yo'llagan muassasa | Направившее учреждение | Encounter.admission.origin | Organization | Yakkasaroy tuman oilaviy poliklinikasi |
 | Asosiy tashxis | Основной диагноз | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | `J06.9` "Acute upper respiratory infection, unspecified" |
-| Asorati | Осложнение | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).complication | ICD-10 | `J96.0` "Acute respiratory failure" |
+| Asorati | Осложнение | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `complication` | `J96.0` "Acute respiratory failure" |
 | Yo'ldosh kasallik | Сопутствующее заболевание | Condition.code | ICD-10 | `E66.9` "Obesity, unspecified" |
 
 ---
@@ -127,7 +128,7 @@ Section code: LOINC `18776-5` "Plan of care note".
 | UZ | RU | FHIR Path | Code | Example Value |
 |----|----|------------|------|---------------|
 | Davolash | Лечение | [CarePlan](https://hl7.org/fhir/R5/careplan.html).activity.performedActivity.concept.text | - | Ko'p suyuqlik ichish, dam olish |
-| Tavsiyalar | Рекомендации | CarePlan.note.text | - | Ko'p suyuqlik ichish, dam olish tavsiya etiladi, 3 kundan keyin qayta ko'rikka kelish |
+| Tavsiyalar | Рекомендации | CarePlan.description | - | Ko'p suyuqlik ichish, dam olish tavsiya etiladi, 3 kundan keyin qayta ko'rikka kelish |
 | Retsept | Рецепт | [MedicationRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-medicationrequest.html).medication referencing [Medication](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-medication.html).code | INN `https://terminology.dhp.uz/fhir/core/CodeSystem/inn-medication-name-cs` | `005325` "paracetamol" |
 
 ---
@@ -138,7 +139,7 @@ Section code: LOINC `74213-0` "Discharge instructions".
 
 | UZ | RU | FHIR Path | Code | Example Value |
 |----|----|------------|------|---------------|
-| Kuzatuv | Наблюдение | CarePlan.note.text | - | 1 hafta davomida kuzatuvda saqlash |
+| Kuzatuv | Наблюдение | CarePlan.description | - | 1 hafta davomida kuzatuvda saqlash |
 | Dispanserizatsiya | Диспансеризация | [EpisodeOfCare](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-episodeofcare.html).type[serviceType] | [Episode of Care Type](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-type-vs) | `mserv-0001-00004` "Treatment services" |
 | Shifoxonaga yotqazish | Госпитализация | [ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html).code | [Service Request Codes](https://terminology.dhp.uz/fhir/core/ValueSet/service-request-code-vs) | SNOMED CT `32485007` "Hospital admission" |
 
@@ -150,10 +151,28 @@ Section code: LOINC `LP35157-4` "Responsible party".
 
 | UZ | RU | FHIR Path | Code | Example Value |
 |----|----|------------|------|---------------|
-| Davolovchi shifokor FIShi | Лечащий врач (Ф.И.О.) | PractitionerRole.practitioner | - | Ismoilova M.T. |
-| Davolovchi shifokor imzosi | Лечащий врач (подпись) | [Provenance](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-provenance.html).signature | - | Digital signature (PDF) |
-| Mas'ul shaxs FIShi | Ответственное лицо (Ф.И.О.) | PractitionerRole.practitioner | - | Nazarov S.K. |
-| Mas'ul shaxs imzosi | Ответственное лицо (подпись) | Provenance.signature | - | Digital signature (PDF) |
+| Davolovchi shifokor FIShi | Лечащий врач (Ф.И.О.) | PractitionerRole.practitioner; code | [UZ Core Position and Profession](https://dhp.uz/fhir/core/en/ValueSet-position-and-profession-vs.html) | Ismoilova M.T., `2211.6` "Medical specialist" |
+| Davolovchi shifokor imzosi | Лечащий врач (подпись) | [Provenance](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-provenance.html).signature | `type` [UZ Core Signature Type](https://dhp.uz/fhir/core/en/CodeSystem-signature-type-cs.html) | soliqAuth, 2026-02-10T09:20:00+05:00 |
+| Mas'ul shaxs FIShi | Ответственное лицо (Ф.И.О.) | PractitionerRole.practitioner; code | [UZ Core Position and Profession](https://dhp.uz/fhir/core/en/ValueSet-position-and-profession-vs.html) | Nazarov S.K., `1342.18` "Head of department (health institution)" |
+| Mas'ul shaxs imzosi | Ответственное лицо (подпись) | Provenance.signature | `type` UZ Core Signature Type | soliqAuth, 2026-02-10T09:25:00+05:00 |
+
+---
+
+### Required codes
+
+Elements that have no field on the paper form but must be sent, and the code to put in them. `subject` (`patient` in EpisodeOfCare) is always the Patient and is not listed.
+
+| Resource | Element | Code | Value |
+|---|---|---|---|
+| Encounter | status | [EncounterStatus](https://hl7.org/fhir/R5/valueset-encounter-status.html) | `completed` once the stay or visit the extract covers has ended |
+| Condition | clinicalStatus | [ConditionClinicalStatusCodes](https://hl7.org/fhir/R5/valueset-condition-clinical.html) | `active` while the disease continues, `resolved` once it is over |
+| Observation | status | [ObservationStatus](https://hl7.org/fhir/R5/valueset-observation-status.html) | `final` |
+| DiagnosticReport | status | [DiagnosticReportStatus](https://hl7.org/fhir/R5/valueset-diagnostic-report-status.html) | `final` once the results are released |
+| CarePlan (treatment and recommendations) | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [CarePlanIntent](https://hl7.org/fhir/R5/valueset-care-plan-intent.html) | `active` while the recommendations apply; `plan` |
+| MedicationRequest | status; intent | [MedicationRequest Status](https://hl7.org/fhir/R5/valueset-medicationrequest-status.html); [MedicationRequest Intent](https://hl7.org/fhir/R5/valueset-medicationrequest-intent.html) | `active`; `order` (prescription issued with the extract) |
+| CarePlan (follow-up) | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [CarePlanIntent](https://hl7.org/fhir/R5/valueset-care-plan-intent.html) | `active`; `plan` |
+| EpisodeOfCare | status | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active` once the patient is registered for dispensary observation, `planned` before |
+| ServiceRequest | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [RequestIntent](https://hl7.org/fhir/R5/valueset-request-intent.html) | `active`; `order` |
 
 ---
 
@@ -169,8 +188,7 @@ Bundle (document)
 ├── Organization[] (registering and referring facility)
 ├── Practitioner[] (attending doctor, responsible person)
 ├── PractitionerRole[] (attending doctor and responsible person roles)
-├── Condition[] (main and concomitant diagnoses)
-├── Procedure (complication)
+├── Condition[] (main diagnosis, complication, concomitant disease)
 ├── Observation[] (anamnesis, clinical examination)
 ├── DiagnosticReport (diagnostic tests)
 ├── CarePlan[] (treatment and recommendations, follow-up)

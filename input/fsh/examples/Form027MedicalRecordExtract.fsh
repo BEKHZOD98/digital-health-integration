@@ -26,7 +26,7 @@ Description: "Example of Form 027 extract from patient's medical record"
 * entry[+].fullUrl = "urn:uuid:02700008-1111-2222-3333-444444444444"
 * entry[=].resource = condition-main-diagnosis-027
 * entry[+].fullUrl = "urn:uuid:02700009-1111-2222-3333-444444444444"
-* entry[=].resource = procedure-complication-027
+* entry[=].resource = condition-complication-027
 * entry[+].fullUrl = "urn:uuid:02700010-1111-2222-3333-444444444444"
 * entry[=].resource = condition-concomitant-027
 * entry[+].fullUrl = "urn:uuid:02700011-1111-2222-3333-444444444444"
@@ -74,6 +74,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * date = "2026-02-10T09:15:00+05:00"
 * author[0] = Reference(urn:uuid:02700022-1111-2222-3333-444444444444)
+* custodian = Reference(urn:uuid:02700004-1111-2222-3333-444444444444)
 * title = "Form 027 - Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma"
 
 * section[registrationInformation].title = "Roʻyxatga olish maʼlumotlari"
@@ -153,7 +154,13 @@ Usage: #inline
 * telecom[=].value = "+998901112233"
 * telecom[+].system = #email
 * telecom[=].value = "nilufar.yusupova@mail.com"
-* address.text = "Toshkent sh., Chilonzor tumani, 12-mavze, 5-uy, 10-xonadon"
+* address[uzAddress].text = "Toshkent sh., Chilonzor tumani, 12-mavze, 5-uy, 10-xonadon"
+* address[uzAddress].postalCode = "100115"
+* address[uzAddress].district = "1726294"
+* address[uzAddress].state = "1726"
+* address[uzAddress].line[0] = "12-mavze"
+* address[uzAddress].line[+] = "5-uy"
+* address[uzAddress].line[+] = "10-xonadon"
 
 
 Instance: encounter-027-001
@@ -221,13 +228,13 @@ Instance: practitionerrole-doctor-027
 InstanceOf: UZCorePractitionerRole
 Usage: #inline
 * practitioner = Reference(urn:uuid:02700006-1111-2222-3333-444444444444)
-* code = $practioner-role#doctor "Doctor"
+* code.coding[role] = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs#2211.6 "Medical specialist"
 
 Instance: practitionerrole-responsible-027
 InstanceOf: UZCorePractitionerRole
 Usage: #inline
 * practitioner = Reference(urn:uuid:02700007-1111-2222-3333-444444444444)
-* code = $sct#303133007 "Responsible medical officer"
+* code.coding[role] = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs#1342.18 "Head of department (health institution)"
 
 Instance: condition-main-diagnosis-027
 InstanceOf: UZCoreCondition
@@ -253,14 +260,14 @@ Usage: #inline
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 
 
-Instance: procedure-complication-027
-InstanceOf: UZCoreProcedure
+Instance: condition-complication-027
+InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* status = #completed
-* code = $sct#57485005 "Oxygen therapy"
+* clinicalStatus = $condition-clinical#resolved
+* category = $diagnosis-role#complication
+* code = $icd10#J96.0 "Acute respiratory failure"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
-* complication = $icd10#J96.0 "Acute respiratory failure"
 
 
 Instance: observation-anamnesis-027
@@ -304,12 +311,12 @@ Instance: careplan-treatment-027
 InstanceOf: CarePlan
 Usage: #inline
 * language = #en
-* status = #completed
+* status = #active
 * intent = #plan
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * activity.performedActivity.concept.text = "Ko'p suyuqlik ichish, dam olish"
-* note.text = "Ko'p suyuqlik ichish, dam olish tavsiya etiladi, 3 kundan keyin qayta ko'rikka kelish."
+* description = "Ko'p suyuqlik ichish, dam olish tavsiya etiladi, 3 kundan keyin qayta ko'rikka kelish."
 
 
 Instance: medicationrequest-027
@@ -340,7 +347,7 @@ Usage: #inline
 * status = #active
 * intent = #plan
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
-* note.text = "1 hafta davomida kuzatuvda saqlash."
+* description = "1 hafta davomida kuzatuvda saqlash."
 
 
 Instance: episodeofcare-027
@@ -375,7 +382,7 @@ Usage: #inline
 * recorded = "2026-02-10T09:20:00+05:00"
 * agent.type = $provenance-participant-type#author "Author"
 * agent.who = Reference(urn:uuid:02700022-1111-2222-3333-444444444444) "Ismoilova M.T."
-* signature.type[nationalType] = $signature-type-cs#biometricAuth "Biometric authentication"
+* signature.type[nationalType] = $signature-type-cs#soliqAuth
 * signature.when = "2026-02-10T09:20:00+05:00"
 * signature.who = Reference(urn:uuid:02700022-1111-2222-3333-444444444444) "Ismoilova M.T."
 * signature.sigFormat = #application/pdf
@@ -390,7 +397,7 @@ Usage: #inline
 * recorded = "2026-02-10T09:25:00+05:00"
 * agent.type = $provenance-participant-type#author "Author"
 * agent.who = Reference(urn:uuid:02700023-1111-2222-3333-444444444444) "Nazarov S.K."
-* signature.type[nationalType] = $signature-type-cs#biometricAuth "Biometric authentication"
+* signature.type[nationalType] = $signature-type-cs#soliqAuth
 * signature.when = "2026-02-10T09:25:00+05:00"
 * signature.who = Reference(urn:uuid:02700023-1111-2222-3333-444444444444) "Nazarov S.K."
 * signature.sigFormat = #application/pdf
