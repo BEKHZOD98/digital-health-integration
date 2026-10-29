@@ -46,19 +46,19 @@ Description: "Composition profile for Form 027 (Tibbiy muassasadagi bemorning ti
 * section ^slicing.rules = #open
 
 * section contains
-    registrationInformation 1..1 and
-    personalInformation 1..1 and
-    residenceInformation 1..1 and
-    referralAndDiagnosis 1..1 and
-    clinicalInformation 1..1 and
-    treatmentAndRecommendations 1..1 and
+    registrationInformation 0..1 and
+    personalInformation 0..1 and
+    residenceInformation 0..1 and
+    referralAndDiagnosis 0..1 and
+    clinicalInformation 0..1 and
+    treatmentAndRecommendations 0..1 and
     nextSteps 0..1 and
-    responsiblePersons 1..1
+    responsiblePersons 0..1
 
 * section[registrationInformation].title 1..1
 * section[registrationInformation].title ^short = "1. Registration information"
 * section[registrationInformation].code 1..1
-* section[registrationInformation].code = $loinc#46240-8 "History of Hospitalizations+Outpatient visits Narrative"
+* section[registrationInformation].code = $loinc#LP74442-2 "Admission Information"
 * section[registrationInformation].code ^short = "Institution code and name, registration number, patient type, admission and discharge dates"
 * section[registrationInformation].entry 1..*
 * section[registrationInformation].entry only Reference(UZCoreOrganization or UZCoreEncounter)

@@ -101,7 +101,7 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[+].language = #ru
   * ^designation[=].value = "Запись сеанса гемодиализа"
 
-* #form-027 "Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma"
+* #form-027 "Tibbiy muassasadagi bemorning tibbiy kartasidan ko'chirma"
   * ^designation[0].language = #en
   * ^designation[=].value = "Extract from patient's medical record"
   * ^designation[+].language = #ru

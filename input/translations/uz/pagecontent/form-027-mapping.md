@@ -54,14 +54,14 @@ To'liq namunaviy nusxa uchun [027-shakl ko'chirma misoli](Bundle-example-form-02
 
 ### 1. Roʻyxatga olish maʼlumotlari
 
-Bo'lim kodi: LOINC `46240-8` "History of Hospitalizations+Outpatient visits Narrative".
+Bo'lim kodi: LOINC `LP74442-2` "Admission Information".
 
 | UZ | RU | FHIR yo'li | Kod | Misol qiymati |
 |----|----|------------|------|---------------|
 | Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier[taxId] | `system` `https://dhp.uz/fhir/core/sid/org/uz/soliq`<br>`type` `TAX` | 310271027 |
 | Muassasa nomi | Наименование учреждения | Organization.name | - | Chilonzor tuman poliklinikasi |
 | Bemorning ro'yxatdan o'tish raqami | Регистрационный номер пациента | Encounter.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-027-2026-0124 |
-| Bemor turi | Тип пациента | Encounter.class | v3-ActCode | `IMP` "Inpatient encounter" |
+| Bemor turi | Тип пациента | Encounter.class | v3-ActCode | `AMB` "ambulatory" |
 | Murojaat sanasi | Дата подачи заявления | Encounter.actualPeriod.start | - | 2026-02-08T09:00:00+05:00 |
 | Chiqarilgan sana | Дата выписки | Encounter.actualPeriod.end | - | 2026-02-10T09:00:00+05:00 |
 
@@ -104,8 +104,8 @@ Har bir tashxis [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) kod
 | UZ | RU | FHIR yo'li | Kod | Misol qiymati |
 |----|----|------------|------|---------------|
 | Yo'llagan muassasa | Направившее учреждение | Encounter.admission.origin | Organization | Yakkasaroy tuman oilaviy poliklinikasi |
-| Asosiy tashxis | Основной диагноз | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | `J06.9` "Acute upper respiratory infection, unspecified" |
-| Asorati | Осложнение | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `complication` | `J96.0` "Acute respiratory failure" |
+| Asosiy tashxis | Основной диагноз | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | `J18.9` "Pneumonia, unspecified" |
+| Asorati | Осложнение | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `complication` | `J90` "Pleural effusion, not elsewhere classified" |
 | Yo'ldosh kasallik | Сопутствующее заболевание | Condition.code | ICD-10 | `E66.9` "Obesity, unspecified" |
 
 ---
@@ -116,10 +116,12 @@ Bo'lim kodi: LOINC `34117-2` "History and physical note".
 
 | UZ | RU | FHIR yo'li | Kod | Misol qiymati |
 |----|----|------------|------|---------------|
-| Shikoyatlar | Жалобы | Encounter.reason.value.concept.text | - | Yuqori nafas yo'llari infeksiyasiga xos shikoyatlar |
-| Anamnez | Анамнез | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueString | LOINC `10164-2` "History of present illness Narrative" | 3 kundan beri tana harorati ko'tarilishi, quruq yo'tal, bosh og'rig'i |
-| Klinik ko'rik | Клинический осмотр | Observation.valueString | LOINC `10210-3` "Physical findings of General status Narrative" | Umumiy holati qoniqarli, teri qoplamlari toza |
+| Shikoyatlar | Жалобы | Encounter.reason.value.concept.text | - | Isitma, balg'amli yo'tal, o'ng tomonda ko'krak qafasida og'riq |
+| Anamnez | Анамнез | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueString | LOINC `10164-2` "History of present illness Narrative" | 5 kun oldin sovqotishdan keyin tana harorati 38,7 °C gacha ko'tarildi, balg'amli yo'tal |
+| Klinik ko'rik | Клинический осмотр | Observation.valueString | LOINC `10210-3` "Physical findings of General status Narrative" | Umumiy holati o'rta og'ir, o'ng o'pka pastki qismida nam xirillashlar |
 | Diagnostik tekshiruv | Диагностическое обследование | [DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html).code | LOINC | `58410-2` "CBC panel - Blood by Automated count" |
+| Leykotsitlar | Лейкоциты | *(DiagnosticReport.result)* Observation.valueQuantity | LOINC `6690-2` "Leukocytes [#/volume] in Blood by Automated count", UCUM `10*9/L` | 13.5 10*9/L |
+| Gemoglobin | Гемоглобин | *(DiagnosticReport.result)* Observation.valueQuantity | LOINC `718-7` "Hemoglobin [Mass/volume] in Blood", UCUM `g/L` | 128 g/L |
 
 ---
 
@@ -129,9 +131,10 @@ Bo'lim kodi: LOINC `18776-5` "Plan of care note".
 
 | UZ | RU | FHIR yo'li | Kod | Misol qiymati |
 |----|----|------------|------|---------------|
-| Davolash | Лечение | [CarePlan](https://hl7.org/fhir/R5/careplan.html).activity.performedActivity.concept.text | - | Ko'p suyuqlik ichish, dam olish |
-| Tavsiyalar | Рекомендации | CarePlan.description | - | Ko'p suyuqlik ichish, dam olish tavsiya etiladi, 3 kundan keyin qayta ko'rikka kelish |
+| Davolash | Лечение | [CarePlan](https://hl7.org/fhir/R5/careplan.html).activity.performedActivity.concept.text | - | Antipiretik terapiya, ko'p suyuqlik ichish |
+| Tavsiyalar | Рекомендации | CarePlan.description | - | Statsionar davolash; 10-14 kundan keyin ko'krak qafasi rentgenogrammasini takrorlash |
 | Retsept | Рецепт | [MedicationRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-medicationrequest.html).medication, [Medication](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-medication.html).code ga havola | XPN `https://terminology.dhp.uz/fhir/core/CodeSystem/inn-medication-name-cs` | `005325` "paracetamol" |
+| Dozalash | Дозировка | *(same MedicationRequest)* dosageInstruction.text; doseAndRate.doseQuantity | UCUM `mg` | 500 mg, harorat 38,5 °C dan oshganda, kuniga 3 martagacha |
 
 ---
 
@@ -141,7 +144,7 @@ Bo'lim kodi: LOINC `74213-0` "Discharge instructions".
 
 | UZ | RU | FHIR yo'li | Kod | Misol qiymati |
 |----|----|------------|------|---------------|
-| Kuzatuv | Наблюдение | CarePlan.description | - | 1 hafta davomida kuzatuvda saqlash |
+| Kuzatuv | Наблюдение | CarePlan.description | - | Shifoxonadan chiqqandan keyin 1 oy davomida oilaviy poliklinikada kuzatuv |
 | Dispanserizatsiya | Диспансеризация | [EpisodeOfCare](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-episodeofcare.html).type[serviceType] | [Episode of Care Type](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-type-vs) | `mserv-0001-00004` "Treatment services" |
 | Shifoxonaga yotqazish | Госпитализация | [ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html).code | [Service Request Codes](https://terminology.dhp.uz/fhir/core/ValueSet/service-request-code-vs) | SNOMED CT `32485007` "Hospital admission" |
 
@@ -191,7 +194,7 @@ Bundle (hujjat)
 ├── Practitioner[] (davolovchi shifokor, mas'ul shaxs)
 ├── PractitionerRole[] (davolovchi shifokor va mas'ul shaxs lavozimlari)
 ├── Condition[] (asosiy tashxis, asorat, yo'ldosh kasallik)
-├── Observation[] (anamnez, klinik ko'rik)
+├── Observation[] (anamnez, klinik ko'rik, tahlil natijalari)
 ├── DiagnosticReport (diagnostik tekshiruvlar)
 ├── CarePlan[] (davolash va tavsiyalar, kuzatuv)
 ├── MedicationRequest / Medication (retsept)

@@ -35,6 +35,10 @@ Description: "Example of Form 027 extract from patient's medical record"
 * entry[=].resource = observation-clinical-exam-027
 * entry[+].fullUrl = "urn:uuid:02700013-1111-2222-3333-444444444444"
 * entry[=].resource = diagnosticreport-027
+* entry[+].fullUrl = "urn:uuid:02700024-1111-2222-3333-444444444444"
+* entry[=].resource = observation-wbc-027
+* entry[+].fullUrl = "urn:uuid:02700025-1111-2222-3333-444444444444"
+* entry[=].resource = observation-hemoglobin-027
 * entry[+].fullUrl = "urn:uuid:02700014-1111-2222-3333-444444444444"
 * entry[=].resource = careplan-treatment-027
 * entry[+].fullUrl = "urn:uuid:02700015-1111-2222-3333-444444444444"
@@ -78,7 +82,7 @@ Usage: #inline
 * title = "Form 027 - Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma"
 
 * section[registrationInformation].title = "Roʻyxatga olish maʼlumotlari"
-* section[=].code = $loinc#46240-8 "History of Hospitalizations+Outpatient visits Narrative"
+* section[=].code = $loinc#LP74442-2 "Admission Information"
 * section[=].entry[0] = Reference(urn:uuid:02700004-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 
@@ -170,14 +174,14 @@ Usage: #inline
 * status = #completed
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
 * identifier[=].value = "MRN-027-2026-0124"
-* class = $v3-ActCode#IMP "Inpatient encounter"
+* class = $v3-ActCode#AMB "ambulatory"
 * type[nationalType] = encounter-type-cs#mserv-0001-00004 "Treatment services"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * actualPeriod.start = "2026-02-08T09:00:00+05:00"
 * actualPeriod.end = "2026-02-10T09:00:00+05:00"
 * serviceProvider = Reference(urn:uuid:02700004-1111-2222-3333-444444444444)
 * admission.origin = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
-* reason.value.concept.text = "Yuqori nafas yo'llari infeksiyasiga xos shikoyatlar"
+* reason.value.concept.text = "Isitma, balg'amli yo'tal, o'ng tomonda ko'krak qafasida og'riq"
 
 
 Instance: organization-027-001
@@ -243,8 +247,8 @@ Usage: #inline
 * clinicalStatus = $condition-clinical#active
 * category = $diagnosis-role#main
 * code.coding.system = $icd10
-* code.coding.code = #J06.9
-* code.coding.display = "Acute upper respiratory infection, unspecified"
+* code.coding.code = #J18.9
+* code.coding.display = "Pneumonia, unspecified"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 
 
@@ -264,9 +268,9 @@ Instance: condition-complication-027
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#resolved
+* clinicalStatus = $condition-clinical#active
 * category = $diagnosis-role#complication
-* code = $icd10#J96.0 "Acute respiratory failure"
+* code = $icd10#J90 "Pleural effusion, not elsewhere classified"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 
 
@@ -280,7 +284,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-02-08T09:10:00+05:00"
 * performer = Reference(urn:uuid:02700006-1111-2222-3333-444444444444)
-* valueString = "3 kundan beri tana harorati ko'tarilishi, quruq yo'tal, bosh og'rig'i shikoyatlari bilan murojaat qildi."
+* valueString = "5 kun oldin sovqotishdan keyin tana harorati 38,7 °C gacha ko'tarildi, balg'amli yo'tal paydo bo'ldi. Uyda paratsetamol qabul qildi, yaxshilanmadi."
 
 
 Instance: observation-clinical-exam-027
@@ -293,7 +297,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-02-08T09:20:00+05:00"
 * performer = Reference(urn:uuid:02700006-1111-2222-3333-444444444444)
-* valueString = "Umumiy holati qoniqarli, teri qoplamlari toza. O'pkada qattiq nafas, hushtaksiz."
+* valueString = "Umumiy holati o'rta og'ir. O'ng o'pka pastki qismida nam xirillashlar, perkussiyada tovush qisqargan. Nafas olish soni 24/min."
 
 
 Instance: diagnosticreport-027
@@ -305,6 +309,9 @@ Usage: #inline
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-02-08T10:00:00+05:00"
+* result[0] = Reference(urn:uuid:02700024-1111-2222-3333-444444444444)
+* result[+] = Reference(urn:uuid:02700025-1111-2222-3333-444444444444)
+* conclusion = "Leykotsitoz"
 
 
 Instance: careplan-treatment-027
@@ -315,8 +322,8 @@ Usage: #inline
 * intent = #plan
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
-* activity.performedActivity.concept.text = "Ko'p suyuqlik ichish, dam olish"
-* description = "Ko'p suyuqlik ichish, dam olish tavsiya etiladi, 3 kundan keyin qayta ko'rikka kelish."
+* activity.performedActivity.concept.text = "Antipiretik terapiya, ko'p suyuqlik ichish"
+* description = "Statsionar davolash; 10-14 kundan keyin ko'krak qafasi rentgenogrammasini takrorlash."
 
 
 Instance: medicationrequest-027
@@ -328,6 +335,8 @@ Usage: #inline
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * medication = Reference(urn:uuid:02700021-1111-2222-3333-444444444444)
+* dosageInstruction.text = "500 mg ichish uchun, harorat 38,5 °C dan oshganda, kuniga 3 martagacha"
+* dosageInstruction.doseAndRate.doseQuantity = 500 'mg' "mg"
 
 
 Instance: medication-paracetamol-027
@@ -347,7 +356,7 @@ Usage: #inline
 * status = #active
 * intent = #plan
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
-* description = "1 hafta davomida kuzatuvda saqlash."
+* description = "Shifoxonadan chiqqandan keyin 1 oy davomida oilaviy poliklinikada kuzatuv."
 
 
 Instance: episodeofcare-027
@@ -371,6 +380,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * authoredOn = "2026-02-10"
 * code = $sct#32485007 "Hospital admission"
+* reason.reference = Reference(urn:uuid:02700008-1111-2222-3333-444444444444)
 
 
 
@@ -402,3 +412,27 @@ Usage: #inline
 * signature.who = Reference(urn:uuid:02700023-1111-2222-3333-444444444444) "Nazarov S.K."
 * signature.sigFormat = #application/pdf
 * signature.data = "JVBERi0xLjQKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2Jq"
+
+
+Instance: observation-wbc-027
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#6690-2 "Leukocytes [#/volume] in Blood by Automated count"
+* subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-02-08T10:00:00+05:00"
+* valueQuantity = 13.5 '10*9/L' "10*9/L"
+
+
+Instance: observation-hemoglobin-027
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#718-7 "Hemoglobin [Mass/volume] in Blood"
+* subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-02-08T10:00:00+05:00"
+* valueQuantity = 128 'g/L' "g/L"
