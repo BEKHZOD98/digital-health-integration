@@ -55,8 +55,6 @@ Description: "Example of Form 027 extract from patient's medical record"
 * entry[=].resource = practitionerrole-doctor-027
 * entry[+].fullUrl = "urn:uuid:02700023-1111-2222-3333-444444444444"
 * entry[=].resource = practitionerrole-responsible-027
-* entry[+].fullUrl = "urn:uuid:02700024-1111-2222-3333-444444444444"
-* entry[=].resource = documentreference-027
 
 
 Instance: composition-027-001
@@ -68,12 +66,14 @@ Usage: #inline
 * identifier[+].system = "https://dhp.uz/fhir/core/sid/doc/uz/form-number"
 * identifier[=].value = "027"
 * status = #final
-* type = $loinc#34133-9 "Summary of episode note"
-* category = $document-category-cs#form-027 "Extract from patient's medical record"
+* type.coding[0] = $composition-type-cs#emdoc-0010-0106 "Extract from inpatient medical record"
+* type.coding[+] = $loinc#34133-9 "Summary of episode note"
+* category[dhpCategory] = $composition-category-cs#Comp-001-0001 "Medical record"
+* category[formCategory] = $document-category-cs#form-027 "Extract from patient's medical record"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * date = "2026-02-10T09:15:00+05:00"
-* author[0] = Reference(urn:uuid:02700006-1111-2222-3333-444444444444)
+* author[0] = Reference(urn:uuid:02700022-1111-2222-3333-444444444444)
 * title = "Form 027 - Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma"
 
 * section[registrationInformation].title = "Roʻyxatga olish maʼlumotlari"
@@ -125,9 +125,9 @@ Usage: #inline
 
 * section[responsiblePersons].title = "Masʼul shaxslar"
 * section[=].code = $loinc#LP35157-4 "Responsible party"
-* section[=].entry[0] = Reference(urn:uuid:02700006-1111-2222-3333-444444444444)
+* section[=].entry[0] = Reference(urn:uuid:02700022-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700019-1111-2222-3333-444444444444)
-* section[=].entry[+] = Reference(urn:uuid:02700007-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:02700023-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700020-1111-2222-3333-444444444444)
 
 
@@ -161,8 +161,8 @@ InstanceOf: UZCoreEncounter
 Usage: #inline
 * language = #en
 * status = #completed
-* identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/registration-number"
-* identifier[=].value = "REG-027-2026-0124"
+* identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
+* identifier[=].value = "MRN-027-2026-0124"
 * class = $v3-ActCode#IMP "Inpatient encounter"
 * type[nationalType] = encounter-type-cs#mserv-0001-00004 "Treatment services"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
@@ -170,15 +170,16 @@ Usage: #inline
 * actualPeriod.end = "2026-02-10T09:00:00+05:00"
 * serviceProvider = Reference(urn:uuid:02700004-1111-2222-3333-444444444444)
 * admission.origin = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
-* reason.value.concept.text = "Yuqori nafas yo'llari infeksiyasiga xos shikoyatlar" // Excel: UZCoreEncounter.reason.value - "Shikoyatlar"
+* reason.value.concept.text = "Yuqori nafas yo'llari infeksiyasiga xos shikoyatlar"
 
 
 Instance: organization-027-001
 InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #en
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "200015"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "310271027"
 * name = "Chilonzor tuman poliklinikasi"
 
 
@@ -186,8 +187,9 @@ Instance: organization-referring-027
 InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #en
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "200016"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "310272027"
 * name = "Yakkasaroy tuman oilaviy poliklinikasi"
 
 
@@ -292,7 +294,6 @@ InstanceOf: UZCoreDiagnosticReport
 Usage: #inline
 * language = #en
 * status = #final
-// NAMUNA QIYMAT: real tekshiruv turi bilan almashtirilishi mumkin
 * code = $loinc#58410-2 "CBC panel - Blood by Automated count"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
@@ -312,7 +313,7 @@ Usage: #inline
 
 
 Instance: medicationrequest-027
-InstanceOf: MedicationRequest
+InstanceOf: UZCoreMedicationRequest
 Usage: #inline
 * language = #en
 * status = #active
@@ -323,9 +324,11 @@ Usage: #inline
 
 
 Instance: medication-paracetamol-027
-InstanceOf: Medication
+InstanceOf: UZCoreMedication
 Usage: #inline
 * language = #en
+* identifier[registrationCertificateID].value = "UZ/MED/2025/00271"
+* code = https://terminology.dhp.uz/fhir/core/CodeSystem/inn-medication-name-cs#005325 "paracetamol"
 * code.text = "Paracetamol 500 mg tablet"
 * status = #active
 
@@ -353,7 +356,6 @@ Usage: #inline
 
 
 Instance: servicerequest-027
-// VAQTINCHALIK until General ServiceRequest, as it is not yet defined in the UZCore profiles
 InstanceOf: UZCoreServiceRequest
 Usage: #inline
 * language = #en
@@ -361,22 +363,15 @@ Usage: #inline
 * intent = #order
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * authoredOn = "2026-02-10"
-* code = lab-pan-cs#lab-pan-E "CBC panel"
+* code = $sct#32485007 "Hospital admission"
 
-
-Instance: documentreference-027
-InstanceOf: DocumentReference
-Usage: #inline
-* status = #current
-* content.attachment.contentType = #application/pdf
-* content.attachment.title = "Form 027 - Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma"
 
 
 Instance: provenance-doctor-signature-027
 InstanceOf: UZCoreProvenance
 Usage: #inline
 * language = #en
-* target = Reference(urn:uuid:02700024-1111-2222-3333-444444444444)
+* target = Reference(Bundle/example-form-027-medical-record-extract)
 * recorded = "2026-02-10T09:20:00+05:00"
 * agent.type = $provenance-participant-type#author "Author"
 * agent.who = Reference(urn:uuid:02700022-1111-2222-3333-444444444444) "Ismoilova M.T."
@@ -391,7 +386,7 @@ Instance: provenance-responsible-signature-027
 InstanceOf: UZCoreProvenance
 Usage: #inline
 * language = #en
-* target = Reference(urn:uuid:02700024-1111-2222-3333-444444444444)
+* target = Reference(Bundle/example-form-027-medical-record-extract)
 * recorded = "2026-02-10T09:25:00+05:00"
 * agent.type = $provenance-participant-type#author "Author"
 * agent.who = Reference(urn:uuid:02700023-1111-2222-3333-444444444444) "Nazarov S.K."

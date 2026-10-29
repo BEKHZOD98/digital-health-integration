@@ -209,23 +209,6 @@ Usage: #definition
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/narco"
 * uniqueId[=].preferred = true
 
-Instance: registration-number-ns
-InstanceOf: NamingSystem
-Description: "Identifier system for patient registration numbers assigned at outpatient/inpatient admission in Uzbekistan"
-Usage: #definition
-* name = "UzbekistanRegistrationNumber"
-* status = #active
-* kind = #identifier
-* publisher = "Uzinfocom"
-* responsible = "Ministry of Health of the Republic of Uzbekistan"
-* date = "2026-08-10"
-* description = "Registration number assigned to a patient encounter (e.g., outpatient or inpatient registration)"
-* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
-* usage = "Used in Encounter.identifier for the registration number"
-* uniqueId[0].type = #uri
-* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/registration-number"
-* uniqueId[=].preferred = true
-
 Instance: psychiatry-identifier
 InstanceOf: NamingSystem
 Description: "Identifier system for Psychiatry registration numbers in Uzbekistan"
