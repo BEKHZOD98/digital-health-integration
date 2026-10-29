@@ -1,3 +1,9 @@
+### Ishlab chiqilmoqda
+
+#### Qo'shildi
+
+[027-shakl, bemorning tibbiy kartasidan ko'chirma](StructureDefinition-form-027-medical-record-extract-composition.html) FHIR hujjati sifatida profillandi: ro'yxatga olish va shaxsiy ma'lumotlar, manzil, yo'llanma va tashxis, klinik ma'lumotlar, davolash va tavsiyalar, keyingi tadbirlar va mas'ul shaxslar Composition'ning 8 ta bo'limida. Unga hujjat namunasi (Bundle) va [maydonlarni moslashtirish sahifasi](form-027-mapping.html) ilova qilingan.
+
 ### Versiya 0.12.1
 
 #### O'zgartirildi

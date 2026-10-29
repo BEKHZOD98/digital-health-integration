@@ -1,3 +1,9 @@
+### In development
+
+#### Added
+
+[Form 027 extract from a patient's medical record](StructureDefinition-form-027-medical-record-extract-composition.html) is profiled as a FHIR Document, covering registration, personal information, residence, referral and diagnosis, clinical information, treatment and recommendations, next steps and responsible persons across 8 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-027-mapping.html).
+
 ### Version 0.12.1
 
 #### Changed

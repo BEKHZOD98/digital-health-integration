@@ -1,12 +1,25 @@
+<style>
+/* Per-form mapping-table column widths (027: one table per Composition section). */
+.col-12 table { table-layout: fixed; width: 100%; }
+.col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
+.col-12 th:nth-child(1), .col-12 td:nth-child(1) { width: 18%; }
+.col-12 th:nth-child(2), .col-12 td:nth-child(2) { width: 18%; }
+.col-12 th:nth-child(3), .col-12 td:nth-child(3) { width: 22%; }
+.col-12 th:nth-child(4), .col-12 td:nth-child(4) { width: 26%; }
+.col-12 th:nth-child(5), .col-12 td:nth-child(5) { width: 16%; }
+</style>
+
 ### Form 027 - Medical Record Extract
 
-This page documents the mapping between Form 027 (Extract from Patient's Medical Record) fields and FHIR resources.
+This page documents the mapping between Form 027 (Tibbiy muassasadagi bemorning tibbiy kartasidan ko'chirma) fields and FHIR resources.
 
 ---
 
 ### Overview
 
-Form 027 captures a summarized extract of a patient's medical record for referral or transfer purposes. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 027 Medical Record Extract Composition](StructureDefinition-form-027-medical-record-extract-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
+[Form 027](forms-volume-03-diagnostics-laboratory.html) is an extract from a patient's outpatient or inpatient medical record, sent when the patient is referred or transferred. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 027 Medical Record Extract Composition](StructureDefinition-form-027-medical-record-extract-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
+
+Each of the 8 sections of the Composition carries its own `section.code` and lists the resources belonging to that part of the form.
 
 For a complete reference instance, see the [Form 027 medical record extract example](Bundle-example-form-027-medical-record-extract.html).
 
@@ -14,103 +27,132 @@ For a complete reference instance, see the [Form 027 medical record extract exam
 
 ### Field Mapping
 
-# UZ-027 Medical Record Extract - FHIR Mapping
+### Form 027 Medical Record Extract - FHIR Mapping
 
 ---
 
-### Registration Information
+### Document Information
 
-| UZ-027 | RU-027 | FHIR Path | Code | Example Value |
-|--------|--------|-----------|------|----------------|
-| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier | Local | 200015 |
+| UZ | RU | FHIR Path | Code | Example Value |
+|----|----|------------|------|---------------|
+| Hujjat versiyasi UUID | Идентификатор версии документа | Bundle.identifier | `urn:ietf:rfc:3986` | urn:uuid:760e8400-e29b-41d4-a716-446655440027 |
+| Hujjat UUID | Идентификатор документа | Composition.identifier | `urn:ietf:rfc:3986` | urn:uuid:861f9511-f30c-52e5-b827-557766550027 |
+| Shakl raqami | Номер формы | Composition.identifier | `https://dhp.uz/fhir/core/sid/doc/uz/form-number` | 027 |
+| Hujjat holati | Статус документа | Composition.status | [Document statuses](document-statuses.html): `final` once the extract is signed, `amended` for later corrections, `entered-in-error` if it is withdrawn | final |
+| Hujjat turi | Тип документа | Composition.type | [Composition Type](https://terminology.dhp.uz/fhir/core/ValueSet/composition-type-vs) `emdoc-0010-0106` "Extract from inpatient medical record", plus LOINC `34133-9` "Summary of episode note" | - |
+| Hujjat kategoriyasi | Категория документа | Composition.category | [Composition Category](https://terminology.dhp.uz/fhir/core/ValueSet/composition-category-vs) `Comp-001-0001` "Medical record", and [Document Category](CodeSystem-document-category-cs.html) `form-027` "Extract from patient's medical record" | - |
+| Bemor | Пациент | Composition.subject | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) | Yusupova Nilufar Rustamovna |
+| Murojaat yoki statsionarda davolanish | Обращение или пребывание в стационаре | Composition.encounter | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html) | 2026-02-08 - 2026-02-10 |
+| Hujjat shakllantirilgan sana | Дата составления документа | Composition.date | - | 2026-02-10T09:15:00+05:00 |
+| Davolovchi shifokor | Лечащий врач | Composition.author | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html), or [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) when the role is not known | Ismoilova M.T. |
+| Hujjat sarlavhasi | Заголовок документа | Composition.title | - | Form 027 - Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma |
+
+---
+
+### 1. Registration information
+
+Section code: LOINC `46240-8` "History of Hospitalizations+Outpatient visits Narrative".
+
+| UZ | RU | FHIR Path | Code | Example Value |
+|----|----|------------|------|---------------|
+| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier[taxId] | `system` `https://dhp.uz/fhir/core/sid/org/uz/soliq`<br>`type` `TAX` | 310271027 |
 | Muassasa nomi | Наименование учреждения | Organization.name | - | Chilonzor tuman poliklinikasi |
-| Bemorning ro'yxatdan o'tish raqami | Регистрационный номер пациента | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).identifier.value | - | REG-027-2026-0124 |
-| Bemor turi | Тип пациента | Encounter.class | v3-ActCode | Inpatient encounter |
+| Bemorning ro'yxatdan o'tish raqami | Регистрационный номер пациента | Encounter.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-027-2026-0124 |
+| Bemor turi | Тип пациента | Encounter.class | v3-ActCode | `IMP` "Inpatient encounter" |
 | Murojaat sanasi | Дата подачи заявления | Encounter.actualPeriod.start | - | 2026-02-08T09:00:00+05:00 |
 | Chiqarilgan sana | Дата выписки | Encounter.actualPeriod.end | - | 2026-02-10T09:00:00+05:00 |
 
 ---
 
-### Personal Information
+### 2. Personal information
 
-| UZ-027 | RU-027 | FHIR Path | Code | Example Value |
-|--------|--------|-----------|------|----------------|
-| Bemor JShShIR | ПИНФЛ | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).identifier[nationalId].value | NI | 31234567890124 |
-| Med ID raqami | Медицинский идентификационный номер | Patient.identifier[healthCardId].value | HC | HC-2026-00027 |
+Section code: LOINC `45970-1` "Demographic information section".
+
+| UZ | RU | FHIR Path | Code | Example Value |
+|----|----|------------|------|---------------|
+| Bemor JShShIR | ПИНФЛ | Patient.identifier[nationalId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | 31234567890124 |
+| Med ID raqami | Медицинский идентификационный номер | Patient.identifier[healthCardId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | HC-2026-00027 |
 | Bemor FISh | ФИО пациента | Patient.name.text | - | Yusupova Nilufar Rustamovna |
 | Bemor tug'ilgan sanasi | Дата рождения | Patient.birthDate | - | 1988-07-22 |
-| Bemor jinsi | Пол пациента | Patient.gender | AdministrativeGender | female |
-| Bemor fuqaroligi | Гражданство пациента | Patient.extension[citizenship] | ISO 3166-1 | Uzbekistan (UZ) |
-| Bemor Pasport seriyasi va № | Серия и № паспорта | Patient.identifier[passportLocal or passportInternational or passportForeign] | PPN | AC7654321 |
+| Bemor jinsi | Пол пациента | Patient.gender | [AdministrativeGender](https://hl7.org/fhir/R5/valueset-administrative-gender.html) | `female` |
+| Bemor fuqaroligi | Гражданство пациента | Patient.extension[citizenship] | ISO 3166-1 | `UZ` "Uzbekistan" |
+| Bemor Pasport seriyasi va № | Серия и № паспорта | Patient.identifier[passportLocal] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`<br>`type` `PPN` | AC7654321 |
 
 ---
 
-### Residence Information
+### 3. Residence and contacts
 
-| UZ-027 | RU-027 | FHIR Path | Code | Example Value |
-|--------|--------|-----------|------|----------------|
+Section code: LOINC `56799-0` "Address".
+
+| UZ | RU | FHIR Path | Code | Example Value |
+|----|----|------------|------|---------------|
 | Bemor yashab kelayotgan manzili | Адрес проживания (фактический) | Patient.address.text | - | Toshkent sh., Chilonzor tumani, 12-mavze, 5-uy, 10-xonadon |
-| Bemor telefoni | Телефон | Patient.telecom[phone] | - | +998901112233 |
-| Bemor emaili | Email | Patient.telecom[email] | - | nilufar.yusupova@mail.com |
+| Bemor telefoni | Телефон | Patient.telecom (`system` `phone`) | - | +998901112233 |
+| Bemor emaili | Email | Patient.telecom (`system` `email`) | - | nilufar.yusupova@mail.com |
 
 ---
 
-### Referral and Diagnosis
+### 4. Referral and diagnosis
 
-Each diagnosis is tagged with `Condition.category` from the [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) code system and placed in a matching per-role sub-section of the Composition - Asosiy tashxis → `main`, Asorati → `complication`, Yo'ldosh kasallik → `concomitant`.
+Section code: LOINC `42349-1` "Reason for referral (narrative)".
 
-| UZ-027 | RU-027 | FHIR Path | Code | Example Value |
-|--------|--------|-----------|------|----------------|
-| Yo'llagan muassasa | Направившее учреждение | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).admission.origin | Organization | Yakkasaroy tuman oilaviy poliklinikasi |
-| Asosiy tashxis kodi | Код основного диагноза | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code.coding.code | ICD-10 | J06.9 |
-| Asosiy tashxis nomi | Наименование основного диагноза | Condition.code.coding.display | - | Acute upper respiratory infection, unspecified |
-| Asorati | Код осложнения | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).complication | ICD-10 | J96.0 |
-| Yo'ldosh kasallik kodi | Код сопутствующего заболевания | Condition.code.coding.code | ICD-10 | E66.9 |
+Each diagnosis is tagged with `Condition.category` from the [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) code system and placed in a matching per-role sub-section of the Composition: Asosiy tashxis - `main`, Asorati - `complication`, Yo'ldosh kasallik - `concomitant`.
+
+| UZ | RU | FHIR Path | Code | Example Value |
+|----|----|------------|------|---------------|
+| Yo'llagan muassasa | Направившее учреждение | Encounter.admission.origin | Organization | Yakkasaroy tuman oilaviy poliklinikasi |
+| Asosiy tashxis | Основной диагноз | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | `J06.9` "Acute upper respiratory infection, unspecified" |
+| Asorati | Осложнение | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).complication | ICD-10 | `J96.0` "Acute respiratory failure" |
+| Yo'ldosh kasallik | Сопутствующее заболевание | Condition.code | ICD-10 | `E66.9` "Obesity, unspecified" |
 
 ---
 
-### Clinical Information
+### 5. Clinical information
 
-| UZ-027 | RU-027 | FHIR Path | Code | Example Value |
-|--------|--------|-----------|------|----------------|
+Section code: LOINC `34117-2` "History and physical note".
+
+| UZ | RU | FHIR Path | Code | Example Value |
+|----|----|------------|------|---------------|
 | Shikoyatlar | Жалобы | Encounter.reason.value.concept.text | - | Yuqori nafas yo'llari infeksiyasiga xos shikoyatlar |
 | Anamnez | Анамнез | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueString | LOINC `10164-2` "History of present illness Narrative" | 3 kundan beri tana harorati ko'tarilishi, quruq yo'tal, bosh og'rig'i |
 | Klinik ko'rik | Клинический осмотр | Observation.valueString | LOINC `10210-3` "Physical findings of General status Narrative" | Umumiy holati qoniqarli, teri qoplamlari toza |
-| Diagnostik tekshiruv | Диагностическое обследование | [DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html).code | LOINC | CBC panel - Blood by Automated count |
+| Diagnostik tekshiruv | Диагностическое обследование | [DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html).code | LOINC | `58410-2` "CBC panel - Blood by Automated count" |
 
 ---
 
-### Treatment and Recommendations
+### 6. Treatment and recommendations
 
-| UZ-027 | RU-027 | FHIR Path | Code | Example Value |
-|--------|--------|-----------|------|----------------|
-| Davolash | Лечение | CarePlan.activity.performedActivity.concept.text | Local | Ko'p suyuqlik ichish, dam olish |
+Section code: LOINC `18776-5` "Plan of care note".
+
+| UZ | RU | FHIR Path | Code | Example Value |
+|----|----|------------|------|---------------|
+| Davolash | Лечение | [CarePlan](https://hl7.org/fhir/R5/careplan.html).activity.performedActivity.concept.text | - | Ko'p suyuqlik ichish, dam olish |
 | Tavsiyalar | Рекомендации | CarePlan.note.text | - | Ko'p suyuqlik ichish, dam olish tavsiya etiladi, 3 kundan keyin qayta ko'rikka kelish |
-| Retsept | Рецепт | MedicationRequest.medication | Local | Paracetamol 500 mg tablet |
-
-*Note: CarePlan and MedicationRequest do not yet have dedicated UZ Core profiles; base FHIR resources are used.*
+| Retsept | Рецепт | [MedicationRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-medicationrequest.html).medication referencing [Medication](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-medication.html).code | INN `https://terminology.dhp.uz/fhir/core/CodeSystem/inn-medication-name-cs` | `005325` "paracetamol" |
 
 ---
 
-### Next Steps
+### 7. Next steps
 
-| UZ-027 | RU-027 | FHIR Path | Code | Example Value |
-|--------|--------|-----------|------|----------------|
+Section code: LOINC `74213-0` "Discharge instructions".
+
+| UZ | RU | FHIR Path | Code | Example Value |
+|----|----|------------|------|---------------|
 | Kuzatuv | Наблюдение | CarePlan.note.text | - | 1 hafta davomida kuzatuvda saqlash |
-| Dispanserizatsiya | Диспансеризация | [EpisodeOfCare](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-episode-of-care.html).type.text | Local | Treatment services |
-| Shifoxonaga yotqazish | Госпитализация | ServiceRequest.code | Local | CBC panel |
-
-*Note: ServiceRequest currently uses the UZCoreServiceRequestLaboratory profile as a temporary reference until a general UZCoreServiceRequest profile is published.*
+| Dispanserizatsiya | Диспансеризация | [EpisodeOfCare](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-episodeofcare.html).type[serviceType] | [Episode of Care Type](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-type-vs) | `mserv-0001-00004` "Treatment services" |
+| Shifoxonaga yotqazish | Госпитализация | [ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html).code | [Service Request Codes](https://terminology.dhp.uz/fhir/core/ValueSet/service-request-code-vs) | SNOMED CT `32485007` "Hospital admission" |
 
 ---
 
-### Responsible Persons
+### 8. Responsible persons
 
-| UZ-027 | RU-027 | FHIR Path | Code | Example Value |
-|--------|--------|-----------|------|----------------|
-| Davolovchi shifokor FIShi | Лечащий врач (Ф.И.О.) | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html).name.text | - | Ismoilova M.T. |
+Section code: LOINC `LP35157-4` "Responsible party".
+
+| UZ | RU | FHIR Path | Code | Example Value |
+|----|----|------------|------|---------------|
+| Davolovchi shifokor FIShi | Лечащий врач (Ф.И.О.) | PractitionerRole.practitioner | - | Ismoilova M.T. |
 | Davolovchi shifokor imzosi | Лечащий врач (подпись) | [Provenance](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-provenance.html).signature | - | Digital signature (PDF) |
-| Mas'ul shaxs FIShi | Ответственное лицо (Ф.И.О.) | Practitioner.name.text | - | Nazarov S.K. |
+| Mas'ul shaxs FIShi | Ответственное лицо (Ф.И.О.) | PractitionerRole.practitioner | - | Nazarov S.K. |
 | Mas'ul shaxs imzosi | Ответственное лицо (подпись) | Provenance.signature | - | Digital signature (PDF) |
 
 ---
@@ -123,19 +165,19 @@ The Form 027 document is structured as a FHIR Bundle containing a [Form027Medica
 Bundle (document)
 ├── Composition (Form027MedicalRecordExtractComposition)
 ├── Patient (patient demographics)
-├── Encounter (visit/admission)
+├── Encounter (visit or inpatient stay)
 ├── Organization[] (registering and referring facility)
-├── Practitioner[] (treating doctor, responsible person)
-├── PractitionerRole[] (doctor and responsible person roles)
+├── Practitioner[] (attending doctor, responsible person)
+├── PractitionerRole[] (attending doctor and responsible person roles)
 ├── Condition[] (main and concomitant diagnoses)
 ├── Procedure (complication)
-├── Observation[] (complaints, anamnesis, clinical examination)
-├── DiagnosticReport (diagnostic test results)
-├── CarePlan[] (treatment, recommendations, follow-up)
+├── Observation[] (anamnesis, clinical examination)
+├── DiagnosticReport (diagnostic tests)
+├── CarePlan[] (treatment and recommendations, follow-up)
 ├── MedicationRequest / Medication (prescription)
 ├── EpisodeOfCare (dispensary observation)
 ├── ServiceRequest (hospitalization request)
-└── Provenance[] (signatures of doctor and responsible person)
+└── Provenance[] (signatures of the attending doctor and responsible person)
 ```
 
 ### Example
