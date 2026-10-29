@@ -116,8 +116,8 @@
 
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
-| Shikoyatlar | Жалобы | Encounter.reason.value.concept.text | - | Isitma, balg'amli yo'tal, o'ng tomonda ko'krak qafasida og'riq |
-| Anamnez | Анамнез | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueString | LOINC `10164-2` "History of present illness Narrative" | 5 kun oldin sovqotishdan keyin tana harorati 38,7 °C gacha ko'tarildi, balg'amli yo'tal |
+| Shikoyatlar | Жалобы | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueString | LOINC `8661-1` "Chief complaint - Reported" | Isitma, balg'amli yo'tal, o'ng tomonda ko'krak qafasida og'riq |
+| Anamnez | Анамнез | Observation.valueString | LOINC `10164-2` "History of present illness Narrative" | 5 kun oldin sovqotishdan keyin tana harorati 38,7 °C gacha ko'tarildi, balg'amli yo'tal |
 | Klinik ko'rik | Клинический осмотр | Observation.valueString | LOINC `10210-3` "Physical findings of General status Narrative" | Umumiy holati o'rta og'ir, o'ng o'pka pastki qismida nam xirillashlar |
 | Diagnostik tekshiruv | Диагностическое обследование | [DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html).code | LOINC | `58410-2` "CBC panel - Blood by Automated count" |
 | Leykotsitlar | Лейкоциты | *(DiagnosticReport.result)* Observation.valueQuantity | LOINC `6690-2` "Leukocytes [#/volume] in Blood by Automated count", UCUM `10*9/L` | 13.5 10*9/L |
@@ -194,7 +194,7 @@ Bundle (документ)
 ├── Practitioner[] (лечащий врач, ответственное лицо)
 ├── PractitionerRole[] (должности лечащего врача и ответственного лица)
 ├── Condition[] (основной диагноз, осложнение, сопутствующее заболевание)
-├── Observation[] (анамнез, клинический осмотр, результаты анализов)
+├── Observation[] (жалобы, анамнез, клинический осмотр, результаты анализов)
 ├── DiagnosticReport (диагностические исследования)
 ├── CarePlan[] (лечение и рекомендации, наблюдение)
 ├── MedicationRequest / Medication (рецепт)

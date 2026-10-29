@@ -29,6 +29,8 @@ Description: "Example of Form 027 extract from patient's medical record"
 * entry[=].resource = condition-complication-027
 * entry[+].fullUrl = "urn:uuid:02700010-1111-2222-3333-444444444444"
 * entry[=].resource = condition-concomitant-027
+* entry[+].fullUrl = "urn:uuid:02700026-1111-2222-3333-444444444444"
+* entry[=].resource = observation-complaints-027
 * entry[+].fullUrl = "urn:uuid:02700011-1111-2222-3333-444444444444"
 * entry[=].resource = observation-anamnesis-027
 * entry[+].fullUrl = "urn:uuid:02700012-1111-2222-3333-444444444444"
@@ -113,6 +115,7 @@ Usage: #inline
 * section[clinicalInformation].title = "Klinik maʼlumotlar"
 * section[=].code = $loinc#34117-2 "History and physical note"
 * section[=].entry[0] = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
+* section[=].entry[+] = Reference(urn:uuid:02700026-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700011-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700012-1111-2222-3333-444444444444)
 * section[=].entry[+] = Reference(urn:uuid:02700013-1111-2222-3333-444444444444)
@@ -181,7 +184,6 @@ Usage: #inline
 * actualPeriod.end = "2026-02-10T09:00:00+05:00"
 * serviceProvider = Reference(urn:uuid:02700004-1111-2222-3333-444444444444)
 * admission.origin = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
-* reason.value.concept.text = "Isitma, balg'amli yo'tal, o'ng tomonda ko'krak qafasida og'riq"
 
 
 Instance: organization-027-001
@@ -272,6 +274,19 @@ Usage: #inline
 * category = $diagnosis-role#complication
 * code = $icd10#J90 "Pleural effusion, not elsewhere classified"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
+
+
+Instance: observation-complaints-027
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#8661-1 "Chief complaint - Reported"
+* subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-02-08T09:05:00+05:00"
+* performer = Reference(urn:uuid:02700006-1111-2222-3333-444444444444)
+* valueString = "Isitma, balg'amli yo'tal, o'ng tomonda ko'krak qafasida og'riq"
 
 
 Instance: observation-anamnesis-027
