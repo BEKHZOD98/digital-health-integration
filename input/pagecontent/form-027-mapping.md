@@ -160,19 +160,19 @@ Section code: LOINC `LP35157-4` "Responsible party".
 
 ### Required codes
 
-Elements that have no field on the paper form but must be sent, and the code to put in them. `subject` (`patient` in EpisodeOfCare) is always the Patient and is not listed.
+FHIR requires these elements, but the paper form has no field for them. Set them as follows:
 
 | Resource | Element | Code | Value |
 |---|---|---|---|
-| Encounter | status | [EncounterStatus](https://hl7.org/fhir/R5/valueset-encounter-status.html) | `completed` once the stay or visit the extract covers has ended |
-| Condition | clinicalStatus | [ConditionClinicalStatusCodes](https://hl7.org/fhir/R5/valueset-condition-clinical.html) | `active` while the disease continues, `resolved` once it is over |
-| Observation | status | [ObservationStatus](https://hl7.org/fhir/R5/valueset-observation-status.html) | `final` |
-| DiagnosticReport | status | [DiagnosticReportStatus](https://hl7.org/fhir/R5/valueset-diagnostic-report-status.html) | `final` once the results are released |
+| Encounter | status | [Encounter Status](https://dhp.uz/fhir/core/en/ValueSet-encounter-status-vs.html) | `completed` once the stay or visit the extract covers has ended |
+| Condition | clinicalStatus | [Clinical Status](https://dhp.uz/fhir/core/en/ValueSet-clinical-status-vs.html) | `active` while the disease continues, `resolved` once it is over |
+| Observation | status | [Observation Status](https://dhp.uz/fhir/core/en/ValueSet-observation-status-vs.html) | `final` |
+| DiagnosticReport | status | [Diagnostic Report Status](https://dhp.uz/fhir/core/en/ValueSet-diagnostic-report-status-vs.html) | `final` once the results are released |
 | CarePlan (treatment and recommendations) | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [CarePlanIntent](https://hl7.org/fhir/R5/valueset-care-plan-intent.html) | `active` while the recommendations apply; `plan` |
-| MedicationRequest | status; intent | [MedicationRequest Status](https://hl7.org/fhir/R5/valueset-medicationrequest-status.html); [MedicationRequest Intent](https://hl7.org/fhir/R5/valueset-medicationrequest-intent.html) | `active`; `order` (prescription issued with the extract) |
+| MedicationRequest | status; intent | [MedicationRequest Status](https://dhp.uz/fhir/core/en/ValueSet-medicationrequest-status-vs.html); [MedicationRequest Intent](https://dhp.uz/fhir/core/en/ValueSet-medicationrequest-intent-vs.html) | `active`; `order` (prescription issued with the extract) |
 | CarePlan (follow-up) | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [CarePlanIntent](https://hl7.org/fhir/R5/valueset-care-plan-intent.html) | `active`; `plan` |
-| EpisodeOfCare | status | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active` once the patient is registered for dispensary observation, `planned` before |
-| ServiceRequest | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [RequestIntent](https://hl7.org/fhir/R5/valueset-request-intent.html) | `active`; `order` |
+| EpisodeOfCare | status | [EpisodeOfCare Status](https://dhp.uz/fhir/core/en/ValueSet-episode-of-care-status-vs.html) | `active` once the patient is registered for dispensary observation, `planned` before |
+| ServiceRequest | status; intent | [ServiceRequest Status](https://dhp.uz/fhir/core/en/ValueSet-service-request-status-vs.html); [Request Intent](https://dhp.uz/fhir/core/en/ValueSet-request-intent-vs.html) | `active`; `order` |
 
 ---
 

@@ -162,19 +162,19 @@ Bo'lim kodi: LOINC `LP35157-4` "Responsible party".
 
 ### Majburiy kodlar
 
-Qog'oz shaklda maydoni yo'q, lekin albatta yuboriladigan elementlar va ular uchun kodlar. `subject` (EpisodeOfCare'da `patient`) har doim bemor, jadvalga kiritilmagan.
+FHIR bu elementlarni talab qiladi, lekin qog'oz shaklda ular uchun maydon yo'q. Ularni quyidagicha to'ldiring:
 
 | Resurs | Element | Kod | Qiymat |
 |---|---|---|---|
-| Encounter | status | [EncounterStatus](https://hl7.org/fhir/R5/valueset-encounter-status.html) | `completed`, ko'chirma tegishli bo'lgan yotish yoki murojaat tugaganda |
-| Condition | clinicalStatus | [ConditionClinicalStatusCodes](https://hl7.org/fhir/R5/valueset-condition-clinical.html) | `active`, kasallik davom etayotganda, `resolved` - tugaganda |
-| Observation | status | [ObservationStatus](https://hl7.org/fhir/R5/valueset-observation-status.html) | `final` |
-| DiagnosticReport | status | [DiagnosticReportStatus](https://hl7.org/fhir/R5/valueset-diagnostic-report-status.html) | `final`, natijalar berilganda |
+| Encounter | status | [Encounter Status](https://dhp.uz/fhir/core/en/ValueSet-encounter-status-vs.html) | `completed`, ko'chirma tegishli bo'lgan yotish yoki murojaat tugaganda |
+| Condition | clinicalStatus | [Clinical Status](https://dhp.uz/fhir/core/en/ValueSet-clinical-status-vs.html) | `active`, kasallik davom etayotganda, `resolved` - tugaganda |
+| Observation | status | [Observation Status](https://dhp.uz/fhir/core/en/ValueSet-observation-status-vs.html) | `final` |
+| DiagnosticReport | status | [Diagnostic Report Status](https://dhp.uz/fhir/core/en/ValueSet-diagnostic-report-status-vs.html) | `final`, natijalar berilganda |
 | CarePlan (davolash va tavsiyalar) | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [CarePlanIntent](https://hl7.org/fhir/R5/valueset-care-plan-intent.html) | `active`, tavsiyalar amal qilayotganda; `plan` |
-| MedicationRequest | status; intent | [MedicationRequest Status](https://hl7.org/fhir/R5/valueset-medicationrequest-status.html); [MedicationRequest Intent](https://hl7.org/fhir/R5/valueset-medicationrequest-intent.html) | `active`; `order` (ko'chirma bilan berilgan retsept) |
+| MedicationRequest | status; intent | [MedicationRequest Status](https://dhp.uz/fhir/core/en/ValueSet-medicationrequest-status-vs.html); [MedicationRequest Intent](https://dhp.uz/fhir/core/en/ValueSet-medicationrequest-intent-vs.html) | `active`; `order` (ko'chirma bilan berilgan retsept) |
 | CarePlan (kuzatuv) | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [CarePlanIntent](https://hl7.org/fhir/R5/valueset-care-plan-intent.html) | `active`; `plan` |
-| EpisodeOfCare | status | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active`, bemor dispanser hisobiga olinganda, undan oldin `planned` |
-| ServiceRequest | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [RequestIntent](https://hl7.org/fhir/R5/valueset-request-intent.html) | `active`; `order` |
+| EpisodeOfCare | status | [EpisodeOfCare Status](https://dhp.uz/fhir/core/en/ValueSet-episode-of-care-status-vs.html) | `active`, bemor dispanser hisobiga olinganda, undan oldin `planned` |
+| ServiceRequest | status; intent | [ServiceRequest Status](https://dhp.uz/fhir/core/en/ValueSet-service-request-status-vs.html); [Request Intent](https://dhp.uz/fhir/core/en/ValueSet-request-intent-vs.html) | `active`; `order` |
 
 ---
 

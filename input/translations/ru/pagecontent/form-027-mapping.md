@@ -162,19 +162,19 @@
 
 ### Обязательные коды
 
-Элементы, для которых на бумажной форме нет поля, но которые обязательно передаются, и коды для них. `subject` (`patient` в EpisodeOfCare) - всегда пациент, в таблицу не включён.
+FHIR требует эти элементы, но на бумажной форме для них нет поля. Заполняйте их так:
 
 | Ресурс | Элемент | Код | Значение |
 |---|---|---|---|
-| Encounter | status | [EncounterStatus](https://hl7.org/fhir/R5/valueset-encounter-status.html) | `completed`, когда пребывание или обращение, о котором выписка, завершено |
-| Condition | clinicalStatus | [ConditionClinicalStatusCodes](https://hl7.org/fhir/R5/valueset-condition-clinical.html) | `active`, пока заболевание продолжается, `resolved` - когда оно закончилось |
-| Observation | status | [ObservationStatus](https://hl7.org/fhir/R5/valueset-observation-status.html) | `final` |
-| DiagnosticReport | status | [DiagnosticReportStatus](https://hl7.org/fhir/R5/valueset-diagnostic-report-status.html) | `final`, когда результаты выданы |
+| Encounter | status | [Encounter Status](https://dhp.uz/fhir/core/en/ValueSet-encounter-status-vs.html) | `completed`, когда пребывание или обращение, о котором выписка, завершено |
+| Condition | clinicalStatus | [Clinical Status](https://dhp.uz/fhir/core/en/ValueSet-clinical-status-vs.html) | `active`, пока заболевание продолжается, `resolved` - когда оно закончилось |
+| Observation | status | [Observation Status](https://dhp.uz/fhir/core/en/ValueSet-observation-status-vs.html) | `final` |
+| DiagnosticReport | status | [Diagnostic Report Status](https://dhp.uz/fhir/core/en/ValueSet-diagnostic-report-status-vs.html) | `final`, когда результаты выданы |
 | CarePlan (лечение и рекомендации) | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [CarePlanIntent](https://hl7.org/fhir/R5/valueset-care-plan-intent.html) | `active`, пока действуют рекомендации; `plan` |
-| MedicationRequest | status; intent | [MedicationRequest Status](https://hl7.org/fhir/R5/valueset-medicationrequest-status.html); [MedicationRequest Intent](https://hl7.org/fhir/R5/valueset-medicationrequest-intent.html) | `active`; `order` (рецепт, выданный вместе с выпиской) |
+| MedicationRequest | status; intent | [MedicationRequest Status](https://dhp.uz/fhir/core/en/ValueSet-medicationrequest-status-vs.html); [MedicationRequest Intent](https://dhp.uz/fhir/core/en/ValueSet-medicationrequest-intent-vs.html) | `active`; `order` (рецепт, выданный вместе с выпиской) |
 | CarePlan (наблюдение) | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [CarePlanIntent](https://hl7.org/fhir/R5/valueset-care-plan-intent.html) | `active`; `plan` |
-| EpisodeOfCare | status | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active`, когда пациент взят на диспансерный учёт, до этого `planned` |
-| ServiceRequest | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [RequestIntent](https://hl7.org/fhir/R5/valueset-request-intent.html) | `active`; `order` |
+| EpisodeOfCare | status | [EpisodeOfCare Status](https://dhp.uz/fhir/core/en/ValueSet-episode-of-care-status-vs.html) | `active`, когда пациент взят на диспансерный учёт, до этого `planned` |
+| ServiceRequest | status; intent | [ServiceRequest Status](https://dhp.uz/fhir/core/en/ValueSet-service-request-status-vs.html); [Request Intent](https://dhp.uz/fhir/core/en/ValueSet-request-intent-vs.html) | `active`; `order` |
 
 ---
 
