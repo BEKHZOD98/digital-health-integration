@@ -11,13 +11,13 @@
 
 ### Form 027 - Medical Record Extract
 
-This page documents the mapping between Form 027 (Tibbiy muassasadagi bemorning tibbiy kartasidan ko'chirma) fields and FHIR resources.
+This page documents the mapping between [Form 027 (Tibbiy muassasadagi bemorning tibbiy kartasidan ko'chirma)](forms-volume-03-diagnostics-laboratory.html) fields and FHIR resources.
 
 ---
 
 ### Overview
 
-[Form 027](forms-volume-03-diagnostics-laboratory.html) is an extract from a patient's outpatient or inpatient medical record, sent when the patient is referred or transferred. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 027 Medical Record Extract Composition](StructureDefinition-form-027-medical-record-extract-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
+Form 027 is an extract from a patient's outpatient or inpatient medical record, sent when the patient is referred or transferred. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 027 Medical Record Extract Composition](StructureDefinition-form-027-medical-record-extract-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
 
 Each of the 8 sections of the Composition carries its own `section.code` and lists the resources belonging to that part of the form.
 

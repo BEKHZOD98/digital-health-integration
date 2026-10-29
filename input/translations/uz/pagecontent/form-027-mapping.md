@@ -13,13 +13,13 @@
 
 ### 027-shakl - Tibbiy kartadan koʻchirma
 
-Ushbu sahifada 027-shakl (Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
+Ushbu sahifada [027-shakl (Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma)](forms-volume-03-diagnostics-laboratory.html) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
 
 ---
 
 ### Umumiy ma'lumot
 
-[027-shakl](forms-volume-03-diagnostics-laboratory.html) - bemorning ambulator yoki statsionar tibbiy kartasidan ko'chirma bo'lib, bemor yo'llanganda yoki boshqa muassasaga o'tkazilganda yuboriladi. Shakl ma'lumotlari [Form 027 Medical Record Extract Composition](StructureDefinition-form-027-medical-record-extract-composition.html) profiliga mos keluvchi FHIR hujjatiga birlashtirilgan bir nechta FHIR resurslari bilan moslashtiriladi. Imkoni bo'lgan joyda resurslar [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profillariga mos keladi.
+027-shakl - bemorning ambulator yoki statsionar tibbiy kartasidan ko'chirma bo'lib, bemor yo'llanganda yoki boshqa muassasaga o'tkazilganda yuboriladi. Shakl ma'lumotlari [Form 027 Medical Record Extract Composition](StructureDefinition-form-027-medical-record-extract-composition.html) profiliga mos keluvchi FHIR hujjatiga birlashtirilgan bir nechta FHIR resurslari bilan moslashtiriladi. Imkoni bo'lgan joyda resurslar [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profillariga mos keladi.
 
 Composition'ning 8 ta bo'limining har biri o'z `section.code`iga ega va shaklning shu qismiga tegishli resurslarni sanab o'tadi.
 
