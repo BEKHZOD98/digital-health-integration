@@ -160,7 +160,7 @@ Bo'lim kodi: LOINC `LP35157-4` "Responsible party".
 
 ---
 
-### Majburiy kodlar
+### Majburiy maydonlar
 
 FHIR bu elementlarni talab qiladi, lekin qog'oz shaklda ular uchun maydon yo'q. Ularni quyidagicha to'ldiring:
 

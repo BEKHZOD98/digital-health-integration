@@ -158,7 +158,7 @@ Section code: LOINC `LP35157-4` "Responsible party".
 
 ---
 
-### Required codes
+### Required fields
 
 FHIR requires these elements, but the paper form has no field for them. Set them as follows:
 
