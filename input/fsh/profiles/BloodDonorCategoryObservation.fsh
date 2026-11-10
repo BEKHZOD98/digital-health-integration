@@ -66,8 +66,6 @@ Title: "Example Blood Donor Category Observation - Staff Donor"
 Description: "Staff donor with unpaid plasmapheresis, blood group A and a positive RhD type."
 Usage: #example
 * language = #uz
-* identifier[bloodId].system = $blood-id-system
-* identifier[bloodId].value = "BLOOD-2026-00001"
 * status = #final
 * category = DonorCategoryCS#bdcat-0001-00001 "Kadr donor"
 * code = $sct#105470007 "Blood donor"
@@ -88,8 +86,6 @@ Title: "Example Blood Donor Category Observation - Reserve Donor"
 Description: "Reserve donor with paid whole-blood donation, blood group O and a negative RhD type."
 Usage: #example
 * language = #uz
-* identifier[bloodId].system = $blood-id-system
-* identifier[bloodId].value = "BLOOD-2026-00002"
 * status = #final
 * category = DonorCategoryCS#bdcat-0001-00002 "Zaxira donor"
 * code = $sct#105470007 "Blood donor"
@@ -110,8 +106,6 @@ Title: "Example Blood Donor Category Observation - Recipient"
 Description: "Recipient registered with blood group A, a positive RhD type and unspecified anaemia, linked to the registration encounter and registrar."
 Usage: #example
 * language = #uz
-* identifier[bloodId].system = $blood-id-system
-* identifier[bloodId].value = "BLOOD-2026-00003"
 * status = #final
 * code = $sct#116154003 "Patient"
 * subject = Reference(Patient/example-patient-john)
@@ -122,7 +116,7 @@ Usage: #example
 * component[=].valueCodeableConcept = $sct#112144000 "Blood group A"
 * component[+].code = BloodDonorObservationTypeCS#bdobs-0001-00003 "Rezus-omil"
 * component[=].valueCodeableConcept = $sct#165747007 "RhD positive"
-* component[+].code = $loinc#29308-4 "Diagnosis"
+* component[+].code = $loinc#29308-4 "Tashxis"
 * component[=].valueCodeableConcept = $icd-10#D64.9 "Anaemia, unspecified"
 
 Instance: example-blood-recipient-registration-encounter
