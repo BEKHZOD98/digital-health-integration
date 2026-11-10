@@ -15,7 +15,7 @@ Description: "Observation recording a donor's category, the time it was establis
 * identifier[bloodId].system = $blood-id-system (exactly)
 * identifier[bloodId].value 1..1 MS
 
-* category 0..1
+* category 0..*
 * category from DonorCategoryVS (required)
 * category ^short = "Staff or reserve donor category"
 * code from BloodPatientTypeVS (required)
