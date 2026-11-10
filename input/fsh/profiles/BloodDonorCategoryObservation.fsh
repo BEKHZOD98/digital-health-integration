@@ -12,7 +12,7 @@ Description: "Observation recording a donor's category, the time it was establis
 * identifier ^slicing.ordered = false
 * identifier contains bloodId 0..1 MS
 * identifier[bloodId].system 1..1 MS
-* identifier[bloodId].system = $blood-id-system (exactly)
+* identifier[bloodId].system = $blood-id-system
 * identifier[bloodId].value 1..1 MS
 
 * category 0..*

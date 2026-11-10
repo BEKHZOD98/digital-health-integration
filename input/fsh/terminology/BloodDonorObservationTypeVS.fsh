@@ -7,3 +7,6 @@ Description: "Blood donor observation type codes for blood donor registration in
 * ^experimental = true
 * include codes from system BloodDonorObservationTypeCS
 * include $loinc#29308-4
+
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningLaboratoryCS)

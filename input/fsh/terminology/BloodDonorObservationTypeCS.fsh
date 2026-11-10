@@ -1,6 +1,6 @@
 CodeSystem: BloodDonorObservationTypeCS
 Id: blood-donor-observation-type-cs
-Title: "Blood donor observation type"
+Title: "Blood donor observation type codes"
 Description: "Blood donor observation type codes for blood donor registration in Uzbekistan"
 * insert OriginalCodeSystemDraft(blood-donor-observation-type-cs)
 

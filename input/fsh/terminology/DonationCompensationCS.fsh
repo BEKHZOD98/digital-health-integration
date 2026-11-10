@@ -1,6 +1,6 @@
 CodeSystem: DonationCompensationCS
 Id: donation-compensation-cs
-Title: "Donation compensation"
+Title: "Donation compensation codes"
 Description: "Donation compensation codes for blood donor registration in Uzbekistan"
 * insert OriginalCodeSystemDraft(donation-compensation-cs)
 

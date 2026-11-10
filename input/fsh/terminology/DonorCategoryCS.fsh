@@ -1,6 +1,6 @@
 CodeSystem: DonorCategoryCS
 Id: donor-category-cs
-Title: "Donor category"
+Title: "Donor category codes"
 Description: "Donor category codes for blood donor registration in Uzbekistan"
 * insert OriginalCodeSystemDraft(donor-category-cs)
 

@@ -1,6 +1,6 @@
 CodeSystem: DonationTypeCS
 Id: donation-type-cs
-Title: "Donation type"
+Title: "Donation type codes"
 Description: "Donation type codes for blood donor registration in Uzbekistan"
 * insert OriginalCodeSystemDraft(donation-type-cs)
 
