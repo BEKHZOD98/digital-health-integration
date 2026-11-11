@@ -42,7 +42,7 @@
   "status": "active",
   "intent": "order",
   "subject": {
-    "reference": "Patient/donor-123"
+    "reference": "Patient/example-blood-donor"
   }
 }
 ```
@@ -58,7 +58,7 @@
   "status": "active",
   "intent": "order",
   "subject": {
-    "reference": "Patient/donor-123"
+    "reference": "Patient/example-blood-donor"
   },
   "code": {
     "concept": {
@@ -101,7 +101,7 @@
   "status": "active",
   "intent": "order",
   "subject": {
-    "reference": "Patient/donor-123"
+    "reference": "Patient/example-blood-donor"
   },
   "code": {
     "concept": {
@@ -115,7 +115,7 @@
   },
   "focus": [
     {
-      "reference": "InventoryItem/blood-component-789"
+      "reference": "InventoryItem/example-blood-component-inventory"
     }
   ],
   "orderDetail": [

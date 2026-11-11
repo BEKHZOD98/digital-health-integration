@@ -40,7 +40,7 @@ The first example is minimal; the second adds a selected laboratory test; the th
   "status": "active",
   "intent": "order",
   "subject": {
-    "reference": "Patient/donor-123"
+    "reference": "Patient/example-blood-donor"
   }
 }
 ```
@@ -56,7 +56,7 @@ The first example is minimal; the second adds a selected laboratory test; the th
   "status": "active",
   "intent": "order",
   "subject": {
-    "reference": "Patient/donor-123"
+    "reference": "Patient/example-blood-donor"
   },
   "code": {
     "concept": {
@@ -99,7 +99,7 @@ The first example is minimal; the second adds a selected laboratory test; the th
   "status": "active",
   "intent": "order",
   "subject": {
-    "reference": "Patient/donor-123"
+    "reference": "Patient/example-blood-donor"
   },
   "code": {
     "concept": {
@@ -113,7 +113,7 @@ The first example is minimal; the second adds a selected laboratory test; the th
   },
   "focus": [
     {
-      "reference": "InventoryItem/blood-component-789"
+      "reference": "InventoryItem/example-blood-component-inventory"
     }
   ],
   "orderDetail": [

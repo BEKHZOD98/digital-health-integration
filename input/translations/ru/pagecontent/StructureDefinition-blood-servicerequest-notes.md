@@ -16,7 +16,7 @@ GET [base]/ServiceRequest/[id]
 ```http
 GET [base]/ServiceRequest?identifier=[system]%7C[value]
 GET [base]/ServiceRequest?code=http://snomed.info/sct%7C108252007
-GET [base]/ServiceRequest?subject=Patient/donor-123
+GET [base]/ServiceRequest?subject=Patient/example-blood-donor
 ```
 
 Создание запроса по одному из примеров:
