@@ -21,9 +21,3 @@ Description: "Blood donor observation type codes for blood donor registration in
   * ^designation[=].value = "Резус-фактор"
   * ^designation[+].language = #en
   * ^designation[=].value = "Rh factor"
-
-* #bdobs-0001-00004 "Donor toifasi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Категория донора"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Donor category"

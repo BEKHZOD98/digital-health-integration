@@ -1,6 +1,6 @@
 ValueSet: BloodPatientTypeVS
 Id: blood-patient-type-vs
-Title: "Blood Patient Type"
+Title: "Blood patient type"
 Description: "Types of blood patients for registration in blood system"
 * insert IntegrationsValueSet(blood-patient-type-vs)
 * ^status = #draft
