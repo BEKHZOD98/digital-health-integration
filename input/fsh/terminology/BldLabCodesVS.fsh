@@ -6,6 +6,12 @@ Description: "Laboratory tests and local blood component processing operations s
 * ^status = #draft
 * ^experimental = true
 
+// Reuse existing Uzbek and Russian translations for the included LOINC codes.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(Form096LoincSupplementCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(Form111LoincSupplementCS)
+
 // Candidate laboratory codes from the integration specification.
 // Confirm method and specimen compatibility before production use.
 * include $loinc#1975-2
