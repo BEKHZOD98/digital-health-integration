@@ -102,9 +102,9 @@ Blood Service Registration Observation фиксирует, что человек
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-category-cs",
-            "code": "bdcat-0001-00001",
-            "display": "Kadr donor"
+            "system": "http://snomed.info/sct",
+            "code": "275561000",
+            "display": "Regular blood donor"
           }
         ]
       }

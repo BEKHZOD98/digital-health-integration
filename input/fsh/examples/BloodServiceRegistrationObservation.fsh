@@ -11,7 +11,7 @@ Usage: #example
 * effectiveDateTime = "2026-09-23T10:30:00+05:00"
 * performer = Reference(PractitionerRole/example-practitionerrole)
 * component[donorCategory].code = BloodServiceObservationTypeCS#bsobs-0002-00001 "Donor toifasi"
-* component[donorCategory].valueCodeableConcept = DonorCategoryCS#bdcat-0001-00001 "Kadr donor"
+* component[donorCategory].valueCodeableConcept = $sct#275561000 "Regular blood donor"
 * component[compensation].code = BloodServiceObservationTypeCS#bsobs-0002-00002 "Donatsiya to'lovi"
 * component[compensation].valueCodeableConcept = DonationCompensationCS#bdcomp-0001-00001 "Bepul"
 * component[donationType].code = BloodServiceObservationTypeCS#bsobs-0002-00003 "Donatsiya turi"

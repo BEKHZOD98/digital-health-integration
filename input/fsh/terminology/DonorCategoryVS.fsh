@@ -6,3 +6,4 @@ Description: "Donor categories"
 * ^status = #draft
 * ^experimental = true
 * include codes from system DonorCategoryCS
+* include $sct#275561000 "Regular blood donor"
