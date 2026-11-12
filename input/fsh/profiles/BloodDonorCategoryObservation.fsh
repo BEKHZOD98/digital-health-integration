@@ -30,7 +30,6 @@ Description: "Observation recording a donor's category, the time it was establis
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Sliced by the code identifying each blood donor data item."
-* component.code from BloodDonorObservationTypeVS (required)
 * component contains
     donationType 0..1 MS and
     bloodGroup 0..1 MS and
@@ -43,12 +42,12 @@ Description: "Observation recording a donor's category, the time it was establis
 * component[donationType].valueCodeableConcept from DonationTypeVS (required)
 
 * component[bloodGroup] ^short = "ABO blood group"
-* component[bloodGroup].code = BloodDonorObservationTypeCS#bdobs-0001-00002
+* component[bloodGroup].code = $loinc#883-9
 * component[bloodGroup].value[x] only CodeableConcept
 * component[bloodGroup].valueCodeableConcept from $blood-group-vs (required)
 
 * component[rhFactor] ^short = "Rh factor"
-* component[rhFactor].code = BloodDonorObservationTypeCS#bdobs-0001-00003
+* component[rhFactor].code = $loinc#10331-7
 * component[rhFactor].value[x] only CodeableConcept
 * component[rhFactor].valueCodeableConcept from $blood-rh-vs (required)
 

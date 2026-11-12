@@ -12,10 +12,10 @@ Usage: #example
 * performer = Reference(PractitionerRole/example-practitionerrole)
 * valueCodeableConcept = DonationCompensationCS#bdcomp-0001-00001 "Bepul"
 * component[donationType].code = BloodDonorObservationTypeCS#bdobs-0001-00001 "Donatsiya turi"
-* component[donationType].valueCodeableConcept = DonationTypeCS#bdtype-0001-00002 "Plazmaferez"
-* component[bloodGroup].code = BloodDonorObservationTypeCS#bdobs-0001-00002 "Qon guruhi"
+* component[donationType].valueCodeableConcept = $sct#20720000 "Plasmapheresis"
+* component[bloodGroup].code = $loinc#883-9 "Qonda ABO guruhi turi"
 * component[bloodGroup].valueCodeableConcept = $sct#112144000
-* component[rhFactor].code = BloodDonorObservationTypeCS#bdobs-0001-00003 "Rezus-omil"
+* component[rhFactor].code = $loinc#10331-7 "Qonda Rh turi"
 * component[rhFactor].valueCodeableConcept = $sct#165747007
 
 Instance: example-blood-donor-category-observation-reserve
@@ -27,15 +27,15 @@ Usage: #example
 * status = #final
 * category[donorCategory] = DonorCategoryCS#bdcat-0001-00002 "Zaxira donor"
 * code = $sct#105470007 "Blood donor"
-* subject = Reference(Patient/example-patient-john)
+* subject = Reference(Patient/ExamplePatient)
 * effectiveDateTime = "2026-09-24T09:00:00+05:00"
 * performer = Reference(PractitionerRole/example-practitionerrole)
 * valueCodeableConcept = DonationCompensationCS#bdcomp-0001-00002 "Pullik"
 * component[donationType].code = BloodDonorObservationTypeCS#bdobs-0001-00001 "Donatsiya turi"
-* component[donationType].valueCodeableConcept = DonationTypeCS#bdtype-0001-00001 "To'liq qon"
-* component[bloodGroup].code = BloodDonorObservationTypeCS#bdobs-0001-00002 "Qon guruhi"
+* component[donationType].valueCodeableConcept = $sct#25179006 "Whole blood unit collection"
+* component[bloodGroup].code = $loinc#883-9 "Qonda ABO guruhi turi"
 * component[bloodGroup].valueCodeableConcept = $sct#58460004
-* component[rhFactor].code = BloodDonorObservationTypeCS#bdobs-0001-00003 "Rezus-omil"
+* component[rhFactor].code = $loinc#10331-7 "Qonda Rh turi"
 * component[rhFactor].valueCodeableConcept = $sct#165746003
 
 Instance: example-blood-recipient-category-observation
@@ -50,9 +50,9 @@ Usage: #example
 * encounter = Reference(example-blood-recipient-registration-encounter)
 * effectiveDateTime = "2026-09-25T11:00:00+05:00"
 * performer = Reference(example-blood-recipient-registrar)
-* component[bloodGroup].code = BloodDonorObservationTypeCS#bdobs-0001-00002 "Qon guruhi"
+* component[bloodGroup].code = $loinc#883-9 "Qonda ABO guruhi turi"
 * component[bloodGroup].valueCodeableConcept = $sct#112144000
-* component[rhFactor].code = BloodDonorObservationTypeCS#bdobs-0001-00003 "Rezus-omil"
+* component[rhFactor].code = $loinc#10331-7 "Qonda Rh turi"
 * component[rhFactor].valueCodeableConcept = $sct#165747007
 * component[diagnosis].code = $loinc#29308-4
 * component[diagnosis].valueCodeableConcept = $icd-10#D64.9 "Anaemia, unspecified"

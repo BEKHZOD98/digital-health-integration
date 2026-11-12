@@ -99,11 +99,11 @@ Donation type, blood group and Rh factor each go in their own `component` slice.
 | Slice | `code` | `valueCodeableConcept` from |
 |---|---|---|
 | `donationType` | `bdobs-0001-00001` | [Donation type](ValueSet-donation-type-vs.html) |
-| `bloodGroup` | `bdobs-0001-00002` | [Blood group](https://dhp.uz/fhir/core/en/ValueSet-blood-group-vs.html) (SNOMED CT) |
-| `rhFactor` | `bdobs-0001-00003` | [Rh factor](https://dhp.uz/fhir/core/en/ValueSet-blood-rh-vs.html) (SNOMED CT) |
+| `bloodGroup` | LOINC `883-9` | [Blood group](https://dhp.uz/fhir/core/en/ValueSet-blood-group-vs.html) (SNOMED CT) |
+| `rhFactor` | LOINC `10331-7` | [Rh factor](https://dhp.uz/fhir/core/en/ValueSet-blood-rh-vs.html) (SNOMED CT) |
 | `diagnosis` | LOINC `29308-4` | ICD-10 |
 
-The first three codes are in `https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs`:
+The donation type code is in `https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs`; blood group and Rh factor use the same LOINC codes as blood group results elsewhere, and the donation type values are SNOMED CT procedures:
 
 ```json
 {
@@ -155,8 +155,8 @@ The first three codes are in `https://terminology.dhp.uz/fhir/integrations/CodeS
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/donation-type-cs",
-            "code": "bdtype-0001-00002",
+            "system": "http://snomed.info/sct",
+            "code": "20720000",
             "display": "Plazmaferez"
           }
         ]
@@ -164,13 +164,7 @@ The first three codes are in `https://terminology.dhp.uz/fhir/integrations/CodeS
     },
     {
       "code": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs",
-            "code": "bdobs-0001-00002",
-            "display": "Qon guruhi"
-          }
-        ]
+        "coding": [ { "system": "http://loinc.org", "code": "883-9" } ]
       },
       "valueCodeableConcept": {
         "coding": [
@@ -180,13 +174,7 @@ The first three codes are in `https://terminology.dhp.uz/fhir/integrations/CodeS
     },
     {
       "code": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs",
-            "code": "bdobs-0001-00003",
-            "display": "Rezus-omil"
-          }
-        ]
+        "coding": [ { "system": "http://loinc.org", "code": "10331-7" } ]
       },
       "valueCodeableConcept": {
         "coding": [
@@ -222,13 +210,7 @@ A recipient uses the SNOMED CT code `116154003` (Patient) and has no donor categ
   "component": [
     {
       "code": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs",
-            "code": "bdobs-0001-00002",
-            "display": "Qon guruhi"
-          }
-        ]
+        "coding": [ { "system": "http://loinc.org", "code": "883-9" } ]
       },
       "valueCodeableConcept": {
         "coding": [

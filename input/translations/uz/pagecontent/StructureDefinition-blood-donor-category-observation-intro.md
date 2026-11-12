@@ -101,11 +101,11 @@ Donatsiya turi, qon guruhi va rezus-omil har biri o'z `component` slaysida yozil
 | Slays | `code` | `valueCodeableConcept` manbai |
 |---|---|---|
 | `donationType` | `bdobs-0001-00001` | [Donatsiya turi](ValueSet-donation-type-vs.html) |
-| `bloodGroup` | `bdobs-0001-00002` | [Qon guruhi](https://dhp.uz/fhir/core/uz/ValueSet-blood-group-vs.html) (SNOMED CT) |
-| `rhFactor` | `bdobs-0001-00003` | [Rezus-omil](https://dhp.uz/fhir/core/uz/ValueSet-blood-rh-vs.html) (SNOMED CT) |
+| `bloodGroup` | LOINC `883-9` | [Qon guruhi](https://dhp.uz/fhir/core/uz/ValueSet-blood-group-vs.html) (SNOMED CT) |
+| `rhFactor` | LOINC `10331-7` | [Rezus-omil](https://dhp.uz/fhir/core/uz/ValueSet-blood-rh-vs.html) (SNOMED CT) |
 | `diagnosis` | LOINC `29308-4` | XKT-10 |
 
-Dastlabki uchta kod `https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs` tizimida:
+Donatsiya turi kodi `https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs` tizimida; qon guruhi va rezus-omil uchun boshqa qon guruhi natijalaridagi LOINC kodlari ishlatiladi, donatsiya turi qiymatlari esa SNOMED CT protseduralari:
 
 ```json
 {
@@ -157,8 +157,8 @@ Dastlabki uchta kod `https://terminology.dhp.uz/fhir/integrations/CodeSystem/blo
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/donation-type-cs",
-            "code": "bdtype-0001-00002",
+            "system": "http://snomed.info/sct",
+            "code": "20720000",
             "display": "Plazmaferez"
           }
         ]
@@ -166,13 +166,7 @@ Dastlabki uchta kod `https://terminology.dhp.uz/fhir/integrations/CodeSystem/blo
     },
     {
       "code": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs",
-            "code": "bdobs-0001-00002",
-            "display": "Qon guruhi"
-          }
-        ]
+        "coding": [ { "system": "http://loinc.org", "code": "883-9" } ]
       },
       "valueCodeableConcept": {
         "coding": [
@@ -182,13 +176,7 @@ Dastlabki uchta kod `https://terminology.dhp.uz/fhir/integrations/CodeSystem/blo
     },
     {
       "code": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs",
-            "code": "bdobs-0001-00003",
-            "display": "Rezus-omil"
-          }
-        ]
+        "coding": [ { "system": "http://loinc.org", "code": "10331-7" } ]
       },
       "valueCodeableConcept": {
         "coding": [
@@ -224,13 +212,7 @@ Retsipiyent uchun SNOMED CT `116154003` (Patient) kodi ishlatiladi, donor toifas
   "component": [
     {
       "code": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-donor-observation-type-cs",
-            "code": "bdobs-0001-00002",
-            "display": "Qon guruhi"
-          }
-        ]
+        "coding": [ { "system": "http://loinc.org", "code": "883-9" } ]
       },
       "valueCodeableConcept": {
         "coding": [

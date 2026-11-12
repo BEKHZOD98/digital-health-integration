@@ -1,7 +1,7 @@
 CodeSystem: DonorCategoryCS
 Id: donor-category-cs
 Title: "Donor category codes"
-Description: "Donor category codes for blood donor registration in Uzbekistan"
+Description: "Donor categories in Uzbekistan"
 * insert OriginalCodeSystemDraft(donor-category-cs)
 
 * #bdcat-0001-00001 "Kadr donor"

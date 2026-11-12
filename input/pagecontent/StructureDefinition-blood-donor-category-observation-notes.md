@@ -36,7 +36,9 @@ POST [base]/Observation
 }
 ```
 
-**Update** (for example, when a reserve donor becomes a staff donor) - PUT the full resource back with the new `category`:
+**Record a change** (for example, when a reserve donor becomes a staff donor) - POST a new Observation with the new `category` and the date of the change in `effectiveDateTime`. The earlier record stays as the history of the registration; the latest `effectiveDateTime` is the current category.
+
+**Correct an error** - PUT the full resource back with the corrected value:
 
 ```
 PUT [base]/Observation/[id]

@@ -38,7 +38,9 @@ POST [base]/Observation
 }
 ```
 
-**Yangilash** (masalan, zaxira donor kadr donorga aylanganda) - to'liq resursni yangi `category` bilan qaytarib PUT qiling:
+**Toifa o'zgarishi** (masalan, zaxira donor kadr donorga aylanganda) - yangi `category` va o'zgarish sanasi `effectiveDateTime` da ko'rsatilgan yangi Observation ni POST qiling. Avvalgi yozuv ro'yxatga olish tarixi sifatida qoladi; joriy toifa - eng so'nggi `effectiveDateTime` ga ega yozuv.
+
+**Xatoni tuzatish** - to'liq resursni tuzatilgan qiymat bilan qaytarib PUT qiling:
 
 ```
 PUT [base]/Observation/[id]
