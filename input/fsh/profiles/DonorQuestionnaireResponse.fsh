@@ -5,7 +5,7 @@ Title: "Donor QuestionnaireResponse"
 Description: "Responses to the blood donor questionnaire, retaining source question identifiers and date, text or boolean answer types."
 * ^status = #draft
 * ^experimental = true
-* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire"
+* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire|1.0.0"
 * subject 1..1
 * subject only Reference(UZCorePatient)
 * authored 1..1

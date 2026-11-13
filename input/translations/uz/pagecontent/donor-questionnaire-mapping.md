@@ -1,6 +1,6 @@
 > Bu inglizcha sahifaning mashina tarjimasi.
 
-# Donor so‘rovnomasi maydonlari mosligi
+### Donor so‘rovnomasi maydonlari mosligi
 
 [Source spreadsheet](https://docs.google.com/spreadsheets/d/1SFVk1U3Z4mQ-SYf6bX28hfKYHE3UL2Rz2bMEyQDzPeI/edit).
 

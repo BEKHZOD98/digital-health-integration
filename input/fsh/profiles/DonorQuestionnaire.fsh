@@ -20,6 +20,8 @@ Description: "Multilingual blood donor questionnaire collecting medical history,
 * item ^slicing.discriminator.path = "linkId"
 * item ^slicing.rules = #closed
 * item.item 0..0
+* item.answerOption 0..0
+* item.answerOption.value[x] only Coding or string
 * item ^short = "Questions from the donor questionnaire specification"
 * item contains
     lastDonation 0..1 MS and

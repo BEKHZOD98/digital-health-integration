@@ -16,7 +16,7 @@ Start with one dated answer, add a boolean answer, then use the complete example
       "https://dhp.uz/fhir/integrations/StructureDefinition/donor-questionnaire-response"
     ]
   },
-  "questionnaire": "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire",
+  "questionnaire": "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire|1.0.0",
   "status": "in-progress",
   "subject": {
     "reference": "Patient/example-donor-questionnaire-patient"
@@ -43,7 +43,7 @@ Start with one dated answer, add a boolean answer, then use the complete example
       "https://dhp.uz/fhir/integrations/StructureDefinition/donor-questionnaire-response"
     ]
   },
-  "questionnaire": "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire",
+  "questionnaire": "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire|1.0.0",
   "status": "in-progress",
   "subject": {
     "reference": "Patient/example-donor-questionnaire-patient"

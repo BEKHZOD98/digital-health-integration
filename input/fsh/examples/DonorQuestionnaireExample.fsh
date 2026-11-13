@@ -4,7 +4,7 @@ Usage: #example
 Title: "Example Donor QuestionnaireResponse - Completed Donor Interview"
 Description: "Synthetic completed donor questionnaire. A recent tattoo is reported for clinical review; no eligibility or deferral decision is calculated."
 * language = #uz
-* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire"
+* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire|1.0.0"
 * status = #completed
 * subject = Reference(example-donor-questionnaire-patient)
 * authored = "2026-11-13T09:30:00+05:00"

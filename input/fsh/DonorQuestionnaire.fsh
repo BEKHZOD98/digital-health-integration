@@ -4,6 +4,7 @@ Usage: #definition
 Title: "Donor Medical History Questionnaire"
 Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian and English. Answers support clinical review and do not automatically establish deferral."
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire"
+* version = "1.0.0"
 * name = "DonorQuestionnaire"
 * language = #uz
 * status = #draft

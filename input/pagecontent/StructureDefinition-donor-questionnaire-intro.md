@@ -17,6 +17,7 @@ Start with one date question, add a coded boolean question, then retrieve the co
     ]
   },
   "url": "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire",
+  "version": "1.0.0",
   "status": "draft",
   "title": "Donor questionnaire",
   "subjectType": [
@@ -62,6 +63,7 @@ Start with one date question, add a coded boolean question, then retrieve the co
     ]
   },
   "url": "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire",
+  "version": "1.0.0",
   "status": "draft",
   "title": "Donor questionnaire",
   "subjectType": [

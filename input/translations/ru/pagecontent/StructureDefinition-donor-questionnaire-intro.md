@@ -19,6 +19,7 @@
     ]
   },
   "url": "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire",
+  "version": "1.0.0",
   "status": "draft",
   "title": "Donor questionnaire",
   "subjectType": [
@@ -64,6 +65,7 @@
     ]
   },
   "url": "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire",
+  "version": "1.0.0",
   "status": "draft",
   "title": "Donor questionnaire",
   "subjectType": [
