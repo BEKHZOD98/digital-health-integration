@@ -20,7 +20,7 @@ Usage: #example
 * component[obstetricHistory].code = BloodTransfusionAssessmentCS#bldcomp-0001-00004 "Akusherlik anamnezi"
 * component[obstetricHistory].valueCodeableConcept = ObstetricHistoryCS#bldcomp-0004-00002 "Homiladorlik yoki tug‘ruq bo‘lmagan"
 * component[preliminaryAboGroup].code = BloodTransfusionAssessmentCS#bldcomp-0001-00005 "Dastlabki ABO qon guruhi"
-* component[preliminaryAboGroup].valueCodeableConcept = $sct#112144000 "II guruh (A)"
+* component[preliminaryAboGroup].valueCodeableConcept = $sct#112144000
 * component[biologicalSpecimen].code = BloodTransfusionAssessmentCS#bldcomp-0001-00006 "Biologik namuna"
 * component[biologicalSpecimen].valueCodeableConcept = $sct#260385009 "Negative"
 
