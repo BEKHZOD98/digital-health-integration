@@ -290,4 +290,4 @@ Alias: $composition-category-cs = https://terminology.dhp.uz/fhir/core/CodeSyste
 Alias: $form-044-observation-code-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form-044-observation-code-cs
 
 //Blood management
-Alias: $blood-group-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-group-vs
+Alias: $blood-group-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/blood-group-cs

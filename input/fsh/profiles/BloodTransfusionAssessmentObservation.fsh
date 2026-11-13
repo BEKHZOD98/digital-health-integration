@@ -57,7 +57,7 @@ Description: "Integration Observation profile for pre-transfusion assessment and
 * component[preliminaryAboGroup].code = BloodTransfusionAssessmentCS#bldcomp-0001-00005
 * component[preliminaryAboGroup].code.coding 1..1
 * component[preliminaryAboGroup].value[x] only CodeableConcept
-* component[preliminaryAboGroup].valueCodeableConcept from $blood-group-vs (required)
+* component[preliminaryAboGroup].valueCodeableConcept from BldAboGroupVS (required)
 
 * component[biologicalSpecimen] ^short = "Biological test result"
 * component[biologicalSpecimen].code = BloodTransfusionAssessmentCS#bldcomp-0001-00006
