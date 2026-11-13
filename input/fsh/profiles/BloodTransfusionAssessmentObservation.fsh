@@ -17,7 +17,7 @@ Description: "Integration Observation profile for pre-transfusion assessment and
 * effective[x] ^short = "Actual time or period of the assessment"
 * issued ^short = "When this version of the result became available"
 * component.code from BloodTransfusionAssessmentVS (required)
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.ordered = false
