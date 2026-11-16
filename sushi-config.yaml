@@ -25,7 +25,7 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  # Match the terminology and extension versions required by uz.dhp.core 0.12.0.
+  # Match the UTG and extensions versions that uz.dhp.core 0.12.0 depends on.
   hl7.terminology.r5: 7.5.0
   hl7.fhir.uv.extensions.r5: 5.4.0
   hl7.fhir.uv.tools.r5: 1.3.0
@@ -136,6 +136,8 @@ pages:
     title: Cancer
   hepatitis.md:
     title: Hepatitis
+  blood-management.md:
+    title: Blood Management
   forms.md:
     title: Questionnaires
   donor-questionnaire-mapping.md:
@@ -193,6 +195,7 @@ menu:
     Psychiatry: psychiatry.html
     Cancer: cancer.html
     Hepatitis: hepatitis.html
+    Blood Management: blood-management.html
   Questionnaires: forms.html
   Donor Questionnaire Mapping: donor-questionnaire-mapping.html
   Artifacts: artifacts.html
