@@ -1,42 +1,70 @@
-> Этот текст переведен автоматически.
+> **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
 
-### Быстрое начало работы {#quick-start}
+### Быстрый старт {#quick-start}
 
-Типичные API-взаимодействия для данного профиля. Запросы требуют JWT-токена доступа - см. [Безопасность и аутентификация](https://dhp.uz/fhir/core/api-access.html#security). `[base]` - это [базовый URL FHIR-сервера](https://dhp.uz/fhir/core/api-access.html#endpoints); `|` отделяет систему идентификатора от его значения и должен быть URL-кодирован как `%7C`.
+Типичные API-взаимодействия для данного профиля. Запросы требуют JWT-токена доступа - см. [Безопасность и аутентификация](https://dhp.uz/fhir/core/api-access.html#security). `[base]` - это [базовый URL FHIR-сервера](https://dhp.uz/fhir/core/api-access.html#endpoints); `|` отделяет кодовую систему от значения и должен быть URL-кодирован как `%7C`.
 
-Чтение запроса:
+**Чтение запроса по серверному id и его предыдущих версий**
 
-```http
+```
 GET [base]/ServiceRequest/[id]
+GET [base]/ServiceRequest/[id]/_history
 ```
 
-Поиск по идентификатору, общему коду услуги или донору:
+**Поиск**
 
-```http
+```
 GET [base]/ServiceRequest?identifier=[system]%7C[value]
-GET [base]/ServiceRequest?code-concept=http://snomed.info/sct%7C108252007
-GET [base]/ServiceRequest?subject=Patient/example-blood-donor
+GET [base]/ServiceRequest?requisition=[system]%7C[value]
+GET [base]/ServiceRequest?code-concept=http://snomed.info/sct%7C108252007&patient=Patient/[id]
+GET [base]/ServiceRequest?code-concept=http://snomed.info/sct%7C64108007&status=active
+GET [base]/ServiceRequest?encounter=Encounter/[id]
+GET [base]/ServiceRequest?patient=Patient/[id]&status=active
+GET [base]/ServiceRequest?specimen=Specimen/[id]
 ```
 
-Создание запроса по одному из примеров:
+**Получение лабораторного назначения вместе с результатами**
 
-```http
+```
+GET [base]/ServiceRequest?_id=[id]&_revinclude=DiagnosticReport:based-on
+```
+
+**Создание запроса**
+
+```
 POST [base]/ServiceRequest
-Content-Type: application/fhir+json
+{
+  "resourceType": "ServiceRequest",
+  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest" ] },
+  "status": "active",
+  "intent": "order",
+  "code": { "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "108252007" } ] } },
+  "subject": { "reference": "Patient/[id]" },
+  "requester": { "reference": "Practitioner/[id]" },
+  "authoredOn": "2026-11-10T09:05:00+05:00",
+  "orderDetail": [ { "parameter": [ { "code": { "coding": [ ... ] }, "valueBoolean": true } ] } ],
+  ...
+}
 ```
 
-Обновление с указанием текущей версии для защиты от параллельных изменений:
+**Обновление существующего запроса** (например, установить `status` в `completed`, когда подтверждена каждая операция переработки)
 
-```http
+```
 PUT [base]/ServiceRequest/[id]
-Content-Type: application/fhir+json
-If-Match: W/"[versionId]"
+If-Match: W/"3"   # the ETag from your last read; 412 if it changed since
+{
+  "resourceType": "ServiceRequest",
+  "id": "[id]",
+  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest" ] },
+  "status": "completed",
+  ...
+}
 ```
 
 Полный список поддерживаемых параметров поиска приведён в [CapabilityStatement](https://dhp.uz/fhir/core/CapabilityStatement-DHPCapabilityStatement.html#ServiceRequest1-13).
 
-### Связанные материалы
+### Связанные разделы
 
-- [Формы службы крови](forms-volume-08-blood-service.html)
-- [Лабораторные исследования и операции переработки](ValueSet-bld-lab-codes-vs.html)
-- [Локальные операции переработки](CodeSystem-processing-operation-cs.html)
+- [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest) &middot; [UZ Core Specimen](https://dhp.uz/fhir/core/StructureDefinition/uz-core-specimen) &middot; [UZ Core InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem)
+- [Формы службы крови](forms-volume-08-blood-service.html) &middot; [Лабораторные исследования и операции переработки](ValueSet-bld-lab-codes-vs.html) &middot; [Операции переработки](CodeSystem-processing-operation-cs.html)
+- [Рабочий процесс лабораторного исследования](https://dhp.uz/fhir/core/workflow-lab.html) &middot; [Must Support](https://dhp.uz/fhir/core/must-support.html) &middot; [Общие рекомендации](https://dhp.uz/fhir/core/general-guidance.html)

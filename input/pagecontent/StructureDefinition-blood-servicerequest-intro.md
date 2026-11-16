@@ -1,4 +1,4 @@
-This profile represents donor laboratory orders and requests for secondary processing of blood components. It derives from [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition-uz-core-servicerequest.html) and references existing donors, encounters, specimens and inventory items.
+Blood ServiceRequest is a request from the blood service for a donor's laboratory tests or for secondary processing of a blood component (washing, irradiation, freezing or thawing). It builds on [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest) and records the request only, not what was done. A laboratory order names the donor [Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient), the donation [Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) and the donor [Specimens](https://dhp.uz/fhir/core/StructureDefinition/uz-core-specimen) to test; a processing request points to the blood component's [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem). The selected tests or operations are listed in `orderDetail`, so one request carries every selection for one laboratory or one component. See [Blood service forms](forms-volume-08-blood-service.html) for the source forms.
 
 ### Mandatory and Must Support data elements
 
@@ -6,80 +6,82 @@ The elements below must always be present (mandatory) or must be supported when 
 
 #### Each Blood ServiceRequest Must Have
 
-Each request must have a status, the intent `order`, and a donor reference. Each order detail must have at least one parameter; each parameter must have a selected test or operation code and `valueBoolean: true`. The inherited prr-1 invariant requires `code` whenever `orderDetail` is present.
+Each request must have a `status`, the intent `order` and the donor (`subject`). Each order detail parameter must have the selected test or operation in `code` and `valueBoolean` set to `true`. The base resource also requires `code` whenever `orderDetail` is present.
 
 #### Each Blood ServiceRequest Must Support
 
-- Order identifiers and a shared requisition identifier.
-- The receiving laboratory category, donor encounter, planned time and creation time.
-- Requester, performer, location, specimens and clinical reason.
-- Component inventory item, supporting information, comments and selected tests or operations.
-
-### Workflow
-
-Create a separate request for each receiving laboratory: four for a reserve donor and five for a regular donor. Use the inherited optional `category[dhpCategory]` to identify the laboratory. For secondary processing, create one request per component with all selected operations; omit the category when none applies. Keep the request active until every operation is confirmed, then mark it completed. This transition requires application workflow state.
-
-### Open implementation decisions
-
-The laboratory codes are candidates: confirm the assay, specimen and tube compatibility. SNOMED CT `64108007` remains a provisional overall processing service code and is not fixed by this profile. Destination-only requests for fractionation, cryoprecipitate or disposal remain unresolved. `focus` accepts UZ Core InventoryItem; confirm deployed-server support. Do not duplicate the same component in `supportingInfo`.
-
-The source spreadsheet proposes the blood product identifier system for request identifiers. That system identifies products, so it is not fixed here for order numbers. When identifiers or requisition are supplied, `system` is mandatory; use an approved UZ Core document identifier system. No new identifier system is introduced.
+- the order or processing request number (`identifier`), and a shared number that groups the laboratory orders of one donation (`requisition`), each with its `system`;
+- the status of the request (draft / active / on-hold / revoked / completed / entered-in-error / unknown);
+- the receiving laboratory (`category`), such as haematology, biochemistry or immunology;
+- the urgency (`priority`: routine / urgent / asap / stat) and whether the service must not be done (`doNotPerform`);
+- the overall service requested (`code`), such as a laboratory procedure or blood unit processing;
+- the donor (`subject`) and the donation visit (`encounter`);
+- when the service should happen (`occurrence[x]`) and when the request was issued (`authoredOn`);
+- who issued it (`requester`), who should perform it (`performer`) and where (`location`);
+- why the service is needed (`reason`), how it is paid for (the payment type extension) and the insurance coverage (`insurance`);
+- the donor specimens to test (`specimen`) and the blood component to process (`focus`);
+- other information that supports the request (`supportingInfo`), comments (`note`) and instructions for the donor (`patientInstruction`);
+- the selected laboratory tests or processing operations (`orderDetail.parameter.code`, each with `valueBoolean` `true`).
 
 ### Building the JSON, step by step
 
-The first example is minimal; the second adds a selected laboratory test; the third shows local processing with the provisional overall service code. Full examples: [laboratory order](ServiceRequest-example-blood-laboratory-order.html) and [component processing](ServiceRequest-example-blood-component-processing-order.html).
+The examples below go from the smallest valid request to a component processing request. Each one validates against this profile. The complete reference instances are the [biochemistry](ServiceRequest-example-blood-laboratory-order.html), [immunology](ServiceRequest-example-blood-immunology-laboratory-order.html), [transfusion-transmissible infections](ServiceRequest-example-blood-transfusion-infections-laboratory-order.html), [bacteriology](ServiceRequest-example-blood-bacteriology-laboratory-order.html) and [haematology](ServiceRequest-example-blood-hematology-laboratory-order.html) laboratory orders and the [component processing](ServiceRequest-example-blood-component-processing-order.html) order.
+
+#### The smallest Blood ServiceRequest
+
+The base resource requires `status`, `intent` and `subject`, and every resource names its profile in `meta.profile`. This much passes validation:
 
 ```json
 {
   "resourceType": "ServiceRequest",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"
-    ]
-  },
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
   "status": "active",
   "intent": "order",
-  "subject": {
-    "reference": "Patient/example-blood-donor"
-  }
+  "subject": { "reference": "Patient/example-blood-donor" }
 }
 ```
 
+The profile fixes `intent` to `order` and limits `subject` to a [Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient): the donor. A request is only useful once it says what to do, so the next examples add the selected tests or operations.
+
+#### A donor laboratory order
+
+A donor physician orders bilirubin and ALT tests from the biochemistry laboratory on the donor's whole blood sample during the donation visit:
+
 ```json
 {
   "resourceType": "ServiceRequest",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"
-    ]
-  },
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
+  "language": "uz",
   "status": "active",
   "intent": "order",
-  "subject": {
-    "reference": "Patient/example-blood-donor"
-  },
-  "code": {
-    "concept": {
+  "category": [
+    {
       "coding": [
         {
-          "system": "http://snomed.info/sct",
-          "code": "108252007"
+          "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/lab-categories-cs",
+          "code": "lab-category-04",
+          "display": "Biokimyo"
         }
       ]
     }
+  ],
+  "code": {
+    "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "108252007" } ] }
   },
+  "subject": { "reference": "Patient/example-blood-donor" },
+  "encounter": { "reference": "Encounter/example-blood-donation-encounter" },
+  "authoredOn": "2026-11-10T09:05:00+05:00",
+  "requester": { "reference": "Practitioner/example-blood-donor-physician" },
+  "specimen": [ { "reference": "Specimen/example-blood-whole-blood-specimen" } ],
   "orderDetail": [
     {
       "parameter": [
         {
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "1975-2"
-              }
-            ]
-          },
+          "code": { "coding": [ { "system": "http://loinc.org", "code": "1975-2" } ] },
+          "valueBoolean": true
+        },
+        {
+          "code": { "coding": [ { "system": "http://loinc.org", "code": "1742-6" } ] },
           "valueBoolean": true
         }
       ]
@@ -88,34 +90,27 @@ The first example is minimal; the second adds a selected laboratory test; the th
 }
 ```
 
+Create one request for each receiving laboratory: four for a reserve donor and five for a regular donor. `category` names the laboratory with a code from the national laboratory sections, which have Uzbek displays, so the resource sets `language` to `uz`. `code` is a `CodeableReference`, so the coding sits under `concept`; SNOMED CT `108252007` Laboratory procedure is the overall service. Each selected test is one `orderDetail.parameter` with a code from the [laboratory tests and processing operations](ValueSet-bld-lab-codes-vs.html) and `valueBoolean` `true`; leave unselected tests out. The laboratory codes are candidates until the assay and specimen are confirmed. When the laboratory receives several of the donor's tubes, list each in `specimen`. `identifier` and `requisition` are optional, but when sent each must carry a `system`.
+
+#### A component processing request
+
+Blood service staff ask for a red cell component to be washed and irradiated:
+
 ```json
 {
   "resourceType": "ServiceRequest",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"
-    ]
-  },
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
+  "language": "uz",
   "status": "active",
   "intent": "order",
-  "subject": {
-    "reference": "Patient/example-blood-donor"
-  },
   "code": {
-    "concept": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "64108007"
-        }
-      ]
-    }
+    "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "64108007" } ] }
   },
-  "focus": [
-    {
-      "reference": "InventoryItem/example-blood-component-inventory"
-    }
-  ],
+  "subject": { "reference": "Patient/example-blood-donor" },
+  "authoredOn": "2026-11-10T10:00:00+05:00",
+  "requester": { "reference": "Practitioner/example-blood-processing-requester" },
+  "focus": [ { "reference": "InventoryItem/example-blood-component-inventory" } ],
+  "note": [ { "text": "Ehtiyotkorlik bilan qayta ishlang." } ],
   "orderDetail": [
     {
       "parameter": [
@@ -124,7 +119,20 @@ The first example is minimal; the second adds a selected laboratory test; the th
             "coding": [
               {
                 "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/processing-operation-cs",
-                "code": "bld-operation-0001"
+                "code": "bld-operation-0001",
+                "display": "Yuvish"
+              }
+            ]
+          },
+          "valueBoolean": true
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/processing-operation-cs",
+                "code": "bld-operation-0002",
+                "display": "Nurlantirish"
               }
             ]
           },
@@ -136,4 +144,6 @@ The first example is minimal; the second adds a selected laboratory test; the th
 }
 ```
 
-See [Quick Start](#quick-start).
+Create one request per component with all selected operations from the [processing operations](CodeSystem-processing-operation-cs.html), and point `focus` to the component's [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem); do not repeat it in `supportingInfo`. Leave `category` out. SNOMED CT `64108007` Blood unit processing is a provisional overall service code. Keep the request `active` until every operation is confirmed, then set it to `completed`.
+
+For example API calls, see the [Quick Start](#quick-start) at the bottom of this page.

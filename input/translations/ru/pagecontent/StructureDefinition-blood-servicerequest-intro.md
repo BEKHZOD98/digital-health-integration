@@ -1,87 +1,89 @@
-> Этот текст переведен автоматически.
+> **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
 
-Профиль описывает лабораторные назначения донору и запросы на вторичную переработку компонентов крови. Он основан на [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition-uz-core-servicerequest.html) и ссылается на существующие ресурсы донора, визита, образцов и складского учета.
+Blood ServiceRequest - это запрос службы крови на лабораторные исследования донора или на вторичную переработку компонента крови (отмывание, облучение, замораживание или размораживание). Он основан на [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest) и фиксирует только сам запрос, а не выполненную работу. Лабораторное назначение указывает донора ([Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient)), визит донации ([Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter)) и образцы донора для исследования ([Specimen](https://dhp.uz/fhir/core/StructureDefinition/uz-core-specimen)); запрос на переработку ссылается на [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem) компонента крови. Выбранные исследования или операции перечисляются в `orderDetail`, поэтому один запрос содержит все выбранные позиции для одной лаборатории или одного компонента. Исходные формы приведены на странице [Формы службы крови](forms-volume-08-blood-service.html).
 
 ### Обязательные и поддерживаемые (Must Support) элементы данных
 
 Приведённые ниже элементы должны всегда присутствовать (обязательные) или должны поддерживаться при наличии данных ([Must Support](https://dhp.uz/fhir/core/must-support.html)) - не все они являются обязательными, но ваша система должна заполнять каждый элемент Must Support, когда у неё есть соответствующие данные, и обрабатывать его при получении. Это человекочитаемая сводка; [формальные представления](#profile) ниже дают точные кардинальности, типы и терминологические связки.
 
-#### Обязательные данные Blood ServiceRequest
+#### Каждый Blood ServiceRequest должен содержать
 
-Обязательны статус, намерение `order` и ссылка на донора. Каждый orderDetail содержит хотя бы один параметр с кодом выбранного исследования или операции и `valueBoolean: true`. Унаследованный инвариант prr-1 требует заполнить `code`, если указан `orderDetail`.
+Каждый запрос должен содержать `status`, намерение `order` и донора (`subject`). Каждый параметр детализации назначения должен содержать выбранное исследование или операцию в `code` и `valueBoolean` со значением `true`. Базовый ресурс также требует `code`, если присутствует `orderDetail`.
 
-#### Поддерживаемые данные Blood ServiceRequest
+#### Каждый Blood ServiceRequest должен поддерживать
 
-- Идентификаторы заказа и общий идентификатор requisition.
-- Категория принимающей лаборатории, визит донора, планируемое время и время создания.
-- Автор, исполнитель, место, образцы и клиническая причина.
-- Компонент крови, дополнительные сведения, комментарии и выбранные исследования или операции.
+- номер назначения или запроса на переработку (`identifier`) и общий номер, объединяющий лабораторные назначения одной донации (`requisition`), каждый со своей `system`;
+- статус запроса (draft / active / on-hold / revoked / completed / entered-in-error / unknown);
+- принимающую лабораторию (`category`), например гематологическую, биохимическую или иммунологическую;
+- срочность (`priority`: routine / urgent / asap / stat) и признак того, что услугу выполнять нельзя (`doNotPerform`);
+- запрашиваемую услугу в целом (`code`), например лабораторную процедуру или переработку единицы крови;
+- донора (`subject`) и визит донации (`encounter`);
+- когда услуга должна быть выполнена (`occurrence[x]`) и когда запрос был оформлен (`authoredOn`);
+- кто оформил запрос (`requester`), кто должен его выполнить (`performer`) и где (`location`);
+- зачем нужна услуга (`reason`), как она оплачивается (расширение типа оплаты) и страховое покрытие (`insurance`);
+- образцы донора для исследования (`specimen`) и компонент крови для переработки (`focus`);
+- прочие сведения в поддержку запроса (`supportingInfo`), комментарии (`note`) и инструкции для донора (`patientInstruction`);
+- выбранные лабораторные исследования или операции переработки (`orderDetail.parameter.code`, каждое с `valueBoolean` `true`).
 
-### Рабочий процесс
+### Сборка JSON, шаг за шагом
 
-Для каждой принимающей лаборатории создается отдельный запрос: четыре для резервного донора и пять для кадрового. Лабораторию определяет необязательный срез `category[dhpCategory]`. Для вторичной переработки создается один запрос на компонент со всеми выбранными операциями; категория не заполняется, если подходящей нет. Запрос остается active до подтверждения всех операций, затем становится completed. Этот переход контролирует приложение.
+Примеры ниже идут от наименьшего валидного запроса к запросу на переработку компонента. Каждый из них проходит валидацию по этому профилю. Полные эталонные экземпляры - лабораторные назначения в [биохимическую](ServiceRequest-example-blood-laboratory-order.html), [иммунологическую](ServiceRequest-example-blood-immunology-laboratory-order.html), [на трансфузионно-трансмиссивные инфекции](ServiceRequest-example-blood-transfusion-infections-laboratory-order.html), [бактериологическую](ServiceRequest-example-blood-bacteriology-laboratory-order.html) и [гематологическую](ServiceRequest-example-blood-hematology-laboratory-order.html) лаборатории, а также запрос на [переработку компонента](ServiceRequest-example-blood-component-processing-order.html).
 
-### Открытые вопросы реализации
+#### Наименьший Blood ServiceRequest
 
-Лабораторные коды предварительные: необходимо подтвердить метод, образец и совместимость пробирок. SNOMED CT `64108007` остается предварительным общим кодом услуги переработки и не фиксируется профилем. Назначения только для фракционирования, криопреципитата или утилизации пока не согласованы. `focus` допускает UZ Core InventoryItem; поддержку следует проверить на развернутом сервере. Не дублируйте компонент в `supportingInfo`.
-
-В исходной таблице для номера запроса предложена система идентификаторов продуктов крови. Она идентифицирует продукты, поэтому здесь не фиксируется для номеров заказов. При передаче identifier или requisition поле `system` обязательно; используйте согласованную систему документов UZ Core. Новая система идентификаторов не вводится.
-
-### Пошаговое формирование JSON
-
-Первый пример минимальный; второй добавляет лабораторное исследование; третий показывает локальную операцию с предварительным общим кодом услуги. Полные примеры: [лабораторный заказ](ServiceRequest-example-blood-laboratory-order.html) и [переработка компонента](ServiceRequest-example-blood-component-processing-order.html).
+Базовый ресурс требует `status`, `intent` и `subject`, а каждый ресурс указывает свой профиль в `meta.profile`. Этого достаточно для прохождения валидации:
 
 ```json
 {
   "resourceType": "ServiceRequest",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"
-    ]
-  },
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
   "status": "active",
   "intent": "order",
-  "subject": {
-    "reference": "Patient/example-blood-donor"
-  }
+  "subject": { "reference": "Patient/example-blood-donor" }
 }
 ```
 
+Профиль фиксирует `intent` как `order` и ограничивает `subject` ресурсом [Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) - донором. Запрос полезен только тогда, когда в нём указано, что нужно сделать, поэтому следующие примеры добавляют выбранные исследования или операции.
+
+#### Лабораторное назначение донору
+
+Врач службы крови во время визита донации назначает биохимической лаборатории исследования билирубина и АЛТ по образцу цельной крови донора:
+
 ```json
 {
   "resourceType": "ServiceRequest",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"
-    ]
-  },
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
+  "language": "uz",
   "status": "active",
   "intent": "order",
-  "subject": {
-    "reference": "Patient/example-blood-donor"
-  },
-  "code": {
-    "concept": {
+  "category": [
+    {
       "coding": [
         {
-          "system": "http://snomed.info/sct",
-          "code": "108252007"
+          "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/lab-categories-cs",
+          "code": "lab-category-04",
+          "display": "Biokimyo"
         }
       ]
     }
+  ],
+  "code": {
+    "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "108252007" } ] }
   },
+  "subject": { "reference": "Patient/example-blood-donor" },
+  "encounter": { "reference": "Encounter/example-blood-donation-encounter" },
+  "authoredOn": "2026-11-10T09:05:00+05:00",
+  "requester": { "reference": "Practitioner/example-blood-donor-physician" },
+  "specimen": [ { "reference": "Specimen/example-blood-whole-blood-specimen" } ],
   "orderDetail": [
     {
       "parameter": [
         {
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "1975-2"
-              }
-            ]
-          },
+          "code": { "coding": [ { "system": "http://loinc.org", "code": "1975-2" } ] },
+          "valueBoolean": true
+        },
+        {
+          "code": { "coding": [ { "system": "http://loinc.org", "code": "1742-6" } ] },
           "valueBoolean": true
         }
       ]
@@ -90,34 +92,27 @@
 }
 ```
 
+Создавайте отдельный запрос для каждой принимающей лаборатории: четыре для резервного донора и пять для регулярного. `category` указывает лабораторию кодом из национального перечня лабораторных разделов, у которых узбекские наименования, поэтому в ресурсе `language` равен `uz`. `code` имеет тип `CodeableReference`, поэтому кодировка находится внутри `concept`; общая услуга - SNOMED CT `108252007` Laboratory procedure. Каждое выбранное исследование - это один `orderDetail.parameter` с кодом из набора [лабораторных исследований и операций переработки](ValueSet-bld-lab-codes-vs.html) и `valueBoolean` `true`; невыбранные исследования не передавайте. Лабораторные коды остаются кандидатами до подтверждения методики и образца. Если лаборатория получает несколько пробирок донора, перечислите каждую в `specimen`. `identifier` и `requisition` необязательны, но если они передаются, каждый должен содержать `system`.
+
+#### Запрос на переработку компонента
+
+Сотрудник службы крови запрашивает отмывание и облучение эритроцитарного компонента:
+
 ```json
 {
   "resourceType": "ServiceRequest",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"
-    ]
-  },
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
+  "language": "uz",
   "status": "active",
   "intent": "order",
-  "subject": {
-    "reference": "Patient/example-blood-donor"
-  },
   "code": {
-    "concept": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "64108007"
-        }
-      ]
-    }
+    "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "64108007" } ] }
   },
-  "focus": [
-    {
-      "reference": "InventoryItem/example-blood-component-inventory"
-    }
-  ],
+  "subject": { "reference": "Patient/example-blood-donor" },
+  "authoredOn": "2026-11-10T10:00:00+05:00",
+  "requester": { "reference": "Practitioner/example-blood-processing-requester" },
+  "focus": [ { "reference": "InventoryItem/example-blood-component-inventory" } ],
+  "note": [ { "text": "Ehtiyotkorlik bilan qayta ishlang." } ],
   "orderDetail": [
     {
       "parameter": [
@@ -126,7 +121,20 @@
             "coding": [
               {
                 "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/processing-operation-cs",
-                "code": "bld-operation-0001"
+                "code": "bld-operation-0001",
+                "display": "Yuvish"
+              }
+            ]
+          },
+          "valueBoolean": true
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/processing-operation-cs",
+                "code": "bld-operation-0002",
+                "display": "Nurlantirish"
               }
             ]
           },
@@ -138,4 +146,6 @@
 }
 ```
 
-См. [быстрое начало работы](#quick-start).
+Создавайте один запрос на компонент со всеми выбранными операциями из [операций переработки](CodeSystem-processing-operation-cs.html) и указывайте в `focus` [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem) компонента; не повторяйте его в `supportingInfo`. `category` не передавайте. SNOMED CT `64108007` Blood unit processing - предварительный код общей услуги. Держите запрос в статусе `active`, пока не подтверждена каждая операция, затем переведите его в `completed`.
+
+Примеры вызовов API приведены в разделе [Быстрый старт](#quick-start) внизу этой страницы.

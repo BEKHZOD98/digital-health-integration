@@ -1,87 +1,89 @@
-> Ushbu matn avtomatik tarjima qilingan.
+> **Mashina tarjimasi, inson tomonidan tekshirilishi zarur.** Ushbu sahifa ingliz tilidan sun'iy intellekt yordamida avtomatik tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday nomuvofiqlikda asl inglizcha versiya ustuvor hisoblanadi.
 
-Profil donor laboratoriya buyurtmalari va qon komponentlarini ikkilamchi qayta ishlash so'rovlarini ifodalaydi. U [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition-uz-core-servicerequest.html) asosida tuzilgan va mavjud donor, tashrif, namuna hamda ombor resurslariga murojaat qiladi.
+Blood ServiceRequest - qon xizmatining donor laboratoriya tekshiruvlari yoki qon komponentini ikkilamchi qayta ishlash (yuvish, nurlantirish, muzlatish yoki eritish) uchun so'rovi. U [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest) asosida tuzilgan va bajarilgan ishni emas, faqat so'rovning o'zini qayd etadi. Laboratoriya buyurtmasi donorni ([Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient)), donatsiya tashrifini ([Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter)) va tekshiriladigan donor namunalarini ([Specimen](https://dhp.uz/fhir/core/StructureDefinition/uz-core-specimen)) ko'rsatadi; qayta ishlash so'rovi qon komponentining [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem) resursiga murojaat qiladi. Tanlangan tekshiruvlar yoki operatsiyalar `orderDetail` da sanab o'tiladi, shuning uchun bitta so'rov bitta laboratoriya yoki bitta komponent uchun barcha tanlovlarni o'z ichiga oladi. Manba shakllar [Qon xizmati shakllari](forms-volume-08-blood-service.html) sahifasida keltirilgan.
 
 ### Majburiy va Must Support ma'lumot elementlari
 
 Quyidagi elementlar har doim mavjud bo'lishi (majburiy) yoki ma'lumot mavjud bo'lganda qo'llab-quvvatlanishi shart ([Must Support](https://dhp.uz/fhir/core/must-support.html)) - hammasi talab qilinmaydi, lekin tizimingiz har bir Must Support elementini ma'lumotga ega bo'lganda to'ldirishi va qabul qilishda uni qayta ishlashi shart. Bu inson o'qiy oladigan xulosa; quyidagi [rasmiy ko'rinishlar](#profile) aniq kardinalliklar, turlar va terminologiya bog'lanishlarini beradi.
 
-#### Har bir Blood ServiceRequest uchun majburiy ma'lumotlar
+#### Har bir Blood ServiceRequest quyidagilarga ega bo'lishi shart
 
-Har bir so'rovda holat, `order` maqsadi va donorga havola bo'lishi shart. Har bir orderDetail kamida bitta parametrni o'z ichiga oladi; parametr tanlangan tekshiruv yoki operatsiya kodi va `valueBoolean: true` qiymatini saqlaydi. Meros olingan prr-1 qoidasi orderDetail mavjud bo'lsa code to'ldirilishini talab qiladi.
+Har bir so'rovda `status`, `order` maqsadi va donor (`subject`) bo'lishi shart. Buyurtma tafsilotining har bir parametrida tanlangan tekshiruv yoki operatsiya `code` da va `true` qiymatli `valueBoolean` bo'lishi shart. Asosiy resurs `orderDetail` mavjud bo'lganda `code` ni ham talab qiladi.
 
-#### Har bir Blood ServiceRequest qo'llab-quvvatlaydigan ma'lumotlar
+#### Har bir Blood ServiceRequest quyidagilarni qo'llab-quvvatlashi shart
 
-- Buyurtma identifikatorlari va umumiy requisition identifikatori.
-- Qabul qiluvchi laboratoriya toifasi, donor tashrifi, rejalashtirilgan vaqt va yaratish vaqti.
-- So'rov muallifi, ijrochi, joy, namunalar va klinik sabab.
-- Qon komponenti, qo'shimcha ma'lumotlar, izohlar va tanlangan tekshiruv yoki operatsiyalar.
+- buyurtma yoki qayta ishlash so'rovi raqami (`identifier`) va bitta donatsiyaning laboratoriya buyurtmalarini birlashtiruvchi umumiy raqam (`requisition`), har biri o'z `system` i bilan;
+- so'rov holati (draft / active / on-hold / revoked / completed / entered-in-error / unknown);
+- qabul qiluvchi laboratoriya (`category`), masalan gematologiya, biokimyo yoki immunologiya;
+- shoshilinchlik (`priority`: routine / urgent / asap / stat) va xizmatni bajarish mumkin emasligi (`doNotPerform`);
+- umumiy so'ralgan xizmat (`code`), masalan laboratoriya muolajasi yoki qon birligini qayta ishlash;
+- donor (`subject`) va donatsiya tashrifi (`encounter`);
+- xizmat qachon bajarilishi kerakligi (`occurrence[x]`) va so'rov qachon rasmiylashtirilgani (`authoredOn`);
+- so'rovni kim bergani (`requester`), kim bajarishi kerakligi (`performer`) va qayerda (`location`);
+- xizmat nima uchun kerakligi (`reason`), qanday to'lanishi (to'lov turi kengaytmasi) va sug'urta qoplamasi (`insurance`);
+- tekshiriladigan donor namunalari (`specimen`) va qayta ishlanadigan qon komponenti (`focus`);
+- so'rovni qo'llab-quvvatlovchi boshqa ma'lumotlar (`supportingInfo`), izohlar (`note`) va donor uchun ko'rsatmalar (`patientInstruction`);
+- tanlangan laboratoriya tekshiruvlari yoki qayta ishlash operatsiyalari (`orderDetail.parameter.code`, har biri `valueBoolean` `true` bilan).
 
-### Ish jarayoni
+### JSON ni bosqichma-bosqich qurish
 
-Har bir laboratoriya uchun alohida so'rov yaratiladi: zaxira donor uchun to'rtta, doimiy donor uchun beshta. Laboratoriya ixtiyoriy `category[dhpCategory]` orqali ko'rsatiladi. Ikkilamchi qayta ishlashda har bir komponent uchun barcha tanlangan operatsiyalar bilan bitta so'rov yaratiladi; mos toifa bo'lmasa category berilmaydi. Barcha operatsiyalar tasdiqlanguncha holat active bo'lib qoladi, keyin completed bo'ladi. Bu o'tishni ilova boshqaradi.
+Quyidagi misollar eng kichik yaroqli so'rovdan komponentni qayta ishlash so'rovigacha boradi. Ularning har biri ushbu profil bo'yicha validatsiyadan o'tadi. To'liq namunaviy nusxalar - [biokimyo](ServiceRequest-example-blood-laboratory-order.html), [immunologiya](ServiceRequest-example-blood-immunology-laboratory-order.html), [transfuziya orqali yuqadigan infeksiyalar](ServiceRequest-example-blood-transfusion-infections-laboratory-order.html), [bakteriologiya](ServiceRequest-example-blood-bacteriology-laboratory-order.html) va [gematologiya](ServiceRequest-example-blood-hematology-laboratory-order.html) laboratoriya buyurtmalari hamda [komponentni qayta ishlash](ServiceRequest-example-blood-component-processing-order.html) so'rovi.
 
-### Ochiq amalga oshirish masalalari
+#### Eng kichik Blood ServiceRequest
 
-Laboratoriya kodlari dastlabki: usul, namuna va probirka mosligi tasdiqlanishi kerak. SNOMED CT `64108007` umumiy qayta ishlash xizmati uchun dastlabki kod bo'lib, profilda qat'iy belgilanmagan. Faqat fraksiyalash, kriopretsipitat yoki utilizatsiya yo'nalishlari hali kelishilmagan. focus UZ Core InventoryItem ni qabul qiladi; server qo'llab-quvvatlashini tekshiring. Bir komponentni supportingInfo da takrorlamang.
-
-Manba jadvalida so'rov raqami uchun qon mahsuloti identifikator tizimi taklif qilingan. Bu tizim mahsulotlarni belgilaydi, shuning uchun buyurtma raqamlari uchun qat'iy belgilanmagan. identifier yoki requisition berilsa, system majburiy; tasdiqlangan UZ Core hujjat identifikator tizimidan foydalaning. Yangi identifikator tizimi kiritilmaydi.
-
-### JSON ni bosqichma-bosqich tuzish
-
-Birinchi misol minimal; ikkinchisi laboratoriya tekshiruvini qo'shadi; uchinchisi dastlabki umumiy xizmat kodi bilan mahalliy operatsiyani ko'rsatadi. To'liq misollar: [laboratoriya buyurtmasi](ServiceRequest-example-blood-laboratory-order.html) va [komponentni qayta ishlash](ServiceRequest-example-blood-component-processing-order.html).
+Asosiy resurs `status`, `intent` va `subject` ni talab qiladi, har bir resurs esa o'z profilini `meta.profile` da ko'rsatadi. Validatsiyadan o'tish uchun shu yetarli:
 
 ```json
 {
   "resourceType": "ServiceRequest",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"
-    ]
-  },
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
   "status": "active",
   "intent": "order",
-  "subject": {
-    "reference": "Patient/example-blood-donor"
-  }
+  "subject": { "reference": "Patient/example-blood-donor" }
 }
 ```
 
+Profil `intent` ni `order` ga belgilaydi va `subject` ni [Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) - donor bilan cheklaydi. So'rov nima qilish kerakligini ko'rsatgandagina foydali bo'ladi, shuning uchun keyingi misollar tanlangan tekshiruvlar yoki operatsiyalarni qo'shadi.
+
+#### Donor laboratoriya buyurtmasi
+
+Donor shifokori donatsiya tashrifi vaqtida biokimyo laboratoriyasiga donorning butun qon namunasi bo'yicha bilirubin va ALT tekshiruvlarini buyuradi:
+
 ```json
 {
   "resourceType": "ServiceRequest",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"
-    ]
-  },
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
+  "language": "uz",
   "status": "active",
   "intent": "order",
-  "subject": {
-    "reference": "Patient/example-blood-donor"
-  },
-  "code": {
-    "concept": {
+  "category": [
+    {
       "coding": [
         {
-          "system": "http://snomed.info/sct",
-          "code": "108252007"
+          "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/lab-categories-cs",
+          "code": "lab-category-04",
+          "display": "Biokimyo"
         }
       ]
     }
+  ],
+  "code": {
+    "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "108252007" } ] }
   },
+  "subject": { "reference": "Patient/example-blood-donor" },
+  "encounter": { "reference": "Encounter/example-blood-donation-encounter" },
+  "authoredOn": "2026-11-10T09:05:00+05:00",
+  "requester": { "reference": "Practitioner/example-blood-donor-physician" },
+  "specimen": [ { "reference": "Specimen/example-blood-whole-blood-specimen" } ],
   "orderDetail": [
     {
       "parameter": [
         {
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "1975-2"
-              }
-            ]
-          },
+          "code": { "coding": [ { "system": "http://loinc.org", "code": "1975-2" } ] },
+          "valueBoolean": true
+        },
+        {
+          "code": { "coding": [ { "system": "http://loinc.org", "code": "1742-6" } ] },
           "valueBoolean": true
         }
       ]
@@ -90,34 +92,27 @@ Birinchi misol minimal; ikkinchisi laboratoriya tekshiruvini qo'shadi; uchinchis
 }
 ```
 
+Har bir qabul qiluvchi laboratoriya uchun alohida so'rov yarating: zaxira donor uchun to'rtta, muntazam donor uchun beshta. `category` laboratoriyani milliy laboratoriya bo'limlari kodi bilan ko'rsatadi, ularning nomlari o'zbek tilida, shuning uchun resursda `language` `uz` ga teng. `code` ning turi `CodeableReference`, shuning uchun kodlash `concept` ichida joylashadi; umumiy xizmat - SNOMED CT `108252007` Laboratory procedure. Har bir tanlangan tekshiruv - [laboratoriya tekshiruvlari va qayta ishlash operatsiyalari](ValueSet-bld-lab-codes-vs.html) to'plamidan kod va `valueBoolean` `true` bilan bitta `orderDetail.parameter`; tanlanmagan tekshiruvlarni yubormang. Laboratoriya kodlari usul va namuna tasdiqlanguniga qadar nomzod hisoblanadi. Laboratoriya donorning bir nechta probirkasini qabul qilsa, har birini `specimen` da sanab o'ting. `identifier` va `requisition` ixtiyoriy, lekin yuborilsa, har birida `system` bo'lishi shart.
+
+#### Komponentni qayta ishlash so'rovi
+
+Qon xizmati xodimi eritrotsitar komponentni yuvish va nurlantirishni so'raydi:
+
 ```json
 {
   "resourceType": "ServiceRequest",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"
-    ]
-  },
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
+  "language": "uz",
   "status": "active",
   "intent": "order",
-  "subject": {
-    "reference": "Patient/example-blood-donor"
-  },
   "code": {
-    "concept": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "64108007"
-        }
-      ]
-    }
+    "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "64108007" } ] }
   },
-  "focus": [
-    {
-      "reference": "InventoryItem/example-blood-component-inventory"
-    }
-  ],
+  "subject": { "reference": "Patient/example-blood-donor" },
+  "authoredOn": "2026-11-10T10:00:00+05:00",
+  "requester": { "reference": "Practitioner/example-blood-processing-requester" },
+  "focus": [ { "reference": "InventoryItem/example-blood-component-inventory" } ],
+  "note": [ { "text": "Ehtiyotkorlik bilan qayta ishlang." } ],
   "orderDetail": [
     {
       "parameter": [
@@ -126,7 +121,20 @@ Birinchi misol minimal; ikkinchisi laboratoriya tekshiruvini qo'shadi; uchinchis
             "coding": [
               {
                 "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/processing-operation-cs",
-                "code": "bld-operation-0001"
+                "code": "bld-operation-0001",
+                "display": "Yuvish"
+              }
+            ]
+          },
+          "valueBoolean": true
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/processing-operation-cs",
+                "code": "bld-operation-0002",
+                "display": "Nurlantirish"
               }
             ]
           },
@@ -138,4 +146,6 @@ Birinchi misol minimal; ikkinchisi laboratoriya tekshiruvini qo'shadi; uchinchis
 }
 ```
 
-[Tez boshlash](#quick-start) bo'limiga qarang.
+Har bir komponent uchun [qayta ishlash operatsiyalari](CodeSystem-processing-operation-cs.html) dan barcha tanlangan operatsiyalar bilan bitta so'rov yarating va `focus` da komponentning [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem) resursini ko'rsating; uni `supportingInfo` da takrorlamang. `category` ni yubormang. SNOMED CT `64108007` Blood unit processing - umumiy xizmatning dastlabki kodi. Har bir operatsiya tasdiqlanmaguncha so'rovni `active` holatida saqlang, so'ng uni `completed` ga o'tkazing.
+
+API chaqiruvlari misollari ushbu sahifa pastidagi [Tez boshlash](#quick-start) bo'limida keltirilgan.
