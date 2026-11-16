@@ -63,7 +63,7 @@ Usage: #example
 * requisition.value = "DON-2025-0088231"
 * requisition.assigner = Reference(Organization/xonobod-medical-association)
 * category[dhpCategory] = $lab-categories-cs#lab-category-05 "Immunologiya"
-* code.concept = $loinc#883-9 "Qon guruhi"
+* code.concept = $loinc#883-9 "Qonda ABO guruhi turi"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
@@ -89,7 +89,7 @@ Usage: #example
 * requisition.value = "DON-2025-0088231"
 * requisition.assigner = Reference(Organization/xonobod-medical-association)
 * category[dhpCategory] = $lab-categories-cs#lab-category-05 "Immunologiya"
-* code.concept = $loinc#10331-7 "Rezus omil"
+* code.concept = $loinc#10331-7 "Qonda Rh turi"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
@@ -167,7 +167,7 @@ Usage: #example
 * requisition.value = "DON-2025-0088231"
 * requisition.assigner = Reference(Organization/xonobod-medical-association)
 * category[dhpCategory] = $lab-categories-cs#lab-category-20 "Infeksion diagnostika"
-* code.concept = $loinc#5195-3 "HBsAg tahlili"
+* code.concept = $loinc#5195-3 "Hepatitis B virus surface Ag [Presence] in Serum"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
