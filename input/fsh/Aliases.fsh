@@ -294,3 +294,6 @@ Alias: $form-044-observation-code-cs = https://terminology.dhp.uz/fhir/integrati
 Alias: $blood-group-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-group-vs
 Alias: $blood-registration-number = https://dhp.uz/fhir/core/sid/doc/uz/blood-registration
 Alias: $blood-rh-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-rh-vs
+
+Alias: $blood-service-request-number = https://dhp.uz/fhir/core/sid/doc/uz/blood-service-request
+Alias: $blood-donation-number = https://dhp.uz/fhir/core/sid/prd/uz/blood/donation

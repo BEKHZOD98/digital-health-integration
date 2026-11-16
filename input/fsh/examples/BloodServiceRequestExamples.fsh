@@ -1,13 +1,17 @@
 Instance: example-blood-laboratory-order
 InstanceOf: BloodServiceRequest
-Title: "Example Blood ServiceRequest - Laboratory Order"
-Description: "Donor laboratory order selecting bilirubin and ALT tests. Referenced resources are provided as supporting examples in this guide."
+Title: "Example Blood ServiceRequest - Laboratory Test 1975-2"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
 Usage: #example
 * language = #uz
 * status = #active
 * intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0001"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
 * category[dhpCategory] = $lab-categories-cs#lab-category-04 "Biokimyo"
-* code.concept = $sct#108252007 "Laboratory procedure"
+* code.concept = $loinc#1975-2 "Zardob yoki plazmada umumiy bilirubin miqdori"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
@@ -19,21 +23,47 @@ Usage: #example
 * reason.concept = $icd-10#Z52.0 "Blood donor"
 * supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
-* orderDetail.parameter[0].code = $loinc#1975-2 "Zardob yoki plazmada umumiy bilirubin miqdori"
-* orderDetail.parameter[=].valueBoolean = true
-* orderDetail.parameter[+].code = $loinc#1742-6 "Zardob yoki plazmada alanin aminotransferaza fermenti faolligi"
-* orderDetail.parameter[=].valueBoolean = true
+
+Instance: example-blood-alt-laboratory-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Laboratory Test 1742-6"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0002"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* category[dhpCategory] = $lab-categories-cs#lab-category-04 "Biokimyo"
+* code.concept = $loinc#1742-6 "Zardob yoki plazmada alanin aminotransferaza fermenti faolligi"
+* subject = Reference(Patient/example-salim)
+* encounter = Reference(Encounter/example-blood-donation-encounter)
+* authoredOn = "2026-11-10T09:05:00+05:00"
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* priority = #routine
+* occurrenceDateTime = "2026-11-10"
+* performer = Reference(Organization/xonobod-medical-association)
+* location = Reference(Location/example-blood-service-laboratory)
+* reason.concept = $icd-10#Z52.0 "Blood donor"
+* supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
+* specimen = Reference(Specimen/example-blood-whole-blood-specimen)
 
 Instance: example-blood-immunology-laboratory-order
 InstanceOf: BloodServiceRequest
-Title: "Example Blood ServiceRequest - Immunology Laboratory Order"
-Description: "Donor immunology laboratory order selecting ABO group and Rh typing. Referenced resources are provided as supporting examples in this guide."
+Title: "Example Blood ServiceRequest - Laboratory Test 883-9"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
 Usage: #example
 * language = #uz
 * status = #active
 * intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0003"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
 * category[dhpCategory] = $lab-categories-cs#lab-category-05 "Immunologiya"
-* code.concept = $sct#108252007 "Laboratory procedure"
+* code.concept = $loinc#883-9 "Qon guruhi"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
@@ -45,21 +75,47 @@ Usage: #example
 * reason.concept = $icd-10#Z52.0 "Blood donor"
 * supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
-* orderDetail.parameter[0].code = $loinc#883-9 "Qon guruhi"
-* orderDetail.parameter[=].valueBoolean = true
-* orderDetail.parameter[+].code = $loinc#10331-7 "Rezus omil"
-* orderDetail.parameter[=].valueBoolean = true
+
+Instance: example-blood-rh-laboratory-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Laboratory Test 10331-7"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0004"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* category[dhpCategory] = $lab-categories-cs#lab-category-05 "Immunologiya"
+* code.concept = $loinc#10331-7 "Rezus omil"
+* subject = Reference(Patient/example-salim)
+* encounter = Reference(Encounter/example-blood-donation-encounter)
+* authoredOn = "2026-11-10T09:05:00+05:00"
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* priority = #routine
+* occurrenceDateTime = "2026-11-10"
+* performer = Reference(Organization/xonobod-medical-association)
+* location = Reference(Location/example-blood-service-laboratory)
+* reason.concept = $icd-10#Z52.0 "Blood donor"
+* supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
+* specimen = Reference(Specimen/example-blood-whole-blood-specimen)
 
 Instance: example-blood-transfusion-infections-laboratory-order
 InstanceOf: BloodServiceRequest
-Title: "Example Blood ServiceRequest - Transfusion-Transmissible Infections Laboratory Order"
-Description: "Donor laboratory order selecting hepatitis C antibodies, syphilis RPR, hepatitis B surface antigen and an HIV antibody panel. Assay selection is provisional, as in the integration specification. Referenced resources are provided as supporting examples in this guide."
+Title: "Example Blood ServiceRequest - Laboratory Test 16128-1"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
 Usage: #example
 * language = #uz
 * status = #active
 * intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0005"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
 * category[dhpCategory] = $lab-categories-cs#lab-category-20 "Infeksion diagnostika"
-* code.concept = $sct#108252007 "Laboratory procedure"
+* code.concept = $loinc#16128-1 "Hepatitis C virus Ab [Presence] in Serum"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
@@ -71,25 +127,99 @@ Usage: #example
 * reason.concept = $icd-10#Z52.0 "Blood donor"
 * supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
-* orderDetail.parameter[0].code = $loinc#16128-1 "Hepatitis C virus Ab [Presence] in Serum"
-* orderDetail.parameter[=].valueBoolean = true
-* orderDetail.parameter[+].code = $loinc#20507-0 "Reagin Ab [Presence] in Serum by RPR"
-* orderDetail.parameter[=].valueBoolean = true
-* orderDetail.parameter[+].code = $loinc#5195-3 "HBsAg tahlili"
-* orderDetail.parameter[=].valueBoolean = true
-* orderDetail.parameter[+].code = $loinc#95523-7 "HIV 1 and 2 Ab panel - Serum or Plasma by Immunoassay"
-* orderDetail.parameter[=].valueBoolean = true
 
-Instance: example-blood-bacteriology-laboratory-order
+Instance: example-blood-syphilis-laboratory-order
 InstanceOf: BloodServiceRequest
-Title: "Example Blood ServiceRequest - Bacteriology Laboratory Order"
-Description: "Donor laboratory order selecting Brucella antibodies and malaria smear microscopy. Laboratory grouping follows the integration specification. Referenced specimens represent all donor samples sent to this laboratory; no dedicated bacteriology tube is required."
+Title: "Example Blood ServiceRequest - Laboratory Test 20507-0"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
 Usage: #example
 * language = #uz
 * status = #active
 * intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0006"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* category[dhpCategory] = $lab-categories-cs#lab-category-20 "Infeksion diagnostika"
+* code.concept = $loinc#20507-0 "Reagin Ab [Presence] in Serum by RPR"
+* subject = Reference(Patient/example-salim)
+* encounter = Reference(Encounter/example-blood-donation-encounter)
+* authoredOn = "2026-11-10T09:05:00+05:00"
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* priority = #routine
+* occurrenceDateTime = "2026-11-10"
+* performer = Reference(Organization/xonobod-medical-association)
+* location = Reference(Location/example-blood-service-laboratory)
+* reason.concept = $icd-10#Z52.0 "Blood donor"
+* supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
+* specimen = Reference(Specimen/example-blood-whole-blood-specimen)
+
+Instance: example-blood-hbsag-laboratory-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Laboratory Test 5195-3"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0007"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* category[dhpCategory] = $lab-categories-cs#lab-category-20 "Infeksion diagnostika"
+* code.concept = $loinc#5195-3 "HBsAg tahlili"
+* subject = Reference(Patient/example-salim)
+* encounter = Reference(Encounter/example-blood-donation-encounter)
+* authoredOn = "2026-11-10T09:05:00+05:00"
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* priority = #routine
+* occurrenceDateTime = "2026-11-10"
+* performer = Reference(Organization/xonobod-medical-association)
+* location = Reference(Location/example-blood-service-laboratory)
+* reason.concept = $icd-10#Z52.0 "Blood donor"
+* supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
+* specimen = Reference(Specimen/example-blood-whole-blood-specimen)
+
+Instance: example-blood-hiv-laboratory-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Laboratory Test 95523-7"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0008"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* category[dhpCategory] = $lab-categories-cs#lab-category-20 "Infeksion diagnostika"
+* code.concept = $loinc#95523-7 "HIV 1 and 2 Ab panel - Serum or Plasma by Immunoassay"
+* subject = Reference(Patient/example-salim)
+* encounter = Reference(Encounter/example-blood-donation-encounter)
+* authoredOn = "2026-11-10T09:05:00+05:00"
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* priority = #routine
+* occurrenceDateTime = "2026-11-10"
+* performer = Reference(Organization/xonobod-medical-association)
+* location = Reference(Location/example-blood-service-laboratory)
+* reason.concept = $icd-10#Z52.0 "Blood donor"
+* supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
+* specimen = Reference(Specimen/example-blood-whole-blood-specimen)
+
+Instance: example-blood-bacteriology-laboratory-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Laboratory Test 30202-6"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0009"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
 * category[dhpCategory] = $lab-categories-cs#lab-category-08 "Bakteriologiya"
-* code.concept = $sct#108252007 "Laboratory procedure"
+* code.concept = $loinc#30202-6 "Brucella sp Ab [Presence] in Serum"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
@@ -102,21 +232,48 @@ Usage: #example
 * supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
 * specimen[0] = Reference(Specimen/example-blood-whole-blood-specimen)
 * specimen[+] = Reference(Specimen/example-blood-serum-specimen)
-* orderDetail.parameter[0].code = $loinc#30202-6 "Brucella sp Ab [Presence] in Serum"
-* orderDetail.parameter[=].valueBoolean = true
-* orderDetail.parameter[+].code = $loinc#32700-7 "Microscopic observation [Identifier] in Blood by Malaria smear"
-* orderDetail.parameter[=].valueBoolean = true
 
-Instance: example-blood-hematology-laboratory-order
+Instance: example-blood-malaria-laboratory-order
 InstanceOf: BloodServiceRequest
-Title: "Example Blood ServiceRequest - Hematology Laboratory Order"
-Description: "Donor hematology laboratory order selecting an automated complete blood count panel. Referenced resources are provided as supporting examples in this guide."
+Title: "Example Blood ServiceRequest - Laboratory Test 32700-7"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
 Usage: #example
 * language = #uz
 * status = #active
 * intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0010"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* category[dhpCategory] = $lab-categories-cs#lab-category-08 "Bakteriologiya"
+* code.concept = $loinc#32700-7 "Microscopic observation [Identifier] in Blood by Malaria smear"
+* subject = Reference(Patient/example-salim)
+* encounter = Reference(Encounter/example-blood-donation-encounter)
+* authoredOn = "2026-11-10T09:05:00+05:00"
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* priority = #routine
+* occurrenceDateTime = "2026-11-10"
+* performer = Reference(Organization/xonobod-medical-association)
+* location = Reference(Location/example-blood-service-laboratory)
+* reason.concept = $icd-10#Z52.0 "Blood donor"
+* supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
+* specimen[0] = Reference(Specimen/example-blood-whole-blood-specimen)
+* specimen[+] = Reference(Specimen/example-blood-serum-specimen)
+
+Instance: example-blood-hematology-laboratory-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Laboratory Test 58410-2"
+Description: "One donor laboratory test or panel. Separate requests for this donation share requisition; category identifies the receiving laboratory."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0011"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
 * category[dhpCategory] = $lab-categories-cs#lab-category-02 "Gematologiya"
-* code.concept = $sct#108252007 "Laboratory procedure"
+* code.concept = $loinc#58410-2 "CBC panel - Blood by Automated count"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
@@ -128,19 +285,21 @@ Usage: #example
 * reason.concept = $icd-10#Z52.0 "Blood donor"
 * supportingInfo = Reference(Observation/example-blood-donor-registration-staff)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
-* orderDetail.parameter[0].code = $loinc#58410-2 "CBC panel - Blood by Automated count"
-* orderDetail.parameter[=].valueBoolean = true
 
 Instance: example-blood-component-processing-order
 InstanceOf: BloodServiceRequest
-Title: "Example Blood ServiceRequest - Component Processing"
-Description: "One request selecting washing and irradiation for a blood component. The overall service code is provisional and requires terminology approval."
+Title: "Example Blood ServiceRequest - Washing"
+Description: "One blood component processing operation requested by the blood service for its stock. The subject is the processing location, not the donor."
 Usage: #example
 * language = #uz
 * status = #active
 * intent = #order
-* code.concept = $sct#64108007 "Blood unit processing"
-* subject = Reference(Patient/example-salim)
+* identifier[orderNumber].value = "XON-SR-2026-0012"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* code.concept = $sct#58059003 "Washing RBC for transfusion"
+* subject = Reference(Location/example-blood-service-laboratory)
 * authoredOn = "2026-11-10T10:00:00+05:00"
 * requester = Reference(PractitionerRole/example-practitionerrole)
 * priority = #urgent
@@ -149,7 +308,72 @@ Usage: #example
 * location = Reference(Location/example-blood-service-laboratory)
 * focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
 * note.text = "Ehtiyotkorlik bilan qayta ishlang."
-* orderDetail.parameter[0].code = ProcessingOperationCS#bcproc-0001-00001 "Yuvish"
-* orderDetail.parameter[=].valueBoolean = true
-* orderDetail.parameter[+].code = ProcessingOperationCS#bcproc-0001-00002 "Nurlantirish"
-* orderDetail.parameter[=].valueBoolean = true
+
+Instance: example-blood-component-irradiation-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Irradiation"
+Description: "One blood component processing operation requested by the blood service for its stock. The subject is the processing location, not the donor."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0013"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* code.concept = BloodComponentProcessingCS#bcproc-0001-00002 "Nurlantirish"
+* subject = Reference(Location/example-blood-service-laboratory)
+* authoredOn = "2026-11-10T10:00:00+05:00"
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* priority = #urgent
+* occurrenceDateTime = "2026-11-10T14:00:00+05:00"
+* performer = Reference(Organization/xonobod-medical-association)
+* location = Reference(Location/example-blood-service-laboratory)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
+* note.text = "Ehtiyotkorlik bilan qayta ishlang."
+
+Instance: example-blood-component-freezing-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Freezing"
+Description: "One blood component processing operation requested by the blood service for its stock. The subject is the processing location, not the donor."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0014"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* code.concept = $sct#71643009 "Frozen blood preparation"
+* subject = Reference(Location/example-blood-service-laboratory)
+* authoredOn = "2026-11-10T10:00:00+05:00"
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* priority = #urgent
+* occurrenceDateTime = "2026-11-10T14:00:00+05:00"
+* performer = Reference(Organization/xonobod-medical-association)
+* location = Reference(Location/example-blood-service-laboratory)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
+* note.text = "Ehtiyotkorlik bilan qayta ishlang."
+
+Instance: example-blood-component-thawing-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Thawing"
+Description: "One blood component processing operation requested by the blood service for its stock. The subject is the processing location, not the donor."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* identifier[orderNumber].value = "XON-SR-2026-0015"
+* identifier[orderNumber].assigner = Reference(Organization/xonobod-medical-association)
+* requisition.value = "DON-2025-0088231"
+* requisition.assigner = Reference(Organization/xonobod-medical-association)
+* code.concept = $sct#35382002 "Frozen blood thawing and processing"
+* subject = Reference(Location/example-blood-service-laboratory)
+* authoredOn = "2026-11-10T10:00:00+05:00"
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* priority = #urgent
+* occurrenceDateTime = "2026-11-10T14:00:00+05:00"
+* performer = Reference(Organization/xonobod-medical-association)
+* location = Reference(Location/example-blood-service-laboratory)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
+* note.text = "Ehtiyotkorlik bilan qayta ishlang."

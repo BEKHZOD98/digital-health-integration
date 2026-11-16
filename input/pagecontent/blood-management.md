@@ -48,7 +48,7 @@ Whether a donor may donate is recorded as a Flag on the donor's Patient: eligibl
 
 Each test result before donation (blood group, Rh factor, haemoglobin, HIV, hepatitis B and C, syphilis) is a [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html) on the donor, taken from a [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html). A [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html) groups the results of one examination. A positive infection marker leads to a deferral flag and to disposal of any units already collected.
 
-The donor physician orders the tests with a [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), one per receiving laboratory, with the selected tests in `orderDetail`. The results and the report point back to it through `basedOn`.
+The donor physician creates a [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) for each test or panel, with the service in `code.concept`. Requests for the same donation share its number in `requisition`; `category` identifies the receiving laboratory. Results and reports reference their requests through `basedOn`.
 
 ### Collecting the donation {#collecting}
 
@@ -105,7 +105,7 @@ Requests require a JWT access token - see [Security and authentication](https://
 GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
 GET [base]/Observation?patient=Patient/[id]
-GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://snomed.info/sct%7C108252007
+GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://loinc.org%7C1975-2
 GET [base]/Procedure?patient=Patient/[id]
 GET [base]/BiologicallyDerivedProduct?biological-source-event=https://dhp.uz/fhir/core/sid/prd/uz/blood/donation%7C[donation-number]
 GET [base]/BiologicallyDerivedProductDispense?patient=Patient/[id]

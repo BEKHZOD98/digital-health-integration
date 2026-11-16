@@ -14,7 +14,7 @@ UZ Core Observation asosidagi [Blood Service Registration Observation](Structure
 
 Yordamchi terminologiya: ro'yxatga olish turlari ([ValueSet](ValueSet-blood-service-registration-type-vs.html)) va komponent kodlari uchun [qon xizmati kuzatuv turi](CodeSystem-blood-service-observation-type-cs.html) kod tizimi, [donor toifasi](ValueSet-donor-category-vs.html) qiymatlar to'plami (kadr donor uchun SNOMED CT `275561000`, zaxira donor uchun mahalliy [kod](CodeSystem-donor-category-cs.html)), [donatsiya to'lovi](CodeSystem-donation-compensation-cs.html) ([ValueSet](ValueSet-donation-compensation-vs.html)) uchun mahalliy kod tizimi, SNOMED CT [donatsiya turi](ValueSet-donation-type-vs.html) qiymatlar to'plami, hamda SNOMED CT kodlarining o'zbekcha va ruscha [tarjimalari](CodeSystem-blood-service-snomed-translations-cs.html). Ro'yxatga olish raqami yangi [qon xizmatida ro'yxatga olish raqami](NamingSystem-blood-registration-number-system.html) identifikator tizimidan foydalanadi: `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`.
 
-[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) donor laboratoriya buyurtmalari va qon komponentlarini ikkilamchi qayta ishlashni qamrab oladi; laboratoriya va mahalliy operatsiya kodlari, oltita misol va tavsiflar qo'shildi.
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) alohida tekshiruvlar, panellar va qayta ishlash operatsiyalarini buyuradi; so'rov va donatsiya raqamlari tizimlari, Patient yoki Location subyekti, BloodLabCodesVS va BloodComponentProcessingCS, SNOMED CT operatsiya kodlari va 15 ta misol qo'shildi.
 
 #### O'zgartirildi
 

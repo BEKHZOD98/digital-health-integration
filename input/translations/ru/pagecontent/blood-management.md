@@ -50,7 +50,7 @@
 
 Каждый результат обследования перед донацией (группа крови, резус-фактор, гемоглобин, ВИЧ, гепатиты B и C, сифилис) - это [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html) донора, выполненное по образцу [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html). [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html) объединяет результаты одного обследования. Положительный маркер инфекции ведёт к флагу отвода и утилизации уже заготовленных единиц.
 
-Врач службы крови назначает исследования через [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) - по одному на каждую принимающую лабораторию, с выбранными исследованиями в `orderDetail`. Результаты и отчёт ссылаются на него через `basedOn`.
+Врач службы крови создаёт [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) для каждого исследования или панели, указывая услугу в `code.concept`. Назначения одной донации содержат общий номер в `requisition`; `category` определяет принимающую лабораторию. Результаты и отчёты ссылаются на назначения через `basedOn`.
 
 ### Забор донации {#collecting}
 
@@ -107,7 +107,7 @@
 GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
 GET [base]/Observation?patient=Patient/[id]
-GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://snomed.info/sct%7C108252007
+GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://loinc.org%7C1975-2
 GET [base]/Procedure?patient=Patient/[id]
 GET [base]/BiologicallyDerivedProduct?biological-source-event=https://dhp.uz/fhir/core/sid/prd/uz/blood/donation%7C[donation-number]
 GET [base]/BiologicallyDerivedProductDispense?patient=Patient/[id]

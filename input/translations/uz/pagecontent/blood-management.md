@@ -50,7 +50,7 @@ Donorning qon topshirishi mumkinligi uning Patient yozuvida Flag bilan qayd etil
 
 Donatsiyadan oldingi har bir tekshiruv natijasi (qon guruhi, rezus-omil, gemoglobin, OIV, B va C gepatitlari, zaxm) - donorning [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html) yozuvi bo'lib, [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) namunasidan olinadi. [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html) bitta tekshiruv natijalarini birlashtiradi. Ijobiy infeksiya belgisi chetlatish flagiga va allaqachon olingan birliklarni yo'q qilishga olib keladi.
 
-Donor shifokori tekshiruvlarni [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orqali buyuradi - har bir qabul qiluvchi laboratoriya uchun bittadan, tanlangan tekshiruvlar `orderDetail` da. Natijalar va hisobot unga `basedOn` orqali havola qiladi.
+Donor shifokori har bir tekshiruv yoki panel uchun [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) yaratadi va xizmatni `code.concept` da ko'rsatadi. Bir donatsiya so'rovlari `requisition` da umumiy raqamdan foydalanadi; `category` qabul qiluvchi laboratoriyani bildiradi. Natijalar va hisobotlar so'rovlarga `basedOn` orqali havola qiladi.
 
 ### Donatsiyani olish {#collecting}
 
@@ -107,7 +107,7 @@ So'rovlar JWT kirish tokenini talab qiladi - qarang: [Xavfsizlik va autentifikat
 GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
 GET [base]/Observation?patient=Patient/[id]
-GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://snomed.info/sct%7C108252007
+GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://loinc.org%7C1975-2
 GET [base]/Procedure?patient=Patient/[id]
 GET [base]/BiologicallyDerivedProduct?biological-source-event=https://dhp.uz/fhir/core/sid/prd/uz/blood/donation%7C[donation-number]
 GET [base]/BiologicallyDerivedProductDispense?patient=Patient/[id]

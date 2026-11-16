@@ -1,8 +1,8 @@
-ValueSet: BldLabCodesVS
-Id: bld-lab-codes-vs
+ValueSet: BloodLabCodesVS
+Id: blood-lab-codes-vs
 Title: "Blood laboratory tests and processing operations"
-Description: "Laboratory tests and local blood component processing operations selectable in blood service orders. Laboratory codes are candidates pending confirmation of local methods and specimens."
-* insert IntegrationsValueSet(bld-lab-codes-vs)
+Description: "Laboratory tests and blood component processing operations selectable in blood service orders. Laboratory codes are candidates pending confirmation of local methods and specimens."
+* insert IntegrationsValueSet(blood-lab-codes-vs)
 * ^status = #draft
 * ^experimental = true
 
@@ -26,4 +26,12 @@ Description: "Laboratory tests and local blood component processing operations s
 * include $loinc#32700-7
 * include $loinc#58410-2
 
-* include codes from system ProcessingOperationCS
+* include codes from system BloodComponentProcessingCS
+
+
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(BloodServiceSnomedTranslationsCS)
+
+* include $sct#58059003
+* include $sct#71643009
+* include $sct#35382002
