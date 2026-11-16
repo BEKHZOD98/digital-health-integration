@@ -7,3 +7,6 @@ Description: "Donor categories"
 * ^experimental = true
 * include codes from system DonorCategoryCS
 * include $sct#275561000 "Regular blood donor"
+
+* ^extension[0].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(BloodServiceSnomedTranslationsCS)

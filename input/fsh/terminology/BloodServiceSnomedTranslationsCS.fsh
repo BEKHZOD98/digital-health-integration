@@ -1,8 +1,8 @@
-CodeSystem: DonationTypeTranslationsCS
-Id: donation-type-translations-cs
-Title: "Donation type translations"
-Description: "Donation type supplement with translations in Uzbek and Russian"
-* insert SupplementCodeSystemDraft(donation-type-translations-cs, $sct, 2026.1.0)
+CodeSystem: BloodServiceSnomedTranslationsCS
+Id: blood-service-snomed-translations-cs
+Title: "Blood service SNOMED CT translations"
+Description: "SNOMED CT supplement with Uzbek and Russian translations of the blood service donor category and donation type codes"
+* insert SupplementCodeSystemDraft(blood-service-snomed-translations-cs, $sct, 2026.1.0)
 
 * #25179006 "Whole blood unit collection"
   * ^designation[0].language = #ru
@@ -21,3 +21,9 @@ Description: "Donation type supplement with translations in Uzbek and Russian"
   * ^designation[=].value = "Тромбоцитаферез"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Trombositaferez"
+
+* #275561000 "Regular blood donor"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Кадровый донор"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Kadr donor"

@@ -10,4 +10,4 @@ Description: "Donation types"
 * include $sct#72541002 "Plateletpheresis"
 
 * ^extension[0].url = $valueset-supplement
-* ^extension[=].valueCanonical = Canonical(DonationTypeTranslationsCS)
+* ^extension[=].valueCanonical = Canonical(BloodServiceSnomedTranslationsCS)
