@@ -2,7 +2,7 @@ This profile represents donor laboratory orders and requests for secondary proce
 
 ### Mandatory and Must Support data elements
 
-Mandatory elements must be present. Must Support elements must be supported by implementers even when optional in an individual request.
+The elements below must always be present (mandatory) or must be supported when the data is available ([Must Support](https://dhp.uz/fhir/core/must-support.html)) - not all are required, but your system must populate each Must Support element when it has the data and process it on receipt. This is the human-readable summary; the [formal views](#profile) below give the exact cardinalities, types, and terminology bindings.
 
 #### Each Blood ServiceRequest Must Have
 

@@ -1,7 +1,6 @@
 ### Quick Start {#quick-start}
 
-Use a valid JWT in the Authorization header. Replace `[base]` with the server FHIR base URL.
-Encode the identifier separator `|` as `%7C` in query URLs.
+Common API interactions for this profile. Requests require a JWT access token - see [Security and authentication](https://dhp.uz/fhir/core/api-access.html#security). `[base]` is the [FHIR server base URL](https://dhp.uz/fhir/core/api-access.html#endpoints); `|` separates an identifier system from its value and must be URL-encoded as `%7C`.
 
 Read a request:
 
@@ -13,7 +12,7 @@ Search by identifier, overall service code or donor:
 
 ```http
 GET [base]/ServiceRequest?identifier=[system]%7C[value]
-GET [base]/ServiceRequest?code=http://snomed.info/sct%7C108252007
+GET [base]/ServiceRequest?code-concept=http://snomed.info/sct%7C108252007
 GET [base]/ServiceRequest?subject=Patient/example-blood-donor
 ```
 
@@ -32,8 +31,7 @@ Content-Type: application/fhir+json
 If-Match: W/"[versionId]"
 ```
 
-The searches above use standard FHIR R5 search parameters. Confirm server support against the
-[UZ Core CapabilityStatement](https://dhp.uz/fhir/core/CapabilityStatement-DHPCapabilityStatement.html).
+See the [CapabilityStatement](https://dhp.uz/fhir/core/CapabilityStatement-DHPCapabilityStatement.html#ServiceRequest1-13) for the full list of supported search parameters.
 
 ### Related
 

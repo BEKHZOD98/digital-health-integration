@@ -76,6 +76,6 @@ Usage: #example
 * identifier[inventoryItem].system = "https://dhp.uz/fhir/core/sid/doc/uz/inventory-item"
 * identifier[inventoryItem].value = "INV-BLOOD-2026-00789"
 * name.nameType = http://hl7.org/fhir/inventoryitem-nametype#alias
-* name.name = "Blood component"
-* name.language = #en
+* name.name = "Qon komponenti"
+* name.language = #uz
 

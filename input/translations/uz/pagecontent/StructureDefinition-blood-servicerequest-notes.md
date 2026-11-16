@@ -2,8 +2,7 @@
 
 ### Tez boshlash {#quick-start}
 
-Authorization sarlavhasida amaldagi JWT ni yuboring. `[base]` o'rniga FHIR serverining asosiy URL manzilini yozing.
-Qidiruv URL manzilida `|` ajratgichini `%7C` sifatida kodlang.
+Ushbu profil uchun keng tarqalgan API o'zaro ta'sirlari. So'rovlar JWT kirish tokenini talab qiladi - qarang: [Xavfsizlik va autentifikatsiya](https://dhp.uz/fhir/core/api-access.html#security). `[base]` bu [FHIR server bazaviy URL manzili](https://dhp.uz/fhir/core/api-access.html#endpoints); `|` identifikator tizimini uning qiymatidan ajratadi va URL'da `%7C` sifatida kodlanishi shart.
 
 So'rovni o'qish:
 
@@ -15,7 +14,7 @@ Identifikator, umumiy xizmat kodi yoki donor bo'yicha qidirish:
 
 ```http
 GET [base]/ServiceRequest?identifier=[system]%7C[value]
-GET [base]/ServiceRequest?code=http://snomed.info/sct%7C108252007
+GET [base]/ServiceRequest?code-concept=http://snomed.info/sct%7C108252007
 GET [base]/ServiceRequest?subject=Patient/example-blood-donor
 ```
 
@@ -34,8 +33,7 @@ Content-Type: application/fhir+json
 If-Match: W/"[versionId]"
 ```
 
-Misollarda standart FHIR R5 qidiruv parametrlari ishlatilgan. Server qo'llab-quvvatlashini
-[UZ Core CapabilityStatement](https://dhp.uz/fhir/core/CapabilityStatement-DHPCapabilityStatement.html) orqali tekshiring.
+Qo'llab-quvvatlanadigan qidiruv parametrlarining to'liq ro'yxati [CapabilityStatement](https://dhp.uz/fhir/core/CapabilityStatement-DHPCapabilityStatement.html#ServiceRequest1-13) da keltirilgan.
 
 ### Tegishli materiallar
 

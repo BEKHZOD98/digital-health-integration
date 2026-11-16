@@ -2,9 +2,9 @@
 
 Profil donor laboratoriya buyurtmalari va qon komponentlarini ikkilamchi qayta ishlash so'rovlarini ifodalaydi. U [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition-uz-core-servicerequest.html) asosida tuzilgan va mavjud donor, tashrif, namuna hamda ombor resurslariga murojaat qiladi.
 
-### Majburiy va qo'llab-quvvatlanadigan elementlar
+### Majburiy va Must Support ma'lumot elementlari
 
-Majburiy elementlar mavjud bo'lishi kerak. Must Support elementlari alohida so'rovda ixtiyoriy bo'lsa ham, tizimlar tomonidan qo'llab-quvvatlanishi shart.
+Quyidagi elementlar har doim mavjud bo'lishi (majburiy) yoki ma'lumot mavjud bo'lganda qo'llab-quvvatlanishi shart ([Must Support](https://dhp.uz/fhir/core/must-support.html)) - hammasi talab qilinmaydi, lekin tizimingiz har bir Must Support elementini ma'lumotga ega bo'lganda to'ldirishi va qabul qilishda uni qayta ishlashi shart. Bu inson o'qiy oladigan xulosa; quyidagi [rasmiy ko'rinishlar](#profile) aniq kardinalliklar, turlar va terminologiya bog'lanishlarini beradi.
 
 #### Har bir Blood ServiceRequest uchun majburiy ma'lumotlar
 
