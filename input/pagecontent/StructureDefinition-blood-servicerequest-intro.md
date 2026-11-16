@@ -1,8 +1,8 @@
-Blood ServiceRequest is a request from the blood service for a donor's laboratory tests or for secondary processing of a blood component (washing, irradiation, freezing or thawing). It builds on [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest) and records the request only, not what was done. A laboratory order names the donor [Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient), the donation [Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter) and the donor [Specimens](https://dhp.uz/fhir/core/StructureDefinition/uz-core-specimen) to test; a processing request points to the blood component's [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem). The selected tests or operations are listed in `orderDetail`, so one request carries every selection for one laboratory or one component. See [Blood service forms](forms-volume-08-blood-service.html) for the source forms.
+Blood ServiceRequest is a request from the blood service for a donor's laboratory tests or for secondary processing of a blood component (washing, irradiation, freezing or thawing). It builds on [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html) and records the request only, not what was done. A laboratory order names the donor [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html), the donation [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html) and the donor [Specimens](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) to test; a processing request points to the blood component's [BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html). The selected tests or operations are listed in `orderDetail`, so one request carries every selection for one laboratory or one component. [Blood Management](blood-management.html) shows where these requests fit in the blood service, and [Blood service forms](forms-volume-08-blood-service.html) describes the source forms.
 
 ### Mandatory and Must Support data elements
 
-The elements below must always be present (mandatory) or must be supported when the data is available ([Must Support](https://dhp.uz/fhir/core/must-support.html)) - not all are required, but your system must populate each Must Support element when it has the data and process it on receipt. This is the human-readable summary; the [formal views](#profile) below give the exact cardinalities, types, and terminology bindings.
+The elements below must always be present (mandatory) or must be supported when the data is available ([Must Support](https://dhp.uz/fhir/core/en/must-support.html)) - not all are required, but your system must populate each Must Support element when it has the data and process it on receipt. This is the human-readable summary; the [formal views](#profile) below give the exact cardinalities, types, and terminology bindings.
 
 #### Each Blood ServiceRequest Must Have
 
@@ -37,11 +37,11 @@ The base resource requires `status`, `intent` and `subject`, and every resource 
   "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
   "status": "active",
   "intent": "order",
-  "subject": { "reference": "Patient/example-blood-donor" }
+  "subject": { "reference": "Patient/example-salim" }
 }
 ```
 
-The profile fixes `intent` to `order` and limits `subject` to a [Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient): the donor. A request is only useful once it says what to do, so the next examples add the selected tests or operations.
+The profile fixes `intent` to `order` and limits `subject` to a [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html): the donor. A request is only useful once it says what to do, so the next examples add the selected tests or operations.
 
 #### A donor laboratory order
 
@@ -68,10 +68,10 @@ A donor physician orders bilirubin and ALT tests from the biochemistry laborator
   "code": {
     "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "108252007" } ] }
   },
-  "subject": { "reference": "Patient/example-blood-donor" },
+  "subject": { "reference": "Patient/example-salim" },
   "encounter": { "reference": "Encounter/example-blood-donation-encounter" },
   "authoredOn": "2026-11-10T09:05:00+05:00",
-  "requester": { "reference": "Practitioner/example-blood-donor-physician" },
+  "requester": { "reference": "PractitionerRole/example-practitionerrole" },
   "specimen": [ { "reference": "Specimen/example-blood-whole-blood-specimen" } ],
   "orderDetail": [
     {
@@ -106,10 +106,10 @@ Blood service staff ask for a red cell component to be washed and irradiated:
   "code": {
     "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "64108007" } ] }
   },
-  "subject": { "reference": "Patient/example-blood-donor" },
+  "subject": { "reference": "Patient/example-salim" },
   "authoredOn": "2026-11-10T10:00:00+05:00",
-  "requester": { "reference": "Practitioner/example-blood-processing-requester" },
-  "focus": [ { "reference": "InventoryItem/example-blood-component-inventory" } ],
+  "requester": { "reference": "PractitionerRole/example-practitionerrole" },
+  "focus": [ { "reference": "BiologicallyDerivedProduct/example-blood-component-product" } ],
   "note": [ { "text": "Ehtiyotkorlik bilan qayta ishlang." } ],
   "orderDetail": [
     {
@@ -144,6 +144,6 @@ Blood service staff ask for a red cell component to be washed and irradiated:
 }
 ```
 
-Create one request per component with all selected operations from the [processing operations](CodeSystem-processing-operation-cs.html), and point `focus` to the component's [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem); do not repeat it in `supportingInfo`. Leave `category` out. SNOMED CT `64108007` Blood unit processing is a provisional overall service code. Keep the request `active` until every operation is confirmed, then set it to `completed`.
+Create one request per component with all selected operations from the [processing operations](CodeSystem-processing-operation-cs.html), and point `focus` to the component's [BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html); do not repeat it in `supportingInfo`. Leave `category` out. SNOMED CT `64108007` Blood unit processing is a provisional overall service code. Keep the request `active` until every operation is confirmed, then set it to `completed`.
 
 For example API calls, see the [Quick Start](#quick-start) at the bottom of this page.

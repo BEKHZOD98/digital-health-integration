@@ -8,10 +8,10 @@ Usage: #example
 * intent = #order
 * category[dhpCategory] = $lab-categories-cs#lab-category-04 "Biokimyo"
 * code.concept = $sct#108252007 "Laboratory procedure"
-* subject = Reference(Patient/example-blood-donor)
+* subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
-* requester = Reference(Practitioner/example-blood-donor-physician)
+* requester = Reference(PractitionerRole/example-practitionerrole)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
 * orderDetail.parameter[0].code = $loinc#1975-2 "Zardob yoki plazmada umumiy bilirubin miqdori"
 * orderDetail.parameter[=].valueBoolean = true
@@ -28,10 +28,10 @@ Usage: #example
 * intent = #order
 * category[dhpCategory] = $lab-categories-cs#lab-category-05 "Immunologiya"
 * code.concept = $sct#108252007 "Laboratory procedure"
-* subject = Reference(Patient/example-blood-donor)
+* subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
-* requester = Reference(Practitioner/example-blood-donor-physician)
+* requester = Reference(PractitionerRole/example-practitionerrole)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
 * orderDetail.parameter[0].code = $loinc#883-9 "Qon guruhi"
 * orderDetail.parameter[=].valueBoolean = true
@@ -48,10 +48,10 @@ Usage: #example
 * intent = #order
 * category[dhpCategory] = $lab-categories-cs#lab-category-20 "Infeksion diagnostika"
 * code.concept = $sct#108252007 "Laboratory procedure"
-* subject = Reference(Patient/example-blood-donor)
+* subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
-* requester = Reference(Practitioner/example-blood-donor-physician)
+* requester = Reference(PractitionerRole/example-practitionerrole)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
 * orderDetail.parameter[0].code = $loinc#16128-1 "Hepatitis C virus Ab [Presence] in Serum"
 * orderDetail.parameter[=].valueBoolean = true
@@ -72,10 +72,10 @@ Usage: #example
 * intent = #order
 * category[dhpCategory] = $lab-categories-cs#lab-category-08 "Bakteriologiya"
 * code.concept = $sct#108252007 "Laboratory procedure"
-* subject = Reference(Patient/example-blood-donor)
+* subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
-* requester = Reference(Practitioner/example-blood-donor-physician)
+* requester = Reference(PractitionerRole/example-practitionerrole)
 * specimen[0] = Reference(Specimen/example-blood-whole-blood-specimen)
 * specimen[+] = Reference(Specimen/example-blood-serum-specimen)
 * orderDetail.parameter[0].code = $loinc#30202-6 "Brucella sp Ab [Presence] in Serum"
@@ -93,10 +93,10 @@ Usage: #example
 * intent = #order
 * category[dhpCategory] = $lab-categories-cs#lab-category-02 "Gematologiya"
 * code.concept = $sct#108252007 "Laboratory procedure"
-* subject = Reference(Patient/example-blood-donor)
+* subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * authoredOn = "2026-11-10T09:05:00+05:00"
-* requester = Reference(Practitioner/example-blood-donor-physician)
+* requester = Reference(PractitionerRole/example-practitionerrole)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
 * orderDetail.parameter[0].code = $loinc#58410-2 "CBC panel - Blood by Automated count"
 * orderDetail.parameter[=].valueBoolean = true
@@ -110,10 +110,10 @@ Usage: #example
 * status = #active
 * intent = #order
 * code.concept = $sct#64108007 "Blood unit processing"
-* subject = Reference(Patient/example-blood-donor)
+* subject = Reference(Patient/example-salim)
 * authoredOn = "2026-11-10T10:00:00+05:00"
-* requester = Reference(Practitioner/example-blood-processing-requester)
-* focus = Reference(InventoryItem/example-blood-component-inventory)
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
 * note.text = "Ehtiyotkorlik bilan qayta ishlang."
 * orderDetail.parameter[0].code = ProcessingOperationCS#bld-operation-0001 "Yuvish"
 * orderDetail.parameter[=].valueBoolean = true

@@ -2,7 +2,7 @@
 
 ### Tez boshlash {#quick-start}
 
-Ushbu profil uchun keng tarqalgan API o'zaro ta'sirlari. So'rovlar JWT kirish tokenini talab qiladi - qarang: [Xavfsizlik va autentifikatsiya](https://dhp.uz/fhir/core/api-access.html#security). `[base]` bu [FHIR server bazaviy URL manzili](https://dhp.uz/fhir/core/api-access.html#endpoints); `|` kod tizimini qiymatdan ajratadi va URL'da `%7C` sifatida kodlanishi shart.
+Ushbu profil uchun keng tarqalgan API o'zaro ta'sirlari. So'rovlar JWT kirish tokenini talab qiladi - qarang: [Xavfsizlik va autentifikatsiya](https://dhp.uz/fhir/core/uz/api-access.html#security). `[base]` bu [FHIR server bazaviy URL manzili](https://dhp.uz/fhir/core/uz/api-access.html#endpoints); `|` kod tizimini qiymatdan ajratadi va URL'da `%7C` sifatida kodlanishi shart.
 
 **So'rovni server id bo'yicha va uning oldingi versiyalarini o'qish**
 
@@ -40,7 +40,7 @@ POST [base]/ServiceRequest
   "intent": "order",
   "code": { "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "108252007" } ] } },
   "subject": { "reference": "Patient/[id]" },
-  "requester": { "reference": "Practitioner/[id]" },
+  "requester": { "reference": "PractitionerRole/[id]" },
   "authoredOn": "2026-11-10T09:05:00+05:00",
   "orderDetail": [ { "parameter": [ { "code": { "coding": [ ... ] }, "valueBoolean": true } ] } ],
   ...
@@ -61,10 +61,10 @@ If-Match: W/"3"   # the ETag from your last read; 412 if it changed since
 }
 ```
 
-Qo'llab-quvvatlanadigan qidiruv parametrlarining to'liq ro'yxati [CapabilityStatement](https://dhp.uz/fhir/core/CapabilityStatement-DHPCapabilityStatement.html#ServiceRequest1-13) da keltirilgan.
+Qo'llab-quvvatlanadigan qidiruv parametrlarining to'liq ro'yxati [CapabilityStatement](https://dhp.uz/fhir/core/uz/CapabilityStatement-DHPCapabilityStatement.html#ServiceRequest1-13) da keltirilgan.
 
 ### Bog'liq bo'limlar
 
-- [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest) &middot; [UZ Core Specimen](https://dhp.uz/fhir/core/StructureDefinition/uz-core-specimen) &middot; [UZ Core InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem)
-- [Qon xizmati shakllari](forms-volume-08-blood-service.html) &middot; [Laboratoriya tekshiruvlari va qayta ishlash operatsiyalari](ValueSet-bld-lab-codes-vs.html) &middot; [Qayta ishlash operatsiyalari](CodeSystem-processing-operation-cs.html)
-- [Laboratoriya ish jarayoni](https://dhp.uz/fhir/core/workflow-lab.html) &middot; [Must Support](https://dhp.uz/fhir/core/must-support.html) &middot; [Umumiy tavsiyalar](https://dhp.uz/fhir/core/general-guidance.html)
+- [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html) &middot; [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) &middot; [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html)
+- [Blood Management](blood-management.html) &middot; [Qon xizmati shakllari](forms-volume-08-blood-service.html) &middot; [Laboratoriya tekshiruvlari va qayta ishlash operatsiyalari](ValueSet-bld-lab-codes-vs.html) &middot; [Qayta ishlash operatsiyalari](CodeSystem-processing-operation-cs.html)
+- [Laboratoriya ish jarayoni](https://dhp.uz/fhir/core/uz/workflow-lab.html) &middot; [Must Support](https://dhp.uz/fhir/core/uz/must-support.html) &middot; [Umumiy tavsiyalar](https://dhp.uz/fhir/core/uz/general-guidance.html)

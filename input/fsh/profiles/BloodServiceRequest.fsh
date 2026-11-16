@@ -19,8 +19,8 @@ Description: "Integration ServiceRequest profile for donor laboratory orders and
 * requisition.system 1..1
 * requisition ^short = "Shared identifier grouping laboratory orders for one donation episode"
 * focus MS
-* focus only Reference(UZCoreInventoryItem)
-* focus ^short = "Blood component inventory item to be processed"
+* focus only Reference(UZCoreBiologicallyDerivedProduct)
+* focus ^short = "Blood component to be processed"
 * note MS
 * orderDetail MS
 * orderDetail.parameter MS

@@ -1,6 +1,6 @@
 ### Quick Start
 
-Common API interactions for this profile. Requests require a JWT access token - see [Security and authentication](https://dhp.uz/fhir/core/api-access.html#security). `[base]` is the [FHIR server base URL](https://dhp.uz/fhir/core/api-access.html#endpoints); `|` separates a code system from its value and must be URL-encoded as `%7C`.
+Common API interactions for this profile. Requests require a JWT access token - see [Security and authentication](https://dhp.uz/fhir/core/en/api-access.html#security). `[base]` is the [FHIR server base URL](https://dhp.uz/fhir/core/en/api-access.html#endpoints); `|` separates a code system from its value and must be URL-encoded as `%7C`.
 
 **Read a request by server id, and its earlier versions**
 
@@ -38,7 +38,7 @@ POST [base]/ServiceRequest
   "intent": "order",
   "code": { "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "108252007" } ] } },
   "subject": { "reference": "Patient/[id]" },
-  "requester": { "reference": "Practitioner/[id]" },
+  "requester": { "reference": "PractitionerRole/[id]" },
   "authoredOn": "2026-11-10T09:05:00+05:00",
   "orderDetail": [ { "parameter": [ { "code": { "coding": [ ... ] }, "valueBoolean": true } ] } ],
   ...
@@ -59,10 +59,10 @@ If-Match: W/"3"   # the ETag from your last read; 412 if it changed since
 }
 ```
 
-See the [CapabilityStatement](https://dhp.uz/fhir/core/CapabilityStatement-DHPCapabilityStatement.html#ServiceRequest1-13) for the full list of supported search parameters.
+See the [CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DHPCapabilityStatement.html#ServiceRequest1-13) for the full list of supported search parameters.
 
 ### Related
 
-- [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest) &middot; [UZ Core Specimen](https://dhp.uz/fhir/core/StructureDefinition/uz-core-specimen) &middot; [UZ Core InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem)
-- [Blood service forms](forms-volume-08-blood-service.html) &middot; [Laboratory tests and processing operations](ValueSet-bld-lab-codes-vs.html) &middot; [Processing operations](CodeSystem-processing-operation-cs.html)
-- [Laboratory workflow](https://dhp.uz/fhir/core/workflow-lab.html) &middot; [Must Support](https://dhp.uz/fhir/core/must-support.html) &middot; [General guidance](https://dhp.uz/fhir/core/general-guidance.html)
+- [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html) &middot; [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) &middot; [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html)
+- [Blood Management](blood-management.html) &middot; [Blood service forms](forms-volume-08-blood-service.html) &middot; [Laboratory tests and processing operations](ValueSet-bld-lab-codes-vs.html) &middot; [Processing operations](CodeSystem-processing-operation-cs.html)
+- [Laboratory workflow](https://dhp.uz/fhir/core/en/workflow-lab.html) &middot; [Must Support](https://dhp.uz/fhir/core/en/must-support.html) &middot; [General guidance](https://dhp.uz/fhir/core/en/general-guidance.html)

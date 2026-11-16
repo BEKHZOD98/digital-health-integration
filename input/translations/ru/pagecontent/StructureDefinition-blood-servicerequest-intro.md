@@ -1,10 +1,10 @@
 > **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
 
-Blood ServiceRequest - это запрос службы крови на лабораторные исследования донора или на вторичную переработку компонента крови (отмывание, облучение, замораживание или размораживание). Он основан на [UZ Core ServiceRequest](https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest) и фиксирует только сам запрос, а не выполненную работу. Лабораторное назначение указывает донора ([Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient)), визит донации ([Encounter](https://dhp.uz/fhir/core/StructureDefinition/uz-core-encounter)) и образцы донора для исследования ([Specimen](https://dhp.uz/fhir/core/StructureDefinition/uz-core-specimen)); запрос на переработку ссылается на [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem) компонента крови. Выбранные исследования или операции перечисляются в `orderDetail`, поэтому один запрос содержит все выбранные позиции для одной лаборатории или одного компонента. Исходные формы приведены на странице [Формы службы крови](forms-volume-08-blood-service.html).
+Blood ServiceRequest - это запрос службы крови на лабораторные исследования донора или на вторичную переработку компонента крови (отмывание, облучение, замораживание или размораживание). Он основан на [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html) и фиксирует только сам запрос, а не выполненную работу. Лабораторное назначение указывает донора ([Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html)), визит донации ([Encounter](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-encounter.html)) и образцы донора для исследования ([Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html)); запрос на переработку ссылается на компонент крови ([BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html)). Выбранные исследования или операции перечисляются в `orderDetail`, поэтому один запрос содержит все выбранные позиции для одной лаборатории или одного компонента. Место этих запросов в работе службы крови показано на странице [Blood Management](blood-management.html), а исходные формы - на странице [Формы службы крови](forms-volume-08-blood-service.html).
 
 ### Обязательные и поддерживаемые (Must Support) элементы данных
 
-Приведённые ниже элементы должны всегда присутствовать (обязательные) или должны поддерживаться при наличии данных ([Must Support](https://dhp.uz/fhir/core/must-support.html)) - не все они являются обязательными, но ваша система должна заполнять каждый элемент Must Support, когда у неё есть соответствующие данные, и обрабатывать его при получении. Это человекочитаемая сводка; [формальные представления](#profile) ниже дают точные кардинальности, типы и терминологические связки.
+Приведённые ниже элементы должны всегда присутствовать (обязательные) или должны поддерживаться при наличии данных ([Must Support](https://dhp.uz/fhir/core/ru/must-support.html)) - не все они являются обязательными, но ваша система должна заполнять каждый элемент Must Support, когда у неё есть соответствующие данные, и обрабатывать его при получении. Это человекочитаемая сводка; [формальные представления](#profile) ниже дают точные кардинальности, типы и терминологические связки.
 
 #### Каждый Blood ServiceRequest должен содержать
 
@@ -39,11 +39,11 @@ Blood ServiceRequest - это запрос службы крови на лабо
   "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-servicerequest"] },
   "status": "active",
   "intent": "order",
-  "subject": { "reference": "Patient/example-blood-donor" }
+  "subject": { "reference": "Patient/example-salim" }
 }
 ```
 
-Профиль фиксирует `intent` как `order` и ограничивает `subject` ресурсом [Patient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) - донором. Запрос полезен только тогда, когда в нём указано, что нужно сделать, поэтому следующие примеры добавляют выбранные исследования или операции.
+Профиль фиксирует `intent` как `order` и ограничивает `subject` ресурсом [Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html) - донором. Запрос полезен только тогда, когда в нём указано, что нужно сделать, поэтому следующие примеры добавляют выбранные исследования или операции.
 
 #### Лабораторное назначение донору
 
@@ -70,10 +70,10 @@ Blood ServiceRequest - это запрос службы крови на лабо
   "code": {
     "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "108252007" } ] }
   },
-  "subject": { "reference": "Patient/example-blood-donor" },
+  "subject": { "reference": "Patient/example-salim" },
   "encounter": { "reference": "Encounter/example-blood-donation-encounter" },
   "authoredOn": "2026-11-10T09:05:00+05:00",
-  "requester": { "reference": "Practitioner/example-blood-donor-physician" },
+  "requester": { "reference": "PractitionerRole/example-practitionerrole" },
   "specimen": [ { "reference": "Specimen/example-blood-whole-blood-specimen" } ],
   "orderDetail": [
     {
@@ -108,10 +108,10 @@ Blood ServiceRequest - это запрос службы крови на лабо
   "code": {
     "concept": { "coding": [ { "system": "http://snomed.info/sct", "code": "64108007" } ] }
   },
-  "subject": { "reference": "Patient/example-blood-donor" },
+  "subject": { "reference": "Patient/example-salim" },
   "authoredOn": "2026-11-10T10:00:00+05:00",
-  "requester": { "reference": "Practitioner/example-blood-processing-requester" },
-  "focus": [ { "reference": "InventoryItem/example-blood-component-inventory" } ],
+  "requester": { "reference": "PractitionerRole/example-practitionerrole" },
+  "focus": [ { "reference": "BiologicallyDerivedProduct/example-blood-component-product" } ],
   "note": [ { "text": "Ehtiyotkorlik bilan qayta ishlang." } ],
   "orderDetail": [
     {
@@ -146,6 +146,6 @@ Blood ServiceRequest - это запрос службы крови на лабо
 }
 ```
 
-Создавайте один запрос на компонент со всеми выбранными операциями из [операций переработки](CodeSystem-processing-operation-cs.html) и указывайте в `focus` [InventoryItem](https://dhp.uz/fhir/core/StructureDefinition/uz-core-inventoryitem) компонента; не повторяйте его в `supportingInfo`. `category` не передавайте. SNOMED CT `64108007` Blood unit processing - предварительный код общей услуги. Держите запрос в статусе `active`, пока не подтверждена каждая операция, затем переведите его в `completed`.
+Создавайте один запрос на компонент со всеми выбранными операциями из [операций переработки](CodeSystem-processing-operation-cs.html) и указывайте в `focus` компонент ([BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html)); не повторяйте его в `supportingInfo`. `category` не передавайте. SNOMED CT `64108007` Blood unit processing - предварительный код общей услуги. Держите запрос в статусе `active`, пока не подтверждена каждая операция, затем переведите его в `completed`.
 
 Примеры вызовов API приведены в разделе [Быстрый старт](#quick-start) внизу этой страницы.
