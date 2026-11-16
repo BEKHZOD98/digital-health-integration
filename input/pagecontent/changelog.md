@@ -2,6 +2,12 @@
 
 #### Added
 
+[Blood Management](blood-management.html) maps the blood service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
+
+[Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), based on UZ Core Observation, records a person's registration with the blood service as a blood donor or a recipient. It carries the registration number, patient, effective date and time, encounter and performer. Component slices carry the donor category, donation compensation and donation type for a donor and the ICD-10 diagnosis for a recipient; a recipient registration cannot carry the donor components. Examples cover a staff donor, a reserve donor and a recipient, with a registration Encounter and registrar Practitioner for the recipient.
+
+Supporting terminology: a [blood service observation type](CodeSystem-blood-service-observation-type-cs.html) code system for the registration types ([ValueSet](ValueSet-blood-service-registration-type-vs.html)) and component codes, a [donor category](ValueSet-donor-category-vs.html) value set (SNOMED CT `275561000` for a staff donor, a local [code](CodeSystem-donor-category-cs.html) for a reserve donor), a local [donation compensation](CodeSystem-donation-compensation-cs.html) code system ([ValueSet](ValueSet-donation-compensation-vs.html)), a SNOMED CT [donation type](ValueSet-donation-type-vs.html) value set, and Uzbek and Russian [translations](CodeSystem-blood-service-snomed-translations-cs.html) of the SNOMED CT codes. The registration number uses the new [blood registration number](NamingSystem-blood-registration-number-system.html) identifier system `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`.
+
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) supports donor laboratory orders and secondary component processing, with laboratory and local processing codes, two examples and implementation notes.
 
 [Form 027 extract from a patient's medical record](StructureDefinition-form-027-medical-record-extract-composition.html) is profiled as a FHIR Document, covering registration, personal information, residence, referral and diagnosis, clinical information, treatment and recommendations, next steps and responsible persons across 8 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-027-mapping.html).
