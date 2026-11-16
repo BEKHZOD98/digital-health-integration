@@ -1,0 +1,76 @@
+name: FHIR IG Build
+
+on:
+  push:
+    branches:
+      - BloodQTest
+
+  pull_request:
+    branches:
+      - BloodQTest
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Setup Java
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: temurin
+
+      # 3. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 4. Setup Ruby
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      # 5. Install Jekyll
+      - name: Install Jekyll
+        run: gem install jekyll
+
+      # 6. Install SUSHI
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      # 7. Download IG Publisher
+      - name: Download IG Publisher
+        run: |
+          mkdir -p input-cache
+          curl --fail --location --retry 3 \
+            https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+            --output input-cache/publisher.jar
+
+      # 8. Build FHIR Implementation Guide
+      - name: Run IG Publisher
+        run: |
+          java -Xmx12g -jar input-cache/publisher.jar -ig ig.ini
+
+      # 9. Upload build results
+      - name: Upload IG build results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fhir-ig-build-results
+          path: output/
+          if-no-files-found: warn
+          retention-days: 14
