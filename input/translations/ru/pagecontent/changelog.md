@@ -2,7 +2,13 @@
 
 #### Добавлено
 
+[Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) на основе UZ Core Observation фиксирует регистрацию человека в службе крови как донора или реципиента. Оно содержит регистрационный номер, пациента, дату и время, Encounter и исполнителя. Срезы компонентов передают категорию донора, оплату и вид донации для донора и диагноз по МКБ-10 для реципиента; регистрация реципиента не может содержать компоненты донора. Примеры охватывают кадрового донора, резервного донора и реципиента, с Encounter регистрации и регистратором Practitioner для реципиента.
+
+Сопутствующая терминология: кодовая система [типов наблюдений службы крови](CodeSystem-blood-service-observation-type-cs.html) для типов регистрации ([ValueSet](ValueSet-blood-service-registration-type-vs.html)) и кодов компонентов, набор значений [категории донора](ValueSet-donor-category-vs.html) (SNOMED CT `275561000` для кадрового донора, локальный [код](CodeSystem-donor-category-cs.html) для резервного), локальная кодовая система [оплаты донации](CodeSystem-donation-compensation-cs.html) ([ValueSet](ValueSet-donation-compensation-vs.html)), набор значений SNOMED CT [вид донации](ValueSet-donation-type-vs.html), а также [переводы](CodeSystem-blood-service-snomed-translations-cs.html) кодов SNOMED CT на узбекский и русский. Регистрационный номер использует новую систему идентификаторов [номера регистрации в службе крови](NamingSystem-blood-registration-number-system.html) `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`.
+
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) описывает лабораторные назначения донору и вторичную переработку компонентов крови; добавлены лабораторные и локальные коды операций, шесть примеров и пояснения по реализации.
+
+Страница [Blood Management](blood-management.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
 
 [Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html).
 
