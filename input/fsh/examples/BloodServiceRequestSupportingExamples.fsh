@@ -32,3 +32,14 @@ Usage: #example
 * subject = Reference(Patient/example-salim)
 * collection.collector = Reference(PractitionerRole/example-practitionerrole)
 * collection.collectedDateTime = "2026-11-10T09:00:00+05:00"
+
+Instance: example-blood-service-laboratory
+InstanceOf: UZCoreLocation
+Title: "Example Blood Service Laboratory"
+Description: "Blood service laboratory that performs donor tests and component processing."
+Usage: #example
+* language = #uz
+* status = #active
+* name = "Qon xizmati laboratoriyasi"
+* mode = #instance
+* managingOrganization = Reference(Organization/xonobod-medical-association)

@@ -4,22 +4,22 @@ Title: "Blood component processing operations"
 Description: "Local DHP operations selected when requesting secondary processing of a blood component."
 * insert OriginalCodeSystemDraft(processing-operation-cs)
 
-* #bld-operation-0001 "Yuvish"
+* #bcproc-0001-00001 "Yuvish"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Обмывание"
   * ^designation[+].language = #en
   * ^designation[=].value = "Washing"
-* #bld-operation-0002 "Nurlantirish"
+* #bcproc-0001-00002 "Nurlantirish"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Облучение"
   * ^designation[+].language = #en
   * ^designation[=].value = "Irradiation"
-* #bld-operation-0003 "Muzlatish"
+* #bcproc-0001-00003 "Muzlatish"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Заморозка"
   * ^designation[+].language = #en
   * ^designation[=].value = "Freezing"
-* #bld-operation-0004 "Eritish"
+* #bcproc-0001-00004 "Eritish"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Разморозка"
   * ^designation[+].language = #en

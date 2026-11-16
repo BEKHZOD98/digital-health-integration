@@ -121,7 +121,7 @@ Qon xizmati xodimi eritrotsitar komponentni yuvish va nurlantirishni so'raydi:
             "coding": [
               {
                 "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/processing-operation-cs",
-                "code": "bld-operation-0001",
+                "code": "bcproc-0001-00001",
                 "display": "Yuvish"
               }
             ]
@@ -133,7 +133,7 @@ Qon xizmati xodimi eritrotsitar komponentni yuvish va nurlantirishni so'raydi:
             "coding": [
               {
                 "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/processing-operation-cs",
-                "code": "bld-operation-0002",
+                "code": "bcproc-0001-00002",
                 "display": "Nurlantirish"
               }
             ]
