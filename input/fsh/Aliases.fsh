@@ -289,5 +289,10 @@ Alias: $composition-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/co
 Alias: $composition-category-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/composition-category-cs
 Alias: $form-044-observation-code-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form-044-observation-code-cs
 
+// Blood donor observations
+Alias: $blood-group-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-group-vs
+Alias: $blood-registration-number = https://dhp.uz/fhir/core/sid/doc/uz/blood-registration
+Alias: $blood-rh-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-rh-vs
+
 //Blood management
 Alias: $blood-group-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/blood-group-cs
