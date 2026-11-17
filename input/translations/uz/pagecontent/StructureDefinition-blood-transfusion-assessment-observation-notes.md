@@ -34,6 +34,6 @@ Qo'llab-quvvatlanadigan amallar va qidiruv parametrlarini [UZ Core CapabilitySta
 - [Blood transfusion history category](ValueSet-blood-transfusion-history-vs.html)
 - [Obstetric history category](ValueSet-obstetric-history-vs.html)
 - [Biological transfusion test result](ValueSet-specimen-res-vs.html)
-- [Blood Management](blood-management.html) &middot; [Qon xizmati shakllari](forms-volume-08-blood-service.html)
+- [Blood Service](blood-service.html) &middot; [Qon xizmati shakllari](forms-volume-08-blood-service.html)
 - [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html)
 - [Must Support](https://dhp.uz/fhir/core/uz/must-support.html) &middot; [Umumiy ko'rsatmalar](https://dhp.uz/fhir/core/uz/general-guidance.html)

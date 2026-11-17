@@ -32,6 +32,6 @@ Confirm supported operations and search parameters in the [UZ Core CapabilitySta
 - [Blood transfusion history category](ValueSet-blood-transfusion-history-vs.html)
 - [Obstetric history category](ValueSet-obstetric-history-vs.html)
 - [Biological transfusion test result](ValueSet-specimen-res-vs.html)
-- [Blood Management](blood-management.html) &middot; [Blood service forms](forms-volume-08-blood-service.html)
+- [Blood Service](blood-service.html) &middot; [Blood service forms](forms-volume-08-blood-service.html)
 - [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html)
 - [Must Support](https://dhp.uz/fhir/core/en/must-support.html) &middot; [General guidance](https://dhp.uz/fhir/core/en/general-guidance.html)

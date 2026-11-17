@@ -34,6 +34,6 @@ If-Match: W/"[versionId]"
 - [Blood transfusion history category](ValueSet-blood-transfusion-history-vs.html)
 - [Obstetric history category](ValueSet-obstetric-history-vs.html)
 - [Biological transfusion test result](ValueSet-specimen-res-vs.html)
-- [Blood Management](blood-management.html) &middot; [Формы службы крови](forms-volume-08-blood-service.html)
+- [Blood Service](blood-service.html) &middot; [Формы службы крови](forms-volume-08-blood-service.html)
 - [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html)
 - [Must Support](https://dhp.uz/fhir/core/ru/must-support.html) &middot; [Общие рекомендации](https://dhp.uz/fhir/core/ru/general-guidance.html)
