@@ -4,36 +4,48 @@
 
 Типичные API-взаимодействия для данного профиля. Профиль основан на Observation, поэтому используйте конечную точку Observation. Запросы требуют JWT-токена доступа - см. [Безопасность и аутентификация](https://dhp.uz/fhir/core/ru/api-access.html#security). `[base]` - это [базовый URL FHIR-сервера](https://dhp.uz/fhir/core/ru/api-access.html#endpoints); `|` отделяет систему от значения и должен быть URL-кодирован как `%7C`.
 
-Чтение по id или поиск по получателю и коду оценки:
+**Чтение по серверному id**
 
-```http
+```
 GET [base]/Observation/[id]
-GET [base]/Observation?subject=Patient/example-transfusion-assessment-recipient
-GET [base]/Observation?code=http://snomed.info/sct%7C252314007
 ```
 
-Создавайте ресурс по полному примеру. Для исправления результатов обновляйте существующий ресурс, сохраняйте фактическое время оценки и используйте соответствующий статус, например amended. Передавайте текущий ETag для защиты от параллельных изменений.
+**Поиск оценок перед переливанием** (по реципиенту, по Encounter, по несовместимому результату)
 
-```http
+```
+GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C252314007
+GET [base]/Observation?encounter=Encounter/[id]&code=http://snomed.info/sct%7C252314007
+GET [base]/Observation?code=http://snomed.info/sct%7C252314007&component-value-concept=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs%7Cbldcomp-0002-00002
+```
+
+**Создание**
+
+```
 POST [base]/Observation
-Content-Type: application/fhir+json
+{
+  "resourceType": "Observation",
+  "meta": {
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation" ]
+  },
+  "status": "final",
+  "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "252314007" } ] },
+  "subject": { "reference": "Patient/[id]" },
+  "effectiveDateTime": "2026-11-11T10:30:00+05:00",
+  ...
+}
 ```
 
-```http
+**Исправление ошибки** - отправьте PUT с полным ресурсом, исправленным значением и `status` = `amended`, сохранив исходное `effectiveDateTime`:
+
+```
 PUT [base]/Observation/[id]
-Content-Type: application/fhir+json
-If-Match: W/"[versionId]"
+If-Match: W/"3"   # ETag из последнего чтения; 412, если ресурс с тех пор изменился
 ```
 
-Проверьте поддерживаемые операции и параметры поиска в [UZ Core CapabilityStatement](https://dhp.uz/fhir/core/ru/CapabilityStatement-DHPCapabilityStatement.html). В примерах используются стандартные параметры поиска FHIR R5.
+Полный список поддерживаемых параметров поиска см. в [CapabilityStatement](https://dhp.uz/fhir/core/ru/CapabilityStatement-DHPCapabilityStatement.html#Observation1-9).
 
 ### Связанные материалы
 
-- [Blood transfusion assessment component](ValueSet-blood-transfusion-assessment-vs.html)
-- [Blood transfusion compatibility result](ValueSet-blood-transfusion-value-vs.html)
-- [Blood transfusion history category](ValueSet-blood-transfusion-history-vs.html)
-- [Obstetric history category](ValueSet-obstetric-history-vs.html)
-- [Biological transfusion test result](ValueSet-specimen-res-vs.html)
 - [Blood Service](blood-service.html) &middot; [Формы службы крови](forms-volume-08-blood-service.html)
 - [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html)
 - [Must Support](https://dhp.uz/fhir/core/ru/must-support.html) &middot; [Общие рекомендации](https://dhp.uz/fhir/core/ru/general-guidance.html)

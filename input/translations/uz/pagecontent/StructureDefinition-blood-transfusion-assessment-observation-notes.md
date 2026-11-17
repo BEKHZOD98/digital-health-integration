@@ -4,36 +4,48 @@
 
 Ushbu profil uchun keng tarqalgan API o'zaro ta'sirlari. Profil Observation asosida qurilgan, shuning uchun Observation endpointidan foydalaning. So'rovlar JWT kirish tokenini talab qiladi - qarang: [Xavfsizlik va autentifikatsiya](https://dhp.uz/fhir/core/uz/api-access.html#security). `[base]` bu [FHIR server bazaviy URL manzili](https://dhp.uz/fhir/core/uz/api-access.html#endpoints); `|` tizimni uning qiymatidan ajratadi va URL'da `%7C` sifatida kodlanishi shart.
 
-Id bo'yicha o'qish yoki oluvchi va baholash kodi bo'yicha qidirish:
+**Server id bo'yicha o'qish**
 
-```http
+```
 GET [base]/Observation/[id]
-GET [base]/Observation?subject=Patient/example-transfusion-assessment-recipient
-GET [base]/Observation?code=http://snomed.info/sct%7C252314007
 ```
 
-To'liq misol asosida resurs yarating. Natijalarni tuzatishda mavjud resursni yangilang, baholashning haqiqiy vaqtini saqlang va amended kabi mos holatdan foydalaning. Parallel o'zgarishlardan himoyalanish uchun joriy ETag ni yuboring.
+**Qon quyishdan oldingi baholashlarni qidirish** (retsipiyent, Encounter, mos kelmaslik natijasi bo'yicha)
 
-```http
+```
+GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C252314007
+GET [base]/Observation?encounter=Encounter/[id]&code=http://snomed.info/sct%7C252314007
+GET [base]/Observation?code=http://snomed.info/sct%7C252314007&component-value-concept=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs%7Cbldcomp-0002-00002
+```
+
+**Yaratish**
+
+```
 POST [base]/Observation
-Content-Type: application/fhir+json
+{
+  "resourceType": "Observation",
+  "meta": {
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation" ]
+  },
+  "status": "final",
+  "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "252314007" } ] },
+  "subject": { "reference": "Patient/[id]" },
+  "effectiveDateTime": "2026-11-11T10:30:00+05:00",
+  ...
+}
 ```
 
-```http
+**Xatoni tuzatish** - to'liq resursni tuzatilgan qiymat va `status` = `amended` bilan PUT orqali qayta yuboring, asl `effectiveDateTime` ni saqlang:
+
+```
 PUT [base]/Observation/[id]
-Content-Type: application/fhir+json
-If-Match: W/"[versionId]"
+If-Match: W/"3"   # oxirgi o'qishdagi ETag; o'shandan beri o'zgargan bo'lsa 412
 ```
 
-Qo'llab-quvvatlanadigan amallar va qidiruv parametrlarini [UZ Core CapabilityStatement](https://dhp.uz/fhir/core/uz/CapabilityStatement-DHPCapabilityStatement.html) orqali tekshiring. Misollarda standart FHIR R5 qidiruv parametrlari ishlatilgan.
+Qo'llab-quvvatlanadigan qidiruv parametrlarining to'liq ro'yxati uchun [CapabilityStatement](https://dhp.uz/fhir/core/uz/CapabilityStatement-DHPCapabilityStatement.html#Observation1-9) ga qarang.
 
 ### Aloqador materiallar
 
-- [Blood transfusion assessment component](ValueSet-blood-transfusion-assessment-vs.html)
-- [Blood transfusion compatibility result](ValueSet-blood-transfusion-value-vs.html)
-- [Blood transfusion history category](ValueSet-blood-transfusion-history-vs.html)
-- [Obstetric history category](ValueSet-obstetric-history-vs.html)
-- [Biological transfusion test result](ValueSet-specimen-res-vs.html)
 - [Blood Service](blood-service.html) &middot; [Qon xizmati shakllari](forms-volume-08-blood-service.html)
 - [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html)
 - [Must Support](https://dhp.uz/fhir/core/uz/must-support.html) &middot; [Umumiy ko'rsatmalar](https://dhp.uz/fhir/core/uz/general-guidance.html)

@@ -1,6 +1,6 @@
 > **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
 
-Профиль основан на [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html) и описывает предтрансфузионную оценку получателя и результаты биологической пробы в одном Observation на протокол переливания. Используйте существующие ресурсы пациента и визита. Код оценки всегда SNOMED CT `252314007` (Blood transfusion test).
+Blood Transfusion Assessment Observation фиксирует проверки, выполняемые у реципиента при переливании крови: совместимость по ABO и Rh-Hr, трансфузионный и акушерский анамнез, предварительную группу крови ABO и результат биологической пробы на совместимость. Одно Observation соответствует одному протоколу переливания, каждая проверка передаётся в своём компоненте. Профиль основан на [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), поэтому для чтения и поиска используйте конечную точку Observation. Субъект - реципиент, [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html); запись может ссылаться на [Encounter](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-encounter.html), в ходе которого проведена оценка, и на медицинского работника, который её провёл. Как профиль сочетается с профилями UZ Core в работе службы крови, от регистрации донора до трансфузии, описано на странице [Blood Service](blood-service.html).
 
 ### Обязательные элементы данных и элементы Must Support
 
@@ -8,86 +8,83 @@
 
 #### Каждое Blood Transfusion Assessment Observation должно иметь
 
-Статус, фиксированный код оценки и ссылка на получателя. Каждый переданный компонент содержит свой фиксированный код.
+Каждое Blood Transfusion Assessment Observation должно содержать status, code - всегда SNOMED CT `252314007` *Blood transfusion test* как единственное кодирование - и subject - [Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html)-реципиента (1..1). Переданный идентификатор должен содержать `system`. Результаты оценки передаются в компонентах, и каждый компонент содержит свой фиксированный код.
 
 #### Каждое Blood Transfusion Assessment Observation должно поддерживать
 
-- Бизнес-идентификаторы, если присвоены, вместе с системой.
-- Получатель, визит и ответственный специалист или организация.
-- Время оценки, публикации результата и необязательные пояснения.
-- Шесть именованных компонентов и их кодированные значения.
-
-### Срезы component
-
-Каждый срез необязателен и может встретиться один раз. Все шесть срезов используют значения CodeableConcept; фиксированный код компонента определяет нужный ValueSet. Биологическая проба передаётся в шестом компоненте. Компонент даты направления не определён, поскольку среди шести предоставленных типов для него нет кода. Коды SNOMED CT результатов биологической пробы остаются кандидатами до проверки в используемой редакции.
-
-| Slice | Component code | Значение |
-| --- | --- | --- |
-| `aboCompatibility` (Совместимость ABO) | `bldcomp-0001-00001` | Результат совместимости |
-| `rhHrCompatibility` (Совместимость Rh-Hr) | `bldcomp-0001-00002` | Результат совместимости |
-| `transfusionHistory` (Трансфузионный анамнез) | `bldcomp-0001-00003` | Категория трансфузионного анамнеза |
-| `obstetricHistory` (Акушерский анамнез) | `bldcomp-0001-00004` | Категория акушерского анамнеза |
-| `preliminaryAboGroup` (Предварительная группа ABO) | `bldcomp-0001-00005` | Группа ABO из UZ Core |
-| `biologicalSpecimen` (Результат биологической пробы) | `bldcomp-0001-00006` | Положительный или отрицательный SNOMED CT |
+- бизнес-идентификатор оценки;
+- Encounter, в ходе которого проведена оценка, и исполнителя - медицинского работника, его роль или организацию, ответственных за оценку;
+- время проведения оценки (`effective[x]`) и время выдачи результата (`issued`);
+- результаты совместимости по ABO и по Rh-Hr, каждый в своём компоненте;
+- трансфузионный и акушерский анамнез, каждый в своём компоненте;
+- предварительную группу крови ABO и результат биологической пробы на совместимость, каждый в своём компоненте;
+- остальные элементы Must Support, унаследованные от UZ Core Observation.
 
 ### Построение JSON шаг за шагом
 
-Минимальная оценка: срезы component необязательны.
+Примеры ниже идут от наименьшего экземпляра, который примет сервер, до полной оценки. Скопируйте один из них и адаптируйте - каждое показанное значение проходит валидацию по этому профилю. Полный эталонный экземпляр: [оценка реципиента](Observation-example-blood-transfusion-assessment.html).
+
+#### Минимальное наблюдение, которое следует отправлять
+
+Обязательны три элемента: `status`, `code`, указывающий, что это проба на переливание крови, и `subject` ([Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html)-реципиент). Добавьте также `effectiveDateTime` оценки: результат без времени нельзя соотнести с переливанием.
 
 ```json
 {
   "resourceType": "Observation",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation"
-    ]
-  },
   "language": "uz",
+  "meta": {
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation" ]
+  },
   "status": "final",
   "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "252314007"
-      }
-    ]
+    "coding": [ { "system": "http://snomed.info/sct", "code": "252314007", "display": "Blood transfusion test" } ]
   },
-  "subject": {
-    "reference": "Patient/example-transfusion-assessment-recipient"
-  }
+  "subject": { "reference": "Patient/example-transfusion-assessment-recipient" },
+  "effectiveDateTime": "2026-11-11T10:30:00+05:00"
 }
 ```
 
-Совместимость ABO определяется фиксированным кодом компонента.
+`subject` - обычный `Reference`, поэтому цель указывается непосредственно в `reference`.
+
+#### Полная оценка
+
+Каждая проверка передаётся в своём срезе `component`. Каждый срез необязателен и встречается не более одного раза; `code` выбирает срез, а `valueCodeableConcept` должен быть из ValueSet этого среза:
+
+| Срез | `code` | `valueCodeableConcept` из |
+|---|---|---|
+| `aboCompatibility` | `bldcomp-0001-00001` | [Результат совместимости](ValueSet-blood-transfusion-value-vs.html) |
+| `rhHrCompatibility` | `bldcomp-0001-00002` | [Результат совместимости](ValueSet-blood-transfusion-value-vs.html) |
+| `transfusionHistory` | `bldcomp-0001-00003` | [Категория трансфузионного анамнеза](ValueSet-blood-transfusion-history-vs.html) |
+| `obstetricHistory` | `bldcomp-0001-00004` | [Категория акушерского анамнеза](ValueSet-obstetric-history-vs.html) |
+| `preliminaryAboGroup` | `bldcomp-0001-00005` | [Группа крови ABO](https://dhp.uz/fhir/core/ru/ValueSet-blood-group-vs.html) (SNOMED CT) |
+| `biologicalSpecimen` | `bldcomp-0001-00006` | [Результат биологической пробы](ValueSet-specimen-res-vs.html) (SNOMED CT) |
+
+Коды `bldcomp-0001` находятся в `https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs`. Локальные коды имеют отображения на узбекском языке, поэтому ресурс задаёт `language` = `uz`:
 
 ```json
 {
   "resourceType": "Observation",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation"
-    ]
-  },
   "language": "uz",
+  "meta": {
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation" ]
+  },
   "status": "final",
   "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "252314007"
-      }
-    ]
+    "coding": [ { "system": "http://snomed.info/sct", "code": "252314007", "display": "Blood transfusion test" } ]
   },
-  "subject": {
-    "reference": "Patient/example-transfusion-assessment-recipient"
-  },
+  "subject": { "reference": "Patient/example-transfusion-assessment-recipient" },
+  "encounter": { "reference": "Encounter/example-transfusion-assessment-encounter" },
+  "effectiveDateTime": "2026-11-11T10:30:00+05:00",
+  "issued": "2026-11-11T10:35:00+05:00",
+  "performer": [ { "reference": "Practitioner/example-transfusion-assessment-practitioner" } ],
   "component": [
     {
       "code": {
         "coding": [
           {
             "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
-            "code": "bldcomp-0001-00001"
+            "code": "bldcomp-0001-00001",
+            "display": "ABO bo‘yicha moslik"
           }
         ]
       },
@@ -95,53 +92,8 @@
         "coding": [
           {
             "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs",
-            "code": "bldcomp-0002-00001"
-          }
-        ]
-      }
-    }
-  ]
-}
-```
-
-Биологическая проба передаётся отдельным компонентом вместе с проверками совместимости.
-
-```json
-{
-  "resourceType": "Observation",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation"
-    ]
-  },
-  "language": "uz",
-  "status": "final",
-  "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "252314007"
-      }
-    ]
-  },
-  "subject": {
-    "reference": "Patient/example-transfusion-assessment-recipient"
-  },
-  "component": [
-    {
-      "code": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
-            "code": "bldcomp-0001-00001"
-          }
-        ]
-      },
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs",
-            "code": "bldcomp-0002-00001"
+            "code": "bldcomp-0002-00001",
+            "display": "Mos"
           }
         ]
       }
@@ -151,23 +103,93 @@
         "coding": [
           {
             "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
-            "code": "bldcomp-0001-00006"
+            "code": "bldcomp-0001-00002",
+            "display": "Rh-Hr bo‘yicha moslik"
           }
         ]
       },
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "http://snomed.info/sct",
-            "code": "260385009"
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs",
+            "code": "bldcomp-0002-00001",
+            "display": "Mos"
           }
         ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
+            "code": "bldcomp-0001-00003",
+            "display": "Transfuzion anamnez"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-history-cs",
+            "code": "bldcomp-0003-00001",
+            "display": "Avval qon quyilmagan"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
+            "code": "bldcomp-0001-00004",
+            "display": "Akusherlik anamnezi"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/obstetric-history-cs",
+            "code": "bldcomp-0004-00002",
+            "display": "Homiladorlik yoki tug‘ruq bo‘lmagan"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
+            "code": "bldcomp-0001-00005",
+            "display": "Dastlabki ABO qon guruhi"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ { "system": "http://snomed.info/sct", "code": "112144000", "display": "Blood group A" } ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
+            "code": "bldcomp-0001-00006",
+            "display": "Biologik namuna"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ { "system": "http://snomed.info/sct", "code": "260385009", "display": "Negative" } ]
       }
     }
   ]
 }
 ```
 
-[Полный пример](Observation-example-blood-transfusion-assessment.html) содержит все шесть срезов и ссылки на примеры получателя, визита и специалиста.
+Передавайте только компоненты, записанные в протоколе: проверку, которая не проводилась, не передавайте вовсе, а не пустым компонентом. Для акушерского анамнеза используйте *Не применимо* (`bldcomp-0004-00001`), если он к реципиенту не относится, а для трансфузионного анамнеза - *Данные отсутствуют* (`bldcomp-0003-00004`), если его не удалось установить.
 
-[Быстрое начало работы](#quick-start)
+Примеры API-вызовов см. в разделе [Быстрый старт](#quick-start) внизу этой страницы.

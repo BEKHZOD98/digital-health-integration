@@ -1,6 +1,6 @@
 > **Mashina tarjimasi, inson tomonidan tekshirilishi zarur.** Ushbu sahifa ingliz tilidan sun'iy intellekt yordamida avtomatik tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday nomuvofiqlikda asl inglizcha versiya ustuvor hisoblanadi.
 
-Profil [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html) asosida oluvchining transfuziyadan oldingi baholashi va biologik sinov natijalarini har bir transfuziya bayonnomasi uchun bitta Observation da qayd etadi. Mavjud bemor va tashrif resurslaridan foydalaning. Baholash kodi har doim SNOMED CT `252314007` (Blood transfusion test).
+Blood Transfusion Assessment Observation qon quyishda retsipiyentda o'tkaziladigan tekshiruvlarni qayd etadi: ABO va Rh-Hr bo'yicha moslik, transfuzion va akusherlik anamnezi, dastlabki ABO qon guruhi hamda moslikka biologik sinov natijasi. Bitta Observation bitta qon quyish bayonnomasiga to'g'ri keladi, har bir tekshiruv o'z komponentida yoziladi. Profil [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html) asosida qurilgan, shuning uchun o'qish va qidirish uchun Observation endpointidan foydalaning. Subyekt - retsipiyent, [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html); yozuv baholash o'tkazilgan [Encounter](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-encounter.html)ga va uni o'tkazgan tibbiyot xodimiga havola qilishi mumkin. Profil qon xizmatida, donorni ro'yxatga olishdan transfuziyagacha, UZ Core profillari bilan qanday birlashishi [Blood Service](blood-service.html) sahifasida tasvirlangan.
 
 ### Majburiy va Must Support ma'lumot elementlari
 
@@ -8,86 +8,83 @@ Quyidagi elementlar har doim mavjud bo'lishi (majburiy) yoki ma'lumot mavjud bo'
 
 #### Har bir Blood Transfusion Assessment Observation quyidagilarga ega bo'lishi shart
 
-Holat, belgilangan baholash kodi va oluvchiga havola. Har bir berilgan komponent o'zining belgilangan kodini saqlaydi.
+Har bir Blood Transfusion Assessment Observation status, code - har doim yagona kodlash sifatida SNOMED CT `252314007` *Blood transfusion test* - va subject - retsipiyent [Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html) (1..1) ni olib yurishi kerak. Yuborilgan identifikatorda `system` bo'lishi shart. Baholash natijalari komponentlarda yoziladi va har bir komponent o'zining belgilangan kodini saqlaydi.
 
 #### Har bir Blood Transfusion Assessment Observation quyidagilarni qo'llab-quvvatlashi shart
 
-- Tayinlangan bo'lsa, biznes identifikatorlar va ularning tizimi.
-- Oluvchi, tashrif va mas'ul mutaxassis yoki tashkilot.
-- Baholash vaqti, natija e'lon qilingan vaqt va ixtiyoriy izohlar.
-- Oltita nomlangan komponent va ularning kodlangan qiymatlari.
-
-### Component kesimlari
-
-Har bir kesim ixtiyoriy va bir marta uchrashi mumkin. Oltita kesimning barchasi CodeableConcept qiymatidan foydalanadi; belgilangan komponent kodi tegishli ValueSet ni tanlaydi. Biologik sinov natijasi oltinchi komponentda beriladi. Yo'llanma sanasi uchun komponent belgilanmagan, chunki berilgan oltita tur orasida uning kodi yo'q. Biologik sinov natijalarining SNOMED CT kodlari foydalanilayotgan nashrda tekshirilguncha nomzod hisoblanadi.
-
-| Slice | Component code | Qiymat |
-| --- | --- | --- |
-| `aboCompatibility` (ABO bo'yicha moslik) | `bldcomp-0001-00001` | Moslik natijasi |
-| `rhHrCompatibility` (Rh-Hr bo'yicha moslik) | `bldcomp-0001-00002` | Moslik natijasi |
-| `transfusionHistory` (Transfuzion anamnez) | `bldcomp-0001-00003` | Transfuzion anamnez toifasi |
-| `obstetricHistory` (Akusherlik anamnezi) | `bldcomp-0001-00004` | Akusherlik anamnezi toifasi |
-| `preliminaryAboGroup` (Dastlabki ABO guruhi) | `bldcomp-0001-00005` | UZ Core ABO guruhi |
-| `biologicalSpecimen` (Biologik sinov natijasi) | `bldcomp-0001-00006` | SNOMED CT musbat yoki manfiy |
+- baholashning biznes identifikatori;
+- baholash o'tkazilgan Encounter va ijrochi - baholash uchun mas'ul tibbiyot xodimi, uning roli yoki tashkilot;
+- baholash o'tkazilgan vaqt (`effective[x]`) va natija berilgan vaqt (`issued`);
+- ABO va Rh-Hr bo'yicha moslik natijalari, har biri o'z komponentida;
+- transfuzion va akusherlik anamnezi, har biri o'z komponentida;
+- dastlabki ABO qon guruhi va moslikka biologik sinov natijasi, har biri o'z komponentida;
+- UZ Core Observation'dan meros qolgan boshqa Must Support elementlari.
 
 ### JSON'ni bosqichma-bosqich qurish
 
-Minimal baholash: component kesimlari ixtiyoriy.
+Quyidagi misollar server qabul qiladigan eng kichik nusxadan to'liq baholashgacha boradi. Birini nusxalab moslashtiring - ko'rsatilgan har bir qiymat ushbu profil bo'yicha validatsiyadan o'tadi. To'liq namunaviy nusxa: [retsipiyentni baholash](Observation-example-blood-transfusion-assessment.html).
+
+#### Yuborish kerak bo'lgan eng kichik kuzatuv
+
+Uchta element majburiy: `status`, bu qon quyish sinovi ekanini ko'rsatuvchi `code` va `subject` (retsipiyent [Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html)). Baholashning `effectiveDateTime` ini ham qo'shing: vaqtsiz natijani qon quyish bilan bog'lab bo'lmaydi.
 
 ```json
 {
   "resourceType": "Observation",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation"
-    ]
-  },
   "language": "uz",
+  "meta": {
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation" ]
+  },
   "status": "final",
   "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "252314007"
-      }
-    ]
+    "coding": [ { "system": "http://snomed.info/sct", "code": "252314007", "display": "Blood transfusion test" } ]
   },
-  "subject": {
-    "reference": "Patient/example-transfusion-assessment-recipient"
-  }
+  "subject": { "reference": "Patient/example-transfusion-assessment-recipient" },
+  "effectiveDateTime": "2026-11-11T10:30:00+05:00"
 }
 ```
 
-ABO mosligi belgilangan komponent kodi bilan aniqlanadi.
+`subject` oddiy `Reference`, shuning uchun nishon to'g'ridan-to'g'ri `reference` ichida turadi.
+
+#### To'liq baholash
+
+Har bir tekshiruv o'zining `component` slaysida yoziladi. Har bir slays ixtiyoriy va ko'pi bilan bir marta uchraydi; `code` slaysni tanlaydi, `valueCodeableConcept` esa shu slaysning ValueSet'idan bo'lishi shart:
+
+| Slays | `code` | `valueCodeableConcept` manbasi |
+|---|---|---|
+| `aboCompatibility` | `bldcomp-0001-00001` | [Moslik natijasi](ValueSet-blood-transfusion-value-vs.html) |
+| `rhHrCompatibility` | `bldcomp-0001-00002` | [Moslik natijasi](ValueSet-blood-transfusion-value-vs.html) |
+| `transfusionHistory` | `bldcomp-0001-00003` | [Transfuzion anamnez toifasi](ValueSet-blood-transfusion-history-vs.html) |
+| `obstetricHistory` | `bldcomp-0001-00004` | [Akusherlik anamnezi toifasi](ValueSet-obstetric-history-vs.html) |
+| `preliminaryAboGroup` | `bldcomp-0001-00005` | [ABO qon guruhi](https://dhp.uz/fhir/core/uz/ValueSet-blood-group-vs.html) (SNOMED CT) |
+| `biologicalSpecimen` | `bldcomp-0001-00006` | [Biologik sinov natijasi](ValueSet-specimen-res-vs.html) (SNOMED CT) |
+
+`bldcomp-0001` kodlari `https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs` da joylashgan. Mahalliy kodlarning ko'rinishlari o'zbek tilida, shuning uchun resurs `language` ni `uz` qilib belgilaydi:
 
 ```json
 {
   "resourceType": "Observation",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation"
-    ]
-  },
   "language": "uz",
+  "meta": {
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation" ]
+  },
   "status": "final",
   "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "252314007"
-      }
-    ]
+    "coding": [ { "system": "http://snomed.info/sct", "code": "252314007", "display": "Blood transfusion test" } ]
   },
-  "subject": {
-    "reference": "Patient/example-transfusion-assessment-recipient"
-  },
+  "subject": { "reference": "Patient/example-transfusion-assessment-recipient" },
+  "encounter": { "reference": "Encounter/example-transfusion-assessment-encounter" },
+  "effectiveDateTime": "2026-11-11T10:30:00+05:00",
+  "issued": "2026-11-11T10:35:00+05:00",
+  "performer": [ { "reference": "Practitioner/example-transfusion-assessment-practitioner" } ],
   "component": [
     {
       "code": {
         "coding": [
           {
             "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
-            "code": "bldcomp-0001-00001"
+            "code": "bldcomp-0001-00001",
+            "display": "ABO bo‘yicha moslik"
           }
         ]
       },
@@ -95,53 +92,8 @@ ABO mosligi belgilangan komponent kodi bilan aniqlanadi.
         "coding": [
           {
             "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs",
-            "code": "bldcomp-0002-00001"
-          }
-        ]
-      }
-    }
-  ]
-}
-```
-
-Biologik sinov moslik tekshiruvlari bilan birga alohida komponentda beriladi.
-
-```json
-{
-  "resourceType": "Observation",
-  "meta": {
-    "profile": [
-      "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation"
-    ]
-  },
-  "language": "uz",
-  "status": "final",
-  "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "252314007"
-      }
-    ]
-  },
-  "subject": {
-    "reference": "Patient/example-transfusion-assessment-recipient"
-  },
-  "component": [
-    {
-      "code": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
-            "code": "bldcomp-0001-00001"
-          }
-        ]
-      },
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs",
-            "code": "bldcomp-0002-00001"
+            "code": "bldcomp-0002-00001",
+            "display": "Mos"
           }
         ]
       }
@@ -151,23 +103,93 @@ Biologik sinov moslik tekshiruvlari bilan birga alohida komponentda beriladi.
         "coding": [
           {
             "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
-            "code": "bldcomp-0001-00006"
+            "code": "bldcomp-0001-00002",
+            "display": "Rh-Hr bo‘yicha moslik"
           }
         ]
       },
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "http://snomed.info/sct",
-            "code": "260385009"
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs",
+            "code": "bldcomp-0002-00001",
+            "display": "Mos"
           }
         ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
+            "code": "bldcomp-0001-00003",
+            "display": "Transfuzion anamnez"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-history-cs",
+            "code": "bldcomp-0003-00001",
+            "display": "Avval qon quyilmagan"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
+            "code": "bldcomp-0001-00004",
+            "display": "Akusherlik anamnezi"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/obstetric-history-cs",
+            "code": "bldcomp-0004-00002",
+            "display": "Homiladorlik yoki tug‘ruq bo‘lmagan"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
+            "code": "bldcomp-0001-00005",
+            "display": "Dastlabki ABO qon guruhi"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ { "system": "http://snomed.info/sct", "code": "112144000", "display": "Blood group A" } ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-assessment-cs",
+            "code": "bldcomp-0001-00006",
+            "display": "Biologik namuna"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ { "system": "http://snomed.info/sct", "code": "260385009", "display": "Negative" } ]
       }
     }
   ]
 }
 ```
 
-[To'liq misol](Observation-example-blood-transfusion-assessment.html) barcha oltita kesimni va oluvchi, tashrif hamda mutaxassis misollariga havolalarni o'z ichiga oladi.
+Faqat bayonnomada yozilgan komponentlarni yuboring: o'tkazilmagan tekshiruvni bo'sh holda yubormang, umuman qoldirib keting. Akusherlik anamnezi retsipiyentga taalluqli bo'lmasa *Qo'llanilmaydi* (`bldcomp-0004-00001`), transfuzion anamnezni aniqlab bo'lmasa *Ma'lumotlar mavjud emas* (`bldcomp-0003-00004`) ishlatiladi.
 
-[Tez boshlash](#quick-start)
+API chaqiruvlari misollari uchun ushbu sahifaning pastki qismidagi [Tezkor boshlash](#quick-start) bo'limiga qarang.

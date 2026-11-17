@@ -2,36 +2,48 @@
 
 Common API interactions for this profile. It is built on Observation, so use the Observation endpoint. Requests require a JWT access token - see [Security and authentication](https://dhp.uz/fhir/core/en/api-access.html#security). `[base]` is the [FHIR server base URL](https://dhp.uz/fhir/core/en/api-access.html#endpoints); `|` separates a system from its value and must be URL-encoded as `%7C`.
 
-Read by id or search by recipient and assessment code:
+**Read by server id**
 
-```http
+```
 GET [base]/Observation/[id]
-GET [base]/Observation?subject=Patient/example-transfusion-assessment-recipient
-GET [base]/Observation?code=http://snomed.info/sct%7C252314007
 ```
 
-Create using the complete example. To correct results, update the existing resource, retain the actual assessment time and use an appropriate status such as amended. Supply the current ETag to protect against concurrent changes.
+**Find transfusion assessments** (by recipient, encounter, incompatible result)
 
-```http
+```
+GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C252314007
+GET [base]/Observation?encounter=Encounter/[id]&code=http://snomed.info/sct%7C252314007
+GET [base]/Observation?code=http://snomed.info/sct%7C252314007&component-value-concept=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs%7Cbldcomp-0002-00002
+```
+
+**Create**
+
+```
 POST [base]/Observation
-Content-Type: application/fhir+json
+{
+  "resourceType": "Observation",
+  "meta": {
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-transfusion-assessment-observation" ]
+  },
+  "status": "final",
+  "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "252314007" } ] },
+  "subject": { "reference": "Patient/[id]" },
+  "effectiveDateTime": "2026-11-11T10:30:00+05:00",
+  ...
+}
 ```
 
-```http
+**Correct an error** - PUT the full resource back with the corrected value and `status` set to `amended`, keeping the original `effectiveDateTime`:
+
+```
 PUT [base]/Observation/[id]
-Content-Type: application/fhir+json
-If-Match: W/"[versionId]"
+If-Match: W/"3"   # the ETag from your last read; 412 if it changed since
 ```
 
-Confirm supported operations and search parameters in the [UZ Core CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DHPCapabilityStatement.html). These examples use standard FHIR R5 search parameters.
+See the [CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DHPCapabilityStatement.html#Observation1-9) for the full list of supported search parameters.
 
 ### Related
 
-- [Blood transfusion assessment component](ValueSet-blood-transfusion-assessment-vs.html)
-- [Blood transfusion compatibility result](ValueSet-blood-transfusion-value-vs.html)
-- [Blood transfusion history category](ValueSet-blood-transfusion-history-vs.html)
-- [Obstetric history category](ValueSet-obstetric-history-vs.html)
-- [Biological transfusion test result](ValueSet-specimen-res-vs.html)
 - [Blood Service](blood-service.html) &middot; [Blood service forms](forms-volume-08-blood-service.html)
 - [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html)
 - [Must Support](https://dhp.uz/fhir/core/en/must-support.html) &middot; [General guidance](https://dhp.uz/fhir/core/en/general-guidance.html)
