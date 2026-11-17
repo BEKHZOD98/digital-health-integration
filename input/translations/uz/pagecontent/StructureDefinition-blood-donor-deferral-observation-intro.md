@@ -1,10 +1,10 @@
-> Ushbu matn avtomatik tarjima qilingan.
+> **Mashina tarjimasi, inson tomonidan tekshirilishi zarur.** Ushbu sahifa ingliz tilidan sun'iy intellekt yordamida avtomatik tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday nomuvofiqlikda asl inglizcha versiya ustuvor hisoblanadi.
 
-Profil [UZ Core Observation](https://dhp.uz/fhir/core/StructureDefinition-uz-core-observation.html) asosida donorning vaqtincha yoki umrbod chetlatilishi haqidagi baholashni qayd etadi. U mavjud donor, tashrif va mutaxassis resurslariga murojaat qiladi. Bitta Observation bitta chetlatish turini ifodalaydi; shu turga oid bir nechta sabab component orqali beriladi.
+Profil [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html) asosida donorning vaqtincha yoki umrbod chetlatilishi haqidagi baholashni qayd etadi. U mavjud donor, tashrif va mutaxassis resurslariga murojaat qiladi. Bitta Observation bitta chetlatish turini ifodalaydi; shu turga oid bir nechta sabab component orqali beriladi.
 
-### Majburiy va qo'llab-quvvatlanadigan elementlar
+### Majburiy va Must Support ma'lumot elementlari
 
-Majburiy elementlar mavjud bo'lishi kerak. Must Support elementlari alohida namunada ixtiyoriy bo'lsa ham, tizimlar tomonidan qo'llab-quvvatlanishi shart.
+Quyidagi elementlar har doim mavjud bo'lishi (majburiy) yoki ma'lumot mavjud bo'lganda qo'llab-quvvatlanishi kerak ([Must Support](https://dhp.uz/fhir/core/uz/must-support.html)) - hammasi ham talab qilinmaydi, lekin sizning tizimingiz ma'lumotga ega bo'lganda har bir Must Support elementini to'ldirishi va qabul qilishda uni qayta ishlashi kerak. Bu inson o'qiy oladigan qisqacha bayon; quyidagi [rasmiy ko'rinishlar](#profile) aniq kardinalliklar, turlar va terminologiya bog'lanishlarini beradi.
 
 #### Blood Donor Deferral Observation uchun majburiy ma'lumotlar
 
@@ -44,7 +44,7 @@ Ixtiyoriy komponentlarsiz vaqtincha chetlatishning minimal baholashi.
     ]
   },
   "subject": {
-    "reference": "Patient/example-deferral-donor"
+    "reference": "Patient/example-salim"
   }
 }
 ```
@@ -70,7 +70,7 @@ Sabab va misol uchun 180 kunlik muddat bilan vaqtincha chetlatish.
     ]
   },
   "subject": {
-    "reference": "Patient/example-deferral-donor"
+    "reference": "Patient/example-salim"
   },
   "component": [
     {
@@ -109,7 +109,7 @@ Sabab bilan, davomiyliksiz umrbod chetlatish.
     ]
   },
   "subject": {
-    "reference": "Patient/example-deferral-donor"
+    "reference": "Patient/example-salim"
   },
   "component": [
     {

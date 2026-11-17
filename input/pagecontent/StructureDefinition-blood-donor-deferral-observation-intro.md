@@ -1,8 +1,8 @@
-This profile records a donor's temporary or lifelong deferral as an assessment derived from [UZ Core Observation](https://dhp.uz/fhir/core/StructureDefinition-uz-core-observation.html). It references the existing donor, encounter and assessing practitioner. One Observation represents one deferral type; several reasons of that type are recorded as components.
+This profile records a donor's temporary or lifelong deferral as an assessment derived from [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html). It references the existing donor, encounter and assessing practitioner. One Observation represents one deferral type; several reasons of that type are recorded as components.
 
 ### Mandatory and Must Support data elements
 
-Mandatory elements must be present. Must Support elements must be supported by implementations even when optional in an individual instance.
+The elements below must always be present (mandatory) or must be supported when the data is available ([Must Support](https://dhp.uz/fhir/core/en/must-support.html)) - not all are required, but your system must populate each Must Support element when it has the data and process it on receipt. This is the human-readable summary; the [formal views](#profile) below give the exact cardinalities, types, and terminology bindings.
 
 #### Each Blood Donor Deferral Observation Must Have
 
@@ -42,7 +42,7 @@ Minimal temporary assessment without optional components.
     ]
   },
   "subject": {
-    "reference": "Patient/example-deferral-donor"
+    "reference": "Patient/example-salim"
   }
 }
 ```
@@ -68,7 +68,7 @@ Temporary assessment with a reason and an illustrative duration of 180 days.
     ]
   },
   "subject": {
-    "reference": "Patient/example-deferral-donor"
+    "reference": "Patient/example-salim"
   },
   "component": [
     {
@@ -107,7 +107,7 @@ Lifelong assessment with a reason and no duration.
     ]
   },
   "subject": {
-    "reference": "Patient/example-deferral-donor"
+    "reference": "Patient/example-salim"
   },
   "component": [
     {
