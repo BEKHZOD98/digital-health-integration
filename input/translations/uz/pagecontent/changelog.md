@@ -8,6 +8,8 @@
 
 [044-shakl, xorijga ketayotganlar uchun tibbiy ma'lumotnoma](StructureDefinition-form-044-travel-clearance-composition.html) FHIR hujjati sifatida profillandi: shaxsiy ma'lumotlar, kechirgan yuqumli kasalliklar, komissiyaning borish mamlakati va xizmat safari muddati bilan chet elga chiqishga ruxsati, yashash joyi, komissiya raisi va a'zolari - 5 ta Composition bo'limida. Hujjat namunasi (Bundle) va [maydonma-maydon moslashtirish sahifasi](form-044-mapping.html) bilan birga.
 
+[Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) donorni chetlatishni qayd etadi; [vaqtincha](Flag-example-blood-donor-temporary-deferral.html) va [doimiy](Flag-example-blood-donor-permanent-deferral.html) chetlatish misollari bor. `workflow-reason` kengaytmasi sababni mahalliy [chetlatish sabablari](CodeSystem-donor-deferral-reason-cs.html) kod tizimidan ([ValueSet](ValueSet-donor-deferral-reason-vs.html)) beradi.
+
 [Blood Service](blood-service.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) orqali tavsiflaydi.
 
 [Qidiruv](search.html) sahifa sarlavhasidagi yangi maydondan ochiladi. U resurslarni sarlavhasi, nomi, URL yoki tavsifi bo'yicha, shuningdek kod tizimlari, qiymatlar to'plamlari va ConceptMaplardagi kodlar, atamalar va moslashtirishlarni ingliz, rus va o'zbek tillarida topadi. Natijalarni resurs turi bo'yicha filtrlash mumkin.
@@ -23,6 +25,8 @@ Yordamchi terminologiya: ro'yxatga olish turlari ([ValueSet](ValueSet-blood-serv
 #### O'zgartirildi
 
 [011-shakl](StructureDefinition-form-011-hemodialysis-composition.html), [066-shakl](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1-shakl](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va [130-shakl](StructureDefinition-form-130-laboratory-test-results-composition.html) Composition'lari endi `status` ni `final` ga qotirmaydi, shuning uchun hujjat [hayot sikli](document-statuses.html) bo'yicha `preliminary`, `amended` va `entered-in-error` holatlaridan o'ta oladi.
+
+Har bir tildagi resursning JSON nusxasi endi boshqa tillarni paketdagidek `translation` kengaytmalarida saqlaydi; avval ingliz, rus va o'zbek sahifalaridagi JSON'da ular olib tashlangan edi.
 
 ### Versiya 0.12.1
 

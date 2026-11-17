@@ -2,6 +2,8 @@
 
 #### Added
 
+[Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) records a donor deferral, with [temporary](Flag-example-blood-donor-temporary-deferral.html) and [permanent](Flag-example-blood-donor-permanent-deferral.html) examples. The `workflow-reason` extension carries the reason from a local [deferral reason](CodeSystem-donor-deferral-reason-cs.html) code system ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
+
 [Blood Service](blood-service.html) maps the service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
 
 [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), based on UZ Core Observation, records a person's registration with the blood service as a blood donor or a recipient. It carries the registration number, patient, effective date and time, encounter and performer. Component slices carry the donor category, donation compensation and donation type for a donor and the ICD-10 diagnosis for a recipient; a recipient registration cannot carry the donor components. Examples cover a staff donor, a reserve donor and a recipient, with a registration Encounter and registrar Practitioner for the recipient.
@@ -23,6 +25,8 @@ Supporting terminology: a [blood service observation type](CodeSystem-blood-serv
 #### Changed
 
 The [Form 011](StructureDefinition-form-011-hemodialysis-composition.html), [Form 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Form 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) and [Form 130](StructureDefinition-form-130-laboratory-test-results-composition.html) Compositions no longer fix `status` to `final`, so a document can follow the [document lifecycle](document-statuses.html) through `preliminary`, `amended` and `entered-in-error`.
+
+Each language's JSON copy of a resource now keeps the other languages as `translation` extensions, as the package does; before, the JSON linked from the English, Russian and Uzbek pages had them removed.
 
 ### Version 0.12.1
 

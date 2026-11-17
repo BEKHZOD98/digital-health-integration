@@ -2,6 +2,8 @@
 
 #### Добавлено
 
+[Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) фиксирует отвод донора; есть примеры [временного](Flag-example-blood-donor-temporary-deferral.html) и [постоянного](Flag-example-blood-donor-permanent-deferral.html) отвода. Расширение `workflow-reason` содержит причину из локальной кодовой системы [причин отвода](CodeSystem-donor-deferral-reason-cs.html) ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
+
 [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) на основе UZ Core Observation фиксирует регистрацию человека в службе крови как донора или реципиента. Оно содержит регистрационный номер, пациента, дату и время, Encounter и исполнителя. Срезы компонентов передают категорию донора, оплату и вид донации для донора и диагноз по МКБ-10 для реципиента; регистрация реципиента не может содержать компоненты донора. Примеры охватывают кадрового донора, резервного донора и реципиента, с Encounter регистрации и регистратором Practitioner для реципиента.
 
 Сопутствующая терминология: кодовая система [типов наблюдений службы крови](CodeSystem-blood-service-observation-type-cs.html) для типов регистрации ([ValueSet](ValueSet-blood-service-registration-type-vs.html)) и кодов компонентов, набор значений [категории донора](ValueSet-donor-category-vs.html) (SNOMED CT `275561000` для кадрового донора, локальный [код](CodeSystem-donor-category-cs.html) для резервного), локальная кодовая система [оплаты донации](CodeSystem-donation-compensation-cs.html) ([ValueSet](ValueSet-donation-compensation-vs.html)), набор значений SNOMED CT [вид донации](ValueSet-donation-type-vs.html), а также [переводы](CodeSystem-blood-service-snomed-translations-cs.html) кодов SNOMED CT на узбекский и русский. Регистрационный номер использует новую систему идентификаторов [номера регистрации в службе крови](NamingSystem-blood-registration-number-system.html) `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`.
@@ -23,6 +25,8 @@
 #### Изменено
 
 Composition для [Форма 011](StructureDefinition-form-011-hemodialysis-composition.html), [Форма 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Форма 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) и [Форма 130](StructureDefinition-form-130-laboratory-test-results-composition.html) больше не фиксируют `status` как `final`, поэтому документ может проходить [жизненный цикл](document-statuses.html) через `preliminary`, `amended` и `entered-in-error`.
+
+JSON-копия ресурса на каждом языке теперь сохраняет остальные языки в расширениях `translation`, как в пакете; раньше в JSON по ссылкам с английских, русских и узбекских страниц они удалялись.
 
 ### Версия 0.12.1
 

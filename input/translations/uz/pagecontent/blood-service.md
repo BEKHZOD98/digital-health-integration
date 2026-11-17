@@ -13,10 +13,12 @@ Ushbu sahifada qon xizmati donorlik qonining yo'lini - donorni ro'yxatga olishda
 
 Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) profili o'zgarishsiz qo'llaniladi. Ushbu qo'llanma ikkita profil qo'shadi. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) UZ Core Patient da bo'lmagan ro'yxatga olish ma'lumotlari uchun: shaxs donor yoki retsipiyent sifatida ro'yxatga olinganligi, ro'yxatga olish raqami, donor toifasi, donatsiya to'lovi va turi hamda retsipiyent tashxisi. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) donor laboratoriya buyurtmalari va komponentni qayta ishlash so'rovlari uchun. Ushbu bosqichlar ortidagi qog'oz shakllar [8.0 Qon xizmati](forms-volume-08-blood-service.html) bo'limida tavsiflangan.
 
+<!-- CORE-RELEASE #161 -->
+
 | Bosqich | Resurs | Profil |
 | :--- | :--- | :--- |
 | [Donor yoki retsipiyentni ro'yxatga olish](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
-| [Ruxsat yoki chetlatish](#eligibility) | Flag | UZ Core Flag (UZ Core ning keyingi relizi) |
+| [Ruxsat yoki chetlatish](#eligibility) | Flag | UZ Core Flag (UZ Core ning keyingi relizi) ruxsat uchun, [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) chetlatish uchun |
 | [Donor qonini tekshirish](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) |
 | [Donatsiyani olish](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Komponentlarga ajratish](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -44,7 +46,13 @@ Misollar: [kadr donor](Observation-example-blood-donor-registration-staff.html),
 
 ### Ruxsat va chetlatishlar {#eligibility}
 
-Donorning qon topshirishi mumkinligi uning Patient yozuvida Flag bilan qayd etiladi: donatsiyaga ruxsat yoki tibbiy chetlatish. Buning uchun UZ Core Flag profili donorlarga ruxsat kodlari bilan birga UZ Core ning keyingi relizida bo'ladi. Flag ning `status` elementi flagning o'zini tavsiflaydi: `active` holatdagi chetlatish flagi chetlatish amalda ekanini bildiradi.
+<!-- CORE-RELEASE #161 -->
+
+Donorning qon topshirishi mumkinligi uning Patient yozuvida Flag bilan qayd etiladi: donatsiyaga ruxsat, vaqtincha yoki doimiy tibbiy chetlatish. Buning uchun UZ Core Flag profili donorlarga ruxsat kodlari bilan birga UZ Core ning keyingi relizida bo'ladi. Flag ning `status` elementi flagning o'zini tavsiflaydi: `active` holatdagi chetlatish flagi chetlatish amalda ekanini bildiradi.
+
+Chetlatish [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) bilan qayd etiladi: `code` elementida `blood-donation-deferred-temporary` yoki `blood-donation-deferred-permanent` ko'rsatiladi, [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) kengaytmasi esa [chetlatish sababini](ValueSet-donor-deferral-reason-vs.html) o'z ichiga oladi va unga asos bo'lgan narsaga, masalan, ijobiy tahlil natijasiga havola qilishi mumkin. Ikki sabab bilan chetlatilgan donorda ikkita flag bo'ladi. `period.start` chetlatish boshlangan vaqtni bildiradi. Vaqtincha chetlatishda `period.end` bor - donor qayta qon topshirishi mumkin bo'lgan sana; doimiy chetlatishda `period.end` yo'q. Vaqtincha flag `inactive` ga o'tkazilmaguncha `active` bo'lib qoladi, shuning uchun chetlatish hali amal qilayotganini bilish uchun `period.end` ni `status` bilan birga o'qing.
+
+Misollar: [vaqtincha chetlatish](Flag-example-blood-donor-temporary-deferral.html), [doimiy chetlatish](Flag-example-blood-donor-permanent-deferral.html), uning sababi [OIV bo'yicha tasdiqlangan ijobiy natijaga](Observation-example-blood-donor-hiv-result.html) havola qiladi.
 
 ### Donor qonini tekshirish {#testing}
 

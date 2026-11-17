@@ -11,10 +11,12 @@ This page describes how the blood service records the path of donated blood as F
 
 Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profile as it is. This guide adds two profiles. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) records the registration data that UZ Core Patient does not hold: whether a person is registered as a donor or a recipient, the registration number, the donor category, the donation compensation and type, and a recipient's diagnosis. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orders the donor's laboratory tests and the processing of a component. The paper forms behind these steps are described in [8.0 Blood Service](forms-volume-08-blood-service.html).
 
+<!-- CORE-RELEASE #161 -->
+
 | Step | Resource | Profile |
 | :--- | :--- | :--- |
 | [Register a donor or recipient](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
-| [Record eligibility or a deferral](#eligibility) | Flag | UZ Core Flag (next UZ Core release) |
+| [Record eligibility or a deferral](#eligibility) | Flag | UZ Core Flag (next UZ Core release) for eligibility, [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) for a deferral |
 | [Test the donor's blood](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) |
 | [Collect the donation](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Process it into components](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -42,7 +44,13 @@ Examples: [staff donor](Observation-example-blood-donor-registration-staff.html)
 
 ### Eligibility and deferrals {#eligibility}
 
-Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
+<!-- CORE-RELEASE #161 -->
+
+Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a temporary or permanent medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
+
+A deferral is a [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): `code` is `blood-donation-deferred-temporary` or `blood-donation-deferred-permanent`, and the [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries the [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a positive test result. A donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a permanent deferral has no `period.end`. A temporary flag stays `active` until it is set to `inactive`, so read `period.end` together with `status` to tell whether a deferral still applies.
+
+Examples: [temporary deferral](Flag-example-blood-donor-temporary-deferral.html), [permanent deferral](Flag-example-blood-donor-permanent-deferral.html), whose reason points to the [confirmed positive HIV result](Observation-example-blood-donor-hiv-result.html).
 
 ### Testing the donor's blood {#testing}
 
