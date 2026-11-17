@@ -12,7 +12,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 * publisher = "Uzinfocom"
 * subjectType = #Patient
 * useContext[bloodProgram].code = $usage-context-type#program
-* useContext[bloodProgram].valueCodeableConcept = IntegrationAreaCS#blood-service
+* useContext[bloodProgram].valueCodeableConcept = $integration-area#blood-service
 * title = "Donor so‘rovnomasi"
 * title.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
