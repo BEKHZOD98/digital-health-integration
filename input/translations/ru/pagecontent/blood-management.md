@@ -46,6 +46,10 @@
 
 Может ли донор сдавать кровь, фиксируется ресурсом Flag на его Patient: допуск к донации или медицинский отвод. Профиль UZ Core Flag для этого, вместе с кодами допуска доноров, войдёт в следующий выпуск UZ Core. `status` флага описывает сам флаг: флаг отвода в статусе `active` означает, что отвод действует.
 
+У флага отвода в `code` указан `blood-donation-deferred` и вторым coding [причина отвода](ValueSet-donor-deferral-reason-vs.html); донор, отведённый по двум причинам, получает два флага. `period.start` показывает начало отвода. У временного отвода есть `period.end`, у пожизненного нет. Расширение [flag-detail](https://hl7.org/fhir/extensions/StructureDefinition-flag-detail.html) может ссылаться на основание отвода, например на положительный результат анализа или ответы донора в анкете.
+
+Примеры: [временный отвод](Flag-example-blood-donor-temporary-deferral.html), [пожизненный отвод](Flag-example-blood-donor-lifelong-deferral.html).
+
 ### Обследование крови донора {#testing}
 
 Каждый результат обследования перед донацией (группа крови, резус-фактор, гемоглобин, ВИЧ, гепатиты B и C, сифилис) - это [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html) донора, выполненное по образцу [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html). [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html) объединяет результаты одного обследования. Положительный маркер инфекции ведёт к флагу отвода и утилизации уже заготовленных единиц.

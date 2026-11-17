@@ -2,7 +2,7 @@
 
 #### Added
 
-[Blood Donor Deferral Observation](StructureDefinition-blood-donor-deferral-observation.html) records temporary and lifelong donor deferrals, with local type and reason terminology, duration rules and two assessment examples.
+[Blood Management](blood-management.html#eligibility) shows a donor deferral as a Flag with [temporary](Flag-example-blood-donor-temporary-deferral.html) and [lifelong](Flag-example-blood-donor-lifelong-deferral.html) examples. A local [deferral reason](CodeSystem-donor-deferral-reason-cs.html) code system ([ValueSet](ValueSet-donor-deferral-reason-vs.html)) supplies the reason, and a [deferral type](CodeSystem-donor-deferral-type-cs.html) code system ([ValueSet](ValueSet-donor-deferral-type-vs.html)) names temporary and lifelong deferral.
 
 [Blood Management](blood-management.html) maps the blood service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
 

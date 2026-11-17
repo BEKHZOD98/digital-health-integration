@@ -46,6 +46,10 @@ Misollar: [kadr donor](Observation-example-blood-donor-registration-staff.html),
 
 Donorning qon topshirishi mumkinligi uning Patient yozuvida Flag bilan qayd etiladi: donatsiyaga ruxsat yoki tibbiy chetlatish. Buning uchun UZ Core Flag profili donorlarga ruxsat kodlari bilan birga UZ Core ning keyingi relizida bo'ladi. Flag ning `status` elementi flagning o'zini tavsiflaydi: `active` holatdagi chetlatish flagi chetlatish amalda ekanini bildiradi.
 
+Chetlatish flagining `code` elementida `blood-donation-deferred` va ikkinchi coding sifatida [chetlatish sababi](ValueSet-donor-deferral-reason-vs.html) ko'rsatiladi; ikki sabab bilan chetlatilgan donorda ikkita flag bo'ladi. `period.start` chetlatish boshlangan vaqtni bildiradi. Vaqtincha chetlatishda `period.end` bor, umrbod chetlatishda yo'q. [flag-detail](https://hl7.org/fhir/extensions/StructureDefinition-flag-detail.html) kengaytmasi chetlatishga asos bo'lgan narsaga, masalan, ijobiy tahlil natijasiga yoki donorning so'rovnomadagi javoblariga havola qilishi mumkin.
+
+Misollar: [vaqtincha chetlatish](Flag-example-blood-donor-temporary-deferral.html), [umrbod chetlatish](Flag-example-blood-donor-lifelong-deferral.html).
+
 ### Donor qonini tekshirish {#testing}
 
 Donatsiyadan oldingi har bir tekshiruv natijasi (qon guruhi, rezus-omil, gemoglobin, OIV, B va C gepatitlari, zaxm) - donorning [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html) yozuvi bo'lib, [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) namunasidan olinadi. [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html) bitta tekshiruv natijalarini birlashtiradi. Ijobiy infeksiya belgisi chetlatish flagiga va allaqachon olingan birliklarni yo'q qilishga olib keladi.

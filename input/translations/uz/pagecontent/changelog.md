@@ -8,7 +8,7 @@
 
 [044-shakl, xorijga ketayotganlar uchun tibbiy ma'lumotnoma](StructureDefinition-form-044-travel-clearance-composition.html) FHIR hujjati sifatida profillandi: shaxsiy ma'lumotlar, kechirgan yuqumli kasalliklar, komissiyaning borish mamlakati va xizmat safari muddati bilan chet elga chiqishga ruxsati, yashash joyi, komissiya raisi va a'zolari - 5 ta Composition bo'limida. Hujjat namunasi (Bundle) va [maydonma-maydon moslashtirish sahifasi](form-044-mapping.html) bilan birga.
 
-[Blood Donor Deferral Observation](StructureDefinition-blood-donor-deferral-observation.html) donorning vaqtincha va umrbod chetlatilishini qayd etadi; mahalliy tur va sabablar, davomiylik qoidalari va ikkita baholash misoli qo'shildi.
+[Blood Management](blood-management.html#eligibility) donorni chetlatishni Flag sifatida [vaqtincha](Flag-example-blood-donor-temporary-deferral.html) va [umrbod](Flag-example-blood-donor-lifelong-deferral.html) chetlatish misollarida ko'rsatadi. Mahalliy [chetlatish sabablari](CodeSystem-donor-deferral-reason-cs.html) kod tizimi ([ValueSet](ValueSet-donor-deferral-reason-vs.html)) sababni beradi, [chetlatish turlari](CodeSystem-donor-deferral-type-cs.html) kod tizimi ([ValueSet](ValueSet-donor-deferral-type-vs.html)) esa vaqtincha va umrbod chetlatishni nomlaydi.
 
 [Blood Management](blood-management.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) orqali tavsiflaydi.
 

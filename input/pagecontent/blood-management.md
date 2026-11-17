@@ -44,6 +44,10 @@ Examples: [staff donor](Observation-example-blood-donor-registration-staff.html)
 
 Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
 
+A deferral flag has `blood-donation-deferred` and, as a second coding in `code`, the [deferral reason](ValueSet-donor-deferral-reason-vs.html); a donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`; a lifelong one has none. The [flag-detail](https://hl7.org/fhir/extensions/StructureDefinition-flag-detail.html) extension can point to what led to the deferral, such as a positive test result or the donor's questionnaire answers.
+
+Examples: [temporary deferral](Flag-example-blood-donor-temporary-deferral.html), [lifelong deferral](Flag-example-blood-donor-lifelong-deferral.html).
+
 ### Testing the donor's blood {#testing}
 
 Each test result before donation (blood group, Rh factor, haemoglobin, HIV, hepatitis B and C, syphilis) is a [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html) on the donor, taken from a [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html). A [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html) groups the results of one examination. A positive infection marker leads to a deferral flag and to disposal of any units already collected.
