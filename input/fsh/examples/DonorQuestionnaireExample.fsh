@@ -4,7 +4,7 @@ Usage: #example
 Title: "Example Donor QuestionnaireResponse - Completed Donor Interview"
 Description: "Synthetic completed donor questionnaire. A recent tattoo is reported for clinical review; no eligibility or deferral decision is calculated."
 * language = #uz
-* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire|1.0.0"
+* questionnaire = Canonical(donor-questionnaire)
 * status = #completed
 * subject = Reference(example-donor-questionnaire-patient)
 * authored = "2026-11-13T09:30:00+05:00"
@@ -122,3 +122,19 @@ Description: "Synthetic adult donor used by the donor questionnaire response exa
 * name.given = "Malika"
 * gender = #female
 * birthDate = "1992-04-12"
+
+Instance: example-donor-questionnaire-deferral
+InstanceOf: Flag
+Title: "Example Flag - Deferral After the Donor Questionnaire"
+Description: "Synthetic temporary deferral recorded by the clinician after reviewing the donor questionnaire, where the donor reported a recent tattoo. The workflow-reason extension carries the reason code. The 180-day period is example data, not a clinical recommendation."
+Usage: #example
+* language = #uz
+* status = #active
+* category = $flag-category#clinical
+* extension[0].url = $workflow-reason
+* extension[0].valueCodeableReference.concept = DonorDeferralReasonCS#donrsn-0001-00001 "Tatuirovka, piercing yoki akupunktura"
+* code = $blood-donor-eligibility-cs#blood-donation-deferred "Tibbiy sabablarga ko'ra qon donorligidan chetlatilgan"
+* subject = Reference(Patient/example-donor-questionnaire-patient)
+* author = Reference(PractitionerRole/example-practitionerrole)
+* period.start = "2026-11-13T10:00:00+05:00"
+* period.end = "2027-05-12T10:00:00+05:00"

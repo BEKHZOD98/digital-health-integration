@@ -45,42 +45,44 @@ Examples: [staff donor](Observation-example-blood-donor-registration-staff.html)
 
 Before each donation the donor answers the [donor questionnaire](Questionnaire-donor-questionnaire.html), recorded as a [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) on the donor's Patient ([example](QuestionnaireResponse-example-donor-questionnaire-response.html)). No answer defers a donor by itself: a clinician reviews the answers and records any deferral as a [Flag](#eligibility).
 
-The table lists the answer that can lead to a deferral and the reason code that goes with it. The same code is in each question's `item.code`.
+The table lists the answer that can lead to a deferral and the [reason code](ValueSet-donor-deferral-reason-vs.html) that goes with it. The same code is in each question's `item.code`.
 
 | Question | Deferral answer | Reason code |
 | :--- | :--- | :--- |
-| `last-donation` | A recent date | `donrsn-0001-00006` Date of most recent blood donation |
-| `feeling-well` | No | `donrsn-0001-00026` Feeling unwell on the day of visit |
-| `chronic-disease` | Yes | `donrsn-0001-00009` Chronic disease |
-| `regular-treatment` | Yes | `donrsn-0001-00005` Medication use or ongoing treatment |
-| `medication-procedures` | Yes | `donrsn-0001-00005` Medication use or ongoing treatment |
-| `hepatitis-brucellosis` | Yes | `donrsn-0001-00018` History of hepatitis or brucellosis |
-| `dental-procedure` | Yes | `donrsn-0001-00010` Dental procedure |
-| `malaria-illness` | Yes | `donrsn-0001-00011` Travel to a malaria-risk area or malaria-related condition |
-| `vaccination` | Yes | `donrsn-0001-00019` Vaccination |
-| `recent-symptoms` | Yes | `donrsn-0001-00020` Night sweats, weight loss, chills, diarrhea or enlarged lymph nodes in the last 3 months |
-| `infected-contact` | Yes | `donrsn-0001-00021` Contact with a person infected with HIV or hepatitis |
-| `unprotected-sex` | Yes | `donrsn-0001-00022` Casual unprotected sexual contact |
-| `surgery` | Yes | `donrsn-0001-00012` Surgery or medical intervention |
-| `blood-transfusion` | Yes | `donrsn-0001-00003` Blood or blood component transfusion |
-| `sti-treatment` | Yes | `donrsn-0001-00023` Treatment for sexually transmitted infections |
-| `shared-needles` | Yes | `donrsn-0001-00024` Sharing needles or syringes |
-| `tattoo-piercing` | Yes | `donrsn-0001-00001` Tattoo, piercing or acupuncture |
-| `incarceration` | Yes | `donrsn-0001-00025` Incarceration |
-| `testing-consent` | No | `donrsn-0001-00027` Refusal to consent to blood testing |
-| `declaration` | No | `donrsn-0001-00028` Declaration not confirmed |
-| `flu-arvi` | Yes | `donrsn-0001-00004` Flu, ARVI or tonsillitis |
-| `malaria-exposure` | Yes | `donrsn-0001-00011` Travel to a malaria-risk area or malaria-related condition |
-| `pregnancy` | Yes | `donrsn-0001-00007` Pregnancy |
-| `postpartum-miscarriage` | Yes | `donrsn-0001-00017` Postpartum period or period after miscarriage |
-| `breastfeeding` | Yes | `donrsn-0001-00008` Breastfeeding |
-| `alcohol-medication-declaration` | No | - |
+| When was your last blood donation? (`last-donation`) | A recent date | `donrsn-0001-00006` Date of most recent blood donation |
+| Are you feeling well today? (`feeling-well`) | No | `donrsn-0001-00026` Feeling unwell on the day of visit |
+| Do you have any chronic diseases (e.g. epilepsy, diabetes, cancer, or other long-term conditions)? (`chronic-disease`) | Yes | `donrsn-0001-00009` Chronic disease |
+| Are you currently receiving regular medical treatment? (`regular-treatment`) | Yes | `donrsn-0001-00005` Medication use or ongoing treatment |
+| Do you regularly undergo any procedures or take any tablets/medicines? (`medication-procedures`) | Yes | `donrsn-0001-00005` Medication use or ongoing treatment |
+| Have you ever had hepatitis or brucellosis? (`hepatitis-brucellosis`) | Yes | `donrsn-0001-00018` History of hepatitis or brucellosis |
+| Have you undergone any dental procedures recently (during the last 2 weeks)? (`dental-procedure`) | Yes | `donrsn-0001-00010` Dental procedure |
+| Have you had malaria during the last 3 weeks? (`malaria-illness`) | Yes | `donrsn-0001-00011` Travel to a malaria-risk area or malaria-related condition |
+| Have you been vaccinated during the last month? (`vaccination`) | Yes | `donrsn-0001-00019` Vaccination |
+| During the last 3 months, have you experienced night sweats, unexplained weight loss, chills, diarrhoea, or enlarged lymph nodes? (`recent-symptoms`) | Yes | `donrsn-0001-00020` Night sweats, weight loss, chills, diarrhea or enlarged lymph nodes in the last 3 months |
+| Have you been in contact with a person infected with hepatitis or HIV/AIDS? (`infected-contact`) | Yes | `donrsn-0001-00021` Contact with a person infected with HIV or hepatitis |
+| Have you had casual unprotected sexual contact during the last 6 months? (`unprotected-sex`) | Yes | `donrsn-0001-00022` Casual unprotected sexual contact |
+| Have you undergone surgery, a medical intervention, or an endoscopic procedure during the last 6 months? (`surgery`) | Yes | `donrsn-0001-00012` Surgery or medical intervention |
+| Have you ever received a blood transfusion or blood components? (`blood-transfusion`) | Yes | `donrsn-0001-00003` Blood or blood component transfusion |
+| Have you been treated for sexually transmitted infections such as syphilis, gonorrhoea, chlamydia, genital ulcers, or herpes? (`sti-treatment`) | Yes | `donrsn-0001-00023` Treatment for sexually transmitted infections |
+| Have you used shared needles, syringes, or scarifiers? (`shared-needles`) | Yes | `donrsn-0001-00024` Sharing needles or syringes |
+| Have you had a tattoo, piercing, or acupuncture during the last 6 months? (`tattoo-piercing`) | Yes | `donrsn-0001-00001` Tattoo, piercing or acupuncture |
+| Have you been in places of detention or imprisonment? (`incarceration`) | Yes | `donrsn-0001-00025` Incarceration |
+| Do you consent to testing your blood for HIV/AIDS, hepatitis, and syphilis? (`testing-consent`) | No | `donrsn-0001-00027` Refusal to consent to blood testing |
+| Do you confirm that you understood these questions and the reason for asking them, and that you answered honestly? (`declaration`) | No | `donrsn-0001-00028` Declaration not confirmed |
+| Have you recently had influenza, an acute respiratory viral infection (ARVI), or a sore throat? (`flu-arvi`) | Yes | `donrsn-0001-00004` Flu, ARVI or tonsillitis |
+| During the last 3 weeks, have you had a fever or visited malaria-risk areas? (`malaria-exposure`) | Yes | `donrsn-0001-00011` Travel to a malaria-risk area or malaria-related condition |
+| Are you pregnant? (`pregnancy`) | Yes | `donrsn-0001-00007` Pregnancy |
+| Have you given birth or had a miscarriage in the last 6 months? (`postpartum-miscarriage`) | Yes | `donrsn-0001-00017` Postpartum period or period after miscarriage |
+| Are you currently breastfeeding? (`breastfeeding`) | Yes | `donrsn-0001-00008` Breastfeeding |
+| I confirm that I have not consumed alcohol in the last 48 hours and have not taken aspirin or other analgesics in the last 72 hours. (`alcohol-medication-declaration`) | No | - |
 
 A No to `testing-consent` or `declaration` is an administrative stop, not a medical deferral: the donation does not go ahead that day, and no deferral Flag is raised. A No to `alcohol-medication-declaration` has no reason code of its own; the clinician records the reason that applies.
 
 Only `last-donation` captures a date. The other questions do not ask when the event happened, so a deferral Flag starts on the interview date and the clinician sets its end; the answers do not determine it.
 
 `last-doctor-visit`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` and `additional-health` give context for the clinician's review, and `regular-donation-preference` and `contact-consent` record the donor's preferences. None of them lead to a deferral.
+
+Example: after reviewing the [example response](QuestionnaireResponse-example-donor-questionnaire-response.html), where the donor reports a recent tattoo, the clinician records a [temporary deferral Flag](Flag-example-donor-questionnaire-deferral.html) whose `workflow-reason` extension carries reason `donrsn-0001-00001`.
 
 ### Eligibility and deferrals {#eligibility}
 

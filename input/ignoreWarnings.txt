@@ -99,3 +99,7 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 # every diagram, so the two inline diagrams on the screening page share ids. Remove once the
 # template makes diagram ids unique per diagram (https://github.com/HL7/ig-template-base2/pull/55).
 %cervical-breast-cancer-screening.html: The html source has duplicate element ids: ent0001%
+
+# BloodDonorEligibilityCS is published after uz.dhp.core 0.12.0; the deferral Flag examples use its
+# blood-donation-deferred code. Remove once the dependency moves to the UZ Core release that has it.
+%A definition for CodeSystem 'https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs' could not be found, so the code cannot be validated%
