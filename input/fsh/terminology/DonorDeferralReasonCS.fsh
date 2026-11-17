@@ -144,3 +144,23 @@ Description: "Local blood service categories used to record reasons for donor de
   * ^designation[=].value = "Декларация не подтверждена"
   * ^designation[+].language = #en
   * ^designation[=].value = "Declaration not confirmed"
+* #donrsn-0001-00029 "Gemoglobin darajasi past"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Низкий уровень гемоглобина"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Low hemoglobin"
+* #donrsn-0001-00030 "Tana massasi indeksi me’yordan chetga chiqishi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Отклонение индекса массы тела"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Body mass index out of range"
+* #donrsn-0001-00031 "Shifokor qarori"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Решение врача"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Clinician's decision"
+* #donrsn-0001-00032 "Boshqa patologiya"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Прочая патология"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Other pathology"
