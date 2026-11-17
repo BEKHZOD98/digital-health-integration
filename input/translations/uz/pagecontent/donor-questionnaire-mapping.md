@@ -2,13 +2,13 @@
 
 ### Donor so‘rovnomasi maydonlari mosligi
 
-[Source spreadsheet](https://docs.google.com/spreadsheets/d/1SFVk1U3Z4mQ-SYf6bX28hfKYHE3UL2Rz2bMEyQDzPeI/edit).
+[Manba jadval](https://docs.google.com/spreadsheets/d/1SFVk1U3Z4mQ-SYf6bX28hfKYHE3UL2Rz2bMEyQDzPeI/edit).
 
 Jadval manbadagi sabab, taklif etilgan chetlatish turi va muddatlarni saqlaydi. Bu ma’lumotnoma mosligi bo‘lib, avtomatik ruxsat qoidalari emas. Surunkali kasallik yoki aloqa haqidagi umumiy savollar umrbod chetlatishni belgilamaydi. Tekshiruvga rozilik bermaslik va deklaratsiyani tasdiqlamaslik ma’muriy to‘xtatish shartlaridir. Manbada stomatologik muolajadan keyingi muddatlar farq qiladi: 2 hafta va 90 kun. Alkogol va dorilar haqidagi qo‘shma bayonotga bitta sabab kodi mos kelmaydi. Avtomatik ajratish, muddat hisoblash yoki chetlatishni tasniflash amalga oshirilmagan.
 
-The question code is stored in `Questionnaire.item.code` from [DonorDeferralReasonCS](CodeSystem-donor-deferral-reason-cs.html). The proposed type codes refer to [DonorDeferralTypeCS](CodeSystem-donor-deferral-type-cs.html): `tmpdf-0001-00001` / `lldf-0001-00001`. They are source guidance and are not response answers.
+Savol kodi `Questionnaire.item.code` da [DonorDeferralReasonCS](CodeSystem-donor-deferral-reason-cs.html) dan saqlanadi. Taklif etilgan chetlatish turi kodlari [DonorDeferralTypeCS](CodeSystem-donor-deferral-type-cs.html) ga tegishli: `tmpdf-0001-00001` / `lldf-0001-00001`. Ular manba ko‘rsatmasi bo‘lib, savollarga javob emas.
 
-| linkId | Question | Answer type | Reason code | Source deferral type | Source days |
+| linkId | Savol | Javob turi | Sabab kodi | Manba bo‘yicha chetlatish turi | Manba bo‘yicha muddat, kun |
 |---|---|---|---|---|---|
 | last-donation | Oxirgi marta qachon qon topshirgansiz? | date | #donrsn-0001-00006 | #tmpdf-0001-00001 | 180 |
 | last-doctor-visit | Oxirgi marta qachon shifokor qabulida bo‘lgansiz? Qaysi sababga ko‘ra? | text | — | — | — |

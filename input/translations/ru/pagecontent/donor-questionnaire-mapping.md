@@ -2,13 +2,13 @@
 
 ### Соответствие полей анкеты донора
 
-[Source spreadsheet](https://docs.google.com/spreadsheets/d/1SFVk1U3Z4mQ-SYf6bX28hfKYHE3UL2Rz2bMEyQDzPeI/edit).
+[Исходная таблица](https://docs.google.com/spreadsheets/d/1SFVk1U3Z4mQ-SYf6bX28hfKYHE3UL2Rz2bMEyQDzPeI/edit).
 
 Таблица сохраняет причины, предложенные типы отвода и сроки из источника. Это справочное соответствие, а не исполняемые правила допуска. Общие вопросы о хронических заболеваниях и контактах не устанавливают пожизненный отвод. Отказ от тестирования и неподтверждённая декларация являются административными условиями остановки. В источнике есть расхождение срока после стоматологической процедуры: 2 недели и 90 дней. Объединённому утверждению об алкоголе и лекарствах не соответствует один код причины. Автоматическое извлечение, расчёт сроков и классификация отвода не реализованы.
 
-The question code is stored in `Questionnaire.item.code` from [DonorDeferralReasonCS](CodeSystem-donor-deferral-reason-cs.html). The proposed type codes refer to [DonorDeferralTypeCS](CodeSystem-donor-deferral-type-cs.html): `tmpdf-0001-00001` / `lldf-0001-00001`. They are source guidance and are not response answers.
+Код вопроса хранится в `Questionnaire.item.code` из [DonorDeferralReasonCS](CodeSystem-donor-deferral-reason-cs.html). Предлагаемые коды типа отвода относятся к [DonorDeferralTypeCS](CodeSystem-donor-deferral-type-cs.html): `tmpdf-0001-00001` / `lldf-0001-00001`. Это указания источника, а не ответы на вопросы.
 
-| linkId | Question | Answer type | Reason code | Source deferral type | Source days |
+| linkId | Вопрос | Тип ответа | Код причины | Тип отвода по источнику | Срок по источнику, дней |
 |---|---|---|---|---|---|
 | last-donation | Когда вы в последний раз сдавали кровь? | date | #donrsn-0001-00006 | #tmpdf-0001-00001 | 180 |
 | last-doctor-visit | Когда в последний раз вы были на приёме у врача? По какой причине? | text | — | — | — |

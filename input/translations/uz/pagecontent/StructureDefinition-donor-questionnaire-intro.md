@@ -2,7 +2,7 @@
 
 Profil donor suhbatini [ko‘p tilli so‘rovnoma](Questionnaire-donor-questionnaire.html) sifatida taqdim etadi. [Manba jadval](https://docs.google.com/spreadsheets/d/1SFVk1U3Z4mQ-SYf6bX28hfKYHE3UL2Rz2bMEyQDzPeI/edit) qon topshirishdan oldingi anamnez, xavf omillari, rozilik va deklaratsiyalarni qamrab oladi.
 
-### Mandatory and Must Support data elements
+### Majburiy va Must Support ma'lumot elementlari
 
 So‘rovnomada canonical URL, sarlavha, nashr holati, Patient subyekt turi, qon xizmati dasturi konteksti va kamida bitta savol bo‘ladi. Barcha 33 savol va tarjimalar qo‘llab-quvvatlanadi. Javob turlari jadvalga mos: sana, matn va boolean. Manbada majburiylik yoki jinsga qarab ko‘rsatish qoidalari berilmagani uchun savollar ixtiyoriy.
 

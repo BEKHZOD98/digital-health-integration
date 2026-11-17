@@ -16,7 +16,7 @@ Content-Type: application/fhir+json
 If-Match: W/"1"
 ```
 
-See the [CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DHPCapabilityStatement.html#QuestionnaireResponse1-11) for the full list of supported search parameters.
+Полный список поддерживаемых параметров поиска приведён в [CapabilityStatement](https://dhp.uz/fhir/core/ru/CapabilityStatement-DHPCapabilityStatement.html#QuestionnaireResponse1-11).
 
 ### Связанные материалы
 

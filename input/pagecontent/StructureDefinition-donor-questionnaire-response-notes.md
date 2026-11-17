@@ -21,4 +21,4 @@ See the [CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DH
 - [Donor questionnaire field mapping](donor-questionnaire-mapping.html)
 - [Questionnaire](StructureDefinition-donor-questionnaire.html)
 - [QuestionnaireResponse](StructureDefinition-donor-questionnaire-response.html)
-- [Interactive forms](forms.html)
+- [Questionnaires](forms.html)

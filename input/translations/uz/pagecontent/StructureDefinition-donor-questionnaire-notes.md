@@ -15,7 +15,7 @@ Content-Type: application/fhir+json
 If-Match: W/"1"
 ```
 
-See the [CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DHPCapabilityStatement.html#Questionnaire1-10) for the full list of supported search parameters.
+Qo'llab-quvvatlanadigan qidiruv parametrlarining to'liq ro'yxati [CapabilityStatement](https://dhp.uz/fhir/core/uz/CapabilityStatement-DHPCapabilityStatement.html#Questionnaire1-10) da keltirilgan.
 
 ### Tegishli materiallar
 

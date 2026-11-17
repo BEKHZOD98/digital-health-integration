@@ -2,7 +2,7 @@
 
 Profil [donor so‘rovnomasi](Questionnaire-donor-questionnaire.html) javoblarini saqlaydi. Bir xil `linkId` o‘zbek, rus va ingliz tillarida bir xil savolni bildiradi. To‘ldirilgan so‘rovnoma shifokor baholashi uchun xizmat qiladi va o‘z-o‘zidan donorlikka ruxsat yoki chetlatishni belgilamaydi.
 
-### Mandatory and Must Support data elements
+### Majburiy va Must Support ma'lumot elementlari
 
 Javobda so‘rovnoma canonical manzili, holat, donorga havola, to‘ldirish vaqti va kamida bitta savol elementi bo‘ladi. Muallif, manba, tashrif va javoblar qo‘llab-quvvatlanadi. Har bir savol ko‘pi bilan bir marta uchraydi; javob savolga mos date, string yoki boolean turida bo‘ladi.
 
