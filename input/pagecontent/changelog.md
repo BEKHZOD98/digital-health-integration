@@ -4,7 +4,7 @@
 
 [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) records a donor deferral, with [temporary](Flag-example-blood-donor-temporary-deferral.html) and [lifelong](Flag-example-blood-donor-lifelong-deferral.html) examples. The `workflow-reason` extension carries the reason from a local [deferral reason](CodeSystem-donor-deferral-reason-cs.html) code system ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
 
-[Blood Management](blood-management.html) maps the blood service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
+[Blood Service](blood-service.html) maps the service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
 
 [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), based on UZ Core Observation, records a person's registration with the blood service as a blood donor or a recipient. It carries the registration number, patient, effective date and time, encounter and performer. Component slices carry the donor category, donation compensation and donation type for a donor and the ICD-10 diagnosis for a recipient; a recipient registration cannot carry the donor components. Examples cover a staff donor, a reserve donor and a recipient, with a registration Encounter and registrar Practitioner for the recipient.
 
