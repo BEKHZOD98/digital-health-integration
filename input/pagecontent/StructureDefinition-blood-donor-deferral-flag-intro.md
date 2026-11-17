@@ -1,4 +1,4 @@
-Blood Donor Deferral Flag records that a blood donor is deferred from donation for medical reasons. It is a Flag on the donor [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) with the code `blood-donation-deferred`; the [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries one [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a test [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), a DiagnosticReport or a Condition. A donor deferred for two reasons has two flags. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a lifelong deferral has no `period.end`. The profile derives from Flag until UZ Core Flag is published in a UZ Core release. [Blood Service](blood-service.html#eligibility) shows where deferrals fit in the blood service.
+Blood Donor Deferral Flag records that a blood donor is deferred from donation for medical reasons. It is a Flag on the donor [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) with the code `blood-donation-deferred-temporary` or `blood-donation-deferred-permanent`; the [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries one [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a test [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), a DiagnosticReport or a Condition. A donor deferred for two reasons has two flags. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a permanent deferral has no `period.end`. A temporary flag stays `active` until it is set to `inactive`, so read `period.end` together with `status` to tell whether a deferral still applies. The profile derives from Flag until UZ Core Flag is published in a UZ Core release. [Blood Service](blood-service.html#eligibility) shows where deferrals fit in the blood service.
 
 ### Mandatory and Must Support data elements
 
@@ -6,7 +6,7 @@ The elements below must always be present (mandatory) or must be supported when 
 
 #### Each Blood Donor Deferral Flag Must Have
 
-Each flag must have a `status`, the code `blood-donation-deferred`, the donor (`subject`), the start of the deferral (`period.start`) and one deferral reason in the `workflow-reason` extension (`concept`).
+Each flag must have a `status`, the code `blood-donation-deferred-temporary` or `blood-donation-deferred-permanent`, the donor (`subject`), the start of the deferral (`period.start`) and one deferral reason in the `workflow-reason` extension (`concept`).
 
 #### Each Blood Donor Deferral Flag Must Support
 
@@ -19,7 +19,7 @@ Each flag must have a `status`, the code `blood-donation-deferred`, the donor (`
 
 ### Building the JSON, step by step
 
-The examples below go from the smallest valid flag to a lifelong deferral with the result that led to it. Each one validates against this profile. The complete reference instances are the [temporary deferral](Flag-example-blood-donor-temporary-deferral.html) and [lifelong deferral](Flag-example-blood-donor-lifelong-deferral.html).
+The examples below go from the smallest valid flag to a permanent deferral with the result that led to it. Each one validates against this profile. The complete reference instances are the [temporary deferral](Flag-example-blood-donor-temporary-deferral.html) and [permanent deferral](Flag-example-blood-donor-permanent-deferral.html).
 
 #### The smallest Blood Donor Deferral Flag
 
@@ -41,16 +41,16 @@ The base resource requires `status`, `code` and `subject`, this profile requires
   "status": "active",
   "code": { "coding": [ {
     "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
-    "code": "blood-donation-deferred"
+    "code": "blood-donation-deferred-temporary"
   } ] },
   "subject": { "reference": "Patient/[id]" },
   "period": { "start": "2026-11-10T10:00:00+05:00", "end": "2027-05-09T10:00:00+05:00" }
 }
 ```
 
-#### A lifelong deferral with its evidence
+#### A permanent deferral with its evidence
 
-A lifelong deferral has no `period.end`. The reason's `reference` points to the positive result that led to the deferral; it can also point to a DiagnosticReport or a Condition.
+A permanent deferral has no `period.end`. The reason's `reference` points to the positive result that led to the deferral; it can also point to a DiagnosticReport or a Condition.
 
 ```json
 {
@@ -70,7 +70,7 @@ A lifelong deferral has no `period.end`. The reason's `reference` points to the 
   "category": [ { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/flag-category", "code": "clinical" } ] } ],
   "code": { "coding": [ {
     "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
-    "code": "blood-donation-deferred"
+    "code": "blood-donation-deferred-permanent"
   } ] },
   "subject": { "reference": "Patient/[id]" },
   "encounter": { "reference": "Encounter/[id]" },

@@ -7,24 +7,24 @@ Usage: #example
 * status = #active
 * category = $flag-category#clinical
 * extension[reason].valueCodeableReference.concept = DonorDeferralReasonCS#donrsn-0001-00001 "Tatuirovka, piercing yoki akupunktura"
-* code = $blood-donor-eligibility-cs#blood-donation-deferred "Tibbiy sabablarga ko'ra qon donorligidan chetlatilgan"
+* code = $blood-donor-eligibility-cs#blood-donation-deferred-temporary "Tibbiy sabablarga ko'ra qon donorligidan vaqtincha chetlatilgan"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * author = Reference(PractitionerRole/example-practitionerrole)
 * period.start = "2026-11-10T10:00:00+05:00"
 * period.end = "2027-05-09T10:00:00+05:00"
 
-Instance: example-blood-donor-lifelong-deferral
+Instance: example-blood-donor-permanent-deferral
 InstanceOf: BloodDonorDeferralFlag
-Title: "Example Blood Donor Deferral Flag - Lifelong Deferral"
-Description: "Synthetic lifelong deferral after a positive HIV test result: the period has a start and no end."
+Title: "Example Blood Donor Deferral Flag - Permanent Deferral"
+Description: "Synthetic permanent deferral after a positive HIV test result: the period has a start and no end."
 Usage: #example
 * language = #uz
 * status = #active
 * category = $flag-category#clinical
 * extension[reason].valueCodeableReference.concept = DonorDeferralReasonCS#donrsn-0001-00013 "OIV testi ijobiy natijasi"
 * extension[reason].valueCodeableReference.reference = Reference(Observation/example-blood-donor-hiv-result)
-* code = $blood-donor-eligibility-cs#blood-donation-deferred "Tibbiy sabablarga ko'ra qon donorligidan chetlatilgan"
+* code = $blood-donor-eligibility-cs#blood-donation-deferred-permanent "Tibbiy sabablarga ko'ra qon donorligidan doimiy chetlatilgan"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * author = Reference(PractitionerRole/example-practitionerrole)
@@ -33,7 +33,7 @@ Usage: #example
 Instance: example-blood-donor-hiv-result
 InstanceOf: UZCoreObservation
 Title: "Example Observation - Positive Donor HIV Antibody Result"
-Description: "Synthetic positive HIV 1 and 2 antibody result from the donor's pre-donation tests; the lifelong deferral Flag names it as the reason."
+Description: "Synthetic positive HIV 1 and 2 antibody result from the donor's pre-donation tests; the permanent deferral Flag names it as the reason."
 Usage: #example
 * language = #uz
 * status = #final

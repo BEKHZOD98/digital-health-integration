@@ -30,7 +30,7 @@ POST [base]/Flag
   "extension": [ { "url": "http://hl7.org/fhir/StructureDefinition/workflow-reason", "valueCodeableReference": { ... } } ],
   "status": "active",
   "code": { "coding": [ { "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
-                          "code": "blood-donation-deferred" } ] },
+                          "code": "blood-donation-deferred-temporary" } ] },
   "subject": { "reference": "Patient/[id]" },
   "period": { "start": "2026-11-10T10:00:00+05:00", "end": "2027-05-09T10:00:00+05:00" },
   ...

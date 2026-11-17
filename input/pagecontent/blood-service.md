@@ -44,11 +44,11 @@ Examples: [staff donor](Observation-example-blood-donor-registration-staff.html)
 
 <!-- CORE-RELEASE #161 -->
 
-Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
+Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a temporary or permanent medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
 
-A deferral is a [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): `code` is `blood-donation-deferred`, and the [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries the [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a positive test result. A donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a lifelong deferral has no `period.end`.
+A deferral is a [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): `code` is `blood-donation-deferred-temporary` or `blood-donation-deferred-permanent`, and the [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries the [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a positive test result. A donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a permanent deferral has no `period.end`. A temporary flag stays `active` until it is set to `inactive`, so read `period.end` together with `status` to tell whether a deferral still applies.
 
-Examples: [temporary deferral](Flag-example-blood-donor-temporary-deferral.html), [lifelong deferral](Flag-example-blood-donor-lifelong-deferral.html), whose reason points to the [positive HIV result](Observation-example-blood-donor-hiv-result.html).
+Examples: [temporary deferral](Flag-example-blood-donor-temporary-deferral.html), [permanent deferral](Flag-example-blood-donor-permanent-deferral.html), whose reason points to the [positive HIV result](Observation-example-blood-donor-hiv-result.html).
 
 ### Testing the donor's blood {#testing}
 

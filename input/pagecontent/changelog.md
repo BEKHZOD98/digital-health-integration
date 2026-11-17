@@ -2,7 +2,7 @@
 
 #### Added
 
-[Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) records a donor deferral, with [temporary](Flag-example-blood-donor-temporary-deferral.html) and [lifelong](Flag-example-blood-donor-lifelong-deferral.html) examples. The `workflow-reason` extension carries the reason from a local [deferral reason](CodeSystem-donor-deferral-reason-cs.html) code system ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
+[Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) records a donor deferral, with [temporary](Flag-example-blood-donor-temporary-deferral.html) and [permanent](Flag-example-blood-donor-permanent-deferral.html) examples. The `workflow-reason` extension carries the reason from a local [deferral reason](CodeSystem-donor-deferral-reason-cs.html) code system ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
 
 [Blood Service](blood-service.html) maps the service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
 

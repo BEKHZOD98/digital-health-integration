@@ -1,6 +1,6 @@
 > **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
 
-Blood Donor Deferral Flag фиксирует, что донор отведён от донации по медицинским причинам. Это Flag на [Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html) донора с кодом `blood-donation-deferred`; расширение [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) содержит одну [причину отвода](ValueSet-donor-deferral-reason-vs.html) и может ссылаться на её основание, например на [Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html) с результатом анализа, DiagnosticReport или Condition. Донор, отведённый по двум причинам, получает два флага. У временного отвода есть `period.end` - дата, с которой донор снова может сдавать кровь; у пожизненного отвода `period.end` нет. Профиль основан на Flag, пока UZ Core Flag не опубликован в выпуске UZ Core. [Blood Service](blood-service.html#eligibility) показывает место отводов в работе службы крови.
+Blood Donor Deferral Flag фиксирует, что донор отведён от донации по медицинским причинам. Это Flag на [Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html) донора с кодом `blood-donation-deferred-temporary` или `blood-donation-deferred-permanent`; расширение [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) содержит одну [причину отвода](ValueSet-donor-deferral-reason-vs.html) и может ссылаться на её основание, например на [Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html) с результатом анализа, DiagnosticReport или Condition. Донор, отведённый по двум причинам, получает два флага. У временного отвода есть `period.end` - дата, с которой донор снова может сдавать кровь; у постоянного отвода `period.end` нет. Временный флаг остаётся `active`, пока его не переведут в `inactive`, поэтому, чтобы понять, действует ли отвод, читайте `period.end` вместе со `status`. Профиль основан на Flag, пока UZ Core Flag не опубликован в выпуске UZ Core. [Blood Service](blood-service.html#eligibility) показывает место отводов в работе службы крови.
 
 ### Обязательные и поддерживаемые (Must Support) элементы данных
 
@@ -8,7 +8,7 @@ Blood Donor Deferral Flag фиксирует, что донор отведён �
 
 #### Каждый Blood Donor Deferral Flag должен содержать
 
-Каждый флаг должен содержать `status`, код `blood-donation-deferred`, донора (`subject`), начало отвода (`period.start`) и одну причину отвода в расширении `workflow-reason` (`concept`).
+Каждый флаг должен содержать `status`, код `blood-donation-deferred-temporary` или `blood-donation-deferred-permanent`, донора (`subject`), начало отвода (`period.start`) и одну причину отвода в расширении `workflow-reason` (`concept`).
 
 #### Каждый Blood Donor Deferral Flag должен поддерживать
 
@@ -21,7 +21,7 @@ Blood Donor Deferral Flag фиксирует, что донор отведён �
 
 ### Сборка JSON, шаг за шагом
 
-Примеры ниже идут от наименьшего валидного флага к пожизненному отводу с результатом, который к нему привёл. Каждый из них проходит валидацию по этому профилю. Полные эталонные экземпляры - [временный отвод](Flag-example-blood-donor-temporary-deferral.html) и [пожизненный отвод](Flag-example-blood-donor-lifelong-deferral.html).
+Примеры ниже идут от наименьшего валидного флага к постоянному отводу с результатом, который к нему привёл. Каждый из них проходит валидацию по этому профилю. Полные эталонные экземпляры - [временный отвод](Flag-example-blood-donor-temporary-deferral.html) и [постоянный отвод](Flag-example-blood-donor-permanent-deferral.html).
 
 #### Наименьший Blood Donor Deferral Flag
 
@@ -43,16 +43,16 @@ Blood Donor Deferral Flag фиксирует, что донор отведён �
   "status": "active",
   "code": { "coding": [ {
     "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
-    "code": "blood-donation-deferred"
+    "code": "blood-donation-deferred-temporary"
   } ] },
   "subject": { "reference": "Patient/[id]" },
   "period": { "start": "2026-11-10T10:00:00+05:00", "end": "2027-05-09T10:00:00+05:00" }
 }
 ```
 
-#### Пожизненный отвод с основанием
+#### Постоянный отвод с основанием
 
-У пожизненного отвода нет `period.end`. `reference` причины указывает на положительный результат, который привёл к отводу; он может указывать и на DiagnosticReport или Condition.
+У постоянного отвода нет `period.end`. `reference` причины указывает на положительный результат, который привёл к отводу; он может указывать и на DiagnosticReport или Condition.
 
 ```json
 {
@@ -72,7 +72,7 @@ Blood Donor Deferral Flag фиксирует, что донор отведён �
   "category": [ { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/flag-category", "code": "clinical" } ] } ],
   "code": { "coding": [ {
     "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
-    "code": "blood-donation-deferred"
+    "code": "blood-donation-deferred-permanent"
   } ] },
   "subject": { "reference": "Patient/[id]" },
   "encounter": { "reference": "Encounter/[id]" },
