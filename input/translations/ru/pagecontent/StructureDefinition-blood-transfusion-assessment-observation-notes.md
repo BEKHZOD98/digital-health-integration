@@ -10,12 +10,13 @@
 GET [base]/Observation/[id]
 ```
 
-**Поиск оценок перед переливанием** (по реципиенту, по Encounter, по несовместимому результату)
+**Поиск оценок перед переливанием** (по реципиенту, единице крови, Encounter, несовместимому результату)
 
 ```
 GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C252314007
+GET [base]/Observation?focus=BiologicallyDerivedProduct/[id]
 GET [base]/Observation?encounter=Encounter/[id]&code=http://snomed.info/sct%7C252314007
-GET [base]/Observation?code=http://snomed.info/sct%7C252314007&component-value-concept=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs%7Cbldcomp-0002-00002
+GET [base]/Observation?code=http://snomed.info/sct%7C252314007&component-value-concept=http://snomed.info/sct%7C250406009
 ```
 
 **Создание**
@@ -30,6 +31,7 @@ POST [base]/Observation
   "status": "final",
   "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "252314007" } ] },
   "subject": { "reference": "Patient/[id]" },
+  "focus": [ { "reference": "BiologicallyDerivedProduct/[id]" } ],
   "effectiveDateTime": "2026-11-11T10:30:00+05:00",
   ...
 }
@@ -39,7 +41,7 @@ POST [base]/Observation
 
 ```
 PUT [base]/Observation/[id]
-If-Match: W/"3"   # ETag из последнего чтения; 412, если ресурс с тех пор изменился
+If-Match: W/"3"   # the ETag from your last read; 412 if it changed since
 ```
 
 Полный список поддерживаемых параметров поиска см. в [CapabilityStatement](https://dhp.uz/fhir/core/ru/CapabilityStatement-DHPCapabilityStatement.html#Observation1-9).
@@ -47,5 +49,5 @@ If-Match: W/"3"   # ETag из последнего чтения; 412, если �
 ### Связанные материалы
 
 - [Blood Service](blood-service.html) &middot; [Формы службы крови](forms-volume-08-blood-service.html)
-- [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html)
+- [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html) &middot; [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html)
 - [Must Support](https://dhp.uz/fhir/core/ru/must-support.html) &middot; [Общие рекомендации](https://dhp.uz/fhir/core/ru/general-guidance.html)

@@ -24,7 +24,7 @@
 | [Переработка на компоненты](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Учёт запасов](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (следующий выпуск UZ Core) |
 | [Запрос и поставка компонентов](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html) |
-| [Трансфузия реципиенту](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (следующий выпуск UZ Core), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
+| [Трансфузия реципиенту](#transfusing) | ServiceRequest, Observation, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html), [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html), UZ Core BiologicallyDerivedProductDispense (следующий выпуск UZ Core), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-service-model-ru.svg %}</div><br clear="all"/>
 
@@ -101,6 +101,8 @@
 | Шаг | Ресурс | Ключевые элементы |
 | :--- | :--- | :--- |
 | Назначение трансфузии | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html) | `subject` - реципиент |
+| Трансфузионный и акушерский анамнез реципиента | [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) | `code` - вид анамнеза, `subject` - реципиент |
+| Пробы на совместимость с единицей | [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) | `focus` - единица, `derivedFrom` - анамнез и группа крови ABO |
 | Выдача единицы реципиенту | UZ Core BiologicallyDerivedProductDispense (следующий выпуск UZ Core) | `product` - единица, `patient` - реципиент, `basedOn` - назначение |
 | Выполненная трансфузия | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html) | `basedOn` - назначение, `used` - единица |
 | Реакция на трансфузию | [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) | `suspectEntity.instanceReference` - единица |

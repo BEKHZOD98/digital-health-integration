@@ -20,7 +20,7 @@ Yordamchi terminologiya: ro'yxatga olish turlari ([ValueSet](ValueSet-blood-serv
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) alohida tekshiruvlar, panellar va qayta ishlash operatsiyalarini buyuradi; so'rov va donatsiya raqamlari tizimlari, Patient yoki Location subyekti, BloodLabCodesVS va BloodComponentProcessingCS, SNOMED CT operatsiya kodlari va 15 ta misol qo'shildi.
 
-[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) transfuziyadan oldingi baholashni oltita component kesimi, belgilangan SNOMED CT kodi, har bir kesim uchun qiymatlar to'plami va to'liq misol bilan ifodalaydi.
+[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) retsipiyent va bitta qon birligi o'rtasidagi ABO, Rh-Hr bo'yicha moslik va biologik sinamani SNOMED CT natijalari bilan qayd etadi, [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) esa u tayanadigan retsipiyentning transfuzion va akusherlik anamnezini qayd etadi.
 
 #### O'zgartirildi
 

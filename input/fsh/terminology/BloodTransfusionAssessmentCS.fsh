@@ -1,7 +1,7 @@
 CodeSystem: BloodTransfusionAssessmentCS
 Id: blood-transfusion-assessment-cs
-Title: "Blood transfusion assessment components"
-Description: "Local component types recorded in a blood transfusion assessment."
+Title: "Blood transfusion assessment codes"
+Description: "Local codes for the compatibility tests made for a blood transfusion and for the recipient history taken before it."
 * insert OriginalCodeSystemDraft(blood-transfusion-assessment-cs)
 
 * #bldcomp-0001-00001 "ABO bo‘yicha moslik"
@@ -24,13 +24,8 @@ Description: "Local component types recorded in a blood transfusion assessment."
   * ^designation[=].value = "Акушерский анамнез"
   * ^designation[+].language = #en
   * ^designation[=].value = "Obstetric history"
-* #bldcomp-0001-00005 "Dastlabki ABO qon guruhi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Предварительная группа крови ABO"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Preliminary ABO group"
-* #bldcomp-0001-00006 "Biologik namuna"
+* #bldcomp-0001-00006 "Biologik sinama"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Биологическая проба"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Biological specimen"
+  * ^designation[=].value = "Biological compatibility test"

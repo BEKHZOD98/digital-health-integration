@@ -8,12 +8,13 @@ Common API interactions for this profile. It is built on Observation, so use the
 GET [base]/Observation/[id]
 ```
 
-**Find transfusion assessments** (by recipient, encounter, incompatible result)
+**Find transfusion assessments** (by recipient, blood unit, encounter, incompatible result)
 
 ```
 GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C252314007
+GET [base]/Observation?focus=BiologicallyDerivedProduct/[id]
 GET [base]/Observation?encounter=Encounter/[id]&code=http://snomed.info/sct%7C252314007
-GET [base]/Observation?code=http://snomed.info/sct%7C252314007&component-value-concept=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-transfusion-value-cs%7Cbldcomp-0002-00002
+GET [base]/Observation?code=http://snomed.info/sct%7C252314007&component-value-concept=http://snomed.info/sct%7C250406009
 ```
 
 **Create**
@@ -28,6 +29,7 @@ POST [base]/Observation
   "status": "final",
   "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "252314007" } ] },
   "subject": { "reference": "Patient/[id]" },
+  "focus": [ { "reference": "BiologicallyDerivedProduct/[id]" } ],
   "effectiveDateTime": "2026-11-11T10:30:00+05:00",
   ...
 }
@@ -45,5 +47,5 @@ See the [CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DH
 ### Related
 
 - [Blood Service](blood-service.html) &middot; [Blood service forms](forms-volume-08-blood-service.html)
-- [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html)
+- [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html) &middot; [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html)
 - [Must Support](https://dhp.uz/fhir/core/en/must-support.html) &middot; [General guidance](https://dhp.uz/fhir/core/en/general-guidance.html)

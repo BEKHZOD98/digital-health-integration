@@ -24,7 +24,7 @@ Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) 
 | [Komponentlarga ajratish](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Zaxiralarni hisobga olish](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (UZ Core ning keyingi relizi) |
 | [Komponentlarni so'rash va yetkazib berish](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-delivery.html) |
-| [Retsipiyentga transfuziya](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (UZ Core ning keyingi relizi), [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) |
+| [Retsipiyentga transfuziya](#transfusing) | ServiceRequest, Observation, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html), [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html), [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html), UZ Core BiologicallyDerivedProductDispense (UZ Core ning keyingi relizi), [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-service-model-uz.svg %}</div><br clear="all"/>
 
@@ -101,6 +101,8 @@ Misollar: [yetkazib berish so'rovi](https://dhp.uz/fhir/core/uz/SupplyRequest-ex
 | Bosqich | Resurs | Asosiy elementlar |
 | :--- | :--- | :--- |
 | Transfuziya tayinlovi | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html) | `subject` - retsipiyent |
+| Retsipiyentning transfuzion va akusherlik anamnezi | [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) | `code` - anamnez turi, `subject` - retsipiyent |
+| Birlik bilan moslik sinovlari | [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) | `focus` - birlik, `derivedFrom` - anamnez va ABO qon guruhi |
 | Birlikni retsipiyentga berish | UZ Core BiologicallyDerivedProductDispense (UZ Core ning keyingi relizi) | `product` - birlik, `patient` - retsipiyent, `basedOn` - tayinlov |
 | Bajarilgan transfuziya | [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html) | `basedOn` - tayinlov, `used` - birlik |
 | Transfuziyaga reaksiya | [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) | `suspectEntity.instanceReference` - birlik |

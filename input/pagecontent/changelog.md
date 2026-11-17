@@ -12,7 +12,7 @@ Supporting terminology: a [blood service observation type](CodeSystem-blood-serv
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orders individual tests, panels and component processing operations, with fixed order and donation identifier systems, Patient or Location subjects, BloodLabCodesVS and BloodComponentProcessingCS, SNOMED CT processing codes and 15 examples.
 
-[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) records a pre-transfusion assessment with six named component slices, fixed SNOMED CT assessment coding, component-specific value sets and a complete example.
+[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) records the ABO, Rh-Hr and biological compatibility tests between a recipient and one blood unit, with SNOMED CT results, and [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) records the recipient's transfusion and obstetric history it is based on.
 
 [Form 027 extract from a patient's medical record](StructureDefinition-form-027-medical-record-extract-composition.html) is profiled as a FHIR Document, covering registration, personal information, residence, referral and diagnosis, clinical information, treatment and recommendations, next steps and responsible persons across 8 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-027-mapping.html).
 

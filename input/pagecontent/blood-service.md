@@ -22,7 +22,7 @@ Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html)
 | [Process it into components](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Keep stock](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (next UZ Core release) |
 | [Request and deliver components](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-delivery.html) |
-| [Transfuse the recipient](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (next UZ Core release), [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) |
+| [Transfuse the recipient](#transfusing) | ServiceRequest, Observation, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html), [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html), [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html), UZ Core BiologicallyDerivedProductDispense (next UZ Core release), [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-service-model-en.svg %}</div><br clear="all"/>
 
@@ -99,6 +99,8 @@ Examples: [supply request](https://dhp.uz/fhir/core/en/SupplyRequest-example-sup
 | Step | Resource | Key elements |
 | :--- | :--- | :--- |
 | Transfusion order | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html) | `subject` is the recipient |
+| Recipient's transfusion and obstetric history | [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) | `code` says which history, `subject` is the recipient |
+| Compatibility tests with a unit | [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) | `focus` is the unit, `derivedFrom` is the history and the ABO group |
 | Unit issued to the recipient | UZ Core BiologicallyDerivedProductDispense (next UZ Core release) | `product` is the unit, `patient` is the recipient, `basedOn` is the order |
 | Transfusion performed | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html) | `basedOn` is the order, `used` is the unit |
 | Reaction to the transfusion | [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) | `suspectEntity.instanceReference` is the unit |
