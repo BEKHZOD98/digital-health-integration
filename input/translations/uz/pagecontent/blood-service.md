@@ -47,7 +47,7 @@ Misollar: [kadr donor](Observation-example-blood-donor-registration-staff.html),
 
 Har bir donatsiyadan oldin donor [donor so'rovnomasiga](forms.html?form=donor-questionnaire) javob beradi; javoblar donorning Patient yozuvida [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-questionnaire-response.html) bilan qayd etiladi ([namuna](QuestionnaireResponse-example-donor-questionnaire-response.html)). Hech bir javob o'z-o'zidan chetlatish hisoblanmaydi: shifokor javoblarni ko'rib chiqadi va chetlatishni [Flag](#eligibility) bilan qayd etadi.
 
-Jadvalda chetlatishga olib kelishi mumkin bo'lgan javob va unga mos [sabab kodi](ValueSet-donor-deferral-reason-vs.html) ko'rsatilgan. Xuddi shu kod har bir savolning `item.code` elementida ham bor.
+Jadvalda chetlatishga olib kelishi mumkin bo'lgan javob va unga mos [sabab kodi](ValueSet-donor-deferral-reason-vs.html) ko'rsatilgan. Har bir savolning `item.code` elementi, mos kod mavjud bo'lsa, savol nima haqida ekanini LOINC yoki SNOMED CT kodi bilan bildiradi; sabab kodi savolda yo'q.
 
 | Savol | Chetlatishga olib keladigan javob | Sabab kodi |
 | :--- | :--- | :--- |
@@ -82,7 +82,7 @@ Jadvalda chetlatishga olib kelishi mumkin bo'lgan javob va unga mos [sabab kodi]
 
 Sanani faqat `last-donation` qayd etadi. Boshqa savollar hodisa qachon bo'lganini so'ramaydi, shuning uchun chetlatish flagi suhbat sanasidan boshlanadi, tugash sanasini esa shifokor belgilaydi; javoblar uni aniqlamaydi.
 
-`last-doctor-visit`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` va `additional-health` shifokorga baholash uchun kontekst beradi, `regular-donation-preference` va `contact-consent` esa donorning istaklarini qayd etadi. Ularning hech biri chetlatishga olib kelmaydi.
+`gender` homiladorlik haqidagi savollar berilishini belgilaydi. `last-doctor-visit`, `last-doctor-visit-reason`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` va `additional-health` shifokorga baholash uchun kontekst beradi, `regular-donation-preference` va `contact-consent` esa donorning istaklarini qayd etadi. Ularning hech biri chetlatishga olib kelmaydi.
 
 Namuna: donor yaqinda tatuirovka qilganini bildirgan [namunaviy javobni](QuestionnaireResponse-example-donor-questionnaire-response.html) ko'rib chiqib, shifokor `workflow-reason` kengaytmasida `donrsn-0001-00001` sababi bo'lgan [vaqtinchalik chetlatish flagini](Flag-example-donor-questionnaire-deferral.html) qayd etadi.
 

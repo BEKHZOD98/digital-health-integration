@@ -10,12 +10,18 @@ Description: "Synthetic completed donor questionnaire. A recent tattoo is report
 * authored = "2026-11-13T09:30:00+05:00"
 * author = Reference(example-donor-questionnaire-patient)
 * source = Reference(example-donor-questionnaire-patient)
+* item[+].linkId = "gender"
+* item[=].text = "Jinsi"
+* item[=].answer.valueCoding = $gender#female
 * item[+].linkId = "last-donation"
 * item[=].text = "Oxirgi marta qachon qon topshirgansiz?"
 * item[=].answer.valueDate = "2026-01-10"
 * item[+].linkId = "last-doctor-visit"
-* item[=].text = "Oxirgi marta qachon shifokor qabulida bo‘lgansiz? Qaysi sababga ko‘ra?"
-* item[=].answer.valueString = "2026-yil yanvar oyida profilaktik ko‘rik."
+* item[=].text = "Oxirgi marta qachon shifokor qabulida bo‘lgansiz?"
+* item[=].answer.valueDate = "2026-01-20"
+* item[+].linkId = "last-doctor-visit-reason"
+* item[=].text = "Shifokorga qaysi sababga ko‘ra murojaat qilgansiz?"
+* item[=].answer.valueString = "Profilaktik ko‘rik."
 * item[+].linkId = "feeling-well"
 * item[=].text = "Bugun o‘zingizni yaxshi his qilyapsizmi?"
 * item[=].answer.valueBoolean = true

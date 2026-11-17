@@ -2,7 +2,7 @@
 
 #### Qo'shildi
 
-[Donor so‘rovnomasi](forms.html?form=donor-questionnaire) o‘zbek, rus va ingliz tillarida 33 savol, bemor bilan [to‘ldirilgan javob namunasi](QuestionnaireResponse-example-donor-questionnaire-response.html) va qaysi javoblar chetlatishga olib kelishi mumkinligi haqidagi [Blood Management bosqichini](blood-management.html#interviewing) taqdim etadi. Donorni chetlatish sabab va tur kod tizimlari qayta ishlatiladi. Dastur konteksti so‘rovnomani interaktiv shakllar sahifasida guruhlaydi.
+[Donor so‘rovnomasi](forms.html?form=donor-questionnaire) o‘zbek, rus va ingliz tillarida 33 savol, bemor bilan [to‘ldirilgan javob namunasi](QuestionnaireResponse-example-donor-questionnaire-response.html) va qaysi javoblar chetlatishga olib kelishi mumkinligi haqidagi [Blood Service bosqichini](blood-service.html#interviewing) taqdim etadi. Donorni chetlatish sabablari kod tizimi qayta ishlatiladi. Dastur konteksti so‘rovnomani so'rovnomalar sahifasida guruhlaydi.
 
 [027-shakl, bemorning tibbiy kartasidan ko'chirma](StructureDefinition-form-027-medical-record-extract-composition.html) FHIR hujjati sifatida profillandi: ro'yxatga olish va shaxsiy ma'lumotlar, manzil, yo'llanma va tashxis, klinik ma'lumotlar, davolash va tavsiyalar, keyingi tadbirlar va mas'ul shaxslar Composition'ning 8 ta bo'limida. Unga hujjat namunasi (Bundle) va [maydonlarni moslashtirish sahifasi](form-027-mapping.html) ilova qilingan.
 

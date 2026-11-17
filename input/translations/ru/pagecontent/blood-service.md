@@ -47,7 +47,7 @@
 
 Перед каждой донацией донор отвечает на [анкету донора](forms.html?form=donor-questionnaire); ответы фиксируются ресурсом [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-questionnaire-response.html) на Patient донора ([пример](QuestionnaireResponse-example-donor-questionnaire-response.html)). Ни один ответ сам по себе не означает отвод: врач рассматривает ответы и фиксирует отвод ресурсом [Flag](#eligibility).
 
-В таблице указан ответ, который может привести к отводу, и соответствующий [код причины](ValueSet-donor-deferral-reason-vs.html). Этот же код указан в `item.code` каждого вопроса.
+В таблице указан ответ, который может привести к отводу, и соответствующий [код причины](ValueSet-donor-deferral-reason-vs.html). `item.code` каждого вопроса обозначает, о чём он спрашивает, кодом LOINC или SNOMED CT, если подходящий код есть; кода причины в вопросе нет.
 
 | Вопрос | Ответ, ведущий к отводу | Код причины |
 | :--- | :--- | :--- |
@@ -82,7 +82,7 @@
 
 Дату фиксирует только `last-donation`. Остальные вопросы не спрашивают, когда произошло событие, поэтому флаг отвода начинается с даты опроса, а дату окончания устанавливает врач; ответы её не определяют.
 
-`last-doctor-visit`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` и `additional-health` дают врачу контекст для оценки, а `regular-donation-preference` и `contact-consent` фиксируют пожелания донора. Ни один из них не ведёт к отводу.
+`gender` определяет, задаются ли вопросы о беременности. `last-doctor-visit`, `last-doctor-visit-reason`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` и `additional-health` дают врачу контекст для оценки, а `regular-donation-preference` и `contact-consent` фиксируют пожелания донора. Ни один из них не ведёт к отводу.
 
 Пример: рассмотрев [пример ответа](QuestionnaireResponse-example-donor-questionnaire-response.html), где донор сообщает о недавней татуировке, врач фиксирует [флаг временного отвода](Flag-example-donor-questionnaire-deferral.html), у которого расширение `workflow-reason` содержит причину `donrsn-0001-00001`.
 

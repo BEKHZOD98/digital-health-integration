@@ -45,7 +45,7 @@ Examples: [staff donor](Observation-example-blood-donor-registration-staff.html)
 
 Before each donation the donor answers the [donor questionnaire](forms.html?form=donor-questionnaire), recorded as a [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) on the donor's Patient ([example](QuestionnaireResponse-example-donor-questionnaire-response.html)). No answer defers a donor by itself: a clinician reviews the answers and records any deferral as a [Flag](#eligibility).
 
-The table lists the answer that can lead to a deferral and the [reason code](ValueSet-donor-deferral-reason-vs.html) that goes with it. The same code is in each question's `item.code`.
+The table lists the answer that can lead to a deferral and the [reason code](ValueSet-donor-deferral-reason-vs.html) that goes with it. Each question's `item.code` names what it asks about, from LOINC or SNOMED CT where a matching code exists; the reason code is not on the question.
 
 | Question | Deferral answer | Reason code |
 | :--- | :--- | :--- |
@@ -80,7 +80,7 @@ A No to `testing-consent` or `declaration` is an administrative stop, not a medi
 
 Only `last-donation` captures a date. The other questions do not ask when the event happened, so a deferral Flag starts on the interview date and the clinician sets its end; the answers do not determine it.
 
-`last-doctor-visit`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` and `additional-health` give context for the clinician's review, and `regular-donation-preference` and `contact-consent` record the donor's preferences. None of them lead to a deferral.
+`gender` decides whether the pregnancy questions are asked. `last-doctor-visit`, `last-doctor-visit-reason`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` and `additional-health` give context for the clinician's review, and `regular-donation-preference` and `contact-consent` record the donor's preferences. None of them lead to a deferral.
 
 Example: after reviewing the [example response](QuestionnaireResponse-example-donor-questionnaire-response.html), where the donor reports a recent tattoo, the clinician records a [temporary deferral Flag](Flag-example-donor-questionnaire-deferral.html) whose `workflow-reason` extension carries reason `donrsn-0001-00001`.
 

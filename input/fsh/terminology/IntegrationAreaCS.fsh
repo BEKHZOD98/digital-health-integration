@@ -53,7 +53,7 @@ Description: "Areas of integration covered by this guide. Each code names one in
   * ^designation[=].value = "Viral hepatitis"
 
 * #blood-service "Qon xizmati"
-  * ^definition = "Blood donation services, including donor interviews and assessment."
+  * ^definition = "The blood service: donor registration and interviews, testing, collection, processing into components, stock, supply and transfusion."
   * ^designation[0].language = #ru
   * ^designation[=].value = "Служба крови"
   * ^designation[+].language = #en
