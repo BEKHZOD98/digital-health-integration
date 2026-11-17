@@ -24,11 +24,11 @@ Description: "Local blood service categories used to record reasons for donor de
   * ^designation[=].value = "Грипп, ОРВИ или ангина"
   * ^designation[+].language = #en
   * ^designation[=].value = "Flu, ARVI or tonsillitis"
-* #donrsn-0001-00005 "Dori qabul qilish yoki doimiy davolanish"
+* #donrsn-0001-00005 "Dori qabul qilish yoki doimiy davolanish (oxirgi hafta)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Приём лекарств или постоянное лечение"
+  * ^designation[=].value = "Приём лекарств или постоянное лечение (последняя неделя)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Medication use or ongoing treatment"
+  * ^designation[=].value = "Medication use or ongoing treatment (last week)"
 * #donrsn-0001-00006 "Oxirgi qon topshirish sanasi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Дата последней сдачи крови"
@@ -49,21 +49,21 @@ Description: "Local blood service categories used to record reasons for donor de
   * ^designation[=].value = "Хроническое заболевание"
   * ^designation[+].language = #en
   * ^designation[=].value = "Chronic disease"
-* #donrsn-0001-00010 "Stomatologik muolaja"
+* #donrsn-0001-00010 "Stomatologik muolaja (oxirgi 2 hafta)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Стоматологическая процедура"
+  * ^designation[=].value = "Стоматологическая процедура (последние 2 недели)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Dental procedure"
+  * ^designation[=].value = "Dental procedure (last 2 weeks)"
 * #donrsn-0001-00011 "Bezgak xavfi bo‘lgan hududga tashrif yoki bezgak bilan bog‘liq holat"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Посещение региона риска малярии или связанное с малярией состояние"
   * ^designation[+].language = #en
   * ^designation[=].value = "Travel to a malaria-risk area or malaria-related condition"
-* #donrsn-0001-00012 "Jarrohlik yoki tibbiy aralashuv"
+* #donrsn-0001-00012 "Jarrohlik yoki tibbiy aralashuv (oxirgi 6 oy)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Хирургическое или медицинское вмешательство"
+  * ^designation[=].value = "Хирургическое или медицинское вмешательство (последние 6 месяцев)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Surgery or medical intervention"
+  * ^designation[=].value = "Surgery or medical intervention (last 6 months)"
 * #donrsn-0001-00013 "OIV testi ijobiy natijasi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Положительный результат теста на ВИЧ"
@@ -84,11 +84,11 @@ Description: "Local blood service categories used to record reasons for donor de
   * ^designation[=].value = "Положительный результат теста на сифилис"
   * ^designation[+].language = #en
   * ^designation[=].value = "Positive syphilis test result"
-* #donrsn-0001-00017 "Tug‘ruq yoki homila tushishidan keyingi davr"
+* #donrsn-0001-00017 "Tug‘ruq yoki homila tushishidan keyingi davr (oxirgi 6 oy)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Период после родов или выкидыша"
+  * ^designation[=].value = "Период после родов или выкидыша (последние 6 месяцев)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Postpartum period or period after miscarriage"
+  * ^designation[=].value = "Postpartum period or period after miscarriage (last 6 months)"
 * #donrsn-0001-00018 "Avval gepatit yoki brutsellyoz bilan kasallanganlik"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Перенесённый гепатит или бруцеллёз"
@@ -109,21 +109,21 @@ Description: "Local blood service categories used to record reasons for donor de
   * ^designation[=].value = "Контакт с человеком, инфицированным ВИЧ или гепатитом"
   * ^designation[+].language = #en
   * ^designation[=].value = "Contact with a person infected with HIV or hepatitis"
-* #donrsn-0001-00022 "Himoyalanmagan tasodifiy jinsiy aloqa"
+* #donrsn-0001-00022 "Himoyalanmagan tasodifiy jinsiy aloqa (oxirgi 6 oy)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Случайный незащищённый половой контакт"
+  * ^designation[=].value = "Случайный незащищённый половой контакт (последние 6 месяцев)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Casual unprotected sexual contact"
-* #donrsn-0001-00023 "Jinsiy yo‘l bilan yuqadigan infeksiyalarni davolash"
+  * ^designation[=].value = "Casual unprotected sexual contact (last 6 months)"
+* #donrsn-0001-00023 "Jinsiy yo‘l bilan yuqadigan infeksiyalarni davolash (oxirgi 6 oy)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Лечение инфекций, передающихся половым путём"
+  * ^designation[=].value = "Лечение инфекций, передающихся половым путём (последние 6 месяцев)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Treatment for sexually transmitted infections"
-* #donrsn-0001-00024 "Umumiy igna yoki shpritslardan foydalanish"
+  * ^designation[=].value = "Treatment for sexually transmitted infections (last 6 months)"
+* #donrsn-0001-00024 "Umumiy igna yoki shpritslardan foydalanish (oxirgi 6 oy)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Использование общих игл или шприцев"
+  * ^designation[=].value = "Использование общих игл или шприцев (последние 6 месяцев)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Sharing needles or syringes"
+  * ^designation[=].value = "Sharing needles or syringes (last 6 months)"
 * #donrsn-0001-00025 "Ozodlikdan mahrum etish joylarida bo‘lish"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Пребывание в местах лишения свободы"
@@ -149,18 +149,74 @@ Description: "Local blood service categories used to record reasons for donor de
   * ^designation[=].value = "Низкий уровень гемоглобина"
   * ^designation[+].language = #en
   * ^designation[=].value = "Low hemoglobin"
-* #donrsn-0001-00030 "Tana massasi indeksi me’yordan chetga chiqishi"
+* #donrsn-0001-00030 "OIVga tekshiruvning shubhali natijasi"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Отклонение индекса массы тела"
+  * ^designation[=].value = "Сомнительный результат исследования на ВИЧ"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Body mass index out of range"
-* #donrsn-0001-00031 "Shifokor qarori"
+  * ^designation[=].value = "Inconclusive HIV test result"
+
+* #donrsn-0001-00031 "Virusli B gepatitiga tekshiruvning shubhali natijasi"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Решение врача"
+  * ^designation[=].value = "Сомнительный результат исследования на вирусный гепатит B"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Clinician's decision"
-* #donrsn-0001-00032 "Boshqa patologiya"
+  * ^designation[=].value = "Inconclusive hepatitis B test result"
+
+* #donrsn-0001-00032 "Virusli C gepatitiga tekshiruvning shubhali natijasi"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Прочая патология"
+  * ^designation[=].value = "Сомнительный результат исследования на вирусный гепатит C"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Other pathology"
+  * ^designation[=].value = "Inconclusive hepatitis C test result"
+
+* #donrsn-0001-00033 "OIV infeksiyasi (OITS markazi reestri)"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "ВИЧ-инфекция (реестр СПИД-центра)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "HIV infection recorded in the AIDS centre registry"
+
+* #donrsn-0001-00034 "Virusli gepatit (gepatitlar reestri)"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Вирусный гепатит (реестр гепатитов)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Viral hepatitis recorded in the hepatitis registry"
+
+* #donrsn-0001-00035 "Yuqumli kasallik (yuqumli kasalliklar reestri)"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Инфекционное заболевание (реестр инфекционных болезней)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Infectious disease recorded in the infectious disease registry"
+
+* #donrsn-0001-00036 "Narkologik hisobda turadi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Состоит на наркологическом учёте"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Registered with a substance use treatment service"
+
+* #donrsn-0001-00037 "Psixiatrik hisobda turadi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Состоит на психиатрическом учёте"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Registered with a psychiatric service"
+
+* #donrsn-0001-00038 "Terapevt qarori"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Решение терапевта"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "General physician's decision"
+
+* #donrsn-0001-00039 "Ko‘rik natijalari bo‘yicha tibbiy otvod"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Медицинский отвод по результатам осмотра"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Medical deferral following examination"
+
+* #donrsn-0001-00040 "Tana vazni yetarli emas (50 kg dan kam)"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Недостаточная масса тела (менее 50 кг)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Insufficient body weight (less than 50 kg)"
+
+* #donrsn-0001-00041 "Qayta ishlash bo‘limi shifokori qarori"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Решение врача отделения переработки"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Blood processing department physician's decision"

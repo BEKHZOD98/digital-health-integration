@@ -22,6 +22,8 @@ Supporting terminology: a [blood service observation type](CodeSystem-blood-serv
 
 #### Changed
 
+[Donor deferral reasons](CodeSystem-donor-deferral-reason-cs.html) now contain 41 categories based on the developers' `otvod-sabablari.md` list. Added 12 reasons for inconclusive infection tests, external registry records, examination findings and decisions by physicians in different departments, with Uzbek displays and Russian and English translations. Removed the general BMI, clinician decision and other pathology categories, and renumbered the subsequent codes as `donrsn-0001-00030` through `donrsn-0001-00041`.
+
 The [Form 011](StructureDefinition-form-011-hemodialysis-composition.html), [Form 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Form 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) and [Form 130](StructureDefinition-form-130-laboratory-test-results-composition.html) Compositions no longer fix `status` to `final`, so a document can follow the [document lifecycle](document-statuses.html) through `preliminary`, `amended` and `entered-in-error`.
 
 ### Version 0.12.1

@@ -22,6 +22,8 @@
 
 #### Изменено
 
+[Причины отвода донора](CodeSystem-donor-deferral-reason-cs.html) теперь содержат 41 категорию с учётом списка разработчиков `otvod-sabablari.md`. Добавлены 12 причин: сомнительные результаты исследований на инфекции, записи внешних реестров, результаты осмотра и решения врачей разных отделений; названия приведены на узбекском с переводами на русский и английский. Удалены общие категории отклонения ИМТ, решения врача и прочей патологии; последующие коды перенумерованы в диапазон `donrsn-0001-00030`–`donrsn-0001-00041`.
+
 Composition для [Форма 011](StructureDefinition-form-011-hemodialysis-composition.html), [Форма 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Форма 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) и [Форма 130](StructureDefinition-form-130-laboratory-test-results-composition.html) больше не фиксируют `status` как `final`, поэтому документ может проходить [жизненный цикл](document-statuses.html) через `preliminary`, `amended` и `entered-in-error`.
 
 ### Версия 0.12.1
