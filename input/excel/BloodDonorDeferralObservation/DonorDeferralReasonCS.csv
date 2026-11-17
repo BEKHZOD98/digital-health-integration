@@ -27,3 +27,7 @@ donrsn-0001-00025,Ozodlikdan mahrum etish joylarida bo‘lish,Пребывани
 donrsn-0001-00026,Bugun o‘zini yomon his qilish,Плохое самочувствие в день визита,Feeling unwell on the day of visit,Отвод/перенос донации на текущий день до оценки состояния.
 donrsn-0001-00027,Qonni tekshirishga rozilik bermaslik,Отказ от согласия на тестирование крови,Refusal to consent to blood testing,Административное основание не проводить донацию без требуемого согласия.
 donrsn-0001-00028,Deklaratsiyani tasdiqlamaslik,Декларация не подтверждена,Declaration not confirmed,Административное основание не продолжать процедуру до подтверждения декларации.
+donrsn-0001-00029,Gemoglobin darajasi past,Низкий уровень гемоглобина,Low hemoglobin,Отвод по результату определения гемоглобина при осмотре донора.
+donrsn-0001-00030,Tana massasi indeksi me’yordan chetga chiqishi,Отклонение индекса массы тела,Body mass index out of range,Отвод при индексе массы тела вне допустимых значений по результатам осмотра.
+donrsn-0001-00031,Shifokor qarori,Решение врача,Clinician's decision,"Отвод по решению врача, не относящийся к другим причинам."
+donrsn-0001-00032,Boshqa patologiya,Прочая патология,Other pathology,"Отвод по другой выявленной патологии, не относящейся к другим причинам."
