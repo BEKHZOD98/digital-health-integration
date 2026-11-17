@@ -1,4 +1,4 @@
-// Parent becomes UZCoreFlag once a UZ Core release has it (not in uz.dhp.core 0.12.0).
+// CORE-RELEASE #161: Parent becomes UZCoreFlag once a UZ Core release has it (not in uz.dhp.core 0.12.0).
 Profile: BloodDonorDeferralFlag
 Parent: Flag
 Id: blood-donor-deferral-flag

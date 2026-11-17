@@ -44,6 +44,8 @@
 
 ### Допуск и отводы {#eligibility}
 
+<!-- CORE-RELEASE #161 -->
+
 Может ли донор сдавать кровь, фиксируется ресурсом Flag на его Patient: допуск к донации или медицинский отвод. Профиль UZ Core Flag для этого, вместе с кодами допуска доноров, войдёт в следующий выпуск UZ Core. `status` флага описывает сам флаг: флаг отвода в статусе `active` означает, что отвод действует.
 
 Отвод фиксируется ресурсом [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): в `code` указан `blood-donation-deferred`, а расширение [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) содержит [причину отвода](ValueSet-donor-deferral-reason-vs.html) и может ссылаться на её основание, например на положительный результат анализа. Донор, отведённый по двум причинам, получает два флага. `period.start` показывает начало отвода. У временного отвода есть `period.end` - дата, с которой донор снова может сдавать кровь; у пожизненного отвода `period.end` нет.

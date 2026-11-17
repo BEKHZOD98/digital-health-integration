@@ -42,6 +42,8 @@ Examples: [staff donor](Observation-example-blood-donor-registration-staff.html)
 
 ### Eligibility and deferrals {#eligibility}
 
+<!-- CORE-RELEASE #161 -->
+
 Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
 
 A deferral is a [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): `code` is `blood-donation-deferred`, and the [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries the [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a positive test result. A donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a lifelong deferral has no `period.end`.

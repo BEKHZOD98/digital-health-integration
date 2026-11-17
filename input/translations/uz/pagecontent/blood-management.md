@@ -44,6 +44,8 @@ Misollar: [kadr donor](Observation-example-blood-donor-registration-staff.html),
 
 ### Ruxsat va chetlatishlar {#eligibility}
 
+<!-- CORE-RELEASE #161 -->
+
 Donorning qon topshirishi mumkinligi uning Patient yozuvida Flag bilan qayd etiladi: donatsiyaga ruxsat yoki tibbiy chetlatish. Buning uchun UZ Core Flag profili donorlarga ruxsat kodlari bilan birga UZ Core ning keyingi relizida bo'ladi. Flag ning `status` elementi flagning o'zini tavsiflaydi: `active` holatdagi chetlatish flagi chetlatish amalda ekanini bildiradi.
 
 Chetlatish [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) bilan qayd etiladi: `code` elementida `blood-donation-deferred` ko'rsatiladi, [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) kengaytmasi esa [chetlatish sababini](ValueSet-donor-deferral-reason-vs.html) o'z ichiga oladi va unga asos bo'lgan narsaga, masalan, ijobiy tahlil natijasiga havola qilishi mumkin. Ikki sabab bilan chetlatilgan donorda ikkita flag bo'ladi. `period.start` chetlatish boshlangan vaqtni bildiradi. Vaqtincha chetlatishda `period.end` bor - donor qayta qon topshirishi mumkin bo'lgan sana; umrbod chetlatishda `period.end` yo'q.
