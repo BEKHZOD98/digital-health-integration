@@ -14,7 +14,7 @@ Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html)
 | Step | Resource | Profile |
 | :--- | :--- | :--- |
 | [Register a donor or recipient](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
-| [Record eligibility or a deferral](#eligibility) | Flag | UZ Core Flag (next UZ Core release) |
+| [Record eligibility or a deferral](#eligibility) | Flag | [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) |
 | [Test the donor's blood](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) |
 | [Collect the donation](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Process it into components](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -44,9 +44,9 @@ Examples: [staff donor](Observation-example-blood-donor-registration-staff.html)
 
 Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
 
-A deferral flag has `blood-donation-deferred` and, as a second coding in `code`, the [deferral reason](ValueSet-donor-deferral-reason-vs.html); a donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`; a lifelong one has none. The [flag-detail](https://hl7.org/fhir/extensions/StructureDefinition-flag-detail.html) extension can point to what led to the deferral, such as a positive test result or the donor's questionnaire answers.
+A deferral is a [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): `code` is `blood-donation-deferred`, and the [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries the [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a positive test result. A donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a lifelong deferral has no `period.end`.
 
-Examples: [temporary deferral](Flag-example-blood-donor-temporary-deferral.html), [lifelong deferral](Flag-example-blood-donor-lifelong-deferral.html).
+Examples: [temporary deferral](Flag-example-blood-donor-temporary-deferral.html), [lifelong deferral](Flag-example-blood-donor-lifelong-deferral.html), whose reason points to the [positive HIV result](Observation-example-blood-donor-hiv-result.html).
 
 ### Testing the donor's blood {#testing}
 

@@ -2,7 +2,7 @@
 
 #### Добавлено
 
-[Blood Management](blood-management.html#eligibility) показывает отвод донора как Flag на примерах [временного](Flag-example-blood-donor-temporary-deferral.html) и [пожизненного](Flag-example-blood-donor-lifelong-deferral.html) отвода. Локальная кодовая система [причин отвода](CodeSystem-donor-deferral-reason-cs.html) ([ValueSet](ValueSet-donor-deferral-reason-vs.html)) задаёт причину, а кодовая система [типов отвода](CodeSystem-donor-deferral-type-cs.html) ([ValueSet](ValueSet-donor-deferral-type-vs.html)) называет временный и пожизненный отвод.
+[Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) фиксирует отвод донора; есть примеры [временного](Flag-example-blood-donor-temporary-deferral.html) и [пожизненного](Flag-example-blood-donor-lifelong-deferral.html) отвода. Расширение `workflow-reason` содержит причину из локальной кодовой системы [причин отвода](CodeSystem-donor-deferral-reason-cs.html) ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
 
 [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) на основе UZ Core Observation фиксирует регистрацию человека в службе крови как донора или реципиента. Оно содержит регистрационный номер, пациента, дату и время, Encounter и исполнителя. Срезы компонентов передают категорию донора, оплату и вид донации для донора и диагноз по МКБ-10 для реципиента; регистрация реципиента не может содержать компоненты донора. Примеры охватывают кадрового донора, резервного донора и реципиента, с Encounter регистрации и регистратором Practitioner для реципиента.
 

@@ -16,7 +16,7 @@
 | Шаг | Ресурс | Профиль |
 | :--- | :--- | :--- |
 | [Регистрация донора или реципиента](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
-| [Допуск или отвод](#eligibility) | Flag | UZ Core Flag (следующий выпуск UZ Core) |
+| [Допуск или отвод](#eligibility) | Flag | [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) |
 | [Обследование крови донора](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html) |
 | [Забор донации](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Переработка на компоненты](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -46,9 +46,9 @@
 
 Может ли донор сдавать кровь, фиксируется ресурсом Flag на его Patient: допуск к донации или медицинский отвод. Профиль UZ Core Flag для этого, вместе с кодами допуска доноров, войдёт в следующий выпуск UZ Core. `status` флага описывает сам флаг: флаг отвода в статусе `active` означает, что отвод действует.
 
-У флага отвода в `code` указан `blood-donation-deferred` и вторым coding [причина отвода](ValueSet-donor-deferral-reason-vs.html); донор, отведённый по двум причинам, получает два флага. `period.start` показывает начало отвода. У временного отвода есть `period.end`, у пожизненного нет. Расширение [flag-detail](https://hl7.org/fhir/extensions/StructureDefinition-flag-detail.html) может ссылаться на основание отвода, например на положительный результат анализа или ответы донора в анкете.
+Отвод фиксируется ресурсом [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): в `code` указан `blood-donation-deferred`, а расширение [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) содержит [причину отвода](ValueSet-donor-deferral-reason-vs.html) и может ссылаться на её основание, например на положительный результат анализа. Донор, отведённый по двум причинам, получает два флага. `period.start` показывает начало отвода. У временного отвода есть `period.end` - дата, с которой донор снова может сдавать кровь; у пожизненного отвода `period.end` нет.
 
-Примеры: [временный отвод](Flag-example-blood-donor-temporary-deferral.html), [пожизненный отвод](Flag-example-blood-donor-lifelong-deferral.html).
+Примеры: [временный отвод](Flag-example-blood-donor-temporary-deferral.html), [пожизненный отвод](Flag-example-blood-donor-lifelong-deferral.html) причина которого ссылается на [положительный результат на ВИЧ](Observation-example-blood-donor-hiv-result.html).
 
 ### Обследование крови донора {#testing}
 
