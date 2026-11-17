@@ -70,13 +70,13 @@ The table lists the answer that can lead to a deferral and the [reason code](Val
 | Have you had a tattoo, piercing, or acupuncture during the last 6 months? (`tattoo-piercing`) | Yes | `donrsn-0001-00001` Tattoo, piercing or acupuncture |
 | Have you been in places of detention or imprisonment? (`incarceration`) | Yes | `donrsn-0001-00025` Incarceration |
 | Do you consent to testing your blood for HIV/AIDS, hepatitis, and syphilis? (`testing-consent`) | No | `donrsn-0001-00027` Refusal to consent to blood testing |
-| Do you confirm that you understood these questions and the reason for asking them, and that you answered honestly? (`declaration`) | No | `donrsn-0001-00028` Declaration not confirmed |
 | Have you recently had influenza, an acute respiratory viral infection (ARVI), or a sore throat? (`flu-arvi`) | Yes | `donrsn-0001-00004` Flu, ARVI or tonsillitis |
 | During the last 3 weeks, have you had a fever or visited malaria-risk areas? (`malaria-exposure`) | Yes | `donrsn-0001-00011` Travel to a malaria-risk area or malaria-related condition |
 | Are you pregnant? (`pregnancy`) | Yes | `donrsn-0001-00007` Pregnancy |
 | Have you given birth or had a miscarriage in the last 6 months? (`postpartum-miscarriage`) | Yes | `donrsn-0001-00017` Postpartum period or period after miscarriage (last 6 months) |
 | Are you currently breastfeeding? (`breastfeeding`) | Yes | `donrsn-0001-00008` Breastfeeding |
 | I confirm that I have not consumed alcohol in the last 48 hours and have not taken aspirin or other analgesics in the last 72 hours. (`alcohol-medication-declaration`) | No | - |
+| Do you confirm that you understood these questions and the reason for asking them, and that you answered honestly? (`declaration`) | No | `donrsn-0001-00028` Declaration not confirmed |
 
 A No to `testing-consent` or `declaration` is an administrative stop, not a medical deferral: the donation does not go ahead that day, and no deferral Flag is raised. A No to `alcohol-medication-declaration` has no reason code of its own; the clinician records the reason that applies.
 

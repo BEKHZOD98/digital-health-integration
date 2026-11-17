@@ -4,7 +4,6 @@ Usage: #definition
 Title: "Donor Questionnaire"
 Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian and English. Answers support clinical review and do not automatically establish deferral."
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/donor-questionnaire"
-* version = "1.0.0"
 * name = "DonorQuestionnaire"
 * language = #uz
 * status = #draft
@@ -321,17 +320,6 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
   * extension[lang].valueCode = #en
   * extension[content].valueString = "What else can you add about your health?"
 
-// Do you confirm that you understood these questions and the reason for asking them, and that you answered honestly?
-* item[+].linkId = "declaration"
-* item[=].type = #boolean
-* item[=].text = "Ushbu savollarni va ularning berilish sababini tushunganingizni hamda ularga vijdonan javob berganingizni tasdiqlaysizmi?"
-* item[=].text.extension[$translation-extension][+]
-  * extension[lang].valueCode = #ru
-  * extension[content].valueString = "Подтверждаете, что поняли данные вопросы, причину их задавания, и ответили добросовестно?"
-* item[=].text.extension[$translation-extension][+]
-  * extension[lang].valueCode = #en
-  * extension[content].valueString = "Do you confirm that you understood these questions and the reason for asking them, and that you answered honestly?"
-
 // Would you like to donate blood regularly?
 * item[+].linkId = "regular-donation-preference"
 * item[=].type = #boolean
@@ -392,8 +380,8 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Are you pregnant?
 * item[+].linkId = "pregnancy"
 * item[=].enableWhen[+].question = "gender"
-* item[=].enableWhen[=].operator = #=
-* item[=].enableWhen[=].answerCoding = $gender#female
+* item[=].enableWhen[=].operator = #!=
+* item[=].enableWhen[=].answerCoding = $gender#male
 * item[=].type = #boolean
 * item[=].code = $loinc#82810-3
 * item[=].text = "Homiladormisiz?"
@@ -407,8 +395,8 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you given birth or had a miscarriage in the last 6 months?
 * item[+].linkId = "postpartum-miscarriage"
 * item[=].enableWhen[+].question = "gender"
-* item[=].enableWhen[=].operator = #=
-* item[=].enableWhen[=].answerCoding = $gender#female
+* item[=].enableWhen[=].operator = #!=
+* item[=].enableWhen[=].answerCoding = $gender#male
 * item[=].type = #boolean
 * item[=].text = "So‘nggi 6 oy ichida tug‘ruq yoki homila tushishi bo‘lganmi?"
 * item[=].text.extension[$translation-extension][+]
@@ -421,8 +409,8 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Are you currently breastfeeding?
 * item[+].linkId = "breastfeeding"
 * item[=].enableWhen[+].question = "gender"
-* item[=].enableWhen[=].operator = #=
-* item[=].enableWhen[=].answerCoding = $gender#female
+* item[=].enableWhen[=].operator = #!=
+* item[=].enableWhen[=].answerCoding = $gender#male
 * item[=].type = #boolean
 * item[=].code = $loinc#63895-7
 * item[=].text = "Hozirda bolangizni emizyapsizmi?"
@@ -436,10 +424,21 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // I confirm that I have not consumed alcohol in the last 48 hours and have not taken aspirin or other analgesics in the last 72 hours.
 * item[+].linkId = "alcohol-medication-declaration"
 * item[=].type = #boolean
-* item[=].text = "So'nggi 48 soat ichida alkogol iste'mol qilmaganligimni va so'nggi 72 soat ichida aspirin va analgetiklar qabul qilmaganligimni tasdiqlayman"
+* item[=].text = "So‘nggi 48 soat ichida alkogol iste’mol qilmaganligimni va so‘nggi 72 soat ichida aspirin va analgetiklar qabul qilmaganligimni tasdiqlayman"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
   * extension[content].valueString = "Подтверждаю, что в течение последних 48 часов не употреблял(а) алкоголь, а в течение последних 72 часов не принимал(а) аспирин или другие анальгетики."
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #en
   * extension[content].valueString = "I confirm that I have not consumed alcohol in the last 48 hours and have not taken aspirin or other analgesics in the last 72 hours."
+
+// Do you confirm that you understood these questions and the reason for asking them, and that you answered honestly?
+* item[+].linkId = "declaration"
+* item[=].type = #boolean
+* item[=].text = "Ushbu savollarni va ularning berilish sababini tushunganingizni hamda ularga vijdonan javob berganingizni tasdiqlaysizmi?"
+* item[=].text.extension[$translation-extension][+]
+  * extension[lang].valueCode = #ru
+  * extension[content].valueString = "Подтверждаете, что поняли данные вопросы, причину их задавания, и ответили добросовестно?"
+* item[=].text.extension[$translation-extension][+]
+  * extension[lang].valueCode = #en
+  * extension[content].valueString = "Do you confirm that you understood these questions and the reason for asking them, and that you answered honestly?"

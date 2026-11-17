@@ -72,13 +72,13 @@ Jadvalda chetlatishga olib kelishi mumkin bo'lgan javob va unga mos [sabab kodi]
 | So‘nggi 6 oy ichida tatuirovka, pirsing yoki igna bilan davolash (akupunktura) muolajasini olganmisiz? (`tattoo-piercing`) | Ha | `donrsn-0001-00001` Tatuirovka, piercing yoki akupunktura |
 | Ozodlikdan mahrum etish joylarida bo‘lganmisiz? (`incarceration`) | Ha | `donrsn-0001-00025` Ozodlikdan mahrum etish joylarida bo‘lish |
 | Qoningizni OIV/OITS, gepatit va sifilisga tekshirishga rozimisiz? (`testing-consent`) | Yo'q | `donrsn-0001-00027` Qonni tekshirishga rozilik bermaslik |
-| Ushbu savollarni va ularning berilish sababini tushunganingizni hamda ularga vijdonan javob berganingizni tasdiqlaysizmi? (`declaration`) | Yo'q | `donrsn-0001-00028` Deklaratsiyani tasdiqlamaslik |
 | So‘nggi vaqtlarda gripp, O‘RVI yoki angina bilan kasallanganmisiz? (`flu-arvi`) | Ha | `donrsn-0001-00004` Gripp, O‘RVI yoki angina |
 | So‘nggi 3 hafta ichida isitma kuzatildimi yoki bezgak xavfi mavjud hududlarga borganmisiz? (`malaria-exposure`) | Ha | `donrsn-0001-00011` Bezgak xavfi bo‘lgan hududga tashrif yoki bezgak bilan bog‘liq holat |
 | Homiladormisiz? (`pregnancy`) | Ha | `donrsn-0001-00007` Homiladorlik |
 | So‘nggi 6 oy ichida tug‘ruq yoki homila tushishi bo‘lganmi? (`postpartum-miscarriage`) | Ha | `donrsn-0001-00017` Tug‘ruq yoki homila tushishidan keyingi davr (oxirgi 6 oy) |
 | Hozirda bolangizni emizyapsizmi? (`breastfeeding`) | Ha | `donrsn-0001-00008` Emizish davri |
-| So'nggi 48 soat ichida alkogol iste'mol qilmaganligimni va so'nggi 72 soat ichida aspirin va analgetiklar qabul qilmaganligimni tasdiqlayman (`alcohol-medication-declaration`) | Yo'q | - |
+| So‘nggi 48 soat ichida alkogol iste’mol qilmaganligimni va so‘nggi 72 soat ichida aspirin va analgetiklar qabul qilmaganligimni tasdiqlayman (`alcohol-medication-declaration`) | Yo'q | - |
+| Ushbu savollarni va ularning berilish sababini tushunganingizni hamda ularga vijdonan javob berganingizni tasdiqlaysizmi? (`declaration`) | Yo'q | `donrsn-0001-00028` Deklaratsiyani tasdiqlamaslik |
 
 `testing-consent` yoki `declaration` savollariga "Yo'q" javobi tibbiy chetlatish emas, ma'muriy to'xtatishdir: o'sha kuni donatsiya o'tkazilmaydi va chetlatish flagi yaratilmaydi. `alcohol-medication-declaration` savoliga "Yo'q" javobining o'z sabab kodi yo'q; shifokor mos sababni qayd etadi.
 

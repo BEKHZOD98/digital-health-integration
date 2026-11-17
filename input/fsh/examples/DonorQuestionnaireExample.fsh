@@ -1,12 +1,13 @@
 Instance: example-donor-questionnaire-response
 InstanceOf: UZCoreQuestionnaireResponse
 Usage: #example
-Title: "Example Donor QuestionnaireResponse - Completed Donor Interview"
+Title: "Example UZ Core QuestionnaireResponse - Completed Donor Interview"
 Description: "Synthetic completed donor questionnaire. A recent tattoo is reported for clinical review; no eligibility or deferral decision is calculated."
 * language = #uz
 * questionnaire = Canonical(donor-questionnaire)
 * status = #completed
 * subject = Reference(example-donor-questionnaire-patient)
+* encounter = Reference(Encounter/example-donor-questionnaire-encounter)
 * authored = "2026-11-13T09:30:00+05:00"
 * author = Reference(example-donor-questionnaire-patient)
 * source = Reference(example-donor-questionnaire-patient)
@@ -85,9 +86,6 @@ Description: "Synthetic completed donor questionnaire. A recent tattoo is report
 * item[+].linkId = "additional-health"
 * item[=].text = "Sog‘lig‘ingiz haqida yana nimalarni qo‘shimcha qilishingiz mumkin?"
 * item[=].answer.valueString = "Qo‘shimcha ma’lumot yo‘q."
-* item[+].linkId = "declaration"
-* item[=].text = "Ushbu savollarni va ularning berilish sababini tushunganingizni hamda ularga vijdonan javob berganingizni tasdiqlaysizmi?"
-* item[=].answer.valueBoolean = true
 * item[+].linkId = "regular-donation-preference"
 * item[=].text = "Muntazam ravishda qon topshirishni xohlaysizmi?"
 * item[=].answer.valueBoolean = true
@@ -113,7 +111,10 @@ Description: "Synthetic completed donor questionnaire. A recent tattoo is report
 * item[=].text = "Hozirda bolangizni emizyapsizmi?"
 * item[=].answer.valueBoolean = false
 * item[+].linkId = "alcohol-medication-declaration"
-* item[=].text = "So'nggi 48 soat ichida alkogol iste'mol qilmaganligimni va so'nggi 72 soat ichida aspirin va analgetiklar qabul qilmaganligimni tasdiqlayman"
+* item[=].text = "So‘nggi 48 soat ichida alkogol iste’mol qilmaganligimni va so‘nggi 72 soat ichida aspirin va analgetiklar qabul qilmaganligimni tasdiqlayman"
+* item[=].answer.valueBoolean = true
+* item[+].linkId = "declaration"
+* item[=].text = "Ushbu savollarni va ularning berilish sababini tushunganingizni hamda ularga vijdonan javob berganingizni tasdiqlaysizmi?"
 * item[=].answer.valueBoolean = true
 
 Instance: example-donor-questionnaire-patient
@@ -140,6 +141,19 @@ Usage: #example
 * extension[reason].valueCodeableReference.concept = DonorDeferralReasonCS#donrsn-0001-00001 "Tatuirovka, piercing yoki akupunktura"
 * code = $blood-donor-eligibility-cs#blood-donation-deferred-temporary "Tibbiy sabablarga ko'ra qon donorligidan vaqtincha chetlatilgan"
 * subject = Reference(Patient/example-donor-questionnaire-patient)
+* encounter = Reference(Encounter/example-donor-questionnaire-encounter)
 * author = Reference(PractitionerRole/example-practitionerrole)
 * period.start = "2026-11-13T10:00:00+05:00"
 * period.end = "2027-05-12T10:00:00+05:00"
+
+Instance: example-donor-questionnaire-encounter
+InstanceOf: UZCoreEncounter
+Title: "Example UZ Core Encounter - Donor Interview Visit"
+Description: "Donor visit in which the donor answered the questionnaire and the clinician recorded a deferral, so no blood was collected."
+Usage: #example
+* language = #uz
+* status = #completed
+* type[nationalType] = $encounter-type-cs#mserv-0001-00002 "Diagnostika"
+* subject = Reference(Patient/example-donor-questionnaire-patient)
+* actualPeriod.start = "2026-11-13T09:15:00+05:00"
+* actualPeriod.end = "2026-11-13T10:15:00+05:00"
