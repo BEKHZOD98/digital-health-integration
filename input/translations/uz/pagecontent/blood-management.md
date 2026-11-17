@@ -45,7 +45,7 @@ Misollar: [kadr donor](Observation-example-blood-donor-registration-staff.html),
 
 ### Donor bilan suhbat {#interviewing}
 
-Har bir donatsiyadan oldin donor [donor so'rovnomasiga](Questionnaire-donor-questionnaire.html) javob beradi; javoblar donorning Patient yozuvida [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-questionnaire-response.html) bilan qayd etiladi ([namuna](QuestionnaireResponse-example-donor-questionnaire-response.html)). Hech bir javob o'z-o'zidan chetlatish hisoblanmaydi: shifokor javoblarni ko'rib chiqadi va chetlatishni [Flag](#eligibility) bilan qayd etadi.
+Har bir donatsiyadan oldin donor [donor so'rovnomasiga](forms.html?form=donor-questionnaire) javob beradi; javoblar donorning Patient yozuvida [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-questionnaire-response.html) bilan qayd etiladi ([namuna](QuestionnaireResponse-example-donor-questionnaire-response.html)). Hech bir javob o'z-o'zidan chetlatish hisoblanmaydi: shifokor javoblarni ko'rib chiqadi va chetlatishni [Flag](#eligibility) bilan qayd etadi.
 
 Jadvalda chetlatishga olib kelishi mumkin bo'lgan javob va unga mos [sabab kodi](ValueSet-donor-deferral-reason-vs.html) ko'rsatilgan. Xuddi shu kod har bir savolning `item.code` elementida ham bor.
 

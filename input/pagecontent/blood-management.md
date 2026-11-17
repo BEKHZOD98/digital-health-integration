@@ -43,7 +43,7 @@ Examples: [staff donor](Observation-example-blood-donor-registration-staff.html)
 
 ### Interviewing the donor {#interviewing}
 
-Before each donation the donor answers the [donor questionnaire](Questionnaire-donor-questionnaire.html), recorded as a [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) on the donor's Patient ([example](QuestionnaireResponse-example-donor-questionnaire-response.html)). No answer defers a donor by itself: a clinician reviews the answers and records any deferral as a [Flag](#eligibility).
+Before each donation the donor answers the [donor questionnaire](forms.html?form=donor-questionnaire), recorded as a [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) on the donor's Patient ([example](QuestionnaireResponse-example-donor-questionnaire-response.html)). No answer defers a donor by itself: a clinician reviews the answers and records any deferral as a [Flag](#eligibility).
 
 The table lists the answer that can lead to a deferral and the [reason code](ValueSet-donor-deferral-reason-vs.html) that goes with it. The same code is in each question's `item.code`.
 
