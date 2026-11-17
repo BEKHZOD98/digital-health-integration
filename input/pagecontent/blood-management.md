@@ -86,6 +86,8 @@ Example: after reviewing the [example response](QuestionnaireResponse-example-do
 
 ### Eligibility and deferrals {#eligibility}
 
+<!-- CORE-RELEASE #161 -->
+
 Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
 
 ### Testing the donor's blood {#testing}

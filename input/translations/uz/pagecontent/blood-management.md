@@ -88,6 +88,8 @@ Namuna: donor yaqinda tatuirovka qilganini bildirgan [namunaviy javobni](Questio
 
 ### Ruxsat va chetlatishlar {#eligibility}
 
+<!-- CORE-RELEASE #161 -->
+
 Donorning qon topshirishi mumkinligi uning Patient yozuvida Flag bilan qayd etiladi: donatsiyaga ruxsat yoki tibbiy chetlatish. Buning uchun UZ Core Flag profili donorlarga ruxsat kodlari bilan birga UZ Core ning keyingi relizida bo'ladi. Flag ning `status` elementi flagning o'zini tavsiflaydi: `active` holatdagi chetlatish flagi chetlatish amalda ekanini bildiradi.
 
 ### Donor qonini tekshirish {#testing}
