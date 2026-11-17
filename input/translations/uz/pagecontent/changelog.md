@@ -22,6 +22,8 @@ Yordamchi terminologiya: ro'yxatga olish turlari ([ValueSet](ValueSet-blood-serv
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) alohida tekshiruvlar, panellar va qayta ishlash operatsiyalarini buyuradi; so'rov va donatsiya raqamlari tizimlari, Patient yoki Location subyekti, BloodLabCodesVS va BloodComponentProcessingCS, SNOMED CT operatsiya kodlari va 15 ta misol qo'shildi.
 
+[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) retsipiyent va bitta qon birligi o'rtasidagi ABO, Rh-Hr bo'yicha moslik va biologik sinamani SNOMED CT natijalari bilan qayd etadi, [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) esa u tayanadigan retsipiyentning transfuzion va akusherlik anamnezini qayd etadi.
+
 #### O'zgartirildi
 
 [011-shakl](StructureDefinition-form-011-hemodialysis-composition.html), [066-shakl](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1-shakl](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va [130-shakl](StructureDefinition-form-130-laboratory-test-results-composition.html) Composition'lari endi `status` ni `final` ga qotirmaydi, shuning uchun hujjat [hayot sikli](document-statuses.html) bo'yicha `preliminary`, `amended` va `entered-in-error` holatlaridan o'ta oladi.
