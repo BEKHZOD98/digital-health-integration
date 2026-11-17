@@ -1,6 +1,6 @@
 CodeSystem: DonorDeferralReasonCS
 Id: donor-deferral-reason-cs
-Title: "Donor deferral reason"
+Title: "Donor deferral reason codes"
 Description: "Local blood service categories used to record reasons for donor deferral."
 * insert OriginalCodeSystemDraft(donor-deferral-reason-cs)
 

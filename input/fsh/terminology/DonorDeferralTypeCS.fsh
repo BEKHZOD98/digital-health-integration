@@ -1,6 +1,6 @@
 CodeSystem: DonorDeferralTypeCS
 Id: donor-deferral-type-cs
-Title: "Donor deferral type"
+Title: "Donor deferral type codes"
 Description: "Types of blood donor deferral recorded by the blood service."
 * insert OriginalCodeSystemDraft(donor-deferral-type-cs)
 

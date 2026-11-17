@@ -1,7 +1,7 @@
 ValueSet: DonorDeferralTypeVS
 Id: donor-deferral-type-vs
-Title: "Allowed donor deferral types"
-Description: "Types of blood donor deferral in the blood service integration."
+Title: "Donor deferral type"
+Description: "Donor deferral types"
 * insert IntegrationsValueSet(donor-deferral-type-vs)
 * ^status = #draft
 * ^experimental = true

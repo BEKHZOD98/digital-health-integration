@@ -1,4 +1,4 @@
-Invariant: blood-donor-deferral-obs-1
+Invariant: bddo-1
 Description: "Lifelong donor deferral must not include a duration in any component."
 Severity: #error
 Expression: "code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-deferral-type-cs' and code = 'lldf-0001-00001').exists() implies component.value.empty()"
@@ -10,7 +10,7 @@ Title: "Blood Donor Deferral Observation"
 Description: "Integration Observation profile for recording a blood donor's temporary or lifelong deferral and its reasons."
 * ^status = #draft
 * ^experimental = true
-* obeys blood-donor-deferral-obs-1
+* obeys bddo-1
 
 * identifier.system 1..1
 * code from DonorDeferralTypeVS (required)
