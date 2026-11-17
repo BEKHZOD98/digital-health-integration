@@ -10,7 +10,7 @@
 
 [Поиск](search.html), который открывается из нового поля в шапке страницы, находит ресурсы по заголовку, имени, URL или описанию, а также коды, термины и сопоставления в системах кодов, наборах значений и ConceptMap на английском, русском и узбекском языках. Результаты можно отфильтровать по типу ресурса.
 
-Страница [Blood Management](blood-management.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
+Страница [Blood Service](blood-service.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
 
 [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) описывает предтрансфузионную оценку с шестью срезами component, фиксированным кодом SNOMED CT, привязками значений для каждого среза и полным примером.
 
