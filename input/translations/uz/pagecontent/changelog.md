@@ -2,8 +2,6 @@
 
 #### Qo'shildi
 
-[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) transfuziyadan oldingi baholashni oltita component kesimi, belgilangan SNOMED CT kodi, har bir kesim uchun qiymatlar to'plami va to'liq misol bilan ifodalaydi.
-
 [027-shakl, bemorning tibbiy kartasidan ko'chirma](StructureDefinition-form-027-medical-record-extract-composition.html) FHIR hujjati sifatida profillandi: ro'yxatga olish va shaxsiy ma'lumotlar, manzil, yo'llanma va tashxis, klinik ma'lumotlar, davolash va tavsiyalar, keyingi tadbirlar va mas'ul shaxslar Composition'ning 8 ta bo'limida. Unga hujjat namunasi (Bundle) va [maydonlarni moslashtirish sahifasi](form-027-mapping.html) ilova qilingan.
 
 [003-shakl - statsionar bemorning tibbiy kartasi](StructureDefinition-form-003-inpatient-medical-record-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 20 ta bo'limi orqali ma'muriy va shaxsiy ma'lumotlar, qabul qilish, qabulda tekshiruv, birlamchi ko'rik, tekshiruv rejasi va natijalari, tashxislar, operatsiyalar, dori va muolaja varaqalari, harorat varaqasi, kasallik kechishi, davolash natijasi, vaqtincha mehnatga layoqatsizlik, patologoanatomik xulosa va mas'ul shaxslarni qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-003-mapping.html) mavjud.
@@ -15,6 +13,10 @@
 UZ Core Observation asosidagi [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) shaxsning qon xizmatida donor yoki retsipiyent sifatida ro'yxatga olinishini qayd etadi. U ro'yxatga olish raqami, bemor, sana va vaqt, Encounter va ijrochini o'z ichiga oladi. Komponent slayslari donor uchun donor toifasi, donatsiya to'lovi va turini, retsipiyent uchun XKT-10 bo'yicha tashxisni saqlaydi; retsipiyentni ro'yxatga olishda donor komponentlari bo'lmaydi. Misollar kadr donor, zaxira donor va retsipiyentni, retsipiyent uchun ro'yxatga olish Encounter'i va registrator Practitioner'ini qamrab oladi.
 
 Yordamchi terminologiya: ro'yxatga olish turlari ([ValueSet](ValueSet-blood-service-registration-type-vs.html)) va komponent kodlari uchun [qon xizmati kuzatuv turi](CodeSystem-blood-service-observation-type-cs.html) kod tizimi, [donor toifasi](ValueSet-donor-category-vs.html) qiymatlar to'plami (kadr donor uchun SNOMED CT `275561000`, zaxira donor uchun mahalliy [kod](CodeSystem-donor-category-cs.html)), [donatsiya to'lovi](CodeSystem-donation-compensation-cs.html) ([ValueSet](ValueSet-donation-compensation-vs.html)) uchun mahalliy kod tizimi, SNOMED CT [donatsiya turi](ValueSet-donation-type-vs.html) qiymatlar to'plami, hamda SNOMED CT kodlarining o'zbekcha va ruscha [tarjimalari](CodeSystem-blood-service-snomed-translations-cs.html). Ro'yxatga olish raqami yangi [qon xizmatida ro'yxatga olish raqami](NamingSystem-blood-registration-number-system.html) identifikator tizimidan foydalanadi: `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`.
+
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) alohida tekshiruvlar, panellar va qayta ishlash operatsiyalarini buyuradi; so'rov va donatsiya raqamlari tizimlari, Patient yoki Location subyekti, BloodLabCodesVS va BloodComponentProcessingCS, SNOMED CT operatsiya kodlari va 15 ta misol qo'shildi.
+
+[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) transfuziyadan oldingi baholashni oltita component kesimi, belgilangan SNOMED CT kodi, har bir kesim uchun qiymatlar to'plami va to'liq misol bilan ifodalaydi.
 
 #### O'zgartirildi
 
