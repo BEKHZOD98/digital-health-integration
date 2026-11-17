@@ -48,9 +48,38 @@ The base resource requires `status`, `code` and `subject`, this profile requires
 }
 ```
 
+#### A temporary deferral with its category and author
+
+Add the HL7 flag category and who recorded the deferral. HL7 category codes keep their original system; a medical deferral is `clinical`.
+
+```json
+{
+  "resourceType": "Flag",
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag"] },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/workflow-reason",
+    "valueCodeableReference": {
+      "concept": { "coding": [ {
+        "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-deferral-reason-cs",
+        "code": "donrsn-0001-00001"
+      } ] }
+    }
+  } ],
+  "status": "active",
+  "category": [ { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/flag-category", "code": "clinical" } ] } ],
+  "code": { "coding": [ {
+    "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
+    "code": "blood-donation-deferred-temporary"
+  } ] },
+  "subject": { "reference": "Patient/[id]" },
+  "author": { "reference": "PractitionerRole/[id]" },
+  "period": { "start": "2026-11-10T10:00:00+05:00", "end": "2027-05-09T10:00:00+05:00" }
+}
+```
+
 #### A permanent deferral with its evidence
 
-A permanent deferral has no `period.end`. The reason's `reference` points to the positive result that led to the deferral; it can also point to a DiagnosticReport or a Condition.
+A permanent deferral has no `period.end`. The reason's `reference` points to the confirmed positive result that led to the deferral; it can also point to a DiagnosticReport or a Condition.
 
 ```json
 {
@@ -73,9 +102,8 @@ A permanent deferral has no `period.end`. The reason's `reference` points to the
     "code": "blood-donation-deferred-permanent"
   } ] },
   "subject": { "reference": "Patient/[id]" },
-  "encounter": { "reference": "Encounter/[id]" },
   "author": { "reference": "PractitionerRole/[id]" },
-  "period": { "start": "2026-11-10T10:00:00+05:00" }
+  "period": { "start": "2026-11-13T12:00:00+05:00" }
 }
 ```
 

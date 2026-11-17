@@ -14,11 +14,13 @@ GET [base]/Flag/[id]/_history
 **Qidiruv**
 
 ```
-GET [base]/Flag?patient=Patient/[id]&status=active
+GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag&status=active&date=ge2026-11-17
 GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag
 GET [base]/Flag?encounter=Encounter/[id]
 GET [base]/Flag?author=PractitionerRole/[id]&date=ge2026-11-01
 ```
+
+Birinchi so'rov donorning 2026-11-17 kuni amalda bo'lgan chetlatishlarini topadi. `date` `period` bo'yicha qidiradi, `period.end` siz flag davom etayotgan deb hisoblanadi, shuning uchun so'rov doimiy chetlatishlarni va shu kungacha tugamagan vaqtincha chetlatishlarni qaytaradi. Vaqtincha flag `period.end` dan keyin ham `inactive` ga o'tkazilmaguncha `active` bo'lib qoladi, shuning uchun faqat `status=active` muddati o'tgan chetlatishlarni ham qaytaradi.
 
 Flag da sabab bo'yicha qidiruv parametri yo'q; sababni qaytarilgan flaglardan o'qing.
 

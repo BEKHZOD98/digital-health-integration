@@ -12,11 +12,13 @@ GET [base]/Flag/[id]/_history
 **Search**
 
 ```
-GET [base]/Flag?patient=Patient/[id]&status=active
+GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag&status=active&date=ge2026-11-17
 GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag
 GET [base]/Flag?encounter=Encounter/[id]
 GET [base]/Flag?author=PractitionerRole/[id]&date=ge2026-11-01
 ```
+
+The first query finds the donor's deferrals in force on 2026-11-17. `date` searches `period`, and a flag without `period.end` counts as ongoing, so it returns permanent deferrals and the temporary ones that have not ended before that day. A temporary flag stays `active` after its `period.end` until someone sets it to `inactive`, so `status=active` alone would also return expired deferrals.
 
 Flag has no search parameter for the reason; read the reason from the returned flags.
 

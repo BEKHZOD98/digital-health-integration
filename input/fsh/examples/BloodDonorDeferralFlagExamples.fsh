@@ -17,7 +17,7 @@ Usage: #example
 Instance: example-blood-donor-permanent-deferral
 InstanceOf: BloodDonorDeferralFlag
 Title: "Example Blood Donor Deferral Flag - Permanent Deferral"
-Description: "Synthetic permanent deferral after a positive HIV test result: the period has a start and no end."
+Description: "Synthetic permanent deferral after an HIV result confirmed by immunoblot: the period starts when the result is confirmed and has no end."
 Usage: #example
 * language = #uz
 * status = #active
@@ -26,14 +26,13 @@ Usage: #example
 * extension[reason].valueCodeableReference.reference = Reference(Observation/example-blood-donor-hiv-result)
 * code = $blood-donor-eligibility-cs#blood-donation-deferred-permanent "Tibbiy sabablarga ko'ra qon donorligidan doimiy chetlatilgan"
 * subject = Reference(Patient/example-salim)
-* encounter = Reference(Encounter/example-blood-donation-encounter)
 * author = Reference(PractitionerRole/example-practitionerrole)
-* period.start = "2026-11-10T10:00:00+05:00"
+* period.start = "2026-11-13T12:00:00+05:00"
 
-Instance: example-blood-donor-hiv-result
+Instance: example-blood-donor-hiv-screening
 InstanceOf: UZCoreObservation
-Title: "Example Observation - Positive Donor HIV Antibody Result"
-Description: "Synthetic positive HIV 1 and 2 antibody result from the donor's pre-donation tests; the permanent deferral Flag names it as the reason."
+Title: "Example UZ Core Observation - Reactive Donor HIV Screening Result"
+Description: "Synthetic reactive HIV 1 and 2 antibody screening result from the donor's pre-donation tests. A reactive screening result alone does not lead to a permanent deferral; the sample goes for a confirmatory test."
 Usage: #example
 * language = #uz
 * status = #final
@@ -43,6 +42,21 @@ Usage: #example
 * encounter = Reference(Encounter/example-blood-donation-encounter)
 * basedOn = Reference(ServiceRequest/example-blood-hiv-laboratory-order)
 * effectiveDateTime = "2026-11-10T09:30:00+05:00"
+* performer = Reference(Organization/xonobod-medical-association)
+* specimen = Reference(Specimen/example-blood-whole-blood-specimen)
+* valueCodeableConcept = $sct#11214006 "Reactive"
+
+Instance: example-blood-donor-hiv-result
+InstanceOf: UZCoreObservation
+Title: "Example UZ Core Observation - Confirmed Positive Donor HIV Result"
+Description: "Synthetic positive HIV 1 and 2 antibody immunoblot that confirms the reactive screening result of the same sample; the permanent deferral Flag names it as the reason."
+Usage: #example
+* language = #uz
+* status = #final
+* category = $observation-category#laboratory "Laboratory"
+* code = $loinc#44873-8 "HIV 1+2 Ab [Presence] in Serum by Immunoblot"
+* subject = Reference(Patient/example-salim)
+* effectiveDateTime = "2026-11-13T11:00:00+05:00"
 * performer = Reference(Organization/xonobod-medical-association)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
 * valueCodeableConcept = $sct#10828004 "Positive"

@@ -50,9 +50,38 @@ Blood Donor Deferral Flag фиксирует, что донор отведён �
 }
 ```
 
+#### Временный отвод с категорией и автором
+
+Добавьте категорию флага HL7 и того, кто зафиксировал отвод. Коды категорий HL7 сохраняют исходную систему; медицинский отвод относится к `clinical`.
+
+```json
+{
+  "resourceType": "Flag",
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag"] },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/workflow-reason",
+    "valueCodeableReference": {
+      "concept": { "coding": [ {
+        "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-deferral-reason-cs",
+        "code": "donrsn-0001-00001"
+      } ] }
+    }
+  } ],
+  "status": "active",
+  "category": [ { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/flag-category", "code": "clinical" } ] } ],
+  "code": { "coding": [ {
+    "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
+    "code": "blood-donation-deferred-temporary"
+  } ] },
+  "subject": { "reference": "Patient/[id]" },
+  "author": { "reference": "PractitionerRole/[id]" },
+  "period": { "start": "2026-11-10T10:00:00+05:00", "end": "2027-05-09T10:00:00+05:00" }
+}
+```
+
 #### Постоянный отвод с основанием
 
-У постоянного отвода нет `period.end`. `reference` причины указывает на положительный результат, который привёл к отводу; он может указывать и на DiagnosticReport или Condition.
+У постоянного отвода нет `period.end`. `reference` причины указывает на подтверждённый положительный результат, который привёл к отводу; он может указывать и на DiagnosticReport или Condition.
 
 ```json
 {
@@ -75,9 +104,8 @@ Blood Donor Deferral Flag фиксирует, что донор отведён �
     "code": "blood-donation-deferred-permanent"
   } ] },
   "subject": { "reference": "Patient/[id]" },
-  "encounter": { "reference": "Encounter/[id]" },
   "author": { "reference": "PractitionerRole/[id]" },
-  "period": { "start": "2026-11-10T10:00:00+05:00" }
+  "period": { "start": "2026-11-13T12:00:00+05:00" }
 }
 ```
 

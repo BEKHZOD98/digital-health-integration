@@ -203,7 +203,7 @@ Description: "Local blood service categories used to record reasons for donor de
   * ^designation[+].language = #en
   * ^designation[=].value = "General physician's decision"
 
-* #donrsn-0001-00039 "Ko‘rik natijalari bo‘yicha tibbiy otvod"
+* #donrsn-0001-00039 "Ko‘rik natijalari bo‘yicha tibbiy chetlatish"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Медицинский отвод по результатам осмотра"
   * ^designation[+].language = #en

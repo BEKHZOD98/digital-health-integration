@@ -11,7 +11,6 @@ Description: "Flag recording that a blood donor is deferred from donation for me
 
 * extension contains $workflow-reason named reason 1..1 MS
 * extension[reason] ^short = "Why the donor is deferred, and what led to it"
-* extension[reason].value[x] only CodeableReference
 * extension[reason].valueCodeableReference.concept 1..1 MS
 * extension[reason].valueCodeableReference from DonorDeferralReasonVS (required)
 * extension[reason].valueCodeableReference.reference MS

@@ -50,9 +50,38 @@ Bazaviy resurs `status`, `code` va `subject` ni talab qiladi, ushbu profil sabab
 }
 ```
 
+#### Toifa va muallif bilan vaqtincha chetlatish
+
+HL7 flag toifasini va chetlatishni kim qayd etganini qo'shing. HL7 toifa kodlari asl tizimini saqlaydi; tibbiy chetlatish `clinical` toifasiga kiradi.
+
+```json
+{
+  "resourceType": "Flag",
+  "meta": { "profile": ["https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag"] },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/workflow-reason",
+    "valueCodeableReference": {
+      "concept": { "coding": [ {
+        "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-deferral-reason-cs",
+        "code": "donrsn-0001-00001"
+      } ] }
+    }
+  } ],
+  "status": "active",
+  "category": [ { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/flag-category", "code": "clinical" } ] } ],
+  "code": { "coding": [ {
+    "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
+    "code": "blood-donation-deferred-temporary"
+  } ] },
+  "subject": { "reference": "Patient/[id]" },
+  "author": { "reference": "PractitionerRole/[id]" },
+  "period": { "start": "2026-11-10T10:00:00+05:00", "end": "2027-05-09T10:00:00+05:00" }
+}
+```
+
 #### Asosi bilan doimiy chetlatish
 
-Doimiy chetlatishda `period.end` yo'q. Sababning `reference` elementi chetlatishga olib kelgan ijobiy natijaga ishora qiladi; u DiagnosticReport yoki Condition ga ham ishora qilishi mumkin.
+Doimiy chetlatishda `period.end` yo'q. Sababning `reference` elementi chetlatishga olib kelgan tasdiqlangan ijobiy natijaga ishora qiladi; u DiagnosticReport yoki Condition ga ham ishora qilishi mumkin.
 
 ```json
 {
@@ -75,9 +104,8 @@ Doimiy chetlatishda `period.end` yo'q. Sababning `reference` elementi chetlatish
     "code": "blood-donation-deferred-permanent"
   } ] },
   "subject": { "reference": "Patient/[id]" },
-  "encounter": { "reference": "Encounter/[id]" },
   "author": { "reference": "PractitionerRole/[id]" },
-  "period": { "start": "2026-11-10T10:00:00+05:00" }
+  "period": { "start": "2026-11-13T12:00:00+05:00" }
 }
 ```
 

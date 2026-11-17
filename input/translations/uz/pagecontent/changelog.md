@@ -22,8 +22,6 @@ Yordamchi terminologiya: ro'yxatga olish turlari ([ValueSet](ValueSet-blood-serv
 
 #### O'zgartirildi
 
-[Donorni chetlatish sabablari](CodeSystem-donor-deferral-reason-cs.html) ishlab chiquvchilarning `otvod-sabablari.md` ro'yxati asosida 41 ta toifani o'z ichiga oladi. Infeksiyalarga tekshiruvlarning shubhali natijalari, tashqi reestrlar yozuvlari, ko'rik natijalari va turli bo'lim shifokorlarining qarorlari uchun 12 ta sabab o'zbekcha nomlar hamda ruscha va inglizcha tarjimalar bilan qo'shildi. Tana massasi indeksi og'ishi, umumiy shifokor qarori va boshqa patologiya toifalari olib tashlandi; keyingi kodlar `donrsn-0001-00030`–`donrsn-0001-00041` oralig'ida qayta raqamlandi.
-
 [011-shakl](StructureDefinition-form-011-hemodialysis-composition.html), [066-shakl](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1-shakl](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va [130-shakl](StructureDefinition-form-130-laboratory-test-results-composition.html) Composition'lari endi `status` ni `final` ga qotirmaydi, shuning uchun hujjat [hayot sikli](document-statuses.html) bo'yicha `preliminary`, `amended` va `entered-in-error` holatlaridan o'ta oladi.
 
 ### Versiya 0.12.1
