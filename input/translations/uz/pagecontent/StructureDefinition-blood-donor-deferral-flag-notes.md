@@ -58,5 +58,5 @@ Qo'llab-quvvatlanadigan qidiruv parametrlarining to'liq ro'yxati [CapabilityStat
 ### Bog'liq bo'limlar
 
 - [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html) &middot; [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html)
-- [Blood Service](blood-management.html) &middot; [Chetlatish sabablari](ValueSet-donor-deferral-reason-vs.html) &middot; [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html)
+- [Blood Service](blood-service.html) &middot; [Chetlatish sabablari](ValueSet-donor-deferral-reason-vs.html) &middot; [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html)
 - [Must Support](https://dhp.uz/fhir/core/uz/must-support.html) &middot; [Umumiy tavsiyalar](https://dhp.uz/fhir/core/uz/general-guidance.html)

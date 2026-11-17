@@ -56,5 +56,5 @@ Flag is listed in the [CapabilityStatement](https://dhp.uz/fhir/core/en/Capabili
 ### Related
 
 - [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) &middot; [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html)
-- [Blood Service](blood-management.html) &middot; [Deferral reasons](ValueSet-donor-deferral-reason-vs.html) &middot; [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html)
+- [Blood Service](blood-service.html) &middot; [Deferral reasons](ValueSet-donor-deferral-reason-vs.html) &middot; [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html)
 - [Must Support](https://dhp.uz/fhir/core/en/must-support.html) &middot; [General guidance](https://dhp.uz/fhir/core/en/general-guidance.html)

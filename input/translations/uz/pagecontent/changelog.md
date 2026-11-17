@@ -10,7 +10,7 @@
 
 [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) donorni chetlatishni qayd etadi; [vaqtincha](Flag-example-blood-donor-temporary-deferral.html) va [umrbod](Flag-example-blood-donor-lifelong-deferral.html) chetlatish misollari bor. `workflow-reason` kengaytmasi sababni mahalliy [chetlatish sabablari](CodeSystem-donor-deferral-reason-cs.html) kod tizimidan ([ValueSet](ValueSet-donor-deferral-reason-vs.html)) beradi.
 
-[Blood Management](blood-management.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) orqali tavsiflaydi.
+[Blood Service](blood-service.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) orqali tavsiflaydi.
 
 [Qidiruv](search.html) sahifa sarlavhasidagi yangi maydondan ochiladi. U resurslarni sarlavhasi, nomi, URL yoki tavsifi bo'yicha, shuningdek kod tizimlari, qiymatlar to'plamlari va ConceptMaplardagi kodlar, atamalar va moslashtirishlarni ingliz, rus va o'zbek tillarida topadi. Natijalarni resurs turi bo'yicha filtrlash mumkin.
 
