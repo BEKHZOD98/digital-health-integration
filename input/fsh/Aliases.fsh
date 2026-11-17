@@ -297,3 +297,6 @@ Alias: $blood-rh-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-rh-vs
 
 Alias: $blood-service-request-number = https://dhp.uz/fhir/core/sid/doc/uz/blood-service-request
 Alias: $blood-donation-number = https://dhp.uz/fhir/core/sid/prd/uz/blood/donation
+Alias: $blood-donor-eligibility-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs
+Alias: $flag-category = http://terminology.hl7.org/CodeSystem/flag-category
+Alias: $workflow-reason = http://hl7.org/fhir/StructureDefinition/workflow-reason
