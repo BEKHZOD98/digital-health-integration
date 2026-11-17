@@ -130,16 +130,15 @@ Description: "Synthetic adult donor used by the donor questionnaire response exa
 * birthDate = "1992-04-12"
 
 Instance: example-donor-questionnaire-deferral
-InstanceOf: Flag
-Title: "Example Flag - Deferral After the Donor Questionnaire"
+InstanceOf: BloodDonorDeferralFlag
+Title: "Example Blood Donor Deferral Flag - Deferral After the Donor Questionnaire"
 Description: "Synthetic temporary deferral recorded by the clinician after reviewing the donor questionnaire, where the donor reported a recent tattoo. The workflow-reason extension carries the reason code. The 180-day period is example data, not a clinical recommendation."
 Usage: #example
 * language = #uz
 * status = #active
 * category = $flag-category#clinical
-* extension[0].url = $workflow-reason
-* extension[0].valueCodeableReference.concept = DonorDeferralReasonCS#donrsn-0001-00001 "Tatuirovka, piercing yoki akupunktura"
-* code = $blood-donor-eligibility-cs#blood-donation-deferred "Tibbiy sabablarga ko'ra qon donorligidan chetlatilgan"
+* extension[reason].valueCodeableReference.concept = DonorDeferralReasonCS#donrsn-0001-00001 "Tatuirovka, piercing yoki akupunktura"
+* code = $blood-donor-eligibility-cs#blood-donation-deferred-temporary "Tibbiy sabablarga ko'ra qon donorligidan vaqtincha chetlatilgan"
 * subject = Reference(Patient/example-donor-questionnaire-patient)
 * author = Reference(PractitionerRole/example-practitionerrole)
 * period.start = "2026-11-13T10:00:00+05:00"

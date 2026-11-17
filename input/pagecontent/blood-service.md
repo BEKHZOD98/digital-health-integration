@@ -9,13 +9,15 @@ This page describes how the blood service records the path of donated blood as F
 
 ### Overview {#overview}
 
-Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profile as it is. This guide adds two profiles. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) records the registration data that UZ Core Patient does not hold: whether a person is registered as a donor or a recipient, the registration number, the donor category, the donation compensation and type, and a recipient's diagnosis. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orders the donor's laboratory tests and the processing of a component. The paper forms behind these steps are described in [8.0 Blood Service](forms-volume-08-blood-service.html).
+Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profile as it is. This guide adds three profiles. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) records the registration data that UZ Core Patient does not hold: whether a person is registered as a donor or a recipient, the registration number, the donor category, the donation compensation and type, and a recipient's diagnosis. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orders the donor's laboratory tests and the processing of a component. [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) records a temporary or permanent medical deferral from donation. The paper forms behind these steps are described in [8.0 Blood Service](forms-volume-08-blood-service.html).
+
+<!-- CORE-RELEASE #161 -->
 
 | Step | Resource | Profile |
 | :--- | :--- | :--- |
 | [Register a donor or recipient](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Interview the donor](#interviewing) | Questionnaire, QuestionnaireResponse | [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) |
-| [Record eligibility or a deferral](#eligibility) | Flag | UZ Core Flag (next UZ Core release) |
+| [Record eligibility or a deferral](#eligibility) | Flag | UZ Core Flag (next UZ Core release) for eligibility, [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) for a deferral |
 | [Test the donor's blood](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) |
 | [Collect the donation](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Process it into components](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -52,19 +54,19 @@ The table lists the answer that can lead to a deferral and the [reason code](Val
 | When was your last blood donation? (`last-donation`) | A recent date | `donrsn-0001-00006` Date of most recent blood donation |
 | Are you feeling well today? (`feeling-well`) | No | `donrsn-0001-00026` Feeling unwell on the day of visit |
 | Do you have any chronic diseases (e.g. epilepsy, diabetes, cancer, or other long-term conditions)? (`chronic-disease`) | Yes | `donrsn-0001-00009` Chronic disease |
-| Are you currently receiving regular medical treatment? (`regular-treatment`) | Yes | `donrsn-0001-00005` Medication use or ongoing treatment |
-| Do you regularly undergo any procedures or take any tablets/medicines? (`medication-procedures`) | Yes | `donrsn-0001-00005` Medication use or ongoing treatment |
+| Are you currently receiving regular medical treatment? (`regular-treatment`) | Yes | `donrsn-0001-00005` Medication use or ongoing treatment (last week) |
+| Do you regularly undergo any procedures or take any tablets/medicines? (`medication-procedures`) | Yes | `donrsn-0001-00005` Medication use or ongoing treatment (last week) |
 | Have you ever had hepatitis or brucellosis? (`hepatitis-brucellosis`) | Yes | `donrsn-0001-00018` History of hepatitis or brucellosis |
-| Have you undergone any dental procedures recently (during the last 2 weeks)? (`dental-procedure`) | Yes | `donrsn-0001-00010` Dental procedure |
+| Have you undergone any dental procedures recently (during the last 2 weeks)? (`dental-procedure`) | Yes | `donrsn-0001-00010` Dental procedure (last 2 weeks) |
 | Have you had malaria during the last 3 weeks? (`malaria-illness`) | Yes | `donrsn-0001-00011` Travel to a malaria-risk area or malaria-related condition |
 | Have you been vaccinated during the last month? (`vaccination`) | Yes | `donrsn-0001-00019` Vaccination |
 | During the last 3 months, have you experienced night sweats, unexplained weight loss, chills, diarrhoea, or enlarged lymph nodes? (`recent-symptoms`) | Yes | `donrsn-0001-00020` Night sweats, weight loss, chills, diarrhea or enlarged lymph nodes in the last 3 months |
 | Have you been in contact with a person infected with hepatitis or HIV/AIDS? (`infected-contact`) | Yes | `donrsn-0001-00021` Contact with a person infected with HIV or hepatitis |
-| Have you had casual unprotected sexual contact during the last 6 months? (`unprotected-sex`) | Yes | `donrsn-0001-00022` Casual unprotected sexual contact |
-| Have you undergone surgery, a medical intervention, or an endoscopic procedure during the last 6 months? (`surgery`) | Yes | `donrsn-0001-00012` Surgery or medical intervention |
+| Have you had casual unprotected sexual contact during the last 6 months? (`unprotected-sex`) | Yes | `donrsn-0001-00022` Casual unprotected sexual contact (last 6 months) |
+| Have you undergone surgery, a medical intervention, or an endoscopic procedure during the last 6 months? (`surgery`) | Yes | `donrsn-0001-00012` Surgery or medical intervention (last 6 months) |
 | Have you ever received a blood transfusion or blood components? (`blood-transfusion`) | Yes | `donrsn-0001-00003` Blood or blood component transfusion |
-| Have you been treated for sexually transmitted infections such as syphilis, gonorrhoea, chlamydia, genital ulcers, or herpes? (`sti-treatment`) | Yes | `donrsn-0001-00023` Treatment for sexually transmitted infections |
-| Have you used shared needles, syringes, or scarifiers? (`shared-needles`) | Yes | `donrsn-0001-00024` Sharing needles or syringes |
+| Have you been treated for sexually transmitted infections such as syphilis, gonorrhoea, chlamydia, genital ulcers, or herpes? (`sti-treatment`) | Yes | `donrsn-0001-00023` Treatment for sexually transmitted infections (last 6 months) |
+| Have you used shared needles, syringes, or scarifiers? (`shared-needles`) | Yes | `donrsn-0001-00024` Sharing needles or syringes (last 6 months) |
 | Have you had a tattoo, piercing, or acupuncture during the last 6 months? (`tattoo-piercing`) | Yes | `donrsn-0001-00001` Tattoo, piercing or acupuncture |
 | Have you been in places of detention or imprisonment? (`incarceration`) | Yes | `donrsn-0001-00025` Incarceration |
 | Do you consent to testing your blood for HIV/AIDS, hepatitis, and syphilis? (`testing-consent`) | No | `donrsn-0001-00027` Refusal to consent to blood testing |
@@ -72,7 +74,7 @@ The table lists the answer that can lead to a deferral and the [reason code](Val
 | Have you recently had influenza, an acute respiratory viral infection (ARVI), or a sore throat? (`flu-arvi`) | Yes | `donrsn-0001-00004` Flu, ARVI or tonsillitis |
 | During the last 3 weeks, have you had a fever or visited malaria-risk areas? (`malaria-exposure`) | Yes | `donrsn-0001-00011` Travel to a malaria-risk area or malaria-related condition |
 | Are you pregnant? (`pregnancy`) | Yes | `donrsn-0001-00007` Pregnancy |
-| Have you given birth or had a miscarriage in the last 6 months? (`postpartum-miscarriage`) | Yes | `donrsn-0001-00017` Postpartum period or period after miscarriage |
+| Have you given birth or had a miscarriage in the last 6 months? (`postpartum-miscarriage`) | Yes | `donrsn-0001-00017` Postpartum period or period after miscarriage (last 6 months) |
 | Are you currently breastfeeding? (`breastfeeding`) | Yes | `donrsn-0001-00008` Breastfeeding |
 | I confirm that I have not consumed alcohol in the last 48 hours and have not taken aspirin or other analgesics in the last 72 hours. (`alcohol-medication-declaration`) | No | - |
 
@@ -88,7 +90,11 @@ Example: after reviewing the [example response](QuestionnaireResponse-example-do
 
 <!-- CORE-RELEASE #161 -->
 
-Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
+Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a temporary or permanent medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
+
+A deferral is a [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): `code` is `blood-donation-deferred-temporary` or `blood-donation-deferred-permanent`, and the [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries the [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a positive test result. A donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a permanent deferral has no `period.end`. A temporary flag stays `active` until it is set to `inactive`, so read `period.end` together with `status` to tell whether a deferral still applies.
+
+Examples: [temporary deferral](Flag-example-blood-donor-temporary-deferral.html), [permanent deferral](Flag-example-blood-donor-permanent-deferral.html), whose reason points to the [confirmed positive HIV result](Observation-example-blood-donor-hiv-result.html).
 
 ### Testing the donor's blood {#testing}
 

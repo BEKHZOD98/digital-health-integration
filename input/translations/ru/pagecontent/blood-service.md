@@ -11,13 +11,15 @@
 
 ### Обзор {#overview}
 
-Почти на каждом шаге профиль [UZ Core](https://dhp.uz/fhir/core/ru/artifacts.html) используется без изменений. Это руководство добавляет два профиля. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) фиксирует регистрационные данные, которых нет в UZ Core Patient: зарегистрирован ли человек как донор или как реципиент, регистрационный номер, категория донора, оплата и вид донации и диагноз реципиента. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) оформляет лабораторные назначения донору и запросы на переработку компонента. Бумажные формы, стоящие за этими шагами, описаны в разделе [8.0 Служба крови](forms-volume-08-blood-service.html).
+Почти на каждом шаге профиль [UZ Core](https://dhp.uz/fhir/core/ru/artifacts.html) используется без изменений. Это руководство добавляет три профиля. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) фиксирует регистрационные данные, которых нет в UZ Core Patient: зарегистрирован ли человек как донор или как реципиент, регистрационный номер, категория донора, оплата и вид донации и диагноз реципиента. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) оформляет лабораторные назначения донору и запросы на переработку компонента. [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) фиксирует временный или постоянный медицинский отвод от донации. Бумажные формы, стоящие за этими шагами, описаны в разделе [8.0 Служба крови](forms-volume-08-blood-service.html).
+
+<!-- CORE-RELEASE #161 -->
 
 | Шаг | Ресурс | Профиль |
 | :--- | :--- | :--- |
 | [Регистрация донора или реципиента](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Опрос донора](#interviewing) | Questionnaire, QuestionnaireResponse | [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-questionnaire-response.html) |
-| [Допуск или отвод](#eligibility) | Flag | UZ Core Flag (следующий выпуск UZ Core) |
+| [Допуск или отвод](#eligibility) | Flag | UZ Core Flag (следующий выпуск UZ Core) для допуска, [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) для отвода |
 | [Обследование крови донора](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html) |
 | [Забор донации](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Переработка на компоненты](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -54,19 +56,19 @@
 | Когда вы в последний раз сдавали кровь? (`last-donation`) | Недавняя дата | `donrsn-0001-00006` Дата последней сдачи крови |
 | Хорошо ли вы себя чувствуете сегодня? (`feeling-well`) | Нет | `donrsn-0001-00026` Плохое самочувствие в день визита |
 | Есть ли у вас хронические заболевания (например, эпилепсия, диабет, онкологические или другие длительные заболевания)? (`chronic-disease`) | Да | `donrsn-0001-00009` Хроническое заболевание |
-| Получаете ли вы в настоящее время регулярное лечение? (`regular-treatment`) | Да | `donrsn-0001-00005` Приём лекарств или постоянное лечение |
-| Регулярно ли принимаете какие-либо процедуры или таблетки? (`medication-procedures`) | Да | `donrsn-0001-00005` Приём лекарств или постоянное лечение |
+| Получаете ли вы в настоящее время регулярное лечение? (`regular-treatment`) | Да | `donrsn-0001-00005` Приём лекарств или постоянное лечение (последняя неделя) |
+| Регулярно ли принимаете какие-либо процедуры или таблетки? (`medication-procedures`) | Да | `donrsn-0001-00005` Приём лекарств или постоянное лечение (последняя неделя) |
 | Болели ли вы когда-либо гепатитом или бруцеллёзом? (`hepatitis-brucellosis`) | Да | `donrsn-0001-00018` Перенесённый гепатит или бруцеллёз |
-| Проводились ли вам стоматологические процедуры за последнее время (в течение последних 2 недель)? (`dental-procedure`) | Да | `donrsn-0001-00010` Стоматологическая процедура |
+| Проводились ли вам стоматологические процедуры за последнее время (в течение последних 2 недель)? (`dental-procedure`) | Да | `donrsn-0001-00010` Стоматологическая процедура (последние 2 недели) |
 | Болели ли малярией за последние 3 недели? (`malaria-illness`) | Да | `donrsn-0001-00011` Посещение региона риска малярии или связанное с малярией состояние |
 | Делали ли вам прививки в течение последнего месяца? (`vaccination`) | Да | `donrsn-0001-00019` Вакцинация |
 | Были ли у вас в течение последних 3 месяцев ночная потливость, необъяснимая потеря веса, озноб, диарея или увеличение лимфатических узлов? (`recent-symptoms`) | Да | `donrsn-0001-00020` Ночная потливость, потеря веса, озноб, диарея или увеличение лимфоузлов за последние 3 месяца |
 | Были в контакте с человеком, заражённым гепатитом или ВИЧ/СПИД? (`infected-contact`) | Да | `donrsn-0001-00021` Контакт с человеком, инфицированным ВИЧ или гепатитом |
-| Были ли у вас случайные незащищённые половые контакты в течение последних 6 месяцев? (`unprotected-sex`) | Да | `donrsn-0001-00022` Случайный незащищённый половой контакт |
-| Переносили ли вы хирургическое вмешательство, медицинскую процедуру или эндоскопическое исследование в течение последних 6 месяцев? (`surgery`) | Да | `donrsn-0001-00012` Хирургическое или медицинское вмешательство |
+| Были ли у вас случайные незащищённые половые контакты в течение последних 6 месяцев? (`unprotected-sex`) | Да | `donrsn-0001-00022` Случайный незащищённый половой контакт (последние 6 месяцев) |
+| Переносили ли вы хирургическое вмешательство, медицинскую процедуру или эндоскопическое исследование в течение последних 6 месяцев? (`surgery`) | Да | `donrsn-0001-00012` Хирургическое или медицинское вмешательство (последние 6 месяцев) |
 | Получали ли вы когда-либо переливание крови или её компонентов? (`blood-transfusion`) | Да | `donrsn-0001-00003` Переливание крови или её компонентов |
-| Проходили лечение от венерических инфекций: сифилис, гонорея, хламидиоз, генитальные язвы, герпес? (`sti-treatment`) | Да | `donrsn-0001-00023` Лечение инфекций, передающихся половым путём |
-| Использовали общие иглы, шприцы или скарификаторы? (`shared-needles`) | Да | `donrsn-0001-00024` Использование общих игл или шприцев |
+| Проходили лечение от венерических инфекций: сифилис, гонорея, хламидиоз, генитальные язвы, герпес? (`sti-treatment`) | Да | `donrsn-0001-00023` Лечение инфекций, передающихся половым путём (последние 6 месяцев) |
+| Использовали общие иглы, шприцы или скарификаторы? (`shared-needles`) | Да | `donrsn-0001-00024` Использование общих игл или шприцев (последние 6 месяцев) |
 | За последние 6 месяцев: тату, пирсинг или иглоукалывание? (`tattoo-piercing`) | Да | `donrsn-0001-00001` Татуировка, пирсинг или иглоукалывание |
 | Были в местах лишения свободы? (`incarceration`) | Да | `donrsn-0001-00025` Пребывание в местах лишения свободы |
 | Даёте согласие на тестирование крови на ВИЧ/СПИД, гепатит, сифилис? (`testing-consent`) | Нет | `donrsn-0001-00027` Отказ от согласия на тестирование крови |
@@ -74,7 +76,7 @@
 | В последнее время: грипп, ОРВИ или ангина? (`flu-arvi`) | Да | `donrsn-0001-00004` Грипп, ОРВИ или ангина |
 | За последние 3 недели: температура или посещение регионов с малярией? (`malaria-exposure`) | Да | `donrsn-0001-00011` Посещение региона риска малярии или связанное с малярией состояние |
 | Вы беременны? (`pregnancy`) | Да | `donrsn-0001-00007` Беременность |
-| За последние 6 месяцев были роды или выкидыш? (`postpartum-miscarriage`) | Да | `donrsn-0001-00017` Период после родов или выкидыша |
+| За последние 6 месяцев были роды или выкидыш? (`postpartum-miscarriage`) | Да | `donrsn-0001-00017` Период после родов или выкидыша (последние 6 месяцев) |
 | В настоящее время кормите ли вы грудью? (`breastfeeding`) | Да | `donrsn-0001-00008` Грудное вскармливание |
 | Подтверждаю, что в течение последних 48 часов не употреблял(а) алкоголь, а в течение последних 72 часов не принимал(а) аспирин или другие анальгетики. (`alcohol-medication-declaration`) | Нет | - |
 
@@ -90,7 +92,11 @@
 
 <!-- CORE-RELEASE #161 -->
 
-Может ли донор сдавать кровь, фиксируется ресурсом Flag на его Patient: допуск к донации или медицинский отвод. Профиль UZ Core Flag для этого, вместе с кодами допуска доноров, войдёт в следующий выпуск UZ Core. `status` флага описывает сам флаг: флаг отвода в статусе `active` означает, что отвод действует.
+Может ли донор сдавать кровь, фиксируется ресурсом Flag на его Patient: допуск к донации, временный или постоянный медицинский отвод. Профиль UZ Core Flag для этого, вместе с кодами допуска доноров, войдёт в следующий выпуск UZ Core. `status` флага описывает сам флаг: флаг отвода в статусе `active` означает, что отвод действует.
+
+Отвод фиксируется ресурсом [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): в `code` указан `blood-donation-deferred-temporary` или `blood-donation-deferred-permanent`, а расширение [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) содержит [причину отвода](ValueSet-donor-deferral-reason-vs.html) и может ссылаться на её основание, например на положительный результат анализа. Донор, отведённый по двум причинам, получает два флага. `period.start` показывает начало отвода. У временного отвода есть `period.end` - дата, с которой донор снова может сдавать кровь; у постоянного отвода `period.end` нет. Временный флаг остаётся `active`, пока его не переведут в `inactive`, поэтому, чтобы понять, действует ли отвод, читайте `period.end` вместе со `status`.
+
+Примеры: [временный отвод](Flag-example-blood-donor-temporary-deferral.html), [постоянный отвод](Flag-example-blood-donor-permanent-deferral.html) причина которого ссылается на [подтверждённый положительный результат на ВИЧ](Observation-example-blood-donor-hiv-result.html).
 
 ### Обследование крови донора {#testing}
 
