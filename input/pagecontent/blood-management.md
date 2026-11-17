@@ -14,6 +14,7 @@ Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html)
 | Step | Resource | Profile |
 | :--- | :--- | :--- |
 | [Register a donor or recipient](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
+| [Interview the donor](#interviewing) | Questionnaire, QuestionnaireResponse | [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) |
 | [Record eligibility or a deferral](#eligibility) | Flag | UZ Core Flag (next UZ Core release) |
 | [Test the donor's blood](#testing) | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) |
 | [Collect the donation](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -39,6 +40,47 @@ Donors and recipients are both [UZ Core Patient](https://dhp.uz/fhir/core/en/Str
 | Registration date | - | `2026-09-23T10:30:00+05:00` | `effectiveDateTime` |
 
 Examples: [staff donor](Observation-example-blood-donor-registration-staff.html), [reserve donor](Observation-example-blood-donor-registration-reserve.html), [recipient](Observation-example-blood-recipient-registration.html).
+
+### Interviewing the donor {#interviewing}
+
+Before each donation the donor answers the [donor questionnaire](Questionnaire-donor-questionnaire.html), recorded as a [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) on the donor's Patient ([example](QuestionnaireResponse-example-donor-questionnaire-response.html)). No answer defers a donor by itself: a clinician reviews the answers and records any deferral as a [Flag](#eligibility).
+
+The table lists the answer that can lead to a deferral and the reason code that goes with it. The same code is in each question's `item.code`.
+
+| Question | Deferral answer | Reason code |
+| :--- | :--- | :--- |
+| `last-donation` | A recent date | `donrsn-0001-00006` Date of most recent blood donation |
+| `feeling-well` | No | `donrsn-0001-00026` Feeling unwell on the day of visit |
+| `chronic-disease` | Yes | `donrsn-0001-00009` Chronic disease |
+| `regular-treatment` | Yes | `donrsn-0001-00005` Medication use or ongoing treatment |
+| `medication-procedures` | Yes | `donrsn-0001-00005` Medication use or ongoing treatment |
+| `hepatitis-brucellosis` | Yes | `donrsn-0001-00018` History of hepatitis or brucellosis |
+| `dental-procedure` | Yes | `donrsn-0001-00010` Dental procedure |
+| `malaria-illness` | Yes | `donrsn-0001-00011` Travel to a malaria-risk area or malaria-related condition |
+| `vaccination` | Yes | `donrsn-0001-00019` Vaccination |
+| `recent-symptoms` | Yes | `donrsn-0001-00020` Night sweats, weight loss, chills, diarrhea or enlarged lymph nodes in the last 3 months |
+| `infected-contact` | Yes | `donrsn-0001-00021` Contact with a person infected with HIV or hepatitis |
+| `unprotected-sex` | Yes | `donrsn-0001-00022` Casual unprotected sexual contact |
+| `surgery` | Yes | `donrsn-0001-00012` Surgery or medical intervention |
+| `blood-transfusion` | Yes | `donrsn-0001-00003` Blood or blood component transfusion |
+| `sti-treatment` | Yes | `donrsn-0001-00023` Treatment for sexually transmitted infections |
+| `shared-needles` | Yes | `donrsn-0001-00024` Sharing needles or syringes |
+| `tattoo-piercing` | Yes | `donrsn-0001-00001` Tattoo, piercing or acupuncture |
+| `incarceration` | Yes | `donrsn-0001-00025` Incarceration |
+| `testing-consent` | No | `donrsn-0001-00027` Refusal to consent to blood testing |
+| `declaration` | No | `donrsn-0001-00028` Declaration not confirmed |
+| `flu-arvi` | Yes | `donrsn-0001-00004` Flu, ARVI or tonsillitis |
+| `malaria-exposure` | Yes | `donrsn-0001-00011` Travel to a malaria-risk area or malaria-related condition |
+| `pregnancy` | Yes | `donrsn-0001-00007` Pregnancy |
+| `postpartum-miscarriage` | Yes | `donrsn-0001-00017` Postpartum period or period after miscarriage |
+| `breastfeeding` | Yes | `donrsn-0001-00008` Breastfeeding |
+| `alcohol-medication-declaration` | No | - |
+
+A No to `testing-consent` or `declaration` is an administrative stop, not a medical deferral: the donation does not go ahead that day, and no deferral Flag is raised. A No to `alcohol-medication-declaration` has no reason code of its own; the clinician records the reason that applies.
+
+Only `last-donation` captures a date. The other questions do not ask when the event happened, so a deferral Flag starts on the interview date and the clinician sets its end; the answers do not determine it.
+
+`last-doctor-visit`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` and `additional-health` give context for the clinician's review, and `regular-donation-preference` and `contact-consent` record the donor's preferences. None of them lead to a deferral.
 
 ### Eligibility and deferrals {#eligibility}
 

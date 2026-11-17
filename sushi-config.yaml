@@ -140,8 +140,6 @@ pages:
     title: Blood Management
   forms.md:
     title: Questionnaires
-  donor-questionnaire-mapping.md:
-    title: Donor Questionnaire Mapping
   forms-overview.md:
     title: Forms Overview
   forms-volume-01-inpatient.md:
@@ -197,7 +195,6 @@ menu:
     Hepatitis: hepatitis.html
     Blood Management: blood-management.html
   Questionnaires: forms.html
-  Donor Questionnaire Mapping: donor-questionnaire-mapping.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 

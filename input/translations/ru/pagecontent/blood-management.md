@@ -16,6 +16,7 @@
 | Шаг | Ресурс | Профиль |
 | :--- | :--- | :--- |
 | [Регистрация донора или реципиента](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
+| [Опрос донора](#interviewing) | Questionnaire, QuestionnaireResponse | [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-questionnaire-response.html) |
 | [Допуск или отвод](#eligibility) | Flag | UZ Core Flag (следующий выпуск UZ Core) |
 | [Обследование крови донора](#testing) | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html) |
 | [Забор донации](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -41,6 +42,47 @@
 | Дата регистрации | - | `2026-09-23T10:30:00+05:00` | `effectiveDateTime` |
 
 Примеры: [кадровый донор](Observation-example-blood-donor-registration-staff.html), [резервный донор](Observation-example-blood-donor-registration-reserve.html), [реципиент](Observation-example-blood-recipient-registration.html).
+
+### Опрос донора {#interviewing}
+
+Перед каждой донацией донор отвечает на [анкету донора](Questionnaire-donor-questionnaire.html); ответы фиксируются ресурсом [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-questionnaire-response.html) на Patient донора ([пример](QuestionnaireResponse-example-donor-questionnaire-response.html)). Ни один ответ сам по себе не означает отвод: врач рассматривает ответы и фиксирует отвод ресурсом [Flag](#eligibility).
+
+В таблице указан ответ, который может привести к отводу, и соответствующий код причины. Этот же код указан в `item.code` каждого вопроса.
+
+| Вопрос | Ответ, ведущий к отводу | Код причины |
+| :--- | :--- | :--- |
+| `last-donation` | Недавняя дата | `donrsn-0001-00006` Дата последней сдачи крови |
+| `feeling-well` | Нет | `donrsn-0001-00026` Плохое самочувствие в день визита |
+| `chronic-disease` | Да | `donrsn-0001-00009` Хроническое заболевание |
+| `regular-treatment` | Да | `donrsn-0001-00005` Приём лекарств или постоянное лечение |
+| `medication-procedures` | Да | `donrsn-0001-00005` Приём лекарств или постоянное лечение |
+| `hepatitis-brucellosis` | Да | `donrsn-0001-00018` Перенесённый гепатит или бруцеллёз |
+| `dental-procedure` | Да | `donrsn-0001-00010` Стоматологическая процедура |
+| `malaria-illness` | Да | `donrsn-0001-00011` Посещение региона риска малярии или связанное с малярией состояние |
+| `vaccination` | Да | `donrsn-0001-00019` Вакцинация |
+| `recent-symptoms` | Да | `donrsn-0001-00020` Ночная потливость, потеря веса, озноб, диарея или увеличение лимфоузлов за последние 3 месяца |
+| `infected-contact` | Да | `donrsn-0001-00021` Контакт с человеком, инфицированным ВИЧ или гепатитом |
+| `unprotected-sex` | Да | `donrsn-0001-00022` Случайный незащищённый половой контакт |
+| `surgery` | Да | `donrsn-0001-00012` Хирургическое или медицинское вмешательство |
+| `blood-transfusion` | Да | `donrsn-0001-00003` Переливание крови или её компонентов |
+| `sti-treatment` | Да | `donrsn-0001-00023` Лечение инфекций, передающихся половым путём |
+| `shared-needles` | Да | `donrsn-0001-00024` Использование общих игл или шприцев |
+| `tattoo-piercing` | Да | `donrsn-0001-00001` Татуировка, пирсинг или иглоукалывание |
+| `incarceration` | Да | `donrsn-0001-00025` Пребывание в местах лишения свободы |
+| `testing-consent` | Нет | `donrsn-0001-00027` Отказ от согласия на тестирование крови |
+| `declaration` | Нет | `donrsn-0001-00028` Декларация не подтверждена |
+| `flu-arvi` | Да | `donrsn-0001-00004` Грипп, ОРВИ или ангина |
+| `malaria-exposure` | Да | `donrsn-0001-00011` Посещение региона риска малярии или связанное с малярией состояние |
+| `pregnancy` | Да | `donrsn-0001-00007` Беременность |
+| `postpartum-miscarriage` | Да | `donrsn-0001-00017` Период после родов или выкидыша |
+| `breastfeeding` | Да | `donrsn-0001-00008` Грудное вскармливание |
+| `alcohol-medication-declaration` | Нет | - |
+
+Ответ «Нет» на `testing-consent` или `declaration` означает административную остановку, а не медицинский отвод: донация в этот день не проводится, флаг отвода не создаётся. У ответа «Нет» на `alcohol-medication-declaration` нет собственного кода причины; врач указывает подходящую причину.
+
+Дату фиксирует только `last-donation`. Остальные вопросы не спрашивают, когда произошло событие, поэтому флаг отвода начинается с даты опроса, а дату окончания устанавливает врач; ответы её не определяют.
+
+`last-doctor-visit`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` и `additional-health` дают врачу контекст для оценки, а `regular-donation-preference` и `contact-consent` фиксируют пожелания донора. Ни один из них не ведёт к отводу.
 
 ### Допуск и отводы {#eligibility}
 
