@@ -1,8 +1,8 @@
-This profile derives from [UZ Core Observation](https://dhp.uz/fhir/core/StructureDefinition-uz-core-observation.html) and records a recipient's pre-transfusion assessment and biological test results in one Observation per transfusion protocol. Reuse the existing patient and encounter. The assessment code is always SNOMED CT `252314007` (Blood transfusion test).
+This profile derives from [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html) and records a recipient's pre-transfusion assessment and biological test results in one Observation per transfusion protocol. Reuse the existing patient and encounter. The assessment code is always SNOMED CT `252314007` (Blood transfusion test).
 
 ### Mandatory and Must Support data elements
 
-Mandatory elements must be present. Must Support elements must be supported by implementations even when optional in an individual instance.
+The elements below must always be present (mandatory) or must be supported when the data is available ([Must Support](https://dhp.uz/fhir/core/en/must-support.html)) - not all are required, but your system must populate each Must Support element when it has the data and process it on receipt. This is the human-readable summary; the [formal views](#profile) below give the exact cardinalities, types, and terminology bindings.
 
 #### Each Blood Transfusion Assessment Observation Must Have
 

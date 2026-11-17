@@ -1,6 +1,6 @@
 ### Quick Start {#quick-start}
 
-Use a valid JWT in the Authorization header. Replace `[base]` with the server FHIR base URL. Encode the identifier separator `|` as `%7C` in URLs.
+Common API interactions for this profile. It is built on Observation, so use the Observation endpoint. Requests require a JWT access token - see [Security and authentication](https://dhp.uz/fhir/core/en/api-access.html#security). `[base]` is the [FHIR server base URL](https://dhp.uz/fhir/core/en/api-access.html#endpoints); `|` separates a system from its value and must be URL-encoded as `%7C`.
 
 Read by id or search by recipient and assessment code:
 
@@ -23,12 +23,15 @@ Content-Type: application/fhir+json
 If-Match: W/"[versionId]"
 ```
 
-Confirm supported operations and search parameters in the [UZ Core CapabilityStatement](https://dhp.uz/fhir/core/CapabilityStatement-DHPCapabilityStatement.html). These examples use standard FHIR R5 search parameters.
+Confirm supported operations and search parameters in the [UZ Core CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DHPCapabilityStatement.html). These examples use standard FHIR R5 search parameters.
 
 ### Related
 
-- [BloodTransfusionAssessmentVS](ValueSet-blood-transfusion-assessment-vs.html)
-- [BloodTransfusionValueVS](ValueSet-blood-transfusion-value-vs.html)
-- [BloodTransfusionHistoryVS](ValueSet-blood-transfusion-history-vs.html)
-- [ObstetricHistoryVS](ValueSet-obstetric-history-vs.html)
-- [SpecimenResVS](ValueSet-specimen-res-vs.html)
+- [Blood transfusion assessment component](ValueSet-blood-transfusion-assessment-vs.html)
+- [Blood transfusion compatibility result](ValueSet-blood-transfusion-value-vs.html)
+- [Blood transfusion history category](ValueSet-blood-transfusion-history-vs.html)
+- [Obstetric history category](ValueSet-obstetric-history-vs.html)
+- [Biological transfusion test result](ValueSet-specimen-res-vs.html)
+- [Blood Management](blood-management.html) &middot; [Blood service forms](forms-volume-08-blood-service.html)
+- [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html)
+- [Must Support](https://dhp.uz/fhir/core/en/must-support.html) &middot; [General guidance](https://dhp.uz/fhir/core/en/general-guidance.html)

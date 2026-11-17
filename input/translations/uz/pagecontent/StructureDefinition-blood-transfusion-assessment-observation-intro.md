@@ -1,16 +1,16 @@
-> Ushbu matn avtomatik tarjima qilingan.
+> **Mashina tarjimasi, inson tomonidan tekshirilishi zarur.** Ushbu sahifa ingliz tilidan sun'iy intellekt yordamida avtomatik tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday nomuvofiqlikda asl inglizcha versiya ustuvor hisoblanadi.
 
-Profil [UZ Core Observation](https://dhp.uz/fhir/core/StructureDefinition-uz-core-observation.html) asosida oluvchining transfuziyadan oldingi baholashi va biologik sinov natijalarini har bir transfuziya bayonnomasi uchun bitta Observation da qayd etadi. Mavjud bemor va tashrif resurslaridan foydalaning. Baholash kodi har doim SNOMED CT `252314007` (Blood transfusion test).
+Profil [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html) asosida oluvchining transfuziyadan oldingi baholashi va biologik sinov natijalarini har bir transfuziya bayonnomasi uchun bitta Observation da qayd etadi. Mavjud bemor va tashrif resurslaridan foydalaning. Baholash kodi har doim SNOMED CT `252314007` (Blood transfusion test).
 
-### Majburiy va qo'llab-quvvatlanadigan elementlar
+### Majburiy va Must Support ma'lumot elementlari
 
-Majburiy elementlar mavjud bo'lishi kerak. Must Support elementlari alohida namunada ixtiyoriy bo'lsa ham, tizimlar tomonidan qo'llab-quvvatlanishi shart.
+Quyidagi elementlar har doim mavjud bo'lishi (majburiy) yoki ma'lumot mavjud bo'lganda qo'llab-quvvatlanishi kerak ([Must Support](https://dhp.uz/fhir/core/uz/must-support.html)) - hammasi ham talab qilinmaydi, lekin sizning tizimingiz ma'lumotga ega bo'lganda har bir Must Support elementini to'ldirishi va qabul qilishda uni qayta ishlashi kerak. Bu inson o'qiy oladigan qisqacha bayon; quyidagi [rasmiy ko'rinishlar](#profile) aniq kardinalliklar, turlar va terminologiya bog'lanishlarini beradi.
 
-#### Blood Transfusion Assessment Observation uchun majburiy ma'lumotlar
+#### Har bir Blood Transfusion Assessment Observation quyidagilarga ega bo'lishi shart
 
 Holat, belgilangan baholash kodi va oluvchiga havola. Har bir berilgan komponent o'zining belgilangan kodini saqlaydi.
 
-#### Blood Transfusion Assessment Observation qo'llab-quvvatlaydigan ma'lumotlar
+#### Har bir Blood Transfusion Assessment Observation quyidagilarni qo'llab-quvvatlashi shart
 
 - Tayinlangan bo'lsa, biznes identifikatorlar va ularning tizimi.
 - Oluvchi, tashrif va mas'ul mutaxassis yoki tashkilot.
@@ -30,7 +30,7 @@ Har bir kesim ixtiyoriy va bir marta uchrashi mumkin. Oltita kesimning barchasi 
 | `preliminaryAboGroup` (Dastlabki ABO guruhi) | `bldcomp-0001-00005` | UZ Core ABO guruhi |
 | `biologicalSpecimen` (Biologik sinov natijasi) | `bldcomp-0001-00006` | SNOMED CT musbat yoki manfiy |
 
-### JSON ni bosqichma-bosqich tuzish
+### JSON'ni bosqichma-bosqich qurish
 
 Minimal baholash: component kesimlari ixtiyoriy.
 
