@@ -1,7 +1,7 @@
 ValueSet: SpecimenResVS
 Id: specimen-res-vs
-Title: "Biological transfusion test results"
-Description: "Positive and negative SNOMED CT results for the biological test in a blood transfusion assessment."
+Title: "Biological transfusion test result"
+Description: "Biological transfusion test results"
 * insert IntegrationsValueSet(specimen-res-vs)
 * ^status = #draft
 * ^experimental = true

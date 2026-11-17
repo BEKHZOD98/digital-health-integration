@@ -1,7 +1,7 @@
 ValueSet: BloodTransfusionValueVS
 Id: blood-transfusion-value-vs
-Title: "Allowed blood transfusion compatibility results"
-Description: "Local compatibility results used for ABO and Rh-Hr checks."
+Title: "Blood transfusion compatibility result"
+Description: "Blood transfusion compatibility results"
 * insert IntegrationsValueSet(blood-transfusion-value-vs)
 * ^status = #draft
 * ^experimental = true

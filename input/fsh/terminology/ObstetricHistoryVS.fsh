@@ -1,7 +1,7 @@
 ValueSet: ObstetricHistoryVS
 Id: obstetric-history-vs
-Title: "Allowed obstetric history categories"
-Description: "Local categories describing the recipient's obstetric history."
+Title: "Obstetric history category"
+Description: "Obstetric history categories"
 * insert IntegrationsValueSet(obstetric-history-vs)
 * ^status = #draft
 * ^experimental = true
