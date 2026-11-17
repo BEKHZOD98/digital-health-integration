@@ -86,6 +86,8 @@ Sanani faqat `last-donation` qayd etadi. Boshqa savollar hodisa qachon bo'lganin
 
 `gender` homiladorlik haqidagi savollar berilishini belgilaydi. `last-doctor-visit`, `last-doctor-visit-reason`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` va `additional-health` shifokorga baholash uchun kontekst beradi, `regular-donation-preference` va `contact-consent` esa donorning istaklarini qayd etadi. Ularning hech biri chetlatishga olib kelmaydi.
 
+`last-donation` (birinchi marta kelgan donor uni bo‘sh qoldiradi) hamda erkin javobli `last-doctor-visit`, `last-doctor-visit-reason` va `additional-health` savollaridan tashqari barcha savollar majburiy. Homiladorlik haqidagi savollar faqat ko‘rsatilganda majburiy.
+
 Namuna: donor yaqinda tatuirovka qilganini bildirgan [namunaviy javobni](QuestionnaireResponse-example-donor-questionnaire-response.html) ko'rib chiqib, shifokor `workflow-reason` kengaytmasida `donrsn-0001-00001` sababi bo'lgan [vaqtinchalik chetlatish flagini](Flag-example-donor-questionnaire-deferral.html) qayd etadi.
 
 ### Ruxsat va chetlatishlar {#eligibility}

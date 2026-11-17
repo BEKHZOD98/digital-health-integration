@@ -86,6 +86,8 @@
 
 `gender` определяет, задаются ли вопросы о беременности. `last-doctor-visit`, `last-doctor-visit-reason`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` и `additional-health` дают врачу контекст для оценки, а `regular-donation-preference` и `contact-consent` фиксируют пожелания донора. Ни один из них не ведёт к отводу.
 
+Все вопросы обязательны, кроме `last-donation`, который первичный донор оставляет пустым, и открытых `last-doctor-visit`, `last-doctor-visit-reason` и `additional-health`. Вопросы о беременности обязательны, только когда они показаны.
+
 Пример: рассмотрев [пример ответа](QuestionnaireResponse-example-donor-questionnaire-response.html), где донор сообщает о недавней татуировке, врач фиксирует [флаг временного отвода](Flag-example-donor-questionnaire-deferral.html), у которого расширение `workflow-reason` содержит причину `donrsn-0001-00001`.
 
 ### Допуск и отводы {#eligibility}

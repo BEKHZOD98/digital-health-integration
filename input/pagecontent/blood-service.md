@@ -84,6 +84,8 @@ Only `last-donation` captures a date. The other questions do not ask when the ev
 
 `gender` decides whether the pregnancy questions are asked. `last-doctor-visit`, `last-doctor-visit-reason`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` and `additional-health` give context for the clinician's review, and `regular-donation-preference` and `contact-consent` record the donor's preferences. None of them lead to a deferral.
 
+Every question is required except `last-donation`, which a first-time donor leaves empty, and the free-text `last-doctor-visit`, `last-doctor-visit-reason` and `additional-health`. The pregnancy questions are required only while they are shown.
+
 Example: after reviewing the [example response](QuestionnaireResponse-example-donor-questionnaire-response.html), where the donor reports a recent tattoo, the clinician records a [temporary deferral Flag](Flag-example-donor-questionnaire-deferral.html) whose `workflow-reason` extension carries reason `donrsn-0001-00001`.
 
 ### Eligibility and deferrals {#eligibility}

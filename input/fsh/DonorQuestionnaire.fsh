@@ -79,6 +79,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Are you feeling well today?
 * item[+].linkId = "feeling-well"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#17326005
 * item[=].text = "Bugun o‘zingizni yaxshi his qilyapsizmi?"
 * item[=].text.extension[$translation-extension][+]
@@ -91,6 +92,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Do you have any chronic diseases (e.g. epilepsy, diabetes, cancer, or other long-term conditions)?
 * item[+].linkId = "chronic-disease"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $loinc#97068-1
 * item[=].text = "Sizda surunkali kasalliklar (masalan, epilepsiya, diabet, saraton yoki boshqa uzoq davom etadigan kasalliklar) bormi?"
 * item[=].text.extension[$translation-extension][+]
@@ -103,6 +105,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Are you currently receiving regular medical treatment?
 * item[+].linkId = "regular-treatment"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "Hozirda muntazam davolanish kursini olayapsizmi?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -114,6 +117,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Do you regularly undergo any procedures or take any tablets/medicines?
 * item[+].linkId = "medication-procedures"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#710814002
 * item[=].text = "Muntazam ravishda biror muolajadan o‘tasizmi yoki dori tabletkalarini qabul qilasizmi?"
 * item[=].text.extension[$translation-extension][+]
@@ -126,6 +130,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you ever had hepatitis or brucellosis?
 * item[+].linkId = "hepatitis-brucellosis"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "Siz ilgari gepatit yoki brutsellyoz bilan kasallanganmisiz?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -137,6 +142,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Has a doctor ever advised you not to donate blood?
 * item[+].linkId = "advised-not-to-donate"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#897707000
 * item[=].text = "Shifokor sizga ilgari qon topshirmaslikni tavsiya qilganmi?"
 * item[=].text.extension[$translation-extension][+]
@@ -149,6 +155,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you undergone any dental procedures recently (during the last 2 weeks)?
 * item[+].linkId = "dental-procedure"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "So‘nggi vaqtlarda (oxirgi 2 hafta ichida) stomatologik muolajalar o‘tkazilganmi?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -160,6 +167,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you had malaria during the last 3 weeks?
 * item[+].linkId = "malaria-illness"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#161416007
 * item[=].text = "So‘nggi 3 hafta ichida bezgak bilan kasallanganmisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -172,6 +180,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you been vaccinated during the last month?
 * item[+].linkId = "vaccination"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#425457005
 * item[=].text = "So‘nggi bir oy ichida emlanganmisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -184,6 +193,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // During the last 3 months, have you experienced night sweats, unexplained weight loss, chills, diarrhoea, or enlarged lymph nodes?
 * item[+].linkId = "recent-symptoms"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "So‘nggi 3 oy ichida tunda terlash, sababsiz vazn yo‘qotish, titroq, ich ketishi yoki limfa tugunlarining kattalashishi kuzatilganmi?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -195,6 +205,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you been in contact with a person infected with hepatitis or HIV/AIDS?
 * item[+].linkId = "infected-contact"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "Gepatit yoki OIV/OITS bilan kasallangan shaxs bilan aloqada bo‘lganmisiz?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -206,6 +217,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you had casual unprotected sexual contact during the last 6 months?
 * item[+].linkId = "unprotected-sex"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#2314005
 * item[=].text = "So‘nggi 6 oy ichida tasodifiy himoyalanmagan jinsiy aloqada bo‘lganmisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -218,6 +230,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you been hospitalized during the last 6 months?
 * item[+].linkId = "hospitalization"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $loinc#93680-7
 * item[=].text = "So‘nggi 6 oy ichida shifoxonaga yotqizilganmisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -230,6 +243,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you undergone surgery, a medical intervention, or an endoscopic procedure during the last 6 months?
 * item[+].linkId = "surgery"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#161615003
 * item[=].text = "So‘nggi 6 oy ichida jarrohlik amaliyoti, tibbiy muolaja yoki endoskopik tekshiruvdan o‘tganmisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -242,6 +256,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you ever received a blood transfusion or blood components?
 * item[+].linkId = "blood-transfusion"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#161664006
 * item[=].text = "Sizga ilgari qon yoki uning tarkibiy qismlari quyilganmi?"
 * item[=].text.extension[$translation-extension][+]
@@ -254,6 +269,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you been treated for sexually transmitted infections such as syphilis, gonorrhoea, chlamydia, genital ulcers, or herpes?
 * item[+].linkId = "sti-treatment"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#275881005
 * item[=].text = "Sifilis, gonoreya, xlamidioz, jinsiy a’zolardagi yaralar yoki gerpes kabi jinsiy yo‘l bilan yuqadigan infeksiyalardan davolanganmisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -266,6 +282,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you used shared needles, syringes, or scarifiers?
 * item[+].linkId = "shared-needles"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#228400001
 * item[=].text = "Umumiy ignalar, shpritslar yoki skarifikatorlardan foydalanganmisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -278,6 +295,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you had a tattoo, piercing, or acupuncture during the last 6 months?
 * item[+].linkId = "tattoo-piercing"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "So‘nggi 6 oy ichida tatuirovka, pirsing yoki igna bilan davolash (akupunktura) muolajasini olganmisiz?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -289,6 +307,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you been in places of detention or imprisonment?
 * item[+].linkId = "incarceration"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#266944002
 * item[=].text = "Ozodlikdan mahrum etish joylarida bo‘lganmisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -301,6 +320,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Do you consent to testing your blood for HIV/AIDS, hepatitis, and syphilis?
 * item[+].linkId = "testing-consent"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "Qoningizni OIV/OITS, gepatit va sifilisga tekshirishga rozimisiz?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -323,6 +343,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Would you like to donate blood regularly?
 * item[+].linkId = "regular-donation-preference"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $sct#160655006
 * item[=].text = "Muntazam ravishda qon topshirishni xohlaysizmi?"
 * item[=].text.extension[$translation-extension][+]
@@ -335,6 +356,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // May we contact you in the future?
 * item[+].linkId = "contact-consent"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "Kelgusida siz bilan bog‘lanishimiz mumkinmi?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -346,6 +368,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you recently had influenza, an acute respiratory viral infection (ARVI), or a sore throat?
 * item[+].linkId = "flu-arvi"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "So‘nggi vaqtlarda gripp, O‘RVI yoki angina bilan kasallanganmisiz?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -357,6 +380,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Have you travelled abroad during the last 6 months?
 * item[+].linkId = "travel-abroad"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $loinc#8691-8
 * item[=].text = "So‘nggi 6 oy ichida chet elga safar qilganmisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -369,6 +393,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // During the last 3 weeks, have you had a fever or visited malaria-risk areas?
 * item[+].linkId = "malaria-exposure"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "So‘nggi 3 hafta ichida isitma kuzatildimi yoki bezgak xavfi mavjud hududlarga borganmisiz?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -383,6 +408,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 * item[=].enableWhen[=].operator = #!=
 * item[=].enableWhen[=].answerCoding = $gender#male
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $loinc#82810-3
 * item[=].text = "Homiladormisiz?"
 * item[=].text.extension[$translation-extension][+]
@@ -398,6 +424,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 * item[=].enableWhen[=].operator = #!=
 * item[=].enableWhen[=].answerCoding = $gender#male
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "So‘nggi 6 oy ichida tug‘ruq yoki homila tushishi bo‘lganmi?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -412,6 +439,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 * item[=].enableWhen[=].operator = #!=
 * item[=].enableWhen[=].answerCoding = $gender#male
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].code = $loinc#63895-7
 * item[=].text = "Hozirda bolangizni emizyapsizmi?"
 * item[=].text.extension[$translation-extension][+]
@@ -424,6 +452,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // I confirm that I have not consumed alcohol in the last 48 hours and have not taken aspirin or other analgesics in the last 72 hours.
 * item[+].linkId = "alcohol-medication-declaration"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "So‘nggi 48 soat ichida alkogol iste’mol qilmaganligimni va so‘nggi 72 soat ichida aspirin va analgetiklar qabul qilmaganligimni tasdiqlayman"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
@@ -435,6 +464,7 @@ Description: "Donor questionnaire with all 33 source questions in Uzbek, Russian
 // Do you confirm that you understood these questions and the reason for asking them, and that you answered honestly?
 * item[+].linkId = "declaration"
 * item[=].type = #boolean
+* item[=].required = true
 * item[=].text = "Ushbu savollarni va ularning berilish sababini tushunganingizni hamda ularga vijdonan javob berganingizni tasdiqlaysizmi?"
 * item[=].text.extension[$translation-extension][+]
   * extension[lang].valueCode = #ru
