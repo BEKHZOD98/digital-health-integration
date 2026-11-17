@@ -11,13 +11,14 @@ Ushbu sahifada qon xizmati donorlik qonining yo'lini - donorni ro'yxatga olishda
 
 ### Umumiy ko'rinish {#overview}
 
-Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) profili o'zgarishsiz qo'llaniladi. Ushbu qo'llanma ikkita profil qo'shadi. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) UZ Core Patient da bo'lmagan ro'yxatga olish ma'lumotlari uchun: shaxs donor yoki retsipiyent sifatida ro'yxatga olinganligi, ro'yxatga olish raqami, donor toifasi, donatsiya to'lovi va turi hamda retsipiyent tashxisi. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) donor laboratoriya buyurtmalari va komponentni qayta ishlash so'rovlari uchun. Ushbu bosqichlar ortidagi qog'oz shakllar [8.0 Qon xizmati](forms-volume-08-blood-service.html) bo'limida tavsiflangan.
+Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) profili o'zgarishsiz qo'llaniladi. Ushbu qo'llanma uchta profil qo'shadi. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) UZ Core Patient da bo'lmagan ro'yxatga olish ma'lumotlari uchun: shaxs donor yoki retsipiyent sifatida ro'yxatga olinganligi, ro'yxatga olish raqami, donor toifasi, donatsiya to'lovi va turi hamda retsipiyent tashxisi. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) donor laboratoriya buyurtmalari va komponentni qayta ishlash so'rovlari uchun. [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) donatsiyadan vaqtincha yoki doimiy tibbiy chetlatishni qayd etadi. Ushbu bosqichlar ortidagi qog'oz shakllar [8.0 Qon xizmati](forms-volume-08-blood-service.html) bo'limida tavsiflangan.
 
 <!-- CORE-RELEASE #161 -->
 
 | Bosqich | Resurs | Profil |
 | :--- | :--- | :--- |
 | [Donor yoki retsipiyentni ro'yxatga olish](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
+| [Donor bilan suhbat](#interviewing) | Questionnaire, QuestionnaireResponse | [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-questionnaire-response.html) |
 | [Ruxsat yoki chetlatish](#eligibility) | Flag | UZ Core Flag (UZ Core ning keyingi relizi) ruxsat uchun, [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) chetlatish uchun |
 | [Donor qonini tekshirish](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) |
 | [Donatsiyani olish](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -43,6 +44,51 @@ Donorlar ham, retsipiyentlar ham [UZ Core Patient](https://dhp.uz/fhir/core/uz/S
 | Ro'yxatga olish sanasi | - | `2026-09-23T10:30:00+05:00` | `effectiveDateTime` |
 
 Misollar: [kadr donor](Observation-example-blood-donor-registration-staff.html), [zaxira donor](Observation-example-blood-donor-registration-reserve.html), [retsipiyent](Observation-example-blood-recipient-registration.html).
+
+### Donor bilan suhbat {#interviewing}
+
+Har bir donatsiyadan oldin donor [donor so'rovnomasiga](forms.html?form=donor-questionnaire) javob beradi; javoblar donorning Patient yozuvida [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-questionnaire-response.html) bilan qayd etiladi ([namuna](QuestionnaireResponse-example-donor-questionnaire-response.html)). Hech bir javob o'z-o'zidan chetlatish hisoblanmaydi: shifokor javoblarni ko'rib chiqadi va chetlatishni [Flag](#eligibility) bilan qayd etadi.
+
+Jadvalda chetlatishga olib kelishi mumkin bo'lgan javob va unga mos [sabab kodi](ValueSet-donor-deferral-reason-vs.html) ko'rsatilgan. Har bir savolning `item.code` elementi, mos kod mavjud bo'lsa, savol nima haqida ekanini LOINC yoki SNOMED CT kodi bilan bildiradi; sabab kodi savolda yo'q.
+
+| Savol | Chetlatishga olib keladigan javob | Sabab kodi |
+| :--- | :--- | :--- |
+| Oxirgi marta qachon qon topshirgansiz? (`last-donation`) | Yaqin sana | `donrsn-0001-00006` Oxirgi qon topshirish sanasi |
+| Bugun o‘zingizni yaxshi his qilyapsizmi? (`feeling-well`) | Yo'q | `donrsn-0001-00026` Bugun o‘zini yomon his qilish |
+| Sizda surunkali kasalliklar (masalan, epilepsiya, diabet, saraton yoki boshqa uzoq davom etadigan kasalliklar) bormi? (`chronic-disease`) | Ha | `donrsn-0001-00009` Surunkali kasallik |
+| Hozirda muntazam davolanish kursini olayapsizmi? (`regular-treatment`) | Ha | `donrsn-0001-00005` Dori qabul qilish yoki doimiy davolanish (oxirgi hafta) |
+| Muntazam ravishda biror muolajadan o‘tasizmi yoki dori tabletkalarini qabul qilasizmi? (`medication-procedures`) | Ha | `donrsn-0001-00005` Dori qabul qilish yoki doimiy davolanish (oxirgi hafta) |
+| Siz ilgari gepatit yoki brutsellyoz bilan kasallanganmisiz? (`hepatitis-brucellosis`) | Ha | `donrsn-0001-00018` Avval gepatit yoki brutsellyoz bilan kasallanganlik |
+| So‘nggi vaqtlarda (oxirgi 2 hafta ichida) stomatologik muolajalar o‘tkazilganmi? (`dental-procedure`) | Ha | `donrsn-0001-00010` Stomatologik muolaja (oxirgi 2 hafta) |
+| So‘nggi 3 hafta ichida bezgak bilan kasallanganmisiz? (`malaria-illness`) | Ha | `donrsn-0001-00011` Bezgak xavfi bo‘lgan hududga tashrif yoki bezgak bilan bog‘liq holat |
+| So‘nggi bir oy ichida emlanganmisiz? (`vaccination`) | Ha | `donrsn-0001-00019` Emlash |
+| So‘nggi 3 oy ichida tunda terlash, sababsiz vazn yo‘qotish, titroq, ich ketishi yoki limfa tugunlarining kattalashishi kuzatilganmi? (`recent-symptoms`) | Ha | `donrsn-0001-00020` So‘nggi 3 oyda tungi terlash, vazn yo‘qotish, titroq, diareya yoki limfa tugunlari kattalashishi |
+| Gepatit yoki OIV/OITS bilan kasallangan shaxs bilan aloqada bo‘lganmisiz? (`infected-contact`) | Ha | `donrsn-0001-00021` OIV yoki gepatit bilan kasallangan shaxs bilan aloqa |
+| So‘nggi 6 oy ichida tasodifiy himoyalanmagan jinsiy aloqada bo‘lganmisiz? (`unprotected-sex`) | Ha | `donrsn-0001-00022` Himoyalanmagan tasodifiy jinsiy aloqa (oxirgi 6 oy) |
+| So‘nggi 6 oy ichida jarrohlik amaliyoti, tibbiy muolaja yoki endoskopik tekshiruvdan o‘tganmisiz? (`surgery`) | Ha | `donrsn-0001-00012` Jarrohlik yoki tibbiy aralashuv (oxirgi 6 oy) |
+| Sizga ilgari qon yoki uning tarkibiy qismlari quyilganmi? (`blood-transfusion`) | Ha | `donrsn-0001-00003` Qon yoki uning komponentlarini quyish |
+| Sifilis, gonoreya, xlamidioz, jinsiy a’zolardagi yaralar yoki gerpes kabi jinsiy yo‘l bilan yuqadigan infeksiyalardan davolanganmisiz? (`sti-treatment`) | Ha | `donrsn-0001-00023` Jinsiy yo‘l bilan yuqadigan infeksiyalarni davolash (oxirgi 6 oy) |
+| Umumiy ignalar, shpritslar yoki skarifikatorlardan foydalanganmisiz? (`shared-needles`) | Ha | `donrsn-0001-00024` Umumiy igna yoki shpritslardan foydalanish (oxirgi 6 oy) |
+| So‘nggi 6 oy ichida tatuirovka, pirsing yoki igna bilan davolash (akupunktura) muolajasini olganmisiz? (`tattoo-piercing`) | Ha | `donrsn-0001-00001` Tatuirovka, piercing yoki akupunktura |
+| Ozodlikdan mahrum etish joylarida bo‘lganmisiz? (`incarceration`) | Ha | `donrsn-0001-00025` Ozodlikdan mahrum etish joylarida bo‘lish |
+| Qoningizni OIV/OITS, gepatit va sifilisga tekshirishga rozimisiz? (`testing-consent`) | Yo'q | `donrsn-0001-00027` Qonni tekshirishga rozilik bermaslik |
+| So‘nggi vaqtlarda gripp, O‘RVI yoki angina bilan kasallanganmisiz? (`flu-arvi`) | Ha | `donrsn-0001-00004` Gripp, O‘RVI yoki angina |
+| So‘nggi 3 hafta ichida isitma kuzatildimi yoki bezgak xavfi mavjud hududlarga borganmisiz? (`malaria-exposure`) | Ha | `donrsn-0001-00011` Bezgak xavfi bo‘lgan hududga tashrif yoki bezgak bilan bog‘liq holat |
+| Homiladormisiz? (`pregnancy`) | Ha | `donrsn-0001-00007` Homiladorlik |
+| So‘nggi 6 oy ichida tug‘ruq yoki homila tushishi bo‘lganmi? (`postpartum-miscarriage`) | Ha | `donrsn-0001-00017` Tug‘ruq yoki homila tushishidan keyingi davr (oxirgi 6 oy) |
+| Hozirda bolangizni emizyapsizmi? (`breastfeeding`) | Ha | `donrsn-0001-00008` Emizish davri |
+| So‘nggi 48 soat ichida alkogol iste’mol qilmaganligimni va so‘nggi 72 soat ichida aspirin va analgetiklar qabul qilmaganligimni tasdiqlayman (`alcohol-medication-declaration`) | Yo'q | - |
+| Ushbu savollarni va ularning berilish sababini tushunganingizni hamda ularga vijdonan javob berganingizni tasdiqlaysizmi? (`declaration`) | Yo'q | `donrsn-0001-00028` Deklaratsiyani tasdiqlamaslik |
+
+`testing-consent` yoki `declaration` savollariga "Yo'q" javobi tibbiy chetlatish emas, ma'muriy to'xtatishdir: o'sha kuni donatsiya o'tkazilmaydi va chetlatish flagi yaratilmaydi. `alcohol-medication-declaration` savoliga "Yo'q" javobining o'z sabab kodi yo'q; shifokor mos sababni qayd etadi.
+
+Sanani faqat `last-donation` qayd etadi. Boshqa savollar hodisa qachon bo'lganini so'ramaydi, shuning uchun chetlatish flagi suhbat sanasidan boshlanadi, tugash sanasini esa shifokor belgilaydi; javoblar uni aniqlamaydi.
+
+`gender` homiladorlik haqidagi savollar berilishini belgilaydi. `last-doctor-visit`, `last-doctor-visit-reason`, `advised-not-to-donate`, `hospitalization`, `travel-abroad` va `additional-health` shifokorga baholash uchun kontekst beradi, `regular-donation-preference` va `contact-consent` esa donorning istaklarini qayd etadi. Ularning hech biri chetlatishga olib kelmaydi.
+
+`last-donation` (birinchi marta kelgan donor uni bo‘sh qoldiradi) hamda erkin javobli `last-doctor-visit`, `last-doctor-visit-reason` va `additional-health` savollaridan tashqari barcha savollar majburiy. Homiladorlik haqidagi savollar faqat ko‘rsatilganda majburiy.
+
+Namuna: donor yaqinda tatuirovka qilganini bildirgan [namunaviy javobni](QuestionnaireResponse-example-donor-questionnaire-response.html) ko'rib chiqib, shifokor `workflow-reason` kengaytmasida `donrsn-0001-00001` sababi bo'lgan [vaqtinchalik chetlatish flagini](Flag-example-donor-questionnaire-deferral.html) qayd etadi.
 
 ### Ruxsat va chetlatishlar {#eligibility}
 
