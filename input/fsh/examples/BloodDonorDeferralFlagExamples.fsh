@@ -46,4 +46,4 @@ Usage: #example
 * performer = Reference(Organization/xonobod-medical-association)
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
 * valueCodeableConcept = $sct#10828004 "Positive"
-* interpretation = $observation-interpretation#POS "Positive"
+* interpretation = $observation-interpretation#POS "Ijobiy"
