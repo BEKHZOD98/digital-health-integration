@@ -51,3 +51,10 @@ Description: "Areas of integration covered by this guide. Each code names one in
   * ^designation[=].value = "Вирусный гепатит"
   * ^designation[+].language = #en
   * ^designation[=].value = "Viral hepatitis"
+
+* #orders "Yo'llanmalar"
+  * ^definition = "Orders and state-funded referral approval and hospitalization workflows."
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Назначения и направления"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Orders"
