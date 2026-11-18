@@ -2,13 +2,23 @@
 
 #### Добавлено
 
+[Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) фиксирует отвод донора; есть примеры [временного](Flag-example-blood-donor-temporary-deferral.html) и [постоянного](Flag-example-blood-donor-permanent-deferral.html) отвода. Расширение `workflow-reason` содержит причину из локальной кодовой системы [причин отвода](CodeSystem-donor-deferral-reason-cs.html) ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
+
 [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) на основе UZ Core Observation фиксирует регистрацию человека в службе крови как донора или реципиента. Оно содержит регистрационный номер, пациента, дату и время, Encounter и исполнителя. Срезы компонентов передают категорию донора, оплату и вид донации для донора и диагноз по МКБ-10 для реципиента; регистрация реципиента не может содержать компоненты донора. Примеры охватывают кадрового донора, резервного донора и реципиента, с Encounter регистрации и регистратором Practitioner для реципиента.
 
 [Orders](orders.html): добавлены профили направлений и задач согласования, терминология, основания государственного финансирования и критерии SBDL, правовые основания оплаты, примеры госпитализации и разделов выписного документа. Функциональность PR UZ Core #402 перенесена в Integrations; документация доступна на английском, русском и узбекском.
 
 Сопутствующая терминология: кодовая система [типов наблюдений службы крови](CodeSystem-blood-service-observation-type-cs.html) для типов регистрации ([ValueSet](ValueSet-blood-service-registration-type-vs.html)) и кодов компонентов, набор значений [категории донора](ValueSet-donor-category-vs.html) (SNOMED CT `275561000` для кадрового донора, локальный [код](CodeSystem-donor-category-cs.html) для резервного), локальная кодовая система [оплаты донации](CodeSystem-donation-compensation-cs.html) ([ValueSet](ValueSet-donation-compensation-vs.html)), набор значений SNOMED CT [вид донации](ValueSet-donation-type-vs.html), а также [переводы](CodeSystem-blood-service-snomed-translations-cs.html) кодов SNOMED CT на узбекский и русский. Регистрационный номер использует новую систему идентификаторов [номера регистрации в службе крови](NamingSystem-blood-registration-number-system.html) `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`.
 
-Страница [Blood Management](blood-management.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) оформляет отдельные исследования, панели и операции переработки; добавлены фиксированные системы номеров назначения и донации, subject Patient или Location, BloodLabCodesVS и BloodComponentProcessingCS, коды SNOMED CT для переработки и 15 примеров.
+
+[Поиск](search.html), который открывается из нового поля в шапке страницы, находит ресурсы по заголовку, имени, URL или описанию, а также коды, термины и сопоставления в системах кодов, наборах значений и ConceptMap на английском, русском и узбекском языках. Результаты можно отфильтровать по типу ресурса.
+
+Страница [Blood Service](blood-service.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
+
+[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) фиксирует пробы на совместимость по ABO, по Rh-Hr и биологическую пробу между реципиентом и одной единицей крови с результатами в SNOMED CT, а [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) - трансфузионный и акушерский анамнез реципиента, на который она опирается.
+
+[Анкета донора](forms.html?form=donor-questionnaire) содержит 35 вопросов на узбекском, русском и английском языках, [заполненный пример ответа](QuestionnaireResponse-example-donor-questionnaire-response.html) с пациентом и [шаг на странице Blood Service](blood-service.html#interviewing) о том, какие ответы могут привести к отводу. Используется кодовая система причин отвода из спецификации службы крови. Контекст программы группирует анкету на странице опросников.
 
 [Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html).
 
@@ -19,6 +29,8 @@
 #### Изменено
 
 Composition для [Форма 011](StructureDefinition-form-011-hemodialysis-composition.html), [Форма 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Форма 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) и [Форма 130](StructureDefinition-form-130-laboratory-test-results-composition.html) больше не фиксируют `status` как `final`, поэтому документ может проходить [жизненный цикл](document-statuses.html) через `preliminary`, `amended` и `entered-in-error`.
+
+JSON-копия ресурса на каждом языке теперь сохраняет остальные языки в расширениях `translation`, как в пакете; раньше в JSON по ссылкам с английских, русских и узбекских страниц они удалялись.
 
 ### Версия 0.12.1
 
