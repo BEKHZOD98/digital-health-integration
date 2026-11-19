@@ -1,6 +1,6 @@
 ValueSet: OrdersServiceRequestReferralPurposeVS
 Id: orders-service-request-referral-purpose-vs
-Title: "ServiceRequest referral purpose"
+Title: "ServiceRequest referral purposes"
 Description: "ServiceRequest referral purpose codes used in Uzbekistan healthcare workflow."
 * insert IntegrationsValueSet(orders-service-request-referral-purpose-vs)
 * ^experimental = true

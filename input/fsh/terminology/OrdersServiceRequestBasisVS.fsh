@@ -1,6 +1,6 @@
 ValueSet: OrdersServiceRequestBasisVS
 Id: orders-service-request-basis-vs
-Title: "ServiceRequest basis"
+Title: "ServiceRequest treatment bases"
 Description: "ServiceRequest basis codes used in Uzbekistan healthcare workflow."
 * insert IntegrationsValueSet(orders-service-request-basis-vs)
 * ^experimental = true

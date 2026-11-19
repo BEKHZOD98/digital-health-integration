@@ -11,11 +11,11 @@ Description: "Example state-insurance referral for planned hospitalization; its 
 * intent = #order
 * category[dhpCategory] = $sct#32485007 "Admission to hospital"
 * category[referralPurpose] = OrdersServiceRequestReferralPurposeCS#purpose-0001-0003 "Davolash"
-* category[specialty] = $sct#394612005 "Urologiya"
+* category[specialty] = $sct#394612005 "Urology"
 * priority = #routine
 * orderDetail.parameter[basis].code = $loinc#86947-9
 * orderDetail.parameter[basis].valueCodeableConcept = $orders-service-request-basis-cs#basis-0001-00001 "Buyrakning yagona toshi (asoratsiz kechishi)"
-* code = $sct#310449005 "Shifoxonaga yo'llanma"
+* code = $sct#310449005 "Referral to hospital"
 * subject = Reference(Patient/example-orders-patient)
 * occurrencePeriod.start = "2026-03-10"
 * occurrencePeriod.end = "2026-03-31"

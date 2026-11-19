@@ -12,7 +12,8 @@ Description: "Service requests and referrals for the Orders integration, includi
 * category[referralPurpose] ^short = "Purpose of the referral"
 * category[specialty] from OrdersServiceRequestSpecialtyVS (required)
 * category[specialty] ^short = "Clinical specialty the referral is addressed to"
-* code from OrdersServiceRequestCodeVS (extensible)
+* code ^binding.additional[+].purpose = #preferred
+* code ^binding.additional[=].valueSet = Canonical(OrdersServiceRequestCodeVS)
 * orderDetail.parameter MS
 * orderDetail.parameter.code from OrdersServiceRequestOrderDetailParameterVS (preferred)
 * orderDetail.parameter ^slicing.discriminator.type = #value
