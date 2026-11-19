@@ -1,6 +1,8 @@
 ### Ishlab chiqilmoqda
 
-(Hozircha o'zgarishlar yo'q)
+#### Qo'shildi
+
+[Orders](orders.html): yo'llanma va kelishuv vazifalari profillari, terminologiya, davlat hisobidan davolash asoslari va SBDL mezonlari, huquqiy moliyalashtirish asoslari, gospitalizatsiya hamda chiqarish hujjati bo'limlari misollari qo'shildi. UZ Core #402 funksiyalari Integrations ga ko'chirildi; hujjatlar ingliz, rus va o'zbek tillarida mavjud.
 
 ### Versiya 0.13.0
 
@@ -20,7 +22,7 @@
 
 [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) retsipiyent va bitta qon birligi o'rtasidagi ABO, Rh-Hr bo'yicha moslik va biologik sinamani SNOMED CT natijalari bilan qayd etadi, [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) esa u tayanadigan retsipiyentning transfuzion va akusherlik anamnezini qayd etadi.
 
-[Donor so‘rovnomasi](forms.html?form=donor-questionnaire) o‘zbek, rus va ingliz tillarida 35 savol, bemor bilan [to‘ldirilgan javob namunasi](QuestionnaireResponse-example-donor-questionnaire-response.html) va qaysi javoblar chetlatishga olib kelishi mumkinligi haqidagi [Blood Service bosqichini](blood-service.html#interviewing) taqdim etadi. Donorni chetlatish sabablari kod tizimi qayta ishlatiladi. Dastur konteksti so‘rovnomani so'rovnomalar sahifasida guruhlaydi.
+[Donor so‘rovnomasi](forms.html#donor-questionnaire) o‘zbek, rus va ingliz tillarida 35 savol, bemor bilan [to‘ldirilgan javob namunasi](QuestionnaireResponse-example-donor-questionnaire-response.html) va qaysi javoblar chetlatishga olib kelishi mumkinligi haqidagi [Blood Service bosqichini](blood-service.html#interviewing) taqdim etadi. Donorni chetlatish sabablari kod tizimi qayta ishlatiladi. Dastur konteksti so‘rovnomani so'rovnomalar sahifasida guruhlaydi.
 
 [Qidiruv](search.html) sahifa sarlavhasidagi yangi maydondan ochiladi. U resurslarni sarlavhasi, nomi, URL yoki tavsifi bo'yicha, shuningdek kod tizimlari, qiymatlar to'plamlari va ConceptMaplardagi kodlar, atamalar va moslashtirishlarni ingliz, rus va o'zbek tillarida topadi. Natijalarni resurs turi bo'yicha filtrlash mumkin.
 
