@@ -29,13 +29,13 @@ Description: "Example state-insurance referral for planned hospitalization; its 
 
 
 Instance: example-orders-nodira-benefits
-InstanceOf: UZCoreSocioeconomicObservation
+InstanceOf: UZCoreObservation
 Title: "Example Orders - Nodira Benefits"
 Description: "Example benefits observation for Nodira, supporting her state-funded hospitalization referral"
 Usage: #example
 * language = #uz
 * status = #final
-* code.coding[socioeconomicType] = $sct#1303306008
+* code.text = "Eligibility for state-funded treatment assessment"
 * subject = Reference(Patient/example-orders-patient)
 * valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs#regis0004.00009 "\"Ijtimoiy himoya yagona reyestri\" axborot tizimi orqali kam ta'minlangan deb e'tirof etilgan oilalarning a'zolari."
 * effectiveDateTime = "2026-03-05"

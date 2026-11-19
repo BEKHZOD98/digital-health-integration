@@ -6,6 +6,6 @@ Description: "ServiceRequest order detail parameters"
 * ^experimental = true
 
 * $sct#410675002 "Route of administration"
-* $loinc#86947-9 "Reason for hospitalization"
+* $loinc|2.83#86947-9 "Reason for hospitalization"
 
 * ^status = #draft
