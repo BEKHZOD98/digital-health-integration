@@ -22,7 +22,7 @@
 
 [Blood Service](blood-service.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) orqali tavsiflaydi. U komponent hajmi va gematokriti, donatsiya va transfuziya asoratlari, zaxira hisobotlari, guruhlangan yetkazib berish so'rovlari va birliklarni retsipiyentlarga berishni tavsiflaydi.
 
-[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) alohida tekshiruvlar, panellar va qayta ishlash operatsiyalarini buyuradi; so'rov va donatsiya raqamlari tizimlari, Patient yoki Location subyekti, BloodLabCodesVS va BloodComponentProcessingCS, SNOMED CT operatsiya kodlari va 15 ta misol qo'shildi.
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) alohida tekshiruvlar, panellar va qayta ishlash operatsiyalarini buyuradi; so'rov va donatsiya raqamlari tizimlari, Patient yoki Location subyekti, BloodLabCodesVS va BloodComponentProcessingCS, SNOMED CT operatsiya kodlari va ekspeditor roli misoli bilan qon mahsuloti sifat nazoratini o'z ichiga olgan 18 ta misol qo'shildi.
 
 [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) retsipiyent va bitta qon birligi o'rtasidagi ABO, Rh-Hr bo'yicha moslik va biologik sinamani SNOMED CT natijalari bilan qayd etadi, [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) esa u tayanadigan retsipiyentning transfuzion va akusherlik anamnezini qayd etadi.
 
