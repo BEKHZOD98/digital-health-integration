@@ -1,6 +1,8 @@
 ### Ishlab chiqilmoqda
 
-(Hozircha o'zgarishlar yo'q)
+#### O'zgartirildi
+
+Orders uchun [chiqarish hujjati bo'limlari](ValueSet-orders-discharge-summary-section-vs.html) va [yo'llanma tafsilotlari parametrlari](ValueSet-orders-service-request-order-detail-parameter-vs.html) qiymatlar to'plamlari LOINC 2.83 o'rniga 2.82 versiyasidan foydalanadi.
 
 ### Versiya 0.13.1
 

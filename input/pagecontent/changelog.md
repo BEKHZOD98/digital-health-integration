@@ -1,6 +1,8 @@
 ### In development
 
-(No changes yet)
+#### Changed
+
+The [Orders discharge summary section](ValueSet-orders-discharge-summary-section-vs.html) and [order detail parameter](ValueSet-orders-service-request-order-detail-parameter-vs.html) value sets use LOINC 2.82 instead of 2.83.
 
 ### Version 0.13.1
 

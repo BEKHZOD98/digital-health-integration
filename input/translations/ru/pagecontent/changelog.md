@@ -1,6 +1,8 @@
 ### В разработке
 
-(Пока без изменений)
+#### Изменено
+
+Наборы значений Orders для [разделов выписного документа](ValueSet-orders-discharge-summary-section-vs.html) и [параметров деталей направления](ValueSet-orders-service-request-order-detail-parameter-vs.html) используют LOINC 2.82 вместо 2.83.
 
 ### Версия 0.13.1
 
