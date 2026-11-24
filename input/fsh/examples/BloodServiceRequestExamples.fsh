@@ -318,8 +318,8 @@ Usage: #example
 * status = #active
 * intent = #order
 * code.concept = BloodComponentProcessingCS#bcproc-0001-00004 "Qon mahsulotining sifat nazorati"
-* subject = Reference(Patient/example-salim)
-* focus = Reference(InventoryItem/example-inventory-item-rbc)
+* subject = Reference(Location/example-blood-service-laboratory)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
 * requester = Reference(PractitionerRole/example-practitionerrole)
 * authoredOn = "2026-11-16T11:30:00+05:00"
 
@@ -332,8 +332,8 @@ Usage: #example
 * status = #completed
 * intent = #order
 * code.concept = BloodComponentProcessingCS#bcproc-0001-00004 "Qon mahsulotining sifat nazorati"
-* subject = Reference(Patient/example-salim)
-* focus = Reference(InventoryItem/example-inventory-item-rbc)
+* subject = Reference(Location/example-blood-service-laboratory)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
 * requester = Reference(PractitionerRole/example-practitionerrole)
 * performer = Reference(PractitionerRole/example-blood-service-expeditor-role)
 * authoredOn = "2026-11-17T11:30:00+05:00"
@@ -347,8 +347,8 @@ Usage: #example
 * status = #revoked
 * intent = #order
 * code.concept = BloodComponentProcessingCS#bcproc-0001-00004 "Qon mahsulotining sifat nazorati"
-* subject = Reference(Patient/example-salim)
-* focus = Reference(InventoryItem/example-inventory-item-rbc)
+* subject = Reference(Location/example-blood-service-laboratory)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
 * requester = Reference(PractitionerRole/example-practitionerrole)
 * performer = Reference(PractitionerRole/example-blood-service-expeditor-role)
 * authoredOn = "2026-11-18T11:30:00+05:00"
