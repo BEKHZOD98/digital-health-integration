@@ -6,6 +6,8 @@
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): `focus` endi [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) yoki [UZ Core InventoryItem](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryitem.html) ga ham havola qilishi mumkin; active, completed va revoked holatlaridagi qon mahsuloti sifat nazorati misollari va ekspeditor PractitionerRole misoli qo'shildi.
 
+Qo'llanma sahifalari [DHP dasturchilar hujjatlari](https://docs.dhp.uz/uz/) uslubida bezatilgan: Onest va JetBrains Mono shriftlari, DHP yashil ranglari va logotipi, yangilangan sarlavha, menyu, jadvallar, eslatmalar va nusxa olish tugmasi bilan kod bloklari. Sarlavhadagi mavzu menyusi yorug', qorong'i yoki tizimdagidek mavzuni tanlaydi.
+
 ### Versiya 0.13.1
 
 #### Qo'shildi

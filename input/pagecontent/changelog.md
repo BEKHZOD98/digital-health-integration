@@ -6,6 +6,8 @@
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) `focus` also allows a [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) or a [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html), with active, completed and revoked blood product quality control examples and an expeditor PractitionerRole example.
 
+The guide's pages use the look of the [DHP developer documentation](https://docs.dhp.uz/): Onest and JetBrains Mono fonts, DHP green colours and logo, and a restyled header, menu, tables, notes and code blocks, which now have a copy button. A theme menu in the header switches between light, dark and the system setting.
+
 ### Version 0.13.1
 
 #### Added
