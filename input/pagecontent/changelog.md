@@ -1,6 +1,10 @@
 ### In development
 
-(No changes yet)
+#### Changed
+
+[Blood Service Operations](CodeSystem-blood-component-processing-cs.html), formerly Blood component processing operations, adds codes for revoking a blood donor deferral and for blood product quality control.
+
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) `focus` also allows a [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) or a [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html), with active, completed and revoked blood product quality control examples and an expeditor PractitionerRole example.
 
 ### Version 0.13.1
 
@@ -20,7 +24,7 @@
 
 Supporting terminology: a [blood service observation type](CodeSystem-blood-service-observation-type-cs.html) code system for the registration types ([ValueSet](ValueSet-blood-service-registration-type-vs.html)) and component codes, a [donor category](ValueSet-donor-category-vs.html) value set (SNOMED CT `275561000` for a staff donor, a local [code](CodeSystem-donor-category-cs.html) for a reserve donor), a local [donation compensation](CodeSystem-donation-compensation-cs.html) code system ([ValueSet](ValueSet-donation-compensation-vs.html)), a SNOMED CT [donation type](ValueSet-donation-type-vs.html) value set, and Uzbek and Russian [translations](CodeSystem-blood-service-snomed-translations-cs.html) of the SNOMED CT codes. The registration number uses the new [blood registration number](NamingSystem-blood-registration-number-system.html) identifier system `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`.
 
-[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orders individual tests, panels and component processing operations, with fixed order and donation identifier systems, Patient or Location subjects, BloodLabCodesVS and BloodComponentProcessingCS, SNOMED CT processing codes and 18 examples, including blood product quality control with an example expeditor role.
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orders individual tests, panels and component processing operations, with fixed order and donation identifier systems, Patient or Location subjects, BloodLabCodesVS and BloodComponentProcessingCS, SNOMED CT processing codes and 15 examples.
 
 [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) records the ABO, Rh-Hr and biological compatibility tests between a recipient and one blood unit, with SNOMED CT results, and [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) records the recipient's transfusion and obstetric history it is based on.
 
