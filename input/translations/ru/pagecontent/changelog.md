@@ -2,11 +2,15 @@
 
 #### Изменено
 
-[Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (ранее Blood component processing operations): добавлены коды отмены отвода донора крови и контроля качества продукта крови.
+[Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (ранее Blood component processing operations): добавлен код контроля качества продукта крови.
 
-[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): `focus` также допускает [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) или [UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html); добавлены примеры контроля качества продукта крови в статусах active, completed и revoked и пример роли экспедитора PractitionerRole.
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): добавлены примеры контроля качества продукта крови в статусах active, completed и revoked и пример роли экспедитора PractitionerRole.
 
 Страницы руководства оформлены в стиле [документации DHP для разработчиков](https://docs.dhp.uz/ru/): шрифты Onest и JetBrains Mono, зелёные цвета и логотип DHP, обновлённые шапка, меню, таблицы, примечания и блоки кода с кнопкой копирования. Меню темы в шапке переключает светлую, тёмную тему или тему как в системе.
+
+#### Документация
+
+[Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html): описано досрочное снятие отвода - флаг переводится в `inactive`, а Provenance записывает, кто снял отвод и почему ([пример](Provenance-example-blood-donor-deferral-lifted-provenance.html)).
 
 ### Версия 0.13.1
 

@@ -1,7 +1,7 @@
 CodeSystem: BloodComponentProcessingCS
 Id: blood-component-processing-cs
 Title: "Blood Service Operations"
-Description: "Local codes representing blood service operations, including blood component processing, donor deferral management, and blood product quality control, where suitable standard terminology codes are unavailable."
+Description: "Local codes representing blood service operations, including blood component processing and blood product quality control, where suitable standard terminology codes are unavailable."
 * insert OriginalCodeSystemDraft(blood-component-processing-cs)
 
 * #bcproc-0001-00002 "Nurlantirish"
@@ -9,12 +9,6 @@ Description: "Local codes representing blood service operations, including blood
   * ^designation[=].value = "Облучение"
   * ^designation[+].language = #en
   * ^designation[=].value = "Irradiation"
-
-* #bcproc-0001-00003 "Qon donorini chetlatishni bekor qilish"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Отмена отвода донора крови"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Revoke blood donor deferral"
 
 * #bcproc-0001-00004 "Qon mahsulotining sifat nazorati"
   * ^designation[0].language = #ru

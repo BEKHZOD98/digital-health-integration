@@ -2,11 +2,15 @@
 
 #### Changed
 
-[Blood Service Operations](CodeSystem-blood-component-processing-cs.html), formerly Blood component processing operations, adds codes for revoking a blood donor deferral and for blood product quality control.
+[Blood Service Operations](CodeSystem-blood-component-processing-cs.html), formerly Blood component processing operations, adds a code for blood product quality control.
 
-[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) `focus` also allows a [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) or a [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html), with active, completed and revoked blood product quality control examples and an expeditor PractitionerRole example.
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) adds active, completed and revoked blood product quality control examples and an expeditor PractitionerRole example.
 
 The guide's pages use the look of the [DHP developer documentation](https://docs.dhp.uz/): Onest and JetBrains Mono fonts, DHP green colours and logo, and a restyled header, menu, tables, notes and code blocks, which now have a copy button. A theme menu in the header switches between light, dark and the system setting.
+
+#### Documentation
+
+[Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) shows how to record lifting a deferral early: the flag is set to `inactive` and a Provenance records who lifted it and why ([example](Provenance-example-blood-donor-deferral-lifted-provenance.html)).
 
 ### Version 0.13.1
 
