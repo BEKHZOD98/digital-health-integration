@@ -2,6 +2,8 @@
 
 #### O'zgartirildi
 
+[027-shakl](StructureDefinition-form-027-medical-record-extract-composition.html) ambulator va statsionar kartadan ko'chirmalar uchun `emdoc-0010-0106` kodini ishlatadi, ularni `Encounter.class` (`AMB` yoki `IMP`) farqlaydi. Belgilangan `type` endi eski "Extract from inpatient medical record" nomini o'z ichiga olmaydi.
+
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (avvalgi nomi Blood component processing operations): qon mahsulotining sifat nazorati kodi qo'shildi.
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): active, completed va revoked holatlaridagi qon mahsuloti sifat nazorati misollari va ekspeditor PractitionerRole misoli qo'shildi.

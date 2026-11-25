@@ -6,6 +6,8 @@
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) adds active, completed and revoked blood product quality control examples and an expeditor PractitionerRole example.
 
+[Form 027](StructureDefinition-form-027-medical-record-extract-composition.html) uses `emdoc-0010-0106` for both outpatient and inpatient extracts, and `Encounter.class` (`AMB` or `IMP`) tells them apart. The fixed `type` no longer carries the old display "Extract from inpatient medical record".
+
 The guide's pages use the look of the [DHP developer documentation](https://docs.dhp.uz/): Onest and JetBrains Mono fonts, DHP green colours and logo, and a restyled header, menu, tables, notes and code blocks, which now have a copy button. A theme menu in the header switches between light, dark and the system setting.
 
 #### Documentation
